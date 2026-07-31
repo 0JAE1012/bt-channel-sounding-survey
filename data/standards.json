@@ -1,0 +1,329 @@
+{
+  "$schema": "./schema.md",
+  "updated": "2026-07-30",
+  "standards": [
+    {
+      "id": "bt-core-6-0",
+      "title": "Bluetooth Core Specification v6.0",
+      "body": "Bluetooth SIG",
+      "kind": "core-spec",
+      "date": "2024-08-27",
+      "status": "adopted",
+      "url": "https://www.bluetooth.com/core-specification-6-feature-overview/",
+      "relevance": "critical",
+      "summary": "Channel Sounding(CS, 구 HADM)을 최초 도입한 릴리스. PBR(Phase-Based Ranging)과 RTT(Round-Trip Timing)를 규정하고, 릴레이 공격 저항을 위한 CS Security Start 절차를 정의한다. 2.4 GHz 대역에서 1 MHz 간격 79개 RF 채널을 정의하며 이 중 최대 72개를 CS tone/packet 전송에 사용한다 (나머지는 primary advertising 채널과 중첩되어 제외).",
+      "key_sections": [
+        "Vol 6, Part A — Physical Layer (CS tone 및 sounding sequence)",
+        "Vol 6, Part B — Link Layer (CS procedure, subevent/step 구조)",
+        "Vol 6, Part H — Security (CS Security Start, DRBG 기반 난수화)",
+        "Vol 4, Part E — HCI (LE CS 커맨드 및 이벤트, LE CS Test)"
+      ],
+      "notes_for_research": "CS 보안 분석의 1차 근거 문서. sounding sequence의 마커 심볼 삽입, 비트 패턴/톤 페이로드/안테나 경로 선택의 난수화 스크램블링 메커니즘이 위협 모델의 출발점.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-core-6-1",
+      "title": "Bluetooth Core Specification v6.1",
+      "body": "Bluetooth SIG",
+      "kind": "core-spec",
+      "date": "2025-05-06",
+      "status": "adopted",
+      "url": "https://www.bluetooth.com/blog/delivering-on-the-bi-annual-release-schedule-bluetooth-core-6-1-is-here/",
+      "relevance": "medium",
+      "summary": "반기 릴리스 주기의 첫 결과물. 주요 신규 기능은 Randomized RPA(Resolvable Private Address)로, 주소 난수화 주기를 컨트롤러가 관리해 프라이버시와 전력 효율을 개선한다. CS 자체의 큰 변경은 없음.",
+      "key_sections": [
+        "Randomized RPA 관련 Link Layer / HCI 변경"
+      ],
+      "notes_for_research": "CS 세션과 RPA 갱신 타이밍의 상호작용(측정 중 주소 변경 시 세션 연속성)은 검토할 가치가 있는 지점.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-core-6-2",
+      "title": "Bluetooth Core Specification v6.2",
+      "body": "Bluetooth SIG",
+      "kind": "core-spec",
+      "date": "2025-11",
+      "status": "adopted",
+      "url": "https://www.bluetooth.com/bluetooth-core-6-2-feature-overview/",
+      "relevance": "critical",
+      "summary": "Channel Sounding 보안을 직접 강화한 릴리스. Channel Sounding Amplitude-based Attack Resilience가 도입되어 RTT 패킷에 대한 진폭 기반 공격 모델을 정의하고, DFT 기반 진폭 NADM과 90% 탐지 정확도 요구, 다단계 인증 시험 절차를 규정한다. LL_CS_CAPABILITIES_REQ/RSP PDU에 진폭 NADM 지원 비트가 추가되었다. 이 외에 Shorter Connection Interval(SCI)로 LE 연결 간격을 375 µs까지 협상 가능하게 한다.",
+      "key_sections": [
+        "Channel Sounding Amplitude-based Attack Resilience — 공격 모델 정의",
+        "DFT 기반 진폭 NADM 과 90% 탐지 정확도 요구",
+        "다단계 인증 시험 절차",
+        "LL_CS_CAPABILITIES_REQ/RSP 의 진폭 NADM 지원 비트",
+        "Shorter Connection Interval 관련 Link Layer 변경"
+      ],
+      "notes_for_research": "**버전 드리프트에 주의할 것.** CS의 NADM은 6.0의 위상 기반과 6.2의 진폭 기반이 별개다. 'CS 규격의 NADM 3종'이라고 뭉뚱그리면 어느 버전을 공격하는지가 흐려진다. Anliker 2026이 평가한 DFT 지표가 6.0 참조 지표인지 6.2의 인증 대상 지표인지 확인이 필요하다. 그리고 규격이 거리 계산 알고리즘은 정의하지 않지만 탐지 지표와 그 인증 시험은 직접 규정한다는 점이 중요하다. '규격은 아무것도 정의하지 않는다'는 서술은 틀렸다. 짧은 연결 간격은 CS procedure 스케줄링 밀도와 측정 갱신율에도 영향을 준다.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-core-6-3",
+      "title": "Bluetooth Core Specification v6.3",
+      "body": "Bluetooth SIG",
+      "kind": "core-spec",
+      "date": "2026-05-06",
+      "status": "adopted",
+      "url": "https://www.bluetooth.com/blog/just-released-bluetooth-core-6-3/",
+      "relevance": "critical",
+      "summary": "Channel Sounding 정밀도를 직접 개선하는 릴리스. Bluetooth Channel Sounding Inline PCT Transfer가 도입되어 reflector가 위상 정렬된 톤(phase-aligned tone)을 하드웨어로 직접 전달하도록 하여 CS 정확도와 효율을 높인다. 이 외에 인터페이스 용량 확대와 무선 효율 개선이 포함된다.",
+      "key_sections": [
+        "CS Inline PCT Transfer (Vol 6 Part B / Vol 4 Part E HCI)",
+        "CS 관련 정밀도 개선 항목"
+      ],
+      "notes_for_research": "현재 연구 시점 기준 최신 CS 규격. v6.0 대비 delta를 정리해 두면 실험 대상 칩셋의 규격 준수 수준을 구분할 수 있음. Inline PCT Transfer는 새로운 공격면(하드웨어 직접 전달 경로) 가능성도 함께 검토할 것.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-ras-1-0",
+      "title": "Ranging Service (RAS) v1.0",
+      "body": "Bluetooth SIG",
+      "kind": "service",
+      "date": "2024",
+      "status": "adopted",
+      "url": "https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/RAS_v1.0/out/en/index-en.html",
+      "relevance": "critical",
+      "summary": "Ranging Data를 클라이언트에 제공하기 위한 GATT 서비스. Ranging Data는 Core Controller가 생성해 HCI를 통해 Host로 전달하는 CS Procedure 결과물이다. 원격 기기의 ranging 데이터를 읽고 ranging 파라미터를 설정할 수 있게 한다.",
+      "key_sections": [
+        "RAS Characteristics (Ranging Data, Real-time Ranging Data, Control Point)",
+        "Ranging Data 전달 방식 (on-demand vs real-time)"
+      ],
+      "notes_for_research": "CS 원시 데이터를 애플리케이션 계층에서 획득하는 표준 경로. 실험용 데이터 수집 파이프라인을 RAS 기반으로 구성하면 벤더 중립적으로 재현 가능. GATT 계층에서의 ranging 데이터 노출은 프라이버시 분석 대상.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-rap-1-0",
+      "title": "Ranging Profile (RAP) v1.0",
+      "body": "Bluetooth SIG",
+      "kind": "profile",
+      "date": "2024",
+      "status": "adopted",
+      "url": "https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/RAP_v1.0/out/en/index-en.html",
+      "relevance": "critical",
+      "summary": "거리 측정 애플리케이션이 진행 중인 CS procedure의 원격 ranging 결과를 읽고 전달 내용/방식을 설정하기 위한 프로파일. Ranging Responder(RRSP)는 RAS Server를 구현하는 GATT Server이며 EATT bearer 수립을 지원할 수 있고, Ranging Requestor(RREQ)는 GATT Client다.",
+      "key_sections": [
+        "RREQ / RRSP 역할 정의",
+        "EATT bearer 사용",
+        "RAS와의 연계"
+      ],
+      "notes_for_research": "RAS와 함께 CS의 상호운용성 계층을 이룬다. 벤더 간 CS 구현 비교 실험 시 이 프로파일 준수 여부가 비교 가능성의 전제.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-cs-feature-page",
+      "title": "Bluetooth Channel Sounding — 공식 기능 개요 및 기술 자료",
+      "body": "Bluetooth SIG",
+      "kind": "reference",
+      "date": "2024-09",
+      "status": "reference",
+      "url": "https://www.bluetooth.com/learn-about-bluetooth/feature-enhancements/channel-sounding/",
+      "relevance": "high",
+      "summary": "CS 기능의 공식 개요 페이지. PBR을 주 측정 방식으로, RTT를 보안 보강 수단으로 규정하는 SIG의 설계 의도가 정리되어 있다.",
+      "key_sections": [
+        "PBR/RTT 역할 구분",
+        "10 cm 수준 정확도 목표",
+        "digital key / secure access 유스케이스"
+      ],
+      "notes_for_research": "논문 도입부에서 CS 설계 의도를 인용할 때의 1차 출처.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-cs-mrn",
+      "title": "How Bluetooth Channel Sounding will shape the future of device positioning (Market Research Note)",
+      "body": "Bluetooth SIG",
+      "kind": "reference",
+      "date": "2024-12",
+      "status": "reference",
+      "url": "https://www.bluetooth.com/wp-content/uploads/2024/12/mrn-channel-sounding.pdf",
+      "relevance": "medium",
+      "summary": "CS의 시장 도입 전망과 유스케이스를 정리한 SIG 시장조사 보고서.",
+      "key_sections": [
+        "유스케이스별 도입 전망",
+        "UWB 대비 포지셔닝"
+      ],
+      "notes_for_research": "연구 동기(motivation) 서술 시 도입 규모 근거로 인용 가능.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "ieee-802-15-4z",
+      "title": "IEEE 802.15.4z-2020 — Enhanced Impulse Radio (UWB)",
+      "body": "IEEE",
+      "kind": "standard",
+      "date": "2020",
+      "status": "published",
+      "url": "https://standards.ieee.org/ieee/802.15.4z/7211/",
+      "relevance": "high",
+      "summary": "HRP/LRP UWB 보안 거리측정을 규정한 표준. STS(Scrambled Timestamp Sequence) 기반 보호를 도입했다. CS의 직접 경쟁 기술이며, CS 보안성을 논할 때의 표준 비교 대상.",
+      "key_sections": [
+        "STS 구조 및 생성",
+        "HRP vs LRP PHY",
+        "Ranging 프레임 포맷"
+      ],
+      "notes_for_research": "Ghost Peak, Time for Change 등 주요 공격 논문의 대상 표준. CS와의 위협 모델 대조표를 만들 때 필수.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "ieee-802-15-4ab",
+      "title": "IEEE 802.15.4ab — Next Generation UWB",
+      "body": "IEEE",
+      "kind": "standard",
+      "date": "초안 D04, SA 투표 단계 (LMSC 조건부 승인 2026-02)",
+      "status": "in-progress",
+      "url": "https://standards.ieee.org/ieee/802.15.4ab/10694/",
+      "relevance": "medium",
+      "summary": "차세대 UWB 표준. 802.15.4z의 보안 한계 보완과 함께 코딩·프리앰블·변조 방식 추가, 채널 및 운용 주파수 확대, 간섭 완화, 거리측정 정확도 개선, 레이더 기반 존재 감지와 환경 매핑까지 포함한다. 2025년 9월 P802.15.4ab/D03 초안이 나온 뒤 2025년 9~10월 재순회 레터 투표(LB #225)로 Sponsor Ballot 제출이 결정되었고, 2026년 2월 LMSC가 P802.15.4ab-D04의 SA 투표 개시를 조건부 승인했다. IEEE SA 프로젝트 페이지는 2026년 7월 현재 여전히 Active PAR 로만 표시하며 발행 예정일을 공개하지 않는다. STMicroelectronics가 Narrowband Assist를 통합한 첫 802.15.4ab 칩 계열을 출시했다.",
+      "key_sections": [
+        "신규 ranging 모드 및 NBA-MMS-UWB",
+        "보안 개선 항목",
+        "UWB 센싱(레이더) 기능",
+        "하위 호환성 규정"
+      ],
+      "notes_for_research": "Time for Change(USENIX Sec 2023)가 초안 단계의 4ab에서 90 m 초과 축소가 가능하다고 해석적으로 제시했다. 코어 기능이 확정된 지금 그 지적이 반영되었는지 D03에서 확인할 가치가 있다. Narrowband Assist는 CS와 UWB의 경계를 흐리는 지점이므로 CS 연구의 비교 대상이 확장된다. 2026-07-30 확인: 초안이 D04로 올라가 SA 투표 단계에 들어갔으므로 파형·보안 항목이 사실상 고정되었다고 보아야 한다. uwbad-2024-jamming 은 4ab 제안이 SYNC 구조와 CIR 기반 수신, 고정 패킷 간격을 유지하므로 같은 재밍이 그대로 통한다고 논증하고, 대응책으로 랜징 패킷의 의사난수 지연 삽입을 제시한다. D04에 그 대응이 반영되었는지가 확인 대상이다.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "ccc-digital-key",
+      "title": "CCC Digital Key Release 3.0 / 4.0",
+      "body": "Car Connectivity Consortium",
+      "kind": "industry-spec",
+      "date": "3.0: 2021 / 4.0: 2024–",
+      "status": "adopted",
+      "url": "https://carconnectivity.org/digital-key/",
+      "relevance": "high",
+      "summary": "차량 디지털 키 표준. R3.0에서 UWB 기반 보안 측위를 도입했다. CS는 이 영역에 대한 BLE 네이티브 대안으로 포지셔닝된다.",
+      "key_sections": [
+        "보안 측위 요구사항",
+        "릴레이 공격 대응 요구사항",
+        "BLE + UWB 조합 구조"
+      ],
+      "notes_for_research": "CS의 실제 산업 요구사항(정확도, 지연, 보안 수준)을 정량적으로 확인할 수 있는 문서. 회원사 외 공개 범위 제한 있음 — 접근 가능 버전 확인 필요.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "fira-consortium",
+      "title": "FiRa Consortium UWB Specifications (MAC / PHY / UCI)",
+      "body": "FiRa Consortium",
+      "kind": "industry-spec",
+      "date": "지속 개정",
+      "status": "adopted",
+      "url": "https://www.firaconsortium.org/discover/specifications",
+      "relevance": "medium",
+      "summary": "802.15.4z 위에서 상호운용 가능한 UWB 구현을 정의하는 산업 표준군. UCI(UWB Command Interface)는 호스트-칩 간 인터페이스를 규정한다.",
+      "key_sections": [
+        "UCI 명세",
+        "MAC 명세",
+        "인증 프로그램"
+      ],
+      "notes_for_research": "UWB 실험 장비 제어 인터페이스의 표준. CS의 HCI LE CS 커맨드와 구조적으로 대조하면 좋은 비교 자료.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "etsi-en-300-328",
+      "title": "ETSI EN 300 328 — 2.4 GHz 대역 광대역 전송 시스템",
+      "body": "ETSI",
+      "kind": "regulatory",
+      "date": "지속 개정",
+      "status": "published",
+      "url": "https://www.etsi.org/deliver/etsi_en/300300_300399/300328/",
+      "relevance": "medium",
+      "summary": "2.4 GHz ISM 대역 규제 표준. 송신 출력, 대역폭, 채널 점유 등 CS 실험 및 상용 구현이 준수해야 하는 규제 경계를 정의한다.",
+      "key_sections": [
+        "최대 EIRP",
+        "매체 이용 규칙",
+        "적응적 주파수 호핑 요구사항"
+      ],
+      "notes_for_research": "CS의 채널 호핑 및 톤 전송이 규제 한계 안에서 어떤 제약을 받는지 확인. 공격 실험 시 출력 제한 준수 근거로도 필요.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "matlab-bt-cs-toolbox",
+      "title": "MATLAB Bluetooth Toolbox — Channel Sounding 참조 구현",
+      "body": "MathWorks",
+      "kind": "reference",
+      "date": "2025–",
+      "status": "reference",
+      "url": "https://www.mathworks.com/help/bluetooth/ug/what-is-bluetooth-channel-sounding.html",
+      "relevance": "high",
+      "summary": "CS의 PBR/RTT 절차를 시뮬레이션할 수 있는 참조 구현과 설명. 규격 문구를 실행 가능한 모델로 확인하는 데 유용하다.",
+      "key_sections": [
+        "CS 절차 시뮬레이션 예제",
+        "PBR/RTT 거리 추정 알고리즘",
+        "채널 모델링"
+      ],
+      "notes_for_research": "하드웨어 확보 전 위협 모델을 시뮬레이션으로 선검증할 수 있는 실용적 경로.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "silabs-cs-fundamentals",
+      "title": "Silicon Labs — Bluetooth LE Channel Sounding Fundamentals",
+      "body": "Silicon Labs",
+      "kind": "vendor-doc",
+      "date": "지속 갱신",
+      "status": "reference",
+      "url": "https://docs.silabs.com/rtl-lib/latest/rtl-lib-channel-sounding-fundamentals/",
+      "relevance": "high",
+      "summary": "벤더 관점의 CS 구현 문서. 진폭 기반 릴레이/스푸핑에 저항하기 위한 DFT 기반 탐지 지표 등 규격에 명시되지 않은 구현 수준 방어 기법을 설명한다.",
+      "key_sections": [
+        "DFT 기반 탐지 지표",
+        "CS RAS 서비스 API",
+        "RTL 라이브러리 거리 추정"
+      ],
+      "notes_for_research": "규격 준수 이상의 벤더별 방어 로직이 존재함을 보여주는 근거. 공격 평가 시 '표준 대비'와 '구현 대비'를 구분해야 하는 이유.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "nordic-nrf54-cs",
+      "title": "Nordic Semiconductor nRF54L / nRF54H — Channel Sounding 지원 문서",
+      "body": "Nordic Semiconductor",
+      "kind": "vendor-doc",
+      "date": "2024-09–",
+      "status": "reference",
+      "url": "https://www.nordicsemi.com/Nordic-news/2024/09/Bluetooth-6-Channel-Sounding-supported-by-Nordic-Semiconductors-upcoming-nRF54-Series-SoCs",
+      "relevance": "high",
+      "summary": "nRF54L/nRF54H 시리즈의 CS 지원 관련 문서. 실험 플랫폼으로 가장 접근성이 좋은 하드웨어 중 하나이며, PAwR 기반 CS 연구(Schex et al. 2026)도 nRF54L15를 사용했다.",
+      "key_sections": [
+        "CS 지원 범위",
+        "nRF Connect SDK CS 샘플",
+        "HCI LE CS 커맨드 지원"
+      ],
+      "notes_for_research": "실험 장비 선정의 유력 후보. nRF Connect SDK의 CS 샘플로 raw step data 접근이 가능한지 확인 필요.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-core-6-3-overview",
+      "title": "Bluetooth Core 6.3 Technical Overview",
+      "body": "Bluetooth SIG",
+      "kind": "reference",
+      "date": "2026-05",
+      "status": "reference",
+      "url": "https://www.bluetooth.com/bluetooth-core-6-3-technical-overview/",
+      "relevance": "high",
+      "summary": "Core 6.3의 기술 변경을 항목별로 정리한 공식 문서. Channel Sounding 절차에서 불필요한 결과 데이터를 제거해 RAS/RAP 전달 효율을 최적화한 부분과 Inline PCT Transfer의 동작이 여기서 설명된다.",
+      "key_sections": [
+        "CS Inline PCT Transfer",
+        "CS 결과 데이터 최적화와 RAS/RAP 영향",
+        "v6.2 대비 delta"
+      ],
+      "notes_for_research": "규격 원문을 뒤지기 전에 무엇이 바뀌었는지 빠르게 파악하는 경로. RAS로 raw step data를 뽑는 실험을 설계할 때 6.0과 6.3의 전달 형식 차이를 여기서 먼저 확인할 것.",
+      "added": "2026-07-28"
+    },
+    {
+      "id": "bt-cs-inline-pct-transfer",
+      "title": "Channel Sounding Inline Phase Correction Term Transfer (Inline PCT Transfer, IPT) VSr01_PR Draft",
+      "body": "Bluetooth SIG",
+      "kind": "core-spec",
+      "date": "VSr01_PR 공개검토 초안 (2026-07 확인, 채택일 미공개)",
+      "status": "in-progress",
+      "url": "https://www.bluetooth.com/specifications/specs/channel-sounding-inline-phase-correction-term-transfer-2/",
+      "relevance": "high",
+      "summary": "CS Inline PCT Transfer(IPT) 기능을 넣기 위해 Core Specification에 필요한 변경을 규정하는 Core Specification Working Group 초안이다. Reflector가 톤의 위상을 자체적으로 조정해 위상 정렬된 톤을 하드웨어로 직접 넘기고, 그 대가로 Phase Correction Term(PCT) 값의 허수(Q) 성분을 HCI로 보고하지 않는다. Reflector에서 인라인 아날로그 위상 사전보상을 수행해 Initiator가 측정하기 전에 국부발진기(LO) 오프셋을 실시간으로 상쇄하는 것이 요점이며, 결과 데이터가 줄어 RAS/RAP 맥락에서 CS 절차의 속도와 효율이 개선된다.",
+      "key_sections": [
+        "Inline PCT Transfer 절차 및 Reflector 측 위상 사전보상",
+        "PCT 값의 HCI 보고 형식 변경 (Q 성분 미보고)",
+        "RAS/RAP와의 상호작용 및 결과 데이터 축소"
+      ],
+      "notes_for_research": "내 연구 관점에서 이 초안은 기능 추가가 아니라 관측 가능성의 축소로 읽어야 한다. seo-2026이 하드웨어 검증을 못 한 이유가 상용 기기가 양자화된 NADM 레벨만 노출하고 원시 지표를 내보내지 않는다는 것이었는데, IPT는 PCT의 Q 성분마저 HCI에서 걷어낸다. 즉 Host가 볼 수 있는 위상 정보가 더 줄어들고, 위상 일관성 검사에 쓸 재료가 컨트롤러 안에 갇힌다. 확인해야 할 것은 두 가지다. 첫째, Q 성분 없이도 위상 궤적 이상을 판정할 수 있는가 — 못 한다면 탐지 책임이 전적으로 컨트롤러의 NADM으로 넘어간다. 둘째, Reflector가 아날로그 위상을 사전보상한다는 것은 공격자가 조작해야 하는 관측량의 정의가 바뀐다는 뜻이므로, 강화 ED/LC 공격의 위상 보존 조건을 IPT 하에서 다시 유도해야 한다. 초안 단계이므로 채택 여부와 최종 문구를 다음 실행에서 추적할 것.",
+      "added": "2026-07-30"
+    }
+  ]
+}
