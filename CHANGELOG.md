@@ -2,6 +2,21 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-04 (9차: 신규 0건, 보강 2건 — 거리 확대 계보를 verified로)
+
+신규 논문은 없었습니다(전날 8차가 훑은 구간과 겹침). 대신 미검증으로 남아 있던
+`estimation`·`defense` 두 항목을 전문 확인으로 `verified`까지 올렸습니다.
+
+- 보강: **UWB-ED** (Singh 외, USENIX Security 2019) — 거리 확대 탐지의 원형.
+  hardware/software/results/limitations 전면 채움. 2단계(Commitment+Verification)와
+  에너지 분포 이진 가설검정, 규제 제약(PSD -41.3 dBm/MHz), 보안 수치(α=100에서
+  r=2일 때 27% → r=8일 때 5.85%)까지. `distance-enlargement-blind-spot` 인사이트의 근거.
+- 보강: **VAA 기반 BLE ToA/DoA** (Xie 외, arXiv 2026) — BLE two-way CFR의 이진 위상
+  모호성을 신경망 다수결로 풀고 MUSIC으로 결합 추정. 시뮬레이션(SNR 5 dB 이상 CRLB 근접).
+  CS PBR 추정기 계열(`spec-vs-implementation-debate`)과 이어짐.
+- 표준: 변경 없음. 실패: 없음(둘 다 arXiv 전문 확보).
+- 진행: `exp-estimator-threshold` 실험 완료 반영(추정기 문턱), 관련 todo done 처리.
+
 ## 2026-08-03 (8차: 신규 5건, 보강 4건 — PBR의 톤 축이 열림)
 
 이번 실행에서 새로 생긴 축은 **"톤이 비거나 오염되면 PBR은 어떻게 되는가"** 입니다.
