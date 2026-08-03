@@ -2,6 +2,73 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-03 (8차: 신규 5건, 보강 4건 — PBR의 톤 축이 열림)
+
+이번 실행에서 새로 생긴 축은 **"톤이 비거나 오염되면 PBR은 어떻게 되는가"** 입니다.
+지금까지 코퍼스는 CS를 시간 축(ED/LC, RTT 조작)에서만 보고 있었는데, PBR이 균일
+주파수 격자를 전제로 한다는 사실과 실제로는 광고 채널·블록리스트·Wi-Fi 때문에 그
+전제가 깨진다는 사실이 세 편으로 연결되었습니다. 톤 하나가 오염되면 Q90 오차가
+20 cm에서 4 m로 무너진다는 실측이 나왔고, 이는 신호를 위조하지 않고 잡음만 넣는
+거리 확대 공격의 가능성을 뜻합니다. 세 논문 모두 간섭을 자연 현상으로만 다루므로
+적대적 톤 선택은 비어 있습니다.
+
+### 신규 논문
+
+- 신규: Phase-Based Ranging in Narrowband Systems With Missing/Interfered Tones
+  (IEEE IoT-J 2023, vol. 10, no. 17, pp. 15171–15185, 관련도 높음) — 전문 확인 완료.
+  imec 계보(zand-2019 → abidin-2021)의 최신 노드. NXP KW36 야외 실측에서 Q90 오차가
+  ToF 6 m 대 PBR-MUSIC 7.5 cm, nRF52833 유선 셋업에서 톤 39 간섭 시 NN 채널 복원이
+  Q90 오차를 4 m → 20 cm로 개선(플래시 60.5 KB). `wieme-2025-cs-commercial-hw`가
+  이 논문을 인용하고 있어 기존 항목의 `cites` 도 함께 갱신했습니다.
+- 신규: BLE phase-based ranging: accuracy and capability under strong Wi-Fi interference
+  (IJET 2025, 관련도 보통) — 전문 확인 완료. NXP KW38 + TP-Link 공유기 실측.
+  Wi-Fi 간섭만으로 랜덤 오차가 5.4 cm → 17.7~18.4 cm(약 4배). 간섭 채널을 빼면
+  공간 평활화를 못 써 MUSIC이 DFT로 퇴화한다는 구조적 함정을 저자가 명시.
+- 신규: Joint Classification and Regression Deep Learning Model for Universal
+  Phase-based Ranging in Multiple Environments (arXiv 2511.19891, 관련도 보통) —
+  전문 확인 완료. 2NN 평균 RMSE 49 mm. 환경 분류기가 틀리면 거리 추정이 함께
+  무너진다는 점이 NN 기반 CS 거리추정(wacsa-2025, pnn-2025)에도 같은 논리로 걸립니다.
+- 신규: Joint single-shot ToA and DoA estimation for VAA-based BLE ranging with
+  phase ambiguity (arXiv 2602.02503, 관련도 보통) — 초록만 확인, `partial`.
+- 신규: Poster: Identifying Multipath in Phase-Based Ranging Measurements Using
+  Channel Sounding (IEEE VNC 2024, 관련도 보통) — 서지정보만 확인, `unverified`.
+
+### 보강
+
+- 보강: LEO-Range (USENIX Security 2025) — `partial` → `verified`.
+  hardware(R&S SMW200A / RTP164B, Keysight Propsim FS16), software, results(고앙각 LoS
+  78 m 상한에 FRR 3%, NLoS 117 m에 9%; 저앙각 117 m에 4%, 195 m에 6%), limitations,
+  artifacts(Zenodo), cites 8건을 원문에서 채웠습니다. 이 논문이 Bluetooth의 정규화
+  교차상관·최소자승오차 대응책을 "최적 공격자에 대한 보안 증명이 없는 방식"으로
+  분류한 대목이 NADM 계열 지표의 학술적 위치를 확정해 줍니다.
+- 보강: UWB-PR (NDSS 2019) — `partial` → `verified`. hardware(802.15.4f 시제품,
+  3db Access 지원), software(MATLAB 공격 시뮬레이션), results(93 m / 10 cm,
+  802.15.4a coherent 20 m 축소 대 UWB-PR 1 m 미만, non-coherent 최대 2461.6 m),
+  limitations(distance fraud 미방어), cites에 ranganathan-2012 추가.
+- 보강: Lightweight NLOS Channel Detection for ML-assisted BLE DF (arXiv 2026) —
+  `unverified` → `verified`. 저자 6인, hardware(u-blox XPLR-AOA-3 / ANT-B10 /
+  NINA-B411 / C209, 그래핀 차단막), software(Scikit-learn, NKA, RFF),
+  results(NKA가 선형 SVC 대비 7~14%p 개선, MLP 0.908, RFF+SVC 추론 0.009 s,
+  AWGN 20 dB 주입 시 저하 1~3%p)를 채웠습니다.
+- 보강: Vehicular Wireless Positioning: A Survey (arXiv 2026) — `unverified` →
+  `verified`. 저자 12인, CS 서술 내용(HADM은 80 MHz RTT, PBR은 2.4 GHz 반송파 위상)과
+  한계를 확인. 측위 전문가 12인의 대형 서베이가 CS에 한 문단만 쓰고 보안 논의는
+  전무하다는 사실 자체가 빈칸의 근거가 됩니다.
+
+### 표준
+
+- 변경 없음. Core 6.3(2026-05-06)이 최신 adopted, RAS/RAP 1.0 유지,
+  Channel Sounding Inline PCT Transfer는 여전히 Draft(VSr01_PR) 상태입니다.
+
+### 실패
+
+- USENIX Security 2026 technical sessions 페이지가 HTTP 403 — 목차 훑기 실패.
+- NDSS 2026 accepted papers 페이지의 M–Z 구간을 WebFetch로 받았더니 존재하지 않는
+  제목("Portable Executable …" 계열)이 대량으로 생성되어 폐기했습니다. 키워드
+  필터 질의로 다시 받아 BLE 관련 3건만 확인했습니다. 목차 전체 훑기는 미완입니다.
+- `zand-2019-ble-pbr`(관련도 높음, `partial`)은 이번에도 무료 전문 경로를 찾지 못해
+  보강하지 못했습니다.
+
 ## 2026-07-30 (7차: 신규 7건, 보강 5건 — CS 보안 계보의 빈 칸이 채워짐)
 
 이번 실행의 소득은 새 논문 개수가 아니라 계보가 이어진 것입니다. CS의 PBR+RTT 결합이
