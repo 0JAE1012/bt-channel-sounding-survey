@@ -1,6 +1,6 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-07-30",
+  "updated": "2026-08-03",
   "standards": [
     {
       "id": "bt-core-6-0",
@@ -324,6 +324,20 @@
       ],
       "notes_for_research": "내 연구 관점에서 이 초안은 기능 추가가 아니라 관측 가능성의 축소로 읽어야 한다. seo-2026이 하드웨어 검증을 못 한 이유가 상용 기기가 양자화된 NADM 레벨만 노출하고 원시 지표를 내보내지 않는다는 것이었는데, IPT는 PCT의 Q 성분마저 HCI에서 걷어낸다. 즉 Host가 볼 수 있는 위상 정보가 더 줄어들고, 위상 일관성 검사에 쓸 재료가 컨트롤러 안에 갇힌다. 확인해야 할 것은 두 가지다. 첫째, Q 성분 없이도 위상 궤적 이상을 판정할 수 있는가 — 못 한다면 탐지 책임이 전적으로 컨트롤러의 NADM으로 넘어간다. 둘째, Reflector가 아날로그 위상을 사전보상한다는 것은 공격자가 조작해야 하는 관측량의 정의가 바뀐다는 뜻이므로, 강화 ED/LC 공격의 위상 보존 조건을 IPT 하에서 다시 유도해야 한다. 초안 단계이므로 채택 여부와 최종 문구를 다음 실행에서 추적할 것.",
       "added": "2026-07-30"
+    },
+    {
+      "id": "qorvo-dw3000-api",
+      "title": "Qorvo DW3720 Device Driver API Guide (DW3000 제품군)",
+      "body": "Qorvo",
+      "kind": "vendor-doc",
+      "date": "Version 4.9, 2024",
+      "status": "reference",
+      "url": "https://forum.qorvo.com/uploads/short-url/xD3TlXKvkujjdUaJWXv2b4E7GQN.pdf",
+      "relevance": "medium",
+      "summary": "nRF52840-DK + DWM3000EVB 실험 리그의 드라이버 API. nRF52840이 SPI 마스터로 DW3110/DW3720 UWB IC를 dwt_* 함수로 구동한다. 초기화(dwt_probe/dwt_initialise/dwt_configure), TWR 송수신과 타임스탬프(dwt_readtxtimestamp/dwt_readrxtimestamp), 클럭오프셋 보정(dwt_readclockoffset), 4z STS 보안 지표(dwt_readstsquality), CIR 누산기 접근을 규정한다. Ghost Peak(leu-2022)와 Time for Change(anliker-2023)가 쓴 바로 그 리그의 소프트웨어 계층.",
+      "key_sections": ["dwt_config_t — 채널(5/9)·프리앰블·STS·PDoA 설정", "dwt_readstsquality — 4z STS 무결성 지표 (CS의 NADM 대응물)", "타임스탬프와 clock offset 보정 (dwt_readclockoffset, SS/DS-TWR 거리계산)", "안테나 지연 교정 (dwt_setrxantennadelay/dwt_settxantennadelay)", "CIR 누산기 읽기 — 정확한 함수 명칭 원문 대조 필요"],
+      "notes_for_research": "CS 공격/방어를 UWB 계보에 잇는 실험 도구. 핵심 매핑은 dwt_readstsquality(STS 품질) ↔ CS NADM(NCC/PMSE/DFT)로, 둘 다 인증된 earliest-path 존재가 아니라 파형 일치도에 의존한다. anliker-2023이 dwt_readstsquality를, anliker-2026이 NADM을 우회한 것이 같은 구조의 실패이며, 이것이 seo-2026과 anliker-2026을 잇는 축이다. 대역폭 차이(UWB ch5/9 ~500 MHz vs CS 협대역)가 fhss-tracking-is-the-real-barrier 인사이트의 배경.",
+      "added": "2026-08-03"
     }
   ]
 }
