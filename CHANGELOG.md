@@ -2,6 +2,56 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-10 (10차: 신규 5건, 보강 2건 — Wi-Fi 보안 레인징 계보를 통째로 들여옴)
+
+이번 회차의 발견은 검색이 아니라 **참고문헌 캐기**에서 나왔습니다. arXiv `cs.CR`
+목록에서 걸린 ARES 2026 논문의 전문을 열었더니, 그 참고문헌에 코퍼스가 통째로
+비워두고 있던 축이 드러났습니다 — **Wi-Fi FTM/802.11az 보안 계보**. CS와 같은
+2층 구조(상위 협상·설정 + 하위 사운딩 파형)를 가진 인접 표준이고, 그쪽에서 이미
+찾아낸 실패 양식이 CS 질문으로 거의 1:1 번역됩니다.
+
+- 신규: **Secure Wi-Fi Ranging Today: Security and Adoption of IEEE 802.11az/bk**
+  (Antonijević 외, ARES 2026, 관련도 높음, `verified`). 논리계층에서 WPA2/WPA3-Personal과
+  standalone PASN이 특정 AP에 레인징을 결속하지 못함을 보이고, EDCA 모드 강등과
+  Secure HE-LTF Required 미강제로 인한 조용한 다운그레이드를 정리합니다. 물리계층에서는
+  20 MHz secure HE-LTF(122 비영 부반송파 × 64-QAM)를 부분 관측 + message-passing으로
+  예측해 MUSIC ToF에 거리 편향을 유도합니다. zero-power GI의 스펙트럼 마스크 영향까지
+  정량화(비보안 최악 +10.9 dB·초과 빈 6.7% → 보안 최악 +6.2 dB·초과 빈 31.6%).
+  **802.11az를 표방한 개발보드조차 secure HE-LTF 미구현**이었다는 관찰이 특히 큽니다.
+- 신규: **Here, There, and Everywhere: Security Analysis of Wi-Fi FTM**
+  (Schepers·Singh·Ranganathan, WiSec 2021, 관련도 보통, `verified`). 시판 Wi-Fi 동글만으로
+  2–20 m 구간을 평균오차 75 cm 이내로 스푸핑하고, 최종 응답 프레임 리플레이로 RTT를
+  3.99 µs / 8.02 µs 줄여 598.62 m / 1,201.58 m를 축소합니다(기기당 1,000 세션).
+  '데이터 복조는 최강 피크로, ToA는 back-search 창의 이른 피크로'라는 수신기 비결속이
+  근본 원인이라는 지적이 CS의 CIR first-path 탐색에도 걸리는지가 다음 질문입니다.
+- 신규: **Security of Multicarrier Time-of-Flight Ranging** (Leu 외, ACSAC 2021,
+  관련도 높음, `partial`). '부반송파를 늘리면 심볼이 길어지고 긴 심볼은 ED/LC에 취약하다'를
+  OFDM에 대해 정면으로 논증한 논문. Anliker 2026과 Antonijević 2026이 모두 출발점으로
+  인용하는데 코퍼스에 없었습니다. Clulow 2006과 Anliker 2026 사이의 빠진 고리입니다.
+- 신규: **Assessing Localization Technologies for Pedestrian Collision Avoidance**
+  (Varughese 외, arXiv 2026, 관련도 보통, `partial`) — Bluetooth 6.0을 UWB·GNSS와
+  같은 실험에서 벤치마크. BLE 6.0 레인징이 CS 기반인지 초록에 없어 원문 대조 필요.
+- 신규: **A Relay a Day Keeps the AirTag Away** (Gegenhuber 외, arXiv 2026,
+  관련도 낮음, `partial`) — 거리 검증이 없는 BLE 근접 서비스의 대조군.
+- 보강: **So Near and Yet So Far** (Clulow 외, ESAS 2006) `unverified` → `verified`.
+  4개 원칙 전문, 조기 판정(1/5 적분 → 4/5 비트시간 선점, SNR 진폭비 1/5), deferred bit
+  signalling, 그리고 MICA2 사례(38.4 kbit/s → 1비트 26,042 ns = 공간상 7.8 km, 통신반경
+  300 m를 수 km 조작; 8 MHz 클록 → 왕복 거리분해능 최소 20 m)까지 채웠습니다.
+  DOI와 무료 전문(Wellesley 미러)도 확보.
+- 보강: **Bluetooth Channel Sounding Evaluations and Improvements** (Lund MSc)
+  `partial` → `verified`. 저자 확인(Siwei Jiang, u-blox 협업). 플랫폼은 **u-blox NORA-B2
+  (Cortex-M33) + NORA-B206 EVK**. 핵심 관측은 **IQ 샘플의 NaN이 거리에 따라 증가**한다는
+  것 — 75채널 프레임당 평균 4.9233개(4.15 m) → 6.9568개(12.06 m). 근거리 phase-slope /
+  중장거리 CIR 하이브리드 전환(0.2 m 미만 클리핑)과 MCU 이식 제약(CMSIS-DSP)도 기록.
+- 인용 관계: 새 노드 3개를 넣고 기존 논문을 다시 훑어 **12건**을 이었습니다.
+  Clulow 2006 ← 9건(Staat 2022, Anliker 2023/2026, Leu 2020, Olafsdóttir 2017,
+  Singh 2019 UWB-PR, Singh 2022 V-Range, Abidin 2021, Coppola 2025),
+  Leu 2021 ← 2건, Schepers 2021 ← 1건. 인용 96건.
+- 표준: 변경 없음. Core 6.3(2026-05-06) 이후 신규 릴리스 없음. CS Inline PCT Transfer는
+  여전히 draft(채택일 미공개), IEEE P802.15.4ab는 IEEE SA에서 "Active PAR"로만 표시됩니다.
+- 실패: **Leu 2021 ACSAC 전문 미확보** — ACM DL 403, ETH Research Collection 직접 PDF 없음,
+  Semantic Scholar `openAccessPdf` CLOSED. 초록 기준으로만 기록하고 `partial`로 남겼습니다.
+
 ## 2026-08-04 (9차: 신규 0건, 보강 2건 — 거리 확대 계보를 verified로)
 
 신규 논문은 없었습니다(전날 8차가 훑은 구간과 겹침). 대신 미검증으로 남아 있던

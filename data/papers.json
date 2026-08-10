@@ -1,7 +1,7 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-04",
-  "last_run": "2026-08-04",
+  "updated": "2026-08-10",
+  "last_run": "2026-08-10",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
   "citation_edges": 72,
   "papers": [
@@ -513,48 +513,77 @@
       "id": "lund-2026-cs-eval-improvements",
       "title": "Bluetooth Channel Sounding Evaluations and Improvements",
       "authors": [
-        "Lund University MSc thesis (저자명 확인 필요)"
+        "Siwei Jiang"
       ],
       "venue": "MSc Thesis",
-      "venue_full": "Lund University, LUP Student Papers",
+      "venue_full": "Lund University, Department of Electrical and Information Technology — MSc thesis, LUP Student Papers (2026-06-23). u-blox와 협업 (지도: Peter Karlsson)",
       "tier": "thesis",
       "year": 2026,
       "url": "https://lup.lub.lu.se/student-papers/search/publication/9242320",
-      "preprint": null,
+      "preprint": "https://lup.lub.lu.se/student-papers/record/9242320/file/9242343.pdf",
       "doi": null,
       "topics": [
         "channel-sounding",
         "antenna-diversity",
-        "ranging-accuracy"
+        "ranging-accuracy",
+        "cir",
+        "phase-slope",
+        "aoa",
+        "kalman-filter"
       ],
       "relevance": "medium",
-      "relevance_note": "단일/듀얼 안테나 구성별 CS 정확도 비교 — 안테나 다이버시티가 CS 성능에 미치는 영향의 구체적 수치 확보처.",
-      "summary": "Bluetooth Core 6.0 릴리스 이후 단일 안테나와 듀얼 안테나 구성 각각에서 Channel Sounding 기법을 평가하고 개선안을 제시한다.",
+      "relevance_note": "상용 CS 스택이 IQ 원시 데이터를 어디까지 내주는지, 그 데이터로 자체 추정기를 만들면 어디서 깨지는지를 구체적으로 보여주는 자료. 특히 거리가 멀어질수록 IQ 샘플의 NaN(결측 채널)이 늘어난다는 정량 관측은, 결측 채널을 전제로 한 CS 추정기 설계와 '공격자가 특정 채널을 지워 CIR을 왜곡할 수 있는가'라는 질문 양쪽의 출발점이 된다. 근거리 phase-slope / 중장거리 CIR 하이브리드 전환 문턱과 MCU 이식 제약(CMSIS-DSP)은 내 추정기 실험의 현실적 baseline이다.",
+      "summary": "Bluetooth Core 6.0 이후 Channel Sounding을 단일 안테나와 듀얼 안테나 구성에서 평가하고 추정 알고리즘을 개선한다. 단일 안테나에서는 다중 채널 IQ 샘플로부터 phase-slope 기반 레인징과 IFFT 기반 CIR 재구성을 결합하고, 결측 채널 보간·CIR 정리·Kalman 필터를 붙여 상용 시스템 기준값과 비교한다. 듀얼 안테나에서는 공간 다이버시티를 CIR 가중 융합에 써서 안정성을 높이고, 안테나 간 위상차로 개략적 AoA를 추정한다. 사무실·무반향실·NLOS 환경에서 0.15 m부터 20 m 이상까지 측정했고, MATLAB 프로토타입을 C로 옮겨 MCU에서 실시간 동작시켰다.",
       "hardware": [
-        "단일 안테나 / 듀얼 안테나 CS 평가 플랫폼 (모델 확인 필요)"
+        "u-blox NORA-B2 모듈 (Cortex-M33 내장) + NORA-B206 evaluation board / EVK — 모듈 상단 내장 2.4 GHz PCB trace 안테나",
+        "비평행 V자형 듀얼 안테나 시제품 (안테나 간격 0.041 m, 파장 0.123 m)",
+        "3개 평행 안테나 구조의 CS/AoA 안테나 보드 — A2, A3가 IQ 획득 지원",
+        "익명 처리된 상용 CS 측위 시스템 ('Third-party Software') — 75개 주파수 채널 IQ와 내부 평활화 거리만 제공, 초당 약 8회 추정",
+        "레이저 거리계 (ground truth), 반사체 표면에 측정용 플라스틱 테이프",
+        "무반향실, 사무실, 중앙 기둥으로 LOS를 막은 NLOS 환경, 사옥 아트리움(장거리 OLOS)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요"
+        "MATLAB — 알고리즘 프로토타이핑과 성능 평가",
+        "MATLAB 구현을 C로 변환해 MCU에 이식, 실시간 실행 (동료 지원)",
+        "CMSIS-DSP — 임베디드 제약 하 저복잡도 연산만 사용",
+        "1차원 random-walk 모델 기반 경량 Kalman 필터",
+        "CLEAN 알고리즘 (최대 8회 경로 추출), MUSIC / PDDA / Conventional Beamforming AoA 추정기"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "측정의 90%에서 ranging 오차 0.56 m 미만"
+        "측정의 90%에서 ranging 오차 0.56 m 미만",
+        "0.15 m부터 20 m 이상까지, 무반향실·사무실·사람이 움직이는 동적 환경·심한 다중경로 환경에서 raw IQ 수집",
+        "IQ 샘플의 무효(NaN) 개수가 거리에 따라 증가 — 75채널 프레임당 평균 4.9233개(4.15 m) → 6.9568개(12.06 m)",
+        "CIR 도메인 처리 전 자체 phase-based 추정은 25초 부근에서 50 m 이상으로 튀는 이상치 발생; Kalman 필터 적용 후 4.07/6.09/8.04/10.05/12.09 m 통합 CDF에서 오차 감소",
+        "근거리는 phase-slope 추정기, 중장거리는 CIR 지연 마커 추정기가 유리해 하이브리드 전환 전략 채택 — phase-slope는 모델 오프셋 때문에 실제 0.15 m에서 음수 거리가 나와 0.2 m 미만은 0.2 m로 클리핑",
+        "NLOS(중앙 기둥으로 LOS 차단, ground truth 약 6.35 m)와 장거리 OLOS 조건에서 듀얼 안테나 CIR 가중 융합이 단일 안테나보다 안정적",
+        "AoA: 안테나 간격이 반파장 미만이라 이론상 공간 모호성은 없으나 급전선 비대칭에 따른 하드웨어 위상 오프셋이 존재해 음의 각도 성능이 더 좋음. 약 ±10° 이내에서는 합리적 정확도, 각도가 커지면 급격히 악화",
+        "가상 4소자 배열은 주엽이 좁아지지만 피크가 약 −16°로 치우쳐 ground truth 0°에서 10–15° 계통 편향 — 순차 측정 간 위상 불일치가 원인",
+        "251 패킷에 대한 군집화된 ToA 영역 검출 통계를 정리 (Table 3.2)"
       ],
       "limitations": [
         "석사 논문 — 피어 리뷰 미거침",
-        "제한된 환경에서의 측정",
-        "보안 위협 모델 미포함"
+        "AoA 검증 실험이 대부분 ground truth 0°에서만 수행됨 (시간 제약과 평행 듀얼 안테나 구조 준비 중)",
+        "가상 배열 구성 시 안테나 이동·정렬을 수작업으로 해 위치·정렬 오차가 유입됨",
+        "결측 채널 보간 전략의 효과를 대표 CIR 예시로만 보였고 전체 데이터셋 통계 비교는 하지 않음",
+        "CLEAN 알고리즘은 최대 8회 반복으로 제한해 약한 경로가 잔차에 남고, 완전 구현·평가하지 못함",
+        "주파수↔지연 도메인 반복 변환(IFFT→FFT), 공격적 CIR 정리(가우시안 마스킹·평활화), 최초 유의 피크 기반 휴리스틱 경로 선택이 오차원으로 남음",
+        "정적 측정 위주 — 동적 다중경로 환경 평가와 데이터 기반(ML) first-path 검출은 향후 과제",
+        "보안 위협 모델 미포함 — 정확도 개선 연구이며 공격자 모델이 없음",
+        "상용 비교 대상('Third-party Software')이 익명 처리되고 알고리즘이 비공개라 재현·귀속이 제한됨"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-10",
+      "cites": [
+        "santra-2024-cs-indoor"
+      ],
+      "cites_source": "fulltext",
       "category": "measurement"
     },
     {
@@ -1080,7 +1109,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-10",
       "cites": [
         "anliker-2023-time-for-change",
         "clulow-2006-long-symbols",
@@ -1089,7 +1118,8 @@
         "ranganathan-2012-chirp-attacks",
         "secure-ranging-4z-hrp-2024",
         "singh-2021-4z-security-analysis",
-        "staat-2022-analog-relay"
+        "staat-2022-analog-relay",
+        "leu-2021-multicarrier-tof"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -1580,12 +1610,12 @@
         "Tyler Moore"
       ],
       "venue": "ESAS",
-      "venue_full": "European Workshop on Security and Privacy in Ad-hoc and Sensor Networks (ESAS) 2006 — 서지정보 대조 필요",
+      "venue_full": "Security and Privacy in Ad-Hoc and Sensor Networks — 3rd European Workshop (ESAS 2006), LNCS 4357, Springer, pp. 83–97",
       "tier": "other",
       "year": 2006,
       "url": "https://link.springer.com/chapter/10.1007/11964254_9",
-      "preprint": null,
-      "doi": null,
+      "preprint": "https://cs.wellesley.edu/~tmoore/esas2006-distance.pdf",
+      "doi": "10.1007/11964254_9",
       "topics": [
         "distance-bounding",
         "early-detect-late-commit",
@@ -1594,30 +1624,39 @@
       ],
       "relevance": "medium",
       "relevance_note": "긴 심볼이 거리측정 보안의 근본 문제라는 것을 2006년에 처음 지적한 논문. Anliker 2026이 자기 공격의 출발점으로 명시적으로 인용한다. CS가 협대역이라 심볼이 길다는 구조적 취약점을 논증할 때 최초 출처로 인용해야 하는 문헌. Early-Detect/Late-Commit 개념의 원점.",
-      "summary": "무선 거리 바운딩 프로토콜에서 심볼 길이가 길면 공격자가 심볼을 부분 수신만으로 판별해 응답을 앞당길 수 있음을 지적한다. 이후 모든 물리계층 거리 축소 공격 계열의 기반이 되었다.",
+      "summary": "거리 바운딩 프로토콜을 두 축에서 무너뜨린다. 첫째, 단일 다중비트 챌린지-응답을 타이밍하는 프로토콜은 악의적 prover가 응답 비트를 미리 추측해 선제 전송하는 guessing attack에 취약하다. 둘째, 최소 지연으로 최적화되지 않은 통신 채널 자체가 보안을 해친다 — 프로토콜 스택 최적화, 수신 비트의 조기 판정, 전송 파형 변조로 공격자가 시간 이득을 얻는다. 이로부터 안전한 ToF 거리 바운딩의 4개 원칙(빛의 속도 매체, 단일 비트 교환, 심볼 길이 최소화, 높은 비트오류율 감내)을 도출하고, 당시 센서 모트 하드웨어로는 이 원칙을 만족시킬 수 없음을 사례로 보인다.",
       "hardware": [
-        "해당 없음 — 개념/분석 논문"
+        "실험 장비 없음 — 분석 논문. 부록에서 Crossbow MICA2 mote 사양(38.4 kbit/s, 8 MHz 클록, 통신 반경 300 m)을 사례로 분석"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "해당 없음"
+        "해당 없음 — 소프트웨어 구현이나 시뮬레이션 도구를 사용하지 않음"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "긴 심볼 조건에서의 거리 바운딩 공격 개념 정립"
+        "Hu–Perrig–Johnson(2003), Sastry–Shankar–Wagner(2003), Čapkun–Hubaux(2005/2006)의 거리 바운딩 프로토콜이 응답 비트를 미리 추측해 선제 전송하는 guessing attack에 취약함을 보임",
+        "안전한 ToF 거리 바운딩 4개 원칙 — (1) 진공 광속에 최대한 가까운 매체만 사용(음향은 물론 유선·광섬유도 배제), (2) 단일 비트만 전송하고 수신 즉시 반응하는 포맷(바이트/블록 단위와 오류정정 배제), (3) 두 비트값을 구별하는 에너지를 최대한 짧은 시간에 출력해 심볼 길이 최소화, (4) 높은 비트오류율을 견디는 프로토콜 설계",
+        "조기 판정(early detection): 비트 구간의 1/5만 적분해 판정하면 4/5 비트시간을 앞당길 수 있으나 신호 대 잡음 진폭비는 1/5로 떨어짐 — 예시에서는 비트 오류 1개만 발생",
+        "지연 비트 신호(deferred bit signalling): 비트 끝까지 기다렸다가 훨씬 높은 전력으로 짧게 송신해도, 구간 전체를 적분해 면적으로 판정하는 수신기는 같은 값으로 읽음",
+        "공격자는 표준 통신 칩을 소프트웨어 정의 설계나 FPGA 하드웨어/소프트웨어 codesign으로 대체해 저지연 트랜시버를 경제적으로 만들 수 있다고 지적",
+        "부록 사례 — Crossbow MICA2 mote: 38.4 kbit/s에서 1비트가 26,042 ns, 공간상 7.8 km에 해당해 통신 반경 300 m를 수 km 단위로 조작 가능. 8 MHz 클록으로는 125 ns 분해능이 한계라 왕복 기준 거리 분해능이 최소 20 m",
+        "당시 UWB 계열 위치 시스템의 분해능을 30 cm 수준으로 언급하며 짧은 펄스 폭의 필요성을 뒷받침"
       ],
       "limitations": [
-        "개념 제시 중심 — 실기기 실증은 후속 연구들이 담당"
+        "개념·분석 중심 — 실기기 공격 실증은 없음 (후속 연구들이 담당)",
+        "2006년 시점 하드웨어(MICA2 등)를 사례로 삼아 구체 수치를 현행 시스템에 그대로 적용할 수 없음",
+        "제시한 4개 원칙은 서로 긴장 관계에 있음 — 심볼을 짧게 하면 비트당 에너지가 줄어 오류율이 오르고, 그래서 원칙 4가 필요해지는 구조. 정량적 설계 절차가 아니라 지침 수준",
+        "저자들도 이 제약들이 안전한 거리 바운딩 구현의 기술적 난도를 크게 높인다고 인정"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-10",
       "cites": [],
-      "cites_source": "no-fulltext",
+      "cites_source": "fulltext",
       "category": "analysis"
     },
     {
@@ -2016,7 +2055,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-03",
+      "last_checked": "2026-08-10",
       "cites": [
         "clulow-2006-long-symbols",
         "ranganathan-2012-chirp-attacks",
@@ -2025,7 +2064,9 @@
         "singh-2021-4z-security-analysis",
         "singh-2022-v-range",
         "uwb-sv-2023-ccs",
-        "secure-ranging-4z-hrp-2024"
+        "secure-ranging-4z-hrp-2024",
+        "leu-2021-multicarrier-tof",
+        "schepers-2021-ftm-security"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -2783,6 +2824,320 @@
       "cites_source": "no-fulltext",
       "added": "2026-08-03",
       "last_checked": "2026-08-03"
+    },
+    {
+      "id": "antonijevic-2026-secure-wifi-ranging",
+      "title": "Secure Wi-Fi Ranging Today: Security and Adoption of IEEE 802.11az/bk",
+      "authors": [
+        "Nikola Antonijević",
+        "Bernhard Etzlinger",
+        "Dave Singelée",
+        "Bart Preneel"
+      ],
+      "venue": "ARES",
+      "venue_full": "21st International Conference on Availability, Reliability and Security (ARES 2026), Lecture Notes in Computer Science, Springer",
+      "tier": "other",
+      "category": "analysis",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2603.18687",
+      "preprint": "https://arxiv.org/abs/2603.18687",
+      "doi": null,
+      "topics": [
+        "wifi-ftm",
+        "802-11az",
+        "802-11bk",
+        "secure-ranging",
+        "downgrade-attack",
+        "early-detect-late-commit",
+        "waveform-predictability",
+        "spectral-mask"
+      ],
+      "relevance": "high",
+      "relevance_note": "CS 보안 분석이 어떤 모양이어야 하는지를 인접 표준에서 먼저 보여준 논문. 802.11az는 CS와 같은 2층 구조(상위 협상·설정 + 하위 사운딩 파형)를 가지며, 이 논문이 찾아낸 네 가지가 그대로 CS 질문으로 번역된다 — (1) 모드/보안 협상 다운그레이드 → CS의 Mode 협상과 Security Start를 강제하지 않는 구현이 있는가, (2) Secure HE-LTF Counter/SAC 재사용 → CS의 CS_SYNC 무작위 시퀀스 유도 카운터 재사용, (3) 부분 관측만으로 의사난수 사운딩 시퀀스를 예측 → CS_SYNC 부분 예측 가능성, (4) zero-power GI와 스펙트럼 마스크의 충돌 → CS 파형이 ETSI EN 300 328 제약과 부딪히는 지점. 또 '보안 레인징은 설정에 극도로 민감하고 실제 지원 기기는 거의 없다'는 결론은 CS 배치 실태 조사를 설계할 때 그대로 쓸 틀이다.",
+      "summary": "IEEE 802.11az가 도입한 secure FTM과 802.11bk의 대역폭 확장을 보안·배치 관점에서 평가한다. 논리계층에서는 WPA2/WPA3-Personal과 standalone PASN이 '신뢰할 수 있는 특정 AP'에 레인징을 결속하지 못해 비인증 레인징·다운그레이드·서비스 거부가 성립함을 보인다. 물리계층에서는 secure HE-LTF를 부분 관측으로 예측해 신호를 앞당기는 거리 축소 공격을 MATLAB 시뮬레이션으로 평가하고, zero-power 보호구간이 스펙트럼 마스크 준수에 미치는 영향을 정량화한다. 802.11az를 표방한 개발보드조차 secure HE-LTF를 구현하지 않았고 제조사가 현 칩셋에서는 지원 계획이 없다고 확인해 준 점을 근거로, 보안 Wi-Fi 레인징이 아직 실현되지 않았다고 결론짓는다.",
+      "hardware": [
+        "IEEE 802.11az 지원을 표방한 개발보드 — 실제로는 protected management frame만 구현, secure HE-LTF와 물리계층 보호는 미지원. 제조사는 NDA로 비공개이며 현 칩셋에서는 구조적 제약으로 지원 계획 없음을 확인",
+        "Google Pixel 9a — IEEE 802.11mc 레인징 교차 확인용 (secure FTM 기능은 확인되지 않음)",
+        "Aruba AP-734 — secure FTM 지원을 광고하는 소수 상용 AP로 문헌상 언급 (직접 시험 대상 아님)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB WLAN Toolbox — 802.11az Waveform Generation 및 Positioning Using Super-Resolution Time of Arrival Estimation 예제 (draft IEEE P802.11az/D2.0 구현)를 확장",
+        "MUSIC 기반 ToF 추정기",
+        "입자 기반 message-passing(베이지안 추론) 심볼 추정기 — 샘플 300개, SNR 7 dB",
+        "WiFiRttLocator (Android 앱) — Pixel 9a 시험"
+      ],
+      "software_verified": true,
+      "results": [
+        "논리계층: WPA2-Personal에서는 passphrase를 아는 자가 4-way handshake를 수동 관측하면 PTK를 유도할 수 있어, 위조된 protected management frame과 유효한 secure HE-LTF를 만들 수 있다 — '보안' 레인징이 널리 공유되는 passphrase의 비밀성으로 환원됨",
+        "WPA3-Personal은 SAE로 수동 공격은 막지만 핸드셰이크가 특정 AP에 결속되지 않아, password를 아는 공격자가 evil-twin AP로 유효 PTK를 수립하면 secure FTM이 공격자와의 근접성을 증명하게 됨",
+        "standalone PASN은 표준이 상호인증을 보장하지 않는다고 명시 — 공격자가 AP·STA 각각과 독립 키를 세운 뒤 경로에 남아 protected management frame과 secure HE-LTF를 중계·변조할 수 있음",
+        "모드 다운그레이드: secure HE-LTF는 TB/non-TB 레인징에만 정의되고 EDCA 기반 레인징에는 정의되지 않음 — 공격자가 FTMR을 차단·위조해 EDCA 모드로 강등시키면 MAC 보호가 살아 있어도 물리계층 보호가 통째로 빠짐",
+        "협상 다운그레이드: RSTA가 PTKSA를 요구하지 않거나 Secure HE-LTF Required를 강제하지 않으면, 비보호 FTMR 위조만으로 legacy FTM(결정적 HE-LTF)으로 조용히 강등 가능",
+        "Secure HE-LTF Counter와 Validation SAC는 엄격 단조증가여야 하며 재사용 시 동일 키 재료가 재사용되어 물리계층 ToA 조작으로 직결됨 (KRACK·TLS GCM nonce 재사용 전례를 근거로 지적, 하드웨어 제약으로 실증은 못 함)",
+        "가용성: PTK와 secure HE-LTF를 모두 강제하는 엄격한 설정은 다운그레이드에는 강하지만, FTMR/PASN 교환을 방해하거나 SAC 검증 실패를 반복 유발하는 것만으로 레인징 자체를 무력화할 수 있음",
+        "물리계층 예측 가능성: 20 MHz에서 secure HE-LTF는 256개 부반송파 중 122개가 비영이고 각각 64-QAM 의사난수 심볼이라 엔트로피 6×122 비트 — 전수탐색은 불가하나, 부분 관측(예: 80%)에서 message-passing 추론으로 나머지를 재구성할 수 있음",
+        "재구성된 예측으로 신호를 앞당기면 MUSIC ToF 추정에 제어 가능한 거리 편향이 생기며, 관측 비율 20/50/70/90%와 SNR 5/15/25 dB에서 평가 — 짧은 구간만 정확히 예측해도 상당한 편향이 발생해 약한 공격자도 성립",
+        "다만 advance가 커질수록 복조 후 RMS EVM이 상승 — 64-QAM 복조가 깨지거나 PHY 지표 열화로 탐지될 수 있어 극단적 advance는 자기 파괴적. 802.11az Annex AE가 언급하는 반복 간 SIR 저하 모니터링과 부합하지만 실용적 탐지 알고리즘은 아직 희소하다고 지적",
+        "zero-power 보호구간의 스펙트럼 마스크 영향(20 MHz, ±30 MHz 오프셋 구간): 비보안 파형은 최악 초과 약 +10.9 dB, 99퍼센타일 여유 약 +5.9 dB, 마스크 초과 빈 비율 약 6.7%. 보안 파형은 최악 초과 약 +6.2 dB, 99퍼센타일 약 +4.8 dB로 낮아지지만 초과 빈 비율은 약 31.6%로 급증 — 피크는 줄고 대역 전체가 마스크에 붙음",
+        "배치 실태: Pixel 9a + WiFiRttLocator로는 secure FTM 기능이 드러나지 않았고 Nest Wifi Pro·Pixel 계열도 802.11az를 노출하지 않음 — secure FTM 지원을 광고하는 것은 Aruba AP-734 같은 소수 기업용 AP뿐"
+      ],
+      "limitations": [
+        "secure HE-LTF와 물리계층 보호를 실제로 구현한 하드웨어를 구하지 못함 — 개발보드는 protected management frame만 지원했고 제조사가 현 칩셋에서는 지원 계획이 없다고 확인",
+        "그 결과 counter/SAC 재사용 시나리오는 실기기로 시험하지 못하고 표준 해석과 전례에 근거한 지적에 머무름",
+        "물리계층 공격 평가는 AWGN 채널 MATLAB 시뮬레이션 기반 — 실제 다중경로 환경의 실시간 무선 공격 실증은 아님",
+        "개발보드 제조사가 NDA로 비공개라 제3자 재현이 어려움"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "leu-2021-multicarrier-tof",
+        "schepers-2021-ftm-security"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-10",
+      "last_checked": "2026-08-10"
+    },
+    {
+      "id": "leu-2021-multicarrier-tof",
+      "title": "Security of Multicarrier Time-of-Flight Ranging",
+      "authors": [
+        "Patrick Leu",
+        "Martin Kotuliak",
+        "Marc Röschlin",
+        "Srdjan Čapkun"
+      ],
+      "venue": "ACSAC",
+      "venue_full": "37th Annual Computer Security Applications Conference (ACSAC '21), pp. 887–899",
+      "tier": "wireless",
+      "category": "analysis",
+      "year": 2021,
+      "url": "https://dl.acm.org/doi/10.1145/3485832.3485898",
+      "preprint": null,
+      "doi": "10.1145/3485832.3485898",
+      "topics": [
+        "ofdm",
+        "multicarrier",
+        "time-of-flight",
+        "early-detect-late-commit",
+        "802-11az",
+        "symbol-length",
+        "orthogonal-noise"
+      ],
+      "relevance": "high",
+      "relevance_note": "'대역폭을 여러 부반송파로 나누면 심볼이 길어지고, 긴 심볼은 ED/LC에 구조적으로 취약하다'를 OFDM에 대해 정면으로 논증한 논문. CS의 PBR도 톤을 채널별로 나눠 순차 측정하는 협대역 구조라 같은 긴장에 놓이며, '프레임 길이와 부반송파 수를 어떻게 잡아도 취약하다'는 결론이 CS에도 옮겨지는지가 곧바로 연구 질문이 된다. Anliker 2026과 Antonijević 2026이 모두 출발점으로 인용하므로 계보상 빠뜨릴 수 없다. 제안한 대응책(직교 잡음 + 무작위 위상)은 CS_SYNC/PBR 톤에 그대로 이식해 볼 수 있는 후보다.",
+      "summary": "OFDM은 부반송파 병렬 전송으로 페이딩 내성과 처리량을 얻지만 그 대가로 심볼이 시간축에서 길어진다. 이 논문은 긴 심볼이 공격자에게 관측·반응 시간을 주어 early-detect/late-commit 공격을 가능하게 한다는 점에서 OFDM이 보안 거리측정에 본질적으로 부적합함을 논증한다. 가장 견고한 설정인 BPSK와 4-QAM을 예로 조기 검출 확률을 높이는 전략을 제시하고, 이론 분석과 시뮬레이션으로 프레임 길이·부반송파 수와 무관하게 취약함을 보인다. 대응책으로 직교 잡음과 무작위 위상을 검토한다.",
+      "hardware": [
+        "확인 필요 — 원문 전문 미확보 (초록 기준으로는 이론 분석·시뮬레이션 중심으로 보임)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 원문 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "BPSK와 4-QAM 같은 가장 견고한 설정에서도 조기 검출 성공률을 높이는 전략이 성립함을 보임",
+        "프레임 길이와 부반송파 수와 무관하게 OFDM 기반 레인징이 ED/LC 공격에 취약하다는 결론 (구체 수치 확인 필요 — 전문 미확보)",
+        "대응책으로 직교 잡음(orthogonal noise)과 무작위 위상을 제시 (효과 수치 확인 필요)"
+      ],
+      "limitations": [
+        "원문 전문 미확보 — ACM DL 403, ETH Research Collection 직접 링크 없음, Semantic Scholar openAccessPdf CLOSED. 초록 기준으로만 기록",
+        "초록 기준으로는 실기기 무선 실증 없이 이론·시뮬레이션 중심 (확인 필요)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-10",
+      "last_checked": "2026-08-10"
+    },
+    {
+      "id": "schepers-2021-ftm-security",
+      "title": "Here, There, and Everywhere: Security Analysis of Wi-Fi Fine Timing Measurement",
+      "authors": [
+        "Domien Schepers",
+        "Mridula Singh",
+        "Aanjhan Ranganathan"
+      ],
+      "venue": "ACM WiSec",
+      "venue_full": "14th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '21), Abu Dhabi, pp. 78–89",
+      "tier": "wireless",
+      "category": "attack",
+      "year": 2021,
+      "url": "https://dl.acm.org/doi/10.1145/3448300.3467828",
+      "preprint": "https://aanjhan.com/assets/schepers_ftm_wisec21.pdf",
+      "doi": "10.1145/3448300.3467828",
+      "topics": [
+        "wifi-ftm",
+        "distance-reduction",
+        "distance-enlargement",
+        "replay-attack",
+        "overshadow",
+        "early-path-injection",
+        "commodity-hardware"
+      ],
+      "relevance": "medium",
+      "relevance_note": "'상용 하드웨어만으로 거리 조작이 되는가'를 처음 체계적으로 답한 논문이라, CS 공격 논문의 실험 설계를 그대로 베낄 수 있는 템플릿이다 — 기기 조합 6종, 기기당 1,000 세션, 2–20 m 구간 스푸핑 정확도 보고. 핵심 지적인 '수신기는 데이터 복조에는 최강 피크를 쓰고 ToA에는 back-search 창의 이른 피크를 쓴다, 그래서 둘이 결속되지 않는다'는 CS의 RTT/CIR first-path 탐색에도 같은 구조가 있는지 확인해야 할 질문이 된다. 또 '상위 계층 암호 보호로는 물리계층 거리 조작을 막을 수 없다'는 결론은 CS Security Start가 무엇을 보장하고 무엇을 보장하지 않는지를 논증할 때 인용할 선례다.",
+      "summary": "IEEE 802.11-2016의 Wi-Fi Fine Timing Measurement(FTM)를 논리계층과 물리계층에 걸쳐 처음으로 보안 분석한다. FTM을 부채널로 쓰는 벤치마킹 기법으로 개시자의 처리시간을 측정한 뒤, 실제 위치와 무관하게 임의의 거리로 스푸핑한다. 세션 리플레이, 물리계층 파라미터를 바꾼 혼합계층 리플레이, overshadow, earlier-path injection 등 여러 공격을 상용 AP·스마트폰·시판 Wi-Fi 카드 조합에서 실증한다. 대부분의 공격이 WPA3 같은 상위 암호 보호가 있어도 성립하며, 차세대 측위 표준(Wi-Fi NGP)을 위한 보안 권고로 마무리한다.",
+      "hardware": [
+        "응답자(AP): Google Wi-Fi (Qualcomm IPQ4019), Google Nest (Qualcomm QCS404), Compulab WILD (Intel AC-8260), ASUS RT-ARCH13 (Qualcomm IPQ4018)",
+        "개시자: Google Pixel 4 XL (Qualcomm Snapdragon 855), Compulab WILD — 총 6가지 조합",
+        "공격자: TP-LINK AC600 Archer T2UH Wi-Fi 동글 (IEEE 802.11ac, 80 MHz) — 펌웨어·드라이버 수정 없이 monitor mode와 frame injection만 사용",
+        "Intel AC-8260/8265 구동용 NVIDIA Jetson Nano (kernel 4.9.140)",
+        "측정 환경: 사무실, LOS, 5 GHz 80 MHz 채널"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "패치된 iw (Wi-Fi FTM 명령), iwlwifi 드라이버 backport — Core 33 / Core 50(firmware 53) / Core 56(firmware 55·57·58·59)",
+        "공개 저장소: github.com/domienschepers/wifi-ftm (설정법, 지원 기기 추적, 취약점·패치 이력)"
+      ],
+      "software_verified": true,
+      "results": [
+        "6가지 상용 기기 조합에서 시판 하드웨어만으로 거리 축소·확대를 임의의 값으로 유도 — 공격자 위치 제약 없음",
+        "벤치마킹으로 측정한 개시자 처리시간(IPT): Google Nest 77.4 µs, Compulab WILD 81.4 µs — 프레임이 OFDM 심볼 하나만큼 길어 4 µs 차이",
+        "2–20 m 구간 거리 스푸핑에서 평균 오차 75 cm 이하; Pixel 4 XL 기준 최대 오프셋 5 ns(편도 1.50 m), 동일 모델 두 대 간 오프셋은 1 ns",
+        "세션 리플레이: 실제 4 m/20 m에서 3.82 m/20.27 m로 측정되던 것을 리플레이로 1.72 m/19.40 m로 재현",
+        "최종 응답 프레임 리플레이(기기당 1,000 세션): ASUS RT-ARCH13은 RTT 3.99 µs 감소 → 거리 598.62 m 축소, Compulab WILD는 8.02 µs 감소 → 1,201.58 m 축소. 각각 OFDM 심볼 1개·2개 길이에 정확히 대응",
+        "물리계층 파라미터 변조 리플레이: 기준 15.61 m(long GI, BPSK 1/2, 단일 스트림, 4 OFDM 심볼)에서 short GI로 바꾸면 RTT +800 ns(SPB=3 평균), 대역폭·변조 변경 시 4 µs 배수 단위로 조작",
+        "처리시간 1 ns 차이가 거리 30 cm에 해당 — Qualcomm SoC가 Intel보다 표준편차가 작아 공격 정확도가 높음",
+        "overshadow·earlier-path injection 등 순수 물리계층 공격은 수십 m 단위 조작 가능",
+        "WPA3 등 상위 계층 암호 보호가 있어도 리플레이와 물리계층 공격은 성립 — 데이터 보호만으로는 측정 교환을 지킬 수 없음",
+        "다중경로 환경에서 Wi-Fi FTM 자체 정확도가 5 m 이상 어긋날 수 있다는 선행 측정치가 조작 가능 폭의 상한 근거로 쓰임"
+      ],
+      "limitations": [
+        "earlier-path injection은 공격 신호 전력을 잡음 문턱과 정규 신호 사이로 맞춰야 하고 기기 간 거리와 ACK 전송시간을 알아야 함",
+        "Qualcomm SoC 기반 Pixel 4 XL은 큰 음수 측정치를 폐기하고 세션 실패로 처리해 최종 응답 리플레이 공격 대상에서 제외됨",
+        "Wi-Fi FTM 펌웨어가 비공개라 내부 ToA 추정 로직을 직접 검증할 수 없고 상위에는 평균값만 노출됨",
+        "IEEE 802.11az(Wi-Fi NGP)는 당시 미공개라 분석 대상이 아니며, 저자들은 secure channel estimation이 아직 불가능한 미해결 과제라고 남김"
+      ],
+      "artifacts": {
+        "code": "https://github.com/domienschepers/wifi-ftm",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "olafsdottir-2017-carrier-phase",
+        "ranganathan-2012-chirp-attacks",
+        "singh-2019-uwb-ed"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-10",
+      "last_checked": "2026-08-10"
+    },
+    {
+      "id": "varughese-2026-ble6-pedestrian",
+      "title": "Assessing Localization Technologies for Pedestrian Collision Avoidance",
+      "authors": [
+        "Joshua Varughese",
+        "Joseba Gorospe",
+        "Novel Certad",
+        "Cristina Olaverri-Monreal"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2605.18295 (2026-05-18)",
+      "tier": "preprint",
+      "category": "measurement",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2605.18295",
+      "preprint": "https://arxiv.org/abs/2605.18295",
+      "doi": null,
+      "topics": [
+        "ble-6",
+        "uwb",
+        "gnss",
+        "vehicular",
+        "pedestrian-safety",
+        "ranging-accuracy"
+      ],
+      "relevance": "medium",
+      "relevance_note": "Bluetooth 6.0 레인징을 UWB·GNSS와 같은 실험 안에서 나란히 벤치마크한 드문 자료. CS 정확도가 '차량-보행자 충돌 경고'처럼 지연과 정확도 요구가 분명한 유스케이스에서 실제로 쓸 만한지 판단할 외부 근거가 된다. 다만 초록만 확인한 상태이고 Bluetooth 6.0 레인징이 Channel Sounding 기반인지 명시되지 않아, 인용하기 전에 원문에서 측정 방식과 수치를 반드시 대조해야 한다.",
+      "summary": "차량-보행자 충돌 회피를 위한 보행자 측위에 UWB와 Bluetooth 6.0을 후보로 놓고 정확도와 환경 강건성을 GNSS와 비교 평가한다. 저자들은 두 기술이 특정 시나리오에서 GNSS의 대안 또는 보완이 될 수 있다는 예비 결과를 보고한다.",
+      "hardware": [
+        "확인 필요 — 초록만 확인 (UWB 장비, Bluetooth 6.0 기기, GNSS 수신기 모델 미상)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 초록만 확인"
+      ],
+      "software_verified": false,
+      "results": [
+        "UWB와 Bluetooth 6.0이 특정 시나리오에서 GNSS의 대안 또는 보완이 될 수 있다는 예비 결과 (구체 수치 확인 필요 — 초록만 확인)"
+      ],
+      "limitations": [
+        "저자들이 'preliminary results'로 명시",
+        "초록 기준으로는 Bluetooth 6.0 레인징이 Channel Sounding 기반인지 불명 — 원문 대조 필요",
+        "장비·수치·측정 프로토콜 모두 확인 필요"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-10",
+      "last_checked": "2026-08-10"
+    },
+    {
+      "id": "gegenhuber-2026-airtag-relay",
+      "title": "A Relay a Day Keeps the AirTag Away: Practical Relay Attacks on Apple's AirTags",
+      "authors": [
+        "Gabriel K. Gegenhuber",
+        "Leonid Liadveikin",
+        "Florian Holzbauer",
+        "Sebastian Strobl"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2604.10138 — ACSAC 2025 포스터로 발표된 내용의 확장",
+      "tier": "preprint",
+      "category": "attack",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2604.10138",
+      "preprint": "https://arxiv.org/abs/2604.10138",
+      "doi": null,
+      "topics": [
+        "ble",
+        "relay-attack",
+        "find-my",
+        "location-spoofing",
+        "proximity-service"
+      ],
+      "relevance": "low",
+      "relevance_note": "거리 검증이 아예 없는 BLE 근접 서비스가 어떻게 무너지는지의 실사례. Find My는 위치 보고를 종단 암호화해 Apple조차 정합성을 검증할 수 없고, 그래서 중계된 위조 보고가 그대로 수용된다. 'CS가 왜 필요한가'를 서론에서 설명할 때 대조군으로 쓰기 좋지만 레인징 자체를 다루지 않으므로 기여의 핵심은 아니다.",
+      "summary": "AirTag는 주변 iDevice가 익명으로 암호화된 위치 보고를 Apple에 전달하는 Find My 네트워크에 의존한다. 이 암호화가 프라이버시를 지키는 대신 Apple이 보고의 정확성을 검증하지 못하게 만든다. 저자들은 중계 공격으로 조작된 위치 보고를 주입해 분실된 AirTag의 위치를 거짓으로 표시하게 만들 수 있음을 보이고, 같은 기법으로 특정 태그의 회수를 방해하는 표적 서비스 거부가 가능함을 지적한다.",
+      "hardware": [
+        "확인 필요 — 초록만 확인 (AirTag, iDevice 및 중계 장비 구성 미상)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 초록만 확인"
+      ],
+      "software_verified": false,
+      "results": [
+        "중계 공격으로 조작된 위치 보고를 주입해 Find My가 AirTag의 거짓 위치를 표시하게 만듦 (구체 수치 확인 필요 — 초록만 확인)",
+        "같은 기법으로 표적 태그의 회수를 방해하는 서비스 거부가 가능"
+      ],
+      "limitations": [
+        "초록만 확인 — 실험 규모, 성공률, 거리 조건 모두 확인 필요",
+        "중계 실험이 2022년(학사 논문)에 처음 수행되고 2025년에 재현된 것으로, 이후 Apple 측 완화 조치 반영 여부 확인 필요",
+        "거리측정이 아니라 위치 보고 계층의 문제 — 물리계층 레인징 보안과는 층위가 다름"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-10",
+      "last_checked": "2026-08-10"
     }
   ]
 }
