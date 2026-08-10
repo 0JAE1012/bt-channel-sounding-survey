@@ -2,6 +2,46 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-10 (10차 후속: 신규 1건, 보강 3건 — 미검증 상위 항목 정리)
+
+10차 보고에서 "다음 실행에서 팔 것"으로 남긴 네 건을 바로 처리했습니다. 셋은 끝났고
+하나는 다시 막혔습니다.
+
+- 보강: **Formal Analysis of BLE Secure Connection Pairing and Revelation of the PE
+  Confusion Attack** (Shi 외, NDSS 2026) `unverified` → `verified`. NDSS 전문 무료라
+  바로 확보. 6,400개 조합을 84개 pairing case로 줄여 Tamarin으로 전수 검증(서버 6대·
+  컨테이너 20개, 약 5일). **핵심은 공격이 아니라 각 case별 '최소 보안 가정' 표**입니다 —
+  CS 위협모델에서 "페어링은 안전하다고 가정한다"를 쓸 때 어떤 IO capability 조합에서
+  그 가정이 서고 어떤 조합에서 무너지는지를 그대로 인용할 수 있습니다. 가장 강한 가정
+  아래에서도 case 6–16 전부에서 LTK 인증이 위반된다는 점, 단방향 OOB는 기밀성+무결성을
+  함께 요구한다는 점이 특히 CS 배치에 걸립니다. 영향 범위는 12개 pairing case, v4.2–v6.0.
+  Bluetooth SIG가 2025-02-07에 영향을 확인했습니다. Zenodo 아티팩트도 기록.
+- 신규: **Method Confusion Attack on Bluetooth Pairing** (von Tschirschnitz 외,
+  IEEE S&P 2021, 관련도 보통, `verified`). PE confusion의 원형인데 코퍼스에 없었습니다
+  (참고문헌 캐기로 발견, TUM에서 무료 전문). **사용자 연구 40명 중 단 한 명도 공격을
+  눈치채지 못했고 37명(92.5%)이 페어링을 완성**시켰습니다. 프로토콜 내부 완화가 불가능해
+  규격 변경이 필요하다는 결론이, CS Security Start의 암호적 뿌리를 무비판적으로 신뢰하면
+  안 되는 근거가 됩니다. BLERP와 Stealtooth도 이 논문을 인용해 인용 3건 추가.
+- 보강: **Assessing Localization Technologies for Pedestrian Collision Avoidance**
+  (Varughese 외, arXiv 2026) `partial` → `verified`. 전문 확인 결과 **BTCS 맞습니다**
+  (Nordic nRF54L15-DK 2대). CS를 UWB·GNSS와 같은 로봇 플랫폼에서 나란히 잰 옥외
+  벤치마크로, 숫자가 아픕니다 — 개활지 LOS에서 BTCS RMSE 0.718 m 대 UWB 0.226 m,
+  지붕 아래에서 BTCS 2.012–2.46 m로 벌어지는 동안 UWB는 0.49–0.63 m 유지.
+  **다중경로가 CS를 UWB보다 훨씬 빨리 무너뜨린다**는 외부 근거입니다.
+  다만 저자들이 CS 측정을 "TDoA 기반"이라 서술한 것은 규격(RTT+PBR)과 어긋나므로
+  limitations에 명시해 두었습니다. 인용할 때 각주 필요.
+- 실패: **Zand 2019 (WCNC)** 재시도 실패 — IEEE Xplore 유료, TU/e 연구 포털에 전문 파일
+  없음, Semantic Scholar `openAccessPdf` 비어 있음, ResearchGate 로그인 요구. `partial` 유지.
+- 실패: **Leu 2021 (ACSAC)** 재시도 실패 — ETH Research Collection이 스크래핑 차단으로
+  "Access Restricted"를 반환하고 syssec.ethz.ch 직접 PDF는 404. 저자의 ETH 박사논문
+  *Secure Ranging: Physical-Layer Attacks and Countermeasures*(2023)에 챕터로 실렸을
+  가능성이 높다는 단서만 확보해 limitations에 남겼습니다. `partial` 유지.
+
+다음 실행 후보(이번 참고문헌 캐기에서 나온 미추가 항목): Shi 외 *Formal Analysis and
+Patching of BLE-SC Pairing*(USENIX Security 2023), Claverie 외 *Tamarin-based Analysis
+of Bluetooth*(ESORICS 2023), Jangid 외 *Extrapolating Formal Analysis to Uncover Attacks
+in Bluetooth Passkey Entry Pairing*(NDSS 2023).
+
 ## 2026-08-10 (10차: 신규 5건, 보강 2건 — Wi-Fi 보안 레인징 계보를 통째로 들여옴)
 
 이번 회차의 발견은 검색이 아니라 **참고문헌 캐기**에서 나왔습니다. arXiv `cs.CR`
