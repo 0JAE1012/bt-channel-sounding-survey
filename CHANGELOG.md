@@ -2,6 +2,66 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-12 (11차: 신규 3건, 보강 2건 — 보안수준을 '측정'하는 방법론 계보 편입)
+
+목차 훑기(WiSec/NDSS/S&P/USENIX 2026, arXiv)에서는 신규가 나오지 않았습니다. 대신
+**ETH syssec 발행목록을 훑다가 코퍼스에 없던 계보 하나를 통째로 발견**했습니다.
+검색 축을 학회 목차에서 연구그룹 발행목록으로 한 번 바꾼 것이 이번 실행의 수확 전부입니다.
+
+- 신규: **FAST: Fast and Accurate Security Testing of HRP UWB Chips** (Aad 외,
+  TCHES 2026, 관련도 **높음**, `verified`). 이번 실행의 핵심입니다. 독점 구현이라
+  폐형식 보안식을 쓸 수 없는 수신기의 랜덤추측 공격 성공률을, importance sampling 으로
+  **수만 샘플만에 2^-10 ~ 2^-128 범위까지** 신뢰구간과 함께 추정합니다. 결정적으로
+  저자들이 5.2절에서 적용 대상으로 **"sounding sequence randomization for narrowband
+  secure ranging with Bluetooth"를 명시**하고 근거로 Abidin 2021 과 Bluetooth CS 규격을
+  듭니다. 즉 CS_SYNC 검증과 NADM 판정의 보안 수준을 실칩에서 수치로 말하는 절차가
+  이미 제시되어 있다는 뜻입니다. 장비는 R&S SMW200A 신호발생기 + Qorvo DWM3000EVB
+  (nRF52DK 구동) + NXP SR040/SR150, 계측은 R&S RTP164b 40 GSa/s. 코드는 Zenodo 공개.
+  수치: Qorvo STS_NTM 기본값 12 → 2^-12.1, 24 로 올리면 2^-37.2. NXP SR150 은 같은
+  조건에서 2^-13.4 ~ 2^-17.3 으로 SR040(2^-40 ~ 2^-98)보다 훨씬 취약.
+  **측정 1회당 1.5 초** — 내 CS 실험 계획에서 "성공률을 재려면 몇 번 돌려야 하나"가
+  병목이었던 부분에 그대로 답이 됩니다.
+- 신규: **PURE: Payments with UWB RElay-protection** (Coppola 외, USENIX Security 2024,
+  관련도 보통, `verified`). FAST 의 참고문헌 캐기로 발견. 결제는 카드-단말 거리가 5 cm
+  이하라 링크버짓이 좋고, 그래서 절대 문턱값을 크게 올려도 오탈락이 늘지 않습니다.
+  **"유스케이스가 채널을 좁히면 수신기 정책을 공격적으로 조일 수 있다"** 는 논증의 모범
+  사례이고, CS 의 디지털 키(수 m) 대 근접 결제(수 cm) 유스케이스별 NADM 문턱 차등화의
+  근거가 됩니다. T = 702 로 Ghost Peak 성공률을 2^-49 로 상한, 거래시간 증가 41 ms.
+  Tamarin 형식검증이 **레인징 단계를 모델에서 뺐다**는 점도 기록 — CS 를 형식적으로 다룰 때
+  경계선을 어디에 그을지의 선례입니다.
+- 신규: **Realization of RF Distance Bounding** (Rasmussen & Capkun, USENIX Security 2010,
+  관련도 보통, `verified`). 역시 참고문헌 캐기. **처리시간 1 ns = 15 cm** 라는 환산 척도의
+  출처이고, 실측은 μ = 912.92 ps (σ = 61.22 ps). 중요한 것은 저자들이 XOR·비교 함수는
+  복조를 요구해 약 170 ns(≈ 25 m) 지연을 낳아 못 쓴다고 못박고, **복조 없이 아날로그
+  믹서로 채널만 바꿔 되쏘는 CRCS** 를 쓴 점입니다. 이것은 `fhss-tracking` 인사이트에서
+  도달한 결론(LO 재조정 불가 → 고정 LO + DSP)과 같은 구조의 문제이며, 공격자 쪽 아날로그
+  중계기 설계와 방어자 쪽 고속 응답기 설계가 사실상 같은 회로 문제임을 보여줍니다.
+  협대역 CS 조건에서 같은 계산을 다시 하는 것이 바로 이어지는 작업입니다.
+- 보강: **A Relay a Day Keeps the AirTag Away** (Gegenhuber 외, arXiv 2026)
+  `partial` → `verified`. arXiv 전문 확보(4쪽 단편). 장비는 ESP32/Linux BLE 송출기와
+  **타 국가에 둔 Raspberry Pi 중계 노드**, 도구는 AirGuard·OpenHaystack. 새 수치:
+  배터리를 빼 키 회전을 막으면 포착한 비컨을 **7일간** 재생 가능하고 8일째부터
+  outdated 로 표시됩니다. 저자 명단 순서도 원문 byline 대로 정정.
+- 보강: **The Zen of Bluetooth Security** (Antonioli, WiSec 2026) `unverified` →
+  `verified`. ACM DL 이 이 건은 CC-BY 라 전문이 열렸습니다. **확인 결과 1쪽 기조 발표
+  초록이고, 분야 체계화가 아니라 연사 본인 논문 8편을 묶은 것**이며 ZOBS 원칙의 내용도
+  초록에 없습니다. 이전 실행에서 제목만 보고 "Bluetooth 보안 전체 지형을 인용할 단일
+  출처"라고 적어둔 것은 과대평가였으므로 **관련도를 보통 → 낮음으로 내렸습니다.**
+  (의도적 하향이라 근거를 여기 남깁니다.) Channel Sounding·거리측정은 전혀 다루지 않습니다.
+- 인용: 신규 3건을 기존 논문에 역참조 반영 — Olafsdottir 2017 / Leu 2020 / Abidin 2021 /
+  Anliker 2023 → Rasmussen 2010, Anliker 2026 → FAST, Coppola 2025(LEO-Range) → PURE.
+  인용 관계 126건.
+- 표준: 변경 없음. Core Spec 최신은 여전히 6.3, Inline Phase Correction Term Transfer 는
+  아직 VSr01_PR 초안, RAS/RAP 1.0 그대로. 802.15.4ab 도 공개 최신 초안이 D03(2025-09) /
+  D04 로 상태 변화 없음. (참고: STMicroelectronics 가 Embedded World 2026 에서 첫
+  802.15.4ab 칩군 ST64UWB 를 발표했으나 표준 문서 자체의 상태는 그대로.)
+- 실패: **Leu 2021 "Security of Multicarrier Time-of-Flight Ranging"**(ACSAC, 관련도 높음)
+  전문 확보 재실패. ETH Research Collection 에 해당 항목은 있으나 ORIGINAL 번들이 없어
+  OA PDF 가 없고, ACM DL 은 유료, Semantic Scholar 에도 OA 링크 없음. `last_checked` 만
+  갱신하지 않고 항목 자체를 손대지 않았습니다. **Zand 2019 BLE PBR**(관련도 높음) 도
+  TU/e 리포지터리에 OA 없음. WiSec 2026 유료 3건(Timestamps Unchained / HardaBLE /
+  BlueBrothers)과 CCS 2023 / WiSec 2021 도 ACM DL 유료 벽에 막혔습니다.
+
 ## 2026-08-10 (10차 후속: 신규 1건, 보강 3건 — 미검증 상위 항목 정리)
 
 10차 보고에서 "다음 실행에서 팔 것"으로 남긴 네 건을 바로 처리했습니다. 셋은 끝났고

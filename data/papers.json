@@ -1,7 +1,7 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-10",
-  "last_run": "2026-08-10",
+  "updated": "2026-08-12",
+  "last_run": "2026-08-12",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
   "citation_edges": 72,
   "papers": [
@@ -233,13 +233,14 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-12",
       "cites": [
         "clulow-2006-long-symbols",
         "leu-2020-mtac",
         "leu-2022-ghost-peak",
         "olafsdottir-2017-carrier-phase",
         "ranganathan-2012-chirp-attacks",
+        "rasmussen-2010-rf-distance-bounding",
         "singh-2021-4z-security-analysis",
         "singh-2022-v-range"
       ],
@@ -1110,17 +1111,18 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-10",
+      "last_checked": "2026-08-12",
       "cites": [
+        "aad-2026-fast-uwb-testing",
         "anliker-2023-time-for-change",
         "clulow-2006-long-symbols",
+        "leu-2021-multicarrier-tof",
         "leu-2022-ghost-peak",
         "olafsdottir-2017-carrier-phase",
         "ranganathan-2012-chirp-attacks",
         "secure-ranging-4z-hrp-2024",
         "singh-2021-4z-security-analysis",
-        "staat-2022-analog-relay",
-        "leu-2021-multicarrier-tof"
+        "staat-2022-analog-relay"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -1182,10 +1184,11 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-12",
       "cites": [
         "clulow-2006-long-symbols",
-        "ranganathan-2012-chirp-attacks"
+        "ranganathan-2012-chirp-attacks",
+        "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -1247,10 +1250,11 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-12",
       "cites": [
         "clulow-2006-long-symbols",
         "olafsdottir-2017-carrier-phase",
+        "rasmussen-2010-rf-distance-bounding",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr"
       ],
@@ -1919,7 +1923,7 @@
         "Daniele Antonioli"
       ],
       "venue": "ACM WiSec",
-      "venue_full": "19th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '26) — 기조 발표",
+      "venue_full": "19th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '26) — 기조 발표 초록 1쪽",
       "tier": "wireless",
       "year": 2026,
       "url": "https://doi.org/10.1145/3765613.3816019",
@@ -1932,32 +1936,39 @@
         "br-edr",
         "ble"
       ],
-      "relevance": "medium",
-      "relevance_note": "Bluetooth 보안 연구 7년을 BR/EDR과 BLE에 걸쳐 체계화한 기조 발표. related work를 쓸 때 Bluetooth 보안 전체 지형을 인용할 단일 출처로 쓸 수 있고, 저자가 무엇을 미해결로 남겼는지가 연구 주제 선정에 직접 도움이 된다. CS가 이 체계화에서 어디에 놓이는지 확인할 가치가 있다.",
-      "summary": "BR/EDR과 BLE에 걸친 7년간의 Bluetooth 보안 연구를 체계화한다.",
+      "relevance": "low",
+      "relevance_note": "원문 1쪽을 확인한 결과, 분야 전반의 체계화가 아니라 연사 본인의 Bluetooth 논문 8편(BlueBrothers, HardaBLE, BLERP, BLUFFS, BLUR, BIAS, KNOB on BLE, KNOB on BC)을 ZOBS 원칙이라는 렌즈로 묶어 소개하는 기조 발표 초록이다. 원칙 목록도 미해결 과제 목록도 초록 본문에는 실려 있지 않다. 따라서 인용 가치는 'Bluetooth 페어링·키협상 계열 취약점의 계보를 한 줄로 가리키는 포인터' 정도이고, Channel Sounding이나 거리측정은 전혀 다루지 않는다. 내 연구에서는 related work의 Bluetooth 보안 배경 문단에서 개별 논문 대신 묶어 인용할 때만 쓸 만하다.",
+      "summary": "연사가 7년간 수행한 Bluetooth 보안 연구를 ZOBS(The Zen of Bluetooth Security)라는 원칙 모음으로 체계화해 소개하는 WiSec '26 기조 발표 초록이다. BR/EDR(Bluetooth Classic)과 BLE를 아우르는 본인 공저 논문 8편 — BlueBrothers, HardaBLE, BLERP, BLUFFS, BLUR, BIAS, KNOB on BLE, KNOB on BC — 을 그 렌즈로 훑고 얻은 교훈을 무선 보안 연구 공동체와 공유한다. 발표는 Bluetooth 보안의 미해결 연구 과제를 짚고 향후 방향에 대한 토론으로 이어진다고 밝힌다.",
       "hardware": [
-        "해당 없음 — 체계화 발표"
+        "해당 없음 — 1쪽 기조 발표 초록, 실험 없음"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "해당 없음"
+        "해당 없음 — 1쪽 기조 발표 초록, 실험 없음"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "Bluetooth 보안 연구의 분류 체계 및 미해결 문제 정리 (구체 내용 확인 필요)"
+        "실험 결과 없음. 초록은 다룰 논문 8편의 목록과 발표 취지만 제시하며, ZOBS 원칙의 구체적 내용은 초록에 포함되어 있지 않다"
       ],
       "limitations": [
-        "기조 발표 — 정식 논문 형태의 상세 평가는 아님"
+        "1쪽 기조 발표 초록 — 원칙의 정의, 근거, 미해결 과제 목록이 본문에 없다",
+        "다루는 8편이 모두 연사 공저작이라 Bluetooth 보안 분야 전체의 체계화로 볼 수 없다",
+        "Channel Sounding, 거리측정, 물리계층 보안은 언급되지 않는다"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-12",
+      "cites": [
+        "antonioli-2023-bluffs",
+        "sacchetti-2026-blerp",
+        "sacchetti-2026-bluebrothers",
+        "sacchetti-2026-hardable"
+      ],
+      "cites_source": "fulltext",
       "category": "survey"
     },
     {
@@ -2087,18 +2098,19 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-10",
+      "last_checked": "2026-08-12",
       "cites": [
         "clulow-2006-long-symbols",
-        "ranganathan-2012-chirp-attacks",
-        "singh-2019-uwb-pr",
+        "coppola-2024-pure",
         "leu-2020-mtac",
+        "leu-2021-multicarrier-tof",
+        "ranganathan-2012-chirp-attacks",
+        "schepers-2021-ftm-security",
+        "secure-ranging-4z-hrp-2024",
+        "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
         "singh-2022-v-range",
-        "uwb-sv-2023-ccs",
-        "secure-ranging-4z-hrp-2024",
-        "leu-2021-multicarrier-tof",
-        "schepers-2021-ftm-security"
+        "uwb-sv-2023-ccs"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -2251,10 +2263,11 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-12",
       "cites": [
         "clulow-2006-long-symbols",
         "olafsdottir-2017-carrier-phase",
+        "rasmussen-2010-rf-distance-bounding",
         "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
@@ -3143,12 +3156,12 @@
       "title": "A Relay a Day Keeps the AirTag Away: Practical Relay Attacks on Apple's AirTags",
       "authors": [
         "Gabriel K. Gegenhuber",
+        "Sebastian Strobl",
         "Leonid Liadveikin",
-        "Florian Holzbauer",
-        "Sebastian Strobl"
+        "Florian Holzbauer"
       ],
       "venue": "arXiv",
-      "venue_full": "arXiv:2604.10138 — ACSAC 2025 포스터로 발표된 내용의 확장",
+      "venue_full": "arXiv:2604.10138v2 (2026-04-14) — 4쪽 단편, 포스터 요약 포함",
       "tier": "preprint",
       "category": "attack",
       "year": 2026,
@@ -3166,31 +3179,42 @@
       "relevance_note": "거리 검증이 아예 없는 BLE 근접 서비스가 어떻게 무너지는지의 실사례. Find My는 위치 보고를 종단 암호화해 Apple조차 정합성을 검증할 수 없고, 그래서 중계된 위조 보고가 그대로 수용된다. 'CS가 왜 필요한가'를 서론에서 설명할 때 대조군으로 쓰기 좋지만 레인징 자체를 다루지 않으므로 기여의 핵심은 아니다.",
       "summary": "AirTag는 주변 iDevice가 익명으로 암호화된 위치 보고를 Apple에 전달하는 Find My 네트워크에 의존한다. 이 암호화가 프라이버시를 지키는 대신 Apple이 보고의 정확성을 검증하지 못하게 만든다. 저자들은 중계 공격으로 조작된 위치 보고를 주입해 분실된 AirTag의 위치를 거짓으로 표시하게 만들 수 있음을 보이고, 같은 기법으로 특정 태그의 회수를 방해하는 표적 서비스 거부가 가능함을 지적한다.",
       "hardware": [
-        "확인 필요 — 초록만 확인 (AirTag, iDevice 및 중계 장비 구성 미상)"
+        "Apple AirTag (연구진 자체 보유 테스트 기기) — 배터리를 빼 키 회전을 정지시킨 상태로도 실험",
+        "BLE 광고 수집기: Android 단말, Linux 호스트, ESP32 — 원시 광고·타임스탬프·RSSI·광고 필드 기록",
+        "BLE 송출기: Linux 및 ESP32 — AirTag는 공개키 일부를 BLE MAC에 싣는데 루팅하지 않은 Android에서는 MAC 변경이 불가능해 이 두 플랫폼으로 구현",
+        "원격 중계 노드: 타 국가 연구기관에 둔 Raspberry Pi",
+        "중계 서버 — 수집기의 보고를 받아 최초 관측 시각을 기록하고 원시 광고를 저장, 송출 노드에 재생 스케줄을 지시"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 초록만 확인"
+        "AirGuard, OpenHaystack — 기존 오픈소스 도구를 기반으로 사용",
+        "자체 제작 경량 BLE 수집 스크립트 (Android / Linux / ESP32)",
+        "자체 제작 중계 서버 — 타임스탬프 기록, 저장, 재생 스케줄링",
+        "Apple Find My 클라이언트로 위치 보고 수신 확인"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "중계 공격으로 조작된 위치 보고를 주입해 Find My가 AirTag의 거짓 위치를 표시하게 만듦 (구체 수치 확인 필요 — 초록만 확인)",
-        "같은 기법으로 표적 태그의 회수를 방해하는 서비스 거부가 가능"
+        "원격지(타 국가) Raspberry Pi에서 포착한 비컨을 재송출하자 그 주변 iDevice들이 위조 위치 보고를 생성·업로드했고 소유자 기기가 이를 정상적으로 수신함 — 중계로 거짓 위치 주입 성공",
+        "클라우드 보고는 최신 공개키를 쓰는 것만 인정된다. AirTag의 키 회전이 이전 키를 무효화하므로, 현재 비컨을 계속 중계하면 Find My 앱이 정상 위치와 중계 위치 사이를 오간다",
+        "AirTag가 소유자 기기의 BLE 도달 범위에 들어오면 Find My는 근처에 있다고 간주하고 클라우드 보고를 무시한다. 이 로컬 우선 규칙은 과거에 녹음해 둔 비컨으로도 동작한다",
+        "배터리를 빼 키 회전을 막으면 포착한 BLE 비컨을 7일간 재생할 수 있고, 8일째부터 Find My 앱이 outdated로 표시한다"
       ],
       "limitations": [
-        "초록만 확인 — 실험 규모, 성공률, 거리 조건 모두 확인 필요",
-        "중계 실험이 2022년(학사 논문)에 처음 수행되고 2025년에 재현된 것으로, 이후 Apple 측 완화 조치 반영 여부 확인 필요",
+        "키 회전을 막으려면 대상 AirTag에 물리적으로 접근해 배터리를 빼야 한다 — 이 조건 없이는 재생 가능 창이 짧다",
+        "여러 최근 위치 보고를 어떤 알고리즘(예: 평균)으로 조정하는지는 아직 규명하지 못했다고 저자가 명시 (future work)",
+        "Chipolo, Samsung SmartTag, Tile 등 다른 트래커 생태계는 평가하지 않았다 (future work)",
+        "4쪽 단편이라 성공률·거리 조건에 대한 통계적 평가가 없다",
         "거리측정이 아니라 위치 보고 계층의 문제 — 물리계층 레인징 보안과는 층위가 다름"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "cites": [],
-      "cites_source": "no-fulltext",
+      "cites_source": "fulltext",
       "added": "2026-08-10",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-12"
     },
     {
       "id": "tschirschnitz-2021-method-confusion",
@@ -3260,6 +3284,238 @@
       "cites_source": "fulltext",
       "added": "2026-08-10",
       "last_checked": "2026-08-10"
+    },
+    {
+      "id": "aad-2026-fast-uwb-testing",
+      "title": "FAST: Fast and Accurate Security Testing of HRP UWB Chips",
+      "authors": [
+        "Graciana Aad",
+        "Giovanni Camurati",
+        "Matteo Dell'Amico",
+        "Srdjan Capkun"
+      ],
+      "venue": "TCHES",
+      "venue_full": "IACR Transactions on Cryptographic Hardware and Embedded Systems, Vol. 2026, No. 1, pp. 500–532",
+      "tier": "journal",
+      "category": "analysis",
+      "year": 2026,
+      "url": "https://tches.iacr.org/index.php/TCHES/article/view/12691",
+      "preprint": null,
+      "doi": "10.46586/tches.v2026.i1.500-532",
+      "topics": [
+        "uwb",
+        "802.15.4z",
+        "distance-reduction",
+        "importance-sampling",
+        "security-testing",
+        "ghost-peak",
+        "sts"
+      ],
+      "relevance": "high",
+      "relevance_note": "CS 연구에서 지금 가장 아쉬운 것이 '탐지·수락 정책의 보안 수준을 어떻게 수치로 말할 것인가'인데, 이 논문이 그 방법론을 준다. 저자들이 5.2절에서 FAST의 적용 대상으로 'sounding sequence randomization for narrowband secure ranging with Bluetooth'를 명시적으로 지목하고 근거로 Abidin 2021과 Bluetooth CS 규격을 든다. 즉 CS의 CS_SYNC 랜덤 시퀀스 검증과 NADM 판정에 대해, 폐형식 보안식 없이도 실칩에서 랜덤추측 공격 성공률을 2^-10 ~ 2^-128 수준까지 측정할 수 있다는 뜻이다. 내 실험 계획에서 '측정을 몇 번 돌려야 의미 있는 성공률이 나오는가'가 병목이었는데, importance sampling으로 필요한 샘플 수를 수만 개로 줄이는 것이 핵심 해법이다. 또 문턱값을 올리면 성공률이 지수적으로 떨어지는 대신 오탈락률이 오른다는 보안-신뢰성 트레이드오프를 실칩에서 표로 뽑아낸 방식은 CS의 탐지 지표 평가에 그대로 이식할 수 있다.",
+      "summary": "HRP UWB 칩의 STS 검증 알고리즘은 독점 구현이라 랜덤추측 거리축소 공격(Ghost Peak)에 대한 보안 수준을 해석적으로 계산할 수 없다. 저자들은 importance sampling을 써서 매우 낮은 성공률도 적은 시행 횟수로 정확히 추정하는 경험적 테스트 방법론 FAST를 제안한다. 평가자가 기대 STS를 알고 있다는 점을 이용해 성공에 가까운 신호가 더 자주 생성되도록 표본 분포를 편향시키고, 성공률 계산 때 그 편향을 보정한다. Qorvo DWM3000EVB, 그 위에 구현한 PURE 수신기, NXP Trimension SR040/SR150 네 가지 수신기를 문턱값·공격 진폭·채널·프리앰블 비율 등 조건별로 특성화했다.",
+      "hardware": [
+        "[피해 기기]",
+        "Qorvo DWM3000EVB (v1.4) — Nordic Semiconductor nRF52DK로 구동, 독점 ToA 검증 알고리즘을 3개 레지스터(STS_NTM / STS_MNTH / STS_PMULT)로 조정",
+        "NXP Trimension SR040, NXP Trimension SR150 — 두 칩이 서로 two-way ranging 하는 데모 구성, 저수준 접근 불가",
+        "PURE 수신기 — Qorvo DWM3000EVB 위에 절대 문턱값 방식 leading-edge detection으로 구현",
+        "[공격 · 계측 장비]",
+        "Rohde & Schwarz SMW200A 신호발생기 — 공격 신호 주입 (Qorvo는 동축 케이블 직결, NXP는 안테나 경유)",
+        "Rohde & Schwarz RTP164b 오실로스코프 — 40 GSa/s 직접 샘플링으로 HRP 패킷 수집 (STS 디코딩용)",
+        "UWB 안테나 + 대역통과 필터, Qorvo DWM3000EVB 1대를 트리거로 사용",
+        "NXP 실험은 무반사 상자(anechoic box) 안에서 수행"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "FAST 구현은 Python — scipy.optimize의 Nelder-Mead로 표본분포 파라미터 (a, b) 최소화",
+        "Avatar2 기반 모니터로 nRF52DK 펌웨어와 통신",
+        "MATLAB — IEEE 802.15.4a 채널 모델(residential / office / outdoor / industrial × LoS / NLoS) 생성",
+        "펌웨어는 github.com/foldedtoad/dwm3000 (Nordic nRF52 + Decawave DWM3000, Zephyr v2.5) 기반",
+        "Qorvo API dwt_readstsquality 및 STS_TOAST 경고 레지스터로 수락 여부 판정",
+        "STS 디코딩: 4096개 BPSK 펄스 피크를 찾아 Costas Loop로 위상 회전을 보정한 뒤 복조"
+      ],
+      "software_verified": true,
+      "results": [
+        "Qorvo DWM3000, STS_NTM 기본값 12에서 성공률 2^-12.1 (보정 502 + 시험 4944 샘플). NTM을 24로 올리면 2^-37.2 — 문턱값 하나로 25비트 이상 차이",
+        "PURE(Qorvo 위 구현), 절대 문턱값 300 → 2^-14.8, 400 → 2^-23.7, 500 → 2^-35.4 (각각 약 6000 보정 + 11000 시험 샘플)",
+        "NXP SR040, 프리앰블/STS 진폭비 0.25 → 2^-40.75, 0.5 → 2^-46.33, 1.0 → 2^-98.4 (2만 보정 + 18만 시험 샘플). 프리앰블 진폭을 낮춰야 공격이 통하므로 칩이 프리앰블과 STS의 정합성을 함께 보는 것으로 추정",
+        "NXP SR150은 같은 파라미터에서 2^-13.4 ~ 2^-17.3으로 SR040보다 훨씬 취약하고 진폭비의 영향도 일관되지 않음",
+        "수락 영역의 모양이 칩마다 다름: Qorvo DWM3000과 NXP SR150은 전 비트가 반전된 STS도 수락(양측 수락 영역), NXP SR040은 한쪽만 수락",
+        "측정 1회당 약 1.5초 — 나이브 방식과 같지만 필요한 샘플 수가 수십만 배 적음",
+        "전체적으로 수만 샘플만으로 2^-10에서 2^-128까지의 성공률을 신뢰구간과 함께 추정",
+        "오탈락률(FRR) 표: -50 dBm에서는 문턱값을 올려도 오탈락이 크게 늘지 않지만, PURE를 -77 dBm의 열악한 채널에서 돌리면 보안-신뢰성 트레이드오프가 뚜렷해짐"
+      ],
+      "limitations": [
+        "특정 공격(랜덤추측)에 대한 '비보안성'만 추정할 뿐, 임의 공격자에 대한 보안 수준은 말하지 못한다. 형식 분석을 대체하지 않는다",
+        "제어할 파라미터가 많아지면 조사할 경우의 수가 지수적으로 늘어난다",
+        "대상 기기에 대한 제어가 필요하다 — 비밀 STS를 알아야 표본을 편향시킬 수 있고, 수락 여부를 관측할 수 있어야 하며, 수신 대기 상태를 계속 유지할 수 있으면 유리하다",
+        "공격자가 피해 기기에 직접 FAST를 쓸 수는 없지만, STS를 아는 동종 개발보드로 최적 공격 파라미터를 찾는 데는 쓸 수 있다고 저자가 명시",
+        "NXP 칩 분석은 독점 구현이라 결과 해석이 추정에 머문다고 저자가 밝힘"
+      ],
+      "artifacts": {
+        "code": "https://zenodo.org/records/17295874",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "abidin-2021-narrowband-ranging",
+        "anliker-2023-time-for-change",
+        "clulow-2006-long-symbols",
+        "coppola-2024-pure",
+        "leu-2020-mtac",
+        "leu-2021-multicarrier-tof",
+        "leu-2022-ghost-peak",
+        "secure-ranging-4z-hrp-2024",
+        "singh-2019-uwb-pr",
+        "singh-2021-4z-security-analysis",
+        "uwb-sv-2023-ccs",
+        "uwbad-2024-jamming"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-12",
+      "last_checked": "2026-08-12"
+    },
+    {
+      "id": "coppola-2024-pure",
+      "title": "PURE: Payments with UWB RElay-protection",
+      "authors": [
+        "Daniele Coppola",
+        "Giovanni Camurati",
+        "Claudio Anliker",
+        "Xenia Hofmeier",
+        "Patrick Schaller",
+        "David Basin",
+        "Srdjan Capkun"
+      ],
+      "venue": "USENIX Security",
+      "venue_full": "33rd USENIX Security Symposium",
+      "tier": "top4",
+      "category": "defense",
+      "year": 2024,
+      "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/coppola",
+      "preprint": null,
+      "doi": null,
+      "topics": [
+        "uwb",
+        "802.15.4z",
+        "relay-attack",
+        "emv",
+        "leading-edge-detection",
+        "formal-verification",
+        "distance-reduction"
+      ],
+      "relevance": "medium",
+      "relevance_note": "'유스케이스가 채널을 좁히면 수신기 정책을 공격적으로 조일 수 있다'는 논증의 모범 사례다. 결제는 카드-단말 거리가 5 cm 이하라는 것이 규격으로 보장되므로 링크버짓이 좋고, 그래서 절대 문턱값을 크게 올려도 오탈락이 늘지 않는다. CS의 유스케이스별 위험 분석에서 같은 논리를 쓸 수 있다 — 차량 디지털 키는 수 미터, 근접 결제는 수 cm로 요구 채널이 다르니 NADM 문턱을 유스케이스별로 다르게 잡을 근거가 된다. 또 Ghost Peak 성공률을 2^-49로 묶었다는 주장을 importance sampling 유사 기법으로 실측한 절차가 FAST(Aad 2026)의 직접 전신이라, CS에 그 절차를 이식할 때 참조 대상이 된다. Tamarin 형식검증이 물리계층을 추상화해 레인징 단계를 모델에서 뺐다는 점도 중요한데, CS 보안을 형식적으로 다룰 때 경계선을 어디에 그을지의 선례다.",
+      "summary": "기존 EMV 비접촉 결제 프로토콜에 UWB 레인징을 통합해 중계 공격을 막는 PURE를 제안한다. 발급사·매입사·결제망 백엔드는 그대로 두고 카드(스마트폰)와 단말만 바꾸면 되도록 설계했다. 802.15.4z HRP가 거리축소 공격에 취약하다는 점을 감안해, 결제 환경 특유의 좋은 무선 채널을 활용하는 절대 문턱값 기반 leading-edge detection 알고리즘을 얹어 신뢰성과 보안을 동시에 확보한다. Mastercard EMV C-2 커널로의 통합을 Tamarin으로 형식검증하고, 스마트폰 프로토타입으로 성능을 측정했다.",
+      "hardware": [
+        "Android 스마트폰 2대 — Samsung Galaxy S21(카드 역할), Google Pixel 4(단말 역할)",
+        "외장 Qorvo DW3000 보드 — 폰 내장 UWB 칩에 저수준 API가 없어 각 폰에 부착",
+        "Qorvo DWM3000 — 리더 측 수신기. 절대 문턱값 LED 구현 및 CIR 추출에 사용",
+        "iPhone 12 — Apple Nearby Interaction API로 Qorvo 보드와 레인징하며 실채널 CIR 300개 수집",
+        "신호발생기 — Qorvo DWM3000 수신기에 연결, 클리핑 직전 최대 출력(-21 dBm)으로 CIR 피크 진폭 분포 측정"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Android 앱으로 standalone / integrated 두 버전 구현",
+        "Tamarin prover — Mastercard EMV C-2 커널 확장의 형식 모델 및 보안 정리 증명",
+        "Qorvo Nearby Interaction 애플리케이션 수정판 — CIR 추출",
+        "형식 모델 공개: https://github.com/daniCoppola/pure-models"
+      ],
+      "software_verified": true,
+      "results": [
+        "절대 문턱값 T = 702으로 Ghost Peak 랜덤추측 성공률을 최대 2^-49로 상한 (결제 응용이 요구하는 2^-48 수준 충족)",
+        "거래 시간 증가: integrated 버전 B가 41 ms로 최소, 최대 78 ms. Mastercard 일반 거래 시간 (630 ± 151) ms 대비 미미",
+        "레인징 자체는 평균 30 ms이지만 NFC 교환과 병렬로 실행되어 추가 지연을 만들지 않음",
+        "1 m 미만(sub-meter) 중계 보호 — 결제 운용 범위 dmax = 5 cm, Qorvo 칩 정확도 dqorvo = 10 cm를 반영해 수락 문턱 거리를 산정",
+        "iPhone 12로 리더 전면 반공간을 스캔해 모은 CIR 300개에서, 보안을 위해 고른 문턱값이 결제 상황의 신뢰성을 해치지 않음을 확인",
+        "Tamarin으로 SIGMA 키교환의 C-2 커널 통합 및 오프라인 인증 확장에 대한 정리 증명 완료"
+      ],
+      "limitations": [
+        "중계 방어는 단말 대부분에 배포되어야 실효가 있다. 그 전까지는 하위호환 때문에 미보호 단말로의 중계가 남는다",
+        "외부 공격자의 중계는 막지만 당사자 중 하나가 부정직한 경우(악의적 카드소지자가 레인징 키를 공범에게 넘기는 등)는 막지 못한다. 악의적 prover 하에서의 distance bounding 실현은 미해결 과제이며, 지연이 무시할 만한 아날로그 처리처럼 상용 기술에 없는 물리계층 능력이 필요하다고 저자가 명시",
+        "Tamarin은 심볼릭 모델이라 물리계층 속성을 추상화한다. 형식 모델에 레인징 단계는 포함되지 않았고 별도로 분석했다",
+        "폰 내장 UWB 칩에 저수준 API가 없어 외장 Qorvo 보드를 붙여야 했다 — 실제 배포는 칩 내부 구현을 전제로 한다"
+      ],
+      "artifacts": {
+        "code": "https://github.com/daniCoppola/pure-models",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "abidin-2021-narrowband-ranging",
+        "anliker-2023-time-for-change",
+        "leu-2022-ghost-peak",
+        "singh-2021-4z-security-analysis"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-12",
+      "last_checked": "2026-08-12"
+    },
+    {
+      "id": "rasmussen-2010-rf-distance-bounding",
+      "title": "Realization of RF Distance Bounding",
+      "authors": [
+        "Kasper Bonne Rasmussen",
+        "Srdjan Capkun"
+      ],
+      "venue": "USENIX Security",
+      "venue_full": "19th USENIX Security Symposium, pp. 389–402",
+      "tier": "top4",
+      "category": "defense",
+      "year": 2010,
+      "url": "https://www.usenix.org/legacy/event/sec10/tech/full_papers/Rasmussen.pdf",
+      "preprint": null,
+      "doi": null,
+      "topics": [
+        "distance-bounding",
+        "processing-delay",
+        "analog-processing",
+        "channel-selection",
+        "prototype"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS의 왕복시간 예산을 물리적으로 이해하는 기준점이다. 이 논문의 핵심 수치 — prover 처리시간 1 ns가 곧 15 cm — 는 CS의 T_IP / T_SW 같은 규격 타이밍이 왜 그 크기인지, 그 안의 불확실성이 거리로 몇 cm인지 환산하는 척도를 준다. 더 중요한 것은 저자들이 XOR·비교 함수는 복조를 요구해 약 170 ns(약 25 m) 지연을 낳으므로 쓸 수 없다고 못박고, 대신 복조 없이 아날로그 믹서로 채널만 바꿔 되쏘는 CRCS를 쓴 점이다. 이것은 내가 FHSS 추적 병목을 정리하며 도달한 결론(LO 재조정 불가 → 고정 LO + DSP)과 같은 구조의 문제이고, 공격자 쪽 아날로그 중계기 설계와 방어자 쪽 고속 응답기 설계가 사실상 같은 회로 문제임을 보여준다. CS는 협대역이라 대역폭이 훨씬 좁으므로 수치는 다르게 나올 것이고, 같은 계산을 CS 조건에서 다시 해보는 것이 바로 이어지는 작업이다.",
+      "summary": "RF distance bounding이 널리 배치되지 못한 주된 장애를 '프로토콜이 요구하는 엄격한 처리시간을 만족하는 플랫폼의 부재'로 보고, 이를 실제로 만든 프로토타입을 제시한다. prover가 신호를 수신·처리·재전송하는 데 1 ns 미만이 걸리며, 따라서 악의적 prover가 줄일 수 있는 거리는 최대 약 15 cm로 묶인다. 이를 위해 처리 함수로 연접(concatenation)을 쓰고 이를 Challenge Reflection with Channel Selection(CRCS)으로 구현해 수신 신호의 복조 자체를 없앤다. Brands-Chaum 프로토콜 위에 이 함수를 얹은 distance bounding 프로토콜을 설계하고 보안을 분석한다. 아울러 기존 프로토콜들이 쓰던 XOR과 비교 함수가 RF distance bounding 구현에는 적합하지 않음을 보인다.",
+      "hardware": [
+        "prover 프로토타입 — 아날로그 부품만으로 구성: 믹서 1개, 고역통과 필터 1개, 저역통과 필터 1개, 증폭기 4개, 1 dB 감쇠기 1개, 50 Ω 종단저항 1개 (표준 SMA 부품)",
+        "채널 전환 스위치는 이 프로토타입에서 미구현 — C2를 송신 안테나에 직결하고 C1은 종단저항으로 처리. 트랜지스터 스위치로 구현 가능하며 지연 증가는 미미하다고 저자가 논함",
+        "함수 발생기 — 3.5 GHz 챌린지 신호 생성 (1 Hz 펄스로 변조)",
+        "40 GS/s 오실로스코프 — ground truth와 프로토타입 출력의 도착시간 차 측정",
+        "로컬 오실레이터 500 MHz 사인파, 파워 스플리터, 길이가 같은 1 m 동축 케이블 2개",
+        "무선 실험: 입출력에 안테나 연결. 안테나 간 약 0.1 m, 마운트 제약으로 약 1 m SMA 케이블 사용"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "별도 소프트웨어 스택 없음 — 순수 아날로그 회로 프로토타입",
+        "verifier 측 도달시간 판정은 GPS 수신기와 같은 자기상관(auto-correlation) 검출기로 수행할 것을 제안"
+      ],
+      "software_verified": true,
+      "results": [
+        "prover 처리 지연 평균 μ = 912.92 ps, 표준편차 σ = 61.22 ps (10회 측정) — 1 ns 미만",
+        "단일 측정에서 관측된 지연 0.888 ns → 공격자가 줄일 수 있는 최대 거리 약 12 cm",
+        "챌린지 3.5 GHz(fc), 응답 4.0 GHz(fc + Δf, Δf = 500 MHz)로 채널 이동 확인",
+        "10회 측정의 신뢰구간 기준 처리시간은 0.8 ~ 1 ns 사이에서 안정",
+        "유선뿐 아니라 안테나를 붙인 무선 구성에서도 동일하게 동작 (안테나·케이블 지연은 별도 항으로 표기)",
+        "대조군: XOR·비교 함수는 ADC/DAC와 복조·변조가 필요해 약 170 ns의 처리 지연을 유발하며, RX/TX 전환 비용은 여기에 포함되지 않은 값"
+      ],
+      "limitations": [
+        "채널 전환 스위치를 실제로 구현하지 않았다 — 한쪽 채널을 직결하고 다른 쪽은 종단저항으로 처리했다",
+        "SMA 표준 부품 기반이라 신호 경로가 길다. 집적회로로 만들면 처리시간이 더 짧아질 것이며 이 프로토타입이 최선이라고 주장하지 않는다고 저자가 명시",
+        "무선 실험에서 안테나 마운트 제약으로 1 m 케이블을 써야 했고 그만큼의 지연이 별도 항으로 들어간다",
+        "prover가 응답 채널 선택으로만 자기 nonce를 실어 보내므로 두 채널(전이중)이 필요하다",
+        "공격자와 prover가 결탁하지 않는다는 가정 위에서 보안을 분석한다"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "clulow-2006-long-symbols"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-12",
+      "last_checked": "2026-08-12"
     }
   ]
 }
