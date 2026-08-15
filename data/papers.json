@@ -1,7 +1,7 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-12",
-  "last_run": "2026-08-12",
+  "updated": "2026-08-15",
+  "last_run": "2026-08-15",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
   "citation_edges": 72,
   "papers": [
@@ -163,9 +163,11 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-15",
       "cites": [
+        "flury-2010-distance-decreasing",
         "leu-2020-mtac",
+        "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
@@ -233,12 +235,13 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-12",
+      "last_checked": "2026-08-15",
       "cites": [
         "clulow-2006-long-symbols",
         "leu-2020-mtac",
         "leu-2022-ghost-peak",
         "olafsdottir-2017-carrier-phase",
+        "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2021-4z-security-analysis",
@@ -303,11 +306,13 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-03",
+      "last_checked": "2026-08-15",
       "cites": [
         "clulow-2006-long-symbols",
-        "ranganathan-2012-chirp-attacks",
+        "flury-2010-distance-decreasing",
         "olafsdottir-2017-carrier-phase",
+        "poturalski-2011-db-802-15-4a",
+        "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed"
       ],
       "cites_source": "fulltext",
@@ -940,10 +945,12 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-15",
       "cites": [
         "anliker-2023-time-for-change",
+        "flury-2010-distance-decreasing",
         "leu-2022-ghost-peak",
+        "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis"
       ],
@@ -1111,11 +1118,12 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-12",
+      "last_checked": "2026-08-15",
       "cites": [
         "aad-2026-fast-uwb-testing",
         "anliker-2023-time-for-change",
         "clulow-2006-long-symbols",
+        "flury-2010-distance-decreasing",
         "leu-2021-multicarrier-tof",
         "leu-2022-ghost-peak",
         "olafsdottir-2017-carrier-phase",
@@ -1184,9 +1192,11 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-12",
+      "last_checked": "2026-08-15",
       "cites": [
         "clulow-2006-long-symbols",
+        "flury-2010-distance-decreasing",
+        "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding"
       ],
@@ -1250,10 +1260,12 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-12",
+      "last_checked": "2026-08-15",
       "cites": [
         "clulow-2006-long-symbols",
+        "flury-2010-distance-decreasing",
         "olafsdottir-2017-carrier-phase",
+        "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr"
@@ -1324,10 +1336,11 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-15",
       "cites": [
         "clulow-2006-long-symbols",
         "leu-2020-mtac",
+        "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr"
       ],
@@ -1344,12 +1357,12 @@
         "Wonsuk Choi"
       ],
       "venue": "ACM CCS",
-      "venue_full": "ACM Conference on Computer and Communications Security (CCS) 2023",
+      "venue_full": "Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security (CCS '23), pp. 622–635",
       "tier": "top4",
       "year": 2023,
-      "url": "https://dl.acm.org/doi/10.1145/3576915.3623111",
+      "url": "https://dl.acm.org/doi/10.1145/3576915.3623145",
       "preprint": null,
-      "doi": "10.1145/3576915.3623111",
+      "doi": "10.1145/3576915.3623145",
       "topics": [
         "uwb",
         "802.15.4z",
@@ -1375,7 +1388,8 @@
       ],
       "limitations": [
         "확인 필요 — 원문 대조 필요",
-        "UWB HRP 한정 — 협대역 CS 적용 여부 미검증"
+        "UWB HRP 한정 — 협대역 CS 적용 여부 미검증",
+        "원문 미확보 — OpenAlex 기준 gold OA이나 ACM DL이 Cloudflare로 자동 요청을 차단(2026-08-15 curl·WebFetch 모두 403). 대체 미러 없음"
       ],
       "artifacts": {
         "code": null,
@@ -1383,7 +1397,7 @@
       },
       "verification": "partial",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-15",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "defense"
@@ -1399,12 +1413,12 @@
         "Jens Grossklags"
       ],
       "venue": "ACM WiSec",
-      "venue_full": "19th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '26), Saarbrücken, Germany",
+      "venue_full": "Proceedings of the 19th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '26), Saarbrücken, Germany, pp. 280–291",
       "tier": "wireless",
       "year": 2026,
-      "url": "http://wisec26.events.cispa.de/program-accepted-papers/",
+      "url": "https://dl.acm.org/doi/10.1145/3765613.3811688",
       "preprint": null,
-      "doi": null,
+      "doi": "10.1145/3765613.3811688",
       "topics": [
         "wifi",
         "distance-bounding",
@@ -1427,7 +1441,7 @@
         "상용 802.11 기기에서 미터 수준 근접 판정 달성 (구체 수치 확인 필요)"
       ],
       "limitations": [
-        "확인 필요 — 원문 공개 후 대조 필요"
+        "원문 미확보 — 2026-06-29 프로시딩 발행이 확인되어 DOI·페이지·서지정보는 Crossref로 확정했으나, ACM DL이 Cloudflare로 자동 요청을 차단해 본문은 열지 못함(2026-08-15)"
       ],
       "artifacts": {
         "code": null,
@@ -1435,7 +1449,7 @@
       },
       "verification": "unverified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-15",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "protocol"
@@ -1449,12 +1463,12 @@
         "Daniele Antonioli"
       ],
       "venue": "ACM WiSec",
-      "venue_full": "19th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '26), Saarbrücken, Germany",
+      "venue_full": "Proceedings of the 19th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '26), Saarbrücken, Germany, pp. 103–114",
       "tier": "wireless",
       "year": 2026,
-      "url": "http://wisec26.events.cispa.de/program-accepted-papers/",
+      "url": "https://dl.acm.org/doi/10.1145/3765613.3816113",
       "preprint": null,
-      "doi": null,
+      "doi": "10.1145/3765613.3816113",
       "topics": [
         "bluetooth",
         "protocol-design",
@@ -1477,7 +1491,7 @@
         "확인 필요"
       ],
       "limitations": [
-        "확인 필요"
+        "원문 미확보 — 2026-06-29 프로시딩 발행이 확인되어 DOI·페이지·서지정보는 Crossref로 확정했으나, ACM DL이 Cloudflare로 자동 요청을 차단해 본문은 열지 못함(2026-08-15)"
       ],
       "artifacts": {
         "code": null,
@@ -1485,7 +1499,7 @@
       },
       "verification": "unverified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-15",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "defense"
@@ -1567,9 +1581,9 @@
       "venue_full": "5th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '12), Tucson, AZ, pp. 15–26",
       "tier": "wireless",
       "year": 2012,
-      "url": "https://dl.acm.org/doi/10.1145/2185448.2185452",
+      "url": "https://dl.acm.org/doi/10.1145/2185448.2185453",
       "preprint": null,
-      "doi": "10.1145/2185448.2185452",
+      "doi": "10.1145/2185448.2185453",
       "topics": [
         "chirp-spread-spectrum",
         "distance-reduction",
@@ -1592,7 +1606,8 @@
       ],
       "limitations": [
         "확인 필요",
-        "CSS 한정"
+        "CSS 한정",
+        "원문 미확보 — ACM DL이 Cloudflare로 자동 요청 차단(2026-08-15), OpenAlex 기준 closed access"
       ],
       "artifacts": {
         "code": null,
@@ -1600,7 +1615,7 @@
       },
       "verification": "unverified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-15",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "attack"
@@ -2098,10 +2113,11 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-12",
+      "last_checked": "2026-08-15",
       "cites": [
         "clulow-2006-long-symbols",
         "coppola-2024-pure",
+        "flury-2010-distance-decreasing",
         "leu-2020-mtac",
         "leu-2021-multicarrier-tof",
         "ranganathan-2012-chirp-attacks",
@@ -2515,12 +2531,12 @@
         "Norrathep Rattanavipanon"
       ],
       "venue": "ACM WiSec",
-      "venue_full": "Proceedings of the 19th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '26)",
+      "venue_full": "Proceedings of the 19th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '26), Saarbrücken, Germany, pp. 86–96",
       "tier": "wireless",
       "year": 2026,
-      "url": "http://wisec26.events.cispa.de/program-accepted-papers/",
+      "url": "https://dl.acm.org/doi/10.1145/3765613.3811677",
       "preprint": null,
-      "doi": null,
+      "doi": "10.1145/3765613.3811677",
       "topics": [
         "ble",
         "software-compromise",
@@ -2542,7 +2558,7 @@
         "확인 필요"
       ],
       "limitations": [
-        "확인 필요 — 원문 미확보 (WiSec 2026 프로시딩 미공개)"
+        "원문 미확보 — 2026-06-29 프로시딩 발행이 확인되어 DOI·페이지·서지정보는 Crossref로 확정했으나, ACM DL이 Cloudflare로 자동 요청을 차단해 본문은 열지 못함(2026-08-15)"
       ],
       "artifacts": {
         "code": null,
@@ -2550,7 +2566,7 @@
       },
       "verification": "unverified",
       "added": "2026-07-30",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-15",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "defense"
@@ -2976,32 +2992,44 @@
       "relevance_note": "'대역폭을 여러 부반송파로 나누면 심볼이 길어지고, 긴 심볼은 ED/LC에 구조적으로 취약하다'를 OFDM에 대해 정면으로 논증한 논문. CS의 PBR도 톤을 채널별로 나눠 순차 측정하는 협대역 구조라 같은 긴장에 놓이며, '프레임 길이와 부반송파 수를 어떻게 잡아도 취약하다'는 결론이 CS에도 옮겨지는지가 곧바로 연구 질문이 된다. Anliker 2026과 Antonijević 2026이 모두 출발점으로 인용하므로 계보상 빠뜨릴 수 없다. 제안한 대응책(직교 잡음 + 무작위 위상)은 CS_SYNC/PBR 톤에 그대로 이식해 볼 수 있는 후보다.",
       "summary": "OFDM은 부반송파 병렬 전송으로 페이딩 내성과 처리량을 얻지만 그 대가로 심볼이 시간축에서 길어진다. 이 논문은 긴 심볼이 공격자에게 관측·반응 시간을 주어 early-detect/late-commit 공격을 가능하게 한다는 점에서 OFDM이 보안 거리측정에 본질적으로 부적합함을 논증한다. 가장 견고한 설정인 BPSK와 4-QAM을 예로 조기 검출 확률을 높이는 전략을 제시하고, 이론 분석과 시뮬레이션으로 프레임 길이·부반송파 수와 무관하게 취약함을 보인다. 대응책으로 직교 잡음과 무작위 위상을 검토한다.",
       "hardware": [
-        "확인 필요 — 원문 전문 미확보 (초록 기준으로는 이론 분석·시뮬레이션 중심으로 보임)"
+        "없음 — 실기기 실험 없이 수학적 증명과 시뮬레이션만 수행. 실험장비·테스트베드 절이 논문에 존재하지 않음"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 원문 전문 미확보"
+        "논문에 시뮬레이터 이름·언어·버전을 명시하지 않음. 수행한 시뮬레이션은 두 가지로, (1) 부반송파 수별 조기 검출·late-commit 비트오류율 곡선, (2) 위상 무작위화 + 직교 잡음 하에서 유효 연속(valid continuation) 수열을 무작위 표집해 얻은 공격자 BER"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "BPSK와 4-QAM 같은 가장 견고한 설정에서도 조기 검출 성공률을 높이는 전략이 성립함을 보임",
-        "프레임 길이와 부반송파 수와 무관하게 OFDM 기반 레인징이 ED/LC 공격에 취약하다는 결론 (구체 수치 확인 필요 — 전문 미확보)",
-        "대응책으로 직교 잡음(orthogonal noise)과 무작위 위상을 제시 (효과 수치 확인 필요)"
+        "BPSK OFDM 심볼은 앞 n_s/4 + 1 샘플만으로 이상적 조기 검출이 가능하고(정리 3.1), 전체 심볼을 n_s/2 샘플만으로 late-commit할 수 있음(정리 3.3) — 결론적으로 n_s/4 − 1 샘플만큼의 거리 축소가 결정론적으로 성립(따름정리 3.4)",
+        "4-QAM은 이상적 조기 검출에 n_s/2 + 1 샘플 필요(따름정리 3.2). 반심볼 시점에서 late-commit BER이 10% 미만이고, n_s/4 + 3 번째 샘플이 이미 심볼 정보의 90% 이상을 드러내 학습곡선이 가파름",
+        "20 MHz 대역 기준 부반송파 수별 결정론적 거리 축소(BPSK, A = 1): 8개 → 50 ns / 15 m, 16개 → 150 ns / 45 m, 32개 → 350 ns / 105 m, 64개 → 750 ns / 225 m",
+        "IEEE 802.11의 전형적 설정인 20 MHz / 64 부반송파에서 최대 225 m 거리 축소 — 대역폭을 고정한 채 부반송파를 늘릴수록 심볼이 길어져 보안이 나빠지는 구조적 상충을 수치로 보임",
+        "대응책(정보 차원 8점 성상 + 직교 잡음 + 사전공유 무작위 위상 시프트)은 조기 검출에 대해 정보이론적 보안을 제공. 시뮬레이션에서 유효 연속 수열의 BER과 영-확장(zero-extended) 수열의 BER에 차이가 없음을 확인",
+        "저자 결론: 프레임 길이와 부반송파 수를 어떻게 잡아도 OFDM 기반 레인징은 ED/LC에 취약"
       ],
       "limitations": [
-        "원문 전문 미확보 — ACM DL 403, ETH Research Collection은 스크래핑 차단으로 접근 불가(2026-08-10), syssec.ethz.ch 직접 PDF 404, Semantic Scholar openAccessPdf CLOSED. 초록 기준으로만 기록",
-        "저자 Patrick Leu의 ETH 박사논문 'Secure Ranging: Physical-Layer Attacks and Countermeasures'(2023)에 챕터로 실렸을 가능성이 높으나 같은 이유로 확보 실패 — 다음 실행에서 다른 경로 시도",
-        "초록 기준으로는 실기기 무선 실증 없이 이론·시뮬레이션 중심 (확인 필요)"
+        "실기기 무선 실증 없음 — 수학적 증명과 시뮬레이션만. 논문에 실험장비·테스트베드 절 자체가 없음",
+        "BPSK와 4-QAM 두 성상에 한정. 더 조밀한 성상은 5.1.2절에서 정성적으로만 논의",
+        "고정 전이(fixed transition) 모델과 이상적(ideal) 공격자를 가정 — 공격자 처리지연, 하드웨어 전환시간, 실제 채널을 반영하지 않음",
+        "대응책의 대가를 저자 스스로 명시: 잡음 차원에 추가 전력이 필요하고, 위상 보정을 위해 상당한 사전공유 엔트로피가 든다",
+        "보안 레인징에서는 채널 센싱·등화와 cyclic prefix를 쓸 수 없다고 지적하는데(5.3절), 이는 정상 성능을 크게 깎는 제약이나 그 손실을 정량화하지는 않음",
+        "협대역 CS에 대한 직접 적용 없음 — OFDM 다중반송파 구조 분석이므로 CS의 톤 순차 측정 구조로 옮기려면 별도 논증이 필요",
+        "참고문헌에 V-Range(Singh et al.)를 2020년 프리프린트로 인용하나, 코퍼스의 singh-2022-v-range는 NDSS 2022 게재본(year 2022)이라 시간 역행이 되므로 cites에 넣지 않음"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "verification": "verified",
+      "cites": [
+        "singh-2019-uwb-pr",
+        "leu-2020-mtac",
+        "flury-2010-distance-decreasing",
+        "poturalski-2011-db-802-15-4a"
+      ],
+      "cites_source": "fulltext",
       "added": "2026-08-10",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-15"
     },
     {
       "id": "schepers-2021-ftm-security",
@@ -3069,13 +3097,15 @@
       "verification": "verified",
       "cites": [
         "clulow-2006-long-symbols",
+        "flury-2010-distance-decreasing",
         "olafsdottir-2017-carrier-phase",
+        "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-10",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-15"
     },
     {
       "id": "varughese-2026-ble6-pedestrian",
@@ -3445,11 +3475,12 @@
         "abidin-2021-narrowband-ranging",
         "anliker-2023-time-for-change",
         "leu-2022-ghost-peak",
+        "poturalski-2011-db-802-15-4a",
         "singh-2021-4z-security-analysis"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-12",
-      "last_checked": "2026-08-12"
+      "last_checked": "2026-08-15"
     },
     {
       "id": "rasmussen-2010-rf-distance-bounding",
@@ -3511,11 +3542,226 @@
       },
       "verification": "verified",
       "cites": [
-        "clulow-2006-long-symbols"
+        "clulow-2006-long-symbols",
+        "flury-2010-distance-decreasing"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-12",
-      "last_checked": "2026-08-12"
+      "last_checked": "2026-08-15"
+    },
+    {
+      "id": "flury-2010-distance-decreasing",
+      "title": "Effectiveness of Distance-Decreasing Attacks Against Impulse Radio Ranging",
+      "authors": [
+        "Manuel Flury",
+        "Marcin Poturalski",
+        "Panos Papadimitratos",
+        "Jean-Pierre Hubaux",
+        "Jean-Yves Le Boudec"
+      ],
+      "venue": "ACM WiSec",
+      "venue_full": "Proceedings of the Third ACM Conference on Wireless Network Security (WiSec '10), Hoboken, NJ, USA, pp. 117–128",
+      "tier": "wireless",
+      "category": "attack",
+      "year": 2010,
+      "url": "https://dl.acm.org/doi/10.1145/1741866.1741887",
+      "preprint": "https://infoscience.epfl.ch/record/143463",
+      "doi": "10.1145/1741866.1741887",
+      "topics": [
+        "early-detect-late-commit",
+        "distance-reduction",
+        "ir-uwb",
+        "802-15-4a",
+        "energy-detection-receiver",
+        "physical-layer",
+        "relay-attack",
+        "preamble-attack"
+      ],
+      "relevance": "medium",
+      "relevance_note": "Clulow 2006이 '긴 심볼은 위험하다'고 지적한 것을 실제 표준 PHY 위에서 **수치로 환산한 최초의 논문**이다. 내 연구에 쓰이는 방식은 두 가지다. 첫째, 방법론 템플릿이다. '이 PHY에서 ED/LC가 벌어들이는 거리 축소량은 얼마이고, 그 대가로 공격자가 추가로 확보해야 하는 SNR은 몇 dB인가'라는 질문 형식을 세운 것이 이 논문이고, Anliker 2026이 협대역 CS에 대해 하는 일이 정확히 이 질문의 재실행이다. CS 공격의 비용을 논증할 때 같은 축(거리 축소량 × SNR 여유)으로 표를 만들면 심사자가 바로 비교할 수 있다. 둘째, **프리앰블까지 공격해야 한다는 지적**이 CS에 그대로 옮겨진다. 이 논문은 페이로드만 공격하면 부족하고 동기화 구간(SYNC/SFD)까지 밀어야 실제 거리 축소가 성립함을 보였는데, CS도 CS_SYNC로 타이밍을 잡고 PBR 톤으로 위상을 재는 2단 구조라 같은 논리가 걸린다. 코퍼스에서 clulow-2006(개념) → 이 논문(정량화) → leu-2022-ghost-peak(실기기 실증) → anliker-2026(협대역 CS)으로 이어지는 계보의 두 번째 칸이다.",
+      "summary": "IR-UWB, 특히 IEEE 802.15.4a가 물리계층 거리 축소 공격에 얼마나 취약한지를 정량화한다. 저비용 비동기 에너지 검출(ED) 수신기를 가정하고, 표준의 두 필수 모드(LPRF/HPRF)에 맞춘 거리 축소 릴레이 공격을 설계한다. 기존 연구가 페이로드 공격만 다룬 것과 달리, 프리앰블(SYNC/SFD)까지 공격을 확장해야 실제 거리 축소가 성립함을 처음으로 보였다. 표준의 private ranging 모드도 사전 정의된 8개 프리앰블 코드 중에서만 고를 수 있어 보안 이득이 거의 없음을 지적한다. 대응책으로 심볼 길이 단축과 수신기 측 조기 검출(OOK 복조)을 검토하고 각각의 성능 대가를 수치로 제시한다.",
+      "hardware": [
+        "없음 — 실기기 실험 없이 시뮬레이션만 수행. 저자가 이유를 명시함: IR-UWB 하드웨어 가용성이 당시 매우 제한적이었기 때문(\"due to very limited availability of IR-UWB hardware\")"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB — 패킷 단위 IEEE 802.15.4a 전체 시스템 시뮬레이터를 자체 개발 (타이밍 획득, 채널 에너지-지연 프로파일 추정, SFD 검출, 데이터 복호를 모두 구현)",
+        "물리계층 시뮬레이션 정밀도 100 ps",
+        "IEEE 802.15.4a 표준 부속 채널 모델 — residential NLOS(지연확산 약 60 ns)와 office LOS(약 30 ns)"
+      ],
+      "software_verified": true,
+      "results": [
+        "필수 모드에서 외부 공격자가 측정 거리를 최대 140 m 축소, 성공률 99% 이상",
+        "144 m 축소(릴레이 시간이득 480 ns, 128비트 패킷) 기준 LPRF에서는 (SNR_ED = 12 dB, SNR_LC = 14 dB)에서 성공률 0.9869, 그 이상 조합에서 99% 초과 — 정상 동작 대비 ED에 +4 dB, LC에 +6 dB만 더 확보하면 됨",
+        "같은 144 m 축소가 HPRF에서는 (11 dB, 11 dB)에서 성공률 0.9875 — 정상 대비 양쪽 모두 +7 dB. 펄스 간격이 촘촘해 LPRF보다 비용이 크고, 같은 비용이면 축소 거리가 1/4",
+        "패킷 길이를 최대 1016비트로 늘려도 성공률 99% 도달 비용은 HPRF에서 거의 증가 없음, LPRF에서 SNR_ED·SNR_LC 각 약 1.5 dB 증가",
+        "정상(무공격) 동작은 SNR 약 8 dB에서 PER 약 10⁻²",
+        "802.15.4a 필수 모드 파라미터: 페이로드 심볼 T_sym = 1024 ns(LPRF/HPRF 공통), 프리앰블 심볼 T_psym = 3968 ns(LPRF) / 992 ns(HPRF), 칩 길이 T_c = 2 ns",
+        "페이로드 late-commit의 시간이득 상한은 T_sym/2 = 512 ns로 프리앰블 공격 상한(T_sfd)보다 훨씬 작음 — 즉 거리 축소의 대부분은 프리앰블에서 나옴",
+        "대응책 1) 심볼 길이 단축: 표준 비필수 모드에 32 ns 심볼이 있으나 지연확산 근처로 내려가면 ISI가 생겨 저복잡도 비동기 수신기에서 5–10 dB 손실",
+        "대응책 2) 수신기 측 조기 검출(BPPM→OOK 복조): 시간이득을 512 ns에서 채널 지연확산 수준(약 60 ns, 최대 약 20 m)으로 억제. 필수 모드와 호환되고 ISI를 추가하지 않으나 정보의 절반을 버려 정상 성능 약 1.5 dB 손실"
+      ],
+      "limitations": [
+        "실기기 실증 없음 — 전부 시뮬레이션. 저자가 하드웨어 가용성 부족을 이유로 명시",
+        "공격자 처리지연을 0으로 가정한 수치가 다수(140/144 m). 저자는 별도 절에서 통합형 장치나 원격 ARX/ATX 구성에서 약 10 ns(약 3.5 m) 수준의 처리지연이 현실적이라고 논증하지만, 이 값은 본문 수치에 반영되어 있지 않음",
+        "비동기 에너지 검출 수신기 한정 — rake 수신기는 다루지 않음(후속 논문 poturalski-2011-db-802-15-4a에서 다룸)",
+        "외부 공격자(거리 축소 릴레이)에 집중. 악의적 prover(내부 공격)는 범위 밖",
+        "저자 명시 future work: 추가 대응책과 대안적 PHY 공격 조사. 또한 채널 마스크 가중을 극복하는 개선된 late-commit 기법은 미해결로 남김",
+        "IR-UWB 한정 — 협대역 CS의 PBR처럼 위상을 재는 구조에는 직접 적용되지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "clulow-2006-long-symbols"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-15",
+      "last_checked": "2026-08-15"
+    },
+    {
+      "id": "poturalski-2011-db-802-15-4a",
+      "title": "Distance Bounding with IEEE 802.15.4a: Attacks and Countermeasures",
+      "authors": [
+        "Marcin Poturalski",
+        "Manuel Flury",
+        "Panos Papadimitratos",
+        "Jean-Pierre Hubaux",
+        "Jean-Yves Le Boudec"
+      ],
+      "venue": "IEEE TWC",
+      "venue_full": "IEEE Transactions on Wireless Communications, vol. 10, no. 4, pp. 1334–1344",
+      "tier": "journal",
+      "category": "attack",
+      "year": 2011,
+      "url": "https://doi.org/10.1109/TWC.2011.020111.101219",
+      "preprint": "https://infoscience.epfl.ch/server/api/core/bitstreams/fac3e39a-46c3-4d9f-8939-36025959609e/content",
+      "doi": "10.1109/TWC.2011.020111.101219",
+      "topics": [
+        "early-detect-late-commit",
+        "distance-bounding",
+        "ir-uwb",
+        "802-15-4a",
+        "rake-receiver",
+        "countermeasure",
+        "nonce-length",
+        "malicious-prover"
+      ],
+      "relevance": "medium",
+      "relevance_note": "flury-2010의 확장판이자, 이 계보에서 **대응책을 처음 수치로 설계한** 논문이다. CS 연구에 두 가지로 쓰인다. 첫째, '공격자 수신기 vs 정직한 수신기' 조합을 축으로 놓은 표(Table I)의 발상이다. 에너지검출/rake를 교차시켜 각 조합의 시간이득 상한을 따로 적었는데, CS도 초기자와 반사자가 서로 다른 품질의 수신기를 쓸 수 있으므로 같은 형식의 표가 필요하다. 특히 '한쪽만 취약한 수신기를 써도 릴레이 공격자가 상당한 시간이득을 얻는다'는 관찰은 CS의 비대칭 구현(예: 저가 태그 vs 차량 앵커)에 곧바로 대응된다. 둘째, **nonce 길이를 늘려 보안 손실 없이 성능 손실을 상쇄한다**는 아이디어다. 조기 검출 대응책이 심볼의 절반을 버려 생기는 손실을, 논스 비트를 42→108로 늘려 같은 Pguess를 유지하며 흡수했다. CS의 sounding sequence 길이와 스텝 수를 늘려 같은 거래를 할 수 있는지가 직접적인 후속 질문이다. 표준의 성능 최적화 기능(convolutional code, time-hopping)이 오히려 공격 표면이 된다는 지적도 CS 규격을 읽을 때의 관점을 준다.",
+      "summary": "flury-2010을 확장해 IEEE 802.15.4a의 거리 바운딩 내성을 수신기 종류별·공격자 유형별로 정리한다. 외부 거리 축소 릴레이뿐 아니라 악의적 prover(내부 공격)를 함께 다루고, 에너지 검출 수신기와 rake 수신기를 교차시켜 평가한다. 표준의 convolutional code에 이상(anomaly)이 있어 rake를 든 공격자가 에너지 검출 수신기를 상대로 더 큰 거리 축소를 얻거나 탐지되지 않는 공격을 할 수 있음을 밝히고, time-hopping이 악의적 prover의 거리 축소를 성공률과 맞바꿔 키워 준다는 점도 지적한다. 두 취약점 모두 표준의 작은 수정으로 패치 가능하다고 제시한다. 마지막으로 논스 길이를 늘려 보안 수준을 유지한 채 조기 검출 대응책의 성능 손실을 상쇄하는, 표준 호환 대응책을 제안해 거리 축소를 약 10 m 수준으로 억제한다.",
+      "hardware": [
+        "없음 — 실기기 실험 없이 패킷 단위 시스템 시뮬레이션만 수행"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "패킷 단위 IEEE 802.15.4a 전체 시스템 시뮬레이터 — 타이밍 획득, 채널 에너지-지연 프로파일 추정, SFD 검출, 데이터 복호를 모두 구현. 물리계층 정밀도 100 ps. 선행 논문 flury-2010의 평가를 확장한다고 밝히나 구현 언어·툴은 본문에 명시하지 않음",
+        "IEEE 802.15.4a 부속 residential NLOS 채널 모델 (지연확산 T_spread 약 60 ns)"
+      ],
+      "software_verified": true,
+      "results": [
+        "에너지 검출 수신기를 쓰면 내부·외부 공격 모두 수백 미터 규모의 거리 축소가 가능",
+        "rake 공격자 대 에너지 검출 수신기: t_det^A = 48 ns 가정 시 2.8 dB 비용(PER 10⁻², 성공률 99% 상당)으로 시간이득 728 ns — 거리 축소 218 m. 같은 비용에서 ED만 쓰는 공격은 216 ns(65 m)",
+        "페이로드 ED 공격으로 77 m 축소 시 정상 대비 SNR +1.6 dB, 같은 77 m를 LC 공격으로 얻으려면 +4 dB",
+        "convolutional code 이상(anomaly): rake를 든 공격자가 에너지 검출 수신기를 상대로 flury-2010보다 큰 축소를 얻거나, 축소량은 줄이는 대신 탐지되지 않는 공격을 성립시킴. 표준의 작은 수정으로 패치 가능",
+        "time-hopping은 악의적 prover가 성공률을 낮추는 대신 거리 축소를 T_sym/2 + t_THS^max 만큼 키우도록 허용 — 역시 패치 가능",
+        "권장 대응책(수신기 측 조기 검출 + convolutional code 패치): 릴레이 공격의 거리 축소를 약 10 m 수준으로 억제 (t_det = 32 ns 기준). time-hopping 패치까지 더하면 악의적 prover도 같은 수준으로 억제",
+        "논스 길이 상쇄: 보안 수준 P_guess = 2⁻³², 성능 목표 PER_comm = PER_db = 10⁻² 기준으로 기본 논스는 N_nonce = 42비트(허용 오류 N_err = 2). 조기 검출 대응책을 t_det^C = 40 ns로 적용하고 논스를 42→108비트로 늘리면 최대 이론 시간이득 40 ns(약 12 m)까지 낮추면서 PER과 보안 수준을 모두 유지",
+        "공격자 최적 검출시간은 t_det^A = 64 ns(채널 지연확산 수준). 48 ns는 손실 미미, 32 ns는 1–2 dB 손실",
+        "릴레이 공격에서 두 정직한 기기 중 **한쪽만** 대응책 없는 에너지 검출 수신기여도(다른 쪽이 rake여도) 공격자는 상당한 시간이득을 얻음"
+      ],
+      "limitations": [
+        "실기기 실증 없음 — 전부 시뮬레이션",
+        "확보한 전문이 IEEE TWC 게재본이 아니라 EPFL 기술보고서 확장판(EPFL-REPORT-150112)임. 저자가 '같은 제목으로 TWC에 게재된 논문의 확장판'이라고 명시하고 있어 본문 내용은 대응되나, 게재본의 절 번호·그림 번호와 완전히 일치한다고 보장할 수 없음",
+        "residential NLOS 단일 채널 모델로만 평가",
+        "제안 대응책의 대가는 논스 비트 증가에 따른 송수신 부담 — 저자는 프리앰블이 이미 길어서 수용 가능하다고 논증하나 에너지 예산은 정량화하지 않음",
+        "IR-UWB 한정 — 협대역 위상 기반 거리측정에는 직접 적용되지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "flury-2010-distance-decreasing"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-15",
+      "last_checked": "2026-08-15"
+    },
+    {
+      "id": "schwarzbach-2026-cross-tech-ranging",
+      "title": "Bridging the Indoor-Outdoor Gap: Cross-Technology Ranging for Seamless Robot Navigation",
+      "authors": [
+        "Paul Schwarzbach"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv preprint arXiv:2604.25541 (TUD Dresden University of Technology, Institute of Traffic Telematics)",
+      "tier": "preprint",
+      "category": "measurement",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2604.25541",
+      "preprint": "https://arxiv.org/abs/2604.25541",
+      "doi": null,
+      "topics": [
+        "ble-phase-based-ranging",
+        "uwb",
+        "wifi-ftm",
+        "gnss",
+        "ranging-residual",
+        "dataset",
+        "ground-truth",
+        "multipath"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 이전 세대 BLE 위상 기반 거리측정이 **밀리미터급 기준값 대비 실제로 얼마나 틀리는지**를 같은 실험장에서 UWB·Wi-Fi FTM·GNSS와 나란히 잰 드문 자료다. BLE PBR이 모든 구역에서 5–12 m의 양의 편향과 네 기술 중 가장 넓은 산포(실외 σ 약 12 m)를 보이는데, 저자 스스로 이것이 배치된 Metirionic DMK-215의 특성이지 현재 BLE Channel Sounding의 성능이 아니라고 못박는다. 내 연구에는 두 가지로 쓰인다. 첫째, **CS가 무엇을 개선했는지를 말할 때의 기준선**이다. 'CS는 PBR과 RTT를 결합해 정확도를 올렸다'는 서술을 규격 인용이 아니라 실측 대비로 쓸 수 있다. 둘째, 오차의 형태가 기술마다 다르다는 관찰(UWB는 0 근처 본체 + 드문 무거운 꼬리, BLE PBR은 큰 편향 + 넓은 산포)은 **탐지 지표 설계의 전제**를 건드린다. 조작 탐지가 잔차 분포를 가정하는 순간 그 가정이 기술마다 다르다는 뜻이고, CS의 NADM 계열 지표가 어떤 분포를 암묵적으로 가정하는지 되물어야 한다. 데이터셋이 Zenodo에 공개되어 있어 재분석이 가능하다는 점도 실용적 가치다.",
+      "summary": "실내외 경계를 넘나드는 이동 로봇의 측위를 위해, GNSS·UWB·Wi-Fi FTM·BLE 네 기술의 원시 거리측정을 시간 동기화해 밀리미터급 기준값과 비교한 HYMN 데이터셋의 예비 분석이다. 독일 토르가우의 산업시설(44 m × 18 m 홀 + 진입 게이트)에서 실외·전이·실내 세 구역에 걸친 48개 측정점을 잡고, 구역별 측정 가용성과 거리 잔차 분포를 특성화한다. 위성 기반과 지상 기반 두 계열이 상보적이며, 하필 실내외 전이 구간에서 양쪽의 약점이 겹친다는 것이 핵심 관찰이다. 네 기술의 잔차 형태가 질적으로 다르므로 기술당 단일 공분산 가정은 성립하지 않는다고 결론짓는다. 데이터셋은 Zenodo에 공개되어 있다.",
+      "hardware": [
+        "GNSS: NovAtel PwrPak7",
+        "UWB: ZigPos RTLS (앵커 10개)",
+        "Wi-Fi FTM: HPE Aruba 630 (802.11mc, 20–80 MHz 대역폭)",
+        "BLE 위상 기반 거리측정: Metirionic DMK-215 (2.4 GHz ISM 대역 스윕, 채널별 IQ 샘플 수집 후 역푸리에로 조대 CIR 복원)",
+        "기준값(ground truth): Leica TS16 토탈스테이션, 밀리미터 정밀도 — 국소 직교좌표계도 이것으로 고정",
+        "측정 현장: 독일 토르가우 산업시설, 44 m × 18 m 홀, 측정점 48개"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "논문에 처리 툴체인·프레임워크 이름은 명시하지 않음. GNSS 처리 조건만 기술: CODE 정밀 위성시계, CODE 정밀궤도 SP3, Klobuchar 전리층 모델(방송 계수, GPS 계수를 단일주파수 대용으로 Galileo E1에도 적용), 단순 지수 대류권 모델, Sagnac/지구자전 보정 후 최고고도각 위성 기준 BSSD"
+      ],
+      "software_verified": true,
+      "results": [
+        "BLE PBR: 모든 구역에서 5 m–12 m의 양의 편향, 네 기술 중 가장 넓은 산포(실외 σ 약 12 m). 저자는 잔여 위상 보정 오차·IQ 불균형·ISM 대역 다중경로가 상쇄되지 않고 같은 방향으로 누적되기 때문으로 설명",
+        "UWB: LOS 본체는 모든 구역에서 무편향(실내 중앙값 0.05 m), P95|e|는 실내 0.99 m / 전이 1.62 m / 실외 3.70 m. 실내 σ 약 10 m는 본체 특성이 아니라 표적 혼동으로 추정되는 극단 이상치가 부풀린 값",
+        "Wi-Fi FTM: RTT 보정 오프셋이 구역별로 다름 — 전이구역이 가장 좁고(편향 1.17 m, σ 2.98 m), 실내가 중간(편향 2.62 m)",
+        "GNSS BSSD: 세 구역 모두 9 m–13 m의 양의 편향과 σ 약 10 m — 단일주파수 모델 잔차 수준",
+        "가시 위성 수는 실외 25–30개에서 실내 거의 0으로 급락. 게이트 인접 전이구역은 12–20개를 유지하나 몇 미터만 더 들어가면 소수로 붕괴",
+        "UWB 관측 수는 반대로 실외 약 5개에서 실내 전체 앵커 10개로 증가 — 앵커 배치가 원인",
+        "Wi-Fi와 BLE는 전 구역에서 고르게 가용하며, 변동은 구역보다 앵커 기하와 차폐가 지배"
+      ],
+      "limitations": [
+        "저자 명시: 예비(preliminary) 결과임",
+        "저자 명시: 연속 주행 궤적이 아니라 정지 측정점에서만 수집",
+        "저자 명시: 측정점 수가 세 구역을 모두 덮기는 하나 여전히 적고, 구역별 관측 수가 고르지 않아 σ가 큰 구역에서 부풀려짐 (구역 간 비교에는 P95|e|가 더 안정적이라고 저자가 권고)",
+        "저자 명시: 오차 모델 적합(모수 분포, 구역별 파라미터화, 기술 간 상관 분석)은 진행 중이며 후속 논문에서 보고 예정",
+        "**BLE 결과가 Channel Sounding이 아님** — 저자가 명시적으로 못박음. 측정 대상은 배치된 Metirionic DMK-215이고, 표준은 이후 PBR과 RTT를 결합한 BLE Channel Sounding으로 이동했으므로 이 수치를 CS 성능으로 읽으면 안 됨",
+        "단일 현장(토르가우 산업시설) 단일 캠페인 — 환경 일반화 근거 없음",
+        "보안 분석 없음 — 조작이 아니라 자연적 오차만 다룸",
+        "저자가 생성형 AI(Claude, Claude Code CLI) 사용을 원고 작성과 평가 코드 개발에 썼다고 공개 선언함"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": "https://doi.org/10.5281/zenodo.17979434"
+      },
+      "verification": "verified",
+      "cites": [
+        "suresh-2025-cs-vehicle-access"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-15",
+      "last_checked": "2026-08-15"
     }
   ]
 }

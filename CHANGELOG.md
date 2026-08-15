@@ -2,6 +2,69 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-15 (12차: 신규 3건, 보강 6건 — ED/LC 계보의 빠진 두 칸을 메움)
+
+이번 실행의 수확은 **접근 경로**에서 나왔습니다. ACM DL 이 막혀 있어 `partial` 로
+방치돼 있던 항목들을 뚫으려고 `dl.acm.org/doi/fullHtml/` 을 시도했더니 Leu 2021 이
+통째로 열렸습니다(다른 ACM 논문은 여전히 Cloudflare 차단). 그 전문의 참고문헌을 캐다가
+코퍼스의 ED/LC 계보에 **두 칸이 비어 있었다는 것**을 발견했고, EPFL infoscience 의
+DSpace REST API(`/server/api/discover/search/objects` → `/bundles` → `/bitstreams`)로
+둘 다 전문을 확보했습니다. 이 경로는 앞으로도 EPFL·ETH 계열 논문에 재사용할 수 있습니다.
+
+- 신규: **Effectiveness of Distance-Decreasing Attacks Against Impulse Radio Ranging**
+  (Flury 외, ACM WiSec 2010, 관련도 보통, `verified`). Clulow 2006 이 개념으로 지적한
+  '긴 심볼' 문제를 **실제 표준 PHY 위에서 처음 수치로 환산**한 논문입니다. 802.15.4a
+  필수 모드에서 거리 축소 **140 m 를 성공률 99% 이상**으로 달성하고, 그 대가가 정상
+  동작 대비 **LPRF 에서 ED +4 dB / LC +6 dB**, HPRF 에서 양쪽 +7 dB 임을 보입니다.
+  20 MHz 부반송파별 축소량 표(8→15 m, 64→225 m)와 함께, **페이로드만 공격해서는
+  부족하고 프리앰블(SYNC/SFD)까지 밀어야 한다**는 지적이 CS 의 CS_SYNC + PBR 2단
+  구조에 그대로 걸립니다. 하드웨어 없이 MATLAB 시뮬레이션(물리계층 100 ps 정밀도)만
+  사용했다는 점도 전문에서 확인했습니다.
+- 신규: **Distance Bounding with IEEE 802.15.4a: Attacks and Countermeasures**
+  (Poturalski 외, IEEE TWC 2011, 관련도 보통, `verified`). 위 논문의 확장판이자 이
+  계보에서 **대응책을 처음 수치로 설계한** 논문입니다. rake 공격자 대 에너지검출
+  수신기에서 2.8 dB 비용으로 **218 m** 축소, ED 단독은 65 m. 표준의 convolutional
+  code 이상과 time-hopping 이 각각 공격 표면이 된다는 지적이 나옵니다. 가장 쓸모 있는
+  것은 마지막 거래입니다 — 조기 검출 대응책이 심볼 절반을 버려 생기는 성능 손실을
+  **논스 길이를 42→108 비트로 늘려** 흡수하고, P_guess = 2^-32 와 PER 을 유지한 채
+  거리 축소를 **약 12 m** 로 억제합니다. CS 의 sounding sequence 길이·스텝 수로 같은
+  거래가 되는지가 바로 후속 질문입니다. 확보한 전문이 TWC 게재본이 아니라 EPFL
+  기술보고서 확장판이라는 점은 `limitations` 에 적어 두었습니다.
+- 신규: **Bridging the Indoor-Outdoor Gap: Cross-Technology Ranging** (Schwarzbach,
+  arXiv 2026, 관련도 보통, `verified`). CS **이전 세대** BLE 위상 거리측정이 밀리미터급
+  기준값(Leica TS16) 대비 실제로 얼마나 틀리는지를 UWB·Wi-Fi FTM·GNSS 와 같은
+  실험장에서 나란히 잰 자료입니다. BLE PBR 은 전 구역에서 **5–12 m 양의 편향, 실외
+  σ 약 12 m** 로 네 기술 중 최악인 반면 UWB 는 LOS 본체가 무편향(실내 중앙값 0.05 m).
+  저자가 "이건 배치된 Metirionic DMK-215 의 특성이지 현재 BLE Channel Sounding 이
+  아니다" 라고 못박은 문장이 중요합니다 — CS 가 무엇을 개선했는지 말할 때 규격 인용이
+  아니라 실측 대비로 쓸 수 있는 기준선입니다. 데이터셋은 Zenodo 공개.
+- 보강: **Security of Multicarrier Time-of-Flight Ranging** (Leu 2021) —
+  `partial` → **`verified`**. ACM fullHtml 로 전문 확보. 하드웨어 없음(수학적 증명 +
+  시뮬레이션만)을 확인해 `hardware_verified`/`software_verified` 를 채웠고, 지금까지
+  "구체 수치 확인 필요" 로 비어 있던 `results` 를 정리 3.1~따름정리 3.4 와 거리 축소
+  표(20 MHz / 64 부반송파 → **225 m**)로 대체했습니다. `cites` 4건 추출.
+- 보강: **Protecting HRP UWB Ranging System** (uwb-sv-2023-ccs) — **DOI 가 틀려
+  있었습니다.** `10.1145/3576915.3623111` 은 실제로는 range-revocable pseudonym 논문의
+  DOI 이고, 이 논문은 `10.1145/3576915.3623145` (pp. 622–635) 입니다. Crossref 대조로
+  확정했습니다. BibTeX 로 새어 나가고 있던 오류라 서지정보 신뢰도에 직결됩니다.
+- 보강: **Physical-Layer Attacks on Chirp-Based Ranging Systems** (Ranganathan 2012) —
+  같은 유형의 오류. `10.1145/2185448.2185452` (실제로는 jamming 논문) → 정정
+  `10.1145/2185448.2185453`. Crossref 대조.
+- 보강: WiSec 2026 3건(**Timestamps Unchained**, **BlueBrothers**, **HardaBLE**) —
+  2026-06-29 프로시딩 발행이 확인되어 `doi: null` 이던 세 항목에 DOI·페이지·정식
+  venue 를 채웠습니다. 본문은 여전히 못 열었으므로 `verification` 은 `unverified` 유지.
+- 인용: 새 노드 두 개가 코퍼스 전반에 깊이 박혀 있었습니다. 정규화 대조로 **기존 14개
+  항목의 `cites` 를 갱신**(Flury 2010 을 인용하는 논문 10건, Poturalski 2011 을 인용하는
+  논문 8건). 인용 관계가 121건 → 152건으로 늘었습니다.
+- 표준: 변경 없음. Core Specification 은 6.3 이 여전히 최신이고, Ranging Profile/Service
+  는 v1.0, Channel Sounding Inline PCT Transfer 는 VSr01_PR 초안 그대로입니다.
+  IEEE 802.15.4ab 도 공식 TG 페이지에 상태 변화가 게시되지 않았습니다.
+- 실패: ACM DL 이 Cloudflare 로 자동 요청을 차단해 `uwb-sv-2023-ccs`(OpenAlex 기준
+  **gold OA 인데도** 차단), `singh-2021-4z-security-analysis`, `ranganathan-2012-chirp-attacks`,
+  `nagaraj-2025-fbr`(역시 gold OA), WiSec 2026 3건의 본문을 열지 못했습니다.
+  curl(브라우저 UA 포함)과 WebFetch 모두 403. `zand-2019-ble-pbr` 은 TU/e 연구
+  포털에서 저자 전체 명단과 초록 원문은 재확인했으나 전문 파일이 없어 `partial` 유지.
+
 ## 2026-08-12 (11차: 신규 3건, 보강 2건 — 보안수준을 '측정'하는 방법론 계보 편입)
 
 목차 훑기(WiSec/NDSS/S&P/USENIX 2026, arXiv)에서는 신규가 나오지 않았습니다. 대신
