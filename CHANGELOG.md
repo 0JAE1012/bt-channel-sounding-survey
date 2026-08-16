@@ -2,6 +2,59 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-17 (13차: 신규 3건, 보강 2건 — 브라우저 UA 로 ACM DL 이 부분적으로 뚫림)
+
+이번 실행의 수확도 **접근 경로**에서 나왔습니다. `dl.acm.org/doi/pdf/` 요청에 브라우저
+User-Agent 를 붙였더니 **2012 년 WiSec 논문이 그대로 열렸습니다**. 최근 논문(WiSec '26,
+IoT '25, JETC 2022)은 여전히 Cloudflare 가 막으므로 **연차가 오래된 ACM 논문에만 통하는
+경로**로 보입니다. 이 경로로 코퍼스에 마지막까지 남아 있던 `unverified` 고전인
+Ranganathan 2012 를 열었고, 저자 개인 페이지(`francozappa.github.io`)에서 BLUFFS 전문도
+확보했습니다.
+
+- 신규: **Security Assessment of Phase-Based Ranging Systems in a Multipath Environment**
+  (Riaz 외, ACM JETC 18(4), 2022, 관련도 **높음**, `partial`). 코퍼스에 없던 축을 채웁니다 —
+  **다중경로 조건에서의 MCPR 거리축소**입니다. olafsdottir-2017 과 staat-2022 는 채널을
+  대체로 우호적으로 두었는데, 이 논문은 "다중경로가 달라져도 임의의 거리 감소가
+  성립하는가"를 묻고 **30 m 이격을 1 m 미만으로 스푸핑**했다고 보고합니다. 사실이라면
+  "다중경로가 공격을 어렵게 한다"는 흔한 반론이 약해집니다. ACM DL 차단으로 전문은
+  못 열었고, 서지정보는 Crossref 로 확정했습니다(저자 7인 전체 명단 확보).
+- 신규: **Spectrum-Flexible Secure Broadcast Ranging** (Vo-Huu 외, ACM WiSec 2021,
+  관련도 **높음**, `verified`). "2.4 GHz 에서 CS 급 좁은 대역으로 물리계층 공격에 견디는
+  거리측정이 되는가"의 **직접 대조군**입니다. 25 MHz 에서 50 cm, 100 MHz 에서 15 cm 를
+  실측으로 내는데 수단은 정확도 기법이 아니라 설계 원칙입니다 — **프리앰블을 없애고
+  요청·응답 전체를 PRF 난수열로 만들어 잡음과 구별 불가능하게 하고, 응답 시각까지
+  무작위화**합니다. CS 는 시퀀스는 감추지만 타이밍과 채널 스케줄은 규격으로 공개된다는
+  대비가 여기서 선명해집니다. USRP X310 + 커스텀 FPGA, GNU Radio/UHD, 5 µs 버스트.
+- 신규: **Resilient Random Time-hopping Reply against Distance Attacks in UWB Ranging**
+  (Gou 외, arXiv 2406.06252v2, 관련도 보통, `verified`). 위와 같은 문제를 방어 쪽에서
+  건드립니다. 답신 간격 T_reply 를 매 라운드 난수화해 **Qorvo DW3110 실측에서 Ghost Peak
+  성공률을 SDC 모드 60.67% → 0% (각 10,000 회)** 로 낮춥니다. 부수 소득으로 **SDC 모드가
+  Mode1(0.3%)보다 200 배 취약**하다는 실측치를 얻었습니다. CS 관점의 값은 "이 방어를
+  CS 에 쓸 수 없다"는 데 있습니다 — CS 의 스텝 타이밍은 T_IFS 와 서브이벤트 스케줄로
+  고정되어 있으므로, 왜 못 쓰는지를 논증하면 표준 수준 개선 제안으로 이어집니다.
+- 보강: **Physical-Layer Attacks on Chirp-Based Ranging Systems** (Ranganathan 2012) —
+  `unverified` → `verified`, 관련도 낮음 → 보통. 전문에서 **공격자 하드웨어 지연
+  t_hw = 87 ns (Spartan 3A zero-crossing 검출 7 ns 포함)**, **chirp 1 µs 에서 150 m /
+  4 µs 에서 600 m 축소**, **조기검출 정확도 100% 구간(t_ed = T_chirp 의 20~70%, 실채널)**,
+  그리고 **(7,4) Hamming 오류정정이 공격 여유를 넓혀 chirp 의 10% 만 보고 90% 지점까지
+  늦게 커밋해도 성립**한다는 관찰을 채웠습니다. 저자들이 "USRP 류는 처리 지연이 µs 라
+  ED/LC 에 부적합"이라고 명시한 대목은 내 FPGA 경로 판단의 선행 근거입니다.
+  hardware/software 모두 `verified`.
+- 보강: **BLUFFS** (Antonioli, CCS 2023) — `partial` → `verified`. 장비(CYW20819 보드 +
+  Linux 노트북), 도구(InternalBlue, Ghidra, ARM Thumb-2 패치 7종), 규모(**17 종 칩 / 18 개
+  기기, 기기당 15 분 미만**), 대응책 비용(**LMP 명령 1 개 + 공중 48 바이트 + 함수 호출 3 회**),
+  코드 링크를 채웠습니다. 동시에 **`relevance_note` 의 적용 범위를 좁혔습니다** — 이 공격은
+  Bluetooth Classic 의 LSC 세션 확립 대상이고 CS 가 쓰는 LE Secure Connections 가 아닙니다.
+  CS 로의 함의는 **"논스 없이 일방적·반복 가능한 키 유도라는 근본 원인이 CS Security
+  Start 에도 있는가"**라는 질문 형태로만 남깁니다.
+- 인용 관계: 152 → 171건 (자동 추출 + 참고문헌 육안 대조로 Vo-Huu→Flury, Gou→UWBAD 2건
+  수동 보정 — 줄바꿈으로 제목이 깨져 자동 추출이 놓친 것들).
+- 표준: 변경 없음. Bluetooth SIG 스펙 목록 재확인 — Core 6.3 이 최신이고 Inline PCT
+  Transfer 는 여전히 `VSr01_PR` 공개검토 초안. 다음 코어 릴리스는 11월경 예상.
+- 실패: JETC 2022(Riaz), IoT '25(Nagaraj FBR), WiSec '26(Timestamps Unchained) 전문 —
+  ACM DL 이 브라우저 UA 를 붙여도 최근 논문은 차단. WCNC 2019(Zand) — IEEE Xplore 유료,
+  Unpaywall 기준 OA 사본 없음(3회 연속 실패, 다른 경로 필요).
+
 ## 2026-08-15 (12차: 신규 3건, 보강 6건 — ED/LC 계보의 빠진 두 칸을 메움)
 
 이번 실행의 수확은 **접근 경로**에서 나왔습니다. ACM DL 이 막혀 있어 `partial` 로
