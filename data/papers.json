@@ -1,7 +1,7 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-17",
-  "last_run": "2026-08-17",
+  "updated": "2026-08-18",
+  "last_run": "2026-08-18",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
   "citation_edges": 171,
   "papers": [
@@ -80,7 +80,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-18",
       "cites": [
         "abidin-2021-narrowband-ranging",
         "clulow-2006-long-symbols",
@@ -90,7 +90,8 @@
         "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -164,11 +165,12 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-08-18",
       "cites": [
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -235,7 +237,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
         "leu-2020-mtac",
@@ -245,7 +247,8 @@
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2021-4z-security-analysis",
-        "singh-2022-v-range"
+        "singh-2022-v-range",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -306,13 +309,14 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
         "olafsdottir-2017-carrier-phase",
         "poturalski-2011-db-802-15-4a",
-        "singh-2019-uwb-ed"
+        "singh-2019-uwb-ed",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -341,32 +345,45 @@
       ],
       "relevance": "medium",
       "relevance_note": "표준 자체를 보안 분석 대상으로 삼는 방법론. Bluetooth Core 6.x의 CS 규격에 동일한 분석 틀을 적용하는 연구 설계의 참고 모델.",
-      "summary": "IEEE 802.15.4z HRP UWB의 ToF 거리측정 보안을 표준 문서 수준에서 분석하고, STS 기반 보호가 제공하는 보안 수준과 그 한계를 정량화한다.",
+      "summary": "IEEE 802.15.4z HRP UWB의 ToA 추정 보안에 대한 최초의 공개 분석이다. 표준과 802.15.4z 태스크그룹 문서로부터 STS가 실제로 어떻게 쓰이고 수신기가 ToA를 어떻게 계산하는지를 재구성한 뒤, 리딩엣지 검출에 쓰이는 두 임계값(MPEP, PAPR)과 백서치 윈도우 길이를 축으로 성능과 보안을 동시에 쓸어 본다. 두 공격을 정의한다 — Cicada++(STS 구간에 공격 펄스를 주입해 앞선 경로를 만드는 공격)와 Adaptive Injection(수신기가 보는 채널 임펄스응답을 공격자도 관측할 수 있다고 가정하는 강한 공격). 결론은 트레이드오프다. 오검출률이 낮은 수신기 설정에서는 공격 성공률이 높고, 공격을 막는 설정에서는 정상 측정이 부정확해진다 — 이 수신기 설계로는 둘을 동시에 만족하는 설정이 없다.",
       "hardware": [
-        "분석 중심 연구 — 실측 장비 구성 원문 확인 필요"
+        "없음 — MATLAB 시뮬레이션 전용 (전문 확인). 하드웨어 실험이나 상용 칩 실측은 수행하지 않음"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "분석/시뮬레이션 도구 — 원문 확인 필요"
+        "MATLAB (STS를 4,096개 BPSK 변조 펄스로 모델링, 펄스 반복주파수 124.8 MHz — 802.15.4z 규격값)",
+        "IEEE 802.15.4a UWB 채널모델 (residential / office / outdoor / industrial, LoS·NLoS)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "STS 길이와 거리 축소 공격 성공 확률 사이의 정량적 관계 도출",
-        "표준이 규정한 파라미터 조합 중 취약 구성 식별"
+        "핵심 트레이드오프: 수신기 파라미터 (백서치, PAPR) = (20, 4)에서 오검출률 0.96% 미만일 때 Cicada++ 성공률 88.4%. 오검출률이 1.5% 미만인 모든 설정에서 공격 성공률이 최소 50% — 이 수신기 설계로는 신뢰성과 보안을 동시에 만족하는 설정이 없다",
+        "채널 의존성: 모든 채널이 Cicada++에 취약. Industrial LoS에서 성공률이 상대적으로 더 높다 — 리딩엣지가 가장 강한 상관 피크여서 백서치 윈도우를 길게 잡을 수 있고, 그만큼 앞선 피크를 끼워 넣을 여지가 커진다. '깨끗한 채널이 오히려 거리축소에 더 취약'이라는 반직관적 결론",
+        "정밀 주입 성공률 (수신기 파라미터 (20,8), 각 값은 정상·공격 신호 각각 1,600개 채널에 대해 계산): 리딩엣지보다 ε = 100 ns 앞선 지점에 δ = 4 ns 정밀도로 피크를 넣을 확률이 Cicada++ 6.15%, Adaptive Injection 14.21%. ε = 100 ns / δ = 12 ns에서는 각각 17.34%, 29.44%",
+        "Adaptive Injection이 Cicada++보다 '의도한 위치에' 피크를 만드는 능력에서 우세 — 랑잉 패킷이 여러 STS 세그먼트를 쓸 때 특히 효과적",
+        "MPEP 임계값을 너무 낮게(예: 5σ) 잡으면 수신기가 리딩엣지를 잡음으로 버리고 더 강한 다중경로 성분을 리딩엣지로 오인 — 보안은 좋아지지만 정상 측정이 부정확해진다",
+        "ToA가 오직 STS에만 근거하므로 HRP의 보안은 리딩엣지 검출에 전적으로 달려 있다. 표준은 데이터 심볼 도착시각을 함께 쓰는 거리한정(distance commitment) 방식을 HRP에 대해 규정하지 않는다"
       ],
       "limitations": [
-        "실제 칩셋 구현 편차 미반영",
-        "UWB 한정"
+        "시뮬레이션 전용 — 하드웨어 실측 없음. 저자들이 결론에서 '업계가 배포한 HRP 구현은 비공개라 실제로 어떤 트레이드오프를 택했는지 알 수 없고, 배포된 칩에 대한 더 많은 연구가 필요하다'고 명시",
+        "수신기 설계는 표준과 태스크그룹 문서로부터 '가장 그럴듯한 방식'을 재구성한 것 — 실제 상용 수신기와 다를 수 있음",
+        "채널에 추가 잡음이나 경로손실을 넣지 않았다 (오검출률과 공격 성공률에 비례적으로 영향을 준다는 이유). 전송전력 변화로만 거리 효과를 표현",
+        "공격자 채널은 정상 송신자 채널과 '같은 종류지만 다른 인스턴스'로 모델링 — 공격자가 송신자 근처에 있다는 가정"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "singh-2019-uwb-pr",
+        "leu-2020-mtac",
+        "flury-2010-distance-decreasing",
+        "poturalski-2011-db-802-15-4a",
+        "clulow-2006-long-symbols"
+      ],
+      "cites_source": "fulltext",
       "category": "analysis"
     },
     {
@@ -877,14 +894,15 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-18",
       "cites": [
         "anliker-2023-time-for-change",
         "leu-2022-ghost-peak",
         "secure-ranging-4z-hrp-2024",
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
-        "uwb-sv-2023-ccs"
+        "uwb-sv-2023-ccs",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -1190,13 +1208,14 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
-        "rasmussen-2010-rf-distance-bounding"
+        "rasmussen-2010-rf-distance-bounding",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -1258,7 +1277,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1266,7 +1285,8 @@
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2019-uwb-ed",
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -1334,13 +1354,14 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-ed",
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -1371,33 +1392,48 @@
       ],
       "relevance": "medium",
       "relevance_note": "Ghost Peak 계열 공격에 대한 탐지 기반 방어이자 국내 연구진(고려대) 성과. STS를 하위 필드로 쪼개 상호상관 일관성을 검사하는 발상은 CS의 NADM 지표 설계를 개선할 때 그대로 참고할 수 있다. Anliker 2026이 CS의 NADM 3종을 모두 무력화했으므로, sub-template 방식이 NGD 공격에도 통하는지가 곧바로 후속 연구 질문이 된다. 협대역 CS의 sounding sequence에 같은 분할 검증을 적용할 수 있을지가 핵심.",
-      "summary": "HRP UWB 거리측정에 대한 실용적 거리 축소 공격을 막는 방어 기법(UWB-SV)을 제안한다. UWB 프레임의 STS 필드를 여러 하위 필드로 나누고, 각 하위 필드와 대응 로컬 템플릿 간 상호상관 결과의 일관성을 분석해 거리 축소 공격을 탐지한다.",
+      "summary": "HRP UWB에서 거리축소 공격을 막는 UWB-SV(sub-template verification)를 제안한다. 착상은 단순하다 — 수신한 STS 필드와 로컬 템플릿을 각각 여러 서브필드/서브템플릿으로 쪼개고, 부분 상호상관 결과들이 서로 일관적인지를 검증한다. 공격자가 STS를 조작하면서 모든 부분의 일관성까지 맞추기는 어렵기 때문에 탐지가 된다. 핵심 장점은 배포 가능성이다 — 802.15.4z 태스크그룹이 논의했던 '다중 세그먼트' 방식과 달리 STS를 4,096비트 단일 세그먼트로 쓰는 현행 상용 기기(Digital Key 표준 포함)에 그대로 적용된다. 피해자-공격자 채널 조합 16종에서 평가해 실외 환경 평균 탐지율 96.24%, 오탐률 0.32%를 보고하고, DWM3000 실측으로 추가 연산 비용이 STS 필드당 125.9 µs임을 보인다.",
       "hardware": [
-        "확인 필요 — 원문 대조 필요"
+        "Qorvo DWM3000 모듈 + STMicroelectronics NUCLEO-Z429 보드 (연산 오버헤드 실측 전용 — 시스템 클록 해상도 4 ns)",
+        "공격 실험은 하드웨어 없이 시뮬레이션 (아래 software 참조)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 원문 대조 필요"
+        "MATLAB (물리계층 시뮬레이션 — Digital Key 3.0 규격 파라미터, STS 4,096개 BPSK 변조 펄스)",
+        "IEEE 802.15.4a 태스크그룹 채널모델 (실내/실외, LoS·NLoS 조합 16종, 채널·ξ 당 1,000회 반복)",
+        "공개 코드/데이터셋: https://github.com/kyunghojoo/uwb-sv"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "피해자-공격자 간 16가지 채널 조건에서 종합 평가",
-        "실외 환경 공격 탐지율 96.24%, 오탐률 0.32%"
+        "탐지 성능: 실외 환경 평균 공격 탐지율 96.24%, 오탐률(FPR) 0.32% (피해자-공격자 채널 조합 16종 평가)",
+        "PAPR = 8 설정에서 UWB-SV 적용 전 거리축소 성공률은 공격 펄스 전력 ξ = 15 dB일 때 약 4% — 실용적 공격에는 ξ > 15 dB가 필요. UWB-SV 적용 후 최악의 경우도 약 2% 이하로 떨어지고, ξ > 20 dB에서는 완전 탐지",
+        "ξ가 클수록 서브 CIR의 분산이 커져 오히려 탐지가 쉬워진다 — 공격 성공에 필요한 강한 펄스가 곧 탐지 신호가 되는 구조",
+        "연산 오버헤드 (DWM3000 실측, 시간간격 200회 평균): 서브템플릿 8개 기준 15.747 µs × 8 = 125.976 µs. UWB-SV 없는 기본 처리지연이 125.9 µs이므로 약 +100%. 일반적인 랑잉 주기 10~100 ms 대비 무시할 수준",
+        "지나치게 강한 공격 펄스는 가짜 리딩엣지를 만드는 동시에 CIR의 최대 피크 위치까지 왜곡시켜 거리축소 대신 '랑잉 거부(denial-of-ranging)'를 유발 — ToA가 666 ns 이상 축소되는 경우로 정의",
+        "설계 파라미터: Phase 2 검증에서 최대 피크 위치 표준편차의 99%가 50 미만에 들어옴 — 이 값이 일관성 임계값의 근거"
       ],
       "limitations": [
-        "확인 필요 — 원문 대조 필요",
-        "UWB HRP 한정 — 협대역 CS 적용 여부 미검증",
-        "원문 미확보 — OpenAlex 기준 gold OA이나 ACM DL이 Cloudflare로 자동 요청을 차단(2026-08-15 curl·WebFetch 모두 403). 대체 미러 없음"
+        "링크버짓이 낮은 상황(신호 감쇠나 심한 다중경로)에서는 세 단계 검증값이 모두 임계를 넘겨 오탐이 발생. 저자들의 대응은 '측정 거리가 근접 검증 상한(수 m) 이내이고 링크버짓이 충분한 경우에만 UWB-SV를 적용하라'는 운용 제약",
+        "공격 실증은 시뮬레이션 — 하드웨어 실측은 연산 오버헤드 측정에만 사용. 실제 공격 장비로 UWB-SV를 우회하려는 시도는 수행되지 않음",
+        "STS 4,096비트 단일 세그먼트를 전제 — 다중 세그먼트를 쓰는 미래 구성에서의 이득은 별도 평가 필요"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "leu-2022-ghost-peak",
+        "singh-2019-uwb-pr",
+        "singh-2021-4z-security-analysis",
+        "leu-2020-mtac",
+        "rasmussen-2010-rf-distance-bounding",
+        "francillon-2011-pkes-relay",
+        "cremers-2012-distance-hijacking"
+      ],
+      "cites_source": "fulltext",
       "category": "defense"
     },
     {
@@ -1426,30 +1462,55 @@
       ],
       "relevance": "medium",
       "relevance_note": "상용 하드웨어의 타임스탬핑 파이프라인을 리버스 엔지니어링해 ToF 프로토콜을 얹는 접근. CS 지원 칩에서 raw step data와 타이밍 정보를 어디까지 끌어낼 수 있는지 조사할 때 방법론이 그대로 참고된다.",
-      "summary": "상용 802.11 기기의 고정밀 타임스탬핑 파이프라인을 리버스 엔지니어링해 ToF 프로토콜을 구현하고, 미터 수준의 근접 판정을 가능하게 한다.",
+      "summary": "거리한정(distance bounding) 연구가 SDR이나 UWB 칩 같은 특수 플랫폼에 갇혀 있던 이유는 상용 Wi-Fi 칩의 나노초급 타임스탬프가 폐쇄 펌웨어 안에 잠겨 FTM 절차로만 얻을 수 있기 때문이다. 이 논문은 ESP32-C3의 Wi-Fi 스택을 리버스 엔지니어링해 그 잠금을 푼다. 발견의 핵심은 하드웨어가 FTM 프레임뿐 아니라 **일반 OFDM 프레임에 대해서도** 피코초 해상도 타임스탬프를 만들며, 프로미스큐어스 모드로 관측한 — 즉 자기 앞으로 오지 않은 — 프레임까지 포함한다는 것이다. 저자들은 pp_wdev_funcs 전역 배열의 쓰기 가능한 함수 포인터를 덮어써 송수신 경로에 훅을 걸고, 애플리케이션이 콜백으로 타임스탬프를 받는 오픈소스 C API를 공개한다. 응용으로 AES 키를 공유한 두 기기가 100 ms마다 타임스탬프를 브로드캐스트하고 DS-TWR로 근접을 판정하는 인증 거리한정 프로토콜을 구현해 평가했다.",
       "hardware": [
-        "확인 필요 — 원문 공개 후 대조 필요"
+        "Espressif ESP32-C3 마이크로컨트롤러 (저가 Wi-Fi SoC) — 개발보드 모델은 논문에 명시 없음. 참조 문서는 ESP32-C3 Technical Reference Manual v1.3",
+        "실험 환경: 건물로 둘러싸인 콘크리트 안뜰, LOS 확보. 전방향 안테나를 지면에 수직으로 고정",
+        "비교 시도: Intel AX-200 Wi-Fi 카드 — 나노초 근접 정밀도의 타임스탬프를 신뢰성 있게 얻지 못해 실패로 기록"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 원문 공개 후 대조 필요"
+        "ESP-IDF (Espressif 개발 프레임워크) — 버전은 논문에 명시 없음",
+        "GDB (raw 타임스탬프 메모리 영역이 하드웨어 레지스터임을 확인하는 데 사용)",
+        "커스텀 훅 라이브러리 (라이브러리 내부 어셈블리를 C로 재구현, set_rx_cb / set_tx_cb API 제공)",
+        "AES (프로토콜 APP의 타임스탬프 브로드캐스트 인증)",
+        "공개 코드: https://github.com/tumitsec/timestamps-unchained"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "상용 802.11 기기에서 미터 수준 근접 판정 달성 (구체 수치 확인 필요)"
+        "ESP32-C3 하드웨어가 일반 802.11 OFDM 프레임에 대해 피코초 해상도 타임스탬프를 생성함을 확인 — 프로미스큐어스 모드로 관측한 타 기기 수신 프레임 포함. raw 타임스탬프는 Technical Reference Manual에 'Reserved'로만 표기된 메모리 영역에 위치",
+        "실험 1 (5~15 m를 1 m 간격, 거리당 약 800개 유효 샘플): 측정 거리 표준편차 0.076~0.271 m. 1 m 간격으로 수집한 측정 집합들이 중앙값으로 서로 구별되며, 2 m 차이는 극단값을 감안해도 구별 가능",
+        "실험 2 (임계 10 m, 9~11 m를 25 cm 간격, 거리당 750~800 샘플): 10.5 m 초과에서 수락률 0, 9.5 m 미만에서 수락률 1 — 폭 1 m의 모호구간을 사이에 둔 명확한 '안/밖' 구분",
+        "결론적 운용 지침: LOS 조건과 고정 하드웨어 구성에서 설정 임계값에 보수적으로 2 m 여유를 더하면 근접 판정에 쓸 수 있다",
+        "판정 알고리즘: 최근 30초 데이터에서 DS-TWR 3프레임 구조를 찾아 계산한 뒤, 하위 10% 결과의 중앙값을 최종값으로 사용",
+        "타임스탬프를 표준 FTM 교환에서 분리한 결과 얻는 자유도 3가지 — 임의 페이로드 프레임의 타임스탬프, FTM의 엄격한 프레임간 타이밍을 따르지 않는 스케줄링, 자체 암호 프리미티브·난수원 사용"
       ],
       "limitations": [
-        "원문 미확보 — 2026-06-29 프로시딩 발행이 확인되어 DOI·페이지·서지정보는 Crossref로 확정했으나, ACM DL이 Cloudflare로 자동 요청을 차단해 본문은 열지 못함(2026-08-15)"
+        "저자 명시: 하드웨어가 만드는 타임스탬프가 실제 송수신 물리 이벤트를 충실히 반영한다는 가정 위에 서 있다",
+        "저자 명시: 물리계층 거리축소 공격에 대한 내성을 제공하지 않는다 — FTM/NGP처럼 프레임 동기 구조의 상관에 의존하므로 ED/LC 공격에 취약. 저자들은 '면역을 주장하는 것이 아니라 물리계층 가정을 실증적으로 검증할 개방 플랫폼을 제공하는 것'이 목표라고 명시",
+        "저자 명시: 응용 프로토콜 APP은 양쪽 기기를 신뢰한다고 가정 — distance fraud를 다루지 않음",
+        "저자 명시: 평가는 LOS 조건에서만 수행",
+        "저자 명시: 라이브러리 확장이 현재 ESP32-C3에 한정",
+        "콜백이 ESP 표준 라이브러리 내부 저수준 경로에서 호출되므로 블로킹 연산 불가, 내부 자료구조 포인터를 콜백 반환 후 사용 금지 등 사용 제약이 있다"
       ],
       "artifacts": {
-        "code": null,
+        "code": "https://github.com/tumitsec/timestamps-unchained",
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "staat-2022-analog-relay",
+        "olafsdottir-2017-carrier-phase",
+        "ranganathan-2012-chirp-attacks",
+        "clulow-2006-long-symbols",
+        "leu-2021-multicarrier-tof",
+        "schepers-2021-ftm-security",
+        "riaz-2022-pbr-multipath-security",
+        "francillon-2011-pkes-relay"
+      ],
+      "cites_source": "fulltext",
       "category": "protocol"
     },
     {
@@ -1476,30 +1537,46 @@
       ],
       "relevance": "low",
       "relevance_note": "CS 거리측정 자체가 아니라 Bluetooth 페어링·인증 프로토콜 강화 연구. CS Security Start가 전제하는 본딩 신뢰 기반이 어디까지 보강 가능한지의 참고 자료.",
-      "summary": "임퍼소네이션과 중간자 공격에 대응하는 세 가지 신규 Bluetooth 보안 프로토콜을 제안한다.",
+      "summary": "Bluetooth의 페어링·세션확립 프로토콜이 설계 수준에서 가진 결함(무결성 부재, 재전송·반사 공격, 전방향 비밀성 부재 등 C1~C4)을 고치는 세 프로토콜 BB-Pairing / BB-Session / BB-Rekey를 제안한다. BB-Pairing은 장기 정적 공개키를 부트스트랩하며 메시지 무결성, 재전송·반사 내성, 정적 키 유출에 대한 전방향 비밀성을 제공한다. Dolev-Yao 공격자 모델 하에서 ProVerif로 세션키 기밀성, 상호인증, 전방·후방 비밀성, KCI 내성을 검증했고, method confusion 공격 저항성을 평가하기 위해 '어긋난 연결 프롬프트를 그대로 수락하는 부주의한 사용자' 분기를 모델에 포함시켰다. 구현은 두 층위 — BLE용으로 NimBLE 스택을 수정한 스택 계층 통합과, Bluetooth Classic·BLE 양쪽에서 쓰이는 독립 C 라이브러리(bb-lib)를 통한 애플리케이션 계층 구현이다.",
       "hardware": [
-        "확인 필요 — 원문 공개 후 대조 필요"
+        "Nordic nRF52840 개발보드 2대 (Central / Peripheral)",
+        "Nordic Power Profiler Kit II (Peripheral 소비전류 측정)",
+        "실험 환경: 다른 기기의 간섭이 존재하는 실사용 환경"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 원문 공개 후 대조 필요"
+        "Apache Mynewt v1.13.0 + 패치한 NimBLE v1.8.0 (Bluetooth v5.4 준수, nRF51/nRF52/nRF53/DA1469x 지원)",
+        "ProVerif (BB-Pairing / BB-Session / BB-Rekey 각각 별도 심볼릭 모델 3종)",
+        "bb-lib — 이식 가능한 독립 C 라이브러리 (bb_state 구조체, bb_session_make_pkt 등 플랫폼 무관 API)",
+        "Linux 데모: HCI User Channel로 BlueZ 설정과 L2CAP 제약을 우회하는 사용자 공간 데몬",
+        "암호: secp256r1 ECDH, Mynewt native time API (지연 측정)",
+        "공개 코드·데이터·ProVerif 모델: https://github.com/sacca97/bb-protocols"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "확인 필요"
+        "ProVerif 검증: 세 프로토콜 모두 목표 보안속성(기밀성, 상호인증, 전방·후방 비밀성, KCI 내성)을 공격자 모델 하에서 만족. 전방/후방 비밀성은 ProVerif의 phase 구문으로 키 유출을 모델링해 확인",
+        "지연 (nRF52840, 100회 실행 평균): 표준 BLE Secure Connections 대비 BB-Pairing 55.0% 감소, BB-Session 17.6% 감소. 논문 초록이 말하는 '최대 59% 감소'는 BB-Rekey 포함 수치",
+        "에너지 (100회 연속 실행 총 소비, mAh): BB-Pairing은 17.65% 감소, BB-Session은 증가 — 전반적으로 표준 대비 더 빠르면서 에너지 소비는 비슷한 수준",
+        "배포 경로: BLE의 Link-Layer Feature Set 또는 BC의 Extended Feature Page로 협상하고, 기존 SCOnly 모드와 유사한 로컬 정책으로 하위호환과 보안강제를 관리하는 방식을 제안"
       ],
       "limitations": [
-        "원문 미확보 — 2026-06-29 프로시딩 발행이 확인되어 DOI·페이지·서지정보는 Crossref로 확정했으나, ACM DL이 Cloudflare로 자동 요청을 차단해 본문은 열지 못함(2026-08-15)"
+        "표준화 경로가 아니라 제안 — Bluetooth SIG 채택 여부는 미지수이며 하위호환 관리가 로컬 정책에 달려 있다",
+        "평가가 nRF52 제약 기기의 최악 시나리오 한 종류에 한정 — 다양한 칩·스택 조합에서의 성능은 미확인",
+        "ProVerif는 심볼릭 모델 검증이므로 구현 수준 결함(사이드채널, 상태기계 버그)은 범위 밖",
+        "거리측정·근접 검증과 무관 — Channel Sounding의 Security Start나 CS 키 유도는 다루지 않는다"
       ],
       "artifacts": {
-        "code": null,
+        "code": "https://github.com/sacca97/bb-protocols",
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "antonioli-2023-bluffs",
+        "tschirschnitz-2021-method-confusion"
+      ],
+      "cites_source": "fulltext",
       "category": "defense"
     },
     {
@@ -1624,12 +1701,13 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-17",
+      "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
         "poturalski-2011-db-802-15-4a",
-        "rasmussen-2010-rf-distance-bounding"
+        "rasmussen-2010-rf-distance-bounding",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -2309,12 +2387,13 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-08-12",
+      "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
         "olafsdottir-2017-carrier-phase",
         "rasmussen-2010-rf-distance-bounding",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -2413,35 +2492,40 @@
       ],
       "relevance": "medium",
       "relevance_note": "보안 관점에서 흥미로운 것은 정확도가 아니라 대역폭 요구다. FBR은 단일 2 MHz Bluetooth 채널의 패킷 교환만으로 데시미터급 거리를 낸다고 주장한다. 사실이라면 두 가지가 흔들린다. 첫째, CS의 다채널 호핑이 정확도를 위해 불가피하다는 전제가 약해진다. 둘째, '채널 선택적 공격에서는 FHSS 추적이 공격자의 실질적 병목'이라는 내 판단의 적용 범위가 좁아진다 — 단일 채널에서 성립하는 거리측정은 공격자가 추적할 채널이 하나뿐이라는 뜻이기 때문이다. 다만 근거가 실내 채널 시뮬레이션이고 원문을 아직 못 열었으므로, 위협 재평가의 근거로 쓰기 전에 실측 검증과 전문 확인이 먼저다.",
-      "summary": "Bluetooth 기기의 거리측정을 위해 FMCW 레이더 원리를 변형한 Frequency Based Ranging(FBR)을 제안한다. 전통적 선형 chirp FMCW는 파형 비호환 등의 이유로 Bluetooth에 맞지 않으므로, 변형된 FMCW를 수정하지 않은 Bluetooth 패킷 구조 안에서 생성하는 방법을 제시한다. PBR과 동등한 정확도를 훨씬 작은 대역폭과 짧은 시간에 얻으며, 단일 2 MHz 채널의 패킷 교환만으로 데시미터급 정확도가 가능하다고 주장한다. 거리 추정의 신호처리 단계는 널리 쓰이는 Bluetooth 수신기 기술과 호환된다. 지수 전력지연 프로파일의 실내 채널 시뮬레이션으로 정확도를 확인했다.",
+      "summary": "CS의 PBR과 같은 정확도를 훨씬 좁은 대역과 짧은 시간에 내겠다는 제안이다. 원리는 FMCW 레이더 — 전파 지연을 비트 주파수로 바꿔 FFT로 읽는다. 다만 고전적 선형 처프는 파형이 Bluetooth와 호환되지 않으므로, 정현파형 FMCW(S-FMCW)를 Bluetooth 패킷 구조와 GFSK 변조 안에서 근사하는 방법을 제시한다 — 거의 정현파에 가까운 기저대역 파형을 만드는 주기적 1/0 비트열을 골라 넣는 방식이라 송신기도 수신기도 개조가 필요 없다. 지수 지연프로파일 실내 채널 시뮬레이션에서 단일 2 MHz Bluetooth 채널만으로 데시미터급 정확도가 가능함을 보인다. PBR과의 대비가 이 논문의 실질적 기여다 — PBR은 위상이 2π마다 감기므로 여러 채널이 필요하고 T_IFS 호핑 대기와 발진기 드리프트를 감수해야 하지만, FBR은 주파수가 지연에 단조 증가해 모호성이 없고 평균화 덕분에 발진기 불일치에도 둔감하다.",
       "hardware": [
-        "확인 필요 (초록 기준 시뮬레이션 연구로 보이나 원문 미확보)"
+        "없음 — 시뮬레이션 전용 (전문 확인). 저자가 결론에서 'Bluetooth 하드웨어로 S-FMCW를 검증하는 것은 향후 과제'라고 명시"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "지수 전력지연 프로파일 실내 채널 시뮬레이션 (도구 확인 필요)"
+        "지수 전력지연프로파일(exponential PDP) 실내 채널모델 + AWGN 시뮬레이션 — 시뮬레이터·언어·재현 코드 모두 논문에 명시 없음 (전문 확인)"
       ],
       "software_verified": false,
       "results": [
-        "단일 2 MHz Bluetooth 채널의 패킷 교환으로 데시미터급 거리 정확도 달성 주장 (초록)",
-        "PBR과 동등한 정확도를 더 작은 대역폭과 더 짧은 시간에 달성한다고 주장 (초록)",
-        "지수 전력지연 프로파일 실내 채널 시뮬레이션으로 정확도 확인 — 구체 수치 확인 필요",
-        "Bluetooth direction finding과 결합하면 단일 패킷 교환으로 실내 측위가 가능하다고 전망"
+        "단일 2 MHz Bluetooth 채널만으로 데시미터급(10 cm) 거리 정확도 달성 가능 — 통신거리 30 m를 전제로 한 실내 다중경로 시뮬레이션",
+        "10 cm 정확도에 필요한 ATS 관측시간: 20 m 거리에서 페이딩 채널 기준 약 4 ms. Bluetooth 타임슬롯이 0.3125 ms이고 패킷이 1/3/5 슬롯이므로, 먼 거리일수록 긴 패킷이 필요",
+        "거리에 따른 열화가 완만: 5 m → 20 m(4배)에서 자유공간 손실만으로도 입력 SNR이 최소 11 dB 떨어지지만 거리추정 SNR은 6 dB만 떨어진다 — 비트 주파수가 지연에 비례해 커지면서 복조 이득이 함께 늘기 때문. RSSI나 PBR 대비 유리한 특성",
+        "Bluetooth GFSK 복조에 필요한 최소 수신 SNR 12~14 dB 조건에서 링크 통신거리 거의 전 구간에 걸쳐 정확한 랑잉이 가능",
+        "RSSI 대비: 실제 거리 15 m(지연 약 48 ns) 조건에서 RSSI는 핑거프린팅 없이는 페이딩 채널에서 신뢰 불가. FBR은 지연확산이 커질수록 조금씩 나빠지는 정도"
       ],
       "limitations": [
-        "시뮬레이션 근거 — 실측 검증 확인 필요",
-        "보안 분석 없음: 단일 채널 동작이 공격자에게 유리한지 미평가",
-        "원문 미확보 (ACM DL 403) — 수치, 실험 조건, 파형 상세 미확인"
+        "가장 큰 한계는 PBR보다 훨씬 높은 수신 전력이 필요하다는 것 — FM 신호의 편이비(deviation ratio)가 매우 낮기 때문이며, 특히 근거리에서 심하다. 저자가 제시한 완화책은 (i) 송신전력 증가 (ii) β와 대역폭 증가 (iii) 관측시간 증가",
+        "하드웨어 검증 없음 — 실제 Bluetooth 칩에서 S-FMCW 파형이 규격 내에서 재현되는지 미확인 (저자가 향후 과제로 명시)",
+        "FBR과 PBR의 정량 비교는 환경별로 수행되지 않았다 (저자가 향후 과제로 명시)",
+        "보안 분석 없음 — 거리축소·릴레이 공격 하에서 FBR이 PBR보다 나은지 나쁜지는 다루지 않는다. 비트 주파수가 지연에 단조 대응한다는 성질은 정확도에는 유리하지만 공격자에게도 조작 경로가 단순해진다는 뜻일 수 있어, 이 지점이 내 연구의 빈틈이다",
+        "단독 저자 시뮬레이션 논문 — 재현 코드 미공개"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-07-30",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "zand-2019-ble-pbr"
+      ],
+      "cites_source": "fulltext",
       "category": "estimation"
     },
     {
@@ -2575,30 +2659,45 @@
       ],
       "relevance": "low",
       "relevance_note": "CS는 컨트롤러가 측정하고 Host가 거리 추정과 수락 판정을 한다. 따라서 소프트웨어가 침해되면 물리 계층이 정직해도 결과가 거짓이 된다. 이 논문이 BLE 스택의 소프트웨어 침해 모델을 어떻게 세우는지가 '수신기와 판정 정책' 주제의 상위 계층 경계를 정하는 데 쓰인다. CS나 거리측정을 직접 다루지 않으므로 관련도는 낮게 둔다.",
-      "summary": "BLE 스택의 소프트웨어가 침해된 상황에서도 보안 속성을 유지하도록 BLE를 강화하는 기법을 제안한다. 상세 내용 확인 필요 — WiSec 2026 채택 논문 목록만 확인했고 원문을 열지 못했다.",
+      "summary": "Bluetooth 보안 연구가 대체로 무선 근접 공격자를 상정해 온 것과 달리, 이 논문은 '기기의 소프트웨어가 이미 침해된 경우'를 위협 모델로 둔다. Arm TrustZone-M의 보안 처리 환경(SPE) 안에 BLE 보안 파티션을 만들어 페어링과 세션확립의 모든 암호 연산(ECDH, AES, KDF)을 그 안에서 수행하게 하고, 결과 키가 비보안 영역(NSPE)에 평문으로 나타나지 않게 한다. 나아가 SPE를 키 사용 권한의 참조 모니터로 바꿔, LTK에 의존하는 연산을 NSPE 소프트웨어 무결성 검증 성공에 걸어 둔다(integrity gating). Host와 Controller 양쪽에 SPE가 있는 Dual SPE 배포에서는 세션키(SK)도 HCI 평문 전송 대신 암호화해 전달할 수 있다. TLA+/TLC로 신뢰경계 배치와 정책 강제를 모델검사하고, nRF5340에서 시뮬레이션된 소프트웨어 침해 하에 LTK 유출이 차단됨을 실증했다.",
       "hardware": [
-        "확인 필요"
+        "Nordic nRF5340 SoC 개발보드 (Arm Cortex-M33 / TrustZone-M)",
+        "에너지 측정 계측기는 논문에 명시 없음 — 세션확립·페어링 소비전하를 mC 단위로 보고하나 측정 장비 모델은 서술되지 않음 (전문 확인)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요"
+        "Zephyr RTOS + Zephyr BLE 스택 (Host SMP 및 Controller 수정, Central·Peripheral 역할 모두 지원)",
+        "TF-M (Trusted Firmware-M) — 전용 BLE secure partition, PSA IPC 서비스로 NSPE에 노출",
+        "TLA+ 명세 + TLC 모델검사기 (신뢰경계 배치와 키 사용 권한 정책 검증)",
+        "암호: NIST P-256 ECDH 임시 키쌍 생성, AES, KDF (모두 SPE 내부 수행)",
+        "공개 코드·TLA+ 모델: https://github.com/norrathep/HardaBLE"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "확인 필요"
+        "보안: 시뮬레이션된 소프트웨어 침해 하에서 LTK 유출을 차단하고 무결성 게이팅 권한 검사를 강제함을 실증",
+        "세션확립 지연 (Single SPE): integrity gating 없이는 기준선과 구별되지 않음 — 370 ± 25 ms 대 기준선 370 ± 23 ms",
+        "페어링 지연 (n = 50회 평균±표준편차): 기준선 808 ± 105 ms 대 HardaBLE 816 ± 110 ms (+0.99%, 변동폭 내). 페어링 전하도 1.55 ± 0.14 mC 대 1.54 mC로 사실상 동일(-0.65%)",
+        "무결성 게이팅을 켜면 런타임 측정에 해당하는 소비전류 피크가 추가로 나타난다 (세션확립 에너지 트레이스에서 확인)",
+        "TLA+/TLC 모델검사로 LTK(그리고 가능한 경우 SK) 기밀성과 무결성 게이팅 권한부여가 아키텍처 수준에서 강제됨을 검증"
       ],
       "limitations": [
-        "원문 미확보 — 2026-06-29 프로시딩 발행이 확인되어 DOI·페이지·서지정보는 Crossref로 확정했으나, ACM DL이 Cloudflare로 자동 요청을 차단해 본문은 열지 못함(2026-08-15)"
+        "저자 명시: SPE가 있는 중·고급 BLE 기기가 대상 — 현재 배포된 저가 BLE 기기 상당수는 SPE(TrustZone-M 또는 보안요소)를 지원하지 않는다",
+        "저자 명시: LTK(및 SK) 유출은 막지만 침해된 NSPE가 처리하는 평문 데이터는 보호하지 못한다 — 연결 중 임의 코드 실행을 얻은 공격자는 데이터를 가로채고 변조·주입할 수 있다",
+        "저자 명시: 제어흐름·TOCTOU 런타임 방어와 병행해야 한다",
+        "Host와 Controller가 물리적으로 분리된 플랫폼(USB/UART 연결 디스크리트 컨트롤러)에서는 Host·Controller 공동 지원이 필요 — 벤더 협조 없이는 배포 불가",
+        "거리측정·근접 검증과 무관 — Channel Sounding의 CS_SYNC·PBR 경로나 CS 키 유도는 다루지 않는다"
       ],
       "artifacts": {
-        "code": null,
+        "code": "https://github.com/norrathep/HardaBLE",
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-08-15",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "tschirschnitz-2021-method-confusion"
+      ],
+      "cites_source": "fulltext",
       "category": "defense"
     },
     {
@@ -3133,11 +3232,12 @@
         "olafsdottir-2017-carrier-phase",
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
-        "singh-2019-uwb-ed"
+        "singh-2019-uwb-ed",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-10",
-      "last_checked": "2026-08-15"
+      "last_checked": "2026-08-18"
     },
     {
       "id": "varughese-2026-ble6-pedestrian",
@@ -3510,11 +3610,13 @@
         "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
-        "singh-2021-4z-security-analysis"
+        "singh-2021-4z-security-analysis",
+        "francillon-2011-pkes-relay",
+        "cremers-2012-distance-hijacking"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-12",
-      "last_checked": "2026-08-15"
+      "last_checked": "2026-08-18"
     },
     {
       "id": "rasmussen-2010-rf-distance-bounding",
@@ -3824,36 +3926,53 @@
         "physical-layer"
       ],
       "relevance": "high",
-      "relevance_note": "CS의 PBR을 정면으로 겨냥한 위협 모델이면서, 코퍼스가 지금까지 갖지 못한 축 하나를 채운다 — 다중경로다. olafsdottir-2017과 staat-2022는 공격 자체는 실증했지만 채널을 대체로 우호적으로 두었고, 이 논문은 반대로 '다중경로 조건이 달라져도 임의의 거리 감소가 성립하는가'를 묻는다. 초록 기준으로 30 m 이격을 1 m 미만으로 스푸핑했다고 주장하므로, 사실이라면 다중경로가 공격을 어렵게 만든다는 흔한 반론이 약해진다. 내 연구에서는 두 곳에 쓰인다. 첫째, CS의 다중경로 완화(다채널 톤, MVDR류 후처리 — santra-2024 참조)가 공격 저지에 기여하는지 아니면 공격자의 자유도를 오히려 넓히는지를 따질 때의 선행연구. 둘째, 저자들이 평가한 대응책과 그 한계는 CS의 NADM/RTT 교차검증을 새로 논증하지 않고 인용으로 대체할 수 있는 지점이다. 다만 전문을 아직 못 열었으므로 수치와 하드웨어 구현의 범위는 확정 전이다.",
-      "summary": "위상 기반 거리측정은 기존 트랜시버 위에 낮은 복잡도로 올릴 수 있어 보안이 걸린 근접 판정에도 널리 쓰인다는 전제에서 출발해, 다중경로 전파 환경에서 다중반송파 위상 기반 거리측정의 보안을 조사한다. 서로 다른 다중경로 조건에서도 임의의 거리 감소를 성사시킬 수 있는 위협 모델을 제시하고, 다중경로 채널 시뮬레이션으로 여러 공격 시나리오의 실현성을 평가한다. 공격자 모델을 단순화한 버전은 하드웨어로도 구현해 보였다. 두 기기가 30 m 떨어져 있을 때 측정 거리를 1 m 미만으로 스푸핑할 수 있음을 보이고, 가능한 대응책과 위협 모델별 한계를 평가한다. (초록 기준)",
+      "relevance_note": "CS의 PBR을 정면으로 겨냥한 위협 모델이면서, 코퍼스가 갖지 못했던 축 하나를 채운다 — 다중경로다. olafsdottir-2017과 staat-2022는 공격 자체는 실증했지만 채널을 대체로 우호적으로 두었고, 이 논문은 반대로 '다중경로 조건이 달라져도 임의의 거리 감소가 성립하는가'를 묻는다. 전문 확인 결과 답은 '성립한다'였다 — 30 m 이격을 임의의 목표 거리로 스푸핑했고, LOS가 아닌 위치(직선경로에서 수직으로 벗어난 곳)에서도 성립했다. 따라서 '다중경로가 공격을 어렵게 한다'는 흔한 반론은 근거가 약하다. 내 연구에는 세 곳에 쓰인다. (1) 이 논문의 하드웨어 설정이 CS와 파라미터가 거의 같다 — 2.4 GHz ISM 80 MHz를 1 MHz 스텝으로 훑고 톤당 수 µs 측정. CS의 PBR 스텝 구조와 직접 대응하므로 공격자 요구 사양을 그대로 옮겨 계산할 수 있다. (2) 저자들이 검토한 '주파수 호핑' 대응책이 무력화되는 이유가 CS에 그대로 걸린다 — 공격자가 수신 신호에 FFT를 걸어 1 MHz 해상도로 톤 주파수를 찾아내고, 톤 유지시간 약 100 µs 안에 대응하면 되기 때문이다. CS의 채널 호핑도 같은 논증을 피하지 못한다면 호핑을 보안 근거로 쓸 수 없다. (3) 저자들의 ToF 이중인증 분석이 CS의 PBR+RTT 교차검증에 대한 가장 가까운 선행 논증이다. 다만 그 결론이 부정적이라는 것이 중요하다 — 2 Mbps 링크의 ToF 해상도는 150 m 수준이라 '범위 밖 공격'만 잡고, 태그가 150 m 안에 있으면 무력하다. CS의 RTT가 이보다 얼마나 나은지를 수치로 대는 것이 내 논문의 한 절이 될 수 있다.",
+      "summary": "다중경로 전파 환경에서 다중반송파 위상 기반 거리측정(MCPR)의 보안을 시뮬레이션과 하드웨어로 평가한다. 위협 모델의 핵심은 지연이 아니라 실시간 위상 곱셈이다 — 공격자가 수신 신호에 e^{jφ}를 곱해 각 반송파 주파수에서 원하는 위상을 즉시 얹으면, 앵커가 계산하는 거리를 임의의 값으로 만들 수 있고 앵커-태그 실제 거리를 알 필요조차 없다. MATLAB으로 802.15.4a 계열 실내 주거·실외 도심 다중경로 채널에서 30 m 이격을 임의 목표 거리로 스푸핑함을 보이고, 공격자 송신전력과 직선경로로부터의 수직 이격(resolute distance)을 쓸어 가며 성립 조건을 확인한다. 하드웨어로는 단순화한 지연 기반 버전을 USRP-N300으로 구현해 실내 복도와 실외 거리에서 재현했다. 마지막으로 통상적 대응책(주파수 호핑, 수신 신호세기 검증, ToF 이중인증, 지연 기반 통계 탐지)을 하나씩 검토해 모두 필요조건일 뿐 충분조건이 아니라고 결론짓는다.",
       "hardware": [
-        "확인 필요 (초록이 '단순화한 공격자 모델의 하드웨어 구현'을 언급하나 장비·플랫폼 미확인 — 원문 미확보)"
+        "AD9361 기반 SDR 거리측정 장치 2대 (앵커/태그, Analog Devices 제공) — RF 대역폭 5 MHz, ADC 샘플레이트 20 MHz, 2.4 GHz ISM 80 MHz를 1 MHz 스텝으로 측정",
+        "공격자: USRP-N300 (지연 소자를 USRP FPGA 상의 커스텀 IP로 구현해 호스트 PC 경유를 우회)",
+        "지향성 파라볼라 안테나 2개 (직경 0.38 m, 백로브 이득 최소화로 동시 송수신 격리) — 2.44 GHz 기준 원거리장 시작 2.35 m",
+        "앵커 로그 수집용 노트북",
+        "실험 환경: 실내 복도 및 실외 거리 (다른 ISM 사용자/WiFi 존재 상태)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 (다중경로 채널 시뮬레이터·툴체인 미확인)"
+        "MATLAB (앵커·태그·공격자 모델 시뮬레이션 — I/Q 이득·위상 불균형, ADC/DAC 양자화 잡음, 공격자 처리지연, AWGN 포함)",
+        "IEEE 802.15.4a 채널모델 (Molisch 외) — 실내 주거 및 실외 도심 프로파일",
+        "USRP FPGA 커스텀 IP (지연 소자)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "두 기기가 30 m 이격된 상태에서 측정 거리를 1 m 미만으로 스푸핑 (초록)",
-        "서로 다른 다중경로 조건에서 임의의 거리 감소를 성사시키는 위협 모델 제시 — 위상 기반 거리측정을 안전하지 않다고 결론 (초록)",
-        "다중경로 채널 시뮬레이션으로 여러 공격 시나리오의 실현성 평가 + 단순화한 공격자 모델의 하드웨어 구현 (초록, 구체 수치 확인 필요)",
-        "대응책과 위협 모델별 한계 평가 (초록, 세부 내용 확인 필요)"
+        "시뮬레이션: 앵커-태그 30 m 이격에서 공격자가 목표 거리를 임의로 지정해 스푸핑 성공 (실내 주거·실외 도심 채널 모두). 각 지점은 채널 임펄스응답을 재생성하며 20회 반복한 평균±표준편차",
+        "하드웨어: 실내 복도와 실외 거리에서 앵커-태그 30 m, 공격자를 앵커로부터 2.5 m 지점에 두고 목표 거리 스푸핑 재현 (자동차 키리스 엔트리 시나리오 모사)",
+        "송신전력 의존성: 태그가 1 dBm 고정일 때 공격자 전력을 올리면 앵커 측정값이 직접경로 거리 → 스푸핑 거리(10 m)로 전이. 시뮬레이션과 실측 모두 동일 경향",
+        "NLOS 성립: 직선경로에서 수직으로 0~100 m 쓸어도 공격자 신호가 태그 신호를 압도하는 한 목표 10 m 스푸핑 성립 — 공격자가 앵커-태그 직선상에 없어도 된다",
+        "지연 기반 탐지의 한계: Δf = 1 MHz면 위상 롤오버에 필요한 공격자 지연은 1 µs. Δf를 100 kHz로 낮추면 10 µs가 필요해져 유의수준 1%의 Z-검정으로 탐지 가능. 그러나 실시간 위상 곱셈 공격자는 지연을 쓰지 않으므로 이 방법으로 탐지 불가",
+        "주파수 호핑 무력화: 공격자가 수신 신호에 FFT를 걸어 80 MHz 대역에서 1 MHz 해상도로 톤 주파수를 특정. 앵커·태그 송신시간이 약 100 µs(PLL 정착 + 위상 전송)여서 그 안에 스푸핑이 끝난다",
+        "ToF 이중인증의 한계: 2 Mbps(500 ns) 링크의 ToF 해상도는 150 m. PBR의 모호성 없는 최대거리도 Δf = 1 MHz에서 150 m이므로, 태그가 150 m 안에 있으면 ToF가 모순을 못 잡아낸다 — '범위 밖 공격'만 탐지",
+        "참조 수치: AT86RF233/AT86RF215의 PMU 측정 구간은 8 µs, 본 실험 장치는 4 µs, 신뢰할 측정을 위해 60~100 µs 구간의 평균 사용"
       ],
       "limitations": [
-        "원문 미확보 — ACM DL이 Cloudflare로 자동 요청을 차단하고(2026-08-17), Unpaywall 기준 OA 사본 없음, 저자 개인 페이지도 DL 링크만 제공. 서지정보(저자 전체 명단·권호·페이지·발행일)는 Crossref로 확정했으나 수치·장비·대응책 세부는 미확인",
-        "하드웨어 구현은 '단순화한 공격자 모델'로 명시 — 전체 위협 모델이 실물로 검증되었다고 읽으면 안 됨",
-        "Bluetooth CS가 아니라 일반적 다중반송파 PBR 대상 — CS의 RTT 교차검증·NADM 판정은 범위 밖"
+        "하드웨어 실증은 '단순화한 공격자'다 — 실시간 위상 곱셈이 아니라 지연 소자로 각 채널 주파수에서 위상을 2π 배수만큼 굴리는 방식. 논문의 핵심 위협 모델(탐지 불가능한 실시간 위상 조작)은 시뮬레이션으로만 평가됐다",
+        "공격자 지연 t_d는 t_δ + t_m(가드 구간 + 측정 구간) 안에 들어와야 한다 — 이보다 크면 앵커가 첫 구간에서 진짜 위상을 보게 되어 통계 탐지 대상이 된다",
+        "공격 경로는 직접경로보다 표준편차가 크고 측정 거리에 수 m 오프셋이 생긴다 — 앵커-공격자와 공격자-태그 두 다중경로 채널이 합성곱되어 지연 확산이 커지기 때문. ML 알고리즘이 잘못된 NLOS 피크를 고르면 목표 거리를 정확히 못 맞춘다",
+        "저자들이 제안한 대응책은 어느 것도 충분하지 않다고 스스로 결론 — BAW 공진기 기반 1 µs 비트 단위 호핑(자기 인용 [24])을 가능성으로만 언급",
+        "Bluetooth CS가 아니라 일반 다중반송파 PBR 대상 — CS의 CS_SYNC/RTT 교차검증과 NADM 판정은 범위 밖"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-08-17",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "olafsdottir-2017-carrier-phase",
+        "zand-2019-ble-pbr",
+        "francillon-2011-pkes-relay",
+        "cremers-2012-distance-hijacking"
+      ],
+      "cites_source": "fulltext",
       "category": "attack"
     },
     {
@@ -3917,7 +4036,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-08-17",
+      "last_checked": "2026-08-18",
       "cites": [
         "flury-2010-distance-decreasing",
         "leu-2020-mtac",
@@ -3925,7 +4044,8 @@
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed",
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "francillon-2011-pkes-relay"
       ],
       "cites_source": "fulltext",
       "category": "protocol"
@@ -3999,6 +4119,202 @@
       ],
       "cites_source": "fulltext",
       "category": "defense"
+    },
+    {
+      "id": "francillon-2011-pkes-relay",
+      "title": "Relay Attacks on Passive Keyless Entry and Start Systems in Modern Cars",
+      "authors": [
+        "Aurélien Francillon",
+        "Boris Danev",
+        "Srdjan Capkun"
+      ],
+      "venue": "NDSS",
+      "venue_full": "Proceedings of the Network and Distributed System Security Symposium (NDSS 2011), San Diego, CA, USA",
+      "tier": "top4",
+      "year": 2011,
+      "url": "https://www.ndss-symposium.org/ndss2011/relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars/",
+      "preprint": "https://doi.org/10.3929/ethz-a-006708714",
+      "doi": null,
+      "topics": [
+        "relay-attack",
+        "pkes",
+        "keyless-entry",
+        "physical-layer",
+        "automotive",
+        "distance-bounding"
+      ],
+      "relevance": "high",
+      "relevance_note": "Bluetooth Channel Sounding이 왜 존재하는지를 설명하는 원점 문헌이고, 코퍼스에서 계속 비어 있던 자리였다 — 캐시에 전문이 있는 코퍼스 논문 16편이 이 논문을 인용한다(staat-2022, leu-2022, anliker-2023, olafsdottir-2017, leu-2020, riaz-2022 등). 내 연구에는 세 가지로 쓰인다. (1) **위협의 기준선**: '통신 가능하면 근접하다'로 판정하는 시스템이 왜 무너지는지를 10개 차종 실측으로 못박은 논문이라, CS의 거리측정이 반드시 넘어야 할 최소 기준을 제공한다. (2) **공격자 예산의 척도**: 물리계층 아날로그 릴레이가 추가하는 지연이 케이블 30 m에서 160 ns, 무선에서 120 ns라는 수치는 CS의 RTT 판정 여유와 직접 비교할 수 있는 값이다. CS의 T_IFS 기반 왕복시간 측정이 이 정도 지연을 구분할 수 있는지가 곧 CS가 이 공격을 막는지 여부다. (3) **거리한정의 성능 요구사항이 처음 수치로 제시된 곳**: 저자들이 대응책 절에서 '릴레이 지연이 250 ns인데 거리한정 구현의 분산이 그보다 크면 탐지 불가'라고 못박고, 당시 rasmussen-2010의 62 ps 분산을 근거로 '가능하다'고 판정한다. CS의 RTT 분산이 어느 쪽인지를 같은 틀로 논증하면 그 자체가 결과가 된다.",
+      "summary": "현대 자동차의 Passive Keyless Entry and Start(PKES)에 대한 릴레이 공격을 실증한다. 유선과 무선 두 가지 물리계층 아날로그 릴레이를 만들었는데, 신호를 해석하거나 변조하지 않고 아날로그 RF 부품 수준의 지연만 더하므로 변조방식·프로토콜·암호강도와 무관하게 동작한다. 8개 제조사 10개 차종에서 평가했고, 차→키 한 방향만 중계해도 키와 차 사이 실제 거리가 큰 상태에서 공격이 성립함을 보인다. 유선 릴레이는 두 개의 루프 안테나를 동축 케이블로 잇고 선택적으로 증폭기를 넣은 구성이며, 무선 릴레이는 LF 신호를 2.5 GHz로 상향변환해 보내고 반대편에서 다시 내린다. 마지막으로 즉시 적용 가능한 대응책(키 차폐, 배터리 제거)부터 중기 대응책(소프트웨어 비활성화 스위치, 접근제어 정책)과 문헌상 대응책(신호세기 기반 판정의 무효성, 거리한정의 적합성)까지 검토한다.",
+      "hardware": [
+        "유선 릴레이: 루프 안테나 2개 + 자작 30 m 동축 케이블 2개(합쳐 60 m 시험), 선택적 전력증폭기",
+        "대형 안테나 Texas Instruments RI-ANT-G04E (1.0 × 0.5 m) — 키 측 수신 개선용",
+        "무선 릴레이: LF(135 kHz) ↔ 2.5 GHz 아날로그 상·하향변환 (2.5 GHz 신호발생기 + 2.5 GHz 안테나)",
+        "USRP1 (Ettus Research) + LFRX/LFTX 도터보드 — 가변 지연을 넣어 차종별 최대 허용 지연을 측정하는 데 사용. FPGA를 수정해 RX/TX 경로를 우회시켰음",
+        "시험 대상: 8개 제조사 10개 차종 (5만 달러 초과 고급차부터 3만 달러 미만 준중형, 미니밴 포함). 임대 또는 대여로 확보"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "USRP1 FPGA 수정 (호스트 경유 지연을 줄이기 위해 RX/TX 처리 경로 우회) — 합성 툴체인·HDL은 논문에 명시 없음 (전문 확인)"
+      ],
+      "software_verified": false,
+      "results": [
+        "8개 제조사 10개 차종 전부에서 릴레이 공격으로 차 문을 열고 엔진 시동까지 성공",
+        "차→키 한 방향(LF 채널)만 중계해도 충분 — UHF 응답은 원래 도달거리가 10~100 m라 별도 중계가 필요 없다",
+        "릴레이 지연 실측(LF 채널만, UHF 왕복은 별도 가산): 케이블 30 m에서 160 ± 20 ns, 증폭기를 사이에 둔 케이블 60 m에서 350 ± 20 ns, 무선 릴레이 30 m에서 120 ± 20 ns",
+        "차종별 최대 허용 지연은 35 µs에서 수십 ms — 물리계층 릴레이 기준 이론적 도달거리로 환산하면 무선 10~3000 km, 케이블 7~2000 km",
+        "예시 차종(Model 1): 최대 허용 지연 500 µs, 키 응답시간 1782 ± 8 µs, 응답시간 산포 21 µs",
+        "릴레이 안테나-키 거리: 증폭 없이는 수 cm~2 m, 전력증폭기를 쓰면 2~8 m (키를 주머니에 넣은 통상 위치 기준). 차 쪽 릴레이 안테나는 차에서 30 cm 이내여야 함",
+        "USRP1의 최소 처리지연은 10~20 ms로 측정되어, 시험한 PKES 중 한 대를 빼고는 모두 너무 느렸다 — 아날로그 릴레이가 필요한 이유",
+        "대응책 분석: 오늘날 PKES가 쓰는 신호세기 기반 근접 판정은 릴레이로 무력화된다. 거리한정이 자연스러운 해법이며, 릴레이가 더하는 지연이 250 ns 수준이므로 거리한정 구현의 왕복시간 분산이 그보다 훨씬 작아야 한다 — 당시 RF 거리한정 구현이 프로버 처리시간 약 50 ns, 분산 62 ps를 보였으므로 요구사항 충족이 가능하다고 판정"
+      ],
+      "limitations": [
+        "차종·제조사를 익명화해(Model 1~10) 공개 — 재현 시 대상 특정이 불가능하다",
+        "릴레이 부품 총비용은 본문에 수치로 제시되지 않았다 (\"inexpensive\", \"keeps the price very low\"라는 정성적 서술만)",
+        "즉시 대응책(키 차폐, 배터리 제거)은 PKES의 편의성을 사실상 물리 키 수준으로 되돌린다는 점을 저자들도 인정",
+        "차종별 최대 허용 지연 등 일부 표에 미측정 항목이 남아 있다 (모든 차에서 모든 시험을 수행하지는 못함)",
+        "2011년 시점의 PKES 대상 — 이후 UWB/CS 기반 디지털 키가 도입된 차종에는 그대로 적용되지 않는다. 다만 이 논문이 그 도입의 직접 원인이다"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-08-18",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "rasmussen-2010-rf-distance-bounding",
+        "flury-2010-distance-decreasing"
+      ],
+      "cites_source": "fulltext",
+      "category": "attack"
+    },
+    {
+      "id": "cremers-2012-distance-hijacking",
+      "title": "Distance Hijacking Attacks on Distance Bounding Protocols",
+      "authors": [
+        "Cas Cremers",
+        "Kasper Bonne Rasmussen",
+        "Benedikt Schmidt",
+        "Srdjan Capkun"
+      ],
+      "venue": "IEEE S&P",
+      "venue_full": "2012 IEEE Symposium on Security and Privacy (S&P), San Francisco, CA, USA, pp. 113–127",
+      "tier": "top4",
+      "year": 2012,
+      "url": "https://ieeexplore.ieee.org/document/6234408/",
+      "preprint": "https://doi.org/10.3929/ethz-a-006519277",
+      "doi": "10.1109/SP.2012.17",
+      "topics": [
+        "distance-bounding",
+        "distance-hijacking",
+        "formal-analysis",
+        "protocol-design",
+        "location-verification"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS의 보안 논의가 거의 전부 '릴레이를 막는가'에 쏠려 있는데, 이 논문은 릴레이가 아닌 네 번째 공격 유형이 존재함을 보인 문헌이다. Distance Hijacking에서 부정직한 프로버는 공모자가 필요 없다 — 근처에 있는 **정직한** 프로버의 fast phase를 가로채 자기 거리인 것처럼 만든다. CS 관점에서 이것이 중요한 이유는 CS가 다중 기기 환경에서 쓰이도록 설계되어 있기 때문이다(RAS/RAP, 여러 리플렉터, 차량 다중 앵커). 코퍼스의 다른 문헌은 전부 단일 프로버 상황을 전제하므로 이 축이 비어 있었다. 내 연구에는 두 곳에 쓰인다. (1) **위협모델 분류표**: 저자들의 Table 1(누가 공격하는가 / 무엇을 공격하는가 / 무엇이 추가로 필요한가)은 CS 위협모델을 쓸 때 그대로 옮겨 쓸 수 있는 축이고, Distance Fraud·Mafia Fraud·Terrorist Fraud·Distance Hijacking 넷 중 CS가 어느 것을 다루고 어느 것을 안 다루는지를 명시적으로 말하게 강제한다. (2) **CS의 fast phase에 신원이 묶여 있는가**: 이 논문의 진단은 'Brands-Chaum 계열은 fast phase 응답에 프로버 신원이 안 묶여 있어 취약하고, Hancke-Kuhn 계열은 공유키를 fast phase에 직접 써서 안전하다'는 것이다. CS의 CS_SYNC 시퀀스와 PBR 톤이 세션키에서 유도되므로 형식상 후자에 가깝지만, 같은 환경에서 여러 CS 절차가 동시에 돌 때(다중 프로토콜 환경)는 저자들도 '쉬운 해결책이 없다'고 못박는다 — 여기가 파 볼 만한 지점이다.",
+      "summary": "거리한정 프로토콜은 통상 Distance Fraud, Mafia Fraud, Terrorist Fraud 세 유형으로 분석되어 왔다. 이 논문은 네 번째 주요 유형인 Distance Hijacking을 정의한다. 부정직한 프로버가 다른 정직한 프로버(자기보다 가깝거나 먼)의 fast phase를 가로채, 검증자로 하여금 자신이 그 정직한 프로버의 거리에 있다고 믿게 만드는 공격이다. 기존 공격들과 근본적으로 다른 점은 공모를 가정하지 않는다는 것이다 — Terrorist Fraud는 두 부정직한 프로버의 제한적 공모를, Mafia Fraud는 공격자 장비 간 완전 공모를 전제하지만 Distance Hijacking은 정직한 프로버가 자기 프로토콜을 정상 수행하는 것만으로 성립한다. 기존 거리한정 프로토콜 19종을 분석해 10종이 취약함을 보이고(대부분 신규 발견), 추가 메시지나 암호연산 없이 고칠 수 있는 대응책을 제시한다. 마지막으로 이를 Location Hijacking으로 일반화해 위치검증 프로토콜에도 적용한다.",
+      "hardware": [
+        "없음 — 프로토콜 형식분석 논문 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자동화 도구 사용 없음 — 읽은 판본(ETH D-INFK Technical Report)은 수기 분석과 프로토콜 도해로 공격을 제시한다. 관련 연구 절에서 타 연구의 자동 분석 도구(Malladi 외)를 논평할 뿐 자체 도구는 서술하지 않음 (전문 확인)"
+      ],
+      "software_verified": false,
+      "results": [
+        "거리한정 프로토콜 19종을 단일 프로토콜 환경에서 분석해 10종이 Distance Hijacking에 취약함을 확인 — 취약: Brands-Chaum(Fiat-Shamir / Schnorr / signature), CRCS, Kuhn-Luecken-Tippenhauer, MAD, Meadows 외 일부 인스턴스, Noise resilient MAD, WSBC+DB, WSBC+DB Noent. 안전: Bussard-Bagga, Hancke-Kuhn, Hitomi, KA2, Munilla-Peinado, Poulidor, Reid 외, Swiss-Knife, Tree",
+        "표의 공격 중 2건(단순화한 Brands-Chaum signature 판본, Meadows 외의 특정 인스턴스)만 선행 문헌에 있었고 나머지는 전부 신규",
+        "구조적 진단: Brands-Chaum 원형을 그대로 따르는 프로토콜은 Distance Hijacking을 막지 못한다. 반대로 Hancke-Kuhn 계열은 fast phase에서 공유키를 명시적으로 사용하므로 단일 프로토콜 환경에서는 안전하다",
+        "그러나 다중 프로토콜 환경(같은 하드웨어로 서로 다른 거리한정 프로토콜이 함께 도는 환경)에서는 Hancke-Kuhn 계열을 포함해 **모든** 프로토콜이 취약하다",
+        "대응책: fast phase 응답 또는 commit에 프로버 신원을 묶는 것(implicit linking)이 핵심. 단순 신원 접합은 오히려 잘못된 수정임을 반례로 보인다. 단일 프로토콜 환경에서는 추가 메시지나 암호연산 없이 수정 가능",
+        "다수 공격의 전제 조건: 검증자 V가 정직한 프로버 P의 메시지에 \"방해받지 않아야\" 한다 — V가 P의 최종 서명 메시지를 수신·파싱하면 프로토콜을 중단해 공격이 실패할 수 있다",
+        "Location Hijacking으로 일반화: 악의적 프로버가 다른 프로버들의 존재를 악용해 거리 또는 위치를 가로챌 수 있는 조건을 분석"
+      ],
+      "limitations": [
+        "읽은 전문은 IEEE S&P 2012 게재본이 아니라 ETH D-INFK Technical Report 판본(2011)이다 — 내용은 같은 논문이나 게재본과 세부가 다를 수 있다. 게재본은 IEEE Xplore 유료",
+        "일부 프로토콜은 애초에 다중 프로버 환경을 상정하고 설계되지 않았다는 반론이 가능하며, 저자들도 이를 인정한다",
+        "다중 프로토콜 환경에 대해서는 \"쉬운 해결책이 없다\"고 명시 — 환경 내 모든 프로토콜이 서로 다른 fast phase를 쓰도록 강제하는 것 외에 제시된 방법이 없다",
+        "실험적 검증 없음 — 형식·수기 분석. 실제 무선 환경에서 hijacking을 성사시키는 물리계층 조건은 다루지 않는다"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-08-18",
+      "last_checked": "2026-08-18",
+      "cites": [
+        "rasmussen-2010-rf-distance-bounding"
+      ],
+      "cites_source": "fulltext",
+      "category": "analysis"
+    },
+    {
+      "id": "bogner-2026-quantum-db-sdp",
+      "title": "Security evaluation of quantum distance-bounding protocols via semidefinite programming",
+      "authors": [
+        "Kevin Bogner",
+        "Aysajan Abidin",
+        "Dave Singelée",
+        "Bart Preneel"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2607.13464v1 [quant-ph], 2026-07-15 (COSIC / DistriNet, KU Leuven)",
+      "tier": "preprint",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2607.13464",
+      "preprint": "https://arxiv.org/abs/2607.13464",
+      "doi": null,
+      "topics": [
+        "distance-bounding",
+        "formal-analysis",
+        "quantum",
+        "mafia-fraud",
+        "distance-fraud"
+      ],
+      "relevance": "low",
+      "relevance_note": "양자 채널을 쓰므로 CS에 직접 적용되지는 않지만, **방법론** 하나가 그대로 넘어온다 — fast phase 한 라운드를 떼어내 distance fraud와 mafia fraud를 게임으로 정식화하고, 그 게임의 최적 공격 성공확률을 근사가 아니라 정확히 계산한다는 발상이다. CS 보안 논의는 지금까지 '이 공격이 몇 % 성공했다'는 실측 위주였고 '이 구조에서 최적 공격자가 낼 수 있는 상한이 얼마인가'를 묻지 않는다. cremers-2012가 제시한 4분류(DF/MF/TF/Hijacking)와 이 논문의 게임 정식화를 CS의 PBR+RTT 2단 구조에 옮겨 놓으면, CS_SYNC 라운드 하나에 대한 MF 상한을 계산하는 문제가 정의된다. 부수적으로 저자 구성이 유용하다 — Abidin·Singelée·Preneel은 코퍼스의 abidin-2021-narrowband-ranging(협대역 안전 거리측정, TCHES 2021)과 같은 KU Leuven COSIC 그룹이라, 이 팀이 협대역 랑잉과 형식 거리한정 양쪽을 다룬다는 계보가 보인다. 재현 코드가 Zenodo에 아카이브되어 있어 방법론 이식 실험의 출발점으로 쓸 수 있다.",
+      "summary": "양자 거리한정(QDB) 프로토콜은 검증자가 프로버의 진위와 근접성을 동시에 확인하게 한다. 문제는 프로토콜마다 fast phase가 드러내는 정보와 시점이 달라 최적 공격이 크게 달라지고, 그래서 서로 비교하기가 어렵다는 것이다. 이 논문은 fast phase의 한 라운드만 떼어내 one-round distance fraud(DF)와 mafia fraud(MF) 게임으로 정식화한다. 이산변수 QDB에서는 이 게임들이 볼록 최적화 문제로 환원되어 준정부호 계획법(SDP)으로 **정확히** 풀린다 — 완화가 아니라 최적값이며, 각 MF 값에는 명시적 공격과 그에 일치하는 상한 증서가 정확 산술로 짝지어 붙는다. 이것이 양자 위치검증(QPV)과의 대비점이다. QPV의 분할 공격은 비볼록이라 근사에 의존하지만, QDB의 MF 공격자는 one-round 게임에서 '먼저 정직한 프로버에게 묻고 그다음 검증자 챌린지에 답하는' 순차 전략으로 붕괴해 볼록성이 유지된다. 연속변수 QDB에는 가우시안 추정기를 써서 두 프로토콜의 미보고 값과 두 프로토콜의 개선된 추정치를 제시한다.",
+      "hardware": [
+        "없음 — 수치·형식 분석 논문 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "CVXPY (DV-QDB SDP 모델링) + SCS 및 CLARABEL 솔버",
+        "NumPy (테스터 재구성 후 잔차·슬랙 고유값·쌍대성 갭 검사)",
+        "정확 산술 증서 검증 — SDP 솔버나 저장된 부동소수점 증서에 의존하지 않는 별도 검사 경로",
+        "공개 코드·데이터: https://github.com/kevinbogner/qdb-benchmark (아카이브 https://doi.org/10.5281/zenodo.21361445)"
+      ],
+      "software_verified": true,
+      "results": [
+        "DF 값은 모든 DV-QDB 프로토콜에서 동일하게 0.5000 — QDB 2019, Mutual QDB, E91 QDB 모두. 즉 one-round distance fraud는 프로토콜을 구별하지 못한다",
+        "MF 값은 프로토콜을 잘 구별한다: QDB 2019 0.9045 (선행 보고 0.875 초과), Mutual QDB 0.7500 (선행 보고 0.625 초과), E91 QDB 0.9332 (선행 보고 없음)",
+        "연속변수 CV-QDB: DF 0.3592(제한된 가우시안 모형 내 정확 최적), MF 0.9138(유한 격자 가우시안 추정치) — 둘 다 선행 보고 없음",
+        "핵심 결론: one-round MF 내성은 \"프로버가 일찍 흘린 정보를 공격자가 검증자의 새 챌린지에 답하는 데 쓸 수 있는가\"에 달려 있다",
+        "MF 값 전부에 대해 원시·쌍대 증서가 같은 대수적 목적값을 가짐을 정확 산술로 재확인 — 결과가 솔버에 의존하지 않는다",
+        "fast phase가 근접만 확인하고 최종 MAC이 세션을 인증하는 Brands-Chaum형 설계(QDB 2017)는 이 벤치마크 밖 — one-round 게임이 MAC을 벗겨내면 p_MF = 1이 되는데 이는 프로토콜의 성질이 아니라 게임의 한계다"
+      ],
+      "limitations": [
+        "저자 명시: one-round 분석이다 — 라운드 간 상관을 생략하므로 보고값은 fast phase 한 라운드 값이지 전체 프로토콜의 사기 확률이 아니다",
+        "저자 명시: slow phase의 PRF 출력을 독립 균등 비트로 이상화 (PRF가 양자 다항시간 공격자에 안전하고 논스가 신선하다는 가정)",
+        "저자 명시: Terrorist Fraud는 악의적 프로버의 도움이 여러 실행에 재사용되는지의 문제라 one-round 분석 범위 밖",
+        "저자 명시: CV-QDB의 MF 값은 유한 격자 가우시안 추정치로, 인증된 최적값이 아니다",
+        "Mutual QDB는 두 개의 타이밍 교환 중 첫 번째만, E91 QDB는 검증자와 프로버가 같은 기저로 측정하고 결과를 검사하는 라운드만 보고 — 프로토콜별로 축소 범위가 다르다",
+        "양자 채널 전제 — Bluetooth CS를 포함한 고전 RF 거리측정에 수치가 직접 이전되지 않는다. 넘어오는 것은 게임 정식화와 SDP 방법론뿐"
+      ],
+      "artifacts": {
+        "code": "https://github.com/kevinbogner/qdb-benchmark",
+        "dataset": "https://doi.org/10.5281/zenodo.21361445"
+      },
+      "verification": "verified",
+      "added": "2026-08-18",
+      "last_checked": "2026-08-18",
+      "cites": [],
+      "cites_source": "fulltext",
+      "category": "analysis"
     }
   ]
 }
