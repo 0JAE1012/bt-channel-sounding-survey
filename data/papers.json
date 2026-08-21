@@ -1,7 +1,7 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-18",
-  "last_run": "2026-08-18",
+  "updated": "2026-08-21",
+  "last_run": "2026-08-21",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
   "citation_edges": 171,
   "papers": [
@@ -80,7 +80,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-08-21",
       "cites": [
         "abidin-2021-narrowband-ranging",
         "clulow-2006-long-symbols",
@@ -91,7 +91,8 @@
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
         "zand-2019-ble-pbr",
-        "francillon-2011-pkes-relay"
+        "francillon-2011-pkes-relay",
+        "joo-2020-hodor"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -654,7 +655,7 @@
       },
       "verification": "unverified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-21",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "estimation"
@@ -682,7 +683,7 @@
       ],
       "relevance": "medium",
       "relevance_note": "파라메트릭 신경망으로 CS 원시 신호를 후처리하는 접근. santra-2024와 같은 Infineon 계열 저자군이며, 벤더 추정 파이프라인이 성능 차이를 만든다는 seo-2026의 관측을 뒷받침하는 사례군에 속한다. 학습된 추정기가 조작된 입력에서 어떻게 거동하는지는 여전히 미평가.",
-      "summary": "파라메트릭 신경망 기반 데이터 주도 처리로 Bluetooth Channel Sounding 거리 추정 성능을 개선한다.",
+      "summary": "IoT 응용에서 기기 간 거리 추정이 중요한데 RSSI 기반과 협대역 ToF 는 한계가 있고, BLE 위상 기반 거리측정(Channel Sounding)이 선호되지만 기존 접근은 더 개선할 여지가 있다는 전제에서 출발한다. 파라메트릭 신경망으로 CS 원시 데이터에서 직접 학습해 거리 추정을 최적화하는 방법을 제안하며, 전통적 초해상도(super-resolution) 알고리즘을 능가한다고 주장한다. 실험으로 정확도와 정밀도의 개선을 보인다. (초록만 확인, 전문 미확보)",
       "hardware": [
         "확인 필요"
       ],
@@ -692,18 +693,21 @@
       ],
       "software_verified": false,
       "results": [
-        "확인 필요"
+        "기존 초해상도 알고리즘 대비 RMSE 최대 0.4 m 감소 (초록)",
+        "정확도와 정밀도 모두에서 개선을 실험으로 보였다고 주장 — 측정 환경·지점 수 등 조건은 전문 미확보로 미확인"
       ],
       "limitations": [
-        "확인 필요"
+        "학습 데이터 환경 의존성 — 어떤 환경에서 학습·평가했는지 전문 미확보로 미확인",
+        "적대적 입력에 대한 강건성 미평가",
+        "원문 미확보: IEEE Xplore 유료, Semantic Scholar 에 openAccessPdf 없음(2026-08-21 확인). 장비·데이터셋·비교 대상 세부 미확인"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "partial",
       "added": "2026-07-28",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-21",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "estimation"
@@ -712,49 +716,75 @@
       "id": "ble6-2026-utility-basement",
       "title": "Study of BLE6 Ranging Performance in a Utility Basement",
       "authors": [
-        "T. Ulsamer",
-        "C. Mazur",
-        "S. Knauth"
+        "Tim Ulsamer",
+        "Christian Mazur",
+        "Stefan Knauth"
       ],
-      "venue": "IPIN-WCAL Workshop",
-      "venue_full": "Proceedings of the IPIN-WCAL Workshop, 2025",
+      "venue": "IPIN-WCAL",
+      "venue_full": "Proceedings of the Workshop for Computing & Advanced Localization (WCAL) at the 15th International Conference on Indoor Positioning and Indoor Navigation (IPIN 2025), Tampere, Finland, CEUR Workshop Proceedings Vol-4047",
       "tier": "other",
       "year": 2025,
-      "url": "https://www.researchgate.net/publication/401448064_Study_of_BLE6_Ranging_Performance_in_a_Utility_Basement",
+      "url": "https://ceur-ws.org/Vol-4047/short26.pdf",
       "preprint": null,
       "doi": null,
       "topics": [
         "channel-sounding",
         "nlos",
         "multipath",
-        "field-measurement"
+        "field-measurement",
+        "ifft",
+        "rtt"
       ],
       "relevance": "medium",
-      "relevance_note": "실제 다중경로 열악 환경(지하 설비실)에서의 BLE6 CS 성능 실측 — 환경 영향 평가 자료.",
-      "summary": "다중경로가 심한 지하 유틸리티 공간에서 Nordic 기반 BLE 6 ranging 성능을 실측 평가한다. 실외에서는 좋은 성능을, 실내에서는 저하된 결과를 보고했다고 seo-2026이 요약한다. 상세 수치 확인 필요 — 원문 미확보.",
+      "relevance_note": "CS 가 '어려운 환경'에서 어디까지 무너지는지를 같은 장비로 실외/실내 대조해 보여 주는 몇 안 되는 실측이다. 내 연구에는 탐지 지표의 오탐 여유를 정하는 정상 상태 분포로 쓰인다. 실외 1~40 m 에서 IFFT 계열의 측정 내 표준편차가 수 cm(IFFT2 는 0.01 m)인데, 같은 하드웨어가 지하 설비실에서는 표준편차 1.2~2.1 m, 오차 수 미터로 벌어진다. 즉 '조작을 몇 미터 넣으면 탐지된다'는 임계가 환경에 따라 두 자릿수로 달라진다 — 이 격차 자체가 공격자의 은폐 여유다. 또 하나는 알고리즘 의존성의 실측 증거다. 같은 원시 IQ 에서 IFFT/Slope/RTT/IFFT2 의 평균 오차가 0.13 m 에서 0.98 m 까지 갈리고, 실내에서는 IFFT 가 -14 m 라는 큰 음의 오차(거리 축소 방향)를 조작 없이도 스스로 낸다. 벤더 추정 파이프라인이 성능 차이를 만든다는 seo-2026 의 관측에 '거리 축소 방향 오차가 자연 발생한다'는 사례를 더해 준다 — 축소 공격의 탐지 임계를 정할 때 정면으로 걸리는 사실이다. 저자들이 초기화 펌웨어를 고쳐 75 채널 원시 IQ 를 시리얼로 뽑은 것도 그대로 참고할 실험 레시피다.",
+      "summary": "Bluetooth Low Energy 6 규격의 Channel Sounding 을 상용 BLE6 하드웨어(Nordic nRF54L15 DK)로 열악한 전파 환경에서 평가한다. 측정은 두 계열로 나뉜다 — 보정·기준용 공원 개활지 측정(1~40 m, 23 지점)과 1910 년경 지어진 대학 건물 지하 설비실 측정이다. 평가 대상은 벤더 펌웨어에 들어 있는 IFFT, Slope, RTT 세 가지와 저자들이 제안한 개선판 IFFT2 다. IFFT2 는 IQ 값을 정규화해 진폭을 버리고 위상만 쓰며, 결측 데이터점을 위상 회전 방향을 고려해 단위원 위에서 보간하고, 주파수 범위의 양 끝에 있는 결측점은 0 으로 채운 뒤 최대값 주변을 포물선 근사해 첨두를 찾는다. 초기화 펌웨어를 고쳐 75 개 활성 측정 채널의 원시 IQ 값을 시리얼로 실시간 출력하게 하고 오프라인에서 IFFT2 를 돌렸다. 결론은 CS 가 복잡하고 가려진 환경에서도 여전히 동작하되 성능이 크게 저하되며, 제안 알고리즘이 기본 구현을 대체로 앞선다는 것이다.",
       "hardware": [
-        "확인 필요"
+        "Nordic nRF54L15 개발 키트(DK) 2 대 — BLE6 Channel Sounding 지원 SoC",
+        "삼각대 거치, 수직 편파 안테나 급전점을 지면 1.20 m 높이에 고정",
+        "칩에 5 mm 짧은 전송선으로 직결된 PCB λ/4 모노폴 안테나",
+        "USB 시리얼 변환기와 노트북으로 초기화 측정 데이터 수집. 반사기는 I/O 연결 없이 배터리만 물리면 동작",
+        "Ground truth: 측량 테이프, 양방향 반복 측정으로 확인한 정확도 5 cm 미만"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요"
+        "Nordic 제공 SDK 의 CS 예제 펌웨어 — 기본 알고리즘 IFFT, Slope, RTT 포함",
+        "저자 수정 initiator 펌웨어 — 75 개 활성 채널의 원시 IQ 값을 시리얼로 실시간 출력",
+        "IFFT2: 저자 제안 오프라인 알고리즘 (IQ 정규화로 진폭 무시, 단위원 위 결측점 보간, 양 끝 결측점 0 채움, 포물선 근사 첨두 탐색)",
+        "데이터 처리 코드(파일 파싱·평균·변환)는 GPT-4 로 생성한 Python 을 저자가 검토·수정해 사용했다고 명시"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "확인 필요"
+        "실외 개활지 23 지점(1~40 m) 평균 거리오차 / 표준편차: IFFT2 0.13 m / 0.01 m, IFFT 0.21 m / 0.23 m, Slope 0.98 m / 0.23 m, RTT 0.35 m / 0.26 m",
+        "각 방식이 상수 오프셋을 갖고 있어 후처리로 뺐다: IFFT2 0.93 m, IFFT 0.46 m, Slope 1.91 m, RTT 3.78 m. 안테나가 칩에 직결이라 케이블 길이가 아니라 안테나의 주파수 의존 위상 응답을 원인으로 추정하며, 펌웨어의 보정 계수가 이 안테나 구성에 맞지 않았다고 적었다",
+        "실외 CDF 80 백분위: IFFT2 0.2 m 미만, IFFT 약 0.3 m, Slope 1 m 초과, RTT 0.6 m",
+        "지하 설비실 평균 표준편차: IFFT2 1.61 m, IFFT 2.05 m, Slope 1.21 m, RTT 1.25 m — 실외 대비 두 자릿수 악화",
+        "실내 CDF: IFFT 계열이 80% 지점에서 오차 약 5 m. IFFT2 는 95% 가 9 m 미만인 반면 나머지 알고리즘은 11 m 이상",
+        "실내 개별 구간의 큰 오차: 1→4 구간(참값 23.0 m)에서 IFFT 가 8.797 m 를 내 오차 -14.2 m, 1→5 구간(참값 28.0 m)에서 13.607 m 로 오차 -14.4 m — 거리 축소 방향으로 크게 틀렸다. 같은 구간에서 IFFT2 는 각각 +6.3 m, +0.7 m",
+        "가장 긴 4→11 구간(참값 46.2 m)은 실내인데도 IFFT2 오차 0.183 m(SD 0.041), IFFT 0.07 m 로 정확했다 — 직선 복도라 LOS 가 확보된 구간",
+        "측정점 5a, 6, 8a, 12 는 초기화 위치 1·4 에서 아예 도달하지 못했다. 복도의 금속 방화문은 닫으면 성능이 매우 나빠 열어 둔 채 측정했다",
+        "측정 절차: 전 채널 스캔 약 0.5 초 주기, 펌웨어가 IQ 를 평균한 뒤 5 초마다 약 10 회 스캔 묶음을 전송, 지점당 50 초 측정으로 약 10 개 결과"
       ],
       "limitations": [
-        "단일 환경 측정"
+        "단일 건물·단일 칩셋(nRF54L15) 실측이며 실내 측정 구간이 11 개로 적다",
+        "실내 오차(Delta)를 유클리드 거리가 아니라 맨해튼 거리 기준으로 계산했다 — 복도 구조상 전파 경로를 근사한 것이지만 절대 오차 값을 다른 연구와 직접 비교할 때 주의해야 한다",
+        "IFFT2 는 현재 오프라인 전용이다. 임베디드에서 실시간으로 도는지는 평가하지 않았다",
+        "보안 분석이 없다 — 적대적 신호나 조작 입력은 다루지 않는다",
+        "실외 결과는 방식별 상수 오프셋을 사후 보정한 값이다. 보정 없이는 최대 3.78 m(RTT)의 편향이 남는다",
+        "저자들이 '성능이 여전히 Wi-Fi 와 비교할 만하다'고 적었으나 Wi-Fi 측정을 함께 수행하지는 않았다"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-30",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-21",
+      "cites": [
+        "santra-2024-cs-indoor",
+        "suresh-2025-cs-vehicle-access",
+        "pnn-2025-cs-distance-estimation"
+      ],
+      "cites_source": "fulltext",
       "category": "measurement"
     },
     {
@@ -2570,7 +2600,7 @@
       ],
       "limitations": [
         "보안 분석 없음 — 위상 롤오버·위상 조작 공격은 이 논문의 범위 밖",
-        "원문 미확보 — IEEE Xplore 유료, TU/e 연구 포털에 전문 파일 없음, Semantic Scholar openAccessPdf 비어 있음, ResearchGate는 로그인 요구 (2026-08-10 재시도 실패). 장비·실험 조건·수치 미확인"
+        "원문 미확보 — IEEE Xplore 유료, TU/e 연구 포털에 전문 파일 없음, Semantic Scholar openAccessPdf 비어 있음, ResearchGate는 로그인 요구 (2026-08-21 재시도 실패). 장비·실험 조건·수치 미확인"
       ],
       "artifacts": {
         "code": null,
@@ -2578,7 +2608,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-08-10",
+      "last_checked": "2026-08-21",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "estimation"
@@ -2623,7 +2653,7 @@
       ],
       "limitations": [
         "보안 분석 없음 — 적대적 입력에 대한 파이프라인 거동 미평가",
-        "원문 미확보 (IEEE Xplore 비공개) — 시제품 모델명, 측정 조건, 비교 대상의 조건 미확인"
+        "원문 미확보 (IEEE Xplore 비공개, Semantic Scholar 가 openAccess 상태를 CLOSED 로 명시 — 2026-08-21 재확인) — 시제품 모델명, 측정 조건, 비교 대상의 조건 미확인"
       ],
       "artifacts": {
         "code": null,
@@ -2631,7 +2661,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-21",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "estimation"
@@ -2977,13 +3007,13 @@
         "Alois Knoll"
       ],
       "venue": "IEEE VNC",
-      "venue_full": "IEEE Vehicular Networking Conference (VNC) 2024, Kobe, Japan",
+      "venue_full": "IEEE Vehicular Networking Conference (VNC) 2024, Kobe, Japan, pp. 271–272",
       "tier": "other",
       "category": "estimation",
       "year": 2024,
       "url": "https://ieeexplore.ieee.org/document/10575979/",
       "preprint": null,
-      "doi": null,
+      "doi": "10.1109/VNC61989.2024.10575979",
       "topics": [
         "channel-sounding",
         "phase-based-ranging",
@@ -2992,7 +3022,7 @@
       ],
       "relevance": "medium",
       "relevance_note": "CS 측정에서 다중경로를 식별하는 문제를 직접 다룬 몇 안 되는 항목이고, 저자 소속이 TUM 로보틱스 그룹과 차량 응용이라 CS의 주 유스케이스와 겹친다. 다중경로 식별은 내 연구에서 두 겹으로 걸린다 — 정상 상태에서 다중경로가 만드는 오차 분포가 곧 탐지 지표의 오탐 여유이고, 공격자가 만든 초기 성분이 다중경로 성분과 구별되는지가 탐지 가능성 자체를 결정한다. 다만 포스터라 분량이 짧고 아직 원문을 열지 못했다. 전문(IEEE Xplore)을 확보해 어떤 지표로 다중경로를 갈랐는지 확인하는 것이 우선 과제다.",
-      "summary": "확인 필요 — 제목·저자·게재지만 확인했고 원문(IEEE Xplore)을 아직 열지 못함. Channel Sounding을 이용해 위상 기반 거리측정 측정치에서 다중경로를 식별하는 포스터 논문.",
+      "summary": "위상 기반 측정의 정확도를 떨어뜨리는 다중경로를 다룬다. RSSI 랑잉 같은 기존 방식은 특히 다중경로 환경에서 충분히 정확하지 않고, Bluetooth SIG 가 기기 간 고정밀 거리 추정을 가능하게 하는 작업을 진행 중이지만 그 방식 역시 다중경로 페이딩의 영향을 크게 받는다는 문제의식이다. 이 연구는 IQ 데이터 샘플과 기계학습에 기반해 다중경로를 검출하는 방법을 제시한다. 목적은 특히 차량 내부 측정에서 위상 기반 거리 알고리즘의 정확도를 높이거나 IQ 데이터 샘플에 라벨을 붙이는 것이다. (초록만 확인, 전문 미확보 — 2 쪽 포스터)",
       "hardware": [
         "확인 필요 — 원문 미확보"
       ],
@@ -3002,21 +3032,21 @@
       ],
       "software_verified": false,
       "results": [
-        "확인 필요 — 원문 미확보"
+        "IQ 샘플과 기계학습으로 다중경로를 검출하는 방법을 제시 (초록). 사용한 분류기·특징·탐지율 수치는 전문 미확보로 미확인"
       ],
       "limitations": [
-        "확인 필요 — 원문 미확보",
-        "포스터 논문이라 분량과 평가 깊이가 제한적일 가능성"
+        "2 쪽 포스터라 평가 깊이가 제한적",
+        "원문 미확보: IEEE Xplore 유료, Semantic Scholar 에 openAccessPdf 없음, TUM 리포지터리에도 전문 없음(2026-08-21 확인) — 장비·데이터셋·성능 수치 미확인"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
       "added": "2026-08-03",
-      "last_checked": "2026-08-03"
+      "last_checked": "2026-08-21"
     },
     {
       "id": "antonijevic-2026-secure-wifi-ranging",
@@ -4315,6 +4345,228 @@
       "cites": [],
       "cites_source": "fulltext",
       "category": "analysis"
+    },
+    {
+      "id": "droemmer-2026-cs-channel-modeling",
+      "title": "Channel Modeling for Phase-Based Ranging",
+      "authors": [
+        "Till Droemmer",
+        "Markus Gardill"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2608.17497 [eess.SP], 2026년 8월 18일 공개 (BTU Cottbus–Senftenberg Chair of Electronic Systems and Sensors / Mercedes-Benz AG)",
+      "tier": "preprint",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2608.17497",
+      "preprint": "https://arxiv.org/abs/2608.17497",
+      "doi": null,
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "simulation",
+        "multipath",
+        "interference",
+        "physical-layer",
+        "hardware-impairments"
+      ],
+      "relevance": "high",
+      "relevance_note": "내 연구에 지금 가장 크게 빠져 있는 것이 '통제된 CS 물리계층 실험대'인데, 이 논문이 정확히 그것을 규격 준수로 구현했다. Core Spec v6.2 기준 Mode 3 PBR 의 72 톤을 그대로 만들고, 채널(자유공간/정적 다중경로/802.15.4a CM1)과 손상(위상잡음, CFO 위상램프, IQ 불균형, ADC 양자화, Wi-Fi 협대역 간섭)을 하나씩 켜고 끌 수 있다. 공격 연구 관점에서 값진 이유는 손상 항이 식 (1) 에 가산·승산 항으로 분리돼 있다는 점이다 — 공격자가 주입하는 위상 조작을 여기에 항 하나로 더하면, '조작이 만드는 톤별 위상 왜곡'과 '다중경로·하드웨어가 만드는 왜곡'을 같은 축에서 비교할 수 있다. 즉 탐지 지표의 오탐 여유를 정량화하는 시뮬레이션 실험이 이 프레임워크 위에서 장비 없이 가능하다. 다만 저자들이 시간영역 파형과 수신기 샘플클럭을 모델링하지 않는다고 명시했으므로 RTT/CS_SYNC 계열(ED/LC, 조기검출) 공격은 이 위에서 못 돈다. PBR 축 전용 실험대로만 써야 한다.",
+      "summary": "Bluetooth Core Specification v6.2 를 따르는 Bluetooth Channel Sounding 물리계층의 Python 시뮬레이션 프레임워크를 제시한다. 2.4 GHz ISM 대역의 72 개 활성 톤에 대한 Mode 3 위상 기반 거리측정을 구현하고, 자유공간·정적 다중경로·IEEE 802.15.4a 확률적 다중경로의 세 채널 조건을 지원한다. 여기에 상용 SoC 데이터시트와 현장 측정에서 뽑은 파라미터로 위상잡음, CFO 로 인한 위상램프, IQ 불균형, ADC 양자화, 동일 위치 Wi-Fi 의 협대역 간섭을 모델링한다. 시뮬레이터는 시간영역 파형이나 수신기 샘플클럭을 만들지 않고, 거리 추정기가 받게 되는 72 개 복소 톤 응답 벡터 수준에서만 동작한다. Mode 3 의 양방향 톤 교환을 두 번의 독립 손상 체인으로 모사한 뒤 규격대로 Y_comb[k] = Y_A[k]·Y_B[k] 로 결합해 양쪽 기기의 대칭 위상 기여를 상쇄시킨다. 마지막으로 Wieme 등이 공개한 nRF54L15-DK 실측 데이터셋과 정성적으로 대조해 실제 배치의 위상 형태를 재현함을 보인다.",
+      "hardware": [
+        "해당 없음 — 순수 시뮬레이션 연구로 자체 하드웨어 실험 없음",
+        "검증 대조군으로 Wieme 등(2025)이 공개한 Nordic nRF54L15-DK 측정 데이터셋(imec/UGent IDLab 의 300 m² 창고형 환경, Mode 3 72 톤, nRF21540 FEM 포함 20 dBm) 사용",
+        "손상 파라미터 출처로 인용된 상용 SoC 데이터시트 — TI CC274xR-Q1/CC274xP-Q1, NXP MCXW72, Nordic nRF54L05"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Python 기반 BT CS 물리계층 시뮬레이터 (모듈식; 공개 저장소 링크는 논문에 없음)",
+        "IEEE 802.15.4a CM1 실내 주거 채널 모델 구현",
+        "비교 대상으로 언급된 MATLAB Bluetooth Toolbox R2025a (이 논문이 쓰지는 않음)"
+      ],
+      "software_verified": true,
+      "results": [
+        "규격상 79 채널 중 BLE 광고 채널 보호를 위해 7 개(CS 채널 인덱스 0, 1, 23, 24, 25, 77, 78)를 제외한 72 개 활성 톤을 구현하고, 규격대로 의사난수 톤 순서를 재현해 위상램프가 주파수 인덱스가 아니라 측정 시각에 따라 누적되게 했다",
+        "손상 파라미터 범위를 상용 하드웨어 기준으로 명시: 위상잡음 표준편차 σ_φ ≈ 1° (실험실급 발진기) / 5~8° (열 스트레스 하 소비자용 SoC), CFO 위상램프 0.05~0.7°/step, IQ 불균형 진폭 0.5~1.0 dB·위상 1.5~2.0°, ADC 12~16 bit (4~6 bit 로 낮추면 위상 응답에 계단 왜곡이 보임)",
+        "Wi-Fi 협대역 간섭을 20 MHz 채널당 64 개 OFDM 부반송파(간격 312.5 kHz)의 sinc 누설로 모델링하고, AP 활동을 베르누이 과정(기본 duty cycle 0.8)으로, 결정 오차를 ±20 ppm 수정 공차에서 뽑은 CFO 로 준다",
+        "Wieme 데이터셋의 5 m LOS 창고 측정과 정성 대조: 시뮬레이션 파라미터를 위상잡음 1~5°, CFO 1~8 Hz, ADC 12~16 bit, N=150 회로 두고 10~90 백분위 신뢰대를 그렸을 때, 실측과 시뮬 모두 자유공간 기준선보다 위상 기울기가 가파르고 위상 랩 수가 많으며 인접 톤 간 급격한 위상 도약을 보였다 — 둘 다 실제 거리 5 m 보다 큰 겉보기 거리를 낸다",
+        "세 채널 조건의 위상 형태 차이를 제시: 확률적 다중경로(802.15.4a CM1 주거 모델)는 반사 경로의 초과 지연이 짧아 정적 다중경로보다 위상 응답이 매끄럽고 자유공간에 더 가깝다"
+      ],
+      "limitations": [
+        "검증이 정성적이다 — 실측과 시뮬 곡선이 톤 단위로 일치하지 않으며, 저자들도 창고의 정확한 기하와 반사율을 모르므로 점대점 일치는 목적이 아니라고 명시한다",
+        "거리 추정 정확도나 추정기 성능을 평가하지 않는다. 물리계층 응답 생성까지만이 범위이고, 추정기 벤치마크는 향후 과제로 남긴다",
+        "시간영역 파형과 수신기 샘플클럭을 시뮬레이션하지 않는다 — 톤당 복소 IQ 한 샘플 수준의 주파수영역 모델이라 RTT·CS_SYNC 타이밍 계열 현상은 다루지 못한다",
+        "Mode 3(양방향 톤 교환)만 구현했고 다른 CS 모드는 다루지 않는다",
+        "코드 공개 저장소 링크가 논문에 없다",
+        "보안 분석이 전혀 없다 — 적대적 신호 주입은 모델에 포함돼 있지 않다"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "wieme-2025-cs-commercial-hw"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-21",
+      "last_checked": "2026-08-21"
+    },
+    {
+      "id": "joo-2020-hodor",
+      "title": "Hold the Door! Fingerprinting Your Car Key to Prevent Keyless Entry Car Theft",
+      "authors": [
+        "Kyungho Joo",
+        "Wonsuk Choi",
+        "Dong Hoon Lee"
+      ],
+      "venue": "NDSS",
+      "venue_full": "Network and Distributed System Security Symposium (NDSS) 2020, San Diego, CA, USA",
+      "tier": "top4",
+      "category": "defense",
+      "year": 2020,
+      "url": "https://www.ndss-symposium.org/ndss-paper/hold-the-door-fingerprinting-your-car-key-to-prevent-keyless-entry-car-theft/",
+      "preprint": "https://arxiv.org/abs/2003.13251",
+      "doi": "10.14722/ndss.2020.23107",
+      "topics": [
+        "rf-fingerprinting",
+        "keyless-entry",
+        "pkes",
+        "rke",
+        "relay-attack",
+        "machine-learning",
+        "defense",
+        "automotive"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 가 풀려는 문제(키리스 엔트리 릴레이)를 거리 측정을 아예 쓰지 않고 푸는 경쟁 노선이다. 저자들이 서론에서 거리한정을 검토한 뒤 버리는 논거가 내 연구의 반대편 주장으로 그대로 쓰인다 — '거리한정은 타이밍 오차에 극도로 민감하고, UWB-IR 을 쓰려면 통신 시스템을 통째로 새로 넣어야 한다.' CS 는 정확히 이 두 번째 반론을 무력화하는 기술이다(이미 깔린 BLE 위에서 돈다). 따라서 'CS 가 왜 판을 바꾸는가'를 쓸 때 인용할 직전 세대의 대안이다. 동시에 보완재이기도 하다. HODOR 의 판별 특징(peak frequency, SNR, spectral brightness, kurtosis)은 전부 송신기 하드웨어 지문이라 거리와 직교하므로, CS 의 거리 검증과 겹쳐 쓰면 아날로그 릴레이(staat-2022)처럼 거리 축만 속이는 공격자를 하드웨어 축에서 잡을 여지가 있다. 특히 재생(playback) 공격이 peak frequency 는 흉내내지만 ADC/DAC 를 새로 거치므로 spectral brightness 와 kurtosis 에서 걸린다는 분석이 중요하다 — CS 공격자도 톤을 받아 다시 내보내는 순간 같은 흔적을 남긴다. 반대로 한계도 분명하다: 동적 환경에서 FPR 이 5% 까지 오르고 0°C 이하에서 정상 신호가 임계를 넘는다. 물리 지문 단독으로는 못 버틴다는 근거다.",
+      "summary": "키리스 엔트리(PKES/RKE)가 릴레이·재생·암호 공격에 계속 뚫리는 이유를 '유효한 패킷이면 통신 범위 안이라고 간주하는' 구조에서 찾고, 거리 검증 대신 RF 지문으로 이를 막는 HODOR 를 제시한다. 자동차 도메인에 RF 지문을 적용한 첫 시도다. HODOR 는 키포브가 내보내는 UHF 대역(315/433.92 MHz) 신호에서 peak frequency, SNR, spectral brightness, kurtosis 네 가지 특징을 뽑아, 정상 키포브만으로 학습한 단일클래스 분류기(one-class SVM, k-NN)로 판정한다. 기존 인증 시스템을 고치지 않고 신호 수집·분석 장치만 덧붙이는 보조 인증(sub-authentication) 계층으로 설계됐다. 기존 공격 시연들을 단일 밴드 릴레이, 이중 밴드 릴레이, 암호 공격의 세 가지로 형식화한 뒤, 실차 2 대와 SDR 로 각 공격을 재현해 탐지 성능을 측정하고, 온도 변화·NLoS·배터리 노화 같은 환경 요인 아래에서도 특징이 유지되는지 확인한다.",
+      "hardware": [
+        "HackRF One 2 대 — 한 대는 UHF 대역 신호 수집(차량측), 다른 한 대는 공격 신호 생성",
+        "Ettus USRP X310 — 공격 신호 생성용",
+        "실차 2 대: Kia Soul, Volkswagen Tiguan (정품 키포브 Soul 3 개, Tiguan 2 개)",
+        "LF 대역 릴레이용 SMA 케이블과 RF 증폭기(광대역 LNA·전력 증폭 모듈), Mini-Circuits ZABP-450-S+ 대역통과 필터",
+        "배터리 노화 실험용 Panasonic CR2032 리튬 코인셀 (3.0 V → 2.5 V 구간)",
+        "온도 실험용 드라이아이스 아이스박스 (20°C ~ -20°C, 10°C 간격)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "GNU Radio — 전처리 단계를 가상 하드웨어 블록으로 구현, SDR 샘플레이트 5 MS/s",
+        "MATLAB 2017a — one-class SVM(RBF 커널) 및 k-NN(k=1, 표준화 유클리드 거리), 모두 기본 파라미터",
+        "학습은 1 m LoS 에서 수집한 정상 키포브 신호 100 개로만 수행하고, 공격 시뮬레이션마다 공격 신호 100 개를 수집",
+        "Kia Soul 키포브 재현 파라미터: FSK, 비트율 3 kbps, 주파수 편이 30 kHz"
+      ],
+      "software_verified": true,
+      "results": [
+        "PKES 디지털 릴레이 공격(Kia Soul): SVM 평균 FPR 0.27% / FNR 0% (임계 5), k-NN 평균 FPR 0.65% (임계 4). Tiguan 은 두 알고리즘 모두 FPR 0% / FNR 0% (임계 70)",
+        "단일 밴드 릴레이: 5 m, 10 m, 15 m 모두에서 k-NN·SVM 둘 다 FPR 0% / FNR 0%. 거리가 멀수록 탐지가 쉬워졌다. 실험 구성에서 PKES 의 UHF 신호가 도달한 최대 거리는 15 m",
+        "증폭 공격: 공격자가 20~25 m 지점에서 정상 신호와 같은 SNR 수준을 달성할 수 있었으나 k-NN·SVM 모두 FPR 0% / FNR 0%",
+        "재생(playback) 공격(Soul): k-NN 평균 FPR 0%, SVM 평균 FPR 0.35%, FNR 0%",
+        "NLoS: 키포브를 배낭에 넣으면 k-NN 1.32% / SVM 1.35%, 주머니에 넣으면 1.71% / 1.67% (FNR 0%)",
+        "동적 환경: 약 700 대 규모 지하주차장에서 k-NN 5% / SVM 4%, 노상 주차에서 2% / 3% — 정상 키포브를 공격으로 오판하는 비율이 크게 오른다",
+        "배터리 노화: 3.0 V → 2.5 V 전 구간에서 k-NN·SVM 모두 FPR 0% (CR2032 수명의 약 97.34% 구간)",
+        "온도: 20°C ~ -20°C 중 0°C 와 -20°C 에서 출력 분포가 임계를 넘어 정상 신호가 거부됐다. PKES 는 차량 근처(실외)여야 해서 온도 실험은 RKE 로만 수행"
+      ],
+      "limitations": [
+        "동적 환경(지하주차장 FPR 5%)과 저온에서 오탐이 실용 수준을 넘는다고 저자들이 직접 인정하고, 더 극단적 환경에서는 더 나빠질 것이라 적었다",
+        "문 열기 명령 전체의 실행시간을 줄여야 운전자가 지연을 느끼지 않는다 — 현 상태로는 실사용 요건 미달이라고 명시",
+        "임계값이 트레이드오프 파라미터다. NLoS·온도 변동을 견디려고 임계를 크게 잡으면, 특징을 완벽히 흉내내지 못한 공격 신호도 통과할 수 있다",
+        "공격은 실제 절도가 아니라 SDR 로 재현한 것이다. 정상 키포브를 공격 장비로 쓰는 '동일 부품 초강력 공격자'는 가정적 시나리오로만 평가했다",
+        "차량 2 대, 키포브 5 개 규모의 소표본이며 두 차종의 변조 방식과 비트율이 달라 파라미터를 따로 잡아야 했다",
+        "롤잼(roll-jam) 공격은 공격 모델에서 제외됐다",
+        "다른 변조 방식·다른 대역(예: 2.4 GHz BLE)으로의 확장은 범위 밖이라고 명시하고 가능성만 시사한다"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "francillon-2011-pkes-relay",
+        "leu-2020-mtac",
+        "singh-2019-uwb-ed",
+        "singh-2019-uwb-pr"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-21",
+      "last_checked": "2026-08-21"
+    },
+    {
+      "id": "yu-2026-ble-theft-auto",
+      "title": "BLE Theft Auto: Evaluating the Security of Aftermarket BLE-based Automotive Remote Control Systems",
+      "authors": [
+        "Jerry Yu",
+        "Yibo Wei",
+        "Sumanth Rao",
+        "Mohak Vaswani",
+        "Jefferson Chien",
+        "Christian Dameff",
+        "Nishant Bhaskar",
+        "Aaron Schulman"
+      ],
+      "venue": "USENIX Security",
+      "venue_full": "35th USENIX Security Symposium (USENIX Security '26), Baltimore, MD, USA, pp. 3459–3477",
+      "tier": "top4",
+      "category": "attack",
+      "year": 2026,
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/yu-jerry",
+      "preprint": null,
+      "doi": null,
+      "topics": [
+        "ble",
+        "automotive",
+        "keyless-entry",
+        "application-layer-security",
+        "reverse-engineering",
+        "wardriving",
+        "attack"
+      ],
+      "relevance": "low",
+      "relevance_note": "거리 검증 논문이 아니다. 그런데도 코퍼스에 넣는 이유는 이것이 CS 가 배치될 실제 지형의 사진이기 때문이다. CS 보안 논의는 암묵적으로 '상위 계층 인증은 제대로 돼 있고 남은 구멍은 거리뿐'이라고 가정하는데, 이 논문은 그 가정이 시장에서 얼마나 자주 깨지는지를 수치로 보여 준다 — 애프터마켓 BLE 차량 원격제어 6 종 중 3 종이 공유 키·페어링 부재 같은 응용계층 결함을 갖고 있고 취약 차량이 140 만 대 규모다. 세 방향으로 걸린다. 첫째, 위협 모델의 순서다. 이런 시스템에 CS 를 얹어도 공격자가 정당한 사용자로 인증되므로 거리 검증이 그냥 통과된다 — 거리 검증은 인증이 성립한 뒤에야 의미가 있다는 것을 실증 사례로 못박을 수 있다. 둘째, 릴레이가 필요 없는 근접 공격이다. 공격 사거리가 KARR 3~10 m, CarLink 150 m 로 이미 정상 통신 범위 안이거나 그 이상이라 공격자가 거리를 속일 이유 자체가 없다. 릴레이 방어에 집중하는 CS 서사가 실제 차량 절도 위협의 어느 조각을 덮고 어느 조각을 못 덮는지를 가르는 자료다. 셋째, WiGLE 같은 공개 워드라이빙 DB 로 특정 차량을 표적화할 수 있다는 발견은 CS 기기의 광고 패킷 설계(주소 무작위화, 식별자 노출)에 그대로 적용된다.",
+      "summary": "스마트폰 앱이 키포브 역할을 하는 BLE 차량 원격제어 중에서, 지금까지 조사된 적이 없는 애프터마켓(딜러 설치·개인 설치) 제품군을 분석한다. 이들은 BLE 표준의 페어링·인증·암호화를 쓰지 않고 응용계층에서 자체 보안을 구현하는데, 그 이유는 스마트폰 BLE API 가 페어링 취소·공유·동일 단말 내 악성앱 차단을 지원하지 않기 때문이다. 저자들은 고속도로 워드라이빙, FCC 문서, 앱스토어 탐색을 결합해 실제 사용 중인 애프터마켓 시스템 6 종(KARR, CarLink, Rockledge, DS4, EvoStart, Linkr)을 찾아내고, 안드로이드 APK 를 역공학하고 모듈 실물을 구동해 프로토콜을 복원했다. 그중 3 종(KARR, CarLink, Rockledge)에서 페어링·인증의 치명적 결함을 발견했다 — 하나는 모든 설치본이 공유 키를 쓰고, 다른 하나는 벤더 공식 앱만으로 남의 차를 페어링해 원격 시동까지 걸 수 있다. 나아가 순차적 MAC 주소 할당 패턴을 이용한 개체수 추정법을 새로 만들어 배치 규모를 계산하고, WiGLE 크라우드소싱 스캔 DB 로 특정 차량을 표적화하는 것이 실제로 가능함을 보였다.",
+      "hardware": [
+        "애프터마켓 BLE 원격제어 모듈 6 종 실물 구매·구동 (KARR, CarLink, Rockledge, DS4, EvoStart, Linkr)",
+        "실차 2 대: Mazda 3 (KARR No Sale 모드), Toyota Camry (KARR User 모드) — 사거리 측정에 사용",
+        "자체 제작 BLE 워드라이빙 앱을 구동한 스마트폰 (기종은 논문에 미기재)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "JADX — Java/Kotlin 안드로이드 APK 역컴파일",
+        "ILSpy — 한 제품이 BLE 프로토콜을 C# .NET DLL 로 구현해 별도 역컴파일 (안드로이드 앱에서 비-Java 라이브러리로 BLE 프로토콜을 구현한 첫 발견 사례라고 주장)",
+        "DBSCAN — BLE 광고 패킷의 구조 유사도(자카드 유사 거리, 이름 접두사 거리)로 3 단계 계층 클러스터링",
+        "WiGLE 공개 크라우드소싱 무선 스캔 데이터베이스 — 표적화 가능성 평가",
+        "APK 로그 주입 계측 — 모듈별 키의 존재 확인"
+      ],
+      "software_verified": true,
+      "results": [
+        "애프터마켓 6 종 중 3 종(KARR, CarLink, Rockledge)에 페어링·인증의 치명적 취약점. 취약 차량 규모를 최소 140 만 대로 추정 (순차 MAC 추정으로 KARR 1,473,136 대, CarLink 31,927 대)",
+        "BLE 공격 사거리(5 초 안에 안정적으로 성공하는 범위): KARR 은 차 밖에 서서 5~20 m, 근처 차 안에서 3~10 m. CarLink 는 각각 150 m 미만, 60 m 미만으로 KARR 의 약 6 배",
+        "샌디에이고 고속도로 워드라이빙에서 고유 기기 4,314 개를 수집해 애프터마켓 2 종·OEM 3 종을 발견",
+        "KARR 모듈은 펌웨어 서명 검증이 없어 BLE 로 펌웨어를 통째로 덮어쓸 수 있다. 업로드에 60 초가 걸려 주행 중 차량에는 어렵다",
+        "시동이 걸린 KARR 차량 중 47% 가 No Sale 모드, 42% 가 User 모드 — 절반 가까이가 자기 차에 활성 BLE 원격제어 시스템이 있다는 사실을 모를 가능성이 있다. No Sale 모드 차량은 공격자가 User 모드로 바꾼 뒤 이모빌라이저를 걸어 차를 못 쓰게 만들 수 있다",
+        "표적화 실증: WiGLE 에서 최근 관측된 CarLink 모듈 50 개를 뽑아 '100 m 반경 안에서 3 회 이상 관측' 기준을 적용하니 31 개(62%)가 표적화 가능했다",
+        "WiGLE 에서 이름 패턴으로 KARR 725,808 개, CarLink 8,825 개, Rivian 센서 92,443 개의 고유 기기를 수집했고, 세 제품 모두 소수의 24 비트 OUI 블록 안에서 MAC 을 거의 순차 할당한다",
+        "CarLink 페어링은 공식 앱만으로 가능하다 — QR 코드가 상시 송출되는 광고 패킷의 MAC 주소일 뿐이다. 다만 OEM 키가 없으면 브레이크를 밟을 때 시동을 죽이는 보호장치가 있어 원격 시동 후 실제 절도는 어려울 수 있다"
+      ],
+      "limitations": [
+        "악용을 막기 위해 페어링·인증·암호화 취약점의 구체적 익스플로잇 방법을 공개하지 않는다 — 재현이 불가능하다",
+        "분석 대상이 북미(특히 미국 남서부·캐나다) 시장의 애프터마켓 제품 6 종으로 한정된다",
+        "사거리 측정이 차량 2 대, 각 조건 10 회 시도 규모다",
+        "순차 MAC 기반 개체수 추정은 무작위 MAC 을 쓰는 일부 기기(KARR 221 개, CarLink 164 개, Rivian 402 개)를 걸러내고 계산한 값이다",
+        "대부분의 모듈이 셀룰러 인터페이스 없이 BLE 만 갖고 있어, 패치가 나와도 사용자가 수동으로 업데이트해야 한다"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "francillon-2011-pkes-relay",
+        "tschirschnitz-2021-method-confusion"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-21",
+      "last_checked": "2026-08-21"
     }
   ]
 }
