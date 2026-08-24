@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-21",
-  "last_run": "2026-08-21",
+  "updated": "2026-08-24",
+  "last_run": "2026-08-24",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 171,
+  "citation_edges": 242,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -521,10 +521,12 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-30",
+      "last_checked": "2026-08-24",
       "cites": [
+        "gunia-2026-cs-metrological",
         "pnn-2025-cs-distance-estimation",
         "santra-2024-cs-indoor",
+        "sheikh-2025-cs-interference",
         "suresh-2025-cs-vehicle-access",
         "wieme-2025-cs-commercial-hw",
         "zand-2019-ble-pbr"
@@ -1008,10 +1010,13 @@
       "id": "stealtooth-2025",
       "title": "Stealtooth: Breaking Bluetooth Security Abusing Silent Automatic Pairing",
       "authors": [
-        "확인 필요"
+        "Keiichiro Kimura",
+        "Hiroki Kuzuno",
+        "Yoshiaki Shiraishi",
+        "Masakatu Morii"
       ],
       "venue": "arXiv",
-      "venue_full": "arXiv preprint 2507.00847",
+      "venue_full": "arXiv preprint 2507.00847v2 (2025-07-03), Kobe University",
       "tier": "preprint",
       "year": 2025,
       "url": "https://arxiv.org/abs/2507.00847",
@@ -1023,29 +1028,42 @@
         "mitm"
       ],
       "relevance": "low",
-      "relevance_note": "CS 직접 관련은 아니나, CS Security Start가 전제하는 페어링/본딩 신뢰 기반을 흔드는 공격이라 위협 모델 전제 검토에 유용.",
-      "summary": "무음 자동 페어링을 악용해 Bluetooth 보안을 우회하는 공격을 제시한다.",
+      "relevance_note": "CS 의 Security Start 와 CS 키 유도는 이미 본딩된 link key 를 신뢰 기반으로 삼는다. 이 논문은 그 아래층을 흔든다 — 상용 오디오 기기의 자동 페어링 기능을 악용해 사용자 알림 없이 link key 를 덮어쓰고, 10 개 중 8 개에서 성공했다. 내 위협 모델에서 이것이 뜻하는 바는, '공격자가 키를 모른다'는 전제를 무료로 가정할 수 없다는 것이다. 규격이 아니라 벤더 구현에서 생긴 결함이라는 점도 중요하다 — 같은 MediaTek 계열 칩셋(MT2822 / MT2822S)이 서로 다르게 거동했다. CS 도 벤더별 구현 격차가 크므로 같은 형태의 논증이 성립한다. 거리측정 자체를 대상으로 하지 않으므로 관련도는 낮게 둔다.",
+      "summary": "많은 상용 Bluetooth 기기가 편의를 위해 구현한 자동 페어링 기능이 지금까지 조사되지 않은 공격면을 만든다는 문제의식에서 출발한다. Stealtooth 는 이 자동 페어링을 악용해 사용자 인지나 특수 장비 없이 link key 를 완전히 조용하게 덮어쓰는 공격이다. 오디오 기기가 이전에 페어링한 기기와 연결하지 못할 때 자동으로 페어링 상태로 전환한다는 사실을 이용한다. 여기에 절전 모드를 악용하는 기존 Breaktooth 기법을 결합해 중간자 공격(MitM Stealtooth)으로 확장한다. 주요 제조사의 상용 기기 10 대로 평가했고, 구현은 범용 하드웨어와 오픈소스 소프트웨어만으로 가능하다. 대책으로 기기 수준의 사용자 알림 강화와 프로토콜 수준의 자동 페어링 지침 표준화를 제안한다. 취약점은 제조사에 책임 공개했고 Sony 는 패치를 배포했다.",
       "hardware": [
-        "확인 필요"
+        "공격자(Mallory): Raspberry Pi 4 Model B — MitM 시나리오에서는 동일 사양 2 대 (각각 Alice, Bob 을 사칭)",
+        "피해자 Master(Alice): Microsoft Surface Laptop 4 (Windows 11)",
+        "피해자 Slave(Bob): 상용 Bluetooth 오디오 기기 10 대 — Sony WH-1000XM5 / WH-1000XM4 / WF-1000XM5 / WF-1000XM4, Anker Soundcore Space One, EDIFIER W820NB, TOZO NC2, Xiaomi Redmi Buds 6 Pro, Google Pixel Buds Pro, Bose QuietComfort Ultra Headphones"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요"
+        "Raspberry Pi OS 32bit (11 Bullseye), Linux 커널 6.1, BlueZ 5.55, Bluetooth 5.0",
+        "hciconfig (HCI 설정), hcitool (스캔·열거)",
+        "Breaktooth 공격의 공개 오픈소스 도구 (절전 모드 악용 단계에 재사용)",
+        "A2DP Sender / Receiver 자체 구현 — PulseAudio 서버의 Bluetooth 모듈과 BlueZ 스택을 써서 A2DP 스트림을 가로채 TCP 소켓으로 중계"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "확인 필요"
+        "Stealtooth: 10 대 중 8 대에서 사용자 알림 없이 link key 덮어쓰기 성공 (Sony WH-1000XM5/XM4, WF-1000XM5/XM4, Anker Soundcore Space One, EDIFIER W820NB, TOZO NC2 등). 실패한 것은 Google Pixel Buds Pro 와 Bose QuietComfort Ultra Headphones",
+        "연결 개시자에 따라 두 패턴 — Pattern#1(Sony WH-1000XM5, WF-1000XM5)은 Bob 이 재연결을 시도하다 자동 페어링 모드로 Mallory 와 페어링, Pattern#2(나머지)는 Mallory 가 개시하고 Bob 이 인증 실패 후 자동 페어링 모드로 전환",
+        "취약성이 칩셋이 아니라 구현에 달려 있음 — 유사한 MediaTek 칩셋(MT2822, MT2822S) 기기가 서로 다르게 거동",
+        "MitM Stealtooth: Stealtooth 에 취약한 8 대 중 4 대에서 성공. 도청(AS#1)은 4 대 모두에서 성공해 오디오를 WAV 로 기록, 변조(AS#2)는 Sony WH-1000XM5·WF-1000XM5 에서 성공(WH/WF-1000XM4 는 재연결 후에야 프로필 권한 확보), 중계(AS#3)는 부분 성공 — 전달받은 오디오를 적절한 코덱으로 재인코딩하지 못해 매끄러운 재생 실패",
+        "책임 공개 후 Sony 가 보고된 취약 기기에 패치 배포"
       ],
       "limitations": [
-        "CS 거리측정 자체를 대상으로 하지 않음"
+        "평가 기기가 10 대로 한정되고 자동 페어링 거동이 기기 유형·펌웨어 버전에 따라 크게 달라 일반화가 어렵다 (저자 명시)",
+        "정상 기기가 꺼져 있거나 부재한 특정 타이밍 조건에 성공이 의존하며, 이 조건은 공격자가 항상 통제할 수 없어 여러 번 시도가 필요할 수 있다 (저자 명시)",
+        "MitM 구현이 A2DP 오디오 가로채기에 집중되어 다른 Bluetooth 프로필로의 확장은 추가 구현이 필요 (저자 명시)",
+        "CS 거리측정 자체를 대상으로 하지 않음",
+        "BR/EDR(Bluetooth Classic) 대상 — BLE 및 CS 의 본딩 경로에 그대로 적용되는지는 미검증"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-10",
+      "last_checked": "2026-08-24",
       "cites": [
         "antonioli-2023-bluffs",
         "tschirschnitz-2021-method-confusion"
@@ -1057,10 +1075,10 @@
       "id": "ble-security-review-2024",
       "title": "Securing Bluetooth Low Energy: A Literature Review",
       "authors": [
-        "확인 필요"
+        "Zhe Wang"
       ],
       "venue": "arXiv",
-      "venue_full": "arXiv preprint 2404.16846",
+      "venue_full": "arXiv preprint 2404.16846v1 (2024-04-24), Harbin University of Science and Technology",
       "tier": "preprint",
       "year": 2024,
       "url": "https://arxiv.org/abs/2404.16846",
@@ -1072,25 +1090,29 @@
         "ble-security"
       ],
       "relevance": "low",
-      "relevance_note": "BLE 보안 전반 서베이 — related work 작성 시 인용 풀로 유용.",
-      "summary": "BLE 보안 연구 전반을 정리한 문헌 리뷰.",
+      "relevance_note": "BLE 보안 전반을 서술식으로 훑은 짧은 리뷰다. 다만 전문을 읽어 보니 참고문헌 목록이 없고 개별 연구를 지목하지 않는 개괄이라, related work 의 인용 풀로 쓰기에는 부적합하다. Channel Sounding 은 다루지 않으며 스택 계층 구조와 페어링·프라이버시의 배경 정리 정도로만 쓸 수 있다. 이 저장소에서는 'BLE 보안 서베이가 CS 이전에 멈춰 있다'는 공백 자체의 근거로 두는 것이 정직한 용도다.",
+      "summary": "BLE 의 기본 구조와 보안·프라이버시를 서술식으로 정리한 짧은 리뷰다. Bluetooth Mesh, LE isochronous channel, LE Audio 같은 세부 구성요소를 제외하고 BLE 핵심 기능에 집중한다. 컨트롤러/호스트 분리와 HCI, 프로토콜 계층, Security Manager 를 배경으로 설명한 뒤, 공격(수동·능동 스니핑, MITM, 무차별 대입, bluejacking, bluesnarfing, bluebugging, DoS, 사칭, 추적)과 방어(인증·암호화, 펌웨어 갱신, 미사용 기능 비활성화, 강한 PIN·패스키 등)를 나열한다. 관련 연구를 Bluetooth 보안 / Bluetooth 프라이버시 / IoT 보안·프라이버시 세 갈래로 나눠 개괄한다. 거리측정이나 Channel Sounding 은 다루지 않는다.",
       "hardware": [],
       "hardware_verified": false,
       "software": [],
       "software_verified": false,
       "results": [
-        "BLE 공격/방어 연구 분류 체계 제시"
+        "공격을 수동·능동 스니핑, MITM, 무차별 대입, bluejacking, bluesnarfing, bluebugging, DoS, 사칭, 추적으로 나열하고 방어를 대응해 정리",
+        "관련 연구를 Bluetooth 보안 / Bluetooth 프라이버시 / IoT 보안·프라이버시 세 갈래로 개괄"
       ],
       "limitations": [
-        "Channel Sounding 도입 이전 문헌 중심"
+        "Channel Sounding 및 거리측정 보안을 전혀 다루지 않음 — CS 도입 이전 문헌 중심",
+        "체계적 서베이의 형식을 갖추지 않음: 번호 매긴 참고문헌 목록이 없고 선정 기준·검색 범위·분류 방법론이 기술되지 않음 (전문 확인, 2026-08-24)",
+        "조판 템플릿 잔여물이 그대로 남아 있음 ('Proposta recebida em Outubro 2017', 키워드가 'article sample, notes for the authors') — 편집 검수를 거치지 않은 원고로 보임",
+        "개별 공격을 지목한 원 연구를 인용하지 않아 인용 풀로서의 가치가 낮음"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
+      "last_checked": "2026-08-24",
       "cites": [],
       "cites_source": "fulltext",
       "category": "survey"
@@ -2030,11 +2052,11 @@
         "Bart Preneel"
       ],
       "venue": "IEEE S&P",
-      "venue_full": "2026 IEEE Symposium on Security and Privacy (COSIC / DistriNet, KU Leuven)",
+      "venue_full": "2026 IEEE Symposium on Security and Privacy (S&P) — COSIC / DistriNet, KU Leuven",
       "tier": "top4",
       "year": 2026,
       "url": "https://sp2026.ieee-security.org/accepted-papers.html",
-      "preprint": null,
+      "preprint": "https://sayon.me/papers/whisperpair.pdf",
       "doi": null,
       "topics": [
         "bluetooth",
@@ -2043,31 +2065,48 @@
         "protocol-analysis"
       ],
       "relevance": "low",
-      "relevance_note": "Google Fast Pair 프로토콜 보안 분석. CS 거리측정과 직접 관련은 없으나, 벤더가 표준 위에 얹은 페어링 계층이 별도 공격면을 만든다는 사례다. CS도 벤더별 구현 격차가 있으므로 같은 구조의 논증에 참고가 된다.",
-      "summary": "Google Fast Pair 프로토콜을 분석해 보안 취약점을 밝힌다.",
+      "relevance_note": "Google Fast Pair 라는 벤더 확장 계층이 표준 Bluetooth 위에 얹히면서 별도의 공격면을 만든다는 것을 25 개 상용 기기로 실증했다. CS 연구에 세 가지로 걸린다. 첫째, 규격이 정한 상태 술어(pairing mode 여야 한다)를 펌웨어의 응용계층 검사에 맡기면 벤더별로 무너진다는 것을 68% 라는 숫자로 보였다 — CS 도 보안 수준의 실제 적용을 벤더 구현에 맡기는 구조이므로 같은 논증이 그대로 옮겨온다. 둘째, 인증(certification)을 통과한 기기가 여전히 규격 위반이었다는 관찰은, CS 의 보안 주장을 규격 문구가 아니라 실제 칩 거동으로 확인해야 한다는 근거가 된다. 셋째, 페어링 결함이 Find Hub 추적으로 연쇄된 경로는 거리측정 결함이 상위 유스케이스에서 어떻게 증폭되는지의 대조 사례다. 근접성 자체를 다루지는 않으므로 관련도는 낮게 둔다.",
+      "summary": "Google Fast Pair Service(GFPS)는 Bluetooth 페어링에 원탭 설정과 계정 동기화를 얹은 벤더 확장이다. 이 논문은 GFPS 의 첫 포괄적 보안 분석으로, 7 개 칩 제조사의 17 종 칩셋을 쓰는 16 개 벤더의 상용 액세서리 25 개를 조사해 규격의 핵심 보안 요구가 체계적으로 지켜지지 않음을 보인다. 핵심 결함은 '기기가 명시적으로 페어링 모드에 있어야 새 호스트를 받아들인다'는 상태 술어(pairing state predicate)를 암호학적으로 강제하지 않고 응용계층 상태 검사에 맡긴 데 있다. 이를 이용해 WhisperPair 라는 공격군을 실증한다 — 무단 페어링, 오디오 기기의 조용한 탈취, 그리고 피해자의 액세서리를 공격자 Google 계정에 몰래 묶어 Find Hub 망으로 지속 추적하는 은밀한 계정 결속이다. 근본 원인을 설계·구현·검증(Validator)·인증 네 단계에 걸쳐 추적하고, 사용자의 페어링 의도를 키 스케줄에 암호학적으로 묶는 IntentPair 를 대책으로 제안한다.",
       "hardware": [
-        "확인 필요 — 원문 공개 후 대조 필요"
+        "Raspberry Pi 4 (공격자 역할, BlueZ Linux API 로 GATT 특성 읽기/쓰기)",
+        "상용 Fast Pair 인증 액세서리 25 종 / 16 개 벤더 (Sony WH-1000XM4/XM5/XM6, WF-1000XM5, WH-CH720N, Google Pixel Buds Pro 2, Bose QuietComfort Ultra, JBL Live 775 NC / Tune Beam / Clip 5 / Flip 6, Anker Liberty 4 NC, Nothing Ear (a), OnePlus Nord Buds Pro 3, HP Poly VFree 60 / Speak2 55 UC, Jabra Elite 8 Active, Marshall Major V, Beats Solo Buds, Audio-Technica ATH-M20xBT, Xiaomi Buds 5 Pro, Bang & Olufsen Beosound A1, Ultimate Ears Wonderboom 4 등)",
+        "칩셋 17 종 / 7 개 제조사 (Qualcomm QCC3040/QCC3056/QCC5127/QCC5171/QCC5181, MediaTek MT2811/MT2822/MT2827SA/MT2833, Airoha AB1577SA/AB1585/AB1588/AB1588Q, BES BES2600Z/BES2700ZP, Realtek RTL8976, Actions ATS2835, Google Tensor A1)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 원문 공개 후 대조 필요"
+        "BlueZ (Linux Bluetooth 스택) — GATT 특성 접근",
+        "공개 아티팩트: 적합성 시험 하네스 + 공격 실증 코드 (호스트는 노트북 또는 Raspberry Pi 면 충분)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "Google Fast Pair 프로토콜의 취약점 식별 (구체 수치 확인 필요)"
+        "25 개 액세서리 중 17 개(68%)가 pairing state predicate 를 강제하지 못해 페어링 모드가 아닌 상태에서 무단 Key-based Pairing 을 수락",
+        "탈취에 성공한 모든 기기에서 마이크 접근이 가능 — 성공률 100%",
+        "시간 측정: 기기당 5 회 반복, 탈취 소요 6~35 초, 중앙값 10 초, 측정 거리 14 m (더 짧은 거리에서도 동일한 시간과 성공률)",
+        "Find Hub 를 지원하는 4 개 모델 전부가 공격자 계정에 조용히 결속되어 지속 추적 가능. 오디오 전환을 지원하는 6 개 전부에서 전환 악용 가능",
+        "nonce 검증: 17 개(68%)가 부적절 — 6 개는 한 연결 안에서 재사용 수락, 6 개는 임의 반복 nonce 수락. invalid curve 검사는 전 기기 통과",
+        "가격과 보안은 무관 — Sony WH-1000XM6 플래그십은 전 공격에 취약, 절반 이하 가격의 HP Poly VFree 60 은 전부 방어. Qualcomm 칩셋 기기가 가장 견고",
+        "iPhone 사용자 + Pixel Buds Pro 2 시나리오에서 피해자 단말의 미확인 추적기 경고는 약 48 시간 뒤에야 표시됨",
+        "Google 에 2025-08-14 신고, 150 일 공개 유예, CVE-2025-36911 배정, Google 이 critical 로 평가하고 Validator 와 인증 절차를 수정"
       ],
       "limitations": [
-        "확인 필요 — 원문 공개 후 대조 필요"
+        "기기 수를 늘리기보다 칩셋·벤더 다양성을 최대화하는 쪽으로 25 개를 선정 — 전수 조사가 아님 (저자 명시)",
+        "주변 Fast Pair 광고를 대규모로 수집하는 기회적 스캐닝은 윤리적 이유로 수행하지 않음 (저자 명시)",
+        "거리측정·근접성 자체는 다루지 않음 — Find Hub 추적은 위치 보고이지 랑잉이 아니다",
+        "Validator App 은 제조사만 접근 가능해 저자들이 직접 돌려보지 못함 (저자 명시)",
+        "IntentPair 는 페어링 인가에 한정한 하드닝 계층으로 증명했고 GFPS 전체의 인증된 키교환 증명은 아님 (저자 명시)"
       ],
       "artifacts": {
-        "code": null,
-        "dataset": null
+        "code": "https://github.com/KULeuven-COSIC/WhisperPair",
+        "dataset": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/CD30CC"
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-07-28",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-08-24",
+      "cites": [
+        "tschirschnitz-2021-method-confusion",
+        "antonioli-2023-bluffs"
+      ],
+      "cites_source": "fulltext",
       "category": "attack"
     },
     {
@@ -4137,10 +4176,11 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-08-17",
+      "last_checked": "2026-08-24",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
+        "gou-2024-uwb-channel-reciprocity",
         "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "singh-2021-4z-security-analysis",
@@ -4567,6 +4607,242 @@
       "cites_source": "fulltext",
       "added": "2026-08-21",
       "last_checked": "2026-08-21"
+    },
+    {
+      "id": "gunia-2026-cs-metrological",
+      "title": "Channel Sounding: Metrological Exploration of the Design Options Using Related Positioning Systems",
+      "authors": [
+        "Marco Gunia",
+        "Frank Ellinger"
+      ],
+      "venue": "IEEE Access",
+      "venue_full": "IEEE Access, vol. 14, pp. 18913–18928, Feb. 2026",
+      "tier": "journal",
+      "category": "measurement",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11370757/",
+      "preprint": null,
+      "doi": "10.1109/ACCESS.2026.3660596",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "positioning",
+        "estimation",
+        "design-space"
+      ],
+      "relevance": "high",
+      "relevance_note": "CS 의 설계 선택지 — 어떤 랑잉 알고리즘, 어떤 집계(aggregation), 어떤 측위 방식을 쓸 것인가 — 를 계측학 관점에서 훑고 제약(시나리오 크기, 환경, 정확도, 비용)별 권고를 내놓은 드문 문헌이다. 내 연구에 두 갈래로 걸린다. 첫째, 내가 직접 구현할 추정 파이프라인의 선택지 지도로 쓴다. 둘째이자 더 중요한 것은 집계 단계다 — 조작된 한 스텝의 측정이 평균에 섞여 들어가는지 걸러지는지가 여기서 정해지므로, 이 논문이 비교한 집계 방식들이 곧 탐지기가 올라앉을 토대의 목록이다. 다만 저자 스스로 CS 하드웨어의 연결 설정 시간 때문에 대규모 측정 캠페인이 불가능해 '매우 유사한 시스템'으로 대신 탐색했다고 밝히므로, 여기 수치를 CS 실측치로 인용하면 안 된다. schex-2026 이 이 논문을 인용한다.",
+      "summary": "Bluetooth channel sounding 은 위상 기반 개념과 비행시간으로 기기 간 거리를 정확히 추정하는 방법이며 최근 첫 집적회로에 들어가기 시작했다. 이 논문의 목적은 설계자가 랑잉과 측위에 적합한 알고리즘을 고르도록 돕는 계측학적 탐색을 수행하는 것이다. 복합 칩에서 Wi-Fi 로 흔히 얻을 수 있는 신호세기의 병용도 함께 논의한다. 아직 초기 단계인 하드웨어의 단점은 두 기기를 연결하는 데 시간이 오래 걸린다는 점이며, 측위를 하려면 여러 기지국과 반복적으로 링크를 맺어야 해 위치 갱신이 수 분 단위가 된다. 이 지연 때문에 대규모 측정 캠페인이 허용되지 않으므로, 저자들의 탐색은 성질과 동작 방식이 매우 유사한 시스템에 기반한다. 기여는 (a) 간결한 이론 정리, (b) 랑잉·집계·측위의 여러 접근과 설정에 대한 실험적 평가, (c) 시나리오 크기·환경 조건·정확도·비용 같은 제약에 맞춘 개발자용 설계 권고다. (초록만 확인, 전문 미확보)",
+      "hardware": [
+        "확인 필요 — 전문 미확보 (초록은 CS 하드웨어 대신 '매우 유사한 시스템'으로 탐색했다고만 밝힘)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "랑잉·집계·측위의 여러 접근과 설정에 대한 실험적 평가와 제약별 설계 권고 제시 (초록) — 구체 수치 전문 미확보로 미확인",
+        "CS 하드웨어의 연결 설정 지연 때문에 위치 갱신이 분 단위가 되어 대규모 측정 캠페인이 불가능하며, 그래서 평가를 CS 자체가 아니라 성질이 유사한 시스템 위에서 수행했다고 저자가 명시 (초록)"
+      ],
+      "limitations": [
+        "평가 대상이 CS 하드웨어 자체가 아니라 '매우 유사한 시스템'이다 — 저자 스스로 밝힌 대체 측정이므로 수치를 CS 실측으로 인용할 수 없다",
+        "보안 분석 없음 — 조작된 측정에 대한 집계·측위 알고리즘의 거동은 다루지 않음",
+        "원문 미확보: IEEE Access 는 Gold OA(CC BY)이나 IEEE Xplore 가 403 을 돌려주고 Unpaywall 에 직접 PDF 링크가 없음 (2026-08-24 확인). 장비·알고리즘 목록·수치 미확인"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-24",
+      "last_checked": "2026-08-24"
+    },
+    {
+      "id": "sheikh-2025-cs-interference",
+      "title": "Impact of 2.4 GHz Interference on Bluetooth® 6.0 Channel Sounding Ranging Measurements",
+      "authors": [
+        "Ashish Sheikh"
+      ],
+      "venue": "IEEE VCC",
+      "venue_full": "2025 IEEE Virtual Conference on Communications (VCC), Nov. 2025, pp. 1–6",
+      "tier": "other",
+      "category": "measurement",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11351055/",
+      "preprint": null,
+      "doi": "10.1109/VCC67261.2025.11351055",
+      "topics": [
+        "channel-sounding",
+        "interference",
+        "wifi-coexistence",
+        "multipath",
+        "ranging-accuracy"
+      ],
+      "relevance": "high",
+      "relevance_note": "상용 evaluation kit 로 실제 Wi-Fi 및 2.4 GHz 간섭 아래에서 CS 거리측정을 LOS/NLOS 로 측정한 몇 안 되는 문헌이다. 내 연구에서 이 축이 결정적인 이유는 탐지의 오탐 여유가 정상 상태의 오차 분포로 정해지기 때문이다 — 간섭이 만드는 오차가 크고 두꺼운 꼬리를 가지면, 공격이 만든 오차를 임계값으로 가르는 여지가 그만큼 줄어든다. kravets-2025-ble-pbr-wifi 와 sheikh-2023-pbr-missing-tones 가 같은 축의 이웃 문헌이므로 셋을 나란히 놓으면 '간섭이 CS 오차에 얼마를 더하는가'의 근거를 겹쳐 볼 수 있다. 다만 아직 전문을 열지 못해 어떤 킷, 어떤 간섭원, 어떤 거리에서 얼마의 오차였는지는 미확인이다.",
+      "summary": "Bluetooth SIG 가 2024 년 6.0 규격을 내면서 channel sounding 을 핵심 기능으로 도입했고, 이는 위상 기반 랑잉(PBR)과 왕복시간(RTT)을 결합해 서브 10 cm 정확도의 거리측정을 목표로 한다. 이전 버전과 달리 다중 안테나 없이도 정밀 랑잉이 가능한 SISO 기기를 지원한다. 이 논문은 evaluation kit 을 써서 Wi-Fi 트래픽과 그 밖의 2.4 GHz 무선 간섭원이 있는 실제 조건에서 BLE 6.0 channel sounding 측정의 성능을 평가한다. 실내 사무공간에서 LOS 와 NLOS 조건 양쪽으로 여러 거리에서 측정했고, 수집한 데이터로 간섭·다중경로·환경 요인이 BLE 6.0 랑잉 정확도에 미치는 영향을 분석한다. (초록만 확인, 전문 미확보)",
+      "hardware": [
+        "BLE 6.0 Channel Sounding evaluation kit (제조사·모델 확인 필요 — 전문 미확보)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "실내 사무공간에서 LOS/NLOS 조건, 여러 거리로 Wi-Fi 및 2.4 GHz 간섭 아래 CS 측정 수행 (초록) — 오차 수치는 전문 미확보로 미확인",
+        "간섭·다중경로·환경 요인이 BLE 6.0 랑잉 정확도에 미치는 영향을 분석했다고 기술 (초록)"
+      ],
+      "limitations": [
+        "보안 관점 없음 — 간섭으로 인한 오차와 공격으로 인한 오차를 구분하는 문제는 다루지 않음",
+        "원문 미확보: IEEE Xplore 유료, Semantic Scholar 가 openAccess 상태를 CLOSED 로 명시 (2026-08-24 확인). 킷 모델·간섭원 구성·거리별 오차 수치 미확인"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-24",
+      "last_checked": "2026-08-24"
+    },
+    {
+      "id": "gou-2024-uwb-channel-reciprocity",
+      "title": "Channel Reciprocity Based Attack Detection for Securing UWB Ranging by Autoencoder",
+      "authors": [
+        "Wenlong Gou",
+        "Chuanhang Yu",
+        "Juntao Ma",
+        "Gang Wu",
+        "Vladimir Mordachev"
+      ],
+      "venue": "ICCC",
+      "venue_full": "2024 IEEE/CIC International Conference on Communications in China (ICCC), Hangzhou, China, pp. 509–514",
+      "tier": "other",
+      "category": "defense",
+      "year": 2024,
+      "url": "https://doi.org/10.1109/ICCC62479.2024.10681985",
+      "preprint": "https://arxiv.org/abs/2405.18255",
+      "doi": "10.1109/ICCC62479.2024.10681985",
+      "topics": [
+        "uwb",
+        "attack-detection",
+        "channel-reciprocity",
+        "cir",
+        "machine-learning",
+        "ghost-peak"
+      ],
+      "relevance": "medium",
+      "relevance_note": "탐지의 근거를 신호 하나가 아니라 '양쪽이 본 채널이 서로 같은가'에 두는 방식이다. 공격자의 신호는 다른 채널을 거쳐 오므로 양측 CIR 이 어긋난다는 것이 원리다. CS 로 옮길 여지가 실재한다 — CS 는 initiator 와 reflector 가 같은 스텝에서 각자 I/Q 를 얻고, RAS 가 reflector 측 결과를 initiator 로 넘기도록 규격에 정해져 있으므로, 양측 측정을 한자리에 모아 대조하는 것이 프로토콜상 이미 가능하다. 이 논문의 기여 중 실용적으로 중요한 부분은 CIR 을 오토인코더로 700→32 차원, 4 bit 로 압축해 전송량을 줄인 점이다 — RAS 의 대역폭 제약 아래에서 무엇을 넘겨야 하는가라는 질문에 그대로 대응된다. 한계도 분명하다: 상호성 가정이 UWB 의 넓은 대역과 CIR 해상도에 기대고 있어, 협대역 톤 교환인 CS 에서 같은 판별력이 남는지가 곧 검증해야 할 질문이다.",
+      "summary": "Ghost Peak 로 대표되는 랑잉 위협이 IEEE 802.15.4z 확정 이후 UWB 시스템의 보안 성능에 우려를 낳았다는 문제의식에서 출발한다. 채널 상호성(channel reciprocity)에 근거해, 랑잉 양측의 CIR 특징을 오토인코더로 압축·추출해 비교하는 저복잡도 공격 탐지 기법을 제안한다. 오토인코더는 공격이 없는 상황의 CIR 만으로 학습하며, 압축과 양자화로 양측이 주고받아야 하는 데이터량을 크게 줄인다. Ghost Peak 를 예로 시뮬레이션과 실기기 실험 양쪽으로 유효성·실현가능성·일반화 가능성을 보인다. 물리계층 규격을 바꾸지 않고 기존 UWB 시스템에 얹을 수 있다는 점을 설계 목표로 삼았다.",
+      "hardware": [
+        "DW3110 UWB 칩 탑재 상용 랑잉 기기 (Ghost Peak 공격 시나리오 구성, 실내 10 m 환경, STS 를 공격이 성공하기 쉬운 SDC 모드로 전환)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MLP 오토인코더 — 입력 700 차원, 출력 32 차원, 양자화 4 bit, 임계 계수 0.5",
+        "IEEE 802.15.4 표준의 실내 LOS 채널 모델 기반 시뮬레이션 (정상 랑잉 CIR 쌍 20,000 개를 9:1 로 학습/시험 분할, 시뮬레이션 데이터만으로 오프라인 학습)",
+        "BTW 400 샘플(샘플링 2 GHz), MPEP 0.5, PAPR 2, PHR·페이로드 수신에 RAKE 수신기 구조"
+      ],
+      "software_verified": true,
+      "results": [
+        "시뮬레이션: Ghost Peak 하 DS-TWR 랑잉 10,000 회. 4 bit 양자화에서 탐지 성공확률 99% 초과, 2 bit 에서도 95% 초과",
+        "실기기(DW3110, 실내 10 m, SDC 모드): 탐지 적용 전 공격 성공확률 60.067% → 적용 후 0.045%, 오경보율 2.4%, 미탐율 0.075%",
+        "시뮬레이션 데이터만으로 오프라인 학습한 모델을 실기기에 그대로 배치해 동작 — 일반화 가능성을 실험으로 확인",
+        "거리 10 m 에서 랑잉 결과가 5 m 미만이면 공격 성공으로 판정하는 기준을 사용"
+      ],
+      "limitations": [
+        "채널 변화와 임계값 갱신을 함께 고려한 최적화는 향후 과제로 남김 (저자 명시)",
+        "탐지 임계값 T 를 무공격 상태의 양측 CIR 해밍거리 TH 의 비율로 잡으므로, 채널이 시간에 따라 변하는 환경에서 임계값 관리가 필요",
+        "Ghost Peak 한 종류에 대해서만 실증 — 거리 확대(enlargement) 계열이나 물리계층 변조 공격에는 미검증",
+        "양측 CIR 을 교환해야 하므로 통신 오버헤드가 생긴다 (압축·양자화로 줄였으나 0 은 아님)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "flury-2010-distance-decreasing",
+        "poturalski-2011-db-802-15-4a",
+        "singh-2021-4z-security-analysis",
+        "leu-2022-ghost-peak",
+        "anliker-2023-time-for-change",
+        "uwb-sv-2023-ccs"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-24",
+      "last_checked": "2026-08-24"
+    },
+    {
+      "id": "jangid-2026-association-privacy",
+      "title": "Association-based Privacy Attacks in Wireless Protocols: Formal Modeling and Mitigation",
+      "authors": [
+        "Mohit Kumar Jangid",
+        "Felix Engelmann",
+        "Zhiqiang Lin"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv preprint 2608.11337 (2026-08-11)",
+      "tier": "preprint",
+      "category": "defense",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2608.11337",
+      "preprint": "https://arxiv.org/abs/2608.11337",
+      "doi": null,
+      "topics": [
+        "ble",
+        "distance-bounding",
+        "formal-methods",
+        "tamarin",
+        "privacy",
+        "relay"
+      ],
+      "relevance": "medium",
+      "relevance_note": "근접성 검증을 '쓰는 쪽'에서 본 문헌이다. BLE 재연결 절차의 allowlist 조건 검사가 응답 유무로 소속을 새어 나가게 하고, 저자들은 이를 막는 설계에 거리한정(distance bounding) 검사를 넣는다. 내 연구에 두 가지가 남는다. 첫째, 상위 계층이 CS 를 어떻게 소비하는지의 구체적 사례다 — 프로토콜 설계자가 원하는 것은 거리 수치가 아니라 '가까움'이라는 판정이며, 그 판정이 재생·중계 공격을 무력화하는 자리에 놓인다. 둘째이자 더 실용적으로, 그 비용을 실측했다: BLE 재연결 전체 왕복시간 중앙값이 원 규격 31.1 ms 인데 8 라운드 거리한정을 얹으면 64.8 ms, 16 라운드면 123.3 ms 가 된다. CS 를 재연결·페어링 경로에 넣자고 주장할 때 상대가 반드시 묻는 '얼마나 느려지나'에 인용할 수 있는 숫자다. 저자들도 자기 형식화가 거리한정 요구가 충분조건임을 증명하지는 못했다고 명시하므로, 그 빈틈이 곧 후속 연구의 자리다.",
+      "summary": "무선 프로토콜이 재연결을 빠르게 하려고 유지하는 allowlist 와 그에 대한 조건 검사가, 응답의 유무를 통해 사용자가 어느 집단에 속하는지를 외부 관찰자에게 흘린다는 문제(Association Inference, AInf)를 형식적으로 다룬다. 기존 unlinkability 형식화(well-authentication, frame opacity, no-desynchronization)를 allowlist 를 표현할 수 있도록 프로세스 대수 수준에서 확장하고, Bluetooth LE 재연결 절차와 Wi-Fi P2P persistent group formation 을 Tamarin 으로 모델링해 두 프로토콜 모두에서 취약함을 보인다. 대응책으로는 조건 결과와 무관하게 구별 불가능한 응답을 보내는 condition-oblivious response, 재생 저항, 그리고 중계를 잡기 위한 근접성 검사(거리한정)를 결합한 설계를 제안하고 Tamarin 으로 목표 프라이버시 속성을 모두 만족함을 검증한다. C++ 시제품으로 오버헤드도 측정했다. 제안한 설계 변경은 Bluetooth SIG 와 Wi-Fi Alliance 가 확인했다.",
+      "hardware": [
+        "Tamarin 검증용: Intel i7-8550U @ 1.80 GHz ×8, 16 GB RAM, Ubuntu 22.04",
+        "프로토콜 시제품 initiator: Intel i5-6200U, 4 GB RAM, Ubuntu 18.04.6 LTS, Intel Wireless 3165 어댑터, Intel Bluetooth 인터페이스(HCI 4.2)",
+        "responder 도 동일한 Bluetooth 구성 (CPU·RAM 사양은 원문에 부분 기재)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Tamarin-prover 1.6.1 — 모델 총 1,137 줄, 보안 lemma 약 20 개",
+        "C++ 시제품 (아티팩트의 cpp_code 폴더), Tamarin 모델은 tamarin_code 폴더"
+      ],
+      "software_verified": true,
+      "results": [
+        "BT-AD, BT-AD-SKD, Wi-Fi-P2P-AD, Wi-Fi-P2P-AD-SKD 모델 모두에서 well-authentication(WA)·frame opacity(FO)·secrecy-privacy(SP) 위반 확인, no-desynchronization(ND)만 만족",
+        "제안 모델(BT-AD-SKD-PROPOSED, Wi-Fi-P2P-AD-SKD-PROPOSED)은 네 속성을 모두 만족. 증명 시간은 BT 가 WA 6 s / FO 160 s / ND 1 s / SP 12 s, Wi-Fi 가 9 s / 195 s / 2 s / 20 s",
+        "BLE 재연결 왕복시간 중앙값(500 회): 원 규격 31.1 ms, 제안 설계(거리한정 없이) 11.0 ms, 거리한정 8 라운드 64.8 ms, 16 라운드 123.3 ms",
+        "Wi-Fi P2P 왕복시간 중앙값: 원 규격 52.5 ms, 제안 47.8 ms, 거리한정 8 라운드 63.0 ms, 16 라운드 80.1 ms",
+        "제안한 설계 변경을 Bluetooth SIG 와 Wi-Fi Alliance 양쪽이 확인하고 대응책으로 인정 (저자 기술)"
+      ],
+      "limitations": [
+        "condition-oblivious response 가 조용한 폐기(silent discard)를 대체하므로 계산·에너지 오버헤드가 늘어난다 (저자 명시)",
+        "형식화가 allowlist 를 가진 프로세스를 기술하기는 하나, 추가 요구인 거리한정이 충분조건이라는 엄밀한 증명은 없다 (저자 명시) — CS 를 이 자리에 넣을 때 무엇을 보장해야 하는지가 열려 있다는 뜻",
+        "형식 모델링이 완전 자동이 아니어서 Tamarin 모델 구축·디버깅에 상당한 수작업이 필요 (저자 명시)",
+        "가구 단위처럼 여러 사람이 기기를 공유하는 상황에서 소속 추론이 오귀속될 수 있고, 무선 간섭에 의한 패킷 오류가 미탐을 만든다 (저자 명시)",
+        "거리한정 부분은 Hancke–Kuhn 식 추상 프로토콜로 다루며, 실제 물리계층 랑잉(UWB·CS)의 공격면은 범위 밖"
+      ],
+      "artifacts": {
+        "code": "https://u.pcloud.link/publink/show?code=XgtitalK",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "rasmussen-2010-rf-distance-bounding",
+        "francillon-2011-pkes-relay",
+        "cremers-2012-distance-hijacking"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-24",
+      "last_checked": "2026-08-24"
     }
   ]
 }

@@ -2,6 +2,94 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-24 (16차: 신규 4건, 보강 3건 — 참고문헌 캐기로 CS 실측·설계 두 편 발굴)
+
+이번 실행의 수확은 전부 **참고문헌 캐기**에서 나왔습니다. 지난 회차에 편입한
+schex-2026 의 참고문헌 목록을 훑다가 코퍼스에 없던 CS 문헌 두 편 — Gunia·Ellinger 의
+IEEE Access 설계공간 탐색과 Sheikh 의 2.4 GHz 간섭 실측 — 을 찾았습니다. 둘 다
+키워드 검색으로는 안 걸렸습니다. 목차 훑기(WiSec 2026 / NDSS 2026 / S&P 2026 /
+arXiv)는 이번에도 신규를 거의 내놓지 않았고, 남은 미확인 후보 두 편(Pair-Fi,
+BSFuzzer)은 CS 와의 접점이 없어 보류했습니다. 반대로 **원문을 이미 캐시에 갖고
+있으면서 `unverified` 로 방치돼 있던 항목 두 건**을 이번에 정리했습니다 — 받아만
+놓고 안 읽은 것이 남아 있었다는 뜻이라, 다음 회차부터는 캐시 대조를 먼저 합니다.
+
+- 신규: **Channel Sounding: Metrological Exploration of the Design Options Using
+  Related Positioning Systems** (Gunia·Ellinger, IEEE Access 14:18913–18928, 2026-02,
+  관련도 **높음**, `partial`). CS 의 설계 선택지 — 랑잉 알고리즘, **집계(aggregation)**,
+  측위 방식 — 를 계측학 관점에서 훑고 제약별 권고를 내놓습니다. 집계 단계가 중요한
+  이유는 조작된 한 스텝이 평균에 섞여 들어가는지 걸러지는지가 거기서 정해지기
+  때문입니다. 다만 저자가 **CS 하드웨어의 연결 설정 지연 때문에 대규모 측정이
+  불가능해 '매우 유사한 시스템'으로 대신 탐색했다**고 초록에 명시하므로, 수치를
+  CS 실측으로 인용하면 안 됩니다. Gold OA(CC BY)인데도 IEEE Xplore 가 403 을
+  돌려주고 Unpaywall 에 직접 PDF 링크가 없어 초록까지만 확인했습니다.
+- 신규: **Impact of 2.4 GHz Interference on Bluetooth® 6.0 Channel Sounding Ranging
+  Measurements** (Sheikh, IEEE VCC 2025, 관련도 **높음**, `partial`). evaluation kit
+  으로 Wi-Fi 및 2.4 GHz 간섭 아래 LOS/NLOS CS 를 실측한 문헌입니다. 탐지의 오탐
+  여유는 정상 상태의 오차 분포로 정해지므로 이 축이 곧 임계값의 바닥입니다.
+  kravets-2025, sheikh-2023 과 나란히 놓을 자리입니다. IEEE Xplore 유료,
+  Semantic Scholar 가 openAccess 를 CLOSED 로 명시해 초록까지만 확인했습니다.
+- 신규: **Channel Reciprocity Based Attack Detection for Securing UWB Ranging by
+  Autoencoder** (Gou 외, IEEE/CIC ICCC 2024, 관련도 보통, `verified`). 탐지 근거를
+  신호 하나가 아니라 **양쪽이 본 채널이 같은가**에 두는 방식입니다. CS 로 옮길
+  여지가 실재합니다 — CS 는 initiator 와 reflector 가 같은 스텝에서 각자 I/Q 를 얻고
+  RAS 가 reflector 측 결과를 넘기도록 규격에 정해져 있어, 양측 측정을 한자리에
+  모으는 것이 이미 가능합니다. 실용적으로 값진 대목은 **CIR 을 오토인코더로
+  700→32 차원, 4 bit 로 압축**해 전송량을 줄인 점으로, RAS 대역폭 제약 아래 무엇을
+  넘겨야 하는가에 그대로 대응됩니다. 수치: 실기기(DW3110, 실내 10 m, SDC 모드)에서
+  Ghost Peak 성공확률 **60.067% → 0.045%**, 오경보 2.4%, 미탐 0.075%. 시뮬레이션은
+  4 bit 에서 탐지 99% 초과. 한계도 분명합니다 — 상호성 가정이 UWB 의 넓은 대역과
+  CIR 해상도에 기대고 있어, **협대역 톤 교환인 CS 에서 같은 판별력이 남는지**가
+  곧 검증해야 할 질문입니다. 같은 그룹의 gou-2025 가 이 논문을 인용해 관계를 채웠습니다.
+- 신규: **Association-based Privacy Attacks in Wireless Protocols** (Jangid 외,
+  arXiv 2608.11337, 2026-08-11, 관련도 보통, `verified`). 근접성 검증을 **쓰는 쪽**의
+  문헌입니다. BLE 재연결의 allowlist 조건 검사가 응답 유무로 소속을 흘리고, 대책으로
+  condition-oblivious response 와 **거리한정 검사**를 넣습니다. 여기서 얻는 것은
+  비용의 실측치입니다: BLE 재연결 왕복 중앙값이 원 규격 **31.1 ms**, 제안 설계
+  11.0 ms, 거리한정 **8 라운드 64.8 ms / 16 라운드 123.3 ms**. CS 를 재연결·페어링
+  경로에 넣자고 주장할 때 반드시 나오는 "얼마나 느려지나"에 인용할 숫자입니다.
+  저자들도 **거리한정 요구가 충분조건이라는 증명은 없다**고 명시하므로 그 빈틈이
+  후속 연구의 자리입니다.
+- 보강: **One Tap to Hijack Them All** (Duttagupta 외, IEEE S&P 2026) —
+  `unverified` → `verified`. 저자 페이지에 전문(whisperpair.pdf)이 올라와 있었습니다.
+  장비(Raspberry Pi 4 + BlueZ, 상용 액세서리 25 종 / 벤더 16 곳 / 칩셋 17 종),
+  수치(**25 개 중 17 개(68%)가 pairing state predicate 미강제**, 탈취 6~35 초
+  중앙값 10 초, 거리 14 m, 탈취 성공 시 마이크 접근 100%, nonce 검증 실패 68%,
+  Find Hub 지원 4 종 전부 은밀 결속, CVE-2025-36911), 한계, 아티팩트(GitHub +
+  KU Leuven RDR 데이터셋)를 채웠습니다. CS 관점의 쓸모는 **규격이 정한 상태 술어를
+  응용계층 검사에 맡기면 벤더별로 무너지고 인증도 그걸 못 잡는다**는 논증이
+  그대로 CS 의 보안 수준 주장에 옮겨온다는 것입니다. 인용 2 건 확인.
+- 보강: **Stealtooth** (Kimura 외, arXiv 2507.00847) — `unverified` → `verified`.
+  전문이 이미 캐시에 있었는데 읽지 않은 채였습니다. 저자 4 명, 장비(Raspberry Pi 4
+  Model B ×2, Surface Laptop 4, 상용 헤드셋 10 종), 소프트웨어(BlueZ 5.55,
+  PulseAudio 기반 A2DP Sender/Receiver, Breaktooth 공개 도구), 수치(**10 대 중 8 대
+  에서 무음 link key 덮어쓰기**, 그 중 4 대에서 MitM, 도청 4/4 성공, 변조 2 종,
+  중계는 코덱 재인코딩 실패로 부분 성공)를 채웠습니다. **같은 MediaTek 계열
+  MT2822 / MT2822S 가 서로 다르게 거동**한다는 관찰이 핵심입니다 — 규격이 아니라
+  구현의 결함이라는 뜻이고, CS 도 벤더 격차가 크므로 같은 논증이 성립합니다.
+- 보강: **Securing Bluetooth Low Energy: A Literature Review** (Wang, arXiv
+  2404.16846) — `unverified` → `verified`, 그리고 **평가를 내렸습니다**. 전문을
+  읽어 보니 번호 매긴 참고문헌 목록이 아예 없고 선정 기준·검색 범위·분류 방법론이
+  기술되지 않은 서술식 개괄이며, 조판 템플릿 잔여물(`Proposta recebida em Outubro
+  2017`, 키워드가 `article sample, notes for the authors`)이 그대로 남아 있습니다.
+  related work 인용 풀로 쓸 수 없다는 뜻이라 `relevance_note` 를 그렇게 고쳤습니다.
+  이 저장소에서의 정직한 용도는 **BLE 보안 서베이가 CS 이전에 멈춰 있다**는 공백의
+  근거입니다.
+- 표준: 변경 없음. Bluetooth SIG 규격 목록에 6.3 이후 신규 없음, Channel Sounding
+  Inline Phase Correction Term Transfer 는 여전히 `VSr01_PR` 초안(2026-08-24 확인).
+  IEEE 802.15.4ab 은 WG 재회람 letter ballot #227 이 **D04 로 2025-12-18 개시,
+  2026-01-08 마감**이었음을 확인했고 이후 새 정보가 없어 기존 상태를 유지합니다.
+- 실패: Gunia·Ellinger(IEEE Access, Gold OA 인데 Xplore 403·Unpaywall 직접 링크 없음),
+  Sheikh(IEEE VCC, 유료·CLOSED), 그리고 기존 미확인 항목 중 zand-2019, santra-2024,
+  pnn-2025, eriksson-2024 는 이번에도 경로가 열리지 않아 손대지 않았습니다.
+  arXiv API(`export.arxiv.org`)는 연속 질의에서 `Rate exceeded` 와 타임아웃이 반복돼
+  6 개 질의 중 1 개만 성공했고, 나머지는 arXiv 검색 UI 를 WebFetch 로 열어 대체했습니다.
+- 주의(사람 판단 필요): 새로 넣은 Gunia 논문의 제목이 `Channel Sounding:` 으로
+  시작해서 `scripts/extract-cites.mjs` 의 부제 분리 규칙이 **`channel sounding`
+  이라는 일반 어구를 프로브로 만듭니다.** `--dry` 로 확인해 보니 2026 년 논문
+  두 편(vehicular-positioning-survey-2026, varughese-2026)이 오탐으로 잡힙니다.
+  이번에는 스크립트를 돌리지 않고 원문 참고문헌에서 확인한 schex-2026 한 건만
+  손으로 넣었습니다. 스크립트를 그대로 두면 다음 실행에서 유령 인용이 들어갑니다.
+
 ## 2026-08-21 (15차: 신규 3건, 보강 3건 — 규격 준수 CS 물리계층 시뮬레이터 편입)
 
 이번 실행의 수확은 **arXiv API 를 목차 훑기 도구로 쓴 것**입니다. WebFetch 로 arXiv
