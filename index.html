@@ -97,6 +97,38 @@
   }
   .theme-btn:hover { border-color: var(--fg-faint); color: var(--fg); }
 
+  /* ---------- runner ----------
+     로컬 서버(scripts/serve.mjs)로 열었을 때만 나타난다. GitHub Pages 에서는
+     /api/survey 가 없으므로 이 버튼과 패널은 DOM 에 남되 계속 숨어 있다. */
+  .head-actions { flex: 0 0 auto; display: flex; gap: 8px; align-items: center; }
+  .run-btn {
+    border: 1px solid var(--accent); background: var(--accent); color: var(--accent-fg);
+    border-radius: 8px; padding: 7px 13px; font-size: 12.5px; font-weight: 560;
+    cursor: pointer; font-family: inherit; white-space: nowrap;
+  }
+  .run-btn:hover:not(:disabled) { filter: brightness(1.06); }
+  .run-btn:disabled { opacity: .55; cursor: default; }
+  .runner {
+    margin: 20px 0 0; padding: 14px 16px; border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: var(--radius);
+    background: var(--bg-raised); box-shadow: var(--shadow);
+  }
+  .runner-head {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline;
+    font-size: 13px; color: var(--fg-muted);
+  }
+  .runner-head strong { color: var(--fg); font-size: 13.5px; }
+  .runner-head .spacer { flex: 1 1 auto; }
+  .runner.done { border-left-color: var(--fg-faint); }
+  .runner.fail { border-left-color: var(--danger); }
+  .run-log {
+    margin: 10px 0 0; max-height: 260px; overflow: auto; background: var(--bg-sunken);
+    border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px;
+    font-family: var(--mono); font-size: 11.5px; line-height: 1.55;
+    white-space: pre-wrap; word-break: break-word; color: var(--fg-muted);
+  }
+  .run-log:empty { display: none; }
+
   /* ---------- stats ---------- */
   .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 4px; }
   .stat {
@@ -420,13 +452,26 @@
       <p class="subtitle">보안 4대 학회 · 무선/모바일 학회 · arXiv를 주간 자동 수집합니다.</p>
       <div class="updated" id="updated"></div>
     </div>
-    <button class="theme-btn" id="theme-btn" type="button">테마</button>
+    <div class="head-actions">
+      <button class="run-btn" id="run-btn" type="button" hidden>지금 서베이 실행</button>
+      <button class="theme-btn" id="theme-btn" type="button">테마</button>
+    </div>
   </div>
 </header>
 
 <div class="wrap">
   <div id="error" hidden></div>
   <div id="stale" hidden></div>
+  <div class="runner" id="runner" hidden>
+    <div class="runner-head">
+      <strong id="run-state"></strong>
+      <span id="run-detail"></span>
+      <span class="spacer"></span>
+      <button class="linkbtn" id="run-stop" type="button" hidden>중단</button>
+      <button class="linkbtn" id="run-hide" type="button" hidden>닫기</button>
+    </div>
+    <div class="run-log" id="run-log"></div>
+  </div>
 
   <div class="stats" id="stats"></div>
 
@@ -848,18 +893,22 @@
   // make a healthy job look dead — a banner that cries wolf gets ignored.
   const CYCLE_DAYS = 3;
   function staleWarn() {
+    const box = document.getElementById("stale");
+    // 서베이를 돌린 직후 다시 읽는 경로가 있으므로, 매번 처음부터 판정한다.
+    box.hidden = true;
     const anchor = meta.lastRun || meta.papers;
     if (!anchor) return;
     const days = Math.floor((Date.now() - Date.parse(anchor + "T00:00:00Z")) / 864e5);
     if (days <= CYCLE_DAYS + 1) return;
     const missed = Math.floor(days / CYCLE_DAYS);
-    const box = document.getElementById("stale");
     box.hidden = false;
     box.className = days >= CYCLE_DAYS * 3 ? "stale bad" : "stale";
     box.innerHTML = `서베이가 <strong>${days}일</strong> 동안 실행되지 않았습니다`
       + ` (${CYCLE_DAYS}일 주기 기준 ${missed}회 이상 누락). `
-      + `<code>Get-ScheduledTaskInfo -TaskName 'BT Channel Sounding Survey'</code>로 `
-      + `상태를 확인하고 <code>logs\\</code>의 마지막 로그를 보세요.`
+      + (runnerReady
+          ? `위의 <strong>지금 서베이 실행</strong> 버튼을 누르면 바로 한 번 돕니다.`
+          : `저장소에서 <code>node scripts/serve.mjs</code>로 열면 실행 버튼이 생깁니다. `
+            + `Claude Code 세션에서 <code>/survey</code>를 직접 실행해도 됩니다.`)
       + (meta.lastRun ? "" : " (last_run이 없어 데이터 갱신일로 대체 판정했습니다)");
   }
 
@@ -1204,12 +1253,136 @@
     head.setAttribute("aria-expanded", String(state.open.has(id)));
   });
 
+  // ---------- 서베이 실행 (로컬 전용) ----------
+  // 뒤에 scripts/serve.mjs 가 있을 때만 켜진다. GitHub Pages 에는 /api/survey 가
+  // 없으므로 probe 가 실패하고 버튼은 숨은 채로 남는다 — 공개 사이트에서 눌러도
+  // 아무 일이 없는 죽은 버튼을 보여주지 않기 위한 것이다.
+  let runnerReady = false;
+  const runBtn = document.getElementById("run-btn");
+  const runPanel = document.getElementById("runner");
+  const runState = document.getElementById("run-state");
+  const runDetail = document.getElementById("run-detail");
+  const runLog = document.getElementById("run-log");
+  const runStop = document.getElementById("run-stop");
+  const runHide = document.getElementById("run-hide");
+  let poller = null, seen = 0, startedAt = null;
+
+  const elapsed = () => {
+    if (!startedAt) return "";
+    const s = Math.max(0, Math.round((Date.now() - Date.parse(startedAt)) / 1000));
+    return `${Math.floor(s / 60)}분 ${String(s % 60).padStart(2, "0")}초`;
+  };
+
+  function paint(st) {
+    runPanel.hidden = false;
+    startedAt = st.startedAt || startedAt;
+    if (st.lines && st.lines.length) {
+      // 사용자가 위로 스크롤해 읽는 중이면 따라가지 않는다.
+      const atBottom = runLog.scrollHeight - runLog.scrollTop - runLog.clientHeight < 40;
+      runLog.textContent += st.lines.join("\n") + "\n";
+      if (atBottom) runLog.scrollTop = runLog.scrollHeight;
+    }
+    if (typeof st.total === "number") seen = st.total;
+
+    if (st.running) {
+      runPanel.className = "runner";
+      runState.textContent = "서베이 실행 중";
+      runDetail.textContent = `${elapsed()} 경과 · ${st.prompt} · 로그 ${st.logFile || ""}`;
+      runStop.hidden = false;
+      runHide.hidden = true;
+    } else {
+      const ok = st.exitCode === 0;
+      runPanel.className = ok ? "runner done" : "runner fail";
+      runState.textContent = ok ? "서베이 완료" : `서베이 실패 (종료 코드 ${st.exitCode})`;
+      runDetail.textContent = `${elapsed()} 소요 · 로그 ${st.logFile || ""}`;
+      runStop.hidden = true;
+      runHide.hidden = false;
+    }
+  }
+
+  function stopPolling() {
+    if (poller) { clearInterval(poller); poller = null; }
+    runBtn.disabled = false;
+    runBtn.textContent = "지금 서베이 실행";
+  }
+
+  function pollOnce() {
+    return fetch(`api/survey?since=${seen}`, { headers: { "x-survey-run": "1" } })
+      .then((r) => r.json())
+      .then((st) => {
+        if (st.idle) return;
+        paint(st);
+        if (!st.running) {
+          stopPolling();
+          // 서베이가 실제로 무언가 바꿨다면 여기서 화면에 반영된다.
+          // 실패했더라도 부분 커밋이 있을 수 있으므로 종료 코드와 무관하게 다시 읽는다.
+          loadData({ bust: true }).then(() => {
+            runDetail.textContent += " · 데이터 다시 읽음";
+          }).catch(() => {});
+        }
+      })
+      .catch(() => stopPolling());
+  }
+
+  function startPolling() {
+    if (poller) return;
+    poller = setInterval(pollOnce, 1500);
+    runBtn.disabled = true;
+    runBtn.textContent = "실행 중…";
+  }
+
+  runBtn.addEventListener("click", () => {
+    runBtn.disabled = true;
+    runBtn.textContent = "시작하는 중…";
+    runLog.textContent = "";
+    seen = 0;
+    startedAt = null;
+    fetch("api/survey", {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-survey-run": "1" },
+      body: JSON.stringify({ prompt: "/survey" }),
+    })
+      .then((r) => r.json().then((b) => ({ code: r.status, body: b })))
+      .then(({ code, body }) => {
+        if (code !== 202 && code !== 409) throw new Error(body.error || `HTTP ${code}`);
+        startPolling();
+        pollOnce();
+      })
+      .catch((err) => {
+        stopPolling();
+        runPanel.hidden = false;
+        runPanel.className = "runner fail";
+        runState.textContent = "실행하지 못했습니다";
+        runDetail.textContent = err.message;
+      });
+  });
+
+  runStop.addEventListener("click", () => {
+    runStop.hidden = true;
+    fetch("api/survey/stop", { method: "POST", headers: { "x-survey-run": "1" } }).catch(() => {});
+  });
+  runHide.addEventListener("click", () => { runPanel.hidden = true; });
+
+  fetch("api/survey?since=0", { headers: { "x-survey-run": "1" } })
+    .then((r) => (r.ok ? r.json() : Promise.reject(new Error("no runner"))))
+    .then((st) => {
+      if (!st.available) return;
+      runnerReady = true;
+      runBtn.hidden = false;
+      // 새로고침으로 페이지를 다시 열었어도 돌고 있던 서베이에 다시 붙는다.
+      if (!st.idle) { paint(st); if (st.running) startPolling(); }
+    })
+    .catch(() => { /* 정적 호스팅 — 버튼 없음 */ });
+
   // ---------- load ----------
-  const grab = (f) => fetch("data/" + f)
+  // 서베이가 끝나면 같은 경로를 한 번 더 타야 하므로 일회성 체인이 아니라 함수로 둔다.
+  // bust: 방금 쓰인 JSON 을 읽도록 캐시를 건너뛴다.
+  const grab = (f, bust) => fetch("data/" + f + (bust ? "?t=" + Date.now() : ""))
     .then((r) => { if (!r.ok) throw new Error(`${f} ${r.status}`); return r.json(); });
 
-  Promise.all([grab("papers.json"), grab("standards.json"), grab("insights.json")])
-  .then(([p, s, n]) => {
+  function loadData({ bust = false, initial = false } = {}) {
+    return Promise.all([grab("papers.json", bust), grab("standards.json", bust), grab("insights.json", bust)])
+    .then(([p, s, n]) => {
     papers = p.papers || [];
     standards = s.standards || [];
     insights = n.insights || [];
@@ -1225,7 +1398,13 @@
     renderStats();
     const TABS = ["graph", "standards", "insights", "log"];
     const hash = decodeURIComponent(location.hash.slice(1));
-    if (TABS.includes(hash)) {
+    if (!initial) {
+      // 다시 읽은 것이므로 보고 있던 탭·펼침 상태를 그대로 둔다.
+      // 서베이가 CHANGELOG 도 고쳤을 수 있으니 '기록' 탭의 캐시는 버린다.
+      logLoaded = false;
+      render();
+      if (state.tab === "log") buildLog();
+    } else if (TABS.includes(hash)) {
       state.tab = hash;
       render();
     } else if (hash) {
@@ -1239,14 +1418,17 @@
       render();
     }
     staleWarn();
-  }).catch((err) => {
+    });
+  }
+
+  loadData({ initial: true }).catch((err) => {
     const box = document.getElementById("error");
     box.hidden = false;
     box.className = "err";
     box.innerHTML = `<strong>데이터를 불러오지 못했습니다.</strong> <code>${esc(err.message)}</code>
       <p style="margin:10px 0 0;font-size:13.5px">
         <code>file://</code>로 직접 열면 브라우저가 <code>fetch</code>를 막습니다.
-        저장소 루트에서 <code>python -m http.server 8000</code>을 실행한 뒤
+        저장소 루트에서 <code>node scripts/serve.mjs</code>를 실행한 뒤
         <code>http://localhost:8000</code>으로 접속하세요. GitHub Pages에 배포된 주소에서는 그대로 동작합니다.
       </p>`;
   });
