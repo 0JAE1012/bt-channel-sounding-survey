@@ -211,6 +211,8 @@
   .b-cat-defense { background: var(--accent-soft); color: var(--accent); }
   .b-cat-analysis, .b-cat-measurement, .b-cat-estimation,
   .b-cat-protocol, .b-cat-survey { background: var(--info-soft); color: var(--info); }
+  /* 기술 축은 주제·관련도와 겹쳐 읽히면 안 되므로 채우지 않고 테두리로만 구분한다. */
+  .b-tech { background: none; color: var(--fg-muted); border-color: var(--border-strong); }
   .b-unverified { background: var(--danger-soft); color: var(--danger); }
   .b-partial { background: var(--warn-soft); color: var(--warn); }
   .b-verified { background: var(--accent-soft); color: var(--accent); }
@@ -283,6 +285,10 @@
   #graph .g-node.on { opacity: 1; }
   #graph .g-label { opacity: 0; }
   #graph .g-node.lab .g-label, #graph .g-node.on .g-label { opacity: 1; }
+  /* 기술 필터: 색은 학회 구분에 이미 쓰였으므로 기술은 밝기로 가른다. */
+  #graph .g-node.tdim { opacity: .1; }
+  #graph .g-node.tdim .g-label { opacity: 0; }
+  #graph .g-edge.tdim { stroke-opacity: .05; }
 
   .g-legend { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding: 10px 14px 2px; font-size: 12px; color: var(--fg-muted); }
   .g-legend span.k { display: inline-flex; align-items: center; gap: 6px; }
@@ -522,6 +528,7 @@
       원의 크기는 이 코퍼스 안에서 인용된 횟수입니다. 노드를 올리면 해당 논문의 인용 관계만 남고,
       누르면 논문 카드로 이동합니다.
     </p>
+    <div class="filterrow" id="g-tech" style="margin-bottom:10px"></div>
     <div class="graphwrap viz-root">
       <div class="graphscroll"><svg id="graph" role="img" aria-label="논문 인용 관계 그래프"></svg></div>
       <div class="g-legend" id="g-legend"></div>
@@ -549,6 +556,7 @@
     <div class="filterrow" id="f-tier"></div>
     <div class="filterrow" id="f-rel"></div>
     <div class="filterrow" id="f-ver"></div>
+    <div class="filterrow" id="f-tech"></div>
   </div>
 
   <div class="resultline" id="list-resultline">
@@ -594,6 +602,8 @@
     tier: new Set(),
     rel: new Set(),
     ver: new Set(),
+    tech: new Set(),
+    gtech: new Set(),
     open: new Set(),
   };
   let papers = [], standards = [], insights = [], meta = {};
@@ -613,6 +623,9 @@
   const RELS = [["high", "높음"], ["medium", "보통"], ["low", "낮음"]];
   const RELS_STD = [["critical", "필수"], ["high", "높음"], ["medium", "보통"], ["low", "낮음"]];
   const VERS = [["verified", "확인완료"], ["partial", "일부확인"], ["unverified", "확인필요"]];
+  // 기술 축. category(무엇을 하는가)와 직교한다 — data/schema.md의 `tech` 표 참조.
+  const TECHS = [["ble-cs", "Bluetooth CS"], ["uwb", "UWB"], ["wifi", "Wi-Fi"], ["other", "그 외"]];
+  const TECH_LABEL = Object.fromEntries(TECHS);
   const REL_ORDER = { critical: 0, high: 1, medium: 2, low: 3 };
   const TIER_ORDER = { top4: 0, wireless: 1, journal: 2, thesis: 3, preprint: 4, other: 5 };
 
@@ -655,10 +668,12 @@
     document.getElementById("f-cat").hidden = !isP;
     document.getElementById("f-tier").hidden = !isP;
     document.getElementById("f-ver").hidden = !isP;
+    document.getElementById("f-tech").hidden = !isP;
     if (isP) {
       chipRow(document.getElementById("f-cat"), "주제", CATS, state.cat);
       chipRow(document.getElementById("f-tier"), "구분", TIERS, state.tier);
       chipRow(document.getElementById("f-ver"), "확인", VERS, state.ver);
+      chipRow(document.getElementById("f-tech"), "기술", TECHS, state.tech);
     }
     chipRow(document.getElementById("f-rel"), "관련도", isP ? RELS : RELS_STD, state.rel);
   }
@@ -671,6 +686,7 @@
       (!state.tier.size || state.tier.has(p.tier)) &&
       (!state.rel.size  || state.rel.has(p.relevance)) &&
       (!state.ver.size  || state.ver.has(p.verification)) &&
+      (!state.tech.size || (p.tech || []).some((t) => state.tech.has(t))) &&
       (!q || haystack(p).includes(q)));
 
     const cmp = {
@@ -707,6 +723,7 @@
     <div class="card-title">${hl(esc(p.title))}</div>
     <div class="card-meta">
       <span class="badge b-cat-${esc(p.category)}">${esc(CAT_LABEL[p.category] || p.category)}</span>
+      ${(p.tech || []).map((t) => `<span class="badge b-tech">${esc(TECH_LABEL[t] || t)}</span>`).join("")}
       <span class="badge ${tierBadge}">${esc(p.venue)}</span>
       <span class="badge b-year">${esc(p.year)}</span>
       <span class="badge b-rel-${esc(p.relevance)}">관련도 ${esc((RELS.find(r => r[0] === p.relevance) || [, p.relevance])[1])}</span>
@@ -1142,7 +1159,7 @@
       const lab = (deg >= 3 || (p.cites || []).length >= 6) ? " lab" : "";
       const short = labelOf(p);
       parts.push(
-        `<g class="g-node${lab}" data-id="${esc(p.id)}" tabindex="0" role="listitem">`
+        `<g class="g-node${lab}" data-id="${esc(p.id)}" data-tech="${esc((p.tech || []).join(" "))}" tabindex="0" role="listitem">`
         + `<circle cx="${q.x}" cy="${q.y}" r="${rad}" fill="${fill}" stroke="var(--series-${g + 1})"/>`
         + `<text class="g-label" x="${q.x}" y="${q.y - rad - 5}" text-anchor="middle">${esc(short)}</text>`
         + `</g>`);
@@ -1153,7 +1170,8 @@
     document.getElementById("g-legend").innerHTML =
       GROUP_LABEL.map((l, i) => `<span class="k"><i class="g-swatch" style="background:var(--series-${i + 1})"></i>${l}</span>`).join("")
       + `<span class="k"><i class="g-swatch" style="background:var(--bg-raised);border:2px solid var(--viz-muted)"></i>전문 미확보 (인용 관계 미추출)</span>`
-      + `<span class="k">원 크기 = 코퍼스 내 피인용 횟수</span>`;
+      + `<span class="k">원 크기 = 코퍼스 내 피인용 횟수</span>`
+      + `<span class="k">기술 칩을 누르면 그 기술의 노드만 남고, 양끝이 모두 남는 인용선만 진하게 표시됩니다</span>`;
 
     const noFull = papers.filter((p) => p.cites_source !== "fulltext").length;
     document.getElementById("g-note").innerHTML =
@@ -1166,11 +1184,49 @@
 
     // edge list table — the documented relief for the sub-3:1 light-mode slot
     const titleOf = (id) => (papers.find((p) => p.id === id) || {}).title || id;
+    const techOf = (id) => ((papers.find((p) => p.id === id) || {}).tech || [])
+      .map((t) => TECH_LABEL[t] || t).join(" · ");
     const rows = [...m.inDeg.entries()].filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])
       .map(([id, n]) => `<tr><td class="n">${n}</td><td><a href="#${esc(id)}">${esc(titleOf(id))}</a></td>
+        <td class="n">${esc(techOf(id))}</td>
         <td class="n">${esc(m.edges.filter((e) => e.to === id).map((e) => titleOf(e.from).slice(0, 40)).join(" · "))}</td></tr>`);
     document.getElementById("g-table").innerHTML =
-      `<table class="edgetable"><thead><tr><th>피인용</th><th>논문</th><th>인용한 논문</th></tr></thead><tbody>${rows.join("")}</tbody></table>`;
+      `<table class="edgetable"><thead><tr><th>피인용</th><th>논문</th><th>기술</th><th>인용한 논문</th></tr></thead><tbody>${rows.join("")}</tbody></table>`;
+
+    // ---- 기술 필터 ----
+    // 노드 색은 학회 구분에 이미 배정돼 있어(팔레트 슬롯 1–3) 기술을 색으로 더 나눌 수 없다.
+    // 그래서 선택한 기술만 남기고 나머지를 어둡게 죽인다. 인용선은 양끝이 모두 선택에
+    // 들어야 살려둔다 — 그래야 '그 기술 안의 인용 구조'가 보인다.
+    function applyGraphTech() {
+      const sel = state.gtech;
+      const live = new Set();
+      svg.querySelectorAll(".g-node").forEach((n) => {
+        const ts = (n.dataset.tech || "").split(" ").filter(Boolean);
+        const on = !sel.size || ts.some((t) => sel.has(t));
+        n.classList.toggle("tdim", !on);
+        if (on) live.add(n.dataset.id);
+      });
+      let shown = 0;
+      svg.querySelectorAll(".g-edge").forEach((el) => {
+        const on = !sel.size || (live.has(el.dataset.from) && live.has(el.dataset.to));
+        el.classList.toggle("tdim", !on);
+        if (on) shown++;
+      });
+      document.getElementById("g-stat").textContent = sel.size
+        ? `노드 ${live.size}개 · 인용 관계 ${shown}건 (전체 ${papers.length}개 · ${m.edges.length}건 중)`
+        : `노드 ${papers.length}개 · 인용 관계 ${m.edges.length}건`;
+    }
+    chipRow(document.getElementById("g-tech"), "기술", TECHS, state.gtech);
+    // 그래프는 render()로 다시 그리지 않으므로 칩 클릭을 여기서 직접 받는다.
+    document.getElementById("g-tech").onclick = (e) => {
+      const b = e.target.closest(".chip");
+      if (!b) return;
+      const v = b.dataset.v;
+      state.gtech.has(v) ? state.gtech.delete(v) : state.gtech.add(v);
+      b.setAttribute("aria-pressed", String(state.gtech.has(v)));
+      applyGraphTech();
+    };
+    applyGraphTech();
 
     // hover / focus highlighting
     const tip = document.getElementById("g-tip");
