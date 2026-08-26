@@ -2,6 +2,87 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-26 (17차: 신규 4건, 보강 2건 — 협대역 PBR 계보를 통째로 편입, 인용 오탐 12건 제거)
+
+이번 실행에서 두 가지가 열렸습니다. 첫째, **IEEE Xplore 의 OA 논문**은
+`stampPDF/getPDF.jsp?arnumber=<번호>` 에 브라우저 UA 를 붙이면 그대로 받아집니다 —
+IEEE Access 는 CC BY 이므로 이 경로가 통하고, 유료 논문(WCNC·VNC·ICASSP·Sensors
+Letters·VCC)은 여전히 0바이트입니다. 이걸로 `gunia-2026` 전문을 확보했습니다.
+둘째, ACM DL 은 **UA 만으로는 부족하고 `sec-ch-ua`·`Sec-Fetch-*` 를 포함한 전체
+브라우저 헤더 세트**가 있어야 Cloudflare 챌린지를 넘습니다(14차의 쿠키 예열만으로는
+오늘 막혔습니다). 이 경로로 TU Braunschweig 의 InPhase 논문을 받았고, 거기서
+**협대역 2.4 GHz PBR 계보** 세 편이 한꺼번에 들어왔습니다.
+
+- 신규: **InPhase: Phase-based Ranging and Localization** (Schröder·Wolf, ACM TOSN
+  18(2) Art.24, 2022, 관련도 **높음**, `verified`). CS 의 PBR 과 같은 물리를 쓰면서
+  획득 절차·거리계산 알고리즘·품질지표까지 전부 공개된 시스템입니다. 칩(AT86RF233)과
+  코드(GitHub 2개)가 공개돼 있어 **CS 칩 없이 시작할 수 있는 대조군**이 됩니다.
+  보안 관점에서 두 대목이 바로 쓰입니다 — (1) 측정마다 **DQI** 를 내고 Youden 지수로
+  임계값(CDE 0.289)을 정해 이상치를 버리는 구체적 판정 규칙이 있고, (2) 다중경로에서
+  **거리가 과대추정 쪽으로 치우친다**고 반복 보고합니다(RDE·ESSR 은 양의 오차 편향).
+  자연 오차가 + 방향이면 거리축소 공격은 분포의 반대편 꼬리를 만드는 셈입니다.
+  정확도는 Park 0.149 m(σ 0.104) / Apartment 0.376 / Office corridor 0.550 /
+  Basement 0.414 m, 3D 라이브 트래킹 0.95 m(IPSN 2018 경진대회).
+  회랑의 특정 지점에서 **네 알고리즘 모두가 높은 DQI 를 붙인 채 틀린 거리**를 반복
+  보고한 기록이 특히 중요합니다 — 품질지표가 다중경로를 못 걸러낸 사례입니다.
+- 신규: **Investigation of Multipath Effects on Phase-based Ranging** (Schröder 외,
+  IPIN 2019, 관련도 **높음**, `partial`). 같은 연구진의 선행 논문으로, PBR 이
+  **직접경로 대신 반사경로의 길이를 보고할 수 있다**고 실측으로 말합니다. 공격자 없이
+  식별가능성 문제를 먼저 보여주는 자료라, riaz-2022 의 "다중경로에서도 임의 거리축소가
+  된다"와 짝을 이룹니다. IEEE 유료라 전문은 못 열었고 초록 기준으로만 기록했습니다
+  (세 가지 측정 결과 유형의 정의, 51% 개선의 조건은 미확인).
+- 신규: **The Unambiguous Distance in a Phase-based Ranging System with Hopping
+  Frequencies** (Zhang 외, arXiv 2014, 관련도 보통, `verified`). PBR 의 비모호거리가
+  **사용한 주파수 인덱스들의 최대공약수 k** 로 결정된다(UD = c/(k·f_min))는 것과,
+  주파수를 무작위로 고르면 그 확률이 1/ζ(M) 로 근사되어 M > 10 이면 P > 0.999 라는
+  결과입니다. CS 로 옮기면 검증 가능한 가설이 하나 나옵니다 — **간섭·채널맵·재밍으로
+  실제 사용 채널 집합이 특정 간격으로 치우치면 k 가 1 이 아니게 되고 비모호거리가
+  접힌다.** 즉 "공격자가 채널 선택에 영향을 주어 모호거리를 축소시킬 수 있는가"의
+  판정식이 여기 있습니다.
+- 신규: **Robust Localization of Key Fob Using Channel Impulse Response of UWB Sensors
+  for Keyless Entry Systems** (Kolli 외, arXiv 2024, 관련도 보통, `verified`).
+  코퍼스의 방어 논문 여럿이 채널 특징에 신경망을 얹는데, **그 신경망 자체가 공격면**
+  임을 같은 도메인에서 보여줍니다(FGSM·BIM·PGD, ε=0.1 에서 37~38% 열화, 구조 변경만으로
+  특정 구간 67% 복구). 다만 위협모델은 정직하게 봐야 합니다 — 섭동을 48차원 특징
+  벡터에 화이트박스로 직접 가하며, 저자들도 UWB 펄스 반복률 때문에 실시간 무선 생성은
+  실현 가능하지 않다고 적습니다. 무선계층 공격의 실증이 아니라 판정기 강건성 평가입니다.
+- 보강: **gunia-2026-cs-metrological** `partial` → `verified` (IEEE Access OA 경로).
+  가장 쓸모 있는 것은 Table 2 의 **평균오차와 최대오차의 간극**입니다 — PBR(AC-FFT-PD)
+  실외 평균 0.40 m 에 **최대 69.97 m**, 실내 1.36 m 에 최대 11.98 m. 정상 채널에서도
+  두 자릿수 미터 이상치가 자연 발생한다는 뜻이고, 조작된 측정을 그 꼬리에 숨길 여지가
+  그만큼 큽니다. 그리고 저자들은 실내 집계로 **최단거리 채택**을 권하는데, 이는
+  거리축소 공격에 최악의 집계 규칙입니다(공격자가 만든 짧은 값이 항상 선택됨).
+  다중경로 때문에 짧은 쪽을 고른다는 논리가 공격자가 있으면 그대로 뒤집힙니다.
+  장비도 확정했습니다 — Atmel AT86RF233(K=152, 2.403–2.479 GHz, 500 kHz 스텝),
+  자체 UWB 3.774–4.243 GHz, RN42·WRT54G·Galaxy S5(RSS), 기준값은 Leica TS15
+  토탈스테이션(오차 <0.001 m). **CS 칩으로는 측정하지 않았다**는 점을 한계에 명시했습니다.
+- 보강: **wacsa-2025-nn-ranging-fusion** `unverified` → `partial` (Springer 출판사 페이지).
+  저자명을 출판사 기록으로 교정했고(Fang Yang → Fanwei Yang, Y. B. Zhao → Yubin Zhao,
+  소속 Sun Yat-Sen/Jinan), 초록에서 **1–30 m 구간 평균 절대오차 0.22 m**, 구조가
+  attention 기반 다중방식 융합 BPNN(AMF-BPNN)임을 확인했습니다. 이로써 **코퍼스에
+  `unverified` 항목이 하나도 남지 않았습니다**(verified 67 / partial 7).
+- 정정: **인용 관계 12건이 오탐이었습니다.** `scripts/extract-cites.mjs` 가 제목의
+  콜론 앞부분으로도 프로브를 만드는데, `gunia-2026` 의 머리제목이 하필
+  "Channel Sounding" 이라 **본문에 그 흔한 어구가 있기만 하면 인용으로 잡혔습니다**
+  (10건). 같은 이유로 `suresh-2025`("BLE Channel Sounding"), `kravets-2025`
+  ("BLE phase-based ranging") 도 각각 오탐을 만들었습니다. 인용한다고 기록된 논문의
+  전문에 대상의 전체 제목도, 제1저자의 성도 없는 것을 확인하고 12건을 제거했습니다
+  (242 → 240건). **이것은 데이터만 고친 임시 조치입니다** — 다음 실행에서
+  `extract-cites.mjs` 를 다시 돌리면 같은 오탐이 되살아납니다. 서베이 실행은
+  `data/` 밖을 고치지 않으므로 스크립트 수정은 사람의 판단으로 남깁니다.
+- 표준: 변경 없음. Core Spec 6.3 이 최신, Ranging Profile/Service 1.0 채택 유지,
+  Channel Sounding Inline Phase Correction Term Transfer 는 여전히 `VSr01_PR` 초안입니다.
+- 실패: **zand-2019-ble-pbr 4회 연속 실패** — IEEE 유료이고 Unpaywall·OpenAlex 어디에도
+  OA 사본이 없으며, TU/e 연구포털(research.tue.nl)에는 메타데이터만 있고 파일이 없습니다.
+  santra-2024·eriksson-2024·pnn-2025·sheikh-2025 도 같은 이유로 IEEE stampPDF 경로가
+  0바이트를 돌려줬습니다(유료 논문에는 안 통함). Semantic Scholar 는 이번에도 429.
+- 보류: **A Novel Demodulation Scheme for Secure and Reliable UWB Distance Bounding**
+  (Rezaee·Singelee·Preneel, arXiv 2010.10387)은 **저자가 철회한 논문**이라 편입하지
+  않았습니다. **Kluge & Eggert, "Ranging with IEEE 802.15.4 Narrow-Band PHY"**
+  (IEEE 802.15-09-0613-01-004f, 2009)는 InPhase 와 Gunia 가 **둘 다 협대역 PBR 의 출발점으로
+  인용**하는 문서라 `standards.json` 후보로 올려둡니다(.ppt 라 이번엔 못 읽었습니다).
+  Zhang 외의 RIPS 다중경로 보정(arXiv 1702.07624)도 후보로 남깁니다.
+
 ## 2026-08-24 (16차: 신규 4건, 보강 3건 — 참고문헌 캐기로 CS 실측·설계 두 편 발굴)
 
 이번 실행의 수확은 전부 **참고문헌 캐기**에서 나왔습니다. 지난 회차에 편입한

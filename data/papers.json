@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-24",
-  "last_run": "2026-08-24",
+  "updated": "2026-08-26",
+  "last_run": "2026-08-26",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 242,
+  "citation_edges": 240,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -85,14 +85,14 @@
         "abidin-2021-narrowband-ranging",
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
+        "joo-2020-hodor",
         "leu-2020-mtac",
         "olafsdottir-2017-carrier-phase",
         "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
-        "zand-2019-ble-pbr",
-        "francillon-2011-pkes-relay",
-        "joo-2020-hodor"
+        "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -168,10 +168,10 @@
       "added": "2026-07-28",
       "last_checked": "2026-08-18",
       "cites": [
+        "francillon-2011-pkes-relay",
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
-        "singh-2019-uwb-pr",
-        "francillon-2011-pkes-relay"
+        "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -241,6 +241,7 @@
       "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
+        "francillon-2011-pkes-relay",
         "leu-2020-mtac",
         "leu-2022-ghost-peak",
         "olafsdottir-2017-carrier-phase",
@@ -248,8 +249,7 @@
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2021-4z-security-analysis",
-        "singh-2022-v-range",
-        "francillon-2011-pkes-relay"
+        "singh-2022-v-range"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -314,10 +314,10 @@
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
         "olafsdottir-2017-carrier-phase",
         "poturalski-2011-db-802-15-4a",
-        "singh-2019-uwb-ed",
-        "francillon-2011-pkes-relay"
+        "singh-2019-uwb-ed"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -378,11 +378,10 @@
       "added": "2026-07-28",
       "last_checked": "2026-08-18",
       "cites": [
-        "singh-2019-uwb-pr",
-        "leu-2020-mtac",
         "flury-2010-distance-decreasing",
+        "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
-        "clulow-2006-long-symbols"
+        "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
       "category": "analysis"
@@ -616,15 +615,15 @@
       "title": "High-Precision Ranging Fusion Using Neural Network for Bluetooth Channel Sounding",
       "authors": [
         "Yutao Chen",
-        "Fang Yang",
-        "Y. B. Zhao",
+        "Fanwei Yang",
+        "Yubin Zhao",
         "Xiaofan Li"
       ],
       "venue": "WASA",
-      "venue_full": "Wireless Artificial Intelligent Computing Systems and Applications (WASA 2025), LNCS, pp. 131–142",
+      "venue_full": "Wireless Artificial Intelligent Computing Systems and Applications (WASA 2025), LNCS, pp. 131–142, Springer Singapore. Sun Yat-Sen University · Jinan University",
       "tier": "other",
       "year": 2025,
-      "url": "https://dl.acm.org/doi/10.1007/978-981-96-8725-1_11",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-96-8725-1_11",
       "preprint": null,
       "doi": "10.1007/978-981-96-8725-1_11",
       "topics": [
@@ -634,8 +633,8 @@
         "ranging-accuracy"
       ],
       "relevance": "medium",
-      "relevance_note": "PBR/RTT 융합을 신경망으로 처리하는 접근. CS 후처리 개선 계열 연구.",
-      "summary": "Bluetooth 6.0 channel sounding의 복수 ranging 방식(PBR, RTT)을 신경망으로 융합해 거리 예측 정확도를 높이는 시스템을 제안한다.",
+      "relevance_note": "CS 가 내놓는 여러 랑잉 결과(PBR·RTT)를 **어떻게 하나의 거리로 합칠 것인가**라는 집계 단계를 신경망으로 푸는 접근이다. 집계는 내 연구에서 공격 표면으로 중요하다 — gunia-2026 이 보여주듯 집계 규칙(평균/최단거리/클러스터링)이 이상치의 생존 여부를 정하는데, 그 규칙이 학습된 블랙박스가 되면 '조작된 스텝 하나가 최종 거리에 얼마나 반영되는가'를 분석적으로 따질 수 없게 된다. 게다가 kolli-2024 가 보여주듯 학습된 판정기는 적대적 섭동에 취약하다. 즉 이 논문은 정확도 개선 연구지만, 내 관점에서는 **'학습 기반 융합이 CS 의 조작 저항성에 무슨 영향을 주는가'라는 질문의 대상**이다. 초록 기준 평균 절대오차 0.22 m(1–30 m)라는 수치는 공격이 넘어야 할 자연 오차 크기의 기준선으로도 쓸 수 있다.",
+      "summary": "Bluetooth 6.0 channel sounding 의 여러 랑잉 방식을 융합해 거리 정확도를 높이는 신경망 시스템을 제안한다. 서로 다른 환경에서 얻은 각 방식의 데이터를 합치되, 주의(attention) 기반 다중방식 융합 역전파 신경망(AMF-BPNN)으로 각 랑잉 데이터에서 주요 특징을 뽑아 결합한다. 저자들은 이 구조가 복잡도가 낮으면서도 단일 랑잉 방식 대비 유의미한 개선을 낸다고 주장한다. (이상 출판사 초록 기준 — 전문 미확보)",
       "hardware": [
         "확인 필요"
       ],
@@ -645,19 +644,22 @@
       ],
       "software_verified": false,
       "results": [
-        "단일 ranging 방식 대비 정확도 개선 (구체 수치 확인 필요)"
+        "1–30 m 구간에서 평균 절대오차 0.22 m — 단일 랑잉 방식 대비 유의미한 개선이라고 주장 (출판사 초록)",
+        "제안 구조는 attention 기반 다중방식 융합 BPNN(AMF-BPNN) — 저복잡도라고 기술 (출판사 초록)",
+        "측정 환경·기기·데이터 규모는 전문 미확보로 미확인"
       ],
       "limitations": [
-        "학습 데이터 환경 의존성",
+        "전문 미확보 — Springer LNCS 유료이고 ACM DL 에는 색인만 있어 PDF 호스팅이 없음. 실험 조건(기기, 환경 수, 샘플 수)을 확인하지 못함",
+        "학습 데이터 환경 의존성 — 초록이 '여러 환경'을 언급하나 일반화 근거는 미확인",
         "적대적 입력에 대한 강건성 미평가"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "partial",
       "added": "2026-07-28",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-08-26",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "estimation"
@@ -782,9 +784,9 @@
       "added": "2026-07-28",
       "last_checked": "2026-08-21",
       "cites": [
+        "pnn-2025-cs-distance-estimation",
         "santra-2024-cs-indoor",
-        "suresh-2025-cs-vehicle-access",
-        "pnn-2025-cs-distance-estimation"
+        "suresh-2025-cs-vehicle-access"
       ],
       "cites_source": "fulltext",
       "category": "measurement"
@@ -929,12 +931,12 @@
       "last_checked": "2026-08-18",
       "cites": [
         "anliker-2023-time-for-change",
+        "francillon-2011-pkes-relay",
         "leu-2022-ghost-peak",
         "secure-ranging-4z-hrp-2024",
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
-        "uwb-sv-2023-ccs",
-        "francillon-2011-pkes-relay"
+        "uwb-sv-2023-ccs"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -1264,10 +1266,11 @@
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding",
-        "francillon-2011-pkes-relay"
+        "zhang-2014-unambiguous-distance"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -1333,12 +1336,12 @@
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
         "olafsdottir-2017-carrier-phase",
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2019-uwb-ed",
-        "singh-2019-uwb-pr",
-        "francillon-2011-pkes-relay"
+        "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -1409,11 +1412,11 @@
       "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
+        "francillon-2011-pkes-relay",
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-ed",
-        "singh-2019-uwb-pr",
-        "francillon-2011-pkes-relay"
+        "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -1477,13 +1480,13 @@
       "added": "2026-07-28",
       "last_checked": "2026-08-18",
       "cites": [
-        "leu-2022-ghost-peak",
-        "singh-2019-uwb-pr",
-        "singh-2021-4z-security-analysis",
-        "leu-2020-mtac",
-        "rasmussen-2010-rf-distance-bounding",
+        "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
-        "cremers-2012-distance-hijacking"
+        "leu-2020-mtac",
+        "leu-2022-ghost-peak",
+        "rasmussen-2010-rf-distance-bounding",
+        "singh-2019-uwb-pr",
+        "singh-2021-4z-security-analysis"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -1553,14 +1556,14 @@
       "added": "2026-07-28",
       "last_checked": "2026-08-18",
       "cites": [
-        "staat-2022-analog-relay",
+        "clulow-2006-long-symbols",
+        "francillon-2011-pkes-relay",
+        "leu-2021-multicarrier-tof",
         "olafsdottir-2017-carrier-phase",
         "ranganathan-2012-chirp-attacks",
-        "clulow-2006-long-symbols",
-        "leu-2021-multicarrier-tof",
-        "schepers-2021-ftm-security",
         "riaz-2022-pbr-multipath-security",
-        "francillon-2011-pkes-relay"
+        "schepers-2021-ftm-security",
+        "staat-2022-analog-relay"
       ],
       "cites_source": "fulltext",
       "category": "protocol"
@@ -1757,9 +1760,9 @@
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
         "poturalski-2011-db-802-15-4a",
-        "rasmussen-2010-rf-distance-bounding",
-        "francillon-2011-pkes-relay"
+        "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -2103,8 +2106,8 @@
       "added": "2026-07-28",
       "last_checked": "2026-08-24",
       "cites": [
-        "tschirschnitz-2021-method-confusion",
-        "antonioli-2023-bluffs"
+        "antonioli-2023-bluffs",
+        "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -2459,10 +2462,10 @@
       "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
+        "francillon-2011-pkes-relay",
         "olafsdottir-2017-carrier-phase",
         "rasmussen-2010-rf-distance-bounding",
-        "zand-2019-ble-pbr",
-        "francillon-2011-pkes-relay"
+        "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -2639,7 +2642,8 @@
       ],
       "limitations": [
         "보안 분석 없음 — 위상 롤오버·위상 조작 공격은 이 논문의 범위 밖",
-        "원문 미확보 — IEEE Xplore 유료, TU/e 연구 포털에 전문 파일 없음, Semantic Scholar openAccessPdf 비어 있음, ResearchGate는 로그인 요구 (2026-08-21 재시도 실패). 장비·실험 조건·수치 미확인"
+        "원문 미확보 — IEEE Xplore 유료, TU/e 연구 포털에 전문 파일 없음, Semantic Scholar openAccessPdf 비어 있음, ResearchGate는 로그인 요구 (2026-08-21 재시도 실패). 장비·실험 조건·수치 미확인",
+        "전문 접근 4회 연속 실패 (IEEE Xplore 유료, Unpaywall·OpenAlex 에 OA 사본 없음, TU/e 연구포털은 메타데이터만 보유, IEEE stampPDF 경로는 OA 논문에만 통함)"
       ],
       "artifacts": {
         "code": null,
@@ -2647,7 +2651,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-08-26",
       "cites": [],
       "cites_source": "no-fulltext",
       "category": "estimation"
@@ -3029,7 +3033,6 @@
       },
       "verification": "verified",
       "cites": [
-        "kravets-2025-ble-pbr-wifi",
         "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
@@ -3298,11 +3301,11 @@
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
         "olafsdottir-2017-carrier-phase",
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
-        "singh-2019-uwb-ed",
-        "francillon-2011-pkes-relay"
+        "singh-2019-uwb-ed"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-10",
@@ -3676,12 +3679,12 @@
       "cites": [
         "abidin-2021-narrowband-ranging",
         "anliker-2023-time-for-change",
+        "cremers-2012-distance-hijacking",
+        "francillon-2011-pkes-relay",
         "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
-        "singh-2021-4z-security-analysis",
-        "francillon-2011-pkes-relay",
-        "cremers-2012-distance-hijacking"
+        "singh-2021-4z-security-analysis"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-12",
@@ -3961,7 +3964,6 @@
       },
       "verification": "verified",
       "cites": [
-        "kravets-2025-ble-pbr-wifi",
         "suresh-2025-cs-vehicle-access"
       ],
       "cites_source": "fulltext",
@@ -4036,10 +4038,9 @@
       "added": "2026-08-17",
       "last_checked": "2026-08-18",
       "cites": [
-        "olafsdottir-2017-carrier-phase",
-        "zand-2019-ble-pbr",
         "francillon-2011-pkes-relay",
-        "cremers-2012-distance-hijacking"
+        "olafsdottir-2017-carrier-phase",
+        "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -4107,14 +4108,13 @@
       "added": "2026-08-17",
       "last_checked": "2026-08-18",
       "cites": [
-        "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
         "leu-2020-mtac",
         "olafsdottir-2017-carrier-phase",
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed",
-        "singh-2019-uwb-pr",
-        "francillon-2011-pkes-relay"
+        "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
       "category": "protocol"
@@ -4184,8 +4184,7 @@
         "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "singh-2021-4z-security-analysis",
-        "uwb-sv-2023-ccs",
-        "uwbad-2024-jamming"
+        "uwb-sv-2023-ccs"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -4254,8 +4253,8 @@
       "last_checked": "2026-08-18",
       "cites": [
         "clulow-2006-long-symbols",
-        "rasmussen-2010-rf-distance-bounding",
-        "flury-2010-distance-decreasing"
+        "flury-2010-distance-decreasing",
+        "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -4446,6 +4445,7 @@
       },
       "verification": "verified",
       "cites": [
+        "schroeder-2022-inphase",
         "wieme-2025-cs-commercial-hw"
       ],
       "cites_source": "fulltext",
@@ -4616,7 +4616,7 @@
         "Frank Ellinger"
       ],
       "venue": "IEEE Access",
-      "venue_full": "IEEE Access, vol. 14, pp. 18913–18928, Feb. 2026",
+      "venue_full": "IEEE Access, vol. 14, pp. 18913–18928 (2026-02-03 공개, CC BY 4.0)",
       "tier": "journal",
       "category": "measurement",
       "year": 2026,
@@ -4631,34 +4631,53 @@
         "design-space"
       ],
       "relevance": "high",
-      "relevance_note": "CS 의 설계 선택지 — 어떤 랑잉 알고리즘, 어떤 집계(aggregation), 어떤 측위 방식을 쓸 것인가 — 를 계측학 관점에서 훑고 제약(시나리오 크기, 환경, 정확도, 비용)별 권고를 내놓은 드문 문헌이다. 내 연구에 두 갈래로 걸린다. 첫째, 내가 직접 구현할 추정 파이프라인의 선택지 지도로 쓴다. 둘째이자 더 중요한 것은 집계 단계다 — 조작된 한 스텝의 측정이 평균에 섞여 들어가는지 걸러지는지가 여기서 정해지므로, 이 논문이 비교한 집계 방식들이 곧 탐지기가 올라앉을 토대의 목록이다. 다만 저자 스스로 CS 하드웨어의 연결 설정 시간 때문에 대규모 측정 캠페인이 불가능해 '매우 유사한 시스템'으로 대신 탐색했다고 밝히므로, 여기 수치를 CS 실측치로 인용하면 안 된다. schex-2026 이 이 논문을 인용한다.",
-      "summary": "Bluetooth channel sounding 은 위상 기반 개념과 비행시간으로 기기 간 거리를 정확히 추정하는 방법이며 최근 첫 집적회로에 들어가기 시작했다. 이 논문의 목적은 설계자가 랑잉과 측위에 적합한 알고리즘을 고르도록 돕는 계측학적 탐색을 수행하는 것이다. 복합 칩에서 Wi-Fi 로 흔히 얻을 수 있는 신호세기의 병용도 함께 논의한다. 아직 초기 단계인 하드웨어의 단점은 두 기기를 연결하는 데 시간이 오래 걸린다는 점이며, 측위를 하려면 여러 기지국과 반복적으로 링크를 맺어야 해 위치 갱신이 수 분 단위가 된다. 이 지연 때문에 대규모 측정 캠페인이 허용되지 않으므로, 저자들의 탐색은 성질과 동작 방식이 매우 유사한 시스템에 기반한다. 기여는 (a) 간결한 이론 정리, (b) 랑잉·집계·측위의 여러 접근과 설정에 대한 실험적 평가, (c) 시나리오 크기·환경 조건·정확도·비용 같은 제약에 맞춘 개발자용 설계 권고다. (초록만 확인, 전문 미확보)",
+      "relevance_note": "CS 의 설계 선택지 — 랑잉 알고리즘, **집계(aggregation)**, 측위 방식 — 를 계측학 관점에서 훑고 제약별 권고를 내놓는다. 내 연구에 바로 쓰이는 것은 Table 2 의 **평균오차와 최대오차의 간극**이다. PBR(AC-FFT-PD) 은 실외 평균 0.40 m 인데 최대 69.97 m 이고, 실내는 평균 1.36 m 에 최대 11.98 m 다. 즉 **정상 채널에서도 두 자릿수 미터의 이상치가 자연 발생**한다는 뜻이고, 조작된 측정 하나를 그 꼬리 안에 숨길 여지가 그만큼 크다는 뜻이다. 그리고 그 이상치가 최종 위치까지 살아남는지를 정하는 것이 집계 단계인데, 저자들은 실내는 **최단거리 채택**, 실외는 평균을 권한다 — 최단거리 채택은 **거리축소 공격에 최악의 집계 규칙**이다(공격자가 만든 짧은 값이 항상 선택된다). 다중경로 때문에 직접경로가 아니라 더 긴 경로가 잡히니 짧은 쪽을 고른다는 저자들의 논리가, 공격자가 있으면 그대로 뒤집힌다. 여기가 내가 파고들 지점이다. 또 하나 — 저자들은 정확한 ToF 가 있으면 '이상치 검출용으로만 쓰지 말고 측위에 직접 쓰라'고 권하는데, CS 의 RTT 를 PBR 의 정합성 검사로 쓰는 설계와 정확히 맞닿는다.",
+      "summary": "Bluetooth Channel Sounding 의 설계 선택지를 계측학적으로 탐색해 개발자에게 권고를 주는 것이 목표다. RSS·PBR·ToF 세 가지 랑잉과, 그 결과를 모으는 집계(평균/최단거리/클러스터링), 그리고 서수적·계량적 측위 알고리즘들을 한 틀에서 비교한다. 문제는 CS 칩의 연결 설정이 느려(기기 간 재연결에 수 초) 위치 갱신이 분 단위가 되므로 대규모 측정 캠페인을 돌릴 수 없다는 것이다. 그래서 저자들은 **CS 하드웨어가 아니라 성질이 유사한 시스템** — 자체 제작한 ZigBee PBR 시스템(Atmel AT86RF233)과 자체 UWB 시스템, 그리고 Bluetooth·Wi-Fi RSS — 으로 실내 대학 홀과 실외 안뜰에서 측정하고 그 결과를 CS 로 옮겨 해석한다. 마지막에 시나리오 크기·다중경로 유무·목표 정확도·비용의 네 조건별 권고표를 낸다.",
       "hardware": [
-        "확인 필요 — 전문 미확보 (초록은 CS 하드웨어 대신 '매우 유사한 시스템'으로 탐색했다고만 밝힘)"
+        "PBR: Atmel AT86RF233 트랜시버 기반 자체 시스템 — K = 152회 측정, 2.403–2.479 GHz, 스텝 500 kHz, 송신출력 +4 dBm",
+        "ToF: 자체 UWB 시스템 3.774–4.243 GHz (대역폭 약 500 MHz) — CS 의 RTT 를 대신 흉내내는 용도",
+        "RSS: Microchip RN42 트랜시버(Bluetooth BS), Linksys WRT54G 라우터(Wi-Fi BS), 이동국(MS)은 Samsung Galaxy S5",
+        "기준값(ground truth): Leica TS15 토탈스테이션 (광학 레이저, 최대오차 0.001 m 미만), 안테나 끝을 조준",
+        "보정용 거리 측정: Bosch 레이저 거리계",
+        "**CS 칩 자체는 측정에 쓰이지 않음** — Nordic nRF54L15 는 규격·출력범위(-40~+8 dBm, 79채널 1 MHz 간격) 참조용으로만 인용"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 전문 미확보"
+        "PBR 거리추정 두 방식: gradient(톱니파 기울기)와 AC-FFT-PD(FFT 다단 처리, 4096 샘플)",
+        "보정: RSS 는 log-normal 모델의 A·η, PBR 은 y = mx + n 의 m·n 을 최소제곱으로 적합 (UWB 는 보정 불필요)",
+        "집계 3종: 평균 / 최단거리 채택 / 가변 클러스터 크기 클러스터링",
+        "측위: 서수적(Proximity, Centroid, Ecolocation) + 계량적((가중)최소제곱, simple iterative, 최대우도)",
+        "구체 툴체인·언어는 논문에 미기재"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "랑잉·집계·측위의 여러 접근과 설정에 대한 실험적 평가와 제약별 설계 권고 제시 (초록) — 구체 수치 전문 미확보로 미확인",
-        "CS 하드웨어의 연결 설정 지연 때문에 위치 갱신이 분 단위가 되어 대규모 측정 캠페인이 불가능하며, 그래서 평가를 CS 자체가 아니라 성질이 유사한 시스템 위에서 수행했다고 저자가 명시 (초록)"
+        "Table 2 랑잉 오차(평균/최대) — PBR AC-FFT-PD: 실내 1.36 m / 11.98 m, 실외 0.40 m / **69.97 m**",
+        "Table 2 — PBR gradient: 실내 2.15 m / 4.94 m, 실외 0.64 m / 39.40 m. AC-FFT-PD 가 gradient 보다 우수",
+        "Table 2 — UWB ToF: 실내 0.30 m / 5.76 m, 실외 0.23 m / 7.54 m (세 방식 중 최고)",
+        "Table 2 — RSS: Bluetooth 실내 6.96 m / 238.58 m, 실외 6.27 m / 35.43 m; Wi-Fi 실내 5.21 m / 132.51 m, 실외 5.29 m / 117.47 m",
+        "**최대오차가 평균오차보다 1~2 자릿수 크다** — 저자는 개별 측정 분석으로 고립된 이상치가 원인임을 확인했다고 기술",
+        "측정 규모: 실내 대학 홀 17 m × 13 m 에서 27개 지점(points 08–34), 실외 안뜰 50 m × 30 m 중 20 m × 15 m 부분공간에서 52개 지점(points 09–60). 각 지점에서 BS 4개 각각에 10회 반복 랑잉",
+        "집계 권고(PBR): 실내는 **최단거리 채택**, 실외는 평균. 측위는 AC-FFT-PD + simple iterative 조합이 최선",
+        "RSS 측위에서는 단순한 서수적 기법(Ecolocation)이 실내에서 계량적 기법을 대체로 앞섬 — 최소제곱은 실망스러운 성능",
+        "Table 6 설계 권고표: 시나리오 크기(BS 당 면적) × 다중경로 유무 × 목표 정확도에 따라 RSS / PBR-gradient / PBR-AC-FFT-PD / UWB 와 집계·측위 조합을 지정",
+        "저자 결론: 정확한 ToF 가 있으면 이상치 검출용으로만 쓰지 말고 측위에 직접 쓰는 것이 낫다"
       ],
       "limitations": [
-        "평가 대상이 CS 하드웨어 자체가 아니라 '매우 유사한 시스템'이다 — 저자 스스로 밝힌 대체 측정이므로 수치를 CS 실측으로 인용할 수 없다",
-        "보안 분석 없음 — 조작된 측정에 대한 집계·측위 알고리즘의 거동은 다루지 않음",
-        "원문 미확보: IEEE Access 는 Gold OA(CC BY)이나 IEEE Xplore 가 403 을 돌려주고 Unpaywall 에 직접 PDF 링크가 없음 (2026-08-24 확인). 장비·알고리즘 목록·수치 미확인"
+        "**CS 하드웨어로 측정하지 않았다** — 저자 명시. CS 칩의 연결 설정 지연(수 초)으로 위치 갱신이 분 단위가 되어 대규모 캠페인이 불가능해, 성질이 유사한 ZigBee PBR·자체 UWB 로 대체하고 결과의 이전 가능성을 논증한다",
+        "저자 명시: 자체 시스템과 nRF54L15 의 유일한 유의미한 차이는 최소 주파수 스텝(500 kHz vs 1 MHz)이며, 트랜시버보다 **기판의 발진기가 PBR 에 미치는 영향이 더 크다**고 기존 연구를 근거로 밝힘",
+        "보안 위협모델 없음 — 공격자가 없는 계측 연구. 이상치는 전부 다중경로·잡음 탓으로 해석",
+        "RSS 보정은 실사용을 흉내내려 개별 BS 보정을 생략했고 PBR 은 BS 별로 보정 — 두 방식의 비교 조건이 완전히 대칭은 아님",
+        "AC-FFT-PD 는 gradient 보다 계산량이 크게 늘어 더 비싼 하드웨어가 필요할 수 있다고 각주에 명시"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "cites": [],
-      "cites_source": "no-fulltext",
+      "cites_source": "fulltext",
       "added": "2026-08-24",
-      "last_checked": "2026-08-24"
+      "last_checked": "2026-08-26"
     },
     {
       "id": "sheikh-2025-cs-interference",
@@ -4767,11 +4786,11 @@
       },
       "verification": "verified",
       "cites": [
+        "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
+        "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "singh-2021-4z-security-analysis",
-        "leu-2022-ghost-peak",
-        "anliker-2023-time-for-change",
         "uwb-sv-2023-ccs"
       ],
       "cites_source": "fulltext",
@@ -4836,13 +4855,259 @@
       },
       "verification": "verified",
       "cites": [
-        "rasmussen-2010-rf-distance-bounding",
+        "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
-        "cremers-2012-distance-hijacking"
+        "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-24",
       "last_checked": "2026-08-24"
+    },
+    {
+      "id": "schroeder-2022-inphase",
+      "title": "InPhase: Phase-based Ranging and Localization",
+      "authors": [
+        "Yannic Schröder",
+        "Lars Wolf"
+      ],
+      "venue": "ACM TOSN",
+      "venue_full": "ACM Transactions on Sensor Networks, vol. 18, no. 2, Article 24, pp. 1–39 (2022-01-13)",
+      "tier": "journal",
+      "year": 2022,
+      "url": "https://dl.acm.org/doi/10.1145/3494542",
+      "preprint": null,
+      "doi": "10.1145/3494542",
+      "topics": [
+        "phase-based-ranging",
+        "narrowband-ranging",
+        "802.15.4",
+        "ranging-accuracy",
+        "multipath",
+        "localization"
+      ],
+      "relevance": "high",
+      "relevance_note": "CS 의 PBR 과 같은 물리(2.4 GHz 협대역 위상응답)를 쓰면서 획득 절차부터 거리계산 알고리즘·품질지표까지 전부 공개된 시스템이다. 코드가 GitHub 에 있고 칩(AT86RF233)은 구할 수 있으므로, **CS 칩 없이 시작할 수 있는 재현 가능한 대조군**이 된다. 보안 관점에서 두 대목이 바로 쓰인다. 첫째, 측정마다 **DQI(측정 품질 지표)** 를 내고 임계값을 Youden 지수로 정해 이상치를 버리는데 — 조작된 측정이 이 필터를 통과하는지를 실제로 시험할 수 있는 구체적 판정 규칙이다. 코퍼스의 공격 논문들은 대부분 '수신기가 무엇을 버리는가'를 명시하지 않는다. 둘째, 저자들이 다중경로에서 **거리가 과대추정되는 방향으로 치우친다**고 반복해 보고한다(RDE·ESSR 은 양의 오차 편향, CDE 도 회랑·지하에서 평탄 구간). 자연 오차가 +방향이라면 거리축소 공격은 분포의 반대편 꼬리를 만드는 셈이라 탐지 가설의 출발점이 된다. 반대로 한계도 분명하다 — 이 논문에는 공격자가 없다.",
+      "summary": "off-the-shelf IEEE 802.15.4 트랜시버(AT86RF233)의 내장 PMU 로 2.4 GHz 협대역 신호의 위상응답을 수집해 거리와 위치를 얻는 InPhase 시스템을 제시한다. Active-Reflector 원리로 양 노드가 역할을 바꿔가며 주파수마다 위상각을 표본화하고, 새로 제안한 Complex-valued Distance Estimation(CDE) 알고리즘이 그 위상응답에서 거리를 계산하며 측정 품질 지표(DQI)를 함께 낸다. FFT bin 수를 낮추고 보간해 마이크로컨트롤러에서도 돌아가는 iCDE 변종을 제시하고, 잡음·표본오류·버스트 오류에 대한 강건성을 기존 알고리즘 두 종(RDE, ESSR)과 비교한다. 위치추정은 DQI 를 가중치에 반영하는 파티클 필터로 수행한다. UWB 대비 장점으로 협대역(한 번에 500 kHz)이라 다수 기기가 동시에 측정할 수 있는 공존성을 든다.",
+      "hardware": [
+        "Atmel AT86RF233 IEEE 802.15.4 트랜시버 — 내장 PMU(Phase Measurement Unit), 위상값 8비트(T=256), PMU 값은 8 µs 마다 갱신, 내부 구현 비공개(저자들도 블랙박스로 취급)",
+        "INGA 무선센서노드의 여러 변종 (센서노드 플랫폼)",
+        "마이크로컨트롤러 비동기 타이머 — 외부 32.768 kHz 크리스털 구동 (가드 인터벌 길이를 좌우)",
+        "잡음 특성 측정: 안테나 대신 동축 케이블 + 30 dB 감쇠기로 두 트랜시버 연결",
+        "INGA 노드쌍의 하드웨어 의존 오프셋 d_offset = 1.09 m (모든 측정 거리에서 차감)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "센서노드 컴포넌트: Contiki OS 상에서 AR 측정 수행, iCDE·RDE 를 온보드 계산 — https://github.com/ibr-cm/contiki-inphase",
+        "PC 컴포넌트: Python 3 라이브러리, Measurement Provider 로 시리얼·네트워크·파일 재생 입력을 받음 — https://github.com/ibr-cm/python-inphase",
+        "거리추정 알고리즘 4종 구현·비교: CDE, iCDE(보간), RDE, ESSR",
+        "위치추정: 파티클 필터 (초기화·예측·가중·재표본·측위 5단계, 가중 단계에서 DQI 반영)"
+      ],
+      "software_verified": true,
+      "results": [
+        "Park(개활지, 간섭·다중경로 최소) 시나리오에서 CDE 의 MAE 0.149 m, 표준편차 σ = 0.104 m — 논문 대표 수치",
+        "시나리오별 CDE MAE: Park 0.149 m / Apartment 0.376 m / Office corridor 0.550 m(σ 0.738 m) / Basement 0.414 m",
+        "비교 알고리즘은 전 시나리오에서 열세: RDE 0.706–0.890 m, ESSR 0.766–3.313 m (Park 기준 RDE 0.706, ESSR 2.555 m)",
+        "무잡음 합성 sawtooth 1,000개로 FFT bin 수 최적화 — B = 512 에서 MAE 0.037 m, 그 이상 늘려도 개선 미미",
+        "동축 케이블 + 30 dB 감쇠 구성에서 PMU 잡음 표준편차 σ = 25.7 LSB (Pelka 등이 무향실에서 보고한 32.25 LSB 와 유사)",
+        "4개 시나리오 총 2,300회 측정, Youden 지수로 DQI 임계 결정 — CDE 0.289, iCDE 0.288 (두 값이 거의 겹쳐 보간이 DQI 를 훼손하지 않음)",
+        "동기 프레임 유실로 측정신호가 없는 경우: CDE·iCDE 는 80건, RDE 는 52건을 걸러냄. ESSR 은 그런 측정을 식별하지 못하고 잡음에 들어맞는 임의 거리를 반환",
+        "Office corridor 의 특정 지점에서 네 알고리즘 모두가 **높은 DQI 를 붙인 채 틀린 거리**를 반복 보고 (CDF 의 평탄 구간) — 저자는 벽·바닥 다중경로를 원인으로 추정",
+        "IPSN 2018 실내측위 경진대회의 3D 라이브 트래킹에서 위치 MAE 0.95 m — UWB·초음파 기반 경쟁 시스템과 비슷한 수준",
+        "다중경로 환경에서 RDE·ESSR 은 양(+)의 오차 편향을 보임 — 거리를 과대추정하는 경향"
+      ],
+      "limitations": [
+        "저자 명시: AT86RF233 의 PMU 내부 구현이 공개되지 않아 블랙박스로 다룰 수밖에 없음 (Atmel 의 RTB 라이브러리도 사전컴파일 바이너리로만 배포되었고 거리계산 알고리즘 비공개)",
+        "저자 명시: Apartment 시나리오는 다른 기기 세트로 나중에 측정되어 d_offset 이 맞지 않아 음(−)의 오차 편향이 생겼고, 현재 수학 모델로 설명하지 못함",
+        "공격자가 없는 위협모델 — 다중경로·잡음·버스트 오류만 다루며 의도적 조작은 범위 밖",
+        "AR 측정은 두 노드의 동시 시작에 의존 — 동기 프레임이 유실되면 무의미한 측정이 생기고 DQI 로만 사후에 걸러짐",
+        "PLL 을 끄지 않고 송수신을 전환해야 해서(FORCE_PLL_ON) 칩별 구현 의존성이 큼 — 다른 트랜시버로의 이식성은 미검증"
+      ],
+      "artifacts": {
+        "code": "https://github.com/ibr-cm/python-inphase",
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-08-26",
+      "last_checked": "2026-08-26",
+      "cites": [
+        "schroeder-2019-multipath-pbr",
+        "zand-2019-ble-pbr"
+      ],
+      "cites_source": "fulltext",
+      "category": "estimation"
+    },
+    {
+      "id": "schroeder-2019-multipath-pbr",
+      "title": "Investigation of Multipath Effects on Phase-based Ranging",
+      "authors": [
+        "Yannic Schröder",
+        "Daniel Heidorn",
+        "Lars Wolf"
+      ],
+      "venue": "IPIN",
+      "venue_full": "2019 International Conference on Indoor Positioning and Indoor Navigation (IPIN), Pisa, Italy, pp. 1–8 (2019-09)",
+      "tier": "other",
+      "year": 2019,
+      "url": "https://ieeexplore.ieee.org/document/8911817",
+      "preprint": null,
+      "doi": "10.1109/IPIN.2019.8911817",
+      "topics": [
+        "phase-based-ranging",
+        "multipath",
+        "narrowband-ranging",
+        "ranging-accuracy",
+        "802.15.4"
+      ],
+      "relevance": "high",
+      "relevance_note": "**CS 보안의 식별가능성 문제를 공격자 없이 먼저 보여주는 논문**이다. 저자들은 2.4 GHz 협대역 PBR 이 직접경로가 아니라 **반사경로의 길이를 보고할 수 있다**고 실측으로 말한다. 이것이 중요한 이유는, 거리 조작 공격의 탐지 가설이 대부분 '측정이 물리적으로 그럴듯한가'에 기대는데 — 정상 채널에서도 측정이 직접경로를 놓치고 다른 경로로 넘어가는 일이 이미 일어나기 때문이다. 즉 **공격이 만들어내는 이상치와 자연 다중경로가 만드는 이상치의 구별 가능성**이 이 논문이 정의한 세 가지 측정 결과 유형 위에서 정의되어야 한다. riaz-2022 의 '다중경로에서도 임의 거리축소가 된다'는 주장과 짝을 이루는 방어측 자료이고, 같은 연구진의 schroeder-2022-inphase 가 그 플랫폼·알고리즘의 전모를 공개한다. 전문을 못 구해 세 유형의 정의와 51% 개선의 조건은 아직 확인하지 못했다 — 다음 실행 우선 대상.",
+      "summary": "2.4 GHz 대역 위상 기반 거리측정(PBR)에 다중경로 전파가 미치는 영향을 실험으로 조사한다. 저자들은 PBR 시스템이 직접경로 대신 반사된 신호경로의 길이를 보고할 수 있음을 보이고, 두 기기 사이 무선링크의 물리적 성질에 따라 세 가지로 구분되는 측정 결과 유형을 식별했다고 기술한다. 다중경로가 심각한 측정오차로 이어질 수 있다는 것이 핵심 관찰이며, 완화를 위해 측정된 위상각에서 거리를 계산하는 새 알고리즘을 제안한다. 다중경로가 강한 시나리오에서 기존 최신 알고리즘 대비 측정오차를 51% 줄였다고 보고한다. (이상 초록 기준 — 전문 미확보)",
+      "hardware": [
+        "확인 필요 — 전문 미확보 (같은 연구진의 InPhase 플랫폼(AT86RF233 + INGA 노드)일 가능성이 높으나 이 논문에서 직접 확인하지 못함)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "PBR 시스템이 직접경로가 아니라 반사경로의 길이를 보고할 수 있음을 실험으로 제시 (초록)",
+        "무선링크의 물리적 성질에 따라 세 가지로 구분되는 측정 결과 유형을 식별 (초록) — 각 유형의 정의는 전문 미확보로 미확인",
+        "제안 알고리즘이 다중경로가 강한 시나리오에서 기존 최신 알고리즘 대비 측정오차 51% 감소 (초록) — 비교 대상 알고리즘·시나리오 조건은 미확인"
+      ],
+      "limitations": [
+        "IEEE Xplore 유료이고 OA 사본이 색인되지 않아 전문 미확보 — 수치의 측정 조건을 확인하지 못함",
+        "공격자 없는 위협모델 — 자연 다중경로만 다룸"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "added": "2026-08-26",
+      "last_checked": "2026-08-26",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "category": "analysis"
+    },
+    {
+      "id": "zhang-2014-unambiguous-distance",
+      "title": "The Unambiguous Distance in a Phase-based Ranging System with Hopping Frequencies",
+      "authors": [
+        "Yue Zhang",
+        "Wangdong Qi",
+        "Su Zhang"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:1403.1923v1 [cs.OH] (2014-03-08), IET Electronics Letters 투고 원고",
+      "tier": "preprint",
+      "year": 2014,
+      "url": "https://arxiv.org/abs/1403.1923",
+      "preprint": "https://arxiv.org/abs/1403.1923",
+      "doi": null,
+      "topics": [
+        "phase-based-ranging",
+        "frequency-hopping",
+        "ambiguity",
+        "narrowband-ranging"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 의 PBR 이 **왜 특정 거리에서 접히는가**를 지배하는 수식을 준다. 위상 기반 거리측정의 비모호거리(UD)는 사용한 반송파 주파수 인덱스들의 **최대공약수 k** 로 결정되어 UD = c/(k·f_min) 이고, 주파수를 무작위로 고르면 UD 는 확률변수가 된다. 저자들은 그 확률이 '무작위로 고른 정수들이 서로소일 확률'과 같음을 보이고 M > 10 이면 P > 0.999 라고 결론짓는다. CS 로 옮기면 질문이 생긴다 — CS 는 1 MHz 간격 채널에서 스텝마다 채널을 고르므로 이상적으로는 UD = 300 m 지만, **간섭·채널맵·재밍으로 실제 사용 채널 집합이 줄거나 특정 간격으로 치우치면 k 가 1 이 아니게 되고 UD 가 접힌다.** 즉 '공격자가 채널 선택에 영향을 주어 모호거리를 축소시킬 수 있는가'가 검증 가능한 가설이 되고, 그 판정식이 여기 있다. 다만 이 논문 자체는 보안 논문이 아니고 인지무선 대역을 상정한 2014년 원고다.",
+      "summary": "주파수 호핑을 쓰는 위상 기반 거리측정 시스템(PRSHF)에서 비모호거리(unambiguous distance, UD)를 어떻게 규정할 것인가를 다룬다. 고정 주파수 집합에서는 UD = c/(k·f_min)(k 는 주파수 인덱스들의 최대공약수)로 간단히 정해지지만, 인지무선처럼 가용 대역이 불연속이고 주파수를 무작위로 고르면 UD 가 확률변수가 된다. 저자들은 UD 가 최대값을 갖는 확률로 이를 특성화하자고 제안하고, 그 확률이 무작위로 고른 정수들이 서로소일 확률과 같음을 해석적 정수론의 증가율 추정 기법으로 간결한 식으로 얻는다. 결론은 측정에 쓰는 주파수가 10개만 넘으면 UD 가 거의 확실히 최대값을 가지며, 가용 대역이 몇 조각으로 나뉘어 있는지와는 사실상 무관하다는 것이다.",
+      "hardware": [
+        "해당 없음 — 해석과 시뮬레이션만 (실측 장비 없음)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이션: m-계열(m-sequence) 생성기로 가용 주파수에서 M개를 무작위 선택 (툴 이름 미기재)"
+      ],
+      "software_verified": false,
+      "results": [
+        "UD = c/(k·f_min), k = 측정에 쓴 주파수 인덱스 {k_i} 의 최대공약수 — 고정 주파수 집합에서의 기준식",
+        "UD 가 최대값을 가질 확률 ≈ 1/ζ(M) 로 근사되며, 가용 주파수 총수 N 이 충분히 크면 **대역이 몇 조각(L)으로 나뉘었는지와 무관**",
+        "M > 10 이면 P > 0.999 — 주파수 10개 남짓이면 비모호거리가 거의 확실히 최대값",
+        "시뮬레이션 조건: 대역 54–862 MHz, f_min = 1 kHz, 가용 주파수 N = 2^15, 세그먼트 수 L ∈ {1, 7, 12}, M = 3–13. 이론값과 시뮬레이션이 세 경우 모두 일치",
+        "M = 3 부근에서는 확률이 0.83 수준까지 떨어짐 — 주파수 수가 적으면 UD 축소가 실제로 일어남 (Fig. 1)"
+      ],
+      "limitations": [
+        "보안 위협모델이 없음 — 주파수 선택이 무작위라는 가정이며 적대적 선택은 다루지 않음",
+        "인지무선의 넓은 대역(54–862 MHz, f_min = 1 kHz)을 상정 — 2.4 GHz ISM 79채널·1 MHz 간격의 CS 와는 파라미터 범위가 다름",
+        "IET Electronics Letters 투고 원고 형태의 arXiv 프리프린트 — 최종 게재 여부 확인 안 됨",
+        "UD 가 최대값을 갖는 확률만 다루고, 최대값이 아닐 때 UD 가 얼마나 짧아지는지의 분포는 다루지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-08-26",
+      "last_checked": "2026-08-26",
+      "cites": [],
+      "cites_source": "fulltext",
+      "category": "analysis"
+    },
+    {
+      "id": "kolli-2024-keyfob-cir-adversarial",
+      "title": "Robust Localization of Key Fob Using Channel Impulse Response of Ultra Wide Band Sensors for Keyless Entry Systems",
+      "authors": [
+        "Abhiram Kolli",
+        "Filippo Casamassima",
+        "Horst Possegger",
+        "Horst Bischof"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2401.08863v1 [cs.LG] (2024-01-16). Graz University of Technology · Profactor GmbH · NXP Semiconductors",
+      "tier": "preprint",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2401.08863",
+      "preprint": "https://arxiv.org/abs/2401.08863",
+      "doi": null,
+      "topics": [
+        "uwb",
+        "keyless-entry",
+        "machine-learning",
+        "adversarial-examples",
+        "defense"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스의 방어 논문 여럿(eriksson-2024 의 다중경로 ML 판별, gou-2024 의 오토인코더 탐지, arxiv-2026-nlos-ble-df)이 채널 특징에 신경망을 얹는데, **그 신경망 자체가 공격면**이라는 것을 같은 도메인(차량 키포브 UWB CIR)에서 보여준다. FGSM·BIM·PGD 로 만든 미세 섭동이 구역 분류 정확도를 무너뜨리고, 적대적 학습 없이 구조만 바꿔 67%(특정 ε)까지 복구된다는 결과는 'CS 에 ML 탐지기를 붙이면 강건성 평가가 필수'라는 요구사항으로 그대로 옮겨진다. **다만 위협모델을 정직하게 볼 것** — 섭동은 8개 CIR 특징 벡터에 화이트박스로 직접 가해지며, 저자들도 UWB 펄스 반복률이 높아 실시간 무선 생성은 실현 가능하지 않다고 적는다. 즉 이것은 무선계층 공격의 실증이 아니라 **판정기 강건성의 상한 평가**다. 내 연구에서는 CS 탐지기를 제안할 때 '이 탐지기는 어떤 섭동에 무너지는가'를 같이 평가하는 근거로 인용할 수 있다.",
+      "summary": "차량 주변·실내의 키포브 위치를 UWB CIR 로 분류하는 keyless entry 용 신경망의 적대적 강건성을 다룬다. 원시 CIR 에서 뽑은 8개 특징(CIR 면적, 총전력, 첫경로/최강경로 진폭비와 시간차, 스펙트럼 전력, 첫경로 폭·돌출도, 거리)을 센서 6개에서 모아 48차원 입력으로 쓰고, 6개 구역(left, back, front, driver seat, back seat, right)을 분류한다. MLP·RBF 계열을 기준선으로 두고 FGSM·BIM·PGD 적대적 예제에 대한 내재적 강건성을 비교한 뒤, 적대적 학습 없이도 더 강건한 multi-head 자기지도 RBF 구조를 제안한다.",
+      "hardware": [
+        "차량 주변에 배치한 UWB 센서 6개 (제조사·모델 미기재 — NXP Semiconductors 공동저자)",
+        "자체 수집 비공개 데이터셋: 6개 구역 클래스, 총 600 샘플 (학습 300 / 시험 300), 다양한 환경·주변조건에서 수집"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "센서당 8개 CIR 특징 × 6센서 = 48차원 입력 (원시 CIR 이 아니라 사전계산 특징)",
+        "비교 모델: MLP(32뉴런 dense 2층 + 배치정규화), 단일 RBF, multi-RBF 변종들",
+        "제안 모델: 잡음 정규화 인코더-디코더 + 자기지도 multi-head cascaded RBF",
+        "적대적 예제 생성: FGSM, BIM, PGD (프레임워크 미기재)",
+        "학습 설정: ADAM, 학습률 0.001, 1000 epoch, 1-fold·10-fold·100-fold 검증"
+      ],
+      "software_verified": true,
+      "results": [
+        "제안 모델이 깨끗한 샘플에서 기준선 대비 정확도 6% 개선 — 완전한 CIR 을 쓴 CNN 보다 사전계산 특징 8종이 더 나았음",
+        "ε = 0.1 적대적 공격에서 FGSM 37%, PGD 38% 개선 (BIM 은 두 번째로 우수)",
+        "특정 적대적 크기 구간에서는 표준 구조 대비 67% 개선 — 적대적 학습을 전혀 쓰지 않고 구조만으로 달성",
+        "모델 크기 82.0 kB — 마이크로컨트롤러 배포 가능 수준이라고 주장",
+        "적대적 학습(adversarial training)의 두 문제를 지적: 깨끗한 샘플 성능 저하, 그리고 섭동 크기 ε 이 공격자의 선택이라 학습 시점에 정할 수 없음"
+      ],
+      "limitations": [
+        "섭동을 48차원 특징 벡터에 직접 가하는 화이트박스 설정 — 무선계층에서 그 섭동을 만들어내는 방법은 다루지 않음",
+        "저자 명시: UWB 펄스 반복률이 높아 실시간 시나리오에서 (FGSM 이외의) 적대적 공격 생성은 프로토콜상 실현 가능하지 않다고 판단해 기본형만 평가",
+        "데이터셋이 600 샘플로 작고 비공개 — 1/10/100-fold 로 보완했으나 일반화 근거는 제한적",
+        "거리측정이 아니라 구역 분류(6 클래스) 과제 — 거리 조작 공격과는 판정 대상이 다름",
+        "arXiv 프리프린트 — 동료심사 게재 확인 안 됨"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-08-26",
+      "last_checked": "2026-08-26",
+      "cites": [],
+      "cites_source": "fulltext",
+      "category": "defense"
     }
   ]
 }
