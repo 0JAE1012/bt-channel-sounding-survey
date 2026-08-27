@@ -2,6 +2,60 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-27 (18차: 신규 2건, 보강 1건 — 발표 슬라이드로 유료 논문 우회, 인용 20건 보강)
+
+이번 실행의 소득은 두 가지 우회 경로입니다. 첫째, **IEEE 유료 논문이라도 저자가
+학회 발표 슬라이드를 기관 페이지에 올려둔 경우가 있습니다.** `schroeder-2019` 는
+전문 접근이 계속 막혔지만 TU Braunschweig IBR 의 InPhase 프로젝트 페이지에
+IPIN 2019 발표 슬라이드(30 MB)가 그대로 공개돼 있었고, 여기서 장비명·실험 규모·
+오차 표를 모두 얻었습니다. 다만 슬라이드 PDF 는 폰트 서브셋 때문에 `pdftotext` 가
+**숫자를 통째로 버립니다** — PyMuPDF 의 `get_text()` 로 페이지별로 뽑아야 수치가
+나옵니다. 다음 실행에서 슬라이드를 만나면 이 함정을 먼저 기억할 것.
+둘째, 캐시된 전문 56 건을 코퍼스 제목 전체와 정규화 대조해 **누락된 인용 20 건**을
+찾았습니다. 신규 논문을 넣을 때마다 이 스캔을 돌려야 그래프에 고립 노드가 안 생깁니다.
+
+- 신규: **Smartphones with UWB: Evaluating the Accuracy and Reliability of UWB Ranging**
+  (Heinrich·Krollmann·Putz·Hollick, TU Darmstadt SEEMOO, arXiv 2303.11220, 2023,
+  관련도 **보통**, `verified`). 이미 코퍼스의 `seo-2026` 과 `aad-2026` 이 인용하고
+  있던 논문인데 빠져 있었습니다. 핵심은 **공격자가 없어도 상용 기기가 수 m 짜리
+  음의 이상치를 낸다**는 실측입니다 — 실제 5 m 지점에서 보고된 거리가 0 m ~ 7.79 m,
+  간섭 없는 옥외에서도 −3 m, Samsung 은 실험실에서 반복적으로 0 m. 무보정 RMSE 는
+  DW3000 16.03 cm / Pixel 14.98 cm / S21 Ultra 15.65 cm / iPhone 17.68 cm 로
+  제조사 광고치 ±10 cm 를 재현하지 못합니다. 저자들의 네 가지 수신기 권고
+  (DS-TWR, 10~15 회 슬라이딩 윈도 평균, 음수값 폐기, **음수값 빈발을 공격 신호로
+  카운트**)는 CS 의 판정 정책 설계에 그대로 옮길 수 있습니다.
+- 신규: **Multipath Error Correction in Radio Interferometric Positioning Systems**
+  (Zhang·Qi·Wei·Chang·Zhao, arXiv 1702.07624, 2017, 관련도 **보통**, `verified`).
+  2.4 GHz 협대역에서 **위상만 쓰던 관행을 깨고 진폭으로 다중경로 프로파일을 추정해
+  위상 오차를 되돌립니다.** CS 의 PCT 는 톤마다 I/Q 를 주므로 진폭을 이미 갖고 있는데
+  대부분의 파이프라인이 위상 기울기나 IFFT 봉우리만 봅니다. 시뮬레이션에서 q-range
+  75 m 기준 중앙값 0.33 → 0.05 m, 95 백분위 7.4 → 0.38 m 로 꼬리가 20 배 줄었고,
+  경로 지연차가 10 ns 를 넘어야 잘 듣습니다(실내 근거리 CS 가 정확히 그 아래 영역).
+  보안 쪽 함의가 더 큽니다 — 진폭과 위상이 함께 일관해야 한다면 **위상만 조작하는
+  공격자는 진폭 프로파일과의 불일치를 남긴다**는 탐지 가설이 여기서 나옵니다.
+- 보강: **Investigation of Multipath Effects on Phase-based Ranging** (schroeder-2019)
+  — 저자 IPIN 2019 발표 슬라이드로 `hardware`(PMU 를 가진 AT86RF233, 2400~2500 MHz,
+  통제실험 직접 10 m + 반사 40 m 각 1000 회, 실환경 노드 10 대 × 링크 9 × 1000 회
+  ≈ 9만 측정), `results`(Multipath 조건 MAE 4.347 → 2.138 m, 중앙값 1.863 → 0.524 m,
+  표준편차 6.518 → 3.834 m), `limitations` 를 채우고 `hardware_verified: true`.
+  **가장 쓸모 있는 발견은 부록 표의 최악값입니다** — 51% 개선 뒤에도 오차 범위가
+  iCDE −8.576~155.616 m, MP iCDE −10.108~152.760 m 로 거의 그대로입니다. 자연
+  다중경로의 극단 이상치가 공격이 만드는 이상치와 같은 크기 대역에 있다는 뜻이라,
+  임계값 기반 탐지의 상한을 이 숫자가 직접 정합니다. 본문은 여전히 미확보라
+  `verification` 은 `partial` 유지.
+- 인용: 캐시 전문 대조로 **20 건 추가**. `leu-2022-ghost-peak` → singh-2021·flury-2010,
+  `wieme-2025` → zand-2019·sheikh-2023, `anliker-2026` → leu-2021,
+  `ranganathan-2012` 를 인용하던 4 편(singh-2019-uwb-pr·leu-2020-mtac·singh-2022-v-range·
+  coppola-2025), `seo-2026`·`aad-2026` → heinrich-2023 등. 총 인용 264 건.
+- 표준: 변경 없음. Bluetooth Core 6.3(2026-05-06)은 이미 등재돼 있고 신규 릴리스 없음.
+- 실패: 유료 벽에 막힌 `partial` 6 건은 이번에도 뚫지 못했습니다 — Unpaywall 로
+  DOI 7 건을 일괄 조회했으나 **전부 `is_oa: false`** 였습니다(IPIN·WCNC·Sensors
+  Letters·VNC·ICASSP·WASA·VCC). 학회 목차 훑기도 소득 없음: NDSS 2027 accepted 페이지는
+  2017 년 목록으로 리다이렉트되고, CCS 2026 은 accepted 목록이 아직 공개 전이며,
+  USENIX Security 26 technical sessions 는 403 입니다. arXiv API 는 레이트 제한에
+  걸려 검색 UI(`/search/`)로 대체했습니다. `arxiv:2010.10387`(UWB distance bounding
+  복조 기법)은 **저자가 철회한 논문**이라 후보에서 제외했습니다.
+
 ## 2026-08-26 (17차: 신규 4건, 보강 2건 — 협대역 PBR 계보를 통째로 편입, 인용 오탐 12건 제거)
 
 이번 실행에서 두 가지가 열렸습니다. 첫째, **IEEE Xplore 의 OA 논문**은
