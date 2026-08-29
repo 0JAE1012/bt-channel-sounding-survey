@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-27",
-  "last_run": "2026-08-27",
+  "updated": "2026-08-30",
+  "last_run": "2026-08-30",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 240,
+  "citation_edges": 274,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -546,7 +546,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-24",
+      "last_checked": "2026-08-30",
       "cites": [
         "gunia-2026-cs-metrological",
         "pnn-2025-cs-distance-estimation",
@@ -554,7 +554,8 @@
         "sheikh-2025-cs-interference",
         "suresh-2025-cs-vehicle-access",
         "wieme-2025-cs-commercial-hw",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "zand-2019-concurrent-pbr"
       ],
       "cites_source": "fulltext",
       "category": "protocol"
@@ -2658,10 +2659,11 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-08-30",
       "cites": [
         "santra-2024-cs-indoor",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "zand-2019-concurrent-pbr"
       ],
       "cites_source": "fulltext",
       "category": "defense"
@@ -5171,10 +5173,11 @@
       },
       "verification": "verified",
       "added": "2026-08-26",
-      "last_checked": "2026-08-26",
+      "last_checked": "2026-08-30",
       "cites": [
         "schroeder-2019-multipath-pbr",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "zand-2019-concurrent-pbr"
       ],
       "cites_source": "fulltext",
       "category": "estimation"
@@ -5520,6 +5523,418 @@
       "cites_source": "fulltext",
       "added": "2026-08-27",
       "last_checked": "2026-08-27"
+    },
+    {
+      "id": "suresh-2025-ble-uwb-relay",
+      "title": "Mitigating Relay Attacks in Vehicle Access Systems Using BLE and UWB",
+      "authors": [
+        "D. Suresh",
+        "Prashant V. Joshi",
+        "Parag Parandkar"
+      ],
+      "venue": "ETASR",
+      "venue_full": "Engineering, Technology & Applied Science Research, vol. 15, no. 5, pp. 26965–26970, Oct. 2025 (REVA University · SPARK MINDA Technical Center) — CC-BY 4.0",
+      "tier": "journal",
+      "category": "defense",
+      "year": 2025,
+      "url": "https://etasr.com/index.php/ETASR/article/view/12581",
+      "preprint": "https://www.etasr.com/index.php/ETASR/article/download/12581/5530",
+      "doi": "10.48084/etasr.12581",
+      "topics": [
+        "keyless-entry",
+        "relay-attack",
+        "uwb",
+        "digital-key",
+        "vehicle-access",
+        "system-composition",
+        "receiver-policy"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "suresh-2025-cs-vehicle-access(IEEE Access, BLE CS 로 차량 접근)와 **같은 저자진이 같은 해에 낸 UWB 판**이라 두 편을 나란히 놓으면 산업계가 CS 와 UWB 를 어떤 역할로 나누는지가 보인다 — 이 논문에서는 BLE 는 인증과 RSSI 기반 트리거(약 2 m)에만 쓰고 거리 판정은 UWB 에 맡긴다. 내 연구에 쓰이는 지점은 세 가지다. 첫째, **판정 정책의 실제 값**: Lock 임계 1.6 m, Unlock 임계 0.5 m, 그 사이는 판정 보류(no-care zone)라는 히스테리시스 구조가 명시돼 있어 CS 기반 시스템의 수락 정책을 모델링할 때 기준값으로 쓸 수 있다. 둘째, **UWB 가 켜지기 전 구간이 공격에 노출된다**고 저자들이 직접 인정한다(\"A region vulnerable to relay attacks exists because the UWB ranging is inactive\") — BLE 로 세션을 열고 거리측정은 나중에 켜는 구성 자체가 공격 표면이라는 뜻이고, 이는 CS 를 UWB 대신 넣어도 그대로 남는 시스템 구성 문제다. 셋째, 이 논문은 릴레이 공격을 실제로 수행하지 않았고 UWB 거리 정확도도 보고하지 않는다. 즉 \"UWB 를 넣었으니 안전하다\"는 산업계 논증의 전형이며, anliker-2023-time-for-change·leu-2022-ghost-peak 가 보인 UWB 자체의 취약점과 대조하는 반례 자료로 쓸 수 있다.",
+      "summary": "LF/RF 기반 PEPS 의 릴레이 취약점을 BLE + UWB + NFC 조합으로 막는 차량 접근 프레임워크를 제안하고 구현한다. BLE 는 디지털 키 애플릿(비대칭 암호)으로 기기 인증과 근접 트리거만 담당하고, UWB 가 TDOA 와 삼변측량(앵커 4 개 중 가까운 3 개 선택)으로 사용자 위치·각도를 구해 잠금/해제를 결정한다. 랑잉 세션은 디지털 키 인증 핸드셰이크에서 파생한 URSK(Unique Rolling Session Key, 수명 1 시간 이하)로 열고 닫는다. ARM Cortex-M33 기반 칩셋(벤더 SDK 의 BLE 스택)으로 BLE 키포브와 전자 도어핸들 잠금장치를 만들었고, ANSYS HFSS 로 이중 안테나를 설계했다. 실험은 세 각도 방향에서 1~5 m 거리별로 BLE RSSI 와 UWB 측정값의 범위를 표로 보고하며, 1.6 m 밖에서 잠금·0.5 m 안에서 해제가 일관되게 일어남을 보인다. 기존 연구 3 건과의 정성 비교표로 마무리한다.",
+      "hardware": [
+        "ARM Cortex-M33 코어 + 하드웨어 가속기 탑재 칩셋 (벤더·품명 미기재 — 본문은 \"the semiconductor supplier\" 로만 지칭) 위에 BLE 키포브와 BLE 전자 도어핸들 잠금장치를 구현",
+        "UWB 앵커 4 개 (칩·모듈 미기재) — 삼변측량에 가까운 3 개 선택, TDOA 방식",
+        "ANSYS HFSS 3D 고주파 시뮬레이션으로 이중 안테나 설계·보정",
+        "Secure Element: 차량 접근 ECU 와 휴대폰 양쪽의 자동차급 보안 MCU (품명 미기재)",
+        "실험 배치: 차량에서 1·2·3·4·5 m, 세 각도 방향 (표 II)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "벤더 제공 SDK 의 BLE 스택 + 벤더 지정 컴파일러·디버거 툴체인 (이름 미기재)",
+        "디지털 키 애플릿 — 비대칭 암호 기반 키 생성·페어링·보안 랑잉·키 공유, URSK 수명 ≤ 1 h",
+        "UWB: IEEE 802.15.4z, STS 로 타임스탬프 보호 (본문 기술)"
+      ],
+      "software_verified": true,
+      "results": [
+        "판정 정책: Lock 임계 ≤ 1.6 m, Unlock 임계 ≥ 0.5 m, 0.5~1.6 m 는 no-care zone (표 II 주석) — UWB 세션은 ECU 의 BLE RSSI 로 트리거 (약 2 m 이내)",
+        "표 II (방향 1): 거리 1→5 m 에서 BLE RSSI −72~−85 → −78~−94 dBm, UWB 원시값 372~389 → 820~846 (단위 미기재); Lock 은 2 m 부터 YES, Unlock 은 1 m 에서만 YES",
+        "방향 3 (안테나 정면으로 추정): 1→3 m 에서 RSSI −54~−72 → −71~−88 dBm, UWB 227~239 → 430~451 — 같은 거리에서 방향에 따라 UWB 값이 약 1.6 배 차이",
+        "1.6 m 초과 시 RSSI 가 −80 dBm 아래로 떨어지며 잠금, 0.5 m 이내에서 해제 — 세 방향 모두 일관",
+        "UWB 거리 정확도(오차 m/cm)·릴레이 공격 실증·탐지율은 보고하지 않음 — 표 III 의 기존 연구 비교도 정성적"
+      ],
+      "limitations": [
+        "릴레이 공격을 실제로 수행하지 않는다 — \"UWB 는 STS 로 릴레이를 막는다\"는 표준의 주장을 그대로 전제하며, Ghost Peak 류 공격은 언급하지 않음",
+        "UWB 측정값이 단위 없는 원시값이고 거리 오차를 보고하지 않아 정확도를 평가할 수 없음",
+        "UWB 가 켜지기 전 BLE-only 구간이 릴레이에 노출됨을 저자 스스로 인정 (본문) — 시스템 구성상의 공격 표면",
+        "칩셋·UWB 모듈·SE 품명이 모두 미기재라 재현 불가",
+        "안테나 배치와 LOS 여부가 결과를 좌우한다고 저자 명시 — NLOS·차량 내부/외부 판별 실험 없음",
+        "위협 모델이 서술적 — 공격자 능력(지연·이득·동기화)을 정량화하지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "olafsdottir-2017-carrier-phase",
+        "staat-2020-paak-relay",
+        "suresh-2025-cs-vehicle-access"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "staat-2020-paak-relay",
+      "title": "Securing Phone as a Key Against Relay Attacks",
+      "authors": [
+        "Paul Staat",
+        "Kai Jansen",
+        "Christian Zenger",
+        "Christof Paar"
+      ],
+      "venue": "escar Europe",
+      "venue_full": "18th escar Europe: The World's Leading Automotive Cyber Security Conference, pp. 47–58, Nov. 2020 (Max-Planck Institute for Security and Privacy · PHYSEC GmbH · Ruhr-University Bochum)",
+      "tier": "other",
+      "category": "defense",
+      "year": 2020,
+      "url": "https://hss-opus.ub.ruhr-uni-bochum.de/opus4/frontdoor/index/index/year/2020/docId/7546",
+      "preprint": "https://hss-opus.ub.ruhr-uni-bochum.de/opus4/files/7546/05_escar_Europe_2020_paper_24.pdf",
+      "doi": "10.13154/294-7546",
+      "topics": [
+        "keyless-entry",
+        "relay-attack",
+        "phone-as-a-key",
+        "channel-reciprocity",
+        "rf-fingerprinting",
+        "phase-based-ranging",
+        "ble",
+        "feasibility"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "staat-2022-analog-relay(WiSec 2022) 의 **전사(前史)** 다. 같은 제1저자가 2 년 전에 방어 쪽에서 쓴 글로, BLE 반송파 위상 거리측정에 대한 릴레이 공격자가 넘어야 할 네 관문 — 저지연 양방향 신호 전달, 물리계층 일관성(채널 상호성·RF 지문) 유지, 위상 조작에 의한 거리 축소, 무작위 주파수 호핑 아래서의 탐지·동기화 — 을 명시적으로 나열하고, 이를 동시에 만족하려면 아날로그 amplify-and-forward 처리가 필요하다고 예견한다. 2022 년 논문은 바로 그 아날로그 릴레이를 실제로 만들어 이 방어 논증을 스스로 뒤집은 셈이므로, 두 편을 이어 읽으면 **\"방어자가 세운 공격 난이도 가정이 어디서 깨졌는가\"** 를 추적할 수 있다. 내 연구에 직접 쓰이는 것은 두 가지다. 첫째, 채널 상호성 검사와 전이구간(preamble) RF 지문이라는 두 물리계층 탐지 축은 CS 의 NADM 이 CS_SYNC 패킷에서 보는 것과 같은 종류의 지표이며, 저자들이 정리한 두 방식의 장단 비교표(표 1)는 탐지 지표 설계의 출발점이 된다. 둘째, \"BLE 트랜시버로는 고정밀 ToF 가 불가능하다\"는 2020 년의 전제가 CS RTT 로 바뀐 지금, 같은 위협 모델을 다시 세우면 어느 관문이 여전히 유효한지를 점검하는 체크리스트로 쓸 수 있다. 다만 평가 실험이 없는 제안 논문이라 수치 근거는 없다.",
+      "summary": "스마트폰을 차 키로 쓰는 Phone as a Key(PaaK) 가 BLE 로 구현되는 현실에서 릴레이 공격 대책을 논한다. PKES 와 릴레이 공격(범위 확장·decode-and-forward·amplify-and-forward)을 정리한 뒤, BLE 표준의 I/Q 샘플 접근과 CTE 를 이용해 추가 하드웨어 없이 얻을 수 있는 두 물리계층 프리미티브 — 채널 상호성과 RF 기기 지문 — 를 릴레이 탐지에 쓰자고 제안한다. 채널 상호성은 디지털 릴레이와 방향별 독립 릴레이를 막고, RF 지문(전이구간의 비선형 증폭기 특성)은 공격자의 능동 신호 조작을 드러낸다는 논리로, 둘을 합친 하이브리드 물리계층 IDS 를 표준 호환·후장착 가능한 형태로 그린다. 첫 구현으로 상용 BLE 트랜시버의 반송파 위상 거리측정 절차에서 거리·상호성·지문을 한 번에 측정하는 구성을 제시하지만, 평가 결과는 싣지 않고 FPR/FNR 트레이드오프와 실환경 검증을 향후 과제로 남긴다.",
+      "hardware": [
+        "상용 BLE 트랜시버 (제조사·모델 미기재 — 본문은 \"commercially available BLE transceivers\" 로만 기술) 로 반송파 위상 거리측정 + I/Q 수집",
+        "평가 실험 없음 — 제안·논증 논문 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "명시 없음 — 측정 절차만 서술 (다중 주파수에서 무변조 톤을 핑퐁 교환, 후속 I/Q 평가)"
+      ],
+      "software_verified": false,
+      "results": [
+        "정량 결과 없음 — 공격자가 만족해야 할 네 조건(저지연 양방향 전달, 물리계층 일관성, 위상 조작, 탐지·동기화)을 정성적으로 도출",
+        "채널 상호성 vs RF 지문 비교표 (표 1): 상호성은 양방향 측정 필요·학습 불필요, 지문은 단방향 가능·학습 단계 필요 등",
+        "결론: \"BLE 트랜시버는 고정밀 ToF 측정이 불가능하다\"(2020 년 시점) 는 전제 아래, 위상 거리측정 + 상호성 + 지문의 조합으로 공격 난이도를 아날로그 신호처리 수준으로 끌어올리는 것을 목표로 함"
+      ],
+      "limitations": [
+        "평가 실험이 전혀 없음 — 탐지율·FPR/FNR·거리 정확도 모두 미보고 (저자가 향후 과제로 명시)",
+        "공격자가 상호성·지문·거리 조작을 동시에 실시간으로 만족시키기 \"매우 어렵다\"는 주장은 근거 없는 가정 — 같은 저자의 2022 년 아날로그 릴레이(staat-2022-analog-relay)가 이를 반증",
+        "RF 지문은 학습 단계와 기기별 DB 가 필요하고 환경·온도 변화에 취약 (저자 언급)",
+        "BLE 5.1 CTE 기반 위상 측정을 전제 — CS(6.0) 이후의 RTT·NADM 은 당연히 다루지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "francillon-2011-pkes-relay",
+        "joo-2020-hodor",
+        "olafsdottir-2017-carrier-phase"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "bonczyk-2026-learning-phase-estimation",
+      "title": "Learning-Based Phase Estimation for Multi-Frequency Carrier Phase Ranging under Structured Multipath Conditions",
+      "authors": [
+        "Jakub Bonczyk",
+        "Jakub Nikonowicz",
+        "Łukasz Matuszewski"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2606.11332v2 [eess.SP], 2026-06-09 (v2 2026-08-18), Poznan University of Technology — 16쪽, Elsevier 투고 양식",
+      "tier": "preprint",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2606.11332",
+      "preprint": "https://arxiv.org/abs/2606.11332",
+      "doi": null,
+      "topics": [
+        "carrier-phase-ranging",
+        "multicarrier-phase",
+        "multipath",
+        "5g-positioning",
+        "machine-learning",
+        "circular-statistics",
+        "identifiability"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 의 PBR 과 같은 물리(다중 부반송파 위상차로 가상 파장을 합성해 거리를 재는 것)를 5G NR PRS 위에서 다루며, **구조적 다중경로 아래서 위상 관측의 분포가 대칭·단봉이 아니라는 것** 을 3GPP TR 38.901 채널로 정량화한다. CS 연구에 옮겨 쓸 수 있는 지점은 두 가지다. 첫째, 위상 관측의 경험 분포를 von Mises·wrapped Cauchy·이봉 von Mises 로 맞춰 봐도 꼬리와 주봉 이동을 잡지 못한다는 결과(AIC 비교)는, CS 의 톤별 PCT 위상을 원형 평균으로 뭉개는 파이프라인이 다중경로에서 체계적 편향을 갖는다는 근거가 된다 — 이 편향은 공격이 아니라 채널이 만든 것이라 탐지 임계값 설계에서 **정상 분포의 비대칭 꼬리를 먼저 알아야** 한다. 둘째, 저자들이 제안한 \"정규화된 위상차 히스토그램을 입력으로 쓰는 구성 독립 추정기\" 는 CS 의 채널 수·대역 설정이 달라도 같은 모델을 쓸 수 있게 하는 표현이므로, zhang-2017-rips-multipath-correction 의 진폭 프로파일 보정과 함께 위상 분포 형상 자체를 특징으로 쓰는 탐지 가설의 재료가 된다. 다만 하드웨어가 아니라 QuaDRiGa 시뮬레이션이고, 저자 스스로 시뮬레이터 고유의 클러스터 생성 특성을 학습했을 가능성을 한계로 적는다.",
+      "summary": "5G-Advanced/6G 의 반송파 위상(CP) 위치측정에서 부반송파 간 위상차로 가상 파장을 만들어 거리를 추정할 때, 산업 공장(InF)·도심 마이크로셀(UMi) 같은 실제 환경의 결정론적 다중경로가 위상 관측 분포를 비대칭·다봉·중꼬리로 만든다는 것을 QuaDRiGa(3GPP TR 38.901) 시뮬레이션으로 보인다. 그 결과 원형 평균이나 von Mises 가정의 모델 기반 추정기가 체계적으로 편향된다. 대안으로 위상차의 정규화 히스토그램(0.01 rad 해상도)을 입력으로 받는 FC·1D CNN·2D CNN 추정기를 제안해 PRS 구성(대역폭·SCS·자원 할당)에 독립적인 추정을 하고, 3.5 GHz / 100·50 MHz / SCS 30 kHz, 수신기 속도 3·30 km/h, 두 SNR 구간, PRS 심볼 집계 전략(1·12·60 심볼, 5·10 슬롯)에 걸쳐 원형 평균·가중 원형 평균·이봉 von Mises 맞춤과 비교한다. 학습 추정기가 대부분의 시나리오에서 MAE 와 P95 를 줄이지만 시간 집계 전략의 효과는 일관되지 않음을 함께 보고한다.",
+      "hardware": [
+        "없음 — 시뮬레이션 전용 (전문 확인). 실측 데이터 없음"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "QuaDRiGa 채널 생성기 — 3GPP TR 38.901 InF LOS / UMi LOS 시나리오, 클러스터 기반 다중경로",
+        "5G NR PRS 파형: 반송파 3.5 GHz, 대역폭 100 MHz(FFT 4096) 및 50 MHz, SCS 30 kHz, 가상 파장 InF ≈ 50 m / UMi ≈ 200 m, 수신기 궤적 16.65 m @ 30 km/h 또는 1.665 m @ 3 km/h",
+        "데이터: UMi 38,400 / InF 48,000 PRS 심볼, 심볼당 위상차 1,613 / 1,538 개",
+        "추정기: FC · 1D CNN · 2D CNN, 입력은 [0, 2π) 를 0.01 rad 로 나눈 정규화 히스토그램. Adam lr 1e-4, MSE 손실, 최대 50 epoch, early stopping, trial 단위 train/val/test 분할",
+        "딥러닝 프레임워크명·공개 코드 없음 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "AIC 비교 (표 1): 이봉 von Mises 가 von Mises·wrapped Cauchy 보다 낫지만 경험 분포의 꼬리와 주봉 이동을 재현하지 못함",
+        "InF LOS, 30 km/h, SNR 3~6 dB, 1 심볼 (표 3): MAE FC 0.121 rad vs 원형 평균 0.126 vs 가중 원형 평균 0.152 vs 이봉 von Mises 0.198; P95 는 0.439 vs 0.634 vs 0.730 vs 0.934 rad",
+        "UMi LOS, 30 km/h, SNR 3~6 dB, 1 심볼: MAE FC 0.034 rad vs 원형 평균 0.067 (약 절반), P95 0.156 vs 0.456 rad — 12 심볼 1D CNN 은 MAE 0.030 / P95 0.122",
+        "저자 요약 (결론): 가장 어려운 InF LOS 조건에서 1D CNN 이 MAE 0.328 → 0.232 rad — 가상 파장 50 m 기준 거리오차 2.61 m → 1.85 m (0.76 m 개선)",
+        "InF 30 km/h 에서는 원형 평균이 평균오차는 가장 낮고 학습 추정기는 P95(꼬리)만 줄임 — 꼬리 개선이 주된 효과",
+        "PRS 심볼을 많이 집계해도(12·60) 일관된 개선 없음 — 채널이 거의 같은 연속 심볼은 정보가 중복. 1 심볼 히스토그램만으로 FC 가 대부분 최저 MAE·P95"
+      ],
+      "limitations": [
+        "QuaDRiGa 시뮬레이션만으로 학습·평가 — 시뮬레이터 고유의 클러스터 생성 특성을 학습했을 수 있어 실측 채널로의 일반화는 미확인 (저자 명시)",
+        "LOS 조건만 다룸 — NLOS 없음",
+        "시간 집계 전략의 효과가 시나리오마다 달라 결론이 나지 않음 (저자 명시)",
+        "5G NR PRS(3.5 GHz, 최대 100 MHz) 전제 — 2.4 GHz 1 MHz 간격 CS 톤으로 옮기려면 가상 파장·해상도 재설정 필요",
+        "보안 관점 없음 — 공격자가 만든 위상 왜곡과 채널이 만든 왜곡을 구분하는 문제는 다루지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "lyu-2026-radiorange",
+      "title": "RadioRange: An Open-Source Digital Twin-based Ranging Simulator for UWB, Wi-Fi, and 5G",
+      "authors": [
+        "Zhen Lyu",
+        "Yidi Chen",
+        "Li-Ta Hsu",
+        "Guohao Zhang"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2606.23708v1 [eess.SP], 2026-06-14, The Hong Kong Polytechnic University (Dept. of Aeronautical and Aviation Engineering) — 6쪽",
+      "tier": "preprint",
+      "category": "measurement",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2606.23708",
+      "preprint": "https://arxiv.org/abs/2606.23708",
+      "doi": null,
+      "topics": [
+        "simulator",
+        "digital-twin",
+        "ray-tracing",
+        "hardware-impairments",
+        "first-path-detection",
+        "uwb",
+        "wifi-ftm",
+        "5g-positioning",
+        "open-source",
+        "identifiability"
+      ],
+      "tech": [
+        "uwb",
+        "wifi",
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "UWB·Wi-Fi FTM·5G NR 을 **같은 레이트레이싱 채널(Sionna RT) 위에서** 돌리고 11 종의 하드웨어 비이상성(안테나 오프셋·ADC 양자화·I/Q 불일치·샘플링 지터·CFO/SFO·채널추정 잔차 등)을 개별로 켜고 끌 수 있게 만든 공개 시뮬레이터다. Bluetooth CS 는 들어 있지 않지만 내 연구에 두 가지로 쓰인다. 첫째, **공격이 아닌 하드웨어 결함만으로 첫 경로 검출이 얼마나 흔들리는가** 를 정량화한 몇 안 되는 자료다 — 11 종 중 8 종은 DSP 가 1% 미만으로 눌러 버리고, I/Q 불일치·ADC 지터·ADC 양자화 세 가지만 유의미하며, 전부 켜면 UWB −28.6% / Wi-Fi −23.0% / 5G −9.1% 의 정확도 하락이 난다. 이는 CS 의 NADM 이 '이상'으로 볼 신호 왜곡의 바닥선이 어디인지 정하는 데 필요한 기준값이고, 특히 I/Q 불일치가 만드는 거울상 유령 경로(mirror-image ghost path)는 leu-2022-ghost-peak 의 공격 봉우리와 구분해야 할 자연 발생 봉우리다. 둘째, 5 종 첫 경로 검출기(MaxPeak·Threshold·LeadingEdge·SearchBack·ChipLDE)를 같은 CIR 에 적용해 비교한 표는 CS 의 IFFT 봉우리 선택 정책을 설계할 때 그대로 재사용할 수 있는 실험 틀이며, 코드가 공개돼 있어 2.4 GHz 협대역 CS 파형을 트랜시버 계층에 추가하는 것이 현실적인 첫 실험이 된다.",
+      "summary": "RF 거리측정을 프로토콜 간에 공정하게 비교할 공개 플랫폼이 없다는 문제의식에서, 위치측정 우선의 5 계층 디지털 트윈 시뮬레이터 RadioRange 를 만들었다. 1 계층은 NVIDIA Sionna 의 SBR 레이트레이싱(또는 반사 전용 엔진)으로 프로토콜별 반송파(UWB 8.0 GHz, Wi-Fi 5.2 GHz, 5G 4.8 GHz)에서 Fresnel 계수를 따로 계산해 채널 진실값을 만들고, 2 계층은 채널·회로·CSI 세 단계에 11 종 하드웨어 비이상성을 주입하며, 3 계층 트랜시버가 UWB(802.15.4z, 499.2 MHz)·Wi-Fi(802.11 OFDM, 160 MHz)·5G NR(PRS, 122.88 MHz)의 CIR 을 만들어 프로토콜 독립 관측으로 넘긴다. 4 계층은 첫 경로 검출기 5 종과 다중경로 식별 3 종, 5 계층은 몬테카를로 통계다. 상자형 방·복도 장면에서 재질(콘크리트·유리·금속)별 CIR 비교, 검출기 × 프로토콜 × 비이상성 벤치마크를 수행하고, Qorvo QM33120WDK1 과 Google Nest Wi-Fi(802.11mc)로 25 m 복도(LOS)와 L 자 교차로(NLOS)에서 실측해 시뮬레이터가 오차 분산의 85~90% 를 재현함을 보인다.",
+      "hardware": [
+        "실측 검증: Qorvo QM33120WDK1 UWB 개발킷, Google Nest Wi-Fi (802.11mc FTM)",
+        "실측 궤적 2 곳: 25 m 직선 복도 (LOS 지배), L 자 교차로 (NLOS 지배) — 총 102 샘플",
+        "시뮬레이션 장면: 장애물 있는 상자형 방 (300 회 무작위 TX-RX 배치 × 프로토콜 × 알고리즘), 재질 3 종 (전부 콘크리트 / 콘크리트 벽 + 유리 장애물 / 전부 금속), 개선문·자체 정의 실내외 장면"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "RadioRange-Sim 공개 코드: https://github.com/Togure/RadioRange",
+        "NVIDIA Sionna RT (Shooting-and-Bouncing Rays) 레이트레이싱 — ITU-R P.2040 재질 파라미터, 프로토콜별 반송파에서 재계산 후 캐시",
+        "프로토콜 기본값: UWB Ch 9 7.99 GHz / 499.2 MHz / 1024 bin, Wi-Fi 5.18 GHz / 160 MHz / 512 부반송파 (해상도 1.88 m), 5G NR 4.80 GHz / 122.88 MHz / 4096 부반송파 (2.44 m)",
+        "하드웨어 비이상성 11 종을 채널(pre-DSP)·회로(ADC 양자화·AGC·I/Q 불일치)·CSI(post-DSP 잔차) 3 단계에 주입",
+        "첫 경로 검출기 5 종: MaxPeak, Threshold(α=0.18), LeadingEdge, SearchBack(α=0.18), ChipLDE(10 dB); 다중경로 식별 3 종 (SAGE·MUSIC 류)"
+      ],
+      "software_verified": true,
+      "results": [
+        "단순 LOS 상자형 방, 비이상성 없음, 최적 검출기 기준 RMSE: UWB 0.19 m vs Wi-Fi 0.53 m vs 5G 0.72 m — UWB 가 2~4 배 우위; UWB P90 0.38 m, Wi-Fi/5G P90 0.84 m 이상",
+        "표 III (상자형 방 UWB): MaxPeak 0.19 / Threshold 0.24 / LeadingEdge 0.30 / SearchBack 0.24 / ChipLDE 0.18 m. 복도 장면에서는 Threshold 가 Wi-Fi 3.76 m 까지 악화 — 넓은 CIR 봉우리가 적응 임계값을 부풀려 검출 실패",
+        "ChipLDE 가 6 장면 중 5 곳에서 최저 RMSE — 가장 강건한 검출기",
+        "비이상성 절제 실험: 11 종 중 8 종(CFO·SFO·채널추정 등)은 영향 < 1% — 현대 수신기 DSP 가 다중경로 바닥 아래로 억제. 전부 켜면 UWB −28.6%, Wi-Fi −23.0%, 5G −9.1%, 거의 전부 ADC 한계와 I/Q 불일치 때문",
+        "ADC 양자화는 UWB 에서 오히려 정확도를 개선 (stochastic resonance); ADC 타이밍 지터는 Wi-Fi −2.1% / 5G −3.8% 의 경미한 영향",
+        "실측 검증: NLOS L 자 교차로에서 실측 RMSE 가 약 3 배 커지는 것을 시뮬레이션이 재현, 샘플별 오차 추적 일치, 오차 분산의 85~90% 포착, UWB 평균 편향 4 cm 미만"
+      ],
+      "limitations": [
+        "Bluetooth CS 미포함 — 2.4 GHz 협대역 다중 톤 PBR 트랜시버는 사용자가 추가해야 함",
+        "정적 장면만 — 동적 채널 기하, ML 기반 검출기, 초해상도(MUSIC/ESPRIT) 는 향후 과제 (저자 명시)",
+        "실측 검증이 102 샘플·2 궤적으로 소규모이고 5G 는 실측 없음",
+        "공격자 모델 없음 — 비이상성은 모두 자연 발생 결함이며 적대적 신호 주입은 다루지 않음",
+        "802.11mc FTM 기준 — 802.11az 보안 파형·STS 는 모델링하지 않음"
+      ],
+      "artifacts": {
+        "code": "https://github.com/Togure/RadioRange",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "rajendran-2025-11mc-vs-11az",
+      "title": "Performance comparison of 802.11mc and 802.11az Wi-Fi Fine Time Measurement protocols",
+      "authors": [
+        "Govind Rajendran",
+        "Kushagra Sharma",
+        "Vijayalakshmi Chetlapalli",
+        "Jatin Parekh"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2511.17935v1 [cs.NI], 2025-11-22 (Arista Networks · Salesforce · Tarana Wireless) — 5쪽",
+      "tier": "preprint",
+      "category": "measurement",
+      "year": 2025,
+      "url": "https://arxiv.org/abs/2511.17935",
+      "preprint": "https://arxiv.org/abs/2511.17935",
+      "doi": null,
+      "topics": [
+        "wifi-ftm",
+        "802-11az",
+        "802-11mc",
+        "rtt",
+        "ranging-accuracy",
+        "calibration",
+        "commercial-hardware"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "low",
+      "relevance_note": "Wi-Fi RTT 거리측정의 실측 비교 자료로, CS 연구에서는 **비교군의 기준값** 으로만 쓴다. 쓸모 있는 수치는 둘이다. 첫째, 무보정 응답기(responder)가 6 m 실거리를 20/40/80 MHz 에서 71.9 / 47.9 / 66.1 m 로 보고하고 보정 후에도 11.0 / 7.5 / 6.4 m 라는 표 II — RTT 에서 1 ns 의 타임스탬프 지연이 약 0.3 m 오차가 된다는 사실을 상용 장비에서 보여 주며, CS RTT 의 T_IFS·처리 지연 보정이 왜 판정 정책의 전제인지 설명할 때 인용한다. 둘째, 802.11az 가 LOS 80/160 MHz 에서 m 급, NLOS 에서 약 5 m 정확도를 낸다는 결과는 antonijevic-2026-secure-wifi-ranging 이 보안 관점에서 분석한 같은 프로토콜의 정확도 바닥선이다. 보안 내용은 없다.",
+      "summary": "802.11mc 와 802.11az FTM 의 거리측정 정확도를 기업용 AP(openWrt v15.5.01) 를 응답기와 개시자 양쪽에 써서 5 GHz 채널 36 에서 실측 비교한다. 버스트 크기·버스트 수, 채널 폭(20~160 MHz), 간섭·다중경로, 응답기 오프셋 보정이 정확도에 미치는 영향을 본다. LOS 에서 80/160 MHz 채널로 m 급 정확도가 일관되게 나오고, NLOS 에서는 약 5 m 이며, 802.11az 가 반사 많은 혼잡 환경에서 MIMO 덕에 802.11mc 보다 낫다고 결론짓는다. 혼잡한 환경에서 1 m 이하는 어렵다고 적는다.",
+      "hardware": [
+        "FTM 응답기·802.11mc 개시자·802.11az 개시자 모두 기업용 AP (제조사·칩셋 미기재 — 저자 소속이 Arista Networks), openWrt v15.5.01",
+        "5 GHz 채널 36, 채널 폭 20/40/80/160 MHz 가변; 실거리 6 m(보정 실험)·8 m(버스트 실험)",
+        "스마트폰 클라이언트를 쓰지 않은 이유: 하드웨어 오프셋 보정을 직접 통제하고 802.11az 미지원 문제를 피하기 위해 (저자 명시)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "openWrt v15.5.01 (AP 펌웨어) — FTM 스택·측정 도구 이름은 미기재"
+      ],
+      "software_verified": true,
+      "results": [
+        "표 II (실거리 6 m): 무보정 응답기 20/40/80 MHz 에서 71.89 / 47.89 / 66.07 m, 보정 응답기 10.963 / 7.453 / 6.355 m — 1 ns RTT 오차 ≈ 0.3 m",
+        "버스트 크기 7 × 버스트 수 15 이상에서는 개선 정체 (실거리 8 m, 30 회 평균)",
+        "LOS 80/160 MHz: m 급 정확도 일관; NLOS: 약 5 m",
+        "혼잡·다중경로 환경에서 40 MHz 이상이면 802.11az 가 802.11mc 보다 분명히 정확 (그림 8) — 절대 정확도는 크게 다르지 않음",
+        "혼잡 환경에서 1 m 이하 정확도는 어렵다 (저자 결론)"
+      ],
+      "limitations": [
+        "AP 제조사·칩셋 미기재, 결과 대부분이 그림으로만 제시돼 수치 재사용이 제한적",
+        "AP-AP 측정만 — 스마트폰 클라이언트 없음",
+        "보안(802.11az 보안 파형·인증) 미평가",
+        "측정 횟수 30 회 수준의 소규모"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "zand-2019-concurrent-pbr",
+      "title": "A high-accuracy concurrent phase-based ranging for large-scale dense BLE network",
+      "authors": [
+        "Pouria Zand",
+        "Ayturk Duzen",
+        "Jac Romme",
+        "Jochem Govers",
+        "Christian Bachmann",
+        "Kathleen Philips"
+      ],
+      "venue": "PIMRC",
+      "venue_full": "2019 IEEE 30th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC), Istanbul, Sept. 2019 (imec, Eindhoven)",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2019,
+      "url": "https://ieeexplore.ieee.org/document/8904093/",
+      "preprint": null,
+      "doi": "10.1109/PIMRC.2019.8904093",
+      "topics": [
+        "phase-based-ranging",
+        "ble",
+        "group-ranging",
+        "scalability",
+        "crystal-offset",
+        "connectionless",
+        "pre-cs"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "zand-2019-ble-pbr(WCNC 2019) 의 자매 논문으로, CS 이전 imec BLE PBR 계보에서 **일대일 랑잉을 다대다 '그룹 랑잉' 으로 확장** 한 첫 시도다. schex-2026-pawr-connectionless-cs 와 suresh-2025-cs-vehicle-access 가 모두 이 논문을 인용하며, 특히 schex-2026 의 PAwR 기반 연결 없는 CS 는 이 논문이 결론에서 제안한 \"connection-oriented 와 connectionless 양쪽 링크 계층에 그룹 랑잉을 넣자\" 는 아이디어의 CS 판이라 계보상 직접 선행 연구다. 내 연구에서의 쓸모는 보안 쪽 질문을 던지는 데 있다 — 그룹 랑잉은 한 기기의 톤을 여러 기기가 동시에 듣는 구조라 수동 도청과 위상 조작의 표면이 넓어지고, 저자들이 다룬 수정 오프셋 차(COD) 보정은 공격자가 주파수 오프셋을 흉내 내 거리 오프셋을 만들 수 있는지의 문제로 이어진다. 전문은 유료 벽 뒤라 초록만 확인했다.",
+      "summary": "BLE 위치 서비스가 대규모·고밀도 배치로 가면서 쌍마다 따로 재는 기존 위상 기반 거리측정은 에너지와 시간이 비효율적이라는 문제에서 출발해, 여러 기기가 동시에 참여하는 고정밀 동시 위상 거리측정(그룹 랑잉) 두 방식을 제안한다. 실험과 수학 해석으로 랑잉 소요 시간이 약 n−1 배(n 은 기기 수) 줄어듦을 보이고, 두 기기의 수정 오프셋 차(COD)와 위상 잡음이 정확도에 미치는 영향을 분석해 COD 로 인한 거리 오프셋 보정 방법을 제시한다. 마지막으로 제안 방식을 BLE 데이터 링크 계층의 연결형·비연결형 모드 양쪽에 결합하는 방법을 논한다. (출판사 초록 기준)",
+      "hardware": [
+        "확인 필요 — 초록에 '실험' 을 언급하나 장비는 원문 미확보로 미확인 (자매 논문 zand-2019-ble-pbr 과 같은 imec BLE 플랫폼일 가능성은 있으나 확인 안 됨)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 원문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "그룹 랑잉으로 랑잉 소요 시간 약 (n−1) 배 단축, n = 참여 기기 수 (초록)",
+        "COD 와 위상 잡음이 정확도에 미치는 영향 분석 및 COD 거리 오프셋 보정 방법 제시 — 정확도 수치는 초록에 없음",
+        "BLE 링크 계층의 connection-oriented / connectionless 모드에 결합하는 방안 제안 (초록)"
+      ],
+      "limitations": [
+        "전문 미확보 — 실험 규모·장비·정확도 수치 모두 미확인 (IEEE Xplore 유료, OpenAlex·Semantic Scholar 모두 closed)",
+        "보안 고려 없음 — 그룹 랑잉의 도청·조작 표면은 다루지 않은 것으로 보임 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
     }
   ]
 }

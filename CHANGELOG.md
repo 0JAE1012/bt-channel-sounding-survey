@@ -2,6 +2,70 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-30 (19차: 신규 6건 — USENIX Security '26 목차 드디어 확보, 참고문헌 캐기로 계보 2건 편입)
+
+이번 실행의 소득은 접근 경로 둘입니다. 첫째, 지난 세 차례 403 이던 **USENIX Security '26
+technical sessions 페이지가 브라우저 User-Agent 를 붙인 `curl` 로는 열립니다**(1.4 MB).
+WebFetch 는 여전히 403 이므로 다음 실행부터는 curl 로 받아 키워드 필터를 돌릴 것.
+전수 확인 결과 거리측정 관련 신규는 없었고(BLE Theft Auto 는 이미 등재, PrivacyShield 는
+추적 방지용 비콘 릴레이라 범위 밖), CCS 2025·WiSec 2026 목차(dblp)도 마찬가지였습니다.
+둘째, 새로 확보한 전문의 참고문헌에서 코퍼스에 없던 계보 논문 2 건을 찾았습니다 —
+staat-2022 의 전사인 escar 2020 논문(RUB 리포지터리에 공개)과 zand-2019 의 자매 논문
+PIMRC 2019(유료). 후자는 이미 코퍼스의 3 편(schex-2026·suresh-2025-cs·schroeder-2022)이
+인용하고 있었는데 빠져 있었습니다.
+
+- 신규: **Securing Phone as a Key Against Relay Attacks** (Staat·Jansen·Zenger·Paar,
+  escar Europe 2020, 관련도 **보통**, `verified`). staat-2022-analog-relay 의 저자가 2 년 전
+  방어 쪽에서 쓴 제안 논문. BLE 반송파 위상 거리측정에 대한 릴레이 공격자가 넘어야 할 네
+  관문(저지연 양방향 전달·물리계층 일관성·위상 조작·호핑 아래 동기화)을 나열하고 "이를
+  동시에 실시간으로 만족하기는 매우 어렵다"고 썼는데, 같은 저자가 2022 년에 아날로그
+  릴레이로 스스로 반증했습니다. 채널 상호성 + RF 지문의 하이브리드 IDS 제안은 NADM 의
+  전신 격. 평가 실험은 없음.
+- 신규: **Mitigating Relay Attacks in Vehicle Access Systems Using BLE and UWB**
+  (Suresh·Joshi·Parandkar, ETASR 15(5), 2025-10, 관련도 **보통**, `verified`).
+  suresh-2025-cs-vehicle-access 와 같은 저자진의 UWB 판. BLE 는 인증과 RSSI 트리거(≈2 m)만,
+  거리 판정은 UWB — Lock 1.6 m / Unlock 0.5 m / 사이는 no-care zone 이라는 **실제 판정
+  정책값**이 기록돼 있고, "UWB 가 켜지기 전 구간이 릴레이에 노출된다"고 저자가 인정합니다.
+  릴레이 공격 실증도 UWB 정확도 수치도 없어 산업계 논증의 전형으로 대조 자료.
+- 신규: **RadioRange: An Open-Source Digital Twin-based Ranging Simulator for UWB, Wi-Fi,
+  and 5G** (Lyu·Chen·Hsu·Zhang, PolyU, arXiv 2606.23708, 관련도 **보통**, `verified`).
+  Sionna 레이트레이싱 위에 하드웨어 비이상성 11 종을 토글로 주입하는 공개 시뮬레이터.
+  **공격 없이 결함만으로** 첫 경로 검출이 얼마나 흔들리는지의 기준값 — 11 종 중 8 종은
+  DSP 가 1% 미만으로 누르고 I/Q 불일치·ADC 지터·ADC 양자화만 유의미, 전부 켜면 UWB −28.6%
+  / Wi-Fi −23.0% / 5G −9.1%. I/Q 불일치가 만드는 거울상 유령 경로는 Ghost Peak 과 구분해야
+  할 자연 봉우리. 첫 경로 검출기 5 종 비교표와 코드(GitHub) 공개, QM33120WDK1 실측 검증.
+- 신규: **Learning-Based Phase Estimation for Multi-Frequency Carrier Phase Ranging under
+  Structured Multipath Conditions** (Bonczyk·Nikonowicz·Matuszewski, Poznan UT, arXiv
+  2606.11332 v2, 관련도 **보통**, `verified`). 5G PRS 다중 부반송파 위상차 거리측정에서
+  3GPP 채널의 결정론적 다중경로가 위상 분포를 비대칭·다봉으로 만들어 원형 평균이
+  체계적으로 편향됨을 QuaDRiGa 로 정량화. UMi 에서 MAE 0.034 vs 0.067 rad(절반),
+  InF 최악 조건 2.61 → 1.85 m. CS 의 PCT 위상을 원형 평균으로 뭉개는 파이프라인의
+  정상 상태 꼬리를 먼저 알아야 탐지 임계값을 정할 수 있다는 근거. 시뮬레이션 전용.
+- 신규: **Performance comparison of 802.11mc and 802.11az Wi-Fi Fine Time Measurement
+  protocols** (Rajendran 외, Arista, arXiv 2511.17935, 관련도 **낮음**, `verified`).
+  비교군 기준값용. 무보정 응답기가 6 m 를 20/40/80 MHz 에서 71.9/47.9/66.1 m 로 보고하고
+  보정 후에도 11.0/7.5/6.4 m — 1 ns ≈ 0.3 m 가 상용 장비에서 어떻게 나타나는지의 실례.
+- 신규: **A high-accuracy concurrent phase-based ranging for large-scale dense BLE network**
+  (Zand·Duzen·Romme·Govers·Bachmann·Philips, imec, PIMRC 2019, 관련도 **보통**, `partial`).
+  일대일 PBR 을 그룹 랑잉으로 확장(소요 시간 ≈ n−1 배 단축), COD 보정, 연결형·비연결형
+  링크 계층 결합 제안 — schex-2026 PAwR 연결 없는 CS 의 직접 선행. 유료 벽이라 초록만.
+- 인용: 신규 5 편의 참고문헌에서 코퍼스 내 인용 10 건 추가(총 274 건). staat-2020 →
+  clulow-2006·francillon-2011·joo-2020·olafsdottir-2017, suresh-2025-ble-uwb → olafsdottir-2017·
+  staat-2020·suresh-2025-cs, 그리고 schex-2026·suresh-2025-cs·schroeder-2022 → zand-2019-concurrent.
+  **주의**: `scripts/extract-cites.mjs` 를 그대로 돌리면 부제 앞 머리제목이 흔한 구("Channel
+  Sounding:", "BLE phase-based ranging:", "BLE Channel Sounding:")인 논문 3 편이 10 여 곳에
+  오탐으로 붙고, 18 차에서 손으로 잡은 20 건이 다시 사라집니다. 이번에는 직전 상태를
+  복원한 뒤 원문 grep 으로 확인한 것만 더했습니다. 스크립트 수정은 사람 판단 사항으로 남김.
+- 보강: 없음. 유료 `partial` 7 건(WCNC·PIMRC·Sensors Letters·VNC·ICASSP·WASA·VCC)을
+  OpenAlex·Semantic Scholar 로 다시 조회했으나 **전부 closed**, TU/e 리포지터리에도 파일
+  없음, ResearchGate 는 403. 캐시 전문이 있는 `software_verified: false` 항목 4 건은 원문에
+  툴 이름이 정말 없는 것이라 올릴 수 없음.
+- 표준: 변경 없음. Core 6.4 미공개(6.3 이 최신), IEEE P802.15.4ab 는 여전히 Active PAR,
+  Channel Sounding Inline PCT Transfer 는 아직 VSr01_PR 공개검토 초안. bluetooth.com 규격
+  목록 페이지는 로그인 리다이렉트라 자동 확인 불가.
+- 실패: WiSec 2026 공식 accepted 페이지 404(dblp 로 대체), CCS 2026 accepted 미공개,
+  S&P 2026·NDSS 2026 은 신규 없음. arXiv 검색 UI 는 정상.
+
 ## 2026-08-27 (18차: 신규 2건, 보강 1건 — 발표 슬라이드로 유료 논문 우회, 인용 20건 보강)
 
 이번 실행의 소득은 두 가지 우회 경로입니다. 첫째, **IEEE 유료 논문이라도 저자가
