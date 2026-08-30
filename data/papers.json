@@ -477,7 +477,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-08-30",
       "cites": [
         "olafsdottir-2017-carrier-phase",
         "pnn-2025-cs-distance-estimation",
@@ -485,7 +485,8 @@
         "suresh-2025-cs-vehicle-access",
         "wacsa-2025-nn-ranging-fusion",
         "zand-2019-ble-pbr",
-        "sheikh-2023-pbr-missing-tones"
+        "sheikh-2023-pbr-missing-tones",
+        "nikodem-2025-mcpd-ble"
       ],
       "cites_source": "fulltext",
       "category": "measurement"
@@ -555,7 +556,8 @@
         "suresh-2025-cs-vehicle-access",
         "wieme-2025-cs-commercial-hw",
         "zand-2019-ble-pbr",
-        "zand-2019-concurrent-pbr"
+        "zand-2019-concurrent-pbr",
+        "nikodem-2025-mcpd-ble"
       ],
       "cites_source": "fulltext",
       "category": "protocol"
@@ -2497,7 +2499,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-08-30",
       "cites": [
         "abidin-2021-narrowband-ranging",
         "ble6-2026-utility-basement",
@@ -2508,7 +2510,8 @@
         "suresh-2025-cs-vehicle-access",
         "wieme-2025-cs-commercial-hw",
         "zand-2019-ble-pbr",
-        "heinrich-2023-smartphones-uwb"
+        "heinrich-2023-smartphones-uwb",
+        "wang-2025-cs-device-free-sensing"
       ],
       "cites_source": "fulltext",
       "category": "attack"
@@ -4668,11 +4671,12 @@
       "verification": "verified",
       "cites": [
         "schroeder-2022-inphase",
-        "wieme-2025-cs-commercial-hw"
+        "wieme-2025-cs-commercial-hw",
+        "rashidi-2025-ble-uwb-positioning-survey"
       ],
       "cites_source": "fulltext",
       "added": "2026-08-21",
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-30"
     },
     {
       "id": "joo-2020-hodor",
@@ -5933,6 +5937,1034 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "wu-2026-cs-twr-phase-offset",
+      "title": "A Novel Method for Two-Way Ranging to Mitigate Phase Offset in Bluetooth Channel Sounding",
+      "authors": [
+        "Yan Wu",
+        "Marco Gunia",
+        "Adrian Figueroa",
+        "Frank Ellinger"
+      ],
+      "venue": "IEEE Access",
+      "venue_full": "IEEE Access, vol. 14, pp. 125641–125655 (2026-08-14 공개, CC BY 4.0) — Metirionic GmbH · TU Dresden",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11655648/",
+      "preprint": null,
+      "doi": "10.1109/ACCESS.2026.3724006",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "two-way-ranging",
+        "crystal-offset",
+        "ambiguity",
+        "energy",
+        "tone-exchange"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "high",
+      "relevance_note": "CS PBR 의 **톤 교환 순서 자체를 바꾸는** 제안이라, 내 연구에서 공격자가 조작해야 하는 관측량의 정의가 바뀌는 지점을 짚어 준다. 기존 TWR 은 initiator·reflector 의 위상 곱으로 초기 위상을 상쇄하지만 발진기 ppm 오프셋의 잔류항이 절대 주파수 p(k+1) 에 비례해 남는데, 제안하는 Mirrored Tone Exchange(MTE) 는 같은 주파수 쌍에서 송수신 역할을 뒤집은 교환을 한 번 더 넣어 잔류항의 스케일을 Δp 로 떨어뜨린다(cm → µm). 두 가지가 CS 보안에 바로 걸린다. 첫째, **거리 정보가 위상 합에 두 번 실리므로 비모호 거리가 150 m → 75 m 로 반으로 준다**. 저자들은 기존 TWR 시퀀스로 거친 창을 만들고 그 안에서 MMTE 정밀값을 고르는 하이브리드로 푸는데, 이 '거친 창 → 정밀값 선택' 구조는 olafsdottir-2017 이 지적한 위상 모호성 공격의 새 변종 — 공격자가 거친 창만 밀어내면 정밀값은 그대로 따라온다 — 을 낳을 수 있다. 둘째, 동일 저자군(gunia-2026) 이 nRF54L15 대신 Dialog DA14699 DK 로 실험했다는 것은 **CS 규격 이전의 사설 PBR 스택에서도 규격과 같은 물리로 실험할 수 있다**는 뜻이라, 내 케이블 실험 플랫폼 후보가 하나 더 생긴다. 보안 논의는 전혀 없고 keyless entry 는 응용 예로만 등장한다.",
+      "summary": "저가 IoT 기기의 발진기 불안정 때문에 CS PBR 의 기존 Two-Way Ranging 은 위상 오프셋을 일부만 상쇄한다는 문제에서 출발한다. 수식으로 잔류 오차항이 절대 RF 주파수에 비례함을 보이고(식 28), 한 톤 교환 안에서 두 기기의 송수신 순서를 뒤집은 Mirrored Tone Exchange 를 정규 교환과 짝지어 regular(k)→mirrored(k+1)→regular(k+1)→mirrored(k) 로 4회 교환하는 MMTE TWR 을 제안한다. 발진기 의존 항은 대칭적으로 빠지고 전파지연 항은 보강되어 잔류 오차가 약 3 자릿수 줄지만, 비모호 거리가 절반이 되므로 같은 샘플에서 기존 TWR 시퀀스로 거친 창을 만들어 모호성을 푸는 하이브리드 틀을 함께 제시한다. −20~+20 ppm 오프셋 스윕 시뮬레이션, 동축 케이블, 무반향실(1·2·3 m), 실외 주차장, 실내 사무실에서 Dialog DA14699 DK 로 실측해 정확도·정밀도 개선과 에너지 절감을 정량화한다.",
+      "hardware": [
+        "Dialog(Renesas) DA14699 Development Kit 2 대 — initiator·reflector, regular/mirrored 톤 교환을 모두 수행하도록 동작 (전문 확인)",
+        "발진기 오프셋 주입: 수정 발진기를 RIGOL DG4162 임의파형발생기 외부 클럭으로 대체해 −20~+20 ppm 스윕 (±10 ppm 내 1 ppm 스텝, 밖은 5 ppm)",
+        "케이블 실험: 전기적 길이 약 0.45 m 동축 케이블, 오프셋당 50 회 측정",
+        "무반향실: 2.4 GHz 다이폴 안테나, 삼각대 높이 1.7 m, 기준 거리 1·2·3 m, 오프셋당 15 회",
+        "실외 주차장(LoS 우세)·실내 사무실(맞은편 모서리, 반사 다수) — 거리값은 표가 이미지라 텍스트에서 추출 못 함",
+        "Ground truth 계측기 명시 없음 (전문 확인). SDR·nRF 없음",
+        "파라미터: Δf = 2 MHz, K = 40 톤 (하드웨어 저장 한계), T_D = 200 µs"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이션 툴명·SDK·펌웨어·코드 언급 없음 (전문 확인) — 발진기 모델은 Renesas XL PLL 데이터시트의 typical 값 사용",
+        "거리 추정: iFFT 최대 피크, 다중경로 미고려"
+      ],
+      "software_verified": true,
+      "results": [
+        "시뮬레이션 (±20 ppm): 기존 TWR 최대 오차 약 30 cm, MMTE 1 cm 미만",
+        "케이블: 평균 거리 오차 0.12 m → 0.02 m (약 1 자릿수), 표준편차는 소폭 개선",
+        "무반향실: 기존 TWR 오차가 ppm 에 대략 선형으로 커지는 반면 MMTE 는 안정; 0 ppm 에서 하드웨어 기인 systematic offset 잔존(미보정)",
+        "실내: 정밀도 σ 0.14 m → 0.11 m (약 27 %); 실외: 정밀도 약 1 자릿수 개선",
+        "같은 정밀도를 얻는 데 필요한 반복 횟수 비율 N_MMTE/N_conv: 무반향실 0.053, 실외 0.046–0.174, 실내 0.617",
+        "비용: 시퀀스 길이 2 배(톤 교환 8 → 16 ms, 플랫폼상 0.21 → 0.45 s), 단일 추정 에너지 +114 %; 반복 감소를 합친 총 에너지는 무반향실 −89 %, 실외 −63~−90 %, 실내 +32 %",
+        "비모호 거리: 기존 약 150 m (78 MHz, 1 MHz 간격) → MMTE 약 75 m, 하이브리드 틀로 복원"
+      ],
+      "limitations": [
+        "저자 명시: 측정 시간이 2 배로 늘고, 실내처럼 반복 절감이 작은 환경에서는 총 에너지가 오히려 32 % 증가",
+        "저자 명시: 에너지 추정은 평균전력 가정의 1 차 근사로 구현 의존적",
+        "저자 명시: 0 ppm 에서의 systematic offset 은 하드웨어 결함 기인으로 이 논문에서 보정하지 않음; 다중경로 완화와의 결합 평가는 향후 과제",
+        "보안 위협모델 없음 — 위상 조작·릴레이·NADM 언급 전무 (전문 확인)",
+        "CS 규격 칩(nRF54 등)이 아닌 Dialog DA14699 의 사설 PBR 스택으로 실험 — 규격 CS 절차와의 정확한 대응은 논문이 다루지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "zand-2019-ble-pbr",
+        "santra-2024-cs-indoor",
+        "sheikh-2023-pbr-missing-tones",
+        "gunia-2026-cs-metrological",
+        "schroeder-2022-inphase",
+        "schroeder-2019-multipath-pbr"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "nishikawa-2026-digital-phase-compensation",
+      "title": "Digital-Only Phase Compensation for Secure Phase-Based Ranging in Vehicular RKE Systems",
+      "authors": [
+        "Masaki Nishikawa",
+        "Shoji Otaka",
+        "Ichiro Seto",
+        "Tomoaki Otsuki"
+      ],
+      "venue": "IEEE OJVT",
+      "venue_full": "IEEE Open Journal of Vehicular Technology, vol. 7, pp. 2508–2517 (2026-08-05 공개, CC BY 4.0) — Keio University · Toshiba; ICC 2026 논문의 확장판",
+      "tier": "journal",
+      "category": "protocol",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11642576/",
+      "preprint": null,
+      "doi": "10.1109/OJVT.2026.3720811",
+      "topics": [
+        "phase-based-ranging",
+        "sub-ghz",
+        "keyless-entry",
+        "relay-attack",
+        "pll",
+        "phase-coherence",
+        "two-way-ranging"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "Bluetooth 가 아니라 **920 MHz 대 사설 RKE 트랜시버**의 2-톤 위상 거리측정이지만, CS PBR 이 조용히 전제하는 조건 하나를 회로 수준에서 드러낸다 — **송수신 주파수를 바꿀 때 LO 의 초기 위상이 유지되어야 한다**는 것. 저가 SoC 는 VCO 직접변조 송신 + 슈퍼헤테로다인 수신이라 홉마다 fractional-N PLL 의 초기 위상이 결정론적 이동 + 확률적 사이클 슬립으로 깨지고, 저자들은 MASH ΣΔ 변조기의 1 단 적분기만 복제해 기준 클럭으로만 돌리는 '가상 발진기' 를 두어 홉 전후의 위상 변화를 디지털로 추정·보상한다(RTL 혼성신호 시뮬레이션에서 ±0.27° ≈ ±1.6 cm). 내 연구에는 두 가지로 쓰인다. 첫째, CS 칩이 PCT 를 만들 때 같은 종류의 홉 간 위상 불연속을 어떻게 처리하는지가 NADM 의 위상 일관성 검사가 무엇을 '정상' 으로 보는지를 정하므로, 이 논문의 위상 변화 모델(Table 2 의 초기 위상 변동)은 정상 상태 위상 잡음의 하한을 주는 참조값이다. 둘째, 이 논문의 보안 논증은 \"정확한 거리 + 임계값이면 릴레이를 막는다\" 는 고전적 가정 그대로이고 olafsdottir-2017·staat-2022 의 위상 조작 공격은 인용조차 없다 — 산업계 PBR 제안이 여전히 증폭형 릴레이만 위협모델로 삼는다는 사례로 인용할 수 있다.",
+      "summary": "차량 RKE 의 릴레이 공격 대응으로 키와 차량 사이 위상 기반 거리측정을 쓰려면 송수신 주파수 전환 중 LO 위상 일관성을 유지하는 값비싼 RF 아키텍처 재설계가 필요하다는 문제를 다룬다. 기존 트랜시버는 주파수를 바꾸면 LO 초기 위상이 비일관해지므로, 저자들은 fractional-N PLL 안의 디지털 적분기를 복제해 주파수 전환과 무관하게 기준 클럭으로 동작시키고 이를 안정된 위상 기준으로 삼아 전환 중 위상 변화를 추정·보상하는 디지털 전용 방식을 제안한다. RF/아날로그 프론트엔드는 손대지 않는다. 수학 모델링과 양산 SoC 의 LO 블록에 RTL 을 넣은 혼성신호 코시뮬레이션으로, CW 신호에서 잔류 오차 약 0.1°(≈0.006 m) 와 정상 상태 검출 오차 ±3 LSB(±0.27°, ±0.016 m) 를 보이고, 추가 로직 면적이 원 적분기의 약 30 %, 전력 1 mW 미만임을 추산한다.",
+      "hardware": [
+        "없음 — 실기 측정 없음 (전문 확인). 양산 RKE SoC 의 LO 블록 계층에 제안 회로를 RTL 로 넣고 VCO 를 고해상도 행동모델로 둔 혼성신호 코시뮬레이션",
+        "시뮬레이션 파라미터: 기준 클럭 30.32 MHz, VCO 약 1840 MHz, ND = 2 분주 → 920 MHz 대 LO, IF 0.27 MHz, 12 비트 위상(−2048~2047 ↔ ±180°), 3 차 MASH ΣΔ, 분주비 59.36675",
+        "SoC 모델명·공정·시뮬레이터명 미기재 (전문 확인); 면적 추산은 '표준 차량용 CMOS 공정' 의 내부 RTL 구현 연구 기준"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이터·툴체인·코드 미기재 (전문 확인). 편집 보조로 Google NotebookLM·Gemini 를 썼다고만 명시"
+      ],
+      "software_verified": true,
+      "results": [
+        "수학 시뮬레이션: LO 를 925.0 → 925.2 → 925.0 MHz 로 전환하며 사이클 슬립을 유도해도 잔류 위상 오차 약 0.1° — 21 m/360° 스케일에서 약 0.006 m (시스템 분해능 0.30 m 대비 무시 가능)",
+        "RTL 혼성신호 시뮬레이션: 정상 상태 검출 오차 ±3 LSB(±0.27°), 평균 없이 거리 오차 ±0.016 m",
+        "오버헤드: 추가 로직 면적 원 적분기의 약 30 %, 전력 1 mW 미만 (기존 RKE 트랜시버 총 30 mW 대비)",
+        "실제 거리 범위·무선 측정 오차 없음 — 시뮬레이션 전용"
+      ],
+      "limitations": [
+        "저자 명시: CW 신호로 실현 가능성만 보였고, 변조 신호·열 드리프트·실제 하드웨어 평가는 향후 과제",
+        "저자 명시: 다중경로·SNR 등 채널 손상은 범위 밖; 주파수 간 비선형·지연 차이로 인한 체계적 오프셋은 사전 보정이 필요할 수 있음",
+        "저자 명시: RTL 시뮬레이션에서 VCO 초기 상태를 동기화했으며 초기 조건 전수 스윕 대신 호핑으로 대체",
+        "보안 논증이 얇음 — 공격자 모델 없음, 위상 조작·거리 축소 공격(olafsdottir-2017, staat-2022) 미인용, FSK 변조 시 '릴레이 내성 강화' 는 주장만 있음 (전문 확인)",
+        "Bluetooth·UWB 언급 전무 — CS 와의 대응은 독자가 해야 함"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "francillon-2011-pkes-relay",
+        "nishikawa-2026-sub-ghz-pbr-icc"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "morano-2026-one-way-channel-reconstruction",
+      "title": "Interference Mitigation in One-Way Channel Reconstruction for Robust Phase-Based Ranging",
+      "authors": [
+        "Grega Morano",
+        "Tomaž Javornik",
+        "Aleš Simončič",
+        "Aleš Švigelj",
+        "Andrej Hrovat"
+      ],
+      "venue": "IEEE Access",
+      "venue_full": "IEEE Access, vol. 14, pp. 939–955 (2025-12-29 공개, CC BY 4.0) — Jožef Stefan Institute, Ljubljana",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11317961/",
+      "preprint": null,
+      "doi": "10.1109/ACCESS.2025.3649293",
+      "topics": [
+        "mcpr",
+        "narrowband-ranging",
+        "phase-based-ranging",
+        "channel-reconstruction",
+        "interference",
+        "multipath",
+        "ambiguity",
+        "tsch"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "high",
+      "relevance_note": "CS PBR 의 결과물인 **양방향 CFR(TWCFR) 이 물리 채널의 '제곱'** 이라는 사실을 정면으로 다룬다 — 지연 영역에서 두 일방향 CIR 의 순환 합성곱이 되어 탭이 L(L+1)/2 개로 불어나고 LoS 탭이 약해지며 비모호 거리가 반으로 준다. 제곱근으로 일방향 CFR 을 되돌리면 반송파마다 ±1 부호 모호성이 생기고, 기존 방법(PLL 락 필요한 Romme 특허 방식, π 임계값 위상 언래핑)은 잡음 낀 반송파 하나에 무너진다. 제안 CR-BS 는 Hann 창·PDP·CDF 무릎 검출로 봉우리를 찾아 참조 TWCFR 을 만들고 그 위상 점프로 분기를 고른다. 내 연구에 이 논문이 중요한 이유는 **간섭 하나가 언래핑을 통째로 뒤집어 8 m 이상의 오차를 만든다**는 관찰이다 — 이는 공격자가 톤 한두 개만 덮어써서(sheikh-2023 의 결측·간섭 톤과 같은 자리) 분기 선택을 뒤집는 **저비용 거리 조작 벡터**가 될 수 있다는 뜻이고, 반대로 CR-BS 처럼 봉우리 기반 참조를 쓰는 파이프라인은 그 벡터에 얼마나 강한지가 곧 질문이 된다. 또 정렬 보정 τ_corr = τ̂ − T0/2 규칙은 공격자가 만든 긴 지연 추정치를 파이프라인이 스스로 짧은 거리로 접어 넣는 경로라 거리 축소 분석에서 반드시 짚어야 한다. 하드웨어는 802.15.4 TSCH(AT86RF215) 라 tech 는 other 지만 저자 스스로 'Bluetooth 와 직접 호환' 이라고 쓴다.",
+      "summary": "다중반송파 위상차(MCPD) 거리측정에서 두 기기의 CFR 을 곱해 PLL 위상·타이밍 오프셋을 상쇄하면 물리 채널의 제곱인 양방향 CFR 이 나오는데, 이를 일방향 CFR 로 되돌리는 채널 재구성(CR)은 반송파별 제곱근 부호 모호성 때문에 잡음·간섭에 취약한 위상 언래핑에 의존해 왔다. 저자들은 TWCFR 에 Hann 창을 씌워 CIR·PDP 를 만들고 CDF 미분의 무릎으로 임계값을 정해 봉우리를 골라낸 뒤 봉우리 중심 창들의 퍼지 합집합으로 잡음이 제거된 참조 TWCFR 을 만들고, 그 위상이 π 이상 점프하는 반송파에서 분기를 바꾸는 CR-BS 를 제안한다. 재구성이 양방향 위상 기울기를 따르므로 T0/4 를 넘는 채널은 T0/2 만큼 밀리는데, 이를 지연 정렬 보정으로 되돌려 일방향 비모호 거리를 회복한다. 자체 MCPD 시뮬레이터(단일 탭, IEEE 802.11 TGn B/C/D 모델), −3 dB SIR 간섭을 주입한 회의실 실측, 공개 압축 샘플링 데이터셋으로 기존 CR-PU·CR-DT 와 비교해 간섭 시나리오 99.8 % 이상에서 정확한 추정을 보인다.",
+      "hardware": [
+        "VESNA 자체 플랫폼 2 대, Atmel/Microchip AT86RF215 라디오(IQ 샘플링 지원) — 수정한 IEEE 802.15.4 TSCH 프로토콜 위에서 PBR 수행 (전문 확인)",
+        "주파수 스윕: 2400.5~2480.0 MHz 에서 160 IQ 샘플 (Δf = 0.5 MHz)",
+        "환경: 4 m × 6 m 회의실, 벽면 자석 보드가 강한 반사면. LoS 3 구성 (2 / 3 / 4 m), 각 2140 / 2200 / 2015 회 측정. NLoS·무반향실 없음",
+        "간섭: 802.15.4 채널 19(2445 MHz, 5 MHz 폭) 에 부가 잡음을 주입해 SIR −3 dB — 발생 장비는 미기재",
+        "Ground truth: 레이저 거리계. 하드웨어 고정 오프셋 1.8 m 보정",
+        "**Bluetooth 하드웨어 아님** — Nordic·Silicon Labs·SDR 없음. CR-DT 는 라디오가 PLL 락을 지원하지 않아 실측에서 제외",
+        "2 차 검증: 자체 선행 연구의 공개 Golomb-ruler 압축 샘플링 데이터셋 (실내 사무실·복도·실외 공원)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자체 제작 MCPD 시뮬레이션 프레임워크 — 160 반송파 2405~2484.5 MHz, AWGN, 이상 동기(CFO·드리프트 없음); 언어·툴명 미기재 (전문 확인)",
+        "채널: 단일 탭 1~304 m (3 m 스텝, SNR −10~50 dB, 500 회) + IEEE 802.11 TGn B/C/D 및 고반사 B(2 번째 클러스터 +1.5 dB), 1 dB 스텝 1000 회, 적중 기준 ±12.5 cm",
+        "거리 추정기: 8192 빈 제로패딩 iFFT 최대 피크; CR-BS 파라미터 P = 0.2, F = 10 (단일 탭은 P = 0.5); 무릎 검출은 Kneedle",
+        "공개 코드 없음; 데이터셋은 선행 논문 [16] 의 것만 언급 (URL 미기재)"
+      ],
+      "software_verified": true,
+      "results": [
+        "단일 탭 시뮬레이션: CR-DT 는 SNR 5 dB 이상·150 m 이하에서만 신뢰, CR-PU 는 그보다 못함; CR-BS 는 동작 하한을 SNR 0 dB 아래로 내리고 T0/4 이상의 모호성을 해소",
+        "TGn 채널: CR-DT/CR-PU 는 SNR > 15 dB 필요, CR-BS 는 10 dB 미만으로 요구치 감소; 고반사 Model B 에서 TWCFR 직접 추정은 적중률 0",
+        "5 dB Model C CDF: CR-PU 는 추정치의 약 절반이 8 m 이상 벗어남, CR-BS 는 극단 오차 제거",
+        "간섭 실측 (SIR −3 dB): Setup 1(2 m) — TWCFR 은 약 4 m 에 뭉침, CR-BS 적중률 99.8 %, CR-PU 84.5 %(σ 0.93 m); Setup 2(3 m) — TWCFR·CR-BS 100 %, MAE 0.65 / 0.69 m, CR-PU 84.6 %(σ 1.07 m); Setup 3(4 m) — CR-BS 99.8 %, CR-PU 78.6 %. 적중 기준 ±1.875 m (= c/BW @ 80 MHz)",
+        "Fig. 13: 일방향 봉우리 1.9 m 와 6.6 m 가 양방향에서는 4 m 하나로 합쳐짐 — 제곱 채널이 만드는 유령 봉우리의 실측 사례",
+        "복잡도 O(K log K) vs 기존 O(K); 결론에서 TSCH 플랫폼 적중률 99 % 이상"
+      ],
+      "limitations": [
+        "저자 명시: 봉우리 검출·창 폭에 의존하므로 약하거나 겹친 다중경로 성분을 놓칠 수 있고, 비희소 채널에서 P·F 에 민감",
+        "저자 명시: 80 MHz 대역폭에서 가까운 성분은 합쳐져 어떤 CR 도 못 푸는 체계적 오차가 남고, 최대 피크 규칙이 정확도를 제한 — 초해상 추정기 결합은 향후 과제",
+        "저자 명시: 계산·에너지 비용이 CR-PU/CR-DT 보다 큼; MCPD 스윕이 채널 상관시간 안에 끝나야 함",
+        "간섭이 인공 잡음 주입(채널 하나, SIR −3 dB) 이라 실제 Wi-Fi 간섭과 다름; LoS 만 실측",
+        "보안 논의 없음 — 간섭·잡음만 다루고 적대적 톤 조작은 고려하지 않음 (전문 확인)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "zand-2019-ble-pbr",
+        "zand-2019-concurrent-pbr",
+        "schroeder-2022-inphase",
+        "sheikh-2023-pbr-missing-tones",
+        "nikodem-2025-mcpd-ble"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "boshoff-2026-secure-indoor-ranging",
+      "title": "Secure and Reliable Indoor Ranging: An Analysis of Industry Protocols, Attacks, and Defences",
+      "authors": [
+        "Dutliff Boshoff",
+        "Raphael E. Nkrow",
+        "Bruno Silva",
+        "Gerhard P. Hancke"
+      ],
+      "venue": "IEEE TII",
+      "venue_full": "IEEE Transactions on Industrial Informatics, vol. 22, no. 8, pp. 6620–6633, Aug. 2026",
+      "tier": "journal",
+      "category": "survey",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11488266/",
+      "preprint": null,
+      "doi": "10.1109/TII.2026.3680098",
+      "topics": [
+        "secure-ranging",
+        "survey",
+        "distance-manipulation",
+        "relay-attack",
+        "early-path-injection",
+        "overshadow",
+        "countermeasures",
+        "cross-technology"
+      ],
+      "tech": [
+        "ble-cs",
+        "uwb",
+        "wifi"
+      ],
+      "relevance": "high",
+      "relevance_note": "Bluetooth·UWB·Wi-Fi 의 **보안 거리측정 프로토콜만을 다루는 첫 종합 서베이**라고 저자들이 주장하는 논문으로, 내 서베이 코퍼스와 범위가 거의 겹친다 — 이 논문의 참고문헌과 분류표는 내 코퍼스의 누락을 찾는 대조군이자, 내 문헌 정리가 이미 남이 한 것인지 확인하는 신규성 검사 대상이다. 초록만으로도 두 가지가 눈에 띈다. 첫째, 다중 앵커 기반 공격 탐지는 두 기기만 있는 거리측정으로 일반화되지 않는다는 문제 설정은 내 identifiability 주제(한 쌍의 측정만으로 조작을 구별할 수 있는가)와 정확히 같은 질문이다. 둘째, 대응책을 **랜덤화**와 **채널 무결성 검증**(ML·임계값 이상탐지·암호) 두 축으로 묶었는데, CS 의 NADM 은 후자에, CS 의 무작위 톤 순서·RTT 시퀀스는 전자에 해당하므로 이 축으로 CS 규격의 방어를 정리하면 어느 축이 비어 있는지 보인다. Hancke 는 Hancke–Kuhn 거리 한정 프로토콜의 저자라 형식 프로토콜 쪽 관점이 강할 것으로 예상된다. 전문은 유료 벽 뒤라 초록만 확인했다.",
+      "summary": "출입 통제·비접촉 결제·산업 자동화에 쓰이는 보안 실내 거리측정을 대상으로, Bluetooth·UWB·Wi-Fi 의 보안 거리측정 프로토콜만을 다루는 종합 서베이다. 여러 앵커를 쓰는 측위와 달리 거리측정은 두 기기만 관여하므로 다중 앵커 데이터 기반 공격 탐지가 통하지 않는다는 점을 출발점으로 삼는다. IEEE 802.15.4a(UWB)·Bluetooth·IEEE 802.11(Wi-Fi) 의 산업 표준 프로토콜을 정리한 뒤 취약점과 거리 조작 공격 — overshadow, early path injection, 릴레이 — 을 분석하고, 대응책을 랜덤화와 채널 무결성 검증(머신러닝·임계값 이상탐지·암호 기법) 두 범주로 묶어 검토한다. 마지막에 기술 간 교차 통찰과 교훈, 미해결 과제에 대한 연구 방향을 제시한다. (출판사 초록 기준)",
+      "hardware": [
+        "해당 없음 — 서베이 (초록 기준). 전문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "해당 없음 — 서베이 (초록 기준). 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "공격 분류: overshadow, early path injection, 릴레이 (초록)",
+        "대응책 분류: 랜덤화 / 채널 무결성 검증(ML, 임계값 이상탐지, 암호) (초록)",
+        "구체 표·권고·참고문헌 수는 전문 미확보로 미확인"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료(Crossref 링크 202 빈 응답), 저자 기관(CityU·THEi) 리포지터리와 arXiv 에 프리프린트 없음 (2026-08-30 확인)",
+        "초록 기준으로 Bluetooth 항목이 CS(6.0) 를 다루는지 CS 이전 PBR 만 다루는지 불명"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "xie-2026-multipath-toa-binary-ambiguity",
+      "title": "Multipath Time-of-Arrival Estimation for Bluetooth Low Energy Ranging With Binary Phase Ambiguity",
+      "authors": [
+        "Jincheng Xie",
+        "Yili Deng",
+        "Jiguang He",
+        "Zhongyi Huang",
+        "Miaomiao Dong",
+        "Pengyu Wang",
+        "Rui Tang"
+      ],
+      "venue": "IEEE TCOM",
+      "venue_full": "IEEE Transactions on Communications, vol. 74, pp. 476–489 (2026; early access 2025-10)",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11218852/",
+      "preprint": null,
+      "doi": "10.1109/TCOMM.2025.3626036",
+      "topics": [
+        "phase-based-ranging",
+        "ble",
+        "time-of-arrival",
+        "multipath",
+        "ambiguity",
+        "atomic-norm",
+        "super-resolution",
+        "first-path"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "xie-2026-vaa-ble-toa-doa 와 같은 저자군의 모체 논문으로, morano-2026 이 다루는 것과 같은 **양방향 CFR 의 이진 위상 모호성**을 단일 샷 신호에서 푸는 초해상 첫 경로 추정이다. 원자 노름 최소화로 일방향 TDoA 를 뽑고, 헝가리안 매칭으로 TDoA 의 위상적 순서를 맞춘 뒤, 저계수 MaxCut 반정부호 계획으로 첫 도착 지연을 풀며 유일성을 증명한다는 구성이 초록에 있다. 내 연구에서의 자리는 '수신기 정책' 주제다 — 첫 경로 검출을 이렇게 최적화 문제로 푸는 수신기는 공격자가 주입한 가짜 첫 경로(early path injection) 에 대해 iFFT 최대 피크 수신기와 다른 실패 양상을 보일 것이고, 특히 MaxCut 단계의 유일성 조건이 깨지는 입력을 공격자가 만들 수 있는지가 질문이 된다. 전문은 유료 벽 뒤라 초록만 확인했다.",
+      "summary": "위상 모호성을 가진 ToA 추정 연구들은 다중 샷 신호로 만든 상관행렬에 의존했지만 BLE 거리측정에서는 이진 위상 모호성을 가진 단일 샷 신호만 있어 기존 방법이 통하지 않는다는 문제를 제기한다. 여러 주파수 채널 사이의 빔포밍 아이디어를 빌려 3 단계 방법을 제안한다 — 1 단계에서 양방향 CFR 측정으로부터 수정한 원자 노름 최소화(성분 지배 문제를 추가로 해결)로 일방향 TDoA 를 추출하고, 2 단계에서 TDoA 의 위상적 순서 매칭 문제를 교대 최적화와 헝가리안 알고리즘으로 풀며, 3 단계에서 남은 첫 도착 지연 추정을 일련의 저계수 MaxCut 반정부호 계획으로 푼다. 특히 해의 유일성을 증명한다. (출판사 초록 기준)",
+      "hardware": [
+        "확인 필요 — 초록에 실험 장비 언급 없음, 전문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "정확도 수치는 초록에 없음 — 전문 미확보",
+        "기여: 단일 샷 이진 위상 모호성 하의 ToA 추정 3 단계 방법 + 유일성 증명 (초록)"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료, arXiv 판 없음 (2026-08-30 확인)",
+        "보안 고려 없음으로 보임 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "nie-2025-ransac-root-music-cs",
+      "title": "RANSAC-Integrated Root-MUSIC: A Hybrid Algorithm for High-Precision BLE CS Ranging",
+      "authors": [
+        "Yuan Nie",
+        "Zheng Miao",
+        "Yizhen Ding",
+        "Fengkai Liu",
+        "Qijian Zheng",
+        "Cheng Huang",
+        "Hao Liu"
+      ],
+      "venue": "IEEE IWSA",
+      "venue_full": "2025 IEEE International Workshop on Wireless Sensing Technologies and Applications (IWSA 2025), pp. 1–2, Dec. 2025 (2 쪽 요약 논문)",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11405647/",
+      "preprint": null,
+      "doi": "10.1109/IWSA67946.2025.11405647",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "interference",
+        "outlier",
+        "ransac",
+        "music",
+        "super-resolution"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "Bluetooth 6.0 CS 에서 Wi-Fi·ZigBee 간섭으로 오염된 톤을 RANSAC 으로 걸러낸 뒤 Root-MUSIC 으로 지연을 초해상 추정하는 2 쪽 워크숍 논문이다. 내 연구에 걸리는 지점은 **RANSAC 이라는 이상치 제거 단계 자체**다 — 간섭 톤을 '합의에서 벗어난 점' 으로 버리는 수신기는, 공격자가 톤 일부만 조작했을 때 그 조작을 잡음처럼 버려 방어가 되기도 하고, 반대로 공격자가 다수 톤을 일관되게 조작하면 정상 톤을 이상치로 버려 조작을 받아들이기도 한다. sheikh-2025-cs-interference(같은 VCC 계열 간섭 실측) 의 MVDR 기준선 대비 PE90 74 %, RMSE 67 %, STD 86 % 감소라는 수치는 정상 상태 꼬리를 얼마나 줄일 수 있는지의 참조값. 전문은 유료 벽 뒤라 초록만 확인했다.",
+      "summary": "Bluetooth 6.0 이 도입한 CS 의 위상 기반 거리측정은 Wi-Fi·ZigBee 간섭으로 정확도가 제한된다는 문제에서, 이상치 제거를 위한 RANSAC 과 고해상 지연 추정을 위한 Root-MUSIC 을 결합한 하이브리드 알고리즘을 제안한다. 실험에서 MVDR 방법 대비 PE90·RMSE·STD 가 각각 약 74 %·67 %·86 % 줄었다고 보고하며, 간섭 완화와 고해상 추정의 결합이 서브미터 BLE 측위를 가능하게 한다고 결론짓는다. (출판사 초록 기준)",
+      "hardware": [
+        "확인 필요 — 초록에 '실험' 언급만 있고 장비 미기재, 전문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "MVDR 대비 PE90 약 74 % 감소, RMSE 약 67 % 감소, STD 약 86 % 감소 (초록; 절대값 미기재)"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인); 2 쪽 요약이라 전문에도 세부가 적을 가능성",
+        "보안 고려 없음 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "fujii-2025-dual-antenna-cs-sim",
+      "title": "A Simulation Study on Phase-Based Ranging for Dual-Antenna Channel Sounding",
+      "authors": [
+        "Masaaki Fujii",
+        "Takuya Kitajima",
+        "Yoshihiro Nakamura"
+      ],
+      "venue": "ICST",
+      "venue_full": "2025 18th International Conference on Sensing Technology (ICST), pp. 1–5, Dec. 2025",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11512348/",
+      "preprint": null,
+      "doi": "10.1109/ICST66402.2025.11512348",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "multi-antenna",
+        "nlos",
+        "music",
+        "first-path",
+        "simulation"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 규격의 다중 안테나 경로(antenna path) 를 써서 NLoS 에서 첫 경로 검출을 개선하려는 시뮬레이션 연구다. 일대일 연결로 순차 취득한 다중 채널 신호를 상관행렬의 지수이동평균으로 합치고 탐색 범위를 제한한 MUSIC 으로 거리를 추정해, 두 안테나 간 채널 상관 0.4 인 NLoS 다중경로에서 **첫 도착 경로 타이밍 오검출 확률 2.0 %** 를 보고한다. 내 연구에서 중요한 것은 이 '오검출 확률' 이라는 지표다 — 공격 없이도 첫 경로를 놓치는 비율이 2 % 라면 공격 탐지 임계값의 거짓양성 하한이 여기서 정해지고, 공격자가 두 안테나에서 상관된 가짜 첫 경로를 만들 수 있는지(안테나 다양성이 방어가 되는지) 가 다음 질문이 된다. 같은 저자들의 GCCE 2025 실측 논문(fujii-2025-pbr-indoor-experimental) 과 짝. 전문은 유료 벽 뒤라 초록만 확인했다.",
+      "summary": "NLoS 채널에 대응하기 위한 다중 안테나 BLE Channel Sounding 용 개선 PBR 알고리즘을 기술한다. 일대일 연결로 순차 취득한 다중 채널 신호를 상관행렬의 지수이동평균 형태로 결합하고, 탐색 범위를 제한한 MUSIC 으로 복잡도를 줄이면서 고정밀 거리 추정을 수행한다. 두 안테나에 적용했을 때 NLoS 다중경로 환경에서 안테나 간 채널 상관이 0.4 일 때 첫 도착 경로 타이밍의 오검출 확률이 2.0 % 로 줄었다. (출판사 초록 기준)",
+      "hardware": [
+        "없음 — 시뮬레이션 연구 (초록 기준). 채널 모델·툴은 전문 미확보로 미확인"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "듀얼 안테나, NLoS 다중경로, 안테나 간 채널 상관 0.4: 첫 도착 경로 타이밍 오검출 확률 2.0 % (초록)"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인)",
+        "시뮬레이션 전용, 보안 고려 없음 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "fujii-2025-pbr-indoor-experimental",
+      "title": "An Experimental Study on Improving Accuracy of Phase-Based Ranging in Indoor Environments",
+      "authors": [
+        "Masaaki Fujii",
+        "Takuya Kitajima",
+        "Yosuke Oda",
+        "Yoshihiro Nakamura"
+      ],
+      "venue": "GCCE",
+      "venue_full": "2025 IEEE 14th Global Conference on Consumer Electronics (GCCE), pp. 97–98, Sept. 2025 (2 쪽)",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11275392/",
+      "preprint": null,
+      "doi": "10.1109/GCCE65946.2025.11275392",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "multipath",
+        "windowing",
+        "music",
+        "indoor",
+        "field-measurement"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "BLE CS 의 IQ 를 사이드로브 억제 창으로 가중해 IFFT 로 잠정 거리를 잡고, 그 거리에 맞춰 이동한 시간창으로 긴 지연 경로를 눌러 다시 주파수 영역으로 돌린 뒤 탐색 범위를 제한한 MUSIC 을 돌리는 2 단 파이프라인의 실측 결과다(실내 다중경로 중앙값 약 0.35 m). 내 연구에는 '잠정 거리 주변만 본다' 는 **게이팅 구조**가 걸린다 — 첫 단계의 잠정 거리가 공격자에게 밀리면 두 번째 단계는 그 창 안에서만 찾으므로 조작을 스스로 정제해 주는 셈이고, 이는 wu-2026 의 거친 창 → 정밀값 하이브리드와 같은 취약 패턴이다. 정상 상태 중앙값 0.35 m 는 실내 CS 정확도의 참조값(wieme-2025 의 90 % < 0.56 m 과 비교). 전문은 유료 벽 뒤라 초록만 확인했다.",
+      "summary": "BLE Channel Sounding 용 고정밀 PBR 알고리즘을 기술한다. 수신 I/Q 신호를 사이드로브 억제 창으로 가중한 뒤 IFFT 로 시간 영역으로 바꿔 잠정 거리를 추정하고, 그 거리만큼 이동한 창 함수로 긴 지연 경로를 억제한 다음 다시 부반송파 신호로 되돌려 탐색 범위를 제한한 MUSIC 에 넣는다. 실내 다중경로 환경에서 중앙값 약 0.35 m 의 거리 정확도를 얻었다. (출판사 초록 기준)",
+      "hardware": [
+        "확인 필요 — 실측 논문이나 장비는 초록에 없음, 전문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "실내 다중경로 환경 거리 오차 중앙값 약 0.35 m (초록)"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인); 2 쪽 논문",
+        "보안 고려 없음 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "kumbul-2025-ble-localization-ranging-methods",
+      "title": "Indoor Localization with Bluetooth Low Energy Utilizing Different Ranging Methods",
+      "authors": [
+        "Utku Kumbul",
+        "Alireza Sheikh",
+        "Guido Dolmans"
+      ],
+      "venue": "IPIN",
+      "venue_full": "2025 International Conference on Indoor Positioning and Indoor Navigation (IPIN), Tampere, pp. 1–6, Sept. 2025 (imec)",
+      "tier": "other",
+      "category": "measurement",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11213442/",
+      "preprint": null,
+      "doi": "10.1109/IPIN66788.2025.11213442",
+      "topics": [
+        "phase-based-ranging",
+        "ble",
+        "localization",
+        "multilateration",
+        "cots",
+        "field-measurement"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "sheikh-2023-pbr-missing-tones·sheikh-2025-cs-interference 의 imec 계보(Sheikh·Dolmans) 가 **상용 BLE 기기의 위상 측정**으로 여러 거리 추정법을 비교하고 다변측량 측위까지 실측한 논문이다. 고정밀 위상 기반 추정이 다른 방법을 앞서 평균 절대 측위 오차가 선택 궤적에서 12 cm 이내로 최대우도 측위에 근접했다고 한다. 내 연구에서의 쓸모는 **집계 단계의 실측 참조**다 — gunia-2026 이 지적한 '거리 이상치가 위치까지 살아남는가' 를, 앵커 여러 대가 있는 다변측량이 얼마나 눌러 주는지의 수치가 여기 있을 것이고, 동시에 앵커 다수 구성은 boshoff-2026 이 지적하듯 두 기기만의 거리측정에는 없는 방어라는 대비가 된다. 어떤 '상용 BLE 기기' 인지(CS 규격 칩인지 imec 자체 PBR 인지) 는 전문에서 확인해야 한다. 유료 벽이라 초록만 확인.",
+      "summary": "BLE 시스템의 실내 측위를 탐구한다. 상용 BLE 기기의 위상 기반 측정으로 서로 다른 거리 추정법을 써서 거리를 구하고, 각 앵커의 거리 정보로 해석적 다변측량을 돌려 미지 노드의 좌표를 계산한다. 거리 추정법별 다변측량 측위 성능을 실험으로 비교하고 최대우도 측위를 상한 기준으로 삼는다. 고정밀 위상 기반 거리 추정이 다른 접근을 앞서 절대 측위 오차가 가장 작았고, 특히 평균 절대 측위 오차가 최대우도에 근접해 선택 궤적에서 12 cm 이내였다. (출판사 초록 기준)",
+      "hardware": [
+        "확인 필요 — '상용 BLE 기기' 라고만 초록에 있음, 모델 미상, 전문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "고정밀 위상 기반 거리 추정 + 해석적 다변측량: 평균 절대 측위 오차 12 cm 이내(선택 궤적), 최대우도 측위에 근접 (초록)"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인)",
+        "보안 고려 없음 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "andreadis-2025-phase-ble-localization-ml",
+      "title": "Robust Phase-based BLE Localization with a Single Multi-Antenna Receiver and Machine Learning",
+      "authors": [
+        "Georgios Andreadis",
+        "Panos N. Alevizos",
+        "Aggelos Bletsas"
+      ],
+      "venue": "IPIN",
+      "venue_full": "2025 International Conference on Indoor Positioning and Indoor Navigation (IPIN), Tampere, pp. 1–6, Sept. 2025 (Technical University of Crete)",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11213268/",
+      "preprint": null,
+      "doi": "10.1109/IPIN66788.2025.11213268",
+      "topics": [
+        "ble",
+        "direction-finding",
+        "carrier-phase-offset",
+        "frequency-hopping",
+        "machine-learning",
+        "lstm",
+        "localization"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "low",
+      "relevance_note": "CS 가 아니라 BLE 다중 안테나 수신기 한 대의 패킷별 위상·반송파 주파수로 태그 위치를 학습하는 방향탐지 계열 논문이다. 내 연구와 닿는 지점은 하나 — **BLE 주파수 호핑이 패킷마다 안테나별 반송파 위상 오프셋(CPO) 을 무작위로 바꾼다**는 사실을 결정론적 방법이 못 다루어 LSTM 으로 그 분포를 학습한다는 점인데, 이는 CS 가 톤마다 PCT 보정을 두는 이유와 같은 물리이며, 학습 기반 수신기가 '위상 잡음' 으로 흡수하는 범위 안에 공격자의 위상 조작이 숨을 수 있음을 시사한다. CS 직접 관련은 낮다. 전문은 유료 벽 뒤라 초록만 확인했다.",
+      "summary": "단일(또는 복수) 다중 안테나 수신기가 패킷마다 잡은 위상 측정과 반송파 주파수로 정적 BLE 태그를 측위하는 신경망 기반 방법이다. 촘촘히 배치된 안테나의 단일 수신기에서는 BLE 주파수 호핑이 패킷마다 안테나별 반송파 위상 오프셋(CPO) 을 무작위로 바꾸어 결정론적 위상 기법이 실패한다. LSTM 모델이 미지의 CPO 분포를 다루고 위상 잡음을 억제하도록 학습해 수신기 한 대로 강인한 측위를 가능하게 하며, FF·CNN 보다 위상 잡음에 강하고 고속 송신에서 정확도가 높았다. 시뮬레이션 또는 실측 데이터로 학습해 여러 환경의 실측 데이터로 시험했고 결정론적 기법을 앞섰다. (출판사 초록 기준)",
+      "hardware": [
+        "확인 필요 — 다중 안테나 BLE 수신기 모델 미상, 전문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "LSTM · FF · CNN 비교 (초록); 프레임워크 미상, 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "LSTM 이 FF·CNN 보다 위상 잡음에 강하고 고속 태그 송신에서 정확도 우세; 결정론적 기법이 실패하는 경우에도 측위 성공 (초록; 수치 미기재)"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인)",
+        "CS 아님 — 거리가 아니라 위치를 직접 학습하는 방향탐지 계열",
+        "보안 고려 없음 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "rashidi-2025-ble-uwb-positioning-survey",
+      "title": "A Comprehensive Study and Performance Evaluation of Indoor Positioning Methods in BLE and UWB Technologies",
+      "authors": [
+        "Mohammad Rafi Rashidi",
+        "Suchismita Chinara"
+      ],
+      "venue": "IEEE IoT-J",
+      "venue_full": "IEEE Internet of Things Journal, vol. 12, pp. 46475–46499, Nov. 2025",
+      "tier": "journal",
+      "category": "survey",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11172317/",
+      "preprint": null,
+      "doi": "10.1109/JIOT.2025.3611794",
+      "topics": [
+        "survey",
+        "indoor-positioning",
+        "ble",
+        "uwb",
+        "rssi",
+        "aoa",
+        "phase-based-ranging",
+        "rtt",
+        "tdoa"
+      ],
+      "tech": [
+        "ble-cs",
+        "uwb"
+      ],
+      "relevance": "low",
+      "relevance_note": "BLE 와 UWB 의 실내 측위 방법(RSSI·AoA·AoD·PBR·RTT·ToF·TDoA) 을 정확도·신뢰성·구현 복잡도 축으로 비교 평가한 서베이다. 보안은 다루지 않으므로 내 연구에 직접 쓰이지는 않지만, droemmer-2026-cs-channel-modeling 이 인용하는 문헌이라 그래프 연결용으로 넣었고, CS 의 PBR·RTT 를 UWB ToF·TDoA 와 같은 표에 놓은 비교 자료가 필요할 때 참고한다. 전문은 유료 벽 뒤라 초록만 확인했다.",
+      "summary": "공항·쇼핑몰·병원의 길안내와 창고 자산 추적 같은 실내 측위 시스템에서 가장 널리 쓰이는 BLE 와 UWB 를 대상으로, 두 기술의 측위 방법을 정확도·신뢰성·구현 복잡도 관점에서 종합 검토하고 성능을 평가한다. RSSI·AoA·AoD·PBR·RTT·ToF·TDoA 를 다루며 신호 세기·각도·시간 기반 세 범주로 나누어 평가한다. (출판사 초록 기준)",
+      "hardware": [
+        "해당 없음 — 서베이 (초록 기준). 성능 평가에 실측이 포함되는지는 전문 미확보로 미확인"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "해당 없음 — 서베이 (초록 기준)"
+      ],
+      "software_verified": false,
+      "results": [
+        "측위 방법 7 종을 신호 세기·각도·시간 기반 3 범주로 분류·비교 (초록; 수치 미확인)"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인)",
+        "보안 관점 없음 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "qi-2026-cs-hadm-iot",
+      "title": "A High Accuracy Distance Measurements Method with Channel Sounding for Enhancing Internet-of-Things Applications",
+      "authors": [
+        "Xiangtao Qi",
+        "Yankun Wang",
+        "Buyun Wang"
+      ],
+      "venue": "Journal of Computers",
+      "venue_full": "Journal of Computers (Taiwan), pp. 47–61, 2026-06-30",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://doi.org/10.63367/199115992026063703004",
+      "preprint": null,
+      "doi": "10.63367/199115992026063703004",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "rtt",
+        "fusion",
+        "channel-scheduling",
+        "multi-device"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "low",
+      "relevance_note": "PBR 과 RTT 를 융합하고 채널 품질(Wi-Fi 간섭·SNR) 에 따라 채널을 동적으로 바꾸는 BLE CS 방식을 제안하며 LOS ±1~3 cm / NLOS ±5~10 cm, 동시 기기 15 → 50 대 등을 주장하는 지역 저널 논문이다. 초록의 수치가 코퍼스의 실측(wieme-2025 90 % < 0.56 m, ble6-2026 등) 보다 한 자릿수 좋고 '기존 CS ±10~20 cm' 라는 기준도 출처가 불명해 **검증 없이는 인용하지 않을 것**. 내 연구에서 굳이 보는 이유는 하나 — PBR 과 RTT 를 '융합' 해 정확도를 높인다는 발상은 CS 가 두 방식을 **서로의 정합성 검사**로 두는 보안 설계와 정반대 방향이라, 융합 파이프라인에서는 RTT 의 독립 검증 능력이 사라진다는 논점의 사례로 쓸 수 있다. 초록만 확인.",
+      "summary": "다중 안테나 배열이 필요한 AoA/AoD 와 달리 BLE Channel Sounding 은 단일 안테나로 고정밀 거리측정을 하지만, 단일 톤 신호 설계로 채널 혼잡이 심해 다중 기기 동시성이 제한되고 중앙집중 보정이 '핑퐁 락' 을 유발한다고 주장한다. 제안 방식은 (1) PBR 의 위상 분해능과 RTT 의 시간 안정성을 결합한 다차원 신호 특징 융합으로 다중경로를 억제해 오차를 LOS ±1~3 cm, NLOS ±5~10 cm 로 줄이고, (2) 채널 품질을 감시해 자원을 동적으로 할당하는 채널 전환·스케줄링으로 동시 효율을 3 배 높여 15 대 대신 50 대를 지원한다고 한다. (출판사 초록 기준)",
+      "hardware": [
+        "확인 필요 — 초록에 장비 없음, 전문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "주장: 거리 오차 LOS ±1~3 cm, NLOS ±5~10 cm (기존 CS ±10~20 cm 대비); 동시 기기 15 → 50 대, 효율 3 배; 핑퐁 락으로 정확도 약 40 % 저하 (초록; 실험 조건 미확인)"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-08-30); 초록 수치가 코퍼스 실측과 크게 어긋나 신뢰도 낮음 — 검증 전 인용 금지",
+        "보안 고려 없음 (초록 기준)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "nishikawa-2026-sub-ghz-pbr-icc",
+      "title": "Low-Overhead Phase-Based Ranging for Sub-GHz Wireless Systems Using Fractional-N PLL",
+      "authors": [
+        "Masaki Nishikawa",
+        "Shoji Otaka",
+        "Ichiro Seto",
+        "Tomoaki Otsuki"
+      ],
+      "venue": "IEEE ICC",
+      "venue_full": "ICC 2026 – IEEE International Conference on Communications, pp. 1–6, May 2026 (Keio University · Toshiba)",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11587977/",
+      "preprint": null,
+      "doi": "10.1109/ICC59461.2026.11587977",
+      "topics": [
+        "phase-based-ranging",
+        "sub-ghz",
+        "keyless-entry",
+        "relay-attack",
+        "pll",
+        "phase-coherence"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "nishikawa-2026-digital-phase-compensation(OJVT) 의 학회판으로, 내용은 그 논문이 확장한 것과 같다 — sub-GHz RKE 트랜시버에서 송수신 주파수 전환 시 LO 초기 위상 변화를 fractional-N PLL 의 ΣΔ 변조기 안에 복제한 적분기로 추정·보상해 RF/아날로그 변경 없이 위상 기반 거리측정을 가능하게 한다. 계보 연결용으로 넣었고 내용 확인은 OJVT 판(전문 확보) 으로 한다. 유료 벽이라 초록만 확인.",
+      "summary": "현대 차량의 RKE 는 릴레이 공격에 취약하고 키와 차량 사이 무선 거리측정이 대응책으로 인정받는다. 저자들이 앞서 제안한 위상 검출 기반 양방향 sub-GHz 거리측정을 기존 트랜시버 SoC 에 넣으려면 송수신 아키텍처 재설계가 필요한데, 이 논문은 RF/아날로그 변경 없이 송수신 주파수 전환으로 생기는 내부 LO 초기 위상 변화를 추정·보상하는 방법을 제안한다. fractional-N PLL 의 델타시그마 변조기에 복제 적분기를 두어 주파수 변경과 무관하게 동작시킴으로써 정확한 추정을 가능하게 한다. (출판사 초록 기준)",
+      "hardware": [
+        "확인 필요 — 전문 미확보 (OJVT 확장판은 RTL 시뮬레이션 전용)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "수치는 초록에 없음 — OJVT 확장판(nishikawa-2026-digital-phase-compensation) 참조"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인)",
+        "Bluetooth 아님 — 920 MHz 대 사설 RKE 라디오"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "nikodem-2025-mcpd-ble",
+      "title": "Experimental Evaluation of Multicarrier Phase Difference Localization in Bluetooth Low Energy",
+      "authors": [
+        "Maciej Nikodem",
+        "Grzegorz Trajnowicz",
+        "Gabriele Salvatore de Blasio",
+        "Francisco Alexis Quesada-Arencibia"
+      ],
+      "venue": "IEEE Sensors Journal",
+      "venue_full": "IEEE Sensors Journal, vol. 25, no. 1, pp. 1548–1560, Jan. 2025 (저자 accepted 판, CC BY-NC-ND, ULPGC accedaCRIS 리포지터리) — Wrocław University of Science and Technology · Univ. de Las Palmas de Gran Canaria",
+      "tier": "journal",
+      "category": "measurement",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/10755009/",
+      "preprint": "https://accedacris.ulpgc.es/jspui/bitstream/10553/134968/1/Experimental_Evaluation_of_Multi-Carrier_Phase_Difference_Localization_in_Bluetooth_Low_Energy.pdf",
+      "doi": "10.1109/JSEN.2024.3495030",
+      "topics": [
+        "phase-based-ranging",
+        "ble",
+        "mcpd",
+        "localization",
+        "multilateration",
+        "aoa",
+        "rssi",
+        "field-measurement",
+        "pre-cs",
+        "outlier"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 직전 세대의 **Nordic Distance Measurement Library(NDML) 로 100 m² 사무실에서 4 앵커 × 101 지점 × 100 회**를 재고 MCPD(IFFT·위상 기울기·RSSI) 와 AoA(Minew 12 패치 URA) 를 같은 공간에서 비교한 실측이라, 내 연구가 필요로 하는 **정상 상태 거리 오차의 꼬리**를 앵커별 백분위로 제공한다 — IFFT 의 95 백분위가 앵커에 따라 1.62~2.79 m, 앵커별 상수 편향이 0.09~1.44 m 로 제각각이며, 위상 기울기 법은 한 앵커에서 RSSI 보다 못하다. 두 가지가 보안 쪽으로 이어진다. 첫째, 앵커별 편향을 선형 회귀로 빼 주는 보정 단계가 파이프라인에 있다는 것은 공격자가 그 편향값(예: 0.97 m) 만큼은 '보정' 뒤에 숨을 수 있다는 뜻이고, 둘째, Fig. 12 의 0.9 m / 3.3 m 이봉 히스토그램(벽 반사 1·2 회) 은 자연 다중경로가 만드는 이산적 오프셋이 릴레이가 만드는 오프셋과 같은 크기 대역임을 보여 준다. 또 '세 개의 가장 짧은 거리만 쓰면 IFFT 측위가 25~30 % 나빠진다' 는 관찰은 gunia-2026 의 최단거리 채택 권고와 정면 충돌하는 실측이라, 집계 규칙 논의의 근거로 쓴다. schex-2026·wieme-2025·morano-2026 이 인용. 보안 논의 없음.",
+      "summary": "BLE 실내 측위가 RSSI 에서 AoA(5.1) 로, 다시 단일 안테나에서 여러 주파수의 위상차를 쓰는 MCPD(CS 로 표준화) 로 진화했지만 MCPD 의 실환경 평가가 드물다는 문제에서 출발한다. 10 m × 10 m 가구 있는 사무실에서 nRF52840 DK 앵커 4 대와 이동 노드 1 대로 1 m 격자 101 지점에서 앵커당 최소 100 회 거리를 재고, NDML 의 IFFT·위상 기울기·RSSI 추정치를 앵커별 선형 회귀로 편향 보정한 뒤 가중 없는 다변측량으로 위치를 구한다. 같은 공간에서 Minew nRF52833 기반 12 패치 URA AoA 게이트웨이(PDDA) 로도 측위해 비교하고 문헌 5 편과 대조한다. IFFT 기반 MCPD 의 평균 측위 오차 0.98 m 가 AoA 1.26 m(28 % 큼)·위상 기울기 3.19 m·RSSI 3.83 m 를 앞섰고, 가장 가까운 앵커 3 개만 쓰면 IFFT 는 오히려 나빠진다. 투고 몇 주 뒤 BLE 6 CS 가 공개되어 결론에서 차이점(연결 필요, 암호화, 안테나 4 개, 1 MHz 스텝 → 150 m 비모호) 을 정리한다.",
+      "hardware": [
+        "Nordic nRF52840 DK 5 대 (BLE 5.1, CTE·AoA/AoD·NDML 지원) — 앵커 4 대는 방 모서리 벽에서 약 30 cm, 삼각대 1.9 m 높이, 100 ms 주기 scannable advertising; 이동 노드 1 대는 1.6 m 높이, 스캔 간격·창 10.24 s, 설정 후 initiator 로 동작 (전문 확인)",
+        "AoA 비교 시스템: Minew G1 IoT Bluetooth Gateway — nRF52833 기반, 12 패치 안테나 URA, 천장 아래 2.9 m 에 안테나 아래 방향으로 모서리 설치; 이웃 앵커 10 m, 대각 14 m 이상",
+        "환경: 10 m × 10 m(100 m²) 사무실, 책상·책장 등 가구로 일부 지점은 LoS 차단; 2.4/5 GHz Wi-Fi 1 개, 다른 BLE 기기 없음, 주말 하루 측정",
+        "Ground truth: 1 m 간격 격자 101 지점 — 레이저·트래커 등 별도 기준 계측기 언급 없음 (전문 확인)",
+        "MCPD 파라미터: 2 MHz 간격(비모호 약 75 m); high-precision(CIR) 모드는 끄고 측정 (켜면 앵커 4 대 × 100 회에 8~12 분, 끄면 3 분 미만)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Nordic Distance Measurement Library(NDML, 구 Nordic Distance Toolbox) — IFFT · 위상 기울기(phase slope) · RSSI(log-distance 모델) 3 추정기, high precision 비활성",
+        "저자 추가 구현: NDML 큐 위에 앵커당 100 회 초과 시 앵커를 제외하는 메커니즘 (NDML 큐가 오동작해 일부 앵커 거리가 전혀 안 재이는 문제 우회)",
+        "편향 보정: 앵커별 선형 회귀 d̂ = (d_raw − b)/a (IFFT·PS 는 a = 1); 측위: 가중·필터 없는 기본 다변측량(비용함수 최적화)",
+        "AoA 처리: signal fitting + PDDA(propagator direct data acquisition)",
+        "nRF Connect SDK 버전·오프라인 처리 툴(MATLAB/Python)·공개 코드·데이터셋 언급 없음 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "Table II 거리 MAE (평균 / 50 % / 90 % / 95 %, m) — IFFT: 앵커 1 0.68 / 0.50 / 1.28 / 2.51, 앵커 2 0.59 / 0.38 / 1.27 / 1.62, 앵커 3 0.88 / 0.57 / 1.90 / 2.79, 앵커 4 1.02 / 0.89 / 1.82 / 2.72",
+        "Table II — 위상 기울기: 평균 1.94~3.19 m, 95 % 4.65~7.82 m; RSSI: 평균 2.26~4.34 m, 95 % 7.32~8.82 m. 앵커 4 에서는 위상 기울기가 RSSI 보다 일관되게 나쁨",
+        "Table I 앵커별 편향 b (m): IFFT 0.97 / 1.12 / 1.44 / 0.09, 위상 기울기 6.50 / 3.07 / 4.16 / 2.11, RSSI a = 1.12~1.58",
+        "Table III 측위 MAE (평균 / 50 % / 90 % / 95 %, m): IFFT 0.98 / 0.73 / 1.98 / 2.42, AoA 1.26 / 1.05 / 2.31 / 2.85, 위상 기울기 3.19 / 2.81 / 5.46 / 6.59, RSSI 3.83 / 3.82 / 5.76 / 6.64 — IFFT 가 60 % 이상 지점에서 1 m 미만, 추정 위치의 75 % 이상이 시험 영역 안; 위상 기울기는 65 % 가 영역 밖",
+        "Table IV 가장 가까운 앵커 3 개만 사용: IFFT 평균 1.21 m (−23 %, 즉 악화), RSSI 는 10~24 % 개선",
+        "Fig. 12: 지점 (9,2)·앵커 1 에서 오차 히스토그램이 약 0.9 m 와 3.3 m 이봉 — 벽 반사 1 회(+0.6 m)·2 회(+3.2 m) 로 해석",
+        "high precision 켜도 IFFT 대비 정확도 차이 항상 0.1 m 미만"
+      ],
+      "limitations": [
+        "저자 명시: MCPD 는 다수 송신이 필요해 지연·에너지·스펙트럼 사용이 크고 간섭에 더 취약할 수 있음",
+        "저자 명시: NDML 의 다중 앵커 스케줄링 큐가 오동작해 극단적으로는 일부 앵커 거리가 전혀 측정되지 않음 — 대규모 적용 전 해결 필요",
+        "저자 명시: 실험이 오차 원인(주파수 부정확·수정 오프셋·다중경로) 을 분리하지 못함; IFFT 용 거리 품질 평가 지표가 따로 필요; 앵커 밀도 효과는 더 큰 거리에서 재검증 필요",
+        "CS(BLE 6) 가 아닌 Nordic 사설 MCPD — 투고 몇 주 뒤 CS 공개, CS 실측은 없음 (저자 명시)",
+        "보안 논의 없음 — CS 의 암호화는 서술로만 언급 (전문 확인)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "zand-2019-ble-pbr",
+        "zand-2019-concurrent-pbr",
+        "schroeder-2022-inphase",
+        "santra-2024-cs-indoor"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "wang-2025-cs-device-free-sensing",
+      "title": "Exploration of Device-Free Sensing Ability Based on Bluetooth 6.0 Channel Sounding",
+      "authors": [
+        "Cheng Wang",
+        "Manjiang Cao",
+        "Zijun Gong",
+        "Tengfei Chang"
+      ],
+      "venue": "UbiComp Companion",
+      "venue_full": "Companion of the 2025 ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp Companion '25), Espoo, Oct. 2025, pp. 90–94 — HKUST (Guangzhou)",
+      "tier": "other",
+      "category": "measurement",
+      "year": 2025,
+      "url": "https://dl.acm.org/doi/10.1145/3714394.3754369",
+      "preprint": null,
+      "doi": "10.1145/3714394.3754369",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "sensing",
+        "raw-iq",
+        "nrf54l15",
+        "phase-stability",
+        "device-free"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 를 거리가 아니라 **사람 감지(device-free sensing)** 에 쓰려는 5 쪽 워크숍 논문이지만, 내 연구에는 두 가지 실측 사실이 쓸모 있다. 첫째, nRF54L15 + Nordic SDK 2.9.1 에서 서브이벤트마다 채널별 local/peer I/Q 를 꺼내 위상차를 언래핑하는 파이프라인이 그대로 기술되어 있어, 내 케이블 실험에서 원시 PCT 를 얻는 절차의 참조가 된다(seo-2026 이 이 논문을 인용한 이유이기도 하다). 둘째, **2 m·3 m RF 케이블로 안테나를 직결했을 때 16 채널 위상의 변동이 ±0.05 rad 이내**라는 수치는 케이블 연결식 실험에서 '정상' 위상 잡음의 하한이며, 공격자가 만드는 위상 이동이 이 값보다 커야 구별된다는 identifiability 의 바닥값이다. 같은 실험에서 양쪽 송신 전력을 같게 설정해도 실제 진폭이 다르다는 관찰은 진폭 기반 NADM 의 정상 상태 비대칭을 시사한다. 거리 정확도 수치는 없다.",
+      "summary": "BLE 5.1 의 AoA/AoD 가 Wi-Fi CSI 와 비슷한 위상·진폭 정보를 열었고 6.0 의 Channel Sounding 은 mode-0 동기화로 두 기기의 주파수·타이밍을 하드웨어에서 맞추므로, CS 가 켜진 BLE 기기의 센싱 잠재력을 실험으로 탐색한다. nRF54L15 개발보드 2 대에 CS PBR(mode-0 + mode-2 여러 스텝, 절차당 이벤트·서브이벤트 1 개, 16 채널, 1 MHz 간격) 을 구현하고 채널별 local/peer I/Q 에서 위상차를 언래핑해 기울기를 거리 정보로 쓴다. 2 m·3 m RF 케이블로 정적 조건의 위상·진폭 안정성을 확인한 뒤, 1.2 m 떨어진 보드 사이 LoS 근처에 사람이 세 위치에 20 초씩 서 있을 때 진폭 패턴이 뚜렷이 구별됨을 보여 CS 기반 센싱이 Wi-Fi 센싱보다 저비용·단순 배치로 가능하다고 주장한다. 저자들은 이를 CS 기반 센싱의 첫 시연이라 부른다.",
+      "hardware": [
+        "Nordic nRF54L15 개발보드 2 대 (initiator·reflector) — 최신 CS 기능 지원 (전문 확인)",
+        "CS 설정: PBR 16 채널, 채널 폭 1 MHz(2 MHz 대신, 거리 모호성 회피; 가용 CS 채널 40 → 72), 절차당 이벤트·서브이벤트 1 개, mode-0 + mode-2 스텝",
+        "안정성 실험: 두 보드의 안테나를 2 m·3 m 연장 RF 케이블로 직결 (16 채널 중 9 채널 도시)",
+        "사람 감지 실험: 실내에서 보드 간격 1.2 m, 지면 70 cm 높이, LoS 근처 세 위치에 20 초씩 정지 — 방 종류·크기·기준 계측 없음 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Nordic 커뮤니티 제공 SDK 2.9.1 (SDK 명칭은 본문에 'SDK' 로만 표기) — 서브이벤트별 채널 local/peer I/Q 추출, 위상차 계산·언래핑, 기울기 추정",
+        "공개 코드·데이터 없음 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "케이블 2 m·3 m: 모든 채널 위상 안정, 주요 위상 변동 ±0.05 rad 이내 (Fig. 4)",
+        "양쪽 송신 전력을 같게 설정해도 실제 진폭(local amplitude) 에 차이 존재 (Fig. 4c)",
+        "언래핑한 위상차가 채널에 대해 거의 직선 — 기울기가 거리 정보 (거리 오차 수치는 미보고)",
+        "사람 세 위치: 신호처리 없이도 진폭에서 세 패턴이 뚜렷이 구별 (정량 탐지율 없음)"
+      ],
+      "limitations": [
+        "거리 정확도 수치 없음 — 센싱 가능성 탐색이 목적 (전문 확인)",
+        "저자 명시: 지면 제한으로 local 진폭만 도시; 시간에 따른 위상·진폭으로 활동 분해능을 조사하고 신호처리 기법을 탐색하는 것은 향후 과제",
+        "실험 규모가 작음(케이블 2 조건, 사람 3 위치) 이고 통계 없음",
+        "보안 논의 없음 (전문 확인)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "zand-2019-ble-pbr"
+      ],
+      "cites_source": "fulltext",
+      "added": "2026-08-30",
+      "last_checked": "2026-08-30"
+    },
+    {
+      "id": "bianchi-2025-sok-rke",
+      "title": "SoK: Stealing Cars Since Remote Keyless Entry Introduction and How to Defend From It",
+      "authors": [
+        "Tommaso Bianchi",
+        "Alessandro Brighente",
+        "Edoardo Pavan",
+        "Mauro Conti"
+      ],
+      "venue": "USENIX VehicleSec",
+      "venue_full": "3rd USENIX Symposium on Vehicle Security and Privacy (VehicleSec '25), Aug. 2025, pp. 161–178 — University of Padova · TU Delft; arXiv:2505.02713 (2025-05-05)",
+      "tier": "other",
+      "category": "survey",
+      "year": 2025,
+      "url": "https://www.usenix.org/conference/vehiclesec25/presentation/bianchi",
+      "preprint": "https://arxiv.org/abs/2505.02713",
+      "doi": null,
+      "topics": [
+        "sok",
+        "keyless-entry",
+        "pkes",
+        "relay-attack",
+        "rolling-code",
+        "uwb",
+        "ble",
+        "defenses",
+        "automotive"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "RKE/PKES 의 20 년치 공격 35 건·방어 13 건을 정리한 SoK 로, CS 연구의 **동기 부여 문단을 쓸 때 인용할 문헌**이다. 네 연구 질문의 답이 그대로 쓸 만하다 — 암호는 강해졌지만 릴레이·재생에는 여전히 취약하고(A1), 15 년간 공격 유형이 바뀌지 않은 것은 릴레이의 실행 용이성 때문이며(A2), 문헌의 방어 제안은 실제 시스템에 구현된 것이 없다(A3). 특히 방어 표(Table 3) 에서 릴레이 대응책 6 건이 모두 비용 N/A 로 남아 있고, 저자들이 UWB 의 릴레이 내성 약속이 leu-2022 로 흔들리고 있다고 쓴 대목은 CS 가 들어갈 자리를 정확히 가리킨다. 단, 이 SoK 는 **Bluetooth Channel Sounding·위상 기반 거리측정·distance bounding 형식 프로토콜을 전혀 다루지 않는다**(본문에 'channel sounding'·'phase' 0 회, staat-2022·olafsdottir-2017 미인용) — 그 빈칸이 곧 내 서베이의 기여 여지이고, 이 논문을 인용하며 '2025 년 SoK 도 CS 를 못 봤다' 고 쓸 수 있다.",
+      "summary": "RKE 시스템은 도입 이래 절도의 표적이었고 최근 다시 급증하고 있으며 산업계는 뚜렷한 진전을 보이지 못했다는 문제의식에서, RKE 와 PKES 의 역사와 현황을 레거시 롤링코드(DST40·KeeLoq·Hitag2·Megamos·DST80) 부터 NFC·BLE·UWB·웹 API 기반 시스템까지 체계화한다. 네 연구 질문(기술 진화가 보안을 높였는가, 공격 전략은 어떻게 진화했는가, 기존 방어는 배치 가능하고 효과적인가, 안전한 원격 출입 시스템에 무엇이 필요한가) 을 두고 2005 년 이후 4 대 보안 학회와 DEF CON/Black Hat 의 공격 35 건 이상과 RKE 전용 방어 13 건을 분류한다. 공격은 암호(전수탐색·guess-and-determine·slide·대수·상관·전력분석)·릴레이·재밍-재생·Bluetooth/NFC·웹서비스, 방어는 표적별로 묶고 비용을 표로 정리한다. 결론은 보안 강화에도 릴레이·재생은 여전히 유효하고, 방어 제안은 시뮬레이션에 머물러 실제 구현이 없으며, 보안-by-obscurity 를 버리고 명세 공개와 표준화·적합성 기관이 필요하다는 것이다.",
+      "hardware": [
+        "해당 없음 — 문헌 SoK, 자체 실험 없음 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 문헌 SoK, 자체 코드 없음 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "공격 35 건 이상·방어 13 건 체계화; 공격 분류 5 종(암호·릴레이·재밍-재생·Bluetooth/NFC·웹서비스), 방어 표적 5 종(C/R/JR/NT/WA)",
+        "A1: 암호적으로는 안전해졌지만 릴레이·재생에는 여전히 취약; A2: 15 년간 공격 유형 불변 — 릴레이의 실행 용이성 때문; A3: 문헌의 방어 제안 중 실제 시스템에 구현된 것 없음; A4: security-by-obscurity 탈피 필요",
+        "릴레이 계보 정리: francillon-2011(무증폭 2 m·증폭 8 m, 키 쪽 60 m) → NCC Group 2022 BLE 링크 계층 릴레이(Tesla Model 3 의 릴레이 완화·한계 우회) → leu-2022 Ghost Peak(12 → 0 m, 성공률 4 %) → Tesla 가 UWB 를 거리 확인에 안 써 Bluetooth 릴레이로 여전히 도난",
+        "Table 3 릴레이 대응책 6 건 — distance bounding 기반 RKE [francillon-2011], UWB pulse reordering [singh-2019], 컨텍스트 기반 RKE(RSSI·RTT·GPS·Wi-Fi), ToA/DToA 시간 기반 대응(시뮬레이션만), ML 릴레이 탐지(99.8 % / 81 %), HODOR RF 지문(<500 ms) — 비용은 HODOR 외 전부 N/A",
+        "UWB 에 대한 판단: 릴레이 보호 약속이 leu-2022 등으로 논란 중, 더 견고한 구현 필요"
+      ],
+      "limitations": [
+        "저자 명시: 제조사가 폐쇄형이라 공개 정보로만 분석; 방어 제안 다수가 시뮬레이션 근거이고 구현·계산 비용 연구가 없음; PUF·QKD 방식은 특수 하드웨어·신뢰 채널 필요",
+        "범위 제외 (저자 명시): 고정 코드 공격, 물리 잠금 해제, 단기 완화책",
+        "Bluetooth Channel Sounding·위상 기반 거리측정·distance bounding 형식 프로토콜 미포함 — staat-2020/2022·olafsdottir-2017·suresh-2025·kolli-2024 미인용 (전문 확인)",
+        "arXiv 판에는 VehicleSec 게재 표기 없음 — 학회 정보는 USENIX 사이트로 확인"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "francillon-2011-pkes-relay",
+        "joo-2020-hodor",
+        "leu-2022-ghost-peak",
+        "singh-2019-uwb-pr"
+      ],
+      "cites_source": "fulltext",
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     }

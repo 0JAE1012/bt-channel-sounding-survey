@@ -1,6 +1,6 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-03",
+  "updated": "2026-08-30",
   "standards": [
     {
       "id": "bt-core-6-0",
@@ -183,14 +183,14 @@
     },
     {
       "id": "ccc-digital-key",
-      "title": "CCC Digital Key Release 3.0 / 4.0",
+      "title": "CCC Digital Key Release 3.x / 4.x",
       "body": "Car Connectivity Consortium",
       "kind": "industry-spec",
-      "date": "3.0: 2021 / 4.0: 2024–",
+      "date": "3.0: 2021 / 4.0: 2024 / V3.1.4 · V4.1.0 배포 중 (2026-08-30 확인)",
       "status": "adopted",
       "url": "https://carconnectivity.org/digital-key/",
       "relevance": "high",
-      "summary": "차량 디지털 키 표준. R3.0에서 UWB 기반 보안 측위를 도입했다. CS는 이 영역에 대한 BLE 네이티브 대안으로 포지셔닝된다.",
+      "summary": "차량 디지털 키 표준. R3.0에서 UWB 기반 보안 측위를 도입했다. CS는 이 영역에 대한 BLE 네이티브 대안으로 포지셔닝된다. 2026-08 현재 CCC 사양 다운로드 페이지는 V3.1.4 와 V4.1.0 을 제공하며(신청 양식 필요), 2026-06 Plugfest #18(DEKRA Lausitzring) 에서 Version 4 상호운용성·인증 시험을 진행했다.",
       "key_sections": [
         "보안 측위 요구사항",
         "릴레이 공격 대응 요구사항",
@@ -335,7 +335,13 @@
       "url": "https://forum.qorvo.com/uploads/short-url/xD3TlXKvkujjdUaJWXv2b4E7GQN.pdf",
       "relevance": "medium",
       "summary": "nRF52840-DK + DWM3000EVB 실험 리그의 드라이버 API. nRF52840이 SPI 마스터로 DW3110/DW3720 UWB IC를 dwt_* 함수로 구동한다. 초기화(dwt_probe/dwt_initialise/dwt_configure), TWR 송수신과 타임스탬프(dwt_readtxtimestamp/dwt_readrxtimestamp), 클럭오프셋 보정(dwt_readclockoffset), 4z STS 보안 지표(dwt_readstsquality), CIR 누산기 접근을 규정한다. Ghost Peak(leu-2022)와 Time for Change(anliker-2023)가 쓴 바로 그 리그의 소프트웨어 계층.",
-      "key_sections": ["dwt_config_t — 채널(5/9)·프리앰블·STS·PDoA 설정", "dwt_readstsquality — 4z STS 무결성 지표 (CS의 NADM 대응물)", "타임스탬프와 clock offset 보정 (dwt_readclockoffset, SS/DS-TWR 거리계산)", "안테나 지연 교정 (dwt_setrxantennadelay/dwt_settxantennadelay)", "CIR 누산기 읽기 — 정확한 함수 명칭 원문 대조 필요"],
+      "key_sections": [
+        "dwt_config_t — 채널(5/9)·프리앰블·STS·PDoA 설정",
+        "dwt_readstsquality — 4z STS 무결성 지표 (CS의 NADM 대응물)",
+        "타임스탬프와 clock offset 보정 (dwt_readclockoffset, SS/DS-TWR 거리계산)",
+        "안테나 지연 교정 (dwt_setrxantennadelay/dwt_settxantennadelay)",
+        "CIR 누산기 읽기 — 정확한 함수 명칭 원문 대조 필요"
+      ],
       "notes_for_research": "CS 공격/방어를 UWB 계보에 잇는 실험 도구. 핵심 매핑은 dwt_readstsquality(STS 품질) ↔ CS NADM(NCC/PMSE/DFT)로, 둘 다 인증된 earliest-path 존재가 아니라 파형 일치도에 의존한다. anliker-2023이 dwt_readstsquality를, anliker-2026이 NADM을 우회한 것이 같은 구조의 실패이며, 이것이 seo-2026과 anliker-2026을 잇는 축이다. 대역폭 차이(UWB ch5/9 ~500 MHz vs CS 협대역)가 fhss-tracking-is-the-real-barrier 인사이트의 배경.",
       "added": "2026-08-03"
     }

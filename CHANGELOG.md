@@ -2,6 +2,95 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-30 (20차: 신규 16건 — Semantic Scholar API 로 IEEE 저널·학회의 CS 논문 무더기 발굴, 전문 6건 확보)
+
+이번 실행의 소득은 접근 경로 하나입니다. 지금까지 WebSearch·arXiv 로는 안 잡히던
+**IEEE Xplore 쪽 CS/PBR 논문이 Semantic Scholar 검색 API(`/graph/v1/paper/search`,
+`year=2025-2026`)로 한 번에 20 건 넘게 나왔습니다.** arXiv API 는 연속 호출에 429 를
+뱉어 이번엔 못 썼고(6 초 간격으로도 막힘), S2 도 초당 1 회 이상이면 429 지만 `/paper/batch`
+로 초록을 한 번에 받으면 됩니다. 두 번째 소득: **IEEE Access·OJVT 같은 골드 OA 논문은
+Crossref 의 `link` 필드가 주는 `ielx8/.../NNNN.pdf?arnumber=NNNN` 경로를 브라우저 UA 로
+받으면 전문이 열립니다**(`stamp.jsp`·`document/` 는 여전히 202 빈 응답). 유료 논문은
+같은 경로로도 202. 이 두 경로는 메모리에 남겼습니다.
+
+- 신규 (전문 확인 6건):
+  - **A Novel Method for Two-Way Ranging to Mitigate Phase Offset in Bluetooth Channel
+    Sounding** (Wu·Gunia·Figueroa·Ellinger, Metirionic·TU Dresden, IEEE Access 2026-08-14,
+    관련도 **높음**, `verified`). 한 톤 교환 안에서 송수신 순서를 뒤집은 Mirrored Tone
+    Exchange 를 정규 교환과 4 회 짝지어 발진기 오프셋 잔류항을 p(k+1) 스케일에서 Δp
+    스케일로 떨어뜨림(cm → µm). 대가로 비모호 거리 150 → 75 m, 이를 기존 TWR 의 거친
+    창으로 푸는 하이브리드 — **'거친 창 → 정밀값' 구조는 창만 밀면 정밀값이 따라오는
+    공격 패턴**. Dialog DA14699 DK + RIGOL DG4162 외부 클럭으로 ±20 ppm 스윕, 케이블
+    0.12 → 0.02 m, 실내 σ 0.14 → 0.11 m, 총 에너지 무반향실 −89 % / 실내 +32 %.
+  - **Interference Mitigation in One-Way Channel Reconstruction for Robust Phase-Based
+    Ranging** (Morano 외, Jožef Stefan Inst., IEEE Access 2026, 관련도 **높음**, `verified`,
+    tech `other`). 양방향 CFR 은 채널의 제곱이라 탭이 L(L+1)/2 개로 불고 제곱근의 ±1
+    분기를 골라야 하는데, 간섭 톤 하나가 위상 언래핑을 뒤집어 8 m 이상 오차를 낸다는
+    관찰이 핵심 — **톤 한두 개만 덮어써서 분기를 뒤집는 저비용 조작 벡터**의 근거.
+    AT86RF215 TSCH 회의실 실측(SIR −3 dB) 에서 제안 CR-BS 적중률 99.8 % vs 언래핑 84.5 %.
+    정렬 보정 τ − T0/2 규칙은 긴 지연을 짧은 거리로 접는 경로.
+  - **Digital-Only Phase Compensation for Secure Phase-Based Ranging in Vehicular RKE
+    Systems** (Nishikawa·Otaka·Seto·Otsuki, Keio·Toshiba, IEEE OJVT 2026-08-05, 관련도
+    **보통**, `verified`, tech `other`). 920 MHz 사설 RKE 라디오. 송수신 홉마다 깨지는
+    fractional-N PLL 초기 위상을 ΣΔ 1 단 적분기 복제로 디지털 보상(RTL 시뮬레이션
+    ±0.27° ≈ ±1.6 cm). 보안 논증은 "정확한 거리 + 임계값" 그대로이고 olafsdottir-2017·
+    staat-2022 미인용 — 산업계 PBR 이 여전히 증폭 릴레이만 위협모델로 삼는 사례.
+  - **Experimental Evaluation of Multicarrier Phase Difference Localization in Bluetooth
+    Low Energy** (Nikodem 외, Wrocław·ULPGC, IEEE Sensors J. 25(1) 2025, 관련도 **보통**,
+    `verified`, ULPGC 리포지터리 저자판). nRF52840 DK × 5 + NDML, 100 m² 사무실 4 앵커 ×
+    101 지점 × 100 회. IFFT 거리 MAE 앵커별 0.59~1.02 m, 95 백분위 1.62~2.79 m, 앵커별 편향
+    0.09~1.44 m; 측위 0.98 m 가 AoA 1.26 m 를 앞섬. **가장 가까운 앵커 3 개만 쓰면 IFFT 가
+    25~30 % 나빠짐** — gunia-2026 의 최단거리 채택 권고와 정면 충돌하는 실측. 벽 반사
+    1·2 회의 0.9 / 3.3 m 이봉 히스토그램. schex-2026·wieme-2025 가 이미 인용하던 논문.
+  - **Exploration of Device-Free Sensing Ability Based on Bluetooth 6.0 Channel Sounding**
+    (Wang·Cao·Gong·Chang, HKUST-GZ, UbiComp Companion 2025, 관련도 **보통**, `verified`).
+    nRF54L15 + SDK 2.9.1 에서 서브이벤트별 local/peer I/Q 를 꺼내는 절차가 그대로 있고,
+    **2·3 m RF 케이블 직결 시 16 채널 위상 변동 ±0.05 rad 이내** — 케이블 실험의 정상
+    위상 잡음 바닥값. seo-2026 이 인용. 거리 오차 수치는 없음.
+  - **SoK: Stealing Cars Since Remote Keyless Entry Introduction and How to Defend From
+    It** (Bianchi·Brighente·Pavan·Conti, Padova, USENIX VehicleSec 2025, 관련도 **보통**,
+    `verified`). 공격 35 건·방어 13 건 체계화. 릴레이 대응 6 건이 전부 비용 N/A, 15 년간
+    공격 유형 불변. **CS·위상 거리측정·distance bounding 형식 프로토콜을 전혀 안 다룸**
+    ('channel sounding'·'phase' 0 회) — 그 빈칸이 내 서베이의 기여 여지.
+- 신규 (초록만, `partial` 10건): **Secure and Reliable Indoor Ranging: An Analysis of
+  Industry Protocols, Attacks, and Defences** (Boshoff·Nkrow·Silva·Hancke, IEEE TII 22(8)
+  2026-08, 관련도 **높음** — Bluetooth·UWB·Wi-Fi 보안 거리측정만 다루는 첫 서베이라
+  주장, 내 코퍼스의 대조군·신규성 검사 대상. CityU·THEi 리포지터리·arXiv 에 없음);
+  **Multipath ToA Estimation for BLE Ranging With Binary Phase Ambiguity** (Xie 외, IEEE
+  TCOM 74, 보통 — xie-2026-vaa 의 모체, 원자 노름 + 헝가리안 + MaxCut SDP); **RANSAC-
+  Integrated Root-MUSIC for BLE CS** (Nie 외, IWSA 2025, 보통 — MVDR 대비 PE90 −74 %);
+  **Simulation Study on PBR for Dual-Antenna CS** (Fujii 외, ICST 2025, 보통 — NLoS 첫 경로
+  오검출 2.0 %); **Experimental Study on Improving PBR Accuracy Indoors** (Fujii 외, GCCE
+  2025, 보통 — 중앙값 0.35 m, 잠정 거리 게이팅 구조); **Indoor Localization with BLE
+  Utilizing Different Ranging Methods** (Kumbul·Sheikh·Dolmans, imec, IPIN 2025, 보통 —
+  측위 오차 12 cm 이내); **Robust Phase-based BLE Localization with a Single Multi-Antenna
+  Receiver and ML** (Andreadis 외, IPIN 2025, 낮음); **Comprehensive Study of Indoor
+  Positioning Methods in BLE and UWB** (Rashidi·Chinara, IEEE IoT-J 2025, 낮음 —
+  droemmer-2026 이 인용); **High Accuracy Distance Measurements Method with Channel
+  Sounding for IoT** (Qi 외, Journal of Computers 2026, 낮음 — LOS ±1~3 cm 주장은 코퍼스
+  실측과 어긋나 검증 전 인용 금지); **Low-Overhead PBR for Sub-GHz Systems Using
+  Fractional-N PLL** (Nishikawa 외, ICC 2026, 낮음 — OJVT 판의 학회판, 계보 연결용).
+- 인용: 전문 6 편의 참고문헌에서 코퍼스 내 인용 22 건 + 역방향 4 건(schex-2026·
+  wieme-2025 → nikodem-2025, seo-2026 → wang-2025, droemmer-2026 → rashidi-2025) 으로
+  총 274 → 300 건. 전부 `grep -a` 로 원문 확인. 참고문헌에서 코퍼스에 없는 계보 후보:
+  Boer·Romme·Govers·Dolmans "Performance of High-Accuracy Phase-Based Ranging in Multipath
+  Environments" (VTC 2020, 세 편이 인용), Shoudha 외 "Reduced-complexity decimeter-level
+  Bluetooth ranging in multipath environments" (IEEE Access 2022, 골드 OA, TI·UT Dallas),
+  Van Marter 외 SVR Bluetooth ranging (IoT-J 2023), Simončič 외 "Optimizing frequency
+  switching pattern … MCPD" (IEEE Access 2025, OA), Helwa 외 two-way/one-way CSI Wi-Fi
+  ranging (IEEE Access 2023, CR-PU 기준선), Pelka 2014 IPIN. 다음 실행에서 OA 인 것부터.
+- 보강: 없음 — 기존 `partial` 7 건은 메모리대로 재시도하지 않았고, 이번 신규 전문 6 건이
+  보강 몫을 대신함. 기존 항목은 인용 추가로 `last_checked` 만 갱신(4 건).
+- 표준: **CCC Digital Key** — 사양 다운로드 페이지가 V3.1.4 와 V4.1.0 을 제공(신청 필요),
+  2026-06 Plugfest #18 에서 Version 4 시험 진행. 항목 제목·날짜·요약 갱신. Core 6.4 미공개,
+  Inline PCT Transfer 페이지 여전히 VSr01_PR 공개검토 초안, IEEE P802.15.4ab 여전히 Active
+  PAR(초안 번호·완료일 미표시). 변경 없음.
+- 실패: TII 서베이(Boshoff)·TCOM(Xie)·IWSA·ICST·GCCE·IPIN × 2·IoT-J·ICC 전문 — IEEE 유료
+  (`ielx8` 경로 202). 목차 훑기는 같은 날 19 차에서 끝냈으므로 arXiv `pastweek` 목록만
+  다시 봄(cs.CR 해당 없음, eess.SP 는 D-MIMO·서브 THz 측위뿐). arXiv API 429.
+- 주의: Nikodem 논문의 원 제목은 "Multi-Carrier" 표기이나 IEEE 게재 제목(Multicarrier) 을
+  따름. SoK 는 arXiv 판에 4 번째 저자 Edoardo Pavan 이 있어 S2 메타데이터(3 인) 와 다름.
+
 ## 2026-08-30 (19차: 신규 6건 — USENIX Security '26 목차 드디어 확보, 참고문헌 캐기로 계보 2건 편입)
 
 이번 실행의 소득은 접근 경로 둘입니다. 첫째, 지난 세 차례 403 이던 **USENIX Security '26
