@@ -1096,7 +1096,19 @@
           "basis": "exp-pbr-recovery — MoCap 기준 1.0093 m 에 대해 0.9795 m 복원(오차 3 cm)",
           "evidence": [
             "exp-pbr-recovery"
-          ]
+          ],
+          "detail": {
+            "target": "Wieme 2025 공개 데이터셋의 파일 구조 (Zenodo 10.5281/zenodo.17347695, CC-BY-4.0)",
+            "hardware": [
+              "없음 — 공개 데이터셋 재분석",
+              "원 측정 장비: Nordic nRF54L15-DK (데이터셋 제공자)"
+            ],
+            "code": "experiments/pbr_from_iq.py",
+            "expected": "MoCap 기준거리 1.0093 m",
+            "reproduced": "0.9795 m (위상 기울기 추정기)",
+            "discrepancy": "3 cm. 데이터 해석이 맞다는 확인으로 충분한 수준이다. 구조도 확정했다 — CSV 한 장 = 측정 N행 × step 159열, 셀은 세미콜론으로 나뉜 정수 8개, 채널 인덱스 2~76 중 고유 72개가 1 MHz 간격(CS 규격의 '79개 중 최대 72개'와 일치), step 159개가 채널 72개를 약 2.21회 덮는다.",
+            "blocker": null
+          }
         },
         {
           "label": "위상-거리 관례 확정",
@@ -1105,7 +1117,18 @@
           "basis": "exp-convention — 실외 30개 거리로 4π 확정, 기울기 비 1.0051",
           "evidence": [
             "exp-convention"
-          ]
+          ],
+          "detail": {
+            "target": "PBR 거리식의 계수 — 왕복 위상이면 4π, 편도면 2π",
+            "hardware": [
+              "없음 — 공개 데이터셋 재분석"
+            ],
+            "code": "experiments/two_stage_attacker.py",
+            "expected": "d = −c·(dφ/df)/(4π) 이면 기울기 비가 1.0 이 되어야 한다",
+            "reproduced": "실외 30개 거리(1~72 m, 다중경로 없음)에서 4π 확정. 기울기 비 1.0051",
+            "discrepancy": "잔차가 거리와 무관한 +0.86 m 고정 바이어스로 남는다 — 하드웨어 오프셋으로 해석했고 이후 실험에서 차감한다. 실내 창고 계열에서는 위상 언랩 기반 추정기가 다중경로로 무너져(평균 오차 3.5 m) 언랩이 필요 없는 정합필터로 교체했다.",
+            "blocker": null
+          }
         },
         {
           "label": "군지연 주입 (평탄 τ)",
@@ -1114,7 +1137,18 @@
           "basis": "exp-flat-delay — 5개 주입 지점 전부 예측과 6 mm 이내",
           "evidence": [
             "exp-flat-delay"
-          ]
+          ],
+          "detail": {
+            "target": "Anliker 2026 의 RTT 축소량 −18.35 m (Random Sequence, σ 2.83 cm)",
+            "hardware": [
+              "없음 — 실측 I/Q 에 합성 지연 주입 (trace-replay)"
+            ],
+            "code": "experiments/two_stage_attacker.py",
+            "expected": "순수 군지연 τ 는 PBR 을 c·τ, RTT 를 c·(2τ)/2 = c·τ 만큼 움직인다 (해석적 예측)",
+            "reproduced": "−62 / −30 / −10 / +10 / +30 ns 주입 전부 예측과 6 mm 이내 일치. −62 ns 에서 PBR −18.590 m",
+            "discrepancy": "Anliker 의 RTT −18.35 m 와 24 cm 차이. **다만 이것은 교차 논증이지 공동 실험이 아니다** — 장비·파형·수신기가 다른 별도 실험의 숫자를 나란히 놓은 것이므로, 같은 procedure 에서 동시에 관측하기 전까지 '두 측정이 함께 움직였다'고 말할 수 없다.",
+            "blocker": null
+          }
         },
         {
           "label": "분산형 τ(f) 주입",
@@ -1123,7 +1157,18 @@
           "basis": "exp-dispersive 는 로렌츠형 1차 근사를 쓴다. Anliker Figure 10 실측 응답으로 교체해야 붕괴 임계가 확정된다",
           "evidence": [
             "exp-dispersive"
-          ]
+          ],
+          "detail": {
+            "target": "Anliker 2026 Figure 10 — NGD 회로의 주파수 응답 (IF 4.77 MHz 근처 1 MHz 폭)",
+            "hardware": [
+              "없음 — 시뮬레이션 + trace-replay"
+            ],
+            "code": "experiments/dispersive_ngd.py",
+            "expected": "회로 대역을 벗어나면 군지연이 사라지므로, 고정 LO 로 72개 채널을 받으면 채널마다 다른 τ 가 걸린다",
+            "reproduced": "로렌츠형 1차 근사로 대체해 확인: FHSS 추적 시 회로 대역폭과 무관하게 정확히 c·τ 이동하고 톤 정합도 0.949 유지, 고정 LO 면 시험한 모든 대역폭에서 정합도 0.23~0.39 로 붕괴(스푸핑이 아니라 DoS)",
+            "discrepancy": "실제 응답이 로렌츠형과 다르면 붕괴 임계가 달라진다. 지금 값은 모델 의존이며 확정치가 아니다.",
+            "blocker": "Figure 10 을 아직 디지타이즈하지 않았다 (전문은 확보 완료). todo-ngd-response."
+          }
         },
         {
           "label": "추정기 계열별 내성",
@@ -1132,14 +1177,36 @@
           "basis": "exp-estimator-threshold — 정합필터·IFFT·MUSIC 모두 커버리지 0.5 문턱",
           "evidence": [
             "exp-estimator-threshold"
-          ]
+          ],
+          "detail": {
+            "target": "experiments/figures/estimator_threshold.png — 커버리지 대 거리 이동, 추정기 3종",
+            "hardware": [
+              "없음 — trace-replay"
+            ],
+            "code": "experiments/estimator_threshold.py · experiments/plot_estimator_threshold.py",
+            "expected": "정합필터의 0.5 문턱은 bimodal capture 전환점이므로, 두 봉우리를 분리하는 초해상도 추정기(MUSIC)라면 문턱이 달라져야 한다",
+            "reproduced": "정합필터·IFFT·MUSIC 세 계열 모두 커버리지 0.5 에서 전환. MUSIC 은 0.4 에서 −2.6 m 두 번째 봉우리를 보기 시작하나 지배적이지 않아 문턱은 그대로 0.5",
+            "discrepancy": "**예상과 반대 결과다.** 추정기를 바꿔서는 막히지 않는다 — '제대로 된 수신기면 공격이 막힌다'는 반론(C-04)에 대한 선제 데이터가 된다.",
+            "blocker": null
+          }
         },
         {
           "label": "정상 LOS/NLOS 오탐률 (ROC)",
           "percent": 0,
           "status": "todo",
           "basis": "기준 0.949 대 공격 0.23~0.39 의 분리만으로는 방어가 아니다. 임계값에서 정상 측정이 얼마나 거부되는지 필요",
-          "evidence": []
+          "evidence": [],
+          "detail": {
+            "target": "정합도 임계값에서의 정상 측정 거부율 (기준 0.949 대 공격 0.23~0.39 의 분리만으로는 방어가 아니다)",
+            "hardware": [
+              "없음 — Wieme 데이터셋의 실내 NLOS 계열 사용"
+            ],
+            "code": null,
+            "expected": null,
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "미착수. 하드웨어가 필요 없어 지금 바로 할 수 있는 항목이다. todo-coherence-roc."
+          }
         }
       ]
     },
@@ -1158,7 +1225,18 @@
           "basis": "verification: verified — 전문 대조 완료",
           "evidence": [
             "anliker-2026-narrowband-toa"
-          ]
+          ],
+          "detail": {
+            "target": "논문 전체 — 실험 설정(LE 1M, 128-bit Random Sequence, IF 4.77 MHz)과 결과 수치",
+            "hardware": [
+              "없음"
+            ],
+            "code": null,
+            "expected": null,
+            "reproduced": "verification: verified. Random Sequence −18.35 m(σ 2.83 cm), Sounding Sequence −19.09 m(σ 0.09 cm), NADM 참조 지표 3종(NCC·PMSE·DFT) 전부 우회 확인",
+            "discrepancy": null,
+            "blocker": null
+          }
         },
         {
           "label": "NGD 전달함수 모델링",
@@ -1167,38 +1245,95 @@
           "basis": "로렌츠형 1차 근사로 대체 중. Figure 10 실측값 반영 필요",
           "evidence": [
             "exp-dispersive"
-          ]
+          ],
+          "detail": {
+            "target": "Figure 10 — NGD 회로 주파수 응답",
+            "hardware": [
+              "없음 — 모델링"
+            ],
+            "code": "experiments/dispersive_ngd.py",
+            "expected": "IF 4.77 MHz 근처 1 MHz 폭에서 −62 ns, 대역 밖에서는 소멸",
+            "reproduced": "로렌츠형 1차 근사로 대체 사용 중",
+            "discrepancy": "근사와 실측 응답의 차이가 붕괴 임계(고정 LO 시 정합도 0.23~0.39)를 바꿀 수 있다",
+            "blocker": "Figure 10 디지타이즈 미실시. todo-ngd-response."
+          }
         },
         {
           "label": "MATLAB CS SYNC 파이프라인",
-          "percent": 0,
-          "status": "todo",
-          "basis": "현재 재현은 Python 이고 규격 파형 생성은 미착수. Bluetooth Toolbox 로 LE 1M / 128-bit Random Sequence / 4.77 MHz IF 설정 재현 예정",
+          "percent": 30,
+          "status": "partial",
+          "basis": "Phase 0 스크립트(phase0_timing.m)는 작성 완료. MATLAB Bluetooth Toolbox 라이선스가 없어 아직 실행하지 못했다",
           "evidence": [
             "matlab-bt-cs-toolbox",
             "entry-cost-is-low"
-          ]
+          ],
+          "detail": {
+            "target": "CS SYNC 패킷·톤의 실제 지속시간 T_pkt (규격 원문이 회원 전용이라 Toolbox 로 대체 측정)",
+            "hardware": [
+              "없음 — MATLAB + Bluetooth Toolbox (R2023b 이상)"
+            ],
+            "code": "experiments/phase0_timing.m",
+            "expected": "T_pkt 과 규격 정의 T_FCS/T_IP 집합을 합쳐 step 처리 창을 얻고, 거기서 τ_loop 상한(릴레이가 넘으면 안 되는 값)을 유도",
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "스크립트는 작성됐으나 아직 실행하지 못했다 — MATLAB Bluetooth Toolbox 라이선스가 필요하다(`ver('bluetooth')`). todo-step-timing."
+          }
         },
         {
           "label": "LTspice NGD 회로",
           "percent": 0,
           "status": "todo",
           "basis": "회로는 COTS 연산증폭기와 수동소자. 미착수",
-          "evidence": []
+          "evidence": [],
+          "detail": {
+            "target": "Anliker 2026 의 NGD 회로 — COTS 연산증폭기와 수동소자 구성",
+            "hardware": [
+              "없음 — LTspice (무료)"
+            ],
+            "code": null,
+            "expected": "IF 4.77 MHz 에서 −62 ns 군지연",
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "미착수. 논문의 주요 결과가 LTspice 와 MATLAB 시뮬레이션에서 나왔으므로 비용 장벽은 없다."
+          }
         },
         {
           "label": "물리 NGD 회로 제작",
           "percent": 0,
           "status": "todo",
           "basis": "미착수",
-          "evidence": []
+          "evidence": [],
+          "detail": {
+            "target": "실물 회로에서 −62 ns 군지연 재현",
+            "hardware": [
+              "COTS 연산증폭기 + 수동소자",
+              "검증용 계측기 (원 논문은 R&S SMW200A 신호발생기와 RTP 오실로스코프 사용)"
+            ],
+            "code": null,
+            "expected": null,
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "미착수. LTspice 단계 선행 필요. 계측기 확보 경로 미정."
+          }
         },
         {
           "label": "BLE CS 보드 통합",
           "percent": 0,
           "status": "blocked",
           "basis": "CS 지원 보드 2장 미확보 (mode 3)",
-          "evidence": []
+          "evidence": [],
+          "detail": {
+            "target": "동일 CS procedure 에서 PBR·RTT·NADM·품질플래그·Host 최종거리 동시 기록",
+            "hardware": [
+              "Nordic nRF54L15-DK ×2 (Bluetooth 6.0 CS, RAS 지원) — Initiator/Reflector",
+              "동축·감쇠기 30~40 dB (유선 브링업)"
+            ],
+            "code": null,
+            "expected": "RAS 를 통해 raw step data 와 NADM 을 벤더 중립적으로 뽑을 수 있어야 한다",
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "**CS 지원 보드 미확보.** 이 항목이 C-01(PBR+RTT 동시 조작)의 유일한 미검증 지점이며, RQ1 의 다음 실험이다. todo-joint-procedure · todo-rtt-dataset."
+          }
         },
         {
           "label": "OTA / FHSS 추적",
@@ -1207,7 +1342,21 @@
           "basis": "USRP B210 필요, todo-step-timing 선행. 저자들이 범위 밖으로 명시한 지점",
           "evidence": [
             "fhss-tracking-is-the-real-barrier"
-          ]
+          ],
+          "detail": {
+            "target": "커버리지 0.72 모델 대조, 정합도 0.703 예측 대조 (experiments/fhss_poc_design.md Phase 3)",
+            "hardware": [
+              "USRP B210 ×1 (AD9361, 순시 56 MHz, 61.44 MSps, 독립 RX/TX PLL)",
+              "호스트 PC (UHD 4.x, USB3)",
+              "Nordic nRF54L15-DK ×2",
+              "안테나 3~4개 (2.4 GHz), 서큘레이터/커플러"
+            ],
+            "code": "experiments/fhss_poc_design.md (설계 문서 — Phase 0~3 go/no-go 게이트)",
+            "expected": "고정 광대역 LO + 전대역 DSP 로 step 별 활성 채널을 실시간 판별하고 채널별 τ 를 건다",
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "**장비 미확보 + 구조적 제약 발견.** B210 은 Spartan-6 + USB3 고정 이미지라 RFNoC 를 지원하지 않아 릴레이 DSP 가 호스트에서 돌고, 그 경로의 왕복 지연은 수백 µs~ms 급이다. step 처리 창(수십~수백 µs)을 넘길 공산이 커서 실시간 per-step 조작이 안 되면 DoS 로 강등된다. 실시간 저지연은 X310 급(Kintex-7 + RFNoC)이 사실상 필요하다 — 즉 `entry-cost-is-low` 의 범위가 이 공격에는 좁아진다. 단, sounding sequence 가 결정론적인 구간에서는 예측 주입으로 실시간 요구를 낮출 여지가 있어 Phase 1~2 에서 둘 다 잰다. todo-fhss-poc."
+          }
         }
       ]
     },
@@ -1226,7 +1375,18 @@
           "basis": "verification: verified — 전문 대조 완료",
           "evidence": [
             "staat-2022-analog-relay"
-          ]
+          ],
+          "detail": {
+            "target": "논문 전체 — 아날로그 릴레이 구성과 부품, 자기지연 보정",
+            "hardware": [
+              "없음"
+            ],
+            "code": null,
+            "expected": null,
+            "reproduced": "verification: verified. 부품 총액 EUR 2,200(평가보드 제외 시 EUR 1,200 미만), 자기 하드웨어 지연 ~23~30 ns 를 자가보정",
+            "discrepancy": null,
+            "blocker": null
+          }
         },
         {
           "label": "부품 목록(BOM) 확정",
@@ -1235,35 +1395,92 @@
           "basis": "논문 기준 부품 총액 EUR 2,200, 평가보드 제외 시 EUR 1,200 미만이라는 것까지만 확인",
           "evidence": [
             "entry-cost-is-low"
-          ]
+          ],
+          "detail": {
+            "target": "논문의 부품 구성표",
+            "hardware": [
+              "미확정 — 원문에서 품목별로 옮겨 적어야 한다"
+            ],
+            "code": null,
+            "expected": "부품 총액 EUR 2,200 / 평가보드 제외 EUR 1,200 미만",
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "미착수. 전문은 있으므로 하드웨어 없이 할 수 있는 항목이다."
+          }
         },
         {
           "label": "부품 조달",
           "percent": 0,
           "status": "todo",
           "basis": "미착수",
-          "evidence": []
+          "evidence": [],
+          "detail": {
+            "target": null,
+            "hardware": [
+              "BOM 확정 후 결정"
+            ],
+            "code": null,
+            "expected": null,
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "BOM 확정 선행 필요."
+          }
         },
         {
           "label": "아날로그 릴레이 조립",
           "percent": 0,
           "status": "todo",
           "basis": "미착수",
-          "evidence": []
+          "evidence": [],
+          "detail": {
+            "target": null,
+            "hardware": [
+              "BOM 확정 후 결정"
+            ],
+            "code": null,
+            "expected": null,
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "부품 조달 선행 필요."
+          }
         },
         {
           "label": "위상 조작 벤치 시험",
           "percent": 0,
           "status": "todo",
           "basis": "미착수",
-          "evidence": []
+          "evidence": [],
+          "detail": {
+            "target": "Staat 2022 의 거리 조작 결과 — MCPR 을 임의 값으로",
+            "hardware": [
+              "조립된 릴레이",
+              "신호 경로 계측 장비 (미정)"
+            ],
+            "code": null,
+            "expected": null,
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "조립 선행 필요."
+          }
         },
         {
           "label": "BLE CS PBR 통합",
           "percent": 0,
           "status": "blocked",
           "basis": "CS 보드 미확보",
-          "evidence": []
+          "evidence": [],
+          "detail": {
+            "target": "CS 의 PBR 에 같은 조작이 통하는지",
+            "hardware": [
+              "Nordic nRF54L15-DK ×2",
+              "조립된 릴레이"
+            ],
+            "code": null,
+            "expected": null,
+            "reproduced": null,
+            "discrepancy": null,
+            "blocker": "**CS 보드 미확보** + 릴레이 조립 선행 필요."
+          }
         }
       ]
     }
