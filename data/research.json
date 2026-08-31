@@ -1,0 +1,1271 @@
+{
+  "updated": "2026-08-31",
+  "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
+  "landscape": {
+    "title": "Bluetooth Channel Sounding Security Landscape",
+    "subtitle": "이 분야가 어떻게 발전했고 → 지금 어디까지 왔고 → 무엇이 아직 안 됐는가",
+    "stages": [
+      {
+        "id": "foundations",
+        "kind": "stage",
+        "label": "Secure Ranging Foundations",
+        "period": "2006 – 2020",
+        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. Clulow 가 긴 심볼이 근본 문제임을 지적했고, Rasmussen 이 1 ns 미만 처리지연 플랫폼을 실제로 만들어 거리한정이 구현 가능함을 보였으며, Cremers 가 Distance Hijacking 이라는 네 번째 공격 유형을 정의했고, MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다.",
+        "papers": [
+          "clulow-2006-long-symbols",
+          "rasmussen-2010-rf-distance-bounding",
+          "cremers-2012-distance-hijacking",
+          "leu-2020-mtac"
+        ]
+      },
+      {
+        "id": "relay-reduction",
+        "kind": "stage",
+        "label": "Relay / Distance Reduction",
+        "period": "2010 – 2012",
+        "summary": "공격이 실제 제품에서 성립한다는 것이 확인된 시기다. Francillon 이 8개 제조사 10개 차종 전부에서 PKES 릴레이로 문을 열고 시동까지 걸었고, Flury·Poturalski 가 IR-UWB 에서 ED/LC 의 정량적 한계를 잡았으며, Ranganathan 이 chirp 계열까지 같은 논리가 통함을 보였다.",
+        "papers": [
+          "francillon-2011-pkes-relay",
+          "flury-2010-distance-decreasing",
+          "poturalski-2011-db-802-15-4a",
+          "ranganathan-2012-chirp-attacks"
+        ]
+      },
+      {
+        "id": "split",
+        "kind": "split",
+        "label": "두 갈래로 갈라짐",
+        "period": "2017 – 2026",
+        "summary": "CS 가 결합하게 될 두 측정이 각각 따로 공격받아 왔다. 왼쪽은 위상, 오른쪽은 시간이다.",
+        "columns": [
+          {
+            "id": "pbr-security",
+            "label": "PBR Security",
+            "items": [
+              "Phase manipulation",
+              "Analog relay",
+              "MCPR attacks"
+            ],
+            "summary": "위상은 주파수마다 독립적으로 조작할 수 있고, 아날로그 영역에서 처리하면 암호 인증을 건드리지 않고 우회한다.",
+            "papers": [
+              "olafsdottir-2017-carrier-phase",
+              "staat-2022-analog-relay",
+              "riaz-2022-pbr-multipath-security",
+              "schroeder-2019-multipath-pbr"
+            ]
+          },
+          {
+            "id": "rtt-security",
+            "label": "RTT / ToA Security",
+            "items": [
+              "ED/LC",
+              "Temporal masking",
+              "Negative Group Delay"
+            ],
+            "summary": "시간은 심볼이 끝나기 전에 판단하거나(ED/LC), 파형을 곱하거나(temporal masking), 음의 군지연 필터를 통과시켜 앞당긴다.",
+            "papers": [
+              "flury-2010-distance-decreasing",
+              "leu-2021-multicarrier-tof",
+              "leu-2022-ghost-peak",
+              "anliker-2023-time-for-change",
+              "anliker-2026-narrowband-toa"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-cs",
+        "kind": "stage",
+        "label": "Bluetooth Channel Sounding",
+        "period": "2024 – ",
+        "summary": "Core 6.0 이 두 측정을 하나의 절차 안에 넣었다. 상용 칩이 나오면서 실측 평가가 시작됐지만, 평가의 대부분은 보안이 아니라 정확도다 — 코퍼스의 CS 논문 39편 중 공격을 다루는 것은 2편뿐이다.",
+        "papers": [
+          "wieme-2025-cs-commercial-hw",
+          "seo-2026-cs-perf-security",
+          "droemmer-2026-cs-channel-modeling",
+          "gunia-2026-cs-metrological",
+          "sheikh-2025-cs-interference"
+        ],
+        "standards": [
+          "bt-core-6-0",
+          "bt-core-6-3",
+          "bt-ras-1-0",
+          "bt-rap-1-0"
+        ]
+      },
+      {
+        "id": "cs-defenses",
+        "kind": "defense",
+        "label": "PBR + RTT + NADM + Randomization",
+        "period": "규격이 내세우는 방어",
+        "summary": "CS 의 방어는 네 겹으로 설명된다 — 서로 다른 원리의 두 측정을 교차검증하고(PBR+RTT), 조작 흔적 지표를 보고(NADM), 시퀀스·마커·비트패턴을 본딩 키에서 난수화하고, 채널을 호핑한다. 아래 'What Is Still Assumed' 가 이 네 겹이 각각 어디까지 검증됐는지를 정리한다.",
+        "papers": [
+          "abidin-2021-narrowband-ranging",
+          "suresh-2025-cs-vehicle-access"
+        ],
+        "standards": [
+          "bt-core-6-0",
+          "bt-cs-feature-page",
+          "silabs-cs-fundamentals"
+        ]
+      },
+      {
+        "id": "open-problems",
+        "kind": "open",
+        "label": "Open Problems",
+        "period": "지금",
+        "summary": "아래 네 갈래가 열려 있다. 각각은 Research Questions 탭의 RQ 와 연결된다.",
+        "papers": []
+      }
+    ]
+  },
+  "know": [
+    {
+      "text": "PBR 과 RTT 는 공통 군지연에 **같은 방향·같은 크기**로 반응한다. 순수 군지연 τ 는 PBR 을 c·τ, RTT 를 c·(2τ)/2 = c·τ 만큼 움직인다. 실측 I/Q 주입에서 −62 / −30 / −10 / +10 / +30 ns 전부 예측과 6 mm 이내로 일치했다.",
+      "evidence": [
+        "exp-flat-delay",
+        "wieme-2025-cs-commercial-hw",
+        "anliker-2026-narrowband-toa"
+      ],
+      "maturity": "trace-replay"
+    },
+    {
+      "text": "부분 대역 커버리지에는 **0.5 문턱**이 있고 승자독식이다. 그 아래는 이동량이 정확히 0, 그 이상은 곧바로 전량(−18.6 m). 정합필터·IFFT·MUSIC 세 추정기 모두 같은 문턱에서 전환되므로 초해상도 추정기로 막히지 않는다.",
+      "evidence": [
+        "exp-coverage",
+        "exp-estimator-threshold"
+      ],
+      "maturity": "trace-replay"
+    },
+    {
+      "text": "FHSS 추적은 최적화가 아니라 **성립 조건**이다. 추적하면 회로 대역폭과 무관하게 정확히 c·τ 이동하고 톤 정합도가 기준값 0.949 그대로 유지되지만, 고정 LO 면 정합도가 0.23~0.39 로 붕괴해 스푸핑이 아니라 서비스 거부가 된다.",
+      "evidence": [
+        "exp-dispersive",
+        "fhss-tracking-is-the-real-barrier"
+      ],
+      "maturity": "simulated"
+    },
+    {
+      "text": "정상 채널에서도 PBR 은 두 자릿수 미터의 이상치를 낸다. 실외 평균오차 0.40 m 에 최대 69.97 m, 실내 1.36 m 에 최대 11.98 m — 조작된 측정 하나를 자연 오차의 꼬리에 숨길 여지가 그만큼 크다.",
+      "evidence": [
+        "gunia-2026-cs-metrological"
+      ],
+      "maturity": "commercial"
+    },
+    {
+      "text": "다중경로에서 PBR 은 직접경로가 아니라 **반사경로의 길이를 보고할 수 있다**. 공격자가 없어도 측정이 다른 경로로 넘어가는 일이 이미 일어난다.",
+      "evidence": [
+        "schroeder-2019-multipath-pbr",
+        "schroeder-2022-inphase"
+      ],
+      "maturity": "commercial"
+    },
+    {
+      "text": "공격 진입비용이 낮다. Ghost Peak 의 공격 장비는 USD 65(DWM3000EVB + nRF52 DK), Staat 의 아날로그 릴레이는 평가보드를 빼면 EUR 1,200 미만이다. Anliker 의 주요 결과는 LTspice(무료)와 MATLAB 시뮬레이션에서 나왔다.",
+      "evidence": [
+        "leu-2022-ghost-peak",
+        "staat-2022-analog-relay",
+        "anliker-2026-narrowband-toa",
+        "entry-cost-is-low"
+      ],
+      "maturity": "commercial"
+    }
+  ],
+  "broken": [
+    {
+      "text": "다중반송파 위상 거리측정(MCPR)의 위상 조작 — phase-slope rollover, RF cycle slip, on-the-fly phase manipulation 세 유형",
+      "evidence": [
+        "olafsdottir-2017-carrier-phase"
+      ],
+      "year": 2017
+    },
+    {
+      "text": "아날로그 물리계층 릴레이 — 디지털 복조·재변조 없이 중계해 암호학적 인증을 건드리지 않고 우회하며, 거리값도 함께 조작한다",
+      "evidence": [
+        "staat-2022-analog-relay",
+        "francillon-2011-pkes-relay"
+      ],
+      "year": 2022
+    },
+    {
+      "text": "다중경로 환경에서도 임의 거리축소가 성립 — 30 m 이격을 1 m 미만으로 스푸핑. '다중경로가 공격을 어렵게 한다'는 흔한 반론이 여기서 약해진다",
+      "evidence": [
+        "riaz-2022-pbr-multipath-security"
+      ],
+      "year": 2022
+    },
+    {
+      "text": "HRP UWB 의 STS 추측 주입(Ghost Peak) — 성공률 4%, 상용 칩에서 over-the-air 로 실증",
+      "evidence": [
+        "leu-2022-ghost-peak"
+      ],
+      "year": 2022
+    },
+    {
+      "text": "클럭 주파수 불일치를 악용한 타임스탬프 조작(Mix-Down, Stretch-and-Advance) — 암호학적 STS 보호를 우회",
+      "evidence": [
+        "anliker-2023-time-for-change"
+      ],
+      "year": 2023
+    },
+    {
+      "text": "협대역 ToA 의 temporal masking 과 음의 군지연(NGD) — CS 가 참조하는 NADM 지표 3종(NCC·PMSE·DFT)을 모두 우회했고, Sounding Sequence 에서 −19.09 m(σ 0.09 cm)로 Random Sequence 보다 축소량이 크고 분산은 30배 작았다",
+      "evidence": [
+        "anliker-2026-narrowband-toa"
+      ],
+      "year": 2026
+    },
+    {
+      "text": "BLE 재페어링의 0-click / 1-click 보안수준 강등 — CS 난수화가 얹혀 있는 본딩 키의 뿌리가 흔들린다",
+      "evidence": [
+        "sacchetti-2026-blerp",
+        "antonioli-2023-bluffs",
+        "cs-randomness-rests-on-pairing"
+      ],
+      "year": 2026
+    }
+  ],
+  "assumed": [
+    {
+      "text": "PBR 과 RTT 를 동시에 일관되게 속이는 것은 매우 복잡하다",
+      "why_untested": "공통 군지연에 대해서는 이미 반증에 가깝다(위 'What We Know' 1번). 다만 PBR 쪽은 trace-replay, RTT 쪽은 Anliker 의 별도 장비·파형·수신기 측정이라 **동일 CS procedure 에서 둘을 함께 기록한 실험이 아직 없다.**",
+      "evidence": [
+        "dual-defense-not-independent",
+        "exp-flat-delay",
+        "bt-cs-feature-page"
+      ],
+      "blocks": [
+        "todo-joint-procedure"
+      ]
+    },
+    {
+      "text": "NADM 이 조작된 측정을 탐지한다",
+      "why_untested": "규격은 참조 지표 3종만 제시하고 구현은 vendor-specific 이다. Anliker 는 그 3종을 모두 우회했고 Time for Change 는 Qorvo 의 비공개 탐지 플래그도 우회했다. **벤더별로 실제 방어력이 얼마나 다른지 측정한 연구가 없다.**",
+      "evidence": [
+        "nadm-is-vendor-shaped",
+        "mtac-predicted-nadm-failure",
+        "anliker-2026-narrowband-toa",
+        "silabs-cs-fundamentals"
+      ],
+      "blocks": [
+        null
+      ]
+    },
+    {
+      "text": "Sounding Sequence 의 마커 무작위화가 ED/LC 를 막는다",
+      "why_untested": "Anliker 의 실측에서는 Sounding Sequence 쪽 축소량이 더 크고 분산이 30배 작았다. 즉 한 공격을 막으려 넣은 구조가 다른 공격에는 유리하게 작동할 수 있다. **마커 밀도에 대한 ED/LC 대 NGD 트레이드오프 곡선이 없다.**",
+      "evidence": [
+        "sounding-sequence-backfires",
+        "anliker-2026-narrowband-toa",
+        "clulow-2006-long-symbols"
+      ],
+      "blocks": [
+        "todo-marker-tradeoff"
+      ]
+    },
+    {
+      "text": "실시간 FHSS 추적은 공격자에게 어렵다",
+      "why_untested": "Anliker 가 범위 밖으로 명시했고 아무도 실증하지 않았다. 시뮬레이션에서는 추적 성공 시 무흔적, 실패 시 DoS 라는 이분법이 나왔고 B210 급(커버리지 0.72)이면 실증은 되지만 흔적이 남는다. **실기기 실시간 추적은 미검증.**",
+      "evidence": [
+        "fhss-tracking-is-the-real-barrier",
+        "exp-dispersive",
+        "exp-coverage"
+      ],
+      "blocks": [
+        "todo-fhss-poc"
+      ]
+    },
+    {
+      "text": "취약성은 표준의 결함이 아니라 수신기 구현의 문제다",
+      "why_untested": "UWB 에서 이미 벌어진 논쟁이고 CS 에서 반복될 구도다. 우리 쪽 결과는 반대 방향을 가리킨다 — 정합필터·IFFT·MUSIC 세 계열 모두 커버리지 0.5 에서 똑같이 무너졌다. 다만 **상용 CS 수신기 구현을 직접 시험한 것은 아니다.**",
+      "evidence": [
+        "spec-vs-implementation-debate",
+        "secure-ranging-4z-hrp-2024",
+        "exp-estimator-threshold"
+      ],
+      "blocks": []
+    },
+    {
+      "text": "CS Security Start 의 난수는 공격자가 예측할 수 없다",
+      "why_untested": "키 유도 경로(PK 자체인지, 세션 키인지, CS 전용 키인지)가 Core Spec 본문에 있는데 **규격이 회원 전용이라 확인하지 못했다.** 재페어링 강등이 이 뿌리에 닿는지가 여기서 갈린다.",
+      "evidence": [
+        "cs-randomness-rests-on-pairing",
+        "sacchetti-2026-blerp",
+        "bt-core-6-0"
+      ],
+      "blocks": [
+        "todo-core-spec"
+      ]
+    }
+  ],
+  "open": [
+    {
+      "id": "op-joint",
+      "text": "동일 CS procedure 에서 PBR·RTT·NADM·품질플래그·Host 최종거리를 함께 기록하면 공통모드 지연이 실제로 교차검증을 통과하는가",
+      "theme": "identifiability",
+      "evidence": [
+        "dual-defense-not-independent",
+        "exp-flat-delay"
+      ]
+    },
+    {
+      "id": "op-fhss",
+      "text": "실제 공격자가 CS 의 step 간격 안에서 FHSS 를 추적하며 NGD 경로를 통과시킬 수 있는가",
+      "theme": "feasibility",
+      "evidence": [
+        "fhss-tracking-is-the-real-barrier",
+        "exp-dispersive"
+      ]
+    },
+    {
+      "id": "op-nadm",
+      "text": "벤더별 NADM 구현의 실제 방어력 차이는 얼마이며, RAS 를 통해 벤더 중립적으로 비교할 수 있는가",
+      "theme": "receiver-policy",
+      "evidence": [
+        "nadm-is-vendor-shaped",
+        "bt-ras-1-0"
+      ]
+    },
+    {
+      "id": "op-composition",
+      "text": "CS 의 물리계층 난수화가 페어링 계층의 강등 공격에 어디까지 종속되는가",
+      "theme": "system-composition",
+      "evidence": [
+        "cs-randomness-rests-on-pairing",
+        "sacchetti-2026-blerp"
+      ]
+    },
+    {
+      "id": "op-yardstick",
+      "text": "성공률 4%(Ghost Peak), 결정론적 100%(NGD), 탐지율 96.24%(UWB-SV) 를 하나의 운영 위험 단위로 환산하는 기준은 무엇인가",
+      "theme": "receiver-policy",
+      "evidence": [
+        "success-rate-has-no-common-yardstick"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-01",
+      "claim": "PBR 과 RTT 를 동시에 일관되게 조작하는 것은 매우 어렵다. 두 방식은 물리 원리가 다르므로 교차검증이 MITM 위험을 낮춘다.",
+      "source": "Bluetooth SIG (Channel Sounding 기술 개요)",
+      "source_refs": [
+        "bt-cs-feature-page",
+        "bt-core-6-0"
+      ],
+      "supporting": [],
+      "counter": [
+        {
+          "text": "순수 군지연은 PBR 과 RTT 를 같은 크기로 움직인다 — 실측 주입 5개 지점 전부 예측과 6 mm 이내 일치",
+          "evidence": [
+            "exp-flat-delay"
+          ]
+        },
+        {
+          "text": "−62 ns 주입 시 PBR −18.590 m 는 Anliker 가 RTT 에서 측정한 −18.35 m 와 사실상 같다",
+          "evidence": [
+            "anliker-2026-narrowband-toa",
+            "exp-flat-delay"
+          ]
+        },
+        {
+          "text": "위상 조작만으로도 상용 기기에서 거리축소가 성립한다",
+          "evidence": [
+            "olafsdottir-2017-carrier-phase",
+            "staat-2022-analog-relay"
+          ]
+        }
+      ],
+      "status": "challenged",
+      "status_note": "공통모드 지연에 한해서는 반증에 가깝지만, **동일 CS procedure 에서 PBR 과 RTT 를 동시에 관측한 실험이 아직 없다.** 두 수치의 일치는 교차 논증이지 공동 실험이 아니다.",
+      "experiment": "CS 보드 2장으로 mode 3 측정을 수집해 같은 procedure 안에서 PBR 과 RTT step 을 함께 기록하고, 공통 군지연 주입에 대한 두 측정의 동시 반응을 확인한다.",
+      "todo": "todo-joint-procedure"
+    },
+    {
+      "id": "C-02",
+      "claim": "NADM(Normalized Attack Detector Metric)이 조작된 측정을 탐지한다.",
+      "source": "Bluetooth Core 6.0 보안 설정 / 벤더 문서",
+      "source_refs": [
+        "bt-core-6-0",
+        "silabs-cs-fundamentals",
+        "nordic-nrf54-cs"
+      ],
+      "supporting": [],
+      "counter": [
+        {
+          "text": "참조 지표 3종(정규화 상호상관·위상 최소자승오차·DFT)을 모두 우회한 공격이 이미 실측으로 제시됐다",
+          "evidence": [
+            "anliker-2026-narrowband-toa"
+          ]
+        },
+        {
+          "text": "MTAC 은 2020년에 '상관 피크의 존재나 전력 수준에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다 — CS 의 NADM 이 정확히 그 범주다",
+          "evidence": [
+            "leu-2020-mtac",
+            "mtac-predicted-nadm-failure"
+          ]
+        },
+        {
+          "text": "UWB 에서도 벤더의 비공개 탐지 플래그가 우회됐다",
+          "evidence": [
+            "anliker-2023-time-for-change"
+          ]
+        }
+      ],
+      "status": "challenged",
+      "status_note": "구현이 vendor-specific 이라 '어느 벤더의 NADM 이 무엇을 막는가'는 아직 아무도 측정하지 않았다.",
+      "experiment": "nRF54L15 두 장으로 RAS 를 통해 raw step data 와 NADM 값을 뽑을 수 있는지 확인하고, 가능하면 벤더 2종 이상에서 같은 조작 입력에 대한 NADM 응답을 비교한다.",
+      "todo": null
+    },
+    {
+      "id": "C-03",
+      "claim": "Sounding Sequence 의 마커 무작위화가 Early-Detect / Late-Commit 을 막는다.",
+      "source": "규격 설계 의도 (CS SYNC 의 마커 구조)",
+      "source_refs": [
+        "bt-core-6-0",
+        "clulow-2006-long-symbols"
+      ],
+      "supporting": [
+        {
+          "text": "ED/LC 는 심볼이 끝나기 전에 판별하는 공격이므로, 판별 지점을 무작위화하면 원리적으로 성립 난이도가 올라간다",
+          "evidence": [
+            "clulow-2006-long-symbols",
+            "flury-2010-distance-decreasing"
+          ]
+        }
+      ],
+      "counter": [
+        {
+          "text": "NGD 공격에서는 Sounding Sequence 쪽 축소량이 −19.09 m 로 Random Sequence(−18.35 m)보다 크고 분산은 30배 작았다. 저자들은 '대체로 결정론적이기 때문'이라고 설명한다",
+          "evidence": [
+            "anliker-2026-narrowband-toa",
+            "sounding-sequence-backfires"
+          ]
+        }
+      ],
+      "status": "tension",
+      "status_note": "한 공격을 막으려 넣은 구조가 다른 공격에는 유리하게 작동한다. 다만 두 시퀀스 실험의 파형·필터·수신기·SNR 정규화 조건이 동일했는지는 아직 확인하지 못했다.",
+      "experiment": "MATLAB Bluetooth Toolbox 로 마커 개수·위치 분포를 바꿔가며 (a) 조기 판별 확률과 (b) NGD 통과 후 ToA 선행량 분산을 함께 측정해 트레이드오프 곡선을 그린다.",
+      "todo": "todo-marker-tradeoff"
+    },
+    {
+      "id": "C-04",
+      "claim": "거리축소 취약성은 표준의 결함이 아니라 수신기 구현의 문제이며, 적절한 수신기 설계와 결합하면 안전하다.",
+      "source": "IEEE S&P 2024 (802.15.4z HRP 에 대한 논증)",
+      "source_refs": [
+        "secure-ranging-4z-hrp-2024"
+      ],
+      "supporting": [
+        {
+          "text": "STS 파형 자체는 적절한 수신기와 결합되면 보안 거리측정을 제공한다는 분석",
+          "evidence": [
+            "secure-ranging-4z-hrp-2024"
+          ]
+        }
+      ],
+      "counter": [
+        {
+          "text": "정합필터·IFFT·MUSIC 세 추정기 계열 모두 커버리지 0.5 에서 똑같이 전환됐다. 초해상도 추정기도 부분 커버리지 공격을 막지 못한다",
+          "evidence": [
+            "exp-estimator-threshold"
+          ]
+        },
+        {
+          "text": "Ghost Peak 는 상용 칩에서 실제로 성립했다",
+          "evidence": [
+            "leu-2022-ghost-peak"
+          ]
+        }
+      ],
+      "status": "contested",
+      "status_note": "UWB 에서 이미 벌어진 논쟁이고 CS 에서 반복될 구도다. 우리 결과는 '추정기를 바꿔서는 못 막는다'까지만 말할 수 있고, 상용 CS 수신기를 직접 시험한 것은 아니다.",
+      "experiment": "상용 CS 칩(벤더 2종)에서 같은 조작 입력에 대한 Host 최종거리와 품질 플래그를 비교해, 구현 차이가 실제로 결과를 가르는지 확인한다.",
+      "todo": null
+    },
+    {
+      "id": "C-05",
+      "claim": "CS 의 물리계층 난수화(sounding sequence·마커·비트패턴·안테나 경로)는 공격자가 예측할 수 없다.",
+      "source": "Core 6.0 CS Security Start 설계",
+      "source_refs": [
+        "bt-core-6-0",
+        "bt-core-6-3"
+      ],
+      "supporting": [],
+      "counter": [
+        {
+          "text": "난수는 본딩으로 확립된 키에서 유도되는데, BLERP 는 표준 v6.1 의 재페어링 설계 결함으로 보안수준을 LSC + JustWorks 까지 0-click / 1-click 강등할 수 있음을 실증했다",
+          "evidence": [
+            "sacchetti-2026-blerp",
+            "cs-randomness-rests-on-pairing"
+          ]
+        },
+        {
+          "text": "PAwR 기반 대규모 CS 제안은 충돌 제거를 위해 '결정론적 채널 시퀀싱'을 쓰고 짝짓기 행렬을 브로드캐스트한다 — Staat 이 경고한 비랜덤 스윕이 성능을 위해 되살아났다",
+          "evidence": [
+            "schex-2026-pawr-connectionless-cs",
+            "pawr-cs-security-void",
+            "staat-2022-analog-relay"
+          ]
+        }
+      ],
+      "status": "conditional",
+      "status_note": "난수 자체가 깨졌다는 증거는 없다. 문제는 그 난수가 페어링 계층에 얹혀 있고, 그 계층이 따로 깨져 있다는 것이다. 키 유도 경로가 PK 인지 별도 CS 키인지는 규격 접근이 막혀 미확인.",
+      "experiment": "Core 6.0/6.3 Vol 6 Part H 에서 CS Security Start 의 키 유도 입력을 확정한다. 별도 CS 전용 키면 이 주장은 유지되고, PK 파생이면 강등 공격이 그대로 닿는다.",
+      "todo": "todo-core-spec"
+    },
+    {
+      "id": "C-06",
+      "claim": "다중경로 환경이 위상 기반 거리축소 공격을 어렵게 만든다.",
+      "source": "분야의 통념 (공격 논문에 대한 흔한 반론)",
+      "source_refs": [],
+      "supporting": [],
+      "counter": [
+        {
+          "text": "다중경로 조건에서도 임의 거리축소가 성립했다 — 30 m 이격을 1 m 미만으로 스푸핑",
+          "evidence": [
+            "riaz-2022-pbr-multipath-security"
+          ]
+        },
+        {
+          "text": "공격자가 없어도 PBR 은 직접경로 대신 반사경로 길이를 보고할 수 있다. 즉 자연 다중경로가 이미 '틀린 거리'를 만들고 있어 조작을 숨길 여지가 된다",
+          "evidence": [
+            "schroeder-2019-multipath-pbr"
+          ]
+        },
+        {
+          "text": "정상 채널의 PBR 최대오차가 실외 69.97 m 에 이른다",
+          "evidence": [
+            "gunia-2026-cs-metrological"
+          ]
+        }
+      ],
+      "status": "challenged",
+      "status_note": "다만 우리 trace-replay 는 실외 LOS 계열에서 확정됐고, 실내 다중경로 데이터에서는 언랩 기반 추정기가 무너져(평균 오차 3.5 m) 정합필터로 바꿨다. 다중경로 하 공격 안정성은 우리 쪽에서 아직 재현하지 않았다.",
+      "experiment": "Wieme 실내 창고 계열에 같은 군지연 주입을 적용해, 다중경로에서 조작량이 유지되는지 정합필터 추정기로 확인한다.",
+      "todo": "todo-coherence-roc"
+    }
+  ],
+  "matrix": {
+    "note": "행은 공격, 열은 CS 가 내세우는 방어 요소다. 각 칸은 '그 방어가 그 공격에 대해 무엇을 했는가'이며, **?(미평가)가 몰린 칸이 곧 실험 후보**다.",
+    "legend": [
+      {
+        "state": "bypassed",
+        "label": "우회됨",
+        "mark": "●"
+      },
+      {
+        "state": "effective",
+        "label": "유효한 방어",
+        "mark": "■"
+      },
+      {
+        "state": "raises-cost",
+        "label": "공격 비용 상승",
+        "mark": "▲"
+      },
+      {
+        "state": "partial",
+        "label": "부분적",
+        "mark": "◐"
+      },
+      {
+        "state": "not-evaluated",
+        "label": "미평가",
+        "mark": "?"
+      },
+      {
+        "state": "not-applicable",
+        "label": "해당 없음",
+        "mark": "—"
+      }
+    ],
+    "defenses": [
+      {
+        "id": "pbr",
+        "label": "PBR"
+      },
+      {
+        "id": "rtt",
+        "label": "RTT"
+      },
+      {
+        "id": "cross-check",
+        "label": "PBR/RTT 교차검증"
+      },
+      {
+        "id": "random-seq",
+        "label": "Random Sequence"
+      },
+      {
+        "id": "sounding-seq",
+        "label": "Sounding Sequence"
+      },
+      {
+        "id": "nadm",
+        "label": "NADM"
+      },
+      {
+        "id": "fhss",
+        "label": "FHSS"
+      },
+      {
+        "id": "ota-cs",
+        "label": "OTA BLE CS 실증"
+      }
+    ],
+    "attacks": [
+      {
+        "id": "ed-lc",
+        "label": "ED/LC",
+        "papers": [
+          "clulow-2006-long-symbols",
+          "flury-2010-distance-decreasing",
+          "poturalski-2011-db-802-15-4a"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "not-applicable",
+            "note": "심볼 타이밍 공격이라 위상 측정에는 직접 적용되지 않는다"
+          },
+          "rtt": {
+            "state": "bypassed",
+            "note": "IR-UWB·chirp 에서 반복 실증됐다",
+            "evidence": [
+              "flury-2010-distance-decreasing",
+              "poturalski-2011-db-802-15-4a",
+              "ranganathan-2012-chirp-attacks"
+            ]
+          },
+          "cross-check": {
+            "state": "not-evaluated",
+            "note": "CS 의 두 측정을 함께 두고 ED/LC 를 시험한 연구가 없다"
+          },
+          "random-seq": {
+            "state": "effective",
+            "note": "예측 불가능한 시퀀스는 미리 커밋할 대상을 없앤다",
+            "evidence": [
+              "clulow-2006-long-symbols"
+            ]
+          },
+          "sounding-seq": {
+            "state": "effective",
+            "note": "마커 위치 무작위화가 설계 의도상 조기 판별을 막는다"
+          },
+          "nadm": {
+            "state": "partial",
+            "note": "조기 판별 흔적이 지표에 남는지는 벤더 구현에 달렸다"
+          },
+          "fhss": {
+            "state": "not-evaluated"
+          },
+          "ota-cs": {
+            "state": "not-evaluated",
+            "note": "CS 에서의 ED/LC OTA 실증이 없다"
+          }
+        }
+      },
+      {
+        "id": "olafsdottir-phase",
+        "label": "위상 조작 (MCPR)",
+        "papers": [
+          "olafsdottir-2017-carrier-phase"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "bypassed",
+            "note": "phase-slope rollover / RF cycle slip / on-the-fly 조작 세 유형",
+            "evidence": [
+              "olafsdottir-2017-carrier-phase"
+            ]
+          },
+          "rtt": {
+            "state": "not-applicable",
+            "note": "당시 대상 시스템에 RTT 가 없다"
+          },
+          "cross-check": {
+            "state": "not-evaluated"
+          },
+          "random-seq": {
+            "state": "not-applicable"
+          },
+          "sounding-seq": {
+            "state": "not-applicable"
+          },
+          "nadm": {
+            "state": "not-applicable"
+          },
+          "fhss": {
+            "state": "raises-cost",
+            "note": "주파수별 조작이 필요하므로 호핑 추적 부담이 생긴다"
+          },
+          "ota-cs": {
+            "state": "not-evaluated"
+          }
+        }
+      },
+      {
+        "id": "staat-relay",
+        "label": "아날로그 물리계층 릴레이",
+        "papers": [
+          "staat-2022-analog-relay"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "bypassed",
+            "note": "아날로그 영역 중계로 거리값 조작과 통신 연장을 동시에 달성",
+            "evidence": [
+              "staat-2022-analog-relay"
+            ]
+          },
+          "rtt": {
+            "state": "not-evaluated",
+            "note": "대상 시스템이 PBR 중심이었다"
+          },
+          "cross-check": {
+            "state": "not-evaluated"
+          },
+          "random-seq": {
+            "state": "not-applicable"
+          },
+          "sounding-seq": {
+            "state": "not-applicable"
+          },
+          "nadm": {
+            "state": "not-applicable"
+          },
+          "fhss": {
+            "state": "raises-cost",
+            "note": "저자들이 비랜덤 주파수 스윕이 divide-and-conquer 를 허용한다고 지적하고 랜덤 호핑을 권고했다",
+            "evidence": [
+              "staat-2022-analog-relay"
+            ]
+          },
+          "ota-cs": {
+            "state": "not-evaluated"
+          }
+        }
+      },
+      {
+        "id": "riaz-multipath",
+        "label": "다중경로 하 MCPR 거리축소",
+        "papers": [
+          "riaz-2022-pbr-multipath-security"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "bypassed",
+            "note": "30 m 이격을 1 m 미만으로 스푸핑",
+            "evidence": [
+              "riaz-2022-pbr-multipath-security"
+            ]
+          },
+          "rtt": {
+            "state": "not-evaluated"
+          },
+          "cross-check": {
+            "state": "not-evaluated"
+          },
+          "random-seq": {
+            "state": "not-applicable"
+          },
+          "sounding-seq": {
+            "state": "not-applicable"
+          },
+          "nadm": {
+            "state": "not-applicable"
+          },
+          "fhss": {
+            "state": "not-evaluated"
+          },
+          "ota-cs": {
+            "state": "not-evaluated"
+          }
+        }
+      },
+      {
+        "id": "temporal-masking",
+        "label": "Temporal masking",
+        "papers": [
+          "anliker-2026-narrowband-toa"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "not-evaluated",
+            "note": "저자들이 RTT 만 다뤘다 — PBR 응답은 계산하지 않았다"
+          },
+          "rtt": {
+            "state": "bypassed",
+            "evidence": [
+              "anliker-2026-narrowband-toa"
+            ]
+          },
+          "cross-check": {
+            "state": "not-evaluated"
+          },
+          "random-seq": {
+            "state": "bypassed",
+            "note": "Random Sequence 에서도 성립",
+            "evidence": [
+              "anliker-2026-narrowband-toa"
+            ]
+          },
+          "sounding-seq": {
+            "state": "not-evaluated"
+          },
+          "nadm": {
+            "state": "bypassed",
+            "note": "참조 지표 3종을 우회",
+            "evidence": [
+              "anliker-2026-narrowband-toa"
+            ]
+          },
+          "fhss": {
+            "state": "not-evaluated"
+          },
+          "ota-cs": {
+            "state": "not-applicable",
+            "note": "OTA 미구현 — 저자들이 범위 밖으로 명시"
+          }
+        }
+      },
+      {
+        "id": "ngd",
+        "label": "음의 군지연 (NGD)",
+        "papers": [
+          "anliker-2026-narrowband-toa"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "bypassed",
+            "note": "우리 trace-replay 에서 같은 τ 가 PBR 도 c·τ 만큼 이동시켰다",
+            "evidence": [
+              "exp-flat-delay"
+            ]
+          },
+          "rtt": {
+            "state": "bypassed",
+            "note": "−18.35 m (Random Sequence), −19.09 m (Sounding Sequence)",
+            "evidence": [
+              "anliker-2026-narrowband-toa"
+            ]
+          },
+          "cross-check": {
+            "state": "bypassed",
+            "note": "공통모드 지연이라 두 측정이 같이 움직인다 — 다만 동일 procedure 동시 관측은 미실시",
+            "evidence": [
+              "exp-flat-delay",
+              "dual-defense-not-independent"
+            ]
+          },
+          "random-seq": {
+            "state": "bypassed",
+            "evidence": [
+              "anliker-2026-narrowband-toa"
+            ]
+          },
+          "sounding-seq": {
+            "state": "bypassed",
+            "note": "오히려 축소량이 크고 분산이 30배 작다",
+            "evidence": [
+              "anliker-2026-narrowband-toa",
+              "sounding-sequence-backfires"
+            ]
+          },
+          "nadm": {
+            "state": "bypassed",
+            "evidence": [
+              "anliker-2026-narrowband-toa"
+            ]
+          },
+          "fhss": {
+            "state": "effective",
+            "note": "추적 실패 시 정합도가 0.949 → 0.23~0.39 로 붕괴해 스푸핑이 DoS 로 바뀐다. 현재까지 확인된 가장 강한 방어",
+            "evidence": [
+              "exp-dispersive",
+              "fhss-tracking-is-the-real-barrier"
+            ]
+          },
+          "ota-cs": {
+            "state": "not-applicable",
+            "note": "OTA 미구현"
+          }
+        }
+      },
+      {
+        "id": "ghost-peak",
+        "label": "Ghost Peak (참고: UWB)",
+        "papers": [
+          "leu-2022-ghost-peak"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "not-applicable"
+          },
+          "rtt": {
+            "state": "bypassed",
+            "note": "성공률 4% — 반복 시행으로 오수락에 도달",
+            "evidence": [
+              "leu-2022-ghost-peak"
+            ]
+          },
+          "cross-check": {
+            "state": "not-applicable",
+            "note": "UWB 에는 PBR 병행이 없다"
+          },
+          "random-seq": {
+            "state": "raises-cost",
+            "note": "STS 추측 성공률을 낮추지만 0 으로 만들지는 못한다"
+          },
+          "sounding-seq": {
+            "state": "not-applicable"
+          },
+          "nadm": {
+            "state": "partial",
+            "note": "UWB-SV 계열 방어가 탐지율 96.24% / 오탐 0.32% 를 보고",
+            "evidence": [
+              "uwb-sv-2023-ccs"
+            ]
+          },
+          "fhss": {
+            "state": "not-applicable"
+          },
+          "ota-cs": {
+            "state": "not-applicable"
+          }
+        }
+      },
+      {
+        "id": "common-group-delay",
+        "label": "공통 군지연 (우리 결과)",
+        "papers": [],
+        "cells": {
+          "pbr": {
+            "state": "bypassed",
+            "note": "c·τ 만큼 이동, 5개 주입 지점 전부 예측과 6 mm 이내",
+            "evidence": [
+              "exp-flat-delay"
+            ]
+          },
+          "rtt": {
+            "state": "bypassed",
+            "note": "해석적으로 c·τ — 실측은 Anliker 의 별도 실험",
+            "evidence": [
+              "exp-flat-delay",
+              "anliker-2026-narrowband-toa"
+            ]
+          },
+          "cross-check": {
+            "state": "bypassed",
+            "note": "두 측정이 같은 방향으로 움직이므로 교차검증이 독립 증거가 되지 못한다",
+            "evidence": [
+              "exp-flat-delay",
+              "dual-defense-not-independent"
+            ]
+          },
+          "random-seq": {
+            "state": "not-applicable",
+            "note": "시퀀스 내용과 무관한 회로 수준 조작"
+          },
+          "sounding-seq": {
+            "state": "not-applicable"
+          },
+          "nadm": {
+            "state": "not-evaluated",
+            "note": "정합도 지표는 계산했으나 벤더 NADM 응답은 미확인"
+          },
+          "fhss": {
+            "state": "effective",
+            "note": "커버리지 0.5 문턱 — 그 아래는 이동량 0",
+            "evidence": [
+              "exp-coverage",
+              "exp-estimator-threshold"
+            ]
+          },
+          "ota-cs": {
+            "state": "not-evaluated",
+            "note": "trace-replay 단계 — CS 보드 실측이 다음 단계"
+          }
+        }
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "RQ1",
+      "theme": "identifiability",
+      "title": "Identifiability — 조작과 실제 거리를 구별할 수 있는가",
+      "question": "PBR 과 RTT 만으로 실제 전파 지연과 공격 회로가 넣은 지연을 구별할 수 있는가",
+      "what_we_know": "공통 군지연에 대해서는 구별되지 않는다. 순수 군지연 τ 는 PBR 과 RTT 를 모두 c·τ 만큼 움직이고, 실측 주입 5개 지점이 예측과 6 mm 이내로 일치했다.",
+      "supporting": [
+        "exp-flat-delay",
+        "anliker-2026-narrowband-toa",
+        "olafsdottir-2017-carrier-phase"
+      ],
+      "contradicting": [
+        "bt-cs-feature-page",
+        "secure-ranging-4z-hrp-2024"
+      ],
+      "maturity": "trace-replay",
+      "unknown": "동일 CS procedure 에서 PBR·RTT 를 함께 기록한 실험이 없다. 주파수 의존 τ(f) 에서 두 측정이 갈라지는 조건도 시뮬레이션까지만 확인됐다.",
+      "next_experiment": "CS 보드 2장으로 mode 3 측정을 수집해 PBR·RTT·NADM·품질플래그·Host 최종거리를 동시 기록한다.",
+      "todos": [
+        "todo-joint-procedure",
+        "todo-rtt-dataset"
+      ]
+    },
+    {
+      "id": "RQ2",
+      "theme": "feasibility",
+      "title": "Feasibility — 공격자가 그 조건을 만들 수 있는가",
+      "question": "실제 공격자가 FHSS 를 추적하면서 NGD 경로를 통과시킬 수 있는가",
+      "what_we_know": "이분법으로 갈린다. 추적에 성공하면 회로 대역폭과 무관하게 무흔적(정합도 0.949 유지), 실패하면 정합도 0.23~0.39 로 붕괴해 DoS 가 된다. 부분 커버리지에는 0.5 문턱이 있고 B210 급(0.72)이면 성립하되 흔적이 남는다(정합도 0.703).",
+      "supporting": [
+        "exp-dispersive",
+        "exp-coverage",
+        "exp-estimator-threshold"
+      ],
+      "contradicting": [],
+      "maturity": "simulated",
+      "unknown": "실기기에서 step 간격 안에 LO 를 재조정할 수 있는지가 미검증이다. CS step 지속시간·간격 값 자체도 아직 확정하지 못했다.",
+      "next_experiment": "CS step 타이밍을 확정한 뒤 USRP B210 으로 실시간 채널 검출 → LO 재조정 → 지연 경로 통과의 3단계를 실측한다.",
+      "todos": [
+        "todo-step-timing",
+        "todo-fhss-poc",
+        "todo-ngd-response"
+      ]
+    },
+    {
+      "id": "RQ3",
+      "theme": "receiver-policy",
+      "title": "Receiver policy — 조작된 값이 수락되는가",
+      "question": "조작된 신호가 추정되고, 탐지를 통과하고, 최종적으로 수락되는가",
+      "what_we_know": "추정 단계에서는 추정기 계열을 바꿔도 막히지 않는다(정합필터·IFFT·MUSIC 모두 0.5 문턱). 탐지 단계의 NADM 은 참조 지표 3종이 이미 우회됐고, MTAC 이 2020년에 이 범주가 안전하지 않다고 논증했다.",
+      "supporting": [
+        "exp-estimator-threshold",
+        "anliker-2026-narrowband-toa",
+        "leu-2020-mtac"
+      ],
+      "contradicting": [
+        "secure-ranging-4z-hrp-2024",
+        "uwb-sv-2023-ccs"
+      ],
+      "maturity": "trace-replay",
+      "unknown": "벤더별 NADM 구현의 실제 방어력, 그리고 정합도 기반 탐지의 정상 LOS/NLOS 오탐률(ROC)이 없다. 성공률과 운영 위험을 잇는 공통 기준도 없다.",
+      "next_experiment": "Wieme 실내 NLOS 계열로 정합도 탐지의 ROC 곡선을 먼저 그린다 — 하드웨어 없이 가능하다.",
+      "todos": [
+        "todo-coherence-roc",
+        null,
+        null
+      ]
+    },
+    {
+      "id": "RQ4",
+      "theme": "system-composition",
+      "title": "System composition — 상위 계층이 위험을 어떻게 바꾸는가",
+      "question": "CS 의 물리계층 방어가 페어링·스케줄링·응용 정책에 얼마나 종속되는가",
+      "what_we_know": "CS 의 모든 물리계층 난수화는 본딩 키에서 유도된다. 그 페어링은 표준 설계 결함으로 0-click / 1-click 강등이 실증돼 있다. 한편 PAwR 기반 대규모 CS 제안은 성능을 위해 결정론적 채널 시퀀싱을 되살렸고 보안 분석이 없다.",
+      "supporting": [
+        "sacchetti-2026-blerp",
+        "schex-2026-pawr-connectionless-cs",
+        "staat-2022-analog-relay"
+      ],
+      "contradicting": [],
+      "maturity": "hypothesis",
+      "unknown": "CS Security Start 의 키 유도 입력(PK / 세션 키 / CS 전용 키)이 미확인이다. 규격이 회원 전용이라 막혀 있다.",
+      "next_experiment": "Core 6.0/6.3 Vol 6 Part H 에서 키 유도 경로를 확정한다. 하드웨어 없이 규격만으로 답이 갈린다.",
+      "todos": [
+        "todo-core-spec",
+        "todo-pawr-sniff",
+        "todo-enlargement-usecases"
+      ]
+    }
+  ],
+  "reproduction": [
+    {
+      "id": "repro-trace-replay",
+      "title": "Trace-replay 파이프라인 (Wieme 2025 공개 데이터셋)",
+      "target_papers": [
+        "wieme-2025-cs-commercial-hw"
+      ],
+      "next_milestone": "실내 NLOS 계열로 정합도 탐지 ROC 곡선 (todo-coherence-roc)",
+      "items": [
+        {
+          "label": "데이터셋 성격 확인 (원시 per-step I/Q)",
+          "percent": 100,
+          "status": "done",
+          "basis": "exp-pbr-recovery — MoCap 기준 1.0093 m 에 대해 0.9795 m 복원(오차 3 cm)",
+          "evidence": [
+            "exp-pbr-recovery"
+          ]
+        },
+        {
+          "label": "위상-거리 관례 확정",
+          "percent": 100,
+          "status": "done",
+          "basis": "exp-convention — 실외 30개 거리로 4π 확정, 기울기 비 1.0051",
+          "evidence": [
+            "exp-convention"
+          ]
+        },
+        {
+          "label": "군지연 주입 (평탄 τ)",
+          "percent": 100,
+          "status": "done",
+          "basis": "exp-flat-delay — 5개 주입 지점 전부 예측과 6 mm 이내",
+          "evidence": [
+            "exp-flat-delay"
+          ]
+        },
+        {
+          "label": "분산형 τ(f) 주입",
+          "percent": 60,
+          "status": "partial",
+          "basis": "exp-dispersive 는 로렌츠형 1차 근사를 쓴다. Anliker Figure 10 실측 응답으로 교체해야 붕괴 임계가 확정된다",
+          "evidence": [
+            "exp-dispersive"
+          ]
+        },
+        {
+          "label": "추정기 계열별 내성",
+          "percent": 100,
+          "status": "done",
+          "basis": "exp-estimator-threshold — 정합필터·IFFT·MUSIC 모두 커버리지 0.5 문턱",
+          "evidence": [
+            "exp-estimator-threshold"
+          ]
+        },
+        {
+          "label": "정상 LOS/NLOS 오탐률 (ROC)",
+          "percent": 0,
+          "status": "todo",
+          "basis": "기준 0.949 대 공격 0.23~0.39 의 분리만으로는 방어가 아니다. 임계값에서 정상 측정이 얼마나 거부되는지 필요",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "repro-anliker-2026",
+      "title": "Anliker 2026 — 협대역 ToA 공격 (WiSec '26)",
+      "target_papers": [
+        "anliker-2026-narrowband-toa"
+      ],
+      "next_milestone": "CS step 타이밍 확정 → B210 FHSS 추적 실현 가능성 실측 (todo-step-timing → todo-fhss-poc)",
+      "items": [
+        {
+          "label": "논문 전문 확보 및 이해",
+          "percent": 100,
+          "status": "done",
+          "basis": "verification: verified — 전문 대조 완료",
+          "evidence": [
+            "anliker-2026-narrowband-toa"
+          ]
+        },
+        {
+          "label": "NGD 전달함수 모델링",
+          "percent": 50,
+          "status": "partial",
+          "basis": "로렌츠형 1차 근사로 대체 중. Figure 10 실측값 반영 필요",
+          "evidence": [
+            "exp-dispersive"
+          ]
+        },
+        {
+          "label": "MATLAB CS SYNC 파이프라인",
+          "percent": 0,
+          "status": "todo",
+          "basis": "현재 재현은 Python 이고 규격 파형 생성은 미착수. Bluetooth Toolbox 로 LE 1M / 128-bit Random Sequence / 4.77 MHz IF 설정 재현 예정",
+          "evidence": [
+            "matlab-bt-cs-toolbox",
+            "entry-cost-is-low"
+          ]
+        },
+        {
+          "label": "LTspice NGD 회로",
+          "percent": 0,
+          "status": "todo",
+          "basis": "회로는 COTS 연산증폭기와 수동소자. 미착수",
+          "evidence": []
+        },
+        {
+          "label": "물리 NGD 회로 제작",
+          "percent": 0,
+          "status": "todo",
+          "basis": "미착수",
+          "evidence": []
+        },
+        {
+          "label": "BLE CS 보드 통합",
+          "percent": 0,
+          "status": "blocked",
+          "basis": "CS 지원 보드 2장 미확보 (mode 3)",
+          "evidence": []
+        },
+        {
+          "label": "OTA / FHSS 추적",
+          "percent": 0,
+          "status": "blocked",
+          "basis": "USRP B210 필요, todo-step-timing 선행. 저자들이 범위 밖으로 명시한 지점",
+          "evidence": [
+            "fhss-tracking-is-the-real-barrier"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repro-staat-2022",
+      "title": "Staat 2022 — 아날로그 물리계층 릴레이 (WiSec '22)",
+      "target_papers": [
+        "staat-2022-analog-relay"
+      ],
+      "next_milestone": "BOM 확정 및 부품 조달 가능성 확인",
+      "items": [
+        {
+          "label": "논문 전문 확보 및 이해",
+          "percent": 100,
+          "status": "done",
+          "basis": "verification: verified — 전문 대조 완료",
+          "evidence": [
+            "staat-2022-analog-relay"
+          ]
+        },
+        {
+          "label": "부품 목록(BOM) 확정",
+          "percent": 0,
+          "status": "todo",
+          "basis": "논문 기준 부품 총액 EUR 2,200, 평가보드 제외 시 EUR 1,200 미만이라는 것까지만 확인",
+          "evidence": [
+            "entry-cost-is-low"
+          ]
+        },
+        {
+          "label": "부품 조달",
+          "percent": 0,
+          "status": "todo",
+          "basis": "미착수",
+          "evidence": []
+        },
+        {
+          "label": "아날로그 릴레이 조립",
+          "percent": 0,
+          "status": "todo",
+          "basis": "미착수",
+          "evidence": []
+        },
+        {
+          "label": "위상 조작 벤치 시험",
+          "percent": 0,
+          "status": "todo",
+          "basis": "미착수",
+          "evidence": []
+        },
+        {
+          "label": "BLE CS PBR 통합",
+          "percent": 0,
+          "status": "blocked",
+          "basis": "CS 보드 미확보",
+          "evidence": []
+        }
+      ]
+    }
+  ]
+}

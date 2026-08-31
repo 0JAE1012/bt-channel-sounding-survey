@@ -129,6 +129,105 @@
   }
   .run-log:empty { display: none; }
 
+  /* ---------- research landscape ---------- */
+  /* 계보는 세로 흐름이다. 단계 → 화살표 → 두 갈래 → 합류 → CS → 방어 → 열린 문제. */
+  .flow { display: flex; flex-direction: column; align-items: center; margin: 18px 0 6px; }
+  .flow-node {
+    width: min(760px, 100%); background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 13px 16px; box-shadow: var(--shadow);
+  }
+  .flow-node.k-defense { border-color: var(--accent); background: var(--accent-soft); }
+  .flow-node.k-open { border-color: var(--warn); background: var(--warn-soft); }
+  .flow-node.k-cs { border-color: var(--info); }
+  .flow-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+  .flow-title { font-size: 15px; font-weight: 640; letter-spacing: -.01em; }
+  .flow-period { font-size: 11.5px; color: var(--fg-faint); font-family: var(--mono); }
+  .flow-sum { margin: 7px 0 0; font-size: 13px; color: var(--fg-muted); line-height: 1.65; }
+  .flow-arrow { color: var(--border-strong); font-size: 15px; line-height: 1; padding: 7px 0; }
+  .flow-split { display: flex; gap: 14px; width: min(760px, 100%); flex-wrap: wrap; }
+  .flow-split > * { flex: 1 1 320px; }
+  .flow-col-items { margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 5px; }
+  .flow-col-items span {
+    font-size: 11.5px; padding: 2px 8px; border-radius: 999px;
+    background: var(--bg-sunken); color: var(--fg-muted); border: 1px solid var(--border);
+  }
+  .refchips { margin-top: 9px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .refchips a {
+    font-size: 11px; font-family: var(--mono); padding: 2px 7px; border-radius: 5px;
+    background: var(--bg-sunken); border: 1px solid var(--border); color: var(--fg-muted); text-decoration: none;
+  }
+  .refchips a:hover { border-color: var(--accent); color: var(--accent); }
+
+  .ls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 14px; margin-top: 26px; align-items: start; }
+  .ls-box {
+    background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid var(--fg-faint);
+    border-radius: var(--radius); padding: 14px 16px;
+  }
+  .ls-box.know { border-left-color: var(--accent); }
+  .ls-box.broken { border-left-color: var(--danger); }
+  .ls-box.assumed { border-left-color: var(--warn); }
+  .ls-box.open { border-left-color: var(--info); }
+  .ls-box h3 { margin: 0 0 3px; font-size: 14px; }
+  .ls-box .sub { margin: 0 0 10px; font-size: 11.5px; color: var(--fg-faint); }
+  .ls-item { padding: 10px 0; border-top: 1px solid var(--border); font-size: 13px; line-height: 1.7; }
+  .ls-item:first-of-type { border-top: 0; }
+  .ls-why { margin: 6px 0 0; font-size: 12.5px; color: var(--fg-muted); line-height: 1.65; }
+
+  /* ---------- attack x defense matrix ---------- */
+  .mx-wrap { overflow-x: auto; margin-top: 14px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-raised); }
+  table.mx { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  table.mx th, table.mx td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: center; }
+  table.mx th:first-child, table.mx td:first-child { text-align: left; white-space: nowrap; position: sticky; left: 0; background: var(--bg-raised); }
+  table.mx thead th { font-size: 11.5px; color: var(--fg-muted); font-weight: 560; vertical-align: bottom; }
+  table.mx tbody tr:hover td { background: var(--bg-sunken); }
+  .cell { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 6px; font-size: 12px; cursor: help; }
+  .cell.bypassed { background: var(--danger-soft); color: var(--danger); }
+  .cell.effective { background: var(--accent-soft); color: var(--accent); }
+  .cell.raises-cost { background: var(--warn-soft); color: var(--warn); }
+  .cell.partial { background: var(--info-soft); color: var(--info); }
+  .cell.not-evaluated { background: var(--bg-sunken); color: var(--fg-faint); font-weight: 700; }
+  .cell.not-applicable { background: none; color: var(--fg-faint); }
+  .mx-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; font-size: 11.5px; color: var(--fg-muted); }
+  .mx-note { margin-top: 10px; font-size: 12.5px; color: var(--fg-muted); line-height: 1.7; }
+  .mx-detail { margin-top: 16px; font-size: 13px; }
+  .mx-detail li { line-height: 1.7; margin-bottom: 6px; }
+
+  /* ---------- claims ---------- */
+  .claim { background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--radius); padding: 15px 17px; margin-bottom: 12px; box-shadow: var(--shadow); }
+  .claim-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+  .claim-id { font-family: var(--mono); font-size: 12px; color: var(--fg-faint); }
+  .claim-text { margin: 6px 0 0; font-size: 14.5px; font-weight: 560; line-height: 1.6; }
+  .claim-src { margin: 6px 0 0; font-size: 12px; color: var(--fg-muted); }
+  .claim-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; margin-top: 12px; }
+  .claim-col h4 { margin: 0 0 6px; font-size: 12px; color: var(--fg-muted); font-weight: 560; }
+  .claim-col li { font-size: 12.5px; line-height: 1.65; margin-bottom: 7px; }
+  .claim-status { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: var(--bg-sunken); font-size: 12.5px; line-height: 1.7; }
+  .claim-exp { margin-top: 9px; font-size: 12.5px; color: var(--fg-muted); line-height: 1.7; }
+  .b-st-challenged, .b-st-refuted { background: var(--danger-soft); color: var(--danger); }
+  .b-st-tension, .b-st-contested { background: var(--warn-soft); color: var(--warn); }
+  .b-st-conditional, .b-st-untested { background: var(--info-soft); color: var(--info); }
+  .b-st-supported { background: var(--accent-soft); color: var(--accent); }
+
+  /* ---------- research questions ---------- */
+  .rq { background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid var(--info); border-radius: var(--radius); padding: 15px 17px; margin-bottom: 12px; }
+  .rq h3 { margin: 0; font-size: 15px; }
+  .rq-q { margin: 5px 0 0; font-size: 13.5px; color: var(--fg-muted); line-height: 1.65; }
+  .rq-row { margin-top: 11px; font-size: 13px; line-height: 1.7; }
+  .rq-row b { font-size: 11.5px; color: var(--fg-faint); font-weight: 560; display: block; margin-bottom: 2px; }
+
+  /* ---------- reproduction ---------- */
+  .repro { background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--radius); padding: 15px 17px; margin-bottom: 12px; box-shadow: var(--shadow); }
+  .repro h3 { margin: 0 0 2px; font-size: 15px; }
+  .bar-row { display: grid; grid-template-columns: minmax(150px, 260px) 1fr auto; gap: 10px; align-items: center; padding: 7px 0; border-top: 1px solid var(--border); font-size: 12.5px; }
+  .bar-row:first-of-type { border-top: 0; }
+  .bar { height: 9px; border-radius: 999px; background: var(--bg-sunken); overflow: hidden; }
+  .bar > i { display: block; height: 100%; background: var(--accent); }
+  .bar-row.blocked .bar > i { background: var(--danger); }
+  .bar-row.partial .bar > i { background: var(--warn); }
+  .bar-pct { font-family: var(--mono); font-size: 11.5px; color: var(--fg-muted); min-width: 42px; text-align: right; }
+  .bar-basis { grid-column: 1 / -1; font-size: 12px; color: var(--fg-muted); line-height: 1.65; padding: 0 0 6px 2px; }
+  .repro-next { margin-top: 11px; padding: 9px 11px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 12.5px; }
+
   /* ---------- stats ---------- */
   .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 4px; }
   .stat {
@@ -139,7 +238,7 @@
   .stat-l { font-size: 11.5px; color: var(--fg-muted); margin-top: 1px; }
 
   /* ---------- tabs ---------- */
-  .tabs { display: flex; gap: 4px; margin: 22px 0 0; border-bottom: 1px solid var(--border); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 4px; margin: 22px 0 0; border-bottom: 1px solid var(--border); }
   .tab {
     border: 0; background: none; color: var(--fg-muted); font: inherit; font-size: 14px;
     padding: 9px 14px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px;
@@ -482,10 +581,15 @@
   <div class="stats" id="stats"></div>
 
   <div class="tabs" role="tablist">
-    <button class="tab" role="tab" id="tab-papers"    aria-selected="true"  type="button">논문 <span class="cnt" id="cnt-papers"></span></button>
+    <button class="tab" role="tab" id="tab-landscape" aria-selected="true"  type="button">Landscape</button>
+    <button class="tab" role="tab" id="tab-papers"    aria-selected="false" type="button">논문 <span class="cnt" id="cnt-papers"></span></button>
     <button class="tab" role="tab" id="tab-standards" aria-selected="false" type="button">표준 문서 <span class="cnt" id="cnt-standards"></span></button>
     <button class="tab" role="tab" id="tab-graph"     aria-selected="false" type="button">인용 관계 <span class="cnt" id="cnt-edges"></span></button>
-    <button class="tab" role="tab" id="tab-insights"  aria-selected="false" type="button">인사이트 <span class="cnt" id="cnt-insights"></span></button>
+    <button class="tab" role="tab" id="tab-lineage"   aria-selected="false" type="button">연구 계보 <span class="cnt" id="cnt-rel"></span></button>
+    <button class="tab" role="tab" id="tab-matrix"    aria-selected="false" type="button">공격 × 방어</button>
+    <button class="tab" role="tab" id="tab-claims"    aria-selected="false" type="button">주장과 근거 <span class="cnt" id="cnt-claims"></span></button>
+    <button class="tab" role="tab" id="tab-insights"  aria-selected="false" type="button">연구 질문 <span class="cnt" id="cnt-insights"></span></button>
+    <button class="tab" role="tab" id="tab-repro"     aria-selected="false" type="button">재현</button>
     <button class="tab" role="tab" id="tab-log"       aria-selected="false" type="button">기록</button>
   </div>
 
@@ -499,6 +603,15 @@
 
   <section id="inspanel" hidden>
     <p class="g-note" style="padding-left:0">
+      주제 하나를 <strong>연구 질문(RQ)</strong> 단위로 폅니다 — 아는 것 / 뒷받침하는 연구 /
+      반대하는 연구 / 근거의 무게 / <strong>아직 모르는 것</strong> / 다음 실험.
+      그 아래에 할 일, 주제별 인사이트, 실험 이력, 읽는 순서가 이어집니다.
+    </p>
+    <div id="rq-list"></div>
+
+    <h2 class="sec-title">할 일</h2>
+    <p class="sec-sub" id="todo-count2" hidden></p>
+    <p class="g-note" style="padding-left:0">
       코퍼스를 읽으며 나온 관찰과 연구 아이디어입니다. <strong>남의 논문이 아니라 제 판단</strong>이므로
       근거 논문을 직접 확인한 뒤 쓰세요. 각 항목에 실행 가능한 첫 실험과 선행연구 중복 위험을 함께 적었습니다.
       <br><strong>근거 배지</strong>가 그 주장이 무엇 위에 서 있는지 말합니다.
@@ -506,7 +619,6 @@
       붉은 배지는 아직 문헌과 추론뿐이라는 뜻입니다.
     </p>
 
-    <h2 class="sec-title">할 일</h2>
     <p class="sec-sub" id="todo-count"></p>
     <div class="todo" id="todo-list"></div>
 
@@ -521,6 +633,12 @@
     <p class="g-note" style="padding-left:0" id="rd-note"></p>
     <div class="rd" id="rd-list"></div>
   </section>
+
+  <section id="lspanel" hidden></section>
+  <section id="lineagepanel" hidden></section>
+  <section id="matrixpanel" hidden></section>
+  <section id="claimspanel" hidden></section>
+  <section id="repropanel" hidden></section>
 
   <section id="graphpanel" hidden>
     <p class="g-note" style="padding-left:0">
@@ -595,7 +713,7 @@
 
   // ---------- state ----------
   const state = {
-    tab: "papers",
+    tab: "landscape",
     q: "",
     sort: "relevance",
     cat: new Set(),
@@ -606,7 +724,7 @@
     gtech: new Set(),
     open: new Set(),
   };
-  let papers = [], standards = [], insights = [], meta = {};
+  let papers = [], standards = [], insights = [], meta = {}, research = {};
   let themes = [], todos = [], experiments = [], readingOrder = null;
 
   const CATS = [
@@ -781,24 +899,31 @@
 </article>`;
   }
 
+  // 탭 → 패널 · 렌더러. 목록 두 탭(papers/standards)만 검색·필터·정렬 줄을 쓴다.
+  const PANELS = {
+    landscape: ["lspanel", () => buildLandscape()],
+    graph:     ["graphpanel", () => buildGraph()],
+    lineage:   ["lineagepanel", () => buildLineage()],
+    matrix:    ["matrixpanel", () => buildMatrix()],
+    claims:    ["claimspanel", () => buildClaims()],
+    insights:  ["inspanel", () => { buildRQ(); buildInsights(); }],
+    repro:     ["repropanel", () => buildRepro()],
+    log:       ["logpanel", () => buildLog()],
+  };
+  const ALL_TABS = ["landscape", "papers", "standards", "graph", "lineage",
+                    "matrix", "claims", "insights", "repro", "log"];
+
   function render() {
-    const isG = state.tab === "graph", isI = state.tab === "insights";
-    const isL = state.tab === "log";
-    const isList = !isG && !isI && !isL;
-    ["papers", "standards", "graph", "insights", "log"].forEach((t) =>
+    const isList = state.tab === "papers" || state.tab === "standards";
+    ALL_TABS.forEach((t) =>
       document.getElementById("tab-" + t).setAttribute("aria-selected", String(state.tab === t)));
 
-    // Graph and insights are their own panels: the search/filter/sort row and the
-    // card list belong to the two list tabs and would only add noise there.
     document.querySelector(".controls").hidden = !isList;
     document.getElementById("list-resultline").hidden = !isList;
     document.getElementById("list").hidden = !isList;
-    document.getElementById("graphpanel").hidden = !isG;
-    document.getElementById("inspanel").hidden = !isI;
-    document.getElementById("logpanel").hidden = !isL;
-    if (isG) { buildGraph(); return; }
-    if (isI) { buildInsights(); return; }
-    if (isL) { buildLog(); return; }
+    for (const [t, [panel]] of Object.entries(PANELS))
+      document.getElementById(panel).hidden = state.tab !== t;
+    if (!isList) { PANELS[state.tab][1](); return; }
 
     syncFilters();
     const isP = state.tab === "papers";
@@ -971,10 +1096,6 @@
 
     // 실험 이력. 정정된 것도 남긴다.
     const ESTAT = { done: "완료", corrected: "정정됨", superseded: "대체됨" };
-    const MAT2 = {
-      hypothesis: "문헌·추론", simulated: "시뮬레이션", "trace-replay": "실측 trace 주입",
-      conducted: "케이블 실측", ota: "무선 실증", commercial: "상용 end-to-end",
-    };
     document.getElementById("exp-list").innerHTML = experiments.map((e) => `
 <div class="exp-row">
   <div class="exp-q">${esc(e.question)}</div>
@@ -1043,20 +1164,293 @@
     // Evidence and reading-order links are in-page anchors, but the target card
     // only exists while its own tab is rendered. Evidence can cite a standard as
     // readily as a paper, so route to whichever tab holds the id.
-    document.getElementById("inspanel").addEventListener("click", (e) => {
+    ["inspanel", "lspanel", "lineagepanel", "matrixpanel", "claimspanel", "repropanel"]
+      .forEach((pid) => document.getElementById(pid).addEventListener("click", (e) => {
       const a = e.target.closest("a[href^='#']");
       if (!a) return;
       const id = decodeURIComponent(a.getAttribute("href").slice(1));
       const tab = papers.some((p) => p.id === id) ? "papers"
-                : standards.some((s) => s.id === id) ? "standards" : null;
+                : standards.some((s) => s.id === id) ? "standards"
+                : (insights.some((n) => n.id === id) || (experiments || []).some((x) => x.id === id)
+                   || themes.some((t) => t.id === id)) ? "insights" : null;
       if (!tab) return;
       e.preventDefault();
       state.tab = tab; state.open.add(id);
-      state.cat.clear(); state.tier.clear(); state.rel.clear(); state.ver.clear();
+      state.cat.clear(); state.tier.clear(); state.rel.clear(); state.ver.clear(); state.tech.clear();
       state.q = ""; document.getElementById("q").value = "";
       render();
       document.getElementById(id)?.scrollIntoView({ block: "center", behavior: "smooth" });
-    });
+    }));
+  }
+
+
+  // 근거의 무게 라벨. 인사이트 탭과 Landscape 가 같이 쓴다.
+  const MAT2 = {
+    hypothesis: "문헌·추론", simulated: "시뮬레이션", "trace-replay": "실측 trace 주입",
+    conducted: "케이블 실측", ota: "무선 실증", commercial: "상용 end-to-end",
+  };
+
+  // ---------- research questions ----------
+  // insights.json 의 theme 하나에 research.json 의 questions 하나가 대응한다.
+  // theme 는 "무엇에 관한 축인가", RQ 는 "그래서 무엇을 묻고 무엇이 비어 있는가"다.
+  function buildRQ() {
+    const el = document.getElementById("rq-list");
+    if (!el) return;
+    const qs = research.questions || [];
+    el.innerHTML = qs.map((q) => {
+      const th = themes.find((t) => t.id === q.theme);
+      const mine = insights.filter((n) => n.theme === q.theme);
+      const row = (label, html) => html ? `<div class="rq-row"><b>${esc(label)}</b>${html}</div>` : "";
+      return `<article class="rq" id="${esc(q.id)}">
+        <h3>${esc(q.id)}. ${esc(q.title)}</h3>
+        <p class="rq-q">${bold(q.question)}</p>
+        ${row("아는 것", bold(q.what_we_know || ""))}
+        ${row("뒷받침하는 연구", refChips(q.supporting))}
+        ${row("반대하거나 다른 결론", (q.contradicting || []).length ? refChips(q.contradicting)
+              : `<span class="ls-why">코퍼스 안에 없습니다.</span>`)}
+        ${row("근거의 무게", `<span class="badge b-mat-${esc(q.maturity)}">${esc(MAT2[q.maturity] || q.maturity)}</span>`)}
+        ${row("아직 모르는 것", bold(q.unknown || ""))}
+        ${row("다음 실험", bold(q.next_experiment || ""))}
+        <div class="rq-row"><b>연결</b>
+          <span class="ls-why">주제 ${th ? esc(th.title) : esc(q.theme)} ·
+          인사이트 ${mine.length}건 · 할 일 ${(q.todos || []).length}건</span></div>
+      </article>`;
+    }).join("");
+  }
+
+  // ---------- research landscape ----------
+  // 이 탭이 첫 화면인 이유: 논문 목록은 "무엇이 있는가"만 답한다. 연구자가 먼저 알아야 하는 것은
+  // 이 분야가 어디까지 왔고 무엇이 아직 비어 있는가다.
+  const REF_LABEL = (id) => {
+    const p = papers.find((x) => x.id === id);
+    if (p) {
+      const a = (p.authors || [])[0];
+      const nm = a && !/확인/.test(a) ? a.split(/\s+/).pop() : p.venue;
+      return `${nm} ${p.year}`;
+    }
+    const st = standards.find((x) => x.id === id);
+    if (st) return st.title.length > 34 ? st.title.slice(0, 32) + "…" : st.title;
+    const ex = (experiments || []).find((x) => x.id === id);
+    if (ex) return `실험 ${ex.id.replace(/^exp-/, "")}`;
+    const ins = insights.find((x) => x.id === id);
+    if (ins) return `인사이트 ${ins.title.slice(0, 22)}…`;
+    return id;
+  };
+  const refChips = (ids) => !ids || !ids.length ? "" :
+    `<div class="refchips">${ids.map((i) =>
+      `<a href="#${esc(i)}" title="${esc(i)}">${esc(REF_LABEL(i))}</a>`).join("")}</div>`;
+
+  // **굵게** 만 지원하는 최소 강조. 이 파일들의 텍스트가 그 표기를 쓴다.
+  const bold = (t) => esc(t).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+
+  function flowNode(n, cls) {
+    return `<div class="flow-node ${cls}">
+      <div class="flow-head"><span class="flow-title">${esc(n.label)}</span>
+        ${n.period ? `<span class="flow-period">${esc(n.period)}</span>` : ""}</div>
+      ${n.summary ? `<p class="flow-sum">${bold(n.summary)}</p>` : ""}
+      ${n.items ? `<div class="flow-col-items">${n.items.map((i) => `<span>${esc(i)}</span>`).join("")}</div>` : ""}
+      ${refChips([...(n.papers || []), ...(n.standards || [])])}
+    </div>`;
+  }
+
+  function buildLandscape() {
+    const L = research.landscape || {};
+    const arrow = `<div class="flow-arrow">▼</div>`;
+    const flow = (L.stages || []).map((st, i) => {
+      const body = st.kind === "split"
+        ? `<div class="flow-split">${(st.columns || []).map((c) => flowNode(c, "k-branch")).join("")}</div>`
+        : flowNode(st, st.kind === "defense" ? "k-defense" : st.kind === "open" ? "k-open"
+                    : st.id === "bt-cs" ? "k-cs" : "k-stage");
+      return (i ? arrow : "") + body;
+    }).join("");
+
+    const box = (cls, title, sub, items) => `<div class="ls-box ${cls}">
+      <h3>${esc(title)}</h3><p class="sub">${esc(sub)}</p>${items}</div>`;
+
+    const know = (research.know || []).map((k) => `<div class="ls-item">${bold(k.text)}
+      ${k.maturity ? `<span class="badge b-mat-${esc(k.maturity)}">${esc(MAT2[k.maturity] || k.maturity)}</span>` : ""}
+      ${refChips(k.evidence)}</div>`).join("");
+    const broken = (research.broken || []).map((k) => `<div class="ls-item">
+      <span class="flow-period">${esc(k.year || "")}</span> ${bold(k.text)}${refChips(k.evidence)}</div>`).join("");
+    const assumed = (research.assumed || []).map((k) => `<div class="ls-item">${bold(k.text)}
+      <p class="ls-why">${bold(k.why_untested || "")}</p>${refChips(k.evidence)}</div>`).join("");
+    const open = (research.open || []).map((k) => `<div class="ls-item">${bold(k.text)}${refChips(k.evidence)}</div>`).join("");
+
+    document.getElementById("lspanel").innerHTML = `
+      <p class="g-note" style="padding-left:0">${esc(L.subtitle || "")}
+        이 페이지의 모든 문장은 근거 칩으로 원 레코드까지 되짚을 수 있습니다.</p>
+      <h2 style="font-size:17px;margin:22px 0 0">${esc(L.title || "Landscape")}</h2>
+      <div class="flow">${flow}</div>
+      <div class="ls-grid">
+        ${box("know", "What We Know", "실험 또는 실측으로 확인된 것", know)}
+        ${box("broken", "What Has Been Broken", "이미 깨진 것 — 연도순", broken)}
+        ${box("assumed", "What Is Still Assumed", "아직 가정인 것과 왜 검증되지 않았는지", assumed)}
+        ${box("open", "Open Research Questions", "그래서 다음에 무엇을 할 것인가", open)}
+      </div>`;
+  }
+
+  // ---------- research lineage (typed relations) ----------
+  // 인용 그래프와 나란히 두는 이유: "A가 B를 인용했다"와 "A가 B의 무엇을 해결했다"는 다르다.
+  const REL_LABEL = {
+    extends: "확장", implements: "구현", attacks: "공격", defends: "방어", bypasses: "우회",
+    contradicts: "반박", reproduces: "재현", generalizes: "일반화", motivates: "동기",
+    "applies-to": "적용", "fails-against": "취약", complementary: "보완", confirms: "확인",
+  };
+  const REL_CLASS = {
+    attacks: "danger", bypasses: "danger", "fails-against": "danger",
+    defends: "accent", confirms: "accent",
+    contradicts: "warn", complementary: "warn",
+  };
+  let lineageBuilt = false;
+  let lineageFilter = new Set();
+
+  function buildLineage() {
+    const edges = [];
+    papers.forEach((p) => (p.relations || []).forEach((r) => edges.push({ from: p.id, ...r })));
+    const types = [...new Set(edges.map((e) => e.type))].sort((a, b) =>
+      edges.filter((x) => x.type === b).length - edges.filter((x) => x.type === a).length);
+
+    const chips = `<div class="filterrow"><span class="filter-label">관계</span>` + types.map((t) =>
+      `<button class="chip" type="button" data-t="${esc(t)}" aria-pressed="${lineageFilter.has(t)}">`
+      + `${esc(REL_LABEL[t] || t)} <span class="cnt">${edges.filter((e) => e.type === t).length}</span></button>`).join("") + `</div>`;
+
+    const shown = edges.filter((e) => !lineageFilter.size || lineageFilter.has(e.type));
+    // 대상별로 묶는다. "이 논문/규격을 무엇이 확장·공격·방어했는가"가 계보를 읽는 단위다.
+    const byTarget = new Map();
+    shown.forEach((e) => { if (!byTarget.has(e.to)) byTarget.set(e.to, []); byTarget.get(e.to).push(e); });
+    const order = [...byTarget.entries()].sort((a, b) => b[1].length - a[1].length);
+
+    const rows = order.map(([to, list]) => `
+      <div class="ls-box" style="border-left-color:var(--accent);margin-bottom:12px">
+        <h3><a href="#${esc(to)}">${esc(REF_LABEL(to))}</a>
+          <span class="flow-period">${esc(to)}</span></h3>
+        <p class="sub">${esc(list.length)}건이 이 항목을 향한다</p>
+        ${list.map((e) => `<div class="ls-item">
+          <span class="badge b-cat-${REL_CLASS[e.type] === "danger" ? "attack" : REL_CLASS[e.type] === "accent" ? "defense" : "analysis"}">${esc(REL_LABEL[e.type] || e.type)}</span>
+          <a href="#${esc(e.from)}">${esc(REF_LABEL(e.from))}</a>
+          ${e.note ? `<p class="ls-why">${bold(e.note)}</p>` : ""}
+        </div>`).join("")}
+      </div>`).join("");
+
+    document.getElementById("lineagepanel").innerHTML = `
+      <p class="g-note" style="padding-left:0">
+        <strong>인용 관계 탭과 다른 것을 봅니다.</strong> 인용은 "A가 B를 언급했다"이고,
+        여기는 <strong>"A가 B의 무엇을 했다"</strong>입니다 — 확장·구현·공격·방어·반박.
+        인용하지 않아도 관계는 성립하며, 대상은 논문일 수도 표준일 수도 있습니다.
+        원문에서 근거를 확인하지 못한 관계는 넣지 않았고, 가설 수준은 설명에 밝혔습니다.</p>
+      ${chips}
+      <div class="resultline"><span>관계 ${shown.length}건 · 대상 ${order.length}개</span></div>
+      ${rows || `<div class="empty">해당 관계가 없습니다.</div>`}`;
+
+    document.querySelector("#lineagepanel .filterrow").onclick = (e) => {
+      const b = e.target.closest(".chip");
+      if (!b) return;
+      const t = b.dataset.t;
+      lineageFilter.has(t) ? lineageFilter.delete(t) : lineageFilter.add(t);
+      buildLineage();
+    };
+  }
+
+  // ---------- attack x defense matrix ----------
+  function buildMatrix() {
+    const M = research.matrix || {};
+    const marks = Object.fromEntries((M.legend || []).map((l) => [l.state, l.mark]));
+    const labels = Object.fromEntries((M.legend || []).map((l) => [l.state, l.label]));
+    const defs = M.defenses || [];
+
+    const head = `<tr><th>공격</th>${defs.map((d) => `<th>${esc(d.label)}</th>`).join("")}</tr>`;
+    const body = (M.attacks || []).map((a) => `<tr>
+      <td><strong>${esc(a.label)}</strong>${(a.papers || []).length
+        ? `<div class="refchips">${a.papers.map((i) => `<a href="#${esc(i)}">${esc(REF_LABEL(i))}</a>`).join("")}</div>` : ""}</td>
+      ${defs.map((d) => {
+        const c = (a.cells || {})[d.id] || { state: "not-evaluated" };
+        const tip = `${labels[c.state] || c.state}${c.note ? " — " + c.note : ""}`;
+        return `<td><span class="cell ${esc(c.state)}" title="${esc(tip)}">${esc(marks[c.state] || "?")}</span></td>`;
+      }).join("")}
+    </tr>`).join("");
+
+    // ? 가 몰린 칸이 곧 실험 후보다. 세어서 직접 보여준다.
+    const gaps = [];
+    (M.attacks || []).forEach((a) => defs.forEach((d) => {
+      const c = (a.cells || {})[d.id];
+      if (c && c.state === "not-evaluated") gaps.push({ a: a.label, d: d.label, note: c.note });
+    }));
+
+    document.getElementById("matrixpanel").innerHTML = `
+      <p class="g-note" style="padding-left:0">${bold(M.note || "")}</p>
+      <div class="mx-wrap"><table class="mx"><thead>${head}</thead><tbody>${body}</tbody></table></div>
+      <div class="mx-legend">${(M.legend || []).map((l) =>
+        `<span><span class="cell ${esc(l.state)}">${esc(l.mark)}</span> ${esc(l.label)}</span>`).join("")}</div>
+      <div class="mx-detail">
+        <h3 style="font-size:14px;margin:0 0 6px">미평가 칸 ${gaps.length}개 — 실험 후보</h3>
+        <ul>${gaps.map((g) => `<li><strong>${esc(g.a)}</strong> × ${esc(g.d)}${g.note ? ` — ${esc(g.note)}` : ""}</li>`).join("")}</ul>
+      </div>`;
+  }
+
+  // ---------- claims vs evidence ----------
+  const CLAIM_STATUS_LABEL = {
+    supported: "근거 있음", challenged: "반증 제기됨", contested: "논쟁 중", tension: "상충",
+    conditional: "조건부", refuted: "반증됨", untested: "미검증",
+  };
+  function buildClaims() {
+    const list = (research.claims || []).map((c) => `
+      <article class="claim" id="${esc(c.id)}">
+        <div class="claim-head">
+          <span class="claim-id">${esc(c.id)}</span>
+          <span class="badge b-st-${esc(c.status)}">${esc(CLAIM_STATUS_LABEL[c.status] || c.status)}</span>
+        </div>
+        <p class="claim-text">${bold(c.claim)}</p>
+        <p class="claim-src">출처: ${esc(c.source || "—")}</p>
+        ${refChips(c.source_refs)}
+        <div class="claim-cols">
+          <div class="claim-col"><h4>뒷받침하는 근거</h4>
+            ${(c.supporting || []).length ? `<ul>${c.supporting.map((x) =>
+              `<li>${bold(x.text)}${refChips(x.evidence)}</li>`).join("")}</ul>`
+              : `<p class="ls-why">코퍼스 안에서 확인된 것이 없습니다.</p>`}</div>
+          <div class="claim-col"><h4>반대하는 근거</h4>
+            ${(c.counter || []).length ? `<ul>${c.counter.map((x) =>
+              `<li>${bold(x.text)}${refChips(x.evidence)}</li>`).join("")}</ul>`
+              : `<p class="ls-why">아직 없습니다.</p>`}</div>
+        </div>
+        <div class="claim-status"><strong>어디까지 말할 수 있나</strong><br>${bold(c.status_note || "")}</div>
+        ${c.experiment ? `<p class="claim-exp"><strong>가르려면:</strong> ${bold(c.experiment)}
+          ${c.todo ? ` <span class="flow-period">(${esc(c.todo)})</span>` : ""}</p>` : ""}
+      </article>`).join("");
+
+    document.getElementById("claimspanel").innerHTML = `
+      <p class="g-note" style="padding-left:0">
+        업계와 문헌이 내세우는 주장을 그대로 적고, 그에 대한 근거와 반증을 나란히 둡니다.
+        <strong>가장 중요한 칸은 "어디까지 말할 수 있나"</strong>입니다 — 서로 다른 실험의 수치가
+        일치하는 것(교차 논증)과 하나의 실험에서 함께 관측한 것(공동 실험)을 구분해 적습니다.</p>
+      ${list}`;
+  }
+
+  // ---------- reproduction ----------
+  function buildRepro() {
+    const list = (research.reproduction || []).map((r) => {
+      const done = (r.items || []).filter((i) => i.status === "done").length;
+      const rows = (r.items || []).map((i) => `
+        <div class="bar-row ${esc(i.status)}">
+          <div>${esc(i.label)}</div>
+          <div class="bar"><i style="width:${Math.max(0, Math.min(100, i.percent || 0))}%"></i></div>
+          <div class="bar-pct">${i.percent || 0}%</div>
+          ${i.basis ? `<div class="bar-basis">${bold(i.basis)}${refChips(i.evidence)}</div>` : ""}
+        </div>`).join("");
+      return `<article class="repro">
+        <h3>${esc(r.title)}</h3>
+        <p class="sub" style="font-size:11.5px;color:var(--fg-faint);margin:0 0 10px">
+          ${done} / ${(r.items || []).length} 항목 완료</p>
+        ${refChips(r.target_papers)}
+        <div style="margin-top:12px">${rows}</div>
+        ${r.next_milestone ? `<div class="repro-next">다음 이정표 → ${esc(r.next_milestone)}</div>` : ""}
+      </article>`;
+    }).join("");
+
+    document.getElementById("repropanel").innerHTML = `
+      <p class="g-note" style="padding-left:0">
+        각 항목의 진행률은 <strong>근거가 있을 때만</strong> 채웁니다. 근거 줄에 어느 실험에서 나온
+        수치인지, 무엇이 막혀 있는지를 적었고, 미착수는 0%로 둡니다.</p>
+      ${list}`;
   }
 
   // ---------- citation graph ----------
@@ -1288,6 +1682,8 @@
   document.getElementById("tab-graph").addEventListener("click", () => { state.tab = "graph"; render(); });
   document.getElementById("tab-insights").addEventListener("click", () => { state.tab = "insights"; render(); });
   document.getElementById("tab-log").addEventListener("click", () => { state.tab = "log"; render(); });
+  ["landscape", "lineage", "matrix", "claims", "repro"].forEach((t) =>
+    document.getElementById("tab-" + t).addEventListener("click", () => { state.tab = t; render(); }));
   document.getElementById("reset").addEventListener("click", () => {
     state.q = ""; document.getElementById("q").value = "";
     state.cat.clear(); state.tier.clear(); state.rel.clear(); state.ver.clear();
@@ -1437,8 +1833,9 @@
     .then((r) => { if (!r.ok) throw new Error(`${f} ${r.status}`); return r.json(); });
 
   function loadData({ bust = false, initial = false } = {}) {
-    return Promise.all([grab("papers.json", bust), grab("standards.json", bust), grab("insights.json", bust)])
-    .then(([p, s, n]) => {
+    return Promise.all([grab("papers.json", bust), grab("standards.json", bust),
+                        grab("insights.json", bust), grab("research.json", bust)])
+    .then(([p, s, n, r]) => {
     papers = p.papers || [];
     standards = s.standards || [];
     insights = n.insights || [];
@@ -1446,13 +1843,20 @@
     todos = n.todos || [];
     experiments = n.experiments || [];
     readingOrder = n.reading_order || null;
+    research = r || {};
+    // 그래프·계보·표는 한 번 그리고 캐시하므로, 데이터를 다시 읽으면 캐시를 버린다.
+    graphBuilt = false; lineageBuilt = false;
     meta = { papers: p.updated, lastRun: p.last_run, standards: s.updated };
     document.getElementById("updated").textContent =
       `데이터 갱신 ${meta.papers} · 마지막 실행 ${meta.lastRun || "?"}`
       + ` · 논문 ${papers.length}건 · 표준 ${standards.length}건 · 인사이트 ${insights.length}건`;
-    document.getElementById("cnt-insights").textContent = insights.length;
+    document.getElementById("cnt-insights").textContent = (research.questions || []).length;
+    document.getElementById("cnt-claims").textContent = (research.claims || []).length;
+    document.getElementById("cnt-rel").textContent =
+      papers.reduce((a, x) => a + (x.relations || []).length, 0);
     renderStats();
-    const TABS = ["graph", "standards", "insights", "log"];
+    const TABS = ["landscape", "graph", "standards", "insights", "log",
+                  "lineage", "matrix", "claims", "repro"];
     const hash = decodeURIComponent(location.hash.slice(1));
     if (!initial) {
       // 다시 읽은 것이므로 보고 있던 탭·펼침 상태를 그대로 둔다.

@@ -3,7 +3,7 @@
   "updated": "2026-08-31",
   "last_run": "2026-08-31",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 274,
+  "citation_edges": 343,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -98,6 +98,18 @@
         "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "olafsdottir-2017-carrier-phase",
+          "type": "implements",
+          "note": "위상 조작 공격을 아날로그 물리계층 릴레이로 실제 기기에서 구현했다"
+        },
+        {
+          "to": "francillon-2011-pkes-relay",
+          "type": "extends",
+          "note": "릴레이를 통신 연장에서 거리값 조작까지로 확장했다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -182,6 +194,13 @@
         "flury-2010-distance-decreasing"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "singh-2021-4z-security-analysis",
+          "type": "implements",
+          "note": "분석으로 지적된 STS 취약성을 상용 칩에서 OTA 공격으로 실증했다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -263,6 +282,13 @@
         "singh-2022-v-range"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "extends",
+          "note": "STS 추측이 아니라 클럭 불일치라는 새 축으로 같은 목표를 달성했다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -335,6 +361,13 @@
         "ranganathan-2012-chirp-attacks"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "defends",
+          "note": "짧은 심볼과 링크버짓의 딜레마를 펄스 재배열 변조로 깼다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -402,6 +435,7 @@
         "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "analysis"
     },
     {
@@ -491,6 +525,13 @@
         "vanmarter-2023-svr-ble-ranging"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "규격이 정의한 CS 를 상용 하드웨어에서 실측하고 원시 I/Q 데이터셋을 공개했다"
+        }
+      ],
       "category": "measurement"
     },
     {
@@ -564,6 +605,18 @@
         "bintariq-2024-dl-ble-ranging"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "staat-2022-analog-relay",
+          "type": "fails-against",
+          "note": "충돌 제거를 위한 결정론적 채널 시퀀싱이 Staat 이 경고한 비랜덤 스윕 조건을 되살린다 (가설 — 보안 분석 없음)"
+        },
+        {
+          "to": "bt-ras-1-0",
+          "type": "extends",
+          "note": "PAwR 로 비연결형 대규모 CS 아키텍처를 제안한다"
+        }
+      ],
       "category": "protocol"
     },
     {
@@ -644,6 +697,7 @@
         "santra-2024-cs-indoor"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "measurement"
     },
     {
@@ -701,6 +755,7 @@
       "last_checked": "2026-08-26",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "category": "estimation"
     },
     {
@@ -756,6 +811,7 @@
       "last_checked": "2026-08-21",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "category": "estimation"
     },
     {
@@ -835,6 +891,7 @@
         "vanmarter-2023-svr-ble-ranging"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "measurement"
     },
     {
@@ -907,6 +964,7 @@
       "last_checked": "2026-08-03",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "estimation"
     },
     {
@@ -991,6 +1049,7 @@
         "uwb-sv-2023-ccs"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "attack"
     },
     {
@@ -1061,6 +1120,13 @@
         "singh-2021-4z-security-analysis"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "contradicts",
+          "note": "취약성이 표준의 결함이 아니라 수신기 구현의 문제라고 논증한다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -1129,6 +1195,7 @@
         "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "attack"
     },
     {
@@ -1178,6 +1245,7 @@
       "last_checked": "2026-08-24",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "survey"
     },
     {
@@ -1268,6 +1336,28 @@
         "leu-2021-multicarrier-tof"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "extends",
+          "note": "ED/LC 를 협대역 상호상관 ToA 추정으로 옮겼다"
+        },
+        {
+          "to": "anliker-2023-time-for-change",
+          "type": "extends",
+          "note": "UWB 에서 다룬 타이밍 조작을 협대역 CS 영역으로 이어간다"
+        },
+        {
+          "to": "bt-core-6-0",
+          "type": "attacks",
+          "note": "CS 가 참조하는 NADM 지표 3종(NCC·PMSE·DFT)을 모두 우회했다"
+        },
+        {
+          "to": "leu-2020-mtac",
+          "type": "confirms",
+          "note": "상관 기반 ToA 검증이 안전하지 않다는 MTAC 의 논증을 CS 의 NADM 에서 실측으로 확인한 셈이 된다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -1341,6 +1431,13 @@
         "zhang-2014-unambiguous-distance"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "extends",
+          "note": "심볼 타이밍 문제를 반송파 위상 영역으로 옮겨 세 가지 공격 유형을 정의했다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -1416,6 +1513,18 @@
         "ranganathan-2012-chirp-attacks"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "generalizes",
+          "note": "물리계층 거리축소 보안을 형식적 프리미티브(MTAC)로 일반화했다"
+        },
+        {
+          "to": "rasmussen-2010-rf-distance-bounding",
+          "type": "extends",
+          "note": "구현 가능성 논증을 형식적 보안 정의로 끌어올렸다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -1495,6 +1604,7 @@
         "ranganathan-2012-chirp-attacks"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "defense"
     },
     {
@@ -1568,6 +1678,13 @@
         "singh-2021-4z-security-analysis"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "defends",
+          "note": "STS 를 서브템플릿으로 쪼개 부분 상관의 일관성을 검증한다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -1648,6 +1765,13 @@
         "staat-2022-analog-relay"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schepers-2021-ftm-security",
+          "type": "extends",
+          "note": "상용 Wi-Fi 칩에서 나노초 타임스탬프를 꺼내 거리한정 플랫폼을 만든다"
+        }
+      ],
       "category": "protocol"
     },
     {
@@ -1717,6 +1841,7 @@
         "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "defense"
     },
     {
@@ -1784,6 +1909,13 @@
         "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "flury-2010-distance-decreasing",
+          "type": "defends",
+          "note": "거리 확대 쪽을 수신 신호 특성으로 탐지한다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -1856,6 +1988,13 @@
         "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "generalizes",
+          "note": "같은 논리가 chirp spread spectrum 에도 성립함을 보였다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -1918,6 +2057,7 @@
       "last_checked": "2026-08-10",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "analysis"
     },
     {
@@ -1987,6 +2127,13 @@
         "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "attacks",
+          "note": "세션 키 유도를 조작해 전방·후방 비밀성을 깬다 (Bluetooth Classic LSC 대상)"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -2061,6 +2208,13 @@
         "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-1",
+          "type": "attacks",
+          "note": "재페어링 설계 결함으로 보안수준을 0-click/1-click 강등한다 — CS 난수화가 얹힌 본딩 키의 뿌리"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -2145,6 +2299,7 @@
         "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "analysis"
     },
     {
@@ -2216,6 +2371,7 @@
         "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "attack"
     },
     {
@@ -2274,6 +2430,7 @@
         "sacchetti-2026-hardable"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "survey"
     },
     {
@@ -2344,6 +2501,7 @@
       "last_checked": "2026-08-03",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "survey"
     },
     {
@@ -2428,6 +2586,7 @@
         "ranganathan-2012-chirp-attacks"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "defense"
     },
     {
@@ -2519,6 +2678,13 @@
         "wang-2025-cs-device-free-sensing"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "상용 플랫폼 4종에서 CS 의 성능과 보안 설정을 교차 비교했다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -2597,6 +2763,13 @@
         "boer-2020-pbr-multipath"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "olafsdottir-2017-carrier-phase",
+          "type": "defends",
+          "note": "위상 롤오버 공격을 ToF 병행 측정으로 검출하는 협대역 SDB 를 제안했다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -2675,6 +2848,13 @@
         "zand-2019-concurrent-pbr"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "staat-2022-analog-relay",
+          "type": "defends",
+          "note": "RSSI 사전검사와 CS 를 결합해 차량 접근의 릴레이·MITM 을 막으려 한다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -2736,6 +2916,13 @@
         "boer-2020-pbr-multipath"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "extends",
+          "note": "PBR 대신 단일 2 MHz 채널의 S-FMCW 로 같은 정확도를 내려는 대안"
+        }
+      ],
       "category": "estimation"
     },
     {
@@ -2795,6 +2982,7 @@
       "last_checked": "2026-08-26",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "category": "estimation"
     },
     {
@@ -2851,6 +3039,7 @@
       "last_checked": "2026-08-21",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "category": "estimation"
     },
     {
@@ -2918,6 +3107,7 @@
         "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "defense"
     },
     {
@@ -2992,6 +3182,7 @@
         "abidin-2021-narrowband-ranging"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-03",
       "last_checked": "2026-08-03"
     },
@@ -3063,6 +3254,7 @@
         "boer-2020-pbr-multipath"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-03",
       "last_checked": "2026-08-31"
     },
@@ -3132,6 +3324,7 @@
         "sheikh-2023-pbr-missing-tones"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-03",
       "last_checked": "2026-08-27"
     },
@@ -3201,6 +3394,7 @@
         "helwa-2023-csi-wifi-ranging-gap"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-03",
       "last_checked": "2026-08-31"
     },
@@ -3255,6 +3449,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-03",
       "last_checked": "2026-08-21"
     },
@@ -3334,6 +3529,13 @@
         "leu-2021-multicarrier-tof"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schepers-2021-ftm-security",
+          "type": "extends",
+          "note": "802.11az/bk 의 보안 FTM 과 배치 현황까지로 범위를 넓혔다"
+        }
+      ],
       "added": "2026-08-10",
       "last_checked": "2026-08-27"
     },
@@ -3406,6 +3608,13 @@
         "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "generalizes",
+          "note": "긴 심볼 문제를 OFDM 다중반송파 ToF 로 일반화했다"
+        }
+      ],
       "added": "2026-08-10",
       "last_checked": "2026-08-15"
     },
@@ -3487,6 +3696,13 @@
         "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "applies-to",
+          "note": "긴 심볼·처리지연 논리를 Wi-Fi FTM 에 적용해 최초 보안 분석을 냈다"
+        }
+      ],
       "added": "2026-08-10",
       "last_checked": "2026-08-27"
     },
@@ -3566,6 +3782,7 @@
       "verification": "verified",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-10",
       "last_checked": "2026-08-10"
     },
@@ -3634,6 +3851,7 @@
       "verification": "verified",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-10",
       "last_checked": "2026-08-12"
     },
@@ -3706,6 +3924,7 @@
       "verification": "verified",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-10",
       "last_checked": "2026-08-10"
     },
@@ -3801,6 +4020,13 @@
         "heinrich-2023-smartphones-uwb"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "generalizes",
+          "note": "칩별 보안수준을 importance sampling 으로 측정하는 절차로 일반화했다"
+        }
+      ],
       "added": "2026-08-12",
       "last_checked": "2026-08-27"
     },
@@ -3884,6 +4110,13 @@
         "singh-2021-4z-security-analysis"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "applies-to",
+          "note": "거리축소 취약성을 전제로 EMV 결제에 UWB 레인징을 통합한다"
+        }
+      ],
       "added": "2026-08-12",
       "last_checked": "2026-08-18"
     },
@@ -3954,6 +4187,13 @@
         "flury-2010-distance-decreasing"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "defends",
+          "note": "Clulow 가 지적한 처리지연 문제를 1 ns 미만 아날로그 경로로 실제로 만족시켰다"
+        }
+      ],
       "added": "2026-08-12",
       "last_checked": "2026-08-27"
     },
@@ -4029,6 +4269,13 @@
         "clulow-2006-long-symbols"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "implements",
+          "note": "ED/LC 를 IR-UWB 수신기에 구현해 축소량을 정량화했다"
+        }
+      ],
       "added": "2026-08-15",
       "last_checked": "2026-08-15"
     },
@@ -4103,6 +4350,13 @@
         "flury-2010-distance-decreasing"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "flury-2010-distance-decreasing",
+          "type": "extends",
+          "note": "수신기 종류(ED·rake)와 공격자 유형(외부 릴레이·악의적 prover)으로 축을 넓혔다"
+        }
+      ],
       "added": "2026-08-15",
       "last_checked": "2026-08-15"
     },
@@ -4180,6 +4434,7 @@
         "suresh-2025-cs-vehicle-access"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-15",
       "last_checked": "2026-08-15"
     },
@@ -4260,6 +4515,13 @@
         "cremers-2012-distance-hijacking"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "olafsdottir-2017-carrier-phase",
+          "type": "generalizes",
+          "note": "우호적 채널 가정을 걷어내고 다중경로에서도 임의 거리축소가 성립함을 보였다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -4338,6 +4600,7 @@
         "flury-2010-distance-decreasing"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "protocol"
     },
     {
@@ -4411,6 +4674,18 @@
         "uwb-sv-2023-ccs"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "defends",
+          "note": "응답 시각 난수화로 성공률을 SDC 60.67% → 0% 로 떨어뜨렸다"
+        },
+        {
+          "to": "gou-2024-uwb-channel-reciprocity",
+          "type": "extends",
+          "note": "같은 연구진의 탐지 모듈을 방어 전환 트리거로 재사용한다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -4484,6 +4759,13 @@
         "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "applies-to",
+          "note": "거리한정이 필요한 이유를 실제 차량 10종에서 보였다"
+        }
+      ],
       "category": "attack"
     },
     {
@@ -4549,6 +4831,13 @@
         "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "extends",
+          "note": "Distance Hijacking 을 네 번째 공격 유형으로 정의해 위협 분류를 확장했다"
+        }
+      ],
       "category": "analysis"
     },
     {
@@ -4616,6 +4905,7 @@
       "last_checked": "2026-08-18",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "category": "analysis"
     },
     {
@@ -4686,6 +4976,13 @@
         "rashidi-2025-ble-uwb-positioning-survey"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-2",
+          "type": "implements",
+          "note": "Core 6.2 를 따르는 CS 물리계층 시뮬레이션 프레임워크를 구현했다"
+        }
+      ],
       "added": "2026-08-21",
       "last_checked": "2026-08-30"
     },
@@ -4768,6 +5065,13 @@
         "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "francillon-2011-pkes-relay",
+          "type": "defends",
+          "note": "거리 검증 대신 RF 지문으로 PKES 릴레이를 막는 대안 경로"
+        }
+      ],
       "added": "2026-08-21",
       "last_checked": "2026-08-21"
     },
@@ -4848,6 +5152,7 @@
         "tschirschnitz-2021-method-confusion"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-21",
       "last_checked": "2026-08-21"
     },
@@ -4924,6 +5229,13 @@
       "verification": "verified",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "CS 의 설계 선택지를 계측학 관점에서 비교하되 CS 칩이 아닌 유사 시스템으로 측정했다"
+        }
+      ],
       "added": "2026-08-24",
       "last_checked": "2026-08-26"
     },
@@ -4977,6 +5289,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-24",
       "last_checked": "2026-08-24"
     },
@@ -5048,6 +5361,13 @@
         "uwb-sv-2023-ccs"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "defends",
+          "note": "채널 상호성 기반 오토인코더로 조작을 탐지한다"
+        }
+      ],
       "added": "2026-08-24",
       "last_checked": "2026-08-24"
     },
@@ -5117,6 +5437,7 @@
         "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-24",
       "last_checked": "2026-08-24"
     },
@@ -5196,6 +5517,13 @@
         "boer-2020-pbr-multipath"
       ],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schroeder-2019-multipath-pbr",
+          "type": "extends",
+          "note": "같은 연구진의 다중경로 관찰을 시스템 전체(획득·추정·품질지표·측위)로 확장했다"
+        }
+      ],
       "category": "estimation"
     },
     {
@@ -5261,6 +5589,13 @@
       "last_checked": "2026-08-27",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [
+        {
+          "to": "olafsdottir-2017-carrier-phase",
+          "type": "complementary",
+          "note": "공격자 없이도 PBR 이 반사경로를 보고할 수 있음을 보여, 조작과 자연 오차의 식별 문제를 만든다"
+        }
+      ],
       "category": "analysis"
     },
     {
@@ -5320,6 +5655,13 @@
       "last_checked": "2026-08-26",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "olafsdottir-2017-carrier-phase",
+          "type": "complementary",
+          "note": "위상 거리측정의 모호거리가 주파수 인덱스 최대공약수로 정해진다는 판정식을 준다"
+        }
+      ],
       "category": "analysis"
     },
     {
@@ -5387,6 +5729,13 @@
       "last_checked": "2026-08-26",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "gou-2024-uwb-channel-reciprocity",
+          "type": "fails-against",
+          "note": "채널 특징에 얹은 신경망 판정기가 적대적 섭동에 무너질 수 있음을 같은 도메인에서 보인다"
+        }
+      ],
       "category": "defense"
     },
     {
@@ -5470,6 +5819,7 @@
         "flury-2010-distance-decreasing"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-27",
       "last_checked": "2026-08-27"
     },
@@ -5537,6 +5887,7 @@
       "verification": "verified",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-27",
       "last_checked": "2026-08-27"
     },
@@ -5611,6 +5962,7 @@
         "suresh-2025-cs-vehicle-access"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -5679,6 +6031,7 @@
         "olafsdottir-2017-carrier-phase"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -5747,6 +6100,7 @@
       "verification": "verified",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -5823,6 +6177,7 @@
       "verification": "verified",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -5888,6 +6243,7 @@
       "verification": "verified",
       "cites": [],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -5949,6 +6305,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6031,6 +6388,7 @@
         "stanciu-2021-narrowband-distance"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-31"
     },
@@ -6099,6 +6457,7 @@
         "nishikawa-2026-sub-ghz-pbr-icc"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6186,6 +6545,7 @@
         "bintariq-2024-dl-ble-ranging"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-31"
     },
@@ -6248,6 +6608,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6310,6 +6671,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6370,6 +6732,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6426,6 +6789,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6483,6 +6847,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6538,6 +6903,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6595,6 +6961,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6653,6 +7020,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6718,6 +7086,7 @@
         "suresh-2025-cs-vehicle-access"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-31"
     },
@@ -6774,6 +7143,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6858,6 +7228,7 @@
         "stanciu-2021-narrowband-distance"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-31"
     },
@@ -6926,6 +7297,7 @@
         "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -6996,6 +7368,7 @@
         "singh-2019-uwb-pr"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-30",
       "last_checked": "2026-08-30"
     },
@@ -7068,6 +7441,7 @@
         "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     },
@@ -7147,6 +7521,7 @@
         "zand-2019-concurrent-pbr"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     },
@@ -7220,6 +7595,7 @@
         "zand-2019-concurrent-pbr"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     },
@@ -7296,6 +7672,7 @@
         "simoncic-2025-freq-switching-mcpd"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     },
@@ -7363,6 +7740,7 @@
         "rasmussen-2010-rf-distance-bounding"
       ],
       "cites_source": "fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     },
@@ -7420,6 +7798,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     },
@@ -7478,6 +7857,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     },
@@ -7534,6 +7914,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     },
@@ -7591,6 +7972,7 @@
       "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": [],
       "added": "2026-08-31",
       "last_checked": "2026-08-31"
     }
