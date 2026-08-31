@@ -2,6 +2,75 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-08-31 (21차: 신규 9건 — 20차가 남긴 참고문헌 계보 후보 일괄 편입, 전문 5건 확인, qi 전문 확보로 초록 수치 반증)
+
+20차 참고문헌에서 나온 계보 후보(UTD·TI / imec / JSI / NXP 군)를 이번에 팠습니다.
+Crossref `link` → `ielx7/ielx8` + 브라우저 UA 경로가 **2022·2023년 골드 OA에도 통해서**
+IEEE Access 4건의 전문을 바로 받았고(Shoudha 3.2 MB·Helwa 2 MB·Simončič 2025/2026),
+CityU Scholars 포털은 WebFetch 403이지만 curl+UA로 열려 Nkrow CNS 2024 기탁 원고를
+얻었습니다. S2 검색 API는 25초 백오프 6회에도 하루 종일 429라 이번엔 못 썼습니다.
+
+- 신규 (전문 확인 5건):
+  - **Reduced-Complexity Decimeter-Level Bluetooth Ranging in Multipath Environments**
+    (Shoudha 외, UT Dallas·TI, IEEE Access 2022, 관련도 **보통**, `verified`). UTD·TI 계보
+    시조격 — 차량 주차장 실측(도어핸들·룸미러, 0.84~7 m)에서 단일 안테나 MUSIC 1.53 m →
+    다중안테나·희소 OMP 0.61~0.75 m. Burg 대역폭 외삽으로 80 MHz를 가상 확장하는 단계는
+    "측정에 없는 대역을 모델로 지어내는" 추정기라 조작 민감도 질문거리. 장비 모델명은
+    본문에 없음(TI 사사뿐).
+  - **Bridging the Performance Gap Between Two-Way and One-Way CSI-Based 5 GHz WiFi
+    Ranging** (Helwa 외, UT Dallas·TI, IEEE Access 2023, 관련도 **보통**, `verified`, tech
+    `wifi`). two-way CFR 제곱이 망가뜨리는 것을 정량화(탭 2배·LoS 상대전력 1/4)하고
+    제곱근+언래핑+deep fade π 보정으로 one-way에 1~10 cm 차까지 복원 — **±분기 선택이
+    morano-2026의 분기 뒤집기 조작 지점과 동일 구조**임을 Wi-Fi 쪽에서 보여주는 교차
+    자료. USRP 실측 LoS 중앙값 13 cm.
+  - **Optimizing Frequency Switching Pattern to Reduce Asynchronization Effect in MCPD
+    Ranging Systems** (Simončič 외, Jožef Stefan Inst., IEEE Access 2025, 관련도 **보통**,
+    `verified`, tech `other`). 채널 순서 자체가 편향을 만든다 — 순차 호핑은 CFO·클럭
+    오프셋 위상항이 거리 기울기와 같은 모양으로 쌓여 160캐리어 1.6 m, 구조적 재배열로
+    2 cm 미만. **정확도 최적 패턴은 결정론적 순서라 CS의 무작위 호핑과 정면 상충**,
+    BLE 호핑 알고리즘 #1의 비동기 한계는 81.2 ppm. AT86RF215 케이블 실측.
+  - **Mitigating Frequency Dependent Carrier Frequency Offset in MCPD Ranging Through
+    Timing Diagram Design** (Simončič 외, IEEE Access 2026-02-16, 관련도 **높음**,
+    `verified`, tech `other`). PLL 합성에서 CFO가 반송파 주파수에 선형 비례(4대 실측
+    확인)하고, 두 기기의 CFO 기울기 차(CFOSD)가 **거리 기울기와 구별 불가능한 편향**
+    (10 Hz/MHz·ΔTo 120 µs → 약 18 cm)을 만든다는 모델. M=76·1 MHz 구성을 BLE CS와
+    일치한다고 명시. 완화책(시간차 보정·역할 교대)은 전부 CS 표준에 없는 타이밍
+    재설계라 현행 CS는 노출 — 클럭 특성 조작만으로 예측 가능한 편향을 넣는 경로의
+    물리적 근거.
+  - **Building ToF Resiliency Into UWB-Based Secure Distance Bounding Protocols**
+    (Nkrow·Boshoff·Silva·Liu·Hancke, CityU, IEEE CNS 2024, 관련도 **보통**, `verified`).
+    NLOS가 ToF를 부풀려 정직한 prover가 거부되는 FRR 문제에 CIR 특징 기반 LOS/NLOS
+    분류·보정을 제안하고, **보정 자체가 새 공격면임을 스스로 실증** — 4 m LOS 공격자가
+    저장한 2 m NLOS CIR 재생으로 근거리 수락(위조 CIR Pearson 0.90), 오토인코더 탐지
+    FAR 최악 28%. CS의 NADM·ML 보정 논의에 그대로 이식되는 구도. DWM1001 × 2,
+    1~15 m × 500회. boshoff-2026 TII 서베이와 같은 그룹.
+- 신규 (초록만, `partial` 4건): **Support Vector Regression for Bluetooth Ranging**
+  (Van Marter 외, IoT-J 2023, 보통 — 코퍼스 5편이 인용하는 ML 보정 허브, ielam AAM
+  경로는 HTML만 반환); **Performance of High-Accuracy Phase-Based Ranging in Multipath
+  Environments** (Boer 외, imec, VTC2020-Spring, 보통 — 코퍼스 8편이 인용하는 one-way
+  재구성 원류, ielx7 0바이트·Unpaywall closed); **Accurate Distance Measurement Using
+  Narrowband Systems** (Stanciu 외, NXP, MWSCAS 2021, 보통 — 초록에 relay attack
+  prevention을 응용으로 명시한 벤더 논증의 이른 사례, wu-2026·nikodem-2025가 인용);
+  **Reduced Complexity Deep Learning Approach for Bluetooth Ranging** (Bin Tariq 외,
+  Sensors J. 2024, 낮음 — DL 보정의 일반화·임베디드 비용 한계를 벤더 계보 스스로
+  명시, morano-2026·schex-2026이 인용).
+- 보강: **qi-2026-cs-hadm-iot** `partial` → `verified` — Unpaywall에서 bronze OA 발견,
+  전문 60 KB 확보. **초록의 LOS ±1~3 cm 주장은 지면 어디에서도 수치로 뒷받침되지
+  않음을 확정**: 본문 유일의 정량 그림이 자유공간 RMSE 0.5~1.2 m·실내 1~3 m로 두
+  자릿수 차이, 표 1은 ±5~10 cm로 자기모순, 기술 사실 오류 다수(BLE 79채널, BLE SoC의
+  FiRa/802.15.4z 인증, nRF54H20에 NCS 2.0.0). 수치 인용 금지 판단을 전문 확인으로 확정.
+- 인용: 신규 전문 6편의 참고문헌에서 22건 + 역방향(기존 11편 → 신규 5편) 21건으로
+  총 300 → 343건. 전부 원문 참고문헌 대조. 역방향은 기존 캐시 전문 grep 후 참고문헌
+  항목 원문 확인.
+- 표준: 변경 없음 — arXiv 최근 목록(cs.CR 해당 없음, eess.SP는 D-MIMO 측위뿐)·NDSS
+  2027 목차 미공개. 뉴스로는 Silicon Labs BG2B(코인셀용 CS SoC, 2026-08-04 발표)가
+  눈에 띄나 표준 문서가 아니라 미등재.
+- 실패: Van Marter IoT-J·Boer VTC·Stanciu MWSCAS·Bin Tariq Sensors J. 전문 — IEEE 유료
+  (ielx 0바이트/202, Unpaywall·OpenAlex closed). Boshoff TII 서베이 — CityU Scholars에
+  항목 페이지는 있으나 파일 미기탁, 다음 실행에서 재확인. S2 API 하루 종일 429.
+- 주의: Simončič 2026의 정식 제목은 "… Through Timing Diagram Design"까지. Nkrow는
+  IoT-J가 아니라 CNS 2024 학회 논문(5인 저자, Zhe Liu 포함).
+
 ## 2026-08-30 (20차: 신규 16건 — Semantic Scholar API 로 IEEE 저널·학회의 CS 논문 무더기 발굴, 전문 6건 확보)
 
 이번 실행의 소득은 접근 경로 하나입니다. 지금까지 WebSearch·arXiv 로는 안 잡히던
