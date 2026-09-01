@@ -2,6 +2,35 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-09-01 (22차: 신규 2건 — DB 이론 허브 문헌 편입, 인용 18건 추가)
+
+어제(21차) 직후라 신규 발행분은 없었고(arXiv cs.CR/eess.SP 최신 목록 무해당,
+S2 재조회도 신규 0), CityU Scholars 계보를 한 층 더 파서 두 건을 전문으로 편입했습니다.
+CityU 포털 검색 페이지는 이제 Cloudflare 챌린지가 걸리지만, Google이 색인한
+`portalfiles` 직링크는 여전히 curl+UA로 받힙니다.
+
+- 신규 (전문 확인 2건):
+  - **Persistent Distance Bounding for Mobile Provers** (Nkrow·Boshoff·Silva·Liu·Hancke,
+    IEEE CNS 2024, 관련도 **보통**, `verified`). DB의 '순간 검증' 빈틈을 다룬 첫 논문 —
+    CIR 특징 8종 지문(λ)으로 세션 중 경계 이탈을 감시하다 의심 시에만 재측距를 트리거
+    (PiBiF). DWM1001 2대, 환경 1 민감도 1.0/특이도 최악 0.80. 경계 안 프록시(mafia/
+    terrorist fraud)와 CIR 스푸핑은 못 잡는다고 저자가 명시 — receiver-policy 축 근거.
+  - **Security of Distance-Bounding: A Survey** (Avoine 외 15인, ACM CSUR 2018, 관련도
+    **보통**, `verified`, Oxford ORA 기탁본). 코퍼스 전문 확보 논문 12건이 인용하는 DB
+    이론의 허브인데 코퍼스에 없어 인용 그래프에 구멍이 나 있었음. mafia/distance/terrorist
+    fraud 통일 정의와 (1/2)^n vs (3/4)^n 성공확률 프레임의 표준 출처.
+- 인용: 18건 추가 (343 → 361) — avoine-2018을 인용하는 기확보 전문 12건(aad-2026,
+  abidin-2021, anliker-2023, bogner-2026, coppola-2024/2025, leu-2021, nkrow-2024-tof,
+  secure-ranging-4z, singh-2021, tschirschnitz-2026, uwb-sv-2023) 전부 grep+저자명 대조로
+  확정, 신규 2건의 cites 6건.
+- 표준: 변경 없음 — SIG Inline PCT Transfer 여전히 Draft(VSr01_PR), 802.15.4ab 미발행,
+  CCC·Core 6.3 기존 그대로.
+- 실패: partial 잔여분 보강 시도 전패 — OpenAlex 재조회 11건 전부 closed(기존 메모리와
+  일치), boshoff-2026(TII)은 CityU 미기탁·UPSpace 없음·TechRxiv 없음, xie-2026(TCOMM)은
+  arXiv 판 없음(같은 그룹의 VAA 논문만 존재), vanmarter-2023은 TI 재직 저자라 기관
+  리포지터리 없음, schroeder-2019는 TU-BS LeoPARD가 PoW 챌린지로 차단. 해당 8건
+  `last_checked`만 갱신.
+
 ## 2026-08-31 (21차: 신규 9건 — 20차가 남긴 참고문헌 계보 후보 일괄 편입, 전문 5건 확인, qi 전문 확보로 초록 수치 반증)
 
 20차 참고문헌에서 나온 계보 후보(UTD·TI / imec / JSI / NXP 군)를 이번에 팠습니다.

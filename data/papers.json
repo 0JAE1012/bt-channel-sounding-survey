@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-31",
-  "last_run": "2026-08-31",
+  "updated": "2026-09-01",
+  "last_run": "2026-09-01",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 343,
+  "citation_edges": 361,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -268,7 +268,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-01",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -279,7 +279,8 @@
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2021-4z-security-analysis",
-        "singh-2022-v-range"
+        "singh-2022-v-range",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -427,12 +428,13 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-01",
       "cites": [
         "flury-2010-distance-decreasing",
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1110,14 +1112,15 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-15",
+      "last_checked": "2026-09-01",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
         "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr",
-        "singh-2021-4z-security-analysis"
+        "singh-2021-4z-security-analysis",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1667,7 +1670,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-01",
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
@@ -1675,7 +1678,8 @@
         "leu-2022-ghost-peak",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2019-uwb-pr",
-        "singh-2021-4z-security-analysis"
+        "singh-2021-4z-security-analysis",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1753,7 +1757,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-01",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -1762,7 +1766,8 @@
         "ranganathan-2012-chirp-attacks",
         "riaz-2022-pbr-multipath-security",
         "schepers-2021-ftm-security",
-        "staat-2022-analog-relay"
+        "staat-2022-analog-relay",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2570,7 +2575,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-01",
       "cites": [
         "clulow-2006-long-symbols",
         "coppola-2024-pure",
@@ -2583,7 +2588,8 @@
         "singh-2021-4z-security-analysis",
         "singh-2022-v-range",
         "uwb-sv-2023-ccs",
-        "ranganathan-2012-chirp-attacks"
+        "ranganathan-2012-chirp-attacks",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -2753,14 +2759,15 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-08-31",
+      "last_checked": "2026-09-01",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
         "olafsdottir-2017-carrier-phase",
         "rasmussen-2010-rf-distance-bounding",
         "zand-2019-ble-pbr",
-        "boer-2020-pbr-multipath"
+        "boer-2020-pbr-multipath",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3605,7 +3612,8 @@
         "flury-2010-distance-decreasing",
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3616,7 +3624,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-08-15"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "schepers-2021-ftm-security",
@@ -4017,7 +4025,8 @@
         "singh-2021-4z-security-analysis",
         "uwb-sv-2023-ccs",
         "uwbad-2024-jamming",
-        "heinrich-2023-smartphones-uwb"
+        "heinrich-2023-smartphones-uwb",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4028,7 +4037,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-08-27"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "coppola-2024-pure",
@@ -4107,7 +4116,8 @@
         "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
-        "singh-2021-4z-security-analysis"
+        "singh-2021-4z-security-analysis",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4118,7 +4128,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-08-18"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "rasmussen-2010-rf-distance-bounding",
@@ -4902,8 +4912,10 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-08-18",
-      "cites": [],
+      "last_checked": "2026-09-01",
+      "cites": [
+        "avoine-2018-db-survey"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "category": "analysis"
@@ -5586,7 +5598,7 @@
       },
       "verification": "partial",
       "added": "2026-08-26",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-01",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -6610,7 +6622,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "xie-2026-multipath-toa-binary-ambiguity",
@@ -6673,7 +6685,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "nie-2025-ransac-root-music-cs",
@@ -6734,7 +6746,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "fujii-2025-dual-antenna-cs-sim",
@@ -6905,7 +6917,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "andreadis-2025-phase-ble-localization-ml",
@@ -7022,7 +7034,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "qi-2026-cs-hadm-iot",
@@ -7737,12 +7749,13 @@
       "verification": "verified",
       "cites": [
         "clulow-2006-long-symbols",
-        "rasmussen-2010-rf-distance-bounding"
+        "rasmussen-2010-rf-distance-bounding",
+        "avoine-2018-db-survey"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "vanmarter-2023-svr-ble-ranging",
@@ -7800,7 +7813,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-01"
     },
     {
       "id": "boer-2020-pbr-multipath",
@@ -7974,7 +7987,162 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-01"
+    },
+    {
+      "id": "avoine-2018-db-survey",
+      "title": "Security of Distance-Bounding: A Survey",
+      "authors": [
+        "Gildas Avoine",
+        "Muhammed Ali Bingöl",
+        "Ioana Boureanu",
+        "Srdjan Čapkun",
+        "Gerhard Hancke",
+        "Süleyman Kardaş",
+        "Chong Hee Kim",
+        "Cédric Lauradoux",
+        "Benjamin Martin",
+        "Jorge Munilla",
+        "Alberto Peinado",
+        "Kasper Bonne Rasmussen",
+        "Dave Singelée",
+        "Aslan Tchamkerten",
+        "Rolando Trujillo-Rasua",
+        "Serge Vaudenay"
+      ],
+      "venue": "ACM CSUR",
+      "venue_full": "ACM Computing Surveys, Vol. 51, No. 5, Article 94, pp. 1–33, September 2018",
+      "tier": "journal",
+      "category": "survey",
+      "year": 2018,
+      "url": "https://dl.acm.org/doi/10.1145/3264628",
+      "preprint": "https://ora.ox.ac.uk/objects/uuid:0354ad12-91f7-402b-a2b8-f84b06d58f18/files/m05947f7e689231a6cef8cf9be4599565",
+      "doi": "10.1145/3264628",
+      "topics": [
+        "distance-bounding",
+        "mafia-fraud",
+        "distance-fraud",
+        "terrorist-fraud",
+        "protocol-analysis",
+        "rfid",
+        "relay"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스에서 전문을 확보한 논문 13건(aad-2026, abidin-2021, anliker-2023, coppola-2024/2025, leu-2021, uwb-sv-2023 등)이 공통으로 인용하는 DB 이론의 허브 문헌인데 정작 코퍼스에 없어 인용 그래프에 구멍이 나 있었다. 내 연구에는 두 용도다. (1) 위협 어휘의 표준 출처: impersonation / mafia / distance(white·black box) / terrorist fraud의 통일 정의와 라운드당 성공확률 프레임 — Brands-Chaum (1/2)^n vs Hancke-Kuhn (3/4)^n — 은 CS RTT 랜덤 시퀀스(CS SYNC)의 보안 여유를 정량화할 때 그대로 빌려 쓰는 축이다. (2) 경계선 확인: 이 서베이의 분석 단위는 프로토콜 논리 계층이고 물리계층 공격(ED/LC, ghost peak 계열)은 범위 밖이다 — 즉 CS 공격 계보와 DB 이론 계보의 결절점은 clulow-2006이며, '논리 계층에서 안전 증명이 있어도 물리 계층에서 깨진다'는 내 서사의 반대편 기둥을 이 문헌이 제공한다.",
+      "summary": "거리한정(DB) 프로토콜 14종(Brands-Chaum, MAD, Hancke-Kuhn, Bussard-Bagga, Munilla-Peinado, KA2, Swiss-knife, SKI, tree-based, Poulidor 등)을 4개 사기 유형 — impersonation, mafia fraud, distance fraud(white/black box), terrorist fraud — 에 대해 통일된 방법론으로 분석·비교한 표준 서베이다. 각 프로토콜의 라운드 수 대비 사기 성공확률을 차트로, 보안 저항성과 자원 특성을 클러스터로 비교하며, 상당수 칸의 값은 이 서베이가 새로 계산한 것이다. 성공확률 1인 공격이 없는 프로토콜은 Swiss-knife와 SKI뿐임을 보이고, distance fraud에 최악인 설계(프로버가 mafia fraud 탐지를 돕느라 챌린지를 부분적으로 아는 구조)와 최선인 설계(final slow phase — 단 메모리·구현 부담)를 구조적으로 진단한다. DB의 provable security는 미해결 과제로 남긴다.",
+      "hardware": [
+        "없음 — 프로토콜 이론 서베이 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "없음 — 수기 확률 분석·비교 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "분석 대상 중 성공확률 1인 공격이 없는 프로토콜은 Swiss-knife와 SKI 둘뿐 (표 밖에서는 TDB, Fischlin-Onete 추가)",
+        "mafia fraud 성공확률의 스펙트럼: Brands-Chaum (1/2)^n(최적) ~ Hancke-Kuhn (3/4)^n ~ 1 미만 구간별 분류(Table IX)",
+        "distance fraud 최악 설계는 프로버가 mafia fraud 탐지를 돕는 구조(프로버가 챌린지를 부분적으로 앎), 최선은 final slow phase 보유 — 단 final slow phase는 중간값 저장 때문에 메모리·구현상 부담",
+        "4개 사기 유형의 통일 정의(white box/black box 구분 포함)와 클러스터 기반 프로토콜 선정 방법 제공; provable security를 미해결 과제로 명시"
+      ],
+      "limitations": [
+        "물리계층 공격(ED/LC, 심볼 길이 악용 등)은 범위 밖 — 프로토콜 논리 계층의 확률 분석만 다룬다",
+        "2018년 기준이라 이후 표준화·실장(802.15.4z, Bluetooth CS)은 반영되지 않음",
+        "읽은 판본은 Oxford ORA 기탁 저자판으로 CSUR 게재본과 세부(페이지 등)가 다를 수 있음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "rasmussen-2010-rf-distance-bounding",
+        "cremers-2012-distance-hijacking",
+        "francillon-2011-pkes-relay"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-01",
+      "last_checked": "2026-09-01"
+    },
+    {
+      "id": "nkrow-2024-persistent-db",
+      "title": "Persistent Distance Bounding for Mobile Provers",
+      "authors": [
+        "Raphael E. Nkrow",
+        "Dutliff Boshoff",
+        "Bruno J. Silva",
+        "Zhe Liu",
+        "Gerhard P. Hancke"
+      ],
+      "venue": "IEEE CNS",
+      "venue_full": "2024 IEEE Conference on Communications and Network Security (CNS), 2024 — City University of Hong Kong · Zhejiang Lab · NUAA (CityU Scholars 기탁 원고)",
+      "tier": "other",
+      "category": "defense",
+      "year": 2024,
+      "url": "https://ieeexplore.ieee.org/document/10735582",
+      "preprint": "https://scholars.cityu.edu.hk/ws/portalfiles/portal/275351097/261098304.pdf",
+      "doi": "10.1109/CNS62487.2024.10735582",
+      "topics": [
+        "distance-bounding",
+        "uwb",
+        "cir",
+        "fingerprinting",
+        "session-monitoring",
+        "distance-fraud",
+        "distance-hijacking",
+        "cir-spoofing"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "DB 프로토콜이 전부 '순간 검증'이라는 빈틈 — 경계 통과 후 프로버가 멀어져도 세션은 계속 유효하다 — 을 처음 명시적으로 다룬 논문이다. CS 관점에서 이 구도는 낯익다: CS도 연결 기반으로 절차를 반복하며 '언제 다시 잴 것인가'가 스케줄링 문제로 남아 있는데, PiBiF의 'CIR 특징 지문으로 경계 이탈 징후를 감시하다가 의심될 때만 재측距를 트리거'하는 설계는 CS의 NADM·반복 절차 예산 절감에 그대로 이식해 볼 수 있는 수신기 측 정책이다. 동시에 저자들이 스스로 명시한 한계 — 경계 안 프록시(mafia/terrorist fraud)는 원리적으로 못 잡고, CIR 스푸핑으로 지문 자체를 속일 수 있다 — 는 채널 지문 기반 감시가 릴레이 방어가 아니라는 경계선을 그어 주며, 같은 그룹의 tof-resiliency(보정 역용 공격)와 함께 '수신기 측 ML/지문 정책 자체가 새 공격면'이라는 내 receiver-policy 축의 근거가 된다.",
+      "summary": "거리한정(DB) 프로토콜은 종료 시점의 순간적 근접 검증만 제공하므로, 경계 확인 후 프로버가 이동해도 세션이 계속되는 유스케이스(위치 기반 접근제어 등)에서는 빈틈이 생긴다. 이 논문은 '지속적 거리한정' 개념을 제안하고, RBE 단계에서 수집한 CIR로부터 특징 8종(RMS 지연 확산·왜도·첨도·첫 경로 전력·수신 전력·peak-to-lead delay·평균 초과 지연·상승 시간)을 추출해 지문 라벨 λ를 만든 뒤, 세션 중 m회 교환의 새 라벨 λ′가 λ를 넘으면 DB 재실행을 트리거하는 PiBiF 알고리즘을 설계했다. DWM1001 2대로 개방 공간(반경 1~7 m, 35지점)과 교실+복도(LOS/NLOS, 63지점)에서 지점당 500회씩 평가해 환경 1 민감도 1.0(전 거리)·특이도 최악 0.80, 환경 2 특이도 1.0·민감도 최악 약 0.86을 얻었다. 경계 안 프록시를 쓰는 mafia/terrorist fraud와 CIR 스푸핑은 한계로 명시하고, 후자에는 반파장 이상 떨어진 helper 수신기 기반 탐지를 개념 수준에서 제안한다.",
+      "hardware": [
+        "Decawave DWM1001 UWB module × 2 (V/P 각 1대) (전문 확인)",
+        "환경 1: 대학 건물 2층 개방 공간 16.3 m × 17.6 m, 반경 1~7 m 원형 35지점 × 500회 (100 ms 간격); 환경 2: 다른 건물 5층 교실 12 m × 10 m + 복도, 15.6 cm 벽으로 LOS/NLOS 혼합 63지점 × 500회"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "SDK·라이브러리·버전 미기재 (전문 확인) — CIR 특징행렬 정규화 후 평균 지문과 공분산 최대값(식 4~5)으로 판정하는 자체 알고리즘"
+      ],
+      "software_verified": true,
+      "results": [
+        "지문 라벨 λ 비교만으로 경계 내/외 판정 — 환경 1: 민감도 1.0(1~7 m 전 거리), 특이도 최악 0.80(5 m)·0.93(4 m); 환경 2: 특이도 1.0(전 거리), 민감도 최악 31/36≈0.86(4 m)",
+        "판정 로직: λ′>λ면 DB 재실행을 트리거하고 max(t)>tMAX면 세션 종료 — 매 통신마다 전체 DB를 재실행하는 것 대비 오버헤드 절감",
+        "지문 생성은 L=10 교환, 감시는 m=5 교환 샘플로 동작 (예: 환경 1 실험 1에서 λ=5.739, tMAX=8.388 ns)",
+        "λ의 증감이 프로버의 접근/이탈 방향까지 알려줌 — 등거리 이동 시 λ가 근접값 유지",
+        "일부 거리의 성능 저하 원인은 UWB 모듈 안테나 방사 패턴으로 진단 — 전방향 안테나 권고"
+      ],
+      "limitations": [
+        "저자 명시: 경계 안에 프록시 프로버를 두는 mafia/terrorist fraud는 원리적으로 탐지 불가 — 프록시의 채널 특성은 정상으로 보인다",
+        "저자 명시: CIR 스푸핑(전력 조정·신호 중첩·시간지연 다중 전송)으로 지문을 속일 수 있음 — 대응으로 반파장 이상 떨어진 helper 수신기(virtual multipath 방어의 적용)를 제안하나 구현·평가 없음",
+        "PiBiF 단독으로는 근접성을 보안 검증하지 않음 — 기존 DB 프로토콜의 보조 장치",
+        "distance fraud·distance hijacking 탐지가 목표이며 릴레이 공격 방어가 아님"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "avoine-2018-db-survey"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "nkrow-2024-tof-resiliency",
+          "type": "complementary",
+          "note": "같은 그룹이 같은 장비(DWM1001)의 CIR 특징으로 DB 프로토콜의 다른 실용 한계를 보완 — tof-resiliency는 NLOS 오거부(FRR), 본 논문은 경계 검증의 순간성(세션 지속 감시)"
+        }
+      ],
+      "added": "2026-09-01",
+      "last_checked": "2026-09-01"
     }
   ]
 }
