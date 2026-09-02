@@ -2,6 +2,46 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-09-02 (23차: 신규 2건 — Gunia RSS 융합 후속작 전문 편입 + WCL 후보 unverified 등재, 보강 2건 — UTD 학위논문 재수록 장으로 UTD·TI 계보 전문 확인, 인용 12건 추가)
+
+S2 API 는 오늘도 429, OpenAlex 검색은 "클러스터 복구 중"이라 둘 다 못 썼고, Crossref
+`works?query.title=…&filter=from-created-date:2026-08-15` 로 대체해 IEEE 신간을 잡았습니다.
+arXiv cs.CR/eess.SP 신규 목록, CCS 2026 accepted papers, USENIX Sec '26 목차(curl+UA)는 해당
+없음(USENIX 의 PrivacyShield 는 BLE 비콘 릴레이지만 거리측정이 아니라 제외). 보강은 유료
+IEEE 경로가 전부 막힌 상태에서 **저자 박사학위논문의 IEEE 재수록 장**이라는 새 우회로로 뚫었습니다.
+
+- 신규 (전문 확인 1건): **Decimetre-Accurate Positioning Using Channel Sounding and UWB: Does RSS
+  Still Play a Role?** (Gunia·Ellinger, IEEE Access 2026-08-24, 관련도 **보통**, `verified`,
+  ielx8 경로). gunia-2026-cs-metrological 의 3층(칼만 융합·추적) 후속 — Table 2: UWB 단독 실내
+  0.30 m → +Bluetooth RSS 0.26 m, 네 시스템 융합 0.23/0.72 m(평균/최대), RSS 융합으로 평균이
+  나빠진 경우 없음. 여기서도 "CS" 는 AT86RF233 PBR 대용. RSS 가 위상·시간과 직교하는 독립
+  정보라는 저자 논리는 수신기 판정 정책의 재료이고, 고정 R 의 칼만 추적은 단발 조작을 묻는
+  대신 지속 조작에 무방비라는 점을 relevance_note 에 적음.
+- 신규 (제목·서지만, `unverified`): **Accurate and Efficient BLE Ranging in Multipath Environments
+  Using SVT-Based Channel Completion and IFFT-MUSIC** (Wang 외, Tongji, IEEE WCL Early Access
+  2026-08-31, 관련도 보통 — 잠정). Xplore 페이지·REST metadata·Crossref·OpenAlex 어디서도 초록을
+  못 얻어 배지가 붉게 남도록 등재. sheikh-2023 의 "빠진 톤" 계보로 추정.
+- 보강 (partial → `verified` 2건): UT Dallas 리포지터리(DSpace REST API)에서 저자 박사학위논문을
+  받아 "©IEEE Reprinted, with permission" 장으로 확인.
+  - **vanmarter-2023-svr-ble-ranging** — 장비(75 ch × 1 MHz two-way CFR, 4×1/1×4/2×2, 주차장
+    룸미러·도어핸들 + 실내 주거, 705 trial·14,100 측정), SVR 파라미터(ε = 4·10⁻⁴, C = 20, γ = 0.3,
+    N = 30), 결과(룸미러 전체 RMSE MUSIC 1.681/0.749 m vs SVR 0.766/0.585 m, NLOS 편향 +1.203 →
+    +0.116 m, 차 안 1.494 → 0.296 m), cites 5건, relation extends → shoudha-2022.
+  - **bintariq-2024-dl-ble-ranging** — RLA-SepCNN 구조(필터 10-10-40-20, dropout 0.1), 744 trial·
+    14,880 측정·J = 6 leave-one-environment-out, 결과(IE1 0.68/0.96 m vs SVR 0.98/1.43 m, IE2
+    0.37/0.68 m, 실외 DH 0.51/0.74 m), cites 5건, relation extends → vanmarter-2023.
+- 인용: 12건 추가 (361 → 373) — 학위논문 참고문헌은 전체 공용이라 장 본문에서 실제 인용된 번호만
+  대조해 넣음.
+- 표준: 변경 없음 — Core 6.3 최신, IPT 여전히 VSr01_PR Draft, 802.15.4ab Active PAR(2021-09-23
+  승인, 미발행), CCC 3.0/4.x 그대로.
+- 실패: partial 잔여 IEEE 18건 ielx8 재시도 전부 202 빈 응답(재확인, last_checked 만 갱신);
+  Eriksson VNC 포스터는 Google 색인 iel8 직링크도 202·TUM 강좌 페이지(echord.info) 404; Andreadis
+  IPIN 2025 는 dblp 상 closed; Schröder IPIN 2019 는 IBR 개인 페이지에 PDF 없음.
+- 참고문헌 계보 후보 (Gunia 전문): Pelka 2014 IPIN "Accurate radio distance estimation by phase
+  measurements with multiple frequencies", von Zengen 2016 INFOCOM "No-cost distance estimation
+  using standard WSN radios", Schröder 2018 IPIN "Accurate and precise distance estimation from
+  phase-based ranging data" — 비-Bluetooth PBR 계보(`other`), 다음 실행에서 판단.
+
 ## 2026-09-01 (22차: 신규 2건 — DB 이론 허브 문헌 편입, 인용 18건 추가)
 
 어제(21차) 직후라 신규 발행분은 없었고(arXiv cs.CR/eess.SP 최신 목록 무해당,

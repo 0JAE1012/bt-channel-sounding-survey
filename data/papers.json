@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-01",
-  "last_run": "2026-09-01",
+  "updated": "2026-09-02",
+  "last_run": "2026-09-02",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 361,
+  "citation_edges": 373,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -810,7 +810,7 @@
       },
       "verification": "partial",
       "added": "2026-07-28",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-02",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -2986,7 +2986,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-08-26",
+      "last_checked": "2026-09-02",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -3043,7 +3043,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-02",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -3458,7 +3458,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-03",
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "antonijevic-2026-secure-wifi-ranging",
@@ -5303,7 +5303,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-24",
-      "last_checked": "2026-08-24"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "gou-2024-uwb-channel-reciprocity",
@@ -5598,7 +5598,7 @@
       },
       "verification": "partial",
       "added": "2026-08-26",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-02",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -6319,7 +6319,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "wu-2026-cs-twr-phase-offset",
@@ -6622,7 +6622,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "xie-2026-multipath-toa-binary-ambiguity",
@@ -6685,7 +6685,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "nie-2025-ransac-root-music-cs",
@@ -6746,7 +6746,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "fujii-2025-dual-antenna-cs-sim",
@@ -6803,7 +6803,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "fujii-2025-pbr-indoor-experimental",
@@ -6861,7 +6861,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "kumbul-2025-ble-localization-ranging-methods",
@@ -6917,7 +6917,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "andreadis-2025-phase-ble-localization-ml",
@@ -6975,7 +6975,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "rashidi-2025-ble-uwb-positioning-survey",
@@ -7034,7 +7034,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "qi-2026-cs-hadm-iot",
@@ -7157,7 +7157,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "nikodem-2025-mcpd-ble",
@@ -7772,7 +7772,7 @@
       "category": "estimation",
       "year": 2023,
       "url": "https://ieeexplore.ieee.org/document/10044207",
-      "preprint": null,
+      "preprint": "https://utd-ir.tdl.org/items/80759f0b-4e2f-4c7e-9780-ca0f5c5197a3",
       "doi": "10.1109/JIOT.2023.3244743",
       "topics": [
         "phase-based-ranging",
@@ -7787,33 +7787,65 @@
         "ble-cs"
       ],
       "relevance": "medium",
-      "relevance_note": "코퍼스 5편(wieme-2025·morano-2026·nikodem-2025·schex-2026·ble6-2026)이 인용하는 UTD·TI 계보의 ML 거리보정 대표작이라 인용 그래프의 허브로 편입한다. 초록 기준: two-way CFR의 제곱이 만드는 조밀한 다중경로 성분·적은 스냅샷·모델 결함을 데이터 기반 SVR로 우회해, 단일 안테나로 다중 안테나 MUSIC급 decimeter 정확도를 실측 BLE 데이터에서 달성한다고 주장한다. 내 연구 관점에서는 nkrow-2024가 보인 \"학습 기반 보정은 보정을 속이는 공격을 부른다\"는 구도의 BLE 쪽 대상이 되는 논문 — SVR이 학습한 환경 통계 밖의 조작된 CFR에 어떻게 반응하는지가 질문거리다. 전문 미확보로 실험 조건·장비는 미확인.",
-      "summary": "IoT 측위에서 BLE MCPD의 two-way CFR 측정은 one-way CFR의 제곱이라 조밀한 다중경로 성분이 늘고 스냅샷이 적으며 실환경 모델 결함이 있어 정확한 거리측정이 어렵다. 이를 데이터 기반 SVR로 극복해, 실측 BLE 측정에서 단일 안테나 decimeter급 정확도를 달성하고(모델 기반 MUSIC은 비슷한 성능에 다중 안테나 필요) 서로 다른 다중경로 환경에서의 강건성을 보인다고 주장한다. (출판사 초록 기준)",
+      "relevance_note": "코퍼스 5편(wieme-2025·morano-2026·nikodem-2025·schex-2026·ble6-2026)이 인용하는 UTD·TI 계보의 ML 거리보정 대표작이자 bintariq-2024 의 출발점이라 인용 그래프의 허브다. 전문(저자 박사학위논문 제2장 재수록본)으로 확인한 뒤 내 연구에 쓰이는 지점이 셋으로 늘었다. 첫째, **NLOS 편향의 소멸** — MUSIC 은 NLOS 에서 평균오차 +1.203 m(단일 안테나)의 양의 편향을 보이는데 SVR 은 학습 데이터에 대한 편향항 b 로 0.116 m 까지 지운다. 거리 축소 공격은 정확히 이 편향의 반대 방향이므로, 편향을 \"고치는\" 회귀기가 조작된 CFR 에 어느 방향으로 반응하는지가 곧 질문이다. 둘째, **꼬리의 제거** — 저자들은 MUSIC 의 고오차 사례(outlier)를 SVR 이 없앤다고 강조하는데, 그 꼬리는 NADM 류 이상 탐지가 기대는 신호이기도 하다. 큰 오차를 내지 않도록 학습된 추정기는 있을 수 없는 입력에도 그럴듯한 거리를 낸다는 뜻이고, nkrow-2024 가 UWB 에서 보인 \"보정을 속이는 공격\" 구도의 BLE 쪽 대상이 된다. 셋째, 차량 시나리오의 정상 오차 기준값 — 룸미러 LOS 0.677 m / NLOS 0.846 m(단일 안테나 SVR), 차 안 0.296 m — 은 CS 차량 접근 정책이 감당해야 할 오차 폭이다. 하드웨어 모델명은 여기서도 미기재다.",
+      "summary": "BLE MCPD(two-way CFR)는 LO 위상 오프셋을 소거하지만 CFR 을 제곱하는 셈이라 다중경로 성분이 두 배로 늘고, 단일 스냅샷·모델 결함까지 겹쳐 MUSIC 같은 부분공간 추정기가 흔들린다. 저자들은 공간 스무딩한 two-way 표본 공분산의 원소를 입력으로 SVR(ε = 4·10⁻⁴, C = 20, γ = 0.3)을 학습해 거리를 직접 회귀한다. 차량 룸미러·도어핸들에 Initiator 를 붙인 주차장(콘크리트·야외)과 실내 주거 환경에서 75 채널 × 1 MHz two-way CFR 을 4×1/1×4/2×2 안테나 구성으로 14,100회(705 trial × 20) 측정해 5-fold 교차검증했다. 룸미러 전체 측정에서 단일 안테나 SVR 은 RMSE 0.766 m 로 MUSIC 1.681 m 대비 54.4%(91.57 cm) 낮고 연산량도 약 75% 적으며, 4 안테나에서는 0.585 m 로 MUSIC 0.749 m 대비 21.9% 개선·연산 91% 절감이다. 차 안(다중경로 극심)에서는 SVR 0.296 m vs MUSIC 1.494 m 이고, 룸미러로 학습해 도어핸들·실내 주거로 시험해도 MUSIC 보다 낫다.",
       "hardware": [
-        "확인 필요 — 전문 미확보 (유료; Unpaywall·OpenAlex closed, IEEE ielam AAM 경로는 HTML 반환)"
+        "BLE 측정 기기 — 모델명·칩셋 본문 미기재 (전문 확인; TI 공저, shoudha-2022 와 같은 캠페인 장비로 보이나 명시 없음)",
+        "two-way CFR 을 75개 BLE 채널 × 1 MHz 간격(총 75 MHz)으로 측정, Initiator·Reflector 사이 공간 독립 안테나 링크 4개 — 4×1 / 1×4 / 2×2 구성(P = 4), 단일 안테나(P = 1)는 각 구성의 안테나 쌍을 따로 평가",
+        "실외: 주차장(지붕 있는 콘크리트 구조 + 야외) — Initiator 를 차량 룸미러(RVM) 또는 운전석 도어핸들(DH)에 고정, Reflector 는 차 밖 1–7 m(고정 각도 Ai 방향) 또는 차 안 54–139 cm; NLOS 는 사용자·차체 차폐",
+        "실내: 주거 환경 — Initiator 고정, Reflector 이동, NLOS 는 벽 차폐",
+        "데이터셋: 안테나 구성·위치·LOS/NLOS 조합 = 1 trial, trial 당 시간축 20회 → 705 trial, 14,100 측정",
+        "기준 거리 측정 방법 미기재"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 전문 미확보"
+        "SVR: 커널 파라미터 γ = 0.3(교차검증으로 선정), C = 20, ε = 4·10⁻⁴ — 입력은 공간 스무딩 부분배열 N = 30 의 two-way 표본 공분산 원소(정규화), 출력은 거리; 편향항 b 가 학습 데이터 기준 0 편향을 만듦",
+        "비교 기준 MUSIC: forward-backward 평균 + MDL 로 신호원 수 추정, 같은 N = 30",
+        "교차검증: trial 단위로 J = 5 부분집합, 학습에는 trial 당 첫 스냅샷만 사용(추가 스냅샷은 이득 없음), 학습 시 LOS/NLOS 구분 없음",
+        "복잡도: 지원벡터 수 Nsv·N·P 의 함수로 복소 곱셈 수를 해석적으로 유도해 MUSIC 과 비교",
+        "툴체인·라이브러리·코드 공개 없음 (전문 확인)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "주장: 실측 BLE 측정에서 단일 안테나 SVR이 decimeter급 정확도 — 다중 안테나 MUSIC과 동급 (초록; 수치·조건 미확인)"
+        "룸미러 전체(LOS+NLOS, J = 5) RMSE: MUSIC P=1 1.681 m, MUSIC P=4 0.749 m, SVR P=1 0.766 m, SVR P=4 0.585 m (Fig. 2.5d)",
+        "룸미러 LOS RMSE: MUSIC 1.274 / 0.42 m, SVR 0.677 / 0.492 m; NLOS RMSE: MUSIC 2.007 / 0.971 m, SVR 0.846 / 0.665 m (P=1 / P=4)",
+        "평균오차(편향): 전체 MUSIC P=1 +0.875 m·P=4 +0.361 m vs SVR +0.045 / −0.006 m; NLOS 에서 MUSIC P=1 +1.203 m vs SVR +0.116 m — SVR 은 학습 데이터 기준 편향 0",
+        "차 안(Initiator·Reflector 모두 차내, 54–139 cm) RMSE: MUSIC 1.494 / 0.694 m, SVR 0.296 / 0.268 m (P=1 / P=4)",
+        "저자 결론: 단일 안테나 SVR 은 MUSIC 대비 RMSE 91.57 cm(54.4%) 감소·연산량 약 75% 절감, 4 안테나 SVR 은 16.4 cm(21.9%) 감소·연산량 약 91% 절감",
+        "RMSE vs SNR(Fig. 2.4): 단일 안테나 MUSIC 은 −12.5~12.5 dB 구간에서 1.2–1.7 m, SVR 은 0.55–0.8 m; 4 안테나에서는 저 SNR 에서 SVR 우세, 고 SNR 에서 동급",
+        "강건성: 룸미러 데이터로 학습해 도어핸들(회전된 DoA)·실내 주거 환경으로 시험해도 단일·다중 안테나 모두 MUSIC 보다 낮거나 같은 RMSE (Fig. 2.7·2.8, 수치는 SNR 곡선만)",
+        "학습 크기: 8~562 trial 로 늘리며 RMSE 가 빠르게 안정 — 적은 학습 데이터로 충분 (Fig. 2.9)",
+        "SVR 의 입력 길이 요구가 MUSIC 보다 작아 저장 용량도 절감"
       ],
       "limitations": [
-        "전문 미확보 (2026-08-31): IEEE 유료, ielam AAM 링크도 HTML만 반환",
-        "ML 보정의 조작 내성 논의 여부 미확인"
+        "확인 출처: 저자 박사학위논문(UT Dallas, 2024-05) 제2장 — \"©2023 IEEE, reprinted with permission\" 재수록본이라 저널 판과 동일 내용으로 봄",
+        "하드웨어 모델·툴체인 미기재로 재현 정보 부족 (관찰)",
+        "강건성 평가는 RMSE vs SNR 곡선만 제시하고 총괄 RMSE 수치는 없음 (관찰)",
+        "조작된(학습 분포 밖) CFR 에 대한 반응은 다루지 않음 — 보안 논의 없음 (전문 확인)",
+        "학습 데이터가 필요하고 편향항이 학습 환경에 묶임 — 저자는 환경 간 일반화로 반박하나 시험 환경은 같은 캠페인의 3종"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
-      "relations": [],
+      "verification": "verified",
+      "cites": [
+        "zand-2019-ble-pbr",
+        "zand-2019-concurrent-pbr",
+        "boer-2020-pbr-multipath",
+        "stanciu-2021-narrowband-distance",
+        "shoudha-2022-reduced-complexity-ble-ranging"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "shoudha-2022-reduced-complexity-ble-ranging",
+          "type": "extends",
+          "note": "같은 그룹의 MUSIC/OMP 모델 기반 추정을 데이터 기반 SVR 로 대체해 단일 안테나에서 다중 안테나급 정확도를 냄"
+        }
+      ],
       "added": "2026-08-31",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "boer-2020-pbr-multipath",
@@ -7872,7 +7904,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "stanciu-2021-narrowband-distance",
@@ -7929,7 +7961,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "bintariq-2024-dl-ble-ranging",
@@ -7947,7 +7979,7 @@
       "category": "estimation",
       "year": 2024,
       "url": "https://ieeexplore.ieee.org/document/10638469",
-      "preprint": null,
+      "preprint": "https://utd-ir.tdl.org/items/5ac9a7c3-b41d-4b8b-aad8-e5ad8fac8237",
       "doi": "10.1109/JSEN.2024.3441596",
       "topics": [
         "phase-based-ranging",
@@ -7962,32 +7994,61 @@
         "ble-cs"
       ],
       "relevance": "low",
-      "relevance_note": "UTD·TI 계보의 딥러닝 판(vanmarter-2023 SVR의 후속)으로 morano-2026·schex-2026이 인용해 그래프 연결용으로 편입한다. 초록이 MCPD 학습 기반 보정의 두 한계 — **학습 환경 밖 일반화의 어려움과 임베디드 기기에서의 메모리·연산 비용** — 를 스스로 명시하는 점이 유용하다: CS에 ML 보정을 얹자는 제안(wacsa-2025, andreadis-2025 등)을 평가할 때 벤더 쪽 계보조차 인정하는 비용이 무엇인지의 근거. 보안 접점은 없다.",
-      "summary": "two-way CFR을 쓰는 MCPD 거리측정은 one-way CFR 제곱으로 다중경로 성분이 늘고 스냅샷이 적으며 실환경 모델 결함이 있다. 딥러닝으로 이를 데이터에서 학습해 완화하되, 학습 환경에 과적합된 모델의 새 환경 일반화가 어렵고 임베디드 기기에서 메모리·연산 비용이 큰 문제를 지적하며 복잡도를 줄인 딥러닝 접근을 제안한다. (출판사 초록 기준; 초록이 지면에서 잘려 제안 기법 상세 미확인)",
+      "relevance_note": "UTD·TI 계보의 딥러닝 판(vanmarter-2023 SVR 의 후속)으로 morano-2026·schex-2026 이 인용해 그래프 연결용으로 편입했고, 전문(저자 박사학위논문 제3장 재수록본)으로 확인했다. 초록이 말한 \"학습 환경 밖 일반화\"를 실제로는 **leave-one-environment-out(J = 6 환경 중 5개 학습·1개 시험)** 으로 평가해, 같은 캠페인 안에서지만 미지 환경에서 SVR 대비 19~30%·MUSIC 대비 44% 개선을 보인다 — CS 에 ML 보정을 얹자는 제안(wacsa-2025, andreadis-2025 등)을 평가할 때 벤더 계보가 세운 일반화 검증의 기준선이다. 또 하나, 저자들이 임베디드를 겨냥해 FLOPs 를 SVR·MUSIC 보다 낮춘 점은 CS 칩 안에 ML 보정이 실제로 들어갈 수 있다는 뜻이고, 그러면 vanmarter-2023 에서 제기한 \"조작 CFR 에 대한 회귀기의 반응\" 질문이 칩 수준 문제가 된다. 보안 접점은 여전히 없다.",
+      "summary": "vanmarter-2023 의 SVR 은 자동 특징 학습이 없고 추론 비용이 지원벡터 수에 비례한다는 문제의식에서, 모델 기반 전처리와 경량 딥러닝을 결합한 하이브리드 BLE 랑잉을 제안한다. two-way CFR(75 채널 × 1 MHz)을 Hankel 행렬로 공간 스무딩(M = 38)한 뒤 무작위 저계수 근사(RLA)로 신호 공분산을 빠르게 추정하고, 4층 separable CNN(필터 10-10-40-20, 3×3 depthwise, dropout 0.1, max-pool 2)과 완전연결 회귀기로 거리를 낸다(RLA-SepCNN). 두 아파트 실내와 주차장(룸미러·도어핸들 Initiator) 데이터 14,880회(744 trial)를 J = 6 환경으로 나눠 5개로 학습하고 나머지 1개에서 시험하는 leave-one-environment-out 으로 미지 환경 일반화를 평가한다. 실내 1 에서 RMSE 0.68 m(P=4)/0.96 m(P=1)로 SVR 0.98/1.43 m·MUSIC 1.06/2.36 m 보다 30% 이상, 실내 2 에서 0.37/0.68 m 로 19% 이상 낫고, FLOPs 도 SVR·MUSIC 보다 적다.",
       "hardware": [
-        "확인 필요 — 전문 미확보 (IEEE 유료, ielx8 경로 0바이트·Unpaywall closed)"
+        "다중 안테나 BLE 태그 — 모델명·칩셋 본문 미기재 (전문 확인; TI 공저)",
+        "two-way CFR 을 75개 BLE 채널 × 1 MHz(총 75 MHz)로 측정, 안테나 구성 4×1 / 1×4 / 2×2 (P=4) 및 단일 안테나(P=1)",
+        "실내: 서로 다른 평면·가구 배치의 아파트 2곳(IE 1, IE 2), Initiator–Reflector 직선거리 최대 5 m, NLOS 는 벽 차폐",
+        "실외: 주차장 2곳(콘크리트·야외) — Initiator 를 차량 룸미러 또는 운전석 도어핸들에 고정, Reflector 는 차 안/밖 최대 7 m, NLOS 는 물체·사용자 차폐 (vanmarter-2023 와 같은 캠페인)",
+        "데이터셋: 위치당 20회 측정 → 744 trial, 14,880 CFR 측정; 환경 구분 J = 6 (아파트 2 + 주차장 Initiator 구성)",
+        "기준 거리 측정 방법 미기재"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 전문 미확보"
+        "전처리: two-way CFR → Hankel 행렬 공간 스무딩(K = 75, M = 38) → 무작위 저계수 근사(RLA, 행렬 스케칭)로 신호 공분산 추정",
+        "모델: 배치 정규화 → separable CNN 4층(depthwise 3×3×ci + pointwise, 필터 수 10-10-40-20, 각 층 dropout 0.1·max-pool 2, 마지막 층 제외) → 평탄화 → 완전연결 회귀기, MSE 손실; 다중 안테나는 공분산을 평균해 하나로 입력",
+        "평가 프로토콜: J = 6 환경 중 J−1 로 학습, 나머지 1개로 시험 (미세조정 없음)",
+        "복잡도: FLOPs 로 RLA-SepCNN(스무딩 + RLA + SepCNN) vs SVR(Nsv = 1000 가정) vs MUSIC(탐색 격자 Jm = 400 가정) 비교",
+        "학습 프레임워크·옵티마이저·에폭 미기재 (전문 확인), 코드 공개 없음"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "주장: 복잡도 줄인 DL로 MCPD 거리측정 — 일반화·자원 제약 완화 (초록; 수치 미확인)"
+        "실내 1(IE 1) 전체 RMSE: RLA-SepCNN 0.68 m(P=4) / 0.96 m(P=1), SVR 0.98 / 1.43 m, MUSIC 1.06 / 2.36 m — SVR 대비 30% 이상 개선",
+        "실내 2(IE 2) 전체 RMSE: RLA-SepCNN 0.37 / 0.68 m, SVR 0.46 / 0.88 m, MUSIC 0.83 / 1.01 m — SVR 대비 19% 이상 개선",
+        "실외 도어핸들(DH) 전체 RMSE: RLA-SepCNN 0.51 / 0.74 m, SVR 0.71 / 1.00 m, MUSIC 0.84 / 2.41 m; NLOS 에서 SVR 대비 30% 이상 개선",
+        "단일 안테나 종합(Fig. 3.9): 실내 25%, 실외 19.5% RMSE 개선; 저자 결론 \"미지 환경에서 RMSE 0.5 m, MUSIC 대비 44% 개선, 추가 데이터·미세조정 없이\"",
+        "복잡도: RLA-SepCNN 이 단일·다중 안테나 모두 FLOPs 최소, 4 안테나 RLA-SepCNN 이 단일 안테나 MUSIC·SVR 보다도 빠름; 스무딩 크기가 커질수록 MUSIC·SVR 은 훨씬 빠르게 증가 (Fig. 3.10·3.11)",
+        "RMSE vs SNR 구간별 곡선(Fig. 3.6–3.8 (d))도 제시 — 수치는 그림에만"
       ],
       "limitations": [
-        "전문 미확보 (2026-08-31): IEEE 유료, OA 경로 없음"
+        "확인 출처: 저자 박사학위논문(UT Dallas, 2024-12) 제3장 — \"©2024 IEEE, reprinted with permission\" 재수록본이라 저널 판과 동일 내용으로 봄",
+        "하드웨어 모델·학습 프레임워크·하이퍼파라미터(옵티마이저·에폭) 미기재 (관찰)",
+        "일반화 시험은 같은 캠페인의 6 환경 안에서의 leave-one-out — 완전히 다른 건물·장비로의 일반화는 미검증 (관찰)",
+        "학습에 다환경 라벨 데이터 필요; 보안·조작 내성 논의 없음 (전문 확인)"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
-      "relations": [],
+      "verification": "verified",
+      "cites": [
+        "vanmarter-2023-svr-ble-ranging",
+        "shoudha-2022-reduced-complexity-ble-ranging",
+        "zand-2019-ble-pbr",
+        "boer-2020-pbr-multipath",
+        "stanciu-2021-narrowband-distance"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "vanmarter-2023-svr-ble-ranging",
+          "type": "extends",
+          "note": "SVR 의 수동 특징·지원벡터 비례 추론 비용을 separable CNN 으로 대체, 같은 캠페인 데이터로 미지 환경 일반화를 직접 평가"
+        }
+      ],
       "added": "2026-08-31",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-02"
     },
     {
       "id": "avoine-2018-db-survey",
@@ -8143,6 +8204,154 @@
       ],
       "added": "2026-09-01",
       "last_checked": "2026-09-01"
+    },
+    {
+      "id": "gunia-2026-cs-uwb-rss-positioning",
+      "title": "Decimetre-Accurate Positioning Using Channel Sounding and UWB: Does RSS Still Play a Role?",
+      "authors": [
+        "Marco Gunia",
+        "Frank Ellinger"
+      ],
+      "venue": "IEEE Access",
+      "venue_full": "IEEE Access, vol. 14, pp. 130316–130328 (2026-08-24 공개, CC BY 4.0)",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11664071/",
+      "preprint": null,
+      "doi": "10.1109/ACCESS.2026.3726275",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "uwb",
+        "rss",
+        "sensor-fusion",
+        "kalman-filter",
+        "positioning",
+        "tracking"
+      ],
+      "tech": [
+        "ble-cs",
+        "uwb",
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "gunia-2026-cs-metrological 의 후속으로, 같은 측정 캠페인 위에 3층(칼만 필터 융합·추적)을 얹어 \"정확한 PBR·UWB 가 있는데 RSS 를 더 쓸 이유가 있는가\"를 묻는다. 내 연구에 걸리는 지점은 둘이다. 첫째, 저자들이 RSS 를 쓰라고 권하는 근거 — **RSS 는 위상·전파시간에서 도출되지 않는 직교 정보**라는 논리 — 는 그대로 수신기 판정 정책의 재료가 된다. PBR·RTT 를 조작해 거리를 줄인 공격자는 RSS 까지 그 거리에 맞게 연출해야 하는데, 이 논문의 Table 2 는 RSS 단독 추적의 최대오차가 실내 2 m·실외 5 m 대라 RSS 게이트가 얼마나 거친지(=공격자에게 얼마나 여유가 있는지)를 수치로 준다. 둘째, 칼만 추적은 측정 잡음 공분산 R 을 사전 캠페인에서 고정해 두고 이상 측정을 그 무게로 누그러뜨린다 — 즉 **한 번의 조작 측정은 궤적에 묻히고, 공격은 지속적이어야 한다**는 뜻이며, 반대로 NADM 류 증거 없이 R 만으로 신뢰도를 정하니 지속 조작에는 무방비다. 주의: 제목의 Channel Sounding 은 여기서도 Atmel AT86RF233 PBR 로 대신 측정한 것이라 CS 칩 결과가 아니다.",
+      "summary": "Bluetooth Channel Sounding(PBR)과 UWB 가 데시미터급 측위를 주는 시대에, 어차피 기록되는 RSS 를 융합에 더 쓰는 것이 이득인지를 묻는다. CRLB 로 ToA·RSS·ToA+RSS 의 이론 한계를 비교한 뒤, 이전 논문(gunia-2026-cs-metrological)과 같은 실내 대학 홀(17 m × 13 m, 27 지점)과 실외 안뜰(50 m × 30 m, 52 지점) 캠페인 데이터를 선형 칼만 필터로 융합·추적해 Table 2 의 평균·최대 오차를 낸다. 결과는 RSS 단독 측위는 훨씬 나쁘지만(실외 Wi-Fi RSS 평균 1.70 m) UWB 나 PBR 에 RSS 를 더하면 평균오차가 줄고 나빠지는 경우는 없었다는 것 — UWB 는 실내 0.30 → 0.23 m(30%), 실외 0.45 → 0.35 m 다. 이유로 RSS 가 위상·전파시간과 직교하는 독립 정보라는 점과 칼만 필터가 사전 잡음 통계로 가중을 조정한다는 점을 든다. 향후 IMU 융합을 예고한다.",
+      "hardware": [
+        "UWB(ToF): Decawave DW1000, 3.774–4.243 GHz, BS·MS 모두 (IEEE 802.15.4a)",
+        "PBR(\"CS\"): Atmel AT86RF233 트랜시버 — K = 152 주파수, 2.403–2.479 GHz, 스텝 500 kHz (Bluetooth CS 칩이 아님, [3] 과 동일 장비)",
+        "RSS: Linksys WRT54GL 라우터(Wi-Fi BS), Microchip RN42 트랜시버(Bluetooth BS), 이동국(MS)은 Samsung Galaxy S5 (Android, RSS 갱신 ≈1 Hz)",
+        "기준값(ground truth): Leica TS15 Total Station — 광학 레이저, 최대오차 0.001 m 미만, MS 의 같은 지점 조준",
+        "배치: BS 4개를 각 시나리오 모서리에 설치·보정([3] 의 보정 재사용); 실내 대학 홀 17 m × 13 m(계단·난간·기둥·진열장), 실외 안뜰 50 m × 30 m(벤치·관목·나무·연못, 담장) — UWB 통신 한계로 약 20 m 까지만",
+        "Nordic nRF54L15 는 상용 CS IC 로 언급만 됨 — 측정에 쓰이지 않음"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "융합·추적: 시간이산 선형 칼만 필터(Brammer & Siffling) — 상태 [x, y, vx, vy], 초기 상태 (0, 0, 2.5 m/s, 0), 초기 공분산 100·I, 측정잡음 공분산 R 은 [3]·[19]·[28]·[29] 의 개별 캠페인 표본분산에서 고정",
+        "랑잉: RSS 는 log-normal 모델, PBR 은 two-way + AC-FFT-PD, UWB 는 two-way ToF (Table 1)",
+        "집계: RSS·UWB 는 10회 중 최단거리, PBR 은 10회 평균; 측위: PBR·UWB 는 simple iterative, RSS 는 simple weighted iterative (Table 1)",
+        "이론: ToA / RSS / ToA+RSS 의 CRLB 비교 (Fig. 2)",
+        "측정 데이터베이스: 저자들의 MOCAST 2026 논문 [38] 의 신호·거리·각도·위치 DB",
+        "구체 툴체인·언어·코드 공개 없음 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "Table 2 단독 추적(평균/최대): 실내 — Wi-Fi RSS 0.67/2.05 m, Bluetooth RSS 0.73/2.14 m, PBR 0.87/2.08 m, UWB 0.30/0.97 m; 실외 — Wi-Fi RSS 1.70/5.49 m, Bluetooth RSS 1.13/2.26 m, PBR 0.72/1.73 m, UWB 0.45/0.83 m",
+        "Table 2 UWB + RSS: Bluetooth RSS 융합 실내 0.26/0.93 m·실외 0.35/0.88 m, Wi-Fi RSS 융합 실내 0.27/0.85 m·실외 0.40/0.80 m, Wi-Fi+Bluetooth RSS 융합 실내 0.23/0.82 m·실외 0.36/0.72 m — 저자 요약 \"실내 10%, 둘 다 쓰면 30%, 실외 30% 개선\"",
+        "Table 2 PBR + RSS: Bluetooth RSS 융합 실내 0.87/1.95 m(평균 변화 없음)·실외 0.40/0.86 m, Wi-Fi RSS 융합 실내 0.70/2.24 m·실외 0.70/2.44 m; PBR + UWB 실내 0.27/0.73 m·실외 0.43/0.97 m",
+        "Table 2 네 시스템 전부 융합: 실내 0.23/0.72 m, 실외 0.35/0.68 m (최대오차 기준 최선)",
+        "**RSS 를 더해서 평균오차가 나빠진 경우는 없음** — 다만 실내 PBR + Bluetooth RSS 처럼 변화가 없는 경우는 있음",
+        "실내에서는 RSS 단독 추적(0.67/0.73 m)이 PBR 단독(0.87 m)보다 나음 — 저자는 시나리오가 작아 log-normal 비선형성의 손해가 적고, 같은 홀의 AoA 측정([25])에서 확인된 강한 다중경로가 PBR 을 해친 탓으로 해석",
+        "CRLB 분석도 같은 방향 — ToA 에 RSS 를 더한 하한이 ToA 단독보다 낮음 (Fig. 2)",
+        "측정 규모: 실내 27 지점(points 08–34)·실외 52 지점(points 09–60), 각 지점에서 BS 4개 × 10회, 지점 간 갱신율 약 1 Hz"
+      ],
+      "limitations": [
+        "**CS 하드웨어로 측정하지 않았다** — [3] 과 같이 AT86RF233 PBR 과 자체 UWB 로 대신하고 결과를 CS 로 옮겨 해석 (전문 확인)",
+        "저자 명시: UWB 의 낮은 송신전력 때문에 시나리오를 약 20 m 로 제한 — 그 밖에서는 UWB 가 빠지므로 RSS 의 역할이 더 커진다고 주장하나 측정은 없음",
+        "저자 명시: 모든 조건을 실험한 것은 아니며 실제로는 RSS 융합이 성능을 떨어뜨릴 수도 있음",
+        "저자 명시: MS(Galaxy S5 Android)의 RSS 갱신율이 1 Hz 라 지점마다 사용자가 멈춰 기다림 — 자연스러운 보행 궤적이 아님",
+        "Wi-Fi RTT(802.11mc)는 의도적으로 제외 — RSS 의 직교성이 질문의 핵심이라는 이유",
+        "보안 위협모델 없음 — 측정잡음 공분산 R 이 고정이라 조작 측정의 신뢰도 재평가 메커니즘이 없음 (관찰)",
+        "코드·데이터 공개 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "gunia-2026-cs-metrological",
+        "schroeder-2022-inphase"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "gunia-2026-cs-metrological",
+          "type": "extends",
+          "note": "같은 캠페인 데이터 위에 3층(칼만 융합·추적)을 얹어 RSS 융합의 이득을 검증"
+        }
+      ],
+      "added": "2026-09-02",
+      "last_checked": "2026-09-02"
+    },
+    {
+      "id": "wang-2026-svt-ifft-music-ble",
+      "title": "Accurate and Efficient BLE Ranging in Multipath Environments Using SVT-Based Channel Completion and IFFT-MUSIC",
+      "authors": [
+        "Rui Wang",
+        "Zhaolei Zhang",
+        "Junxiang Chen",
+        "Fengyun Zhang"
+      ],
+      "venue": "IEEE WCL",
+      "venue_full": "IEEE Wireless Communications Letters, Early Access (2026-08-31 등록; 권·호·쪽 미정) — Tongji University (OpenAlex 소속 기준)",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11672804",
+      "preprint": null,
+      "doi": "10.1109/LWC.2026.3729084",
+      "topics": [
+        "phase-based-ranging",
+        "ble",
+        "multipath",
+        "music",
+        "channel-completion",
+        "matrix-completion",
+        "super-resolution"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "제목만 확인한 상태다. 제목이 말하는 두 요소 — **SVT(특이값 임계화) 기반 채널 완성**과 IFFT-MUSIC — 가운데 앞의 것이 내 연구에 걸린다. 채널 완성은 비어 있거나 손상된 채널(톤)의 CFR 을 저계수 구조로 메우는 기법이므로, sheikh-2023-pbr-missing-tones 가 다룬 \"빠진 톤\" 문제와 CS 의 채널 맵 제한·간섭 채널 회피가 만드는 구멍을 추정기 쪽에서 메우는 계보에 든다. 보안 관점의 질문은 shoudha-2022 의 대역폭 외삽과 같다 — 측정에 없는 값을 모델로 지어내는 단계가 조작된 톤을 어떻게 전파하는가. 초록·본문을 확보하기 전에는 이 이상 말할 수 없다. 표제 어휘(SVT·IFFT-MUSIC)만으로 판단한 관련도이므로 전문 확인 후 조정.",
+      "summary": "(제목·서지만 확인 — 초록 미확보) 다중경로 환경의 BLE 거리측정을 SVT 기반 채널 완성과 IFFT-MUSIC 으로 정확하고 효율적으로 만든다는 IEEE Wireless Communications Letters 서한 논문. Crossref 등록일 2026-08-31, 저자 4인은 OpenAlex 기준 Tongji University 소속. IEEE Xplore 문서 페이지·REST 메타데이터·Crossref 모두 초록을 주지 않았고 arXiv 판도 없다.",
+      "hardware": [
+        "확인 필요 — 초록·전문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 초록·전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "확인 필요 — 초록·전문 미확보 (제목상 정확도·복잡도 개선 주장)"
+      ],
+      "limitations": [
+        "초록 미확보 (2026-09-02): IEEE Xplore 문서 페이지는 WebFetch 빈 응답, REST metadata 404, Crossref abstract 없음, OpenAlex 초록 없음, arXiv 판 없음, ielx8 경로 202",
+        "WCL 서한이라 분량 4쪽 안팎 — 실험 규모는 제한적일 가능성 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "unverified",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [],
+      "added": "2026-09-02",
+      "last_checked": "2026-09-02"
     }
   ]
 }
