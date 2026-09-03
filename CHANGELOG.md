@@ -2,6 +2,40 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-09-03 (24차: 신규 3건 — 협대역 PBR 계보의 뿌리 InPhase 원형(INFOCOM'16) 전문 편입 + Pelka IPIN'14·Schröder IPIN'18 허브 문헌 편입, 보강 1건 — WCL 신간 초록 확보, 인용 25건 추가)
+
+어제(23차) 직후라 신규 발행분은 없었고(arXiv cs.CR/eess.SP 신규 목록 무해당, Crossref 8-28 이후
+등록분에서 관련 신규 없음, S2 는 여전히 429, arXiv API 는 빈 응답), 23차가 남긴 Gunia 참고문헌 계보
+후보 3건을 처리했습니다. TU Braunschweig IBR 서버가 오늘 ECONNREFUSED 라 **Wayback Machine
+보존본**(`web.archive.org/web/<ts>id_/<url>`)으로 PDF 를 받았고, IEEE Xplore 는 `rest/document/<arnumber>/abstract`
+엔드포인트가 브라우저 UA 로 JSON 초록·소속·키워드를 주는 것을 확인해 유료 논문 3건의 초록을 채웠습니다.
+
+- 신규 (전문 확인 1건): **No-Cost Distance Estimation Using Standard WSN Radios** (von Zengen·Schröder·
+  Rottmann·Büsching·Wolf, IEEE INFOCOM 2016, 관련도 **보통**, `verified`, IBR OA 사본의 Wayback 보존본).
+  InPhase 계보의 출발점 — AT86RF233 PMU + Active Reflector 를 Contiki 에 구현, 2400–2500 MHz 500 kHz
+  스텝(d_max 150 m), 자기상관+FFT 의 PSD 봉우리로 거리·DQF. 네 환경 중앙값 오차 0.40 m(무필터)/0.30 m
+  (DQF 임계 21) vs Atmel RTB 0.59/0.45 m; DQF 는 1 m 초과 오차 분류에서 민감도 0.79·특이도 0.83·PPV 0.94
+  (Youden 0.62 vs RTB 0.33). "PMU 는 측정 신호와 다른 전파를 구별 못 한다"는 저자 명시가 receiver-policy
+  축의 근거. cites 1건(Pelka), relation extends → pelka-2014.
+- 신규 (초록만, `partial`): **Accurate radio distance estimation by phase measurements with multiple
+  frequencies** (Pelka·Bollmeyer·Hellbrück, IPIN 2014, 관련도 보통). 코퍼스 11건이 인용하는 협대역
+  다주파수 PBR 의 이론 뿌리 — PMU 분해능 → 정확도 요구조건 도출. 유료(ielx7 202), OA 없음.
+- 신규 (초록 + 저자 슬라이드, `partial`): **Accurate and Precise Distance Estimation from Phase-based Ranging
+  Data** (Schröder·Reimers·Wolf, IPIN 2018, 관련도 보통). CDE 알고리즘(복소 위상응답 FFT → 최대 봉우리 =
+  거리, 높이 = DQI). Wayback 보존 슬라이드 표를 이미지로 읽어 4 장면 수치 확보 — 공원 CDE MAE 0.149 m·
+  σ 0.104 m vs RDE 0.706/4.292(최소 −69 m) vs ESSR 2.555/19.653(최대 +283 m); 사무실 복도 CDE 0.550/0.738;
+  잡음 하 FFT 4096 빈에서 MAE ~3 cm 바닥. relation extends → vonzengen-2016.
+- 보강 (unverified → `partial`): **wang-2026-svt-ifft-music-ble** (IEEE WCL) — Xplore REST abstract 로
+  초록·소속·키워드 확보: SVT 저계수 CFR 완성으로 빠진·왜곡 톤 복원 후 IFFT 안내 국소 탐색 + 실수값
+  고유분해 MUSIC, 실측 BLE 다중경로에서 정확도 약 39.5 % 개선. sheikh-2023 "빠진 톤" 계보 확정.
+- 인용: 25건 추가 (373 → 399) — 세 신규 노드로 향하는 역방향 인용을 전문 텍스트 참고문헌에서 대조
+  (vanmarter-2023 은 학위논문 장 본문 [4] 사용 확인). relations 3건 추가(schroeder-2022 → 2016·2018,
+  schroeder-2019 → 2018).
+- 표준: 변경 없음.
+- 실패: Boshoff TII 2026 은 Unpaywall closed·CityU Scholars 가 curl 도 403(Cloudflare) 으로 바뀜; IBR
+  서버 다운으로 Schröder IPIN 2019·2018 본문은 여전히 미확보(Wayback 에는 슬라이드만); Pelka 2014 는
+  TH Lübeck 에 PDF 없음.
+
 ## 2026-09-02 (23차: 신규 2건 — Gunia RSS 융합 후속작 전문 편입 + WCL 후보 unverified 등재, 보강 2건 — UTD 학위논문 재수록 장으로 UTD·TI 계보 전문 확인, 인용 12건 추가)
 
 S2 API 는 오늘도 429, OpenAlex 검색은 "클러스터 복구 중"이라 둘 다 못 썼고, Crossref

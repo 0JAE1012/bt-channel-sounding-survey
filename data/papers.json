@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-02",
-  "last_run": "2026-09-02",
+  "updated": "2026-09-03",
+  "last_run": "2026-09-03",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 373,
+  "citation_edges": 399,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -4517,12 +4517,15 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-03",
       "cites": [
         "francillon-2011-pkes-relay",
         "olafsdottir-2017-carrier-phase",
         "zand-2019-ble-pbr",
-        "cremers-2012-distance-hijacking"
+        "cremers-2012-distance-hijacking",
+        "vonzengen-2016-no-cost-distance",
+        "pelka-2014-phase-multi-frequency",
+        "schroeder-2018-cde"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5239,7 +5242,9 @@
         "dataset": null
       },
       "verification": "verified",
-      "cites": [],
+      "cites": [
+        "vonzengen-2016-no-cost-distance"
+      ],
       "cites_source": "fulltext",
       "relations": [
         {
@@ -5249,7 +5254,7 @@
         }
       ],
       "added": "2026-08-24",
-      "last_checked": "2026-08-26"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "sheikh-2025-cs-interference",
@@ -5521,12 +5526,15 @@
       },
       "verification": "verified",
       "added": "2026-08-26",
-      "last_checked": "2026-08-31",
+      "last_checked": "2026-09-03",
       "cites": [
         "schroeder-2019-multipath-pbr",
         "zand-2019-ble-pbr",
         "zand-2019-concurrent-pbr",
-        "boer-2020-pbr-multipath"
+        "boer-2020-pbr-multipath",
+        "vonzengen-2016-no-cost-distance",
+        "pelka-2014-phase-multi-frequency",
+        "schroeder-2018-cde"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5534,6 +5542,16 @@
           "to": "schroeder-2019-multipath-pbr",
           "type": "extends",
           "note": "같은 연구진의 다중경로 관찰을 시스템 전체(획득·추정·품질지표·측위)로 확장했다"
+        },
+        {
+          "to": "vonzengen-2016-no-cost-distance",
+          "type": "extends",
+          "note": "INFOCOM 2016 원형 InPhase(AR 측정 + PSD 추정 + DQF)를 저널 판에서 시스템 전체로 확장"
+        },
+        {
+          "to": "schroeder-2018-cde",
+          "type": "extends",
+          "note": "IPIN 2018 의 CDE/iCDE 알고리즘을 InPhase 시스템 구성요소로 통합(본문 4·6절 명시)"
         }
       ],
       "category": "estimation"
@@ -5598,7 +5616,7 @@
       },
       "verification": "partial",
       "added": "2026-08-26",
-      "last_checked": "2026-09-02",
+      "last_checked": "2026-09-03",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -5606,6 +5624,11 @@
           "to": "olafsdottir-2017-carrier-phase",
           "type": "complementary",
           "note": "공격자 없이도 PBR 이 반사경로를 보고할 수 있음을 보여, 조작과 자연 오차의 식별 문제를 만든다"
+        },
+        {
+          "to": "schroeder-2018-cde",
+          "type": "extends",
+          "note": "CDE/iCDE 의 최대 봉우리 규칙이 다중경로에서 실패함을 보이고 첫 봉우리를 찾는 MP iCDE 로 확장(2019 슬라이드 기준)"
         }
       ],
       "category": "analysis"
@@ -6397,12 +6420,13 @@
         "schroeder-2022-inphase",
         "schroeder-2019-multipath-pbr",
         "shoudha-2022-reduced-complexity-ble-ranging",
-        "stanciu-2021-narrowband-distance"
+        "stanciu-2021-narrowband-distance",
+        "vonzengen-2016-no-cost-distance"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "nishikawa-2026-digital-phase-compensation",
@@ -6466,12 +6490,13 @@
       "verification": "verified",
       "cites": [
         "francillon-2011-pkes-relay",
-        "nishikawa-2026-sub-ghz-pbr-icc"
+        "nishikawa-2026-sub-ghz-pbr-icc",
+        "pelka-2014-phase-multi-frequency"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "morano-2026-one-way-channel-reconstruction",
@@ -6554,12 +6579,15 @@
         "helwa-2023-csi-wifi-ranging-gap",
         "simoncic-2025-freq-switching-mcpd",
         "vanmarter-2023-svr-ble-ranging",
-        "bintariq-2024-dl-ble-ranging"
+        "bintariq-2024-dl-ble-ranging",
+        "vonzengen-2016-no-cost-distance",
+        "pelka-2014-phase-multi-frequency",
+        "schroeder-2018-cde"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "boshoff-2026-secure-indoor-ranging",
@@ -7237,12 +7265,14 @@
         "schroeder-2022-inphase",
         "santra-2024-cs-indoor",
         "vanmarter-2023-svr-ble-ranging",
-        "stanciu-2021-narrowband-distance"
+        "stanciu-2021-narrowband-distance",
+        "pelka-2014-phase-multi-frequency",
+        "schroeder-2018-cde"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "wang-2025-cs-device-free-sensing",
@@ -7450,12 +7480,14 @@
       "verification": "verified",
       "cites": [
         "boer-2020-pbr-multipath",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "pelka-2014-phase-multi-frequency",
+        "schroeder-2018-cde"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "helwa-2023-csi-wifi-ranging-gap",
@@ -7530,12 +7562,14 @@
         "shoudha-2022-reduced-complexity-ble-ranging",
         "boer-2020-pbr-multipath",
         "zand-2019-ble-pbr",
-        "zand-2019-concurrent-pbr"
+        "zand-2019-concurrent-pbr",
+        "pelka-2014-phase-multi-frequency",
+        "schroeder-2018-cde"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "simoncic-2025-freq-switching-mcpd",
@@ -7604,12 +7638,14 @@
         "nikodem-2025-mcpd-ble",
         "santra-2024-cs-indoor",
         "zand-2019-ble-pbr",
-        "zand-2019-concurrent-pbr"
+        "zand-2019-concurrent-pbr",
+        "pelka-2014-phase-multi-frequency",
+        "schroeder-2018-cde"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "simoncic-2026-cfo-mcpd",
@@ -7681,12 +7717,13 @@
         "nikodem-2025-mcpd-ble",
         "zand-2019-ble-pbr",
         "zand-2019-concurrent-pbr",
-        "simoncic-2025-freq-switching-mcpd"
+        "simoncic-2025-freq-switching-mcpd",
+        "pelka-2014-phase-multi-frequency"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "nkrow-2024-tof-resiliency",
@@ -7834,7 +7871,8 @@
         "zand-2019-concurrent-pbr",
         "boer-2020-pbr-multipath",
         "stanciu-2021-narrowband-distance",
-        "shoudha-2022-reduced-complexity-ble-ranging"
+        "shoudha-2022-reduced-complexity-ble-ranging",
+        "pelka-2014-phase-multi-frequency"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -7845,7 +7883,7 @@
         }
       ],
       "added": "2026-08-31",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "boer-2020-pbr-multipath",
@@ -8282,7 +8320,10 @@
       "verification": "verified",
       "cites": [
         "gunia-2026-cs-metrological",
-        "schroeder-2022-inphase"
+        "schroeder-2022-inphase",
+        "vonzengen-2016-no-cost-distance",
+        "pelka-2014-phase-multi-frequency",
+        "schroeder-2018-cde"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8293,7 +8334,7 @@
         }
       ],
       "added": "2026-09-02",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-03"
     },
     {
       "id": "wang-2026-svt-ifft-music-ble",
@@ -8305,7 +8346,7 @@
         "Fengyun Zhang"
       ],
       "venue": "IEEE WCL",
-      "venue_full": "IEEE Wireless Communications Letters, Early Access (2026-08-31 등록; 권·호·쪽 미정) — Tongji University (OpenAlex 소속 기준)",
+      "venue_full": "IEEE Wireless Communications Letters, Early Access, vol. PP, pp. 1–1 (온라인 2026-08-31) — Tongji University (Shanghai Institute of Intelligent Science and Technology / College of Electronics and Information Engineering)",
       "tier": "journal",
       "category": "estimation",
       "year": 2026,
@@ -8316,42 +8357,264 @@
         "phase-based-ranging",
         "ble",
         "multipath",
+        "missing-tones",
         "music",
         "channel-completion",
         "matrix-completion",
-        "super-resolution"
+        "super-resolution",
+        "low-complexity"
       ],
       "tech": [
         "ble-cs"
       ],
       "relevance": "medium",
-      "relevance_note": "제목만 확인한 상태다. 제목이 말하는 두 요소 — **SVT(특이값 임계화) 기반 채널 완성**과 IFFT-MUSIC — 가운데 앞의 것이 내 연구에 걸린다. 채널 완성은 비어 있거나 손상된 채널(톤)의 CFR 을 저계수 구조로 메우는 기법이므로, sheikh-2023-pbr-missing-tones 가 다룬 \"빠진 톤\" 문제와 CS 의 채널 맵 제한·간섭 채널 회피가 만드는 구멍을 추정기 쪽에서 메우는 계보에 든다. 보안 관점의 질문은 shoudha-2022 의 대역폭 외삽과 같다 — 측정에 없는 값을 모델로 지어내는 단계가 조작된 톤을 어떻게 전파하는가. 초록·본문을 확보하기 전에는 이 이상 말할 수 없다. 표제 어휘(SVT·IFFT-MUSIC)만으로 판단한 관련도이므로 전문 확인 후 조정.",
-      "summary": "(제목·서지만 확인 — 초록 미확보) 다중경로 환경의 BLE 거리측정을 SVT 기반 채널 완성과 IFFT-MUSIC 으로 정확하고 효율적으로 만든다는 IEEE Wireless Communications Letters 서한 논문. Crossref 등록일 2026-08-31, 저자 4인은 OpenAlex 기준 Tongji University 소속. IEEE Xplore 문서 페이지·REST 메타데이터·Crossref 모두 초록을 주지 않았고 arXiv 판도 없다.",
+      "relevance_note": "초록까지 확인한 상태다. 이 서한은 sheikh-2023-pbr-missing-tones 가 문제로 세운 **빠진 톤(missing tones)** 과 다중경로가 함께 망가뜨린 BLE CFR 을, 특이값 임계화(SVT) 기반 저계수 행렬 완성으로 먼저 \"복원\"한 뒤 IFFT 로 초기 탐색 구간을 잡고 MUSIC 으로 정밀화하는 2단 추정기다. 내 연구에 걸리는 지점은 두 가지다. 첫째, CFR 이 저계수(소수의 경로 = 소수의 복소 지수 합)라는 가정으로 측정에 없는 톤을 메우는 단계는 곧 **조작된 톤 몇 개가 복원 결과 전체로 번지는 통로**가 된다 — shoudha-2022 의 대역폭 외삽과 같은 종류의 질문이며, 공격자가 톤 일부를 지우거나(간섭·채널 회피를 흉내) 비트는 경우 완성 알고리즘이 어느 쪽으로 수렴하는지가 식별가능성 실험의 소재다. 둘째, IFFT 가 안내한 국소 탐색과 실수값 고유분해로 MUSIC 비용을 줄였다는 점은, CS 수신기가 실시간으로 초해상도 추정기를 돌릴 수 있게 하는 공학적 조건이고 그 경량화가 어떤 가정(경로 수·잡음 백색성)을 추가로 요구하는지 전문에서 확인해야 한다. 실측 BLE 데이터에서 다중경로 조건 정확도 약 39.5% 개선이라는 수치는 초록 기준이며, 어떤 하드웨어·대역·거리인지는 미확인이다.",
+      "summary": "BLE 위상 기반 거리측정은 저비용 근접 감지를 가능하게 하지만, 다중경로와 채널 주파수 응답(CFR)에서 빠진 주파수 톤 때문에 정확도가 크게 나빠진다. 이 서한은 CFR 품질과 경로 추정 정확도를 함께 높이는 경량 거리측정 프레임워크를 제안한다. 특이값 임계화(singular value thresholding, SVT) 기반 저계수 CFR 완성으로 빠지거나 왜곡된 톤을 복원한 뒤, IFFT 가 안내하는 국소 탐색과 실수값 고유값 분해를 쓰는 IFFT–MUSIC 하이브리드 추정기로 계산량을 줄인다. 실측 BLE 데이터 실험에서 계산 복잡도를 크게 낮추면서 다중경로 조건의 거리측정 정확도를 약 39.5% 개선했다고 보고한다. (IEEE Xplore 초록 기준, 전문 미확보)",
       "hardware": [
-        "확인 필요 — 초록·전문 미확보"
+        "확인 필요 — 초록은 \"real-world BLE measurements\" 라고만 함. 칩셋·보드·측정 대역 미확인"
       ],
       "hardware_verified": false,
       "software": [
-        "확인 필요 — 초록·전문 미확보"
+        "확인 필요 — 전문 미확보"
       ],
       "software_verified": false,
       "results": [
-        "확인 필요 — 초록·전문 미확보 (제목상 정확도·복잡도 개선 주장)"
+        "다중경로 조건에서 거리측정 정확도 약 39.5% 개선 (초록; 비교 기준선·오차 단위 미확인)",
+        "SVT 저계수 완성으로 빠진·왜곡된 톤 복원 후 IFFT 안내 국소 탐색 + 실수값 고유분해 MUSIC 으로 계산 복잡도를 크게 감소 (초록; 수치 미확인)"
       ],
       "limitations": [
-        "초록 미확보 (2026-09-02): IEEE Xplore 문서 페이지는 WebFetch 빈 응답, REST metadata 404, Crossref abstract 없음, OpenAlex 초록 없음, arXiv 판 없음, ielx8 경로 202",
+        "전문 미확보 (2026-09-03): IEEE Xplore REST abstract 엔드포인트로 초록·소속·키워드는 확보했으나 유료(isOpenAccess=false), ielx8 경로 202, arXiv 판 없음 — 하드웨어·대역·거리·기준선 미확인",
+        "보안 관점 없음 — 저계수 완성이 조작된 톤을 어떻게 전파하는지는 다루지 않음 (관찰)",
         "WCL 서한이라 분량 4쪽 안팎 — 실험 규모는 제한적일 가능성 (관찰)"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "partial",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-02",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-03"
+    },
+    {
+      "id": "vonzengen-2016-no-cost-distance",
+      "title": "No-Cost Distance Estimation Using Standard WSN Radios",
+      "authors": [
+        "Georg von Zengen",
+        "Yannic Schröder",
+        "Stephan Rottmann",
+        "Felix Büsching",
+        "Lars C. Wolf"
+      ],
+      "venue": "IEEE INFOCOM",
+      "venue_full": "IEEE INFOCOM 2016 — The 35th Annual IEEE International Conference on Computer Communications, San Francisco, CA, USA, Apr. 2016, pp. 1–9",
+      "tier": "wireless",
+      "category": "estimation",
+      "year": 2016,
+      "url": "https://ieeexplore.ieee.org/document/7524540/",
+      "preprint": "https://www.ibr.cs.tu-bs.de/oa/vonzengen_INFOCOM2016.pdf",
+      "doi": "10.1109/INFOCOM.2016.7524540",
+      "topics": [
+        "phase-based-ranging",
+        "narrowband-ranging",
+        "802.15.4",
+        "active-reflector",
+        "ranging-accuracy",
+        "quality-indicator",
+        "interference",
+        "wsn"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "InPhase 계보(schroeder-2018-cde → schroeder-2019-multipath-pbr → schroeder-2022-inphase)의 출발점이자, CS 의 PBR 이 쓰는 두 방향 톤 교환(Active Reflector)을 상용 802.15.4 PMU 로 처음 시스템화한 논문이다. 내 연구에 쓰이는 지점은 세 가지다. 첫째, **수신기 판정 정책의 원형**이 여기 있다 — FFT 봉우리 높이를 Distance Quality Factor 로 삼아 Youden 지수 최대점(임계 21)에서 민감도 0.79·특이도 0.83·PPV 0.94 로 \"1 m 초과 오차\"를 걸러내는데, 이것은 NADM 류의 채널 무결성 판정이 아니라 **추정 신뢰도 기반 수락 정책**이며 그 오탐·미탐 수치가 명시돼 있어 receiver-policy 주제의 기준선이 된다. 둘째, 저자들이 \"PMU 는 측정 신호와 안테나로 들어온 다른 전파를 구별하지 못한다\"고 명시한 것은 공격자 톤 주입이 PMU 층에서 식별 불가능하다는 뜻이고, 이를 자기상관(Wiener–Khinchin)+FFT 로 \"잡음 억제\"하는 설계는 riaz-2022 가 말하는 위상 조작이 왜 추정기를 통과하는지의 구조적 이유다. 셋째, 500 kHz 스텝으로 d_max = 150 m 라는 관계식은 CS 의 1 MHz 채널 간격이 만드는 모호거리 150 m(왕복 기준)와 같은 물리이며, 거리 확대 공격의 위상 롤오버 한계를 규격 이전 문헌으로 잡아 준다. 보안 논의는 전혀 없고 실험이 2016 년 802.15.4 이라 수치 자체는 CS 에 직접 옮길 수 없다.",
+      "summary": "추가 하드웨어 없이 통신용 IEEE 802.15.4 트랜시버(Atmel AT86RF233)의 내장 위상측정유닛(PMU)만으로 두 노드 사이 거리를 재는 InPhase 시스템을 제안한다. Kluge 의 Active Reflector 방식(두 노드가 역할을 바꿔 가며 무변조 톤을 주고받아 비동기 기준클록 효과를 상쇄)을 Contiki 에 구현하되, Pelka 등의 2주파수 방식과 달리 2400–2500 MHz ISM 전대역을 500 kHz 스텝으로 훑어 정확도–최대거리 트레이드오프를 없앴다. 톱니 모양 위상응답의 기울기를 직접 쓰는 대신 자기상관 후 FFT 로 전력스펙트럼밀도(PSD)를 구해 봉우리 위치에서 거리를, 봉우리 높이에서 측정 품질(DQF)을 얻는다. 지하실·사무실 복도·아파트·공원 네 환경(최대 130 m)에서 Atmel Ranging Toolbox(RTB)와 비교해 중앙값 오차 0.40 m(무필터) / 0.30 m(DQF 임계 적용) 로 RTB(0.59 / 0.45 m)보다 33 % 좋았고, DQF 의 Youden 지수도 0.62 대 0.33 으로 우수했다.",
+      "hardware": [
+        "INGA 무선센서노드(갱신판): Atmel ATmega1284p MCU + Atmel AT86RF233 IEEE 802.15.4 트랜시버(내장 PMU, 위상값 8비트 정수, 무변조 정현파 송신 모드 사용)",
+        "비교 대상: Atmel Ranging Toolbox(RTB) — REB233CBB 평가보드(ATxmega256A3 MCU), 제조사 권장 파라미터 세트 A/B/C",
+        "측정 파라미터: TX +4 dBm(A) / −17 dBm(B·C), f_start 2400 MHz(A·B) / 2483 MHz(C), f_stop 2500 MHz, f_step 500 kHz(트랜시버 최소 스텝) → d_max = 150 m",
+        "Ground truth: 레이저 거리계(통상 ±1 mm, 최악 ±20 mm @150 m); 노드는 지상 2 m 높이(이동 테이블 / 벽 / 기둥)",
+        "환경 4종: 지하실(콘크리트·철근, ≤20 m), 사무실 복도(주간 Wi-Fi·802.15.4 혼잡, ≤49 m), 아파트(≤7 m), 공원(≤130 m) — 5 m 간격(아파트 1 m) 50 샘플 + 0.5/1/2 m 추가",
+        "전류 측정: 전원선 0.4 Ω 션트, 10 kHz 샘플링",
+        "하드웨어 오프셋 d_offset: INGA ≈ 1.09 m, RTB 10.3 cm (전체 측정 중앙값으로 보정)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Contiki OS 에 센서 인터페이스로 통합(응용~네트워크 계층에서 사용 가능), Active Reflector 측정 시퀀스와 PSD 계산을 8비트 MCU 에서 수행(FFT 윈도 크기로 정확도·복잡도 조절)",
+        "Atmel AVR2150 RTB Evaluation Application(RTB 펌웨어, 2013-02 판)",
+        "공개 코드 링크 없음 (후속 schroeder-2022-inphase 가 공개)"
+      ],
+      "software_verified": true,
+      "results": [
+        "중앙값 오차(전 환경, 무필터): InPhase 0.40 m (2172 측정) vs RTB 0.59 m (권장 A–C, 1931) / 0.50 m (A 만, 2195)",
+        "DQF 임계 적용: InPhase 0.30 m (수락 68.55 %) vs RTB 0.45 m (70.64 %) / 0.47 m (79.54 %) → 33 % 개선",
+        "DQF(1 m 초과 오차 분류, Youden 최대점): InPhase 임계 21 — 민감도 0.79, 특이도 0.83, test-negative 0.34, PPV 0.94, Youden 0.62; RTB 임계 70 — 0.81 / 0.51 / 0.31 / 0.75 / 0.33",
+        "공원 60 m 지점에서 두 시스템 모두 실패 — InPhase 는 전부 무효로 버리고 RTB 는 큰 오차를 보고(원인 미규명, 환경 요인 추정)",
+        "사무실 복도·공원에서 DQF 가 잡지 못한 산발적 큰 이상치 존재 — 그래도 중앙값은 RTB 보다 우수",
+        "RTB 는 권장값(−17 dBm)보다 +4 dBm 에서 분산이 작았고, 세트 C 로는 49 m 에서 통신 불가",
+        "전력: 서로 다른 보드라 절대값 비교 불가 — RTB 는 원시 데이터를 전송하고 InPhase 는 반사기에서 계산해 측정 주기가 짧음"
+      ],
+      "limitations": [
+        "DQF 가 놓치는 큰 이상치가 남는다 — 교란된 링크의 신뢰성 있는 인식이 향후 과제 (저자 명시)",
+        "PMU 는 측정 신호와 안테나로 들어온 다른 전파를 구별하지 못함 — 간섭 주파수는 건너뛰는 것을 향후 과제로 제시 (저자 명시)",
+        "거리만 측정, 측위 없음(반사기 1 대) — 다중 반사기 실험 없음",
+        "공원 60 m 실패 원인 미규명",
+        "보안·공격자 모델 없음; 2016 년 802.15.4 PMU 결과라 CS 하드웨어로 직접 이식 불가 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "pelka-2014-phase-multi-frequency"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "pelka-2014-phase-multi-frequency",
+          "type": "extends",
+          "note": "2주파수 위상차의 정확도–최대거리 트레이드오프를 ISM 전대역 다주파수 슬로프 추정으로 해소했다고 본문에서 명시"
+        }
+      ],
+      "added": "2026-09-03",
+      "last_checked": "2026-09-03"
+    },
+    {
+      "id": "pelka-2014-phase-multi-frequency",
+      "title": "Accurate radio distance estimation by phase measurements with multiple frequencies",
+      "authors": [
+        "Mathias Pelka",
+        "Christian Bollmeyer",
+        "Horst Hellbrück"
+      ],
+      "venue": "IPIN",
+      "venue_full": "2014 International Conference on Indoor Positioning and Indoor Navigation (IPIN), Busan, Korea, Oct. 2014, pp. 142–151",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2014,
+      "url": "https://ieeexplore.ieee.org/document/7275478/",
+      "preprint": null,
+      "doi": "10.1109/IPIN.2014.7275478",
+      "topics": [
+        "phase-based-ranging",
+        "narrowband-ranging",
+        "802.15.4",
+        "error-analysis",
+        "phase-measurement-unit",
+        "wsn"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 전문 확보 논문 11 건(riaz-2022, schroeder-2022-inphase, shoudha-2022, helwa-2023, vanmarter-2023, nikodem-2025, simoncic-2025/2026, nishikawa-2026, morano-2026, gunia-2026)이 협대역 다주파수 위상 거리측정의 이론 출발점으로 인용하는 허브 문헌인데 코퍼스에 없어 인용 그래프에 구멍이 나 있었다. 초록 기준으로 내 연구에 걸리는 것은 두 가지다. 첫째, 위상측정유닛의 **분해능이 거리 정확도를 어떻게 제한하는지**를 요구조건으로 도출했다는 점 — CS 의 PCT 양자화가 만드는 정확도 바닥과, 공격자가 위상을 조작할 때 넘어야 하는 최소 단위를 같은 틀로 논할 수 있다. 둘째, von Zengen 2016 이 이 논문의 한계로 짚은 \"2 주파수만 쓰면 정확도와 최대 측정거리가 트레이드오프\"는 CS 가 72+ 채널을 쓰는 이유의 규격 이전 논증이고, 거리 확대 공격에서 위상 롤오버 모호성이 어디서 오는지의 뿌리다. 전문을 못 열어 오차원 분석의 구체 항목·수치는 미확인이다.",
+      "summary": "물류 창고 등 수 m 정확도의 실내 측위가 필요한 응용을 겨냥해, 두 무선센서노드 사이의 위상 측정으로 거리를 추정하는 방법을 제안한다. 여러 주파수에서 측정한 위상으로 거리를 추정하는 수학 모델을 세우고 가능한 오차원을 체계적으로 분석하며, 주어진 정확도를 달성하기 위한 위상측정유닛의 분해능 등 요구조건을 도출한다. 내장 위상측정유닛이 있는 저가 IEEE 802.15.4 하드웨어에 알고리즘을 구현하고 두 노드로 위상 측정을 수행해 이론을 예비 평가로 확인한다. (IEEE Xplore 초록 기준, 전문 미확보)",
+      "hardware": [
+        "내장 위상측정유닛(PMU)이 있는 저가 IEEE 802.15.4 하드웨어 (초록) — 칩·보드 모델 확인 필요",
+        "무선센서노드 2 대로 위상 측정 (초록)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "다주파수 위상 측정으로부터 거리를 추정하는 수학 모델과 오차원 분석 제시 (초록)",
+        "목표 정확도 대비 PMU 분해능 요구조건 도출 (초록; 수치 미확인)",
+        "자체 하드웨어 예비 평가로 이론 확인 (초록; 오차 수치 미확인)"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-09-03): IEEE Xplore 유료(ielx7 경로 202), Unpaywall·OpenAlex 에 OA 사본 없음, TH Lübeck CoSA 페이지는 세미나 안내만 — 실험 조건·수치 미확인",
+        "von Zengen 2016 이 지적: 2 주파수 방식은 정확도와 최대 측정거리 사이의 트레이드오프를 가짐 (후속 문헌 기준)",
+        "보안 관점 없음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [],
+      "added": "2026-09-03",
+      "last_checked": "2026-09-03"
+    },
+    {
+      "id": "schroeder-2018-cde",
+      "title": "Accurate and Precise Distance Estimation from Phase-based Ranging Data",
+      "authors": [
+        "Yannic Schröder",
+        "Dennis Reimers",
+        "Lars Wolf"
+      ],
+      "venue": "IPIN",
+      "venue_full": "2018 International Conference on Indoor Positioning and Indoor Navigation (IPIN), Nantes, France, Sep. 2018, pp. 1–8",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2018,
+      "url": "https://ieeexplore.ieee.org/document/8533871/",
+      "preprint": null,
+      "doi": "10.1109/IPIN.2018.8533871",
+      "topics": [
+        "phase-based-ranging",
+        "narrowband-ranging",
+        "802.15.4",
+        "fft",
+        "distance-estimation-algorithm",
+        "outlier",
+        "quality-indicator",
+        "ranging-accuracy"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 의 PBR 수신기가 하는 일 — 채널 위상응답을 복소 신호로 보고 IFFT 로 임펄스응답을 만든 뒤 **가장 높은 봉우리를 거리로 고르는** — 을 협대역 802.15.4 로 먼저 정식화한 Complex-valued Distance Estimation(CDE) 논문이다. 내 연구에 걸리는 지점은 추정기 선택이 오차 꼬리를 얼마나 바꾸는가다. 슬라이드 표에서 같은 데이터에 대해 CDE 는 최대 오차 3.2 m(사무실 복도)인데 실수값 RDE 는 −29.7 ~ +24.7 m, 슬로프 방식 ESSR 은 +297 m 까지 튄다 — 즉 **자연 이상치의 크기 대역은 추정기가 정한다**. 조작과 자연 오차를 가르는 식별가능성 실험은 추정기를 고정하지 않으면 의미가 없다는 뜻이고, CS 규격이 추정 알고리즘을 구현체에 맡긴 이상 같은 공격이 칩마다 다른 꼬리 위에 얹힌다. 또 잡음이 있으면 FFT 빈 4096 개에서 MAE 약 3 cm 바닥에 닿는다는 곡선은 협대역 PBR 의 잡음 바닥 대 양자화 바닥을 가른 수치다. 이 CDE 의 \"최대 봉우리\" 규칙이 다중경로에서 깨지는 것을 같은 저자들이 schroeder-2019-multipath-pbr 에서 보였고, riaz-2022 는 그 규칙을 공격 표면으로 썼다. 본문 대신 초록과 저자 슬라이드(Wayback 보존본)로 확인했다.",
+      "summary": "두 무선 트랜시버 사이의 위상 측정으로부터 거리를 계산하는 Complex-valued Distance Estimation(CDE) 알고리즘을 제안한다. 샘플링한 위상응답을 진폭 1/N 의 복소 신호로 만들어 FFT 하면 채널의 시간영역 임펄스응답이 나오고, 최대 봉우리 위치가 거리(전파속도 c 로 환산), 봉우리 높이가 Distance Quality Indicator(DQI)가 된다. 봉우리 보간으로 FFT 빈 수를 줄인 iCDE 도 제시한다. 실환경 4 장면(지하실·사무실 복도·아파트·공원)의 동일 데이터로 실수값 RDE 와 Oshiga 의 ESSR 과 비교해, 공원에서 평균절대오차 14.9 cm·표준편차 10.4 cm 를 달성했고 RDE/ESSR 은 정확도는 비슷하나 수십~수백 m 이상치를 낸다. 초록은 큰 오차 이상치 탐지 능력 평가와 정확도·정밀도를 해치지 않는 보간 최적화를 추가로 언급한다. (초록 + 저자 IPIN 2018 발표 슬라이드 기준, 본문 미확보)",
+      "hardware": [
+        "위상측정유닛(PMU)을 가진 2.4 GHz 트랜시버 — 슬라이드에 AT86RF233 이 예시로 명시; 측정 대역 2400–2500 MHz",
+        "장면별 측정 수·거리(슬라이드 부록 표): 지하실 350 회 0.5–20 m, 사무실 복도 650 회 0.5–49 m, 아파트 350 회 1–7 m, 공원 950 회 0.5–100 m",
+        "노드 플랫폼(보드)·ground truth 는 슬라이드에 없음 — 확인 필요 (vonzengen-2016 과 같은 INGA 계열로 추정되나 미확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "확인 필요 — 슬라이드에는 알고리즘(CDE / iCDE / RDE / ESSR)만 있고 구현 언어·툴체인 없음"
+      ],
+      "software_verified": false,
+      "results": [
+        "공원: CDE MAE 0.149 m·σ 0.104 m (중앙값 0.131, 범위 −0.493 ~ +0.638 m); iCDE 0.151/0.103; RDE 0.706/4.292 (최소 −69.187 m); ESSR 2.555/19.653 (최대 +282.824 m) — 슬라이드 표",
+        "사무실 복도: CDE 0.550/0.738 (범위 −0.810 ~ +3.199 m); iCDE 0.542/0.730; RDE 0.850/2.218 (−29.686 ~ +24.734 m); ESSR 1.468/13.012 (최대 +296.961 m) — \"다중경로가 plateau 형 오측을 만든다\" (슬라이드)",
+        "아파트: CDE 0.376/0.146 (−0.701 ~ +0.140 m); iCDE 0.377/0.147; RDE 0.862/3.794; ESSR 3.313/26.353",
+        "지하실: CDE 0.414/0.548 (−2.136 ~ +2.329 m); iCDE 0.409/0.532; RDE 0.890/2.850; ESSR 0.766/0.601",
+        "FFT 빈 수: 잡음 없는 시뮬레이션은 빈이 늘수록 MAE 가 계속 줄지만(2^15 에서 ~2 mm), 잡음이 있으면 2^12 = 4096 빈에서 MAE 약 3 cm 바닥에 도달 (슬라이드 그래프)",
+        "보간(iCDE)은 결과에 영향 없이 빈 수를 줄임 — 충분 빈 수 값은 슬라이드 폰트 소실로 미확인",
+        "초록: 전 장면 종합 MAE 14.9 cm·σ 10.4 cm (공원 표와 일치)"
+      ],
+      "limitations": [
+        "본문 미확보 (2026-09-03): IEEE Xplore 유료, IBR 서버 접속 불가(ECONNREFUSED)라 Wayback 보존 슬라이드로 대체 — 수식, DQI 필터링 결과, 이상치 탐지 평가는 본문에만 있어 미확인",
+        "최대 봉우리 선택 규칙 — 다중경로에서 반사경로 봉우리가 더 높으면 실패 (같은 저자들의 schroeder-2019-multipath-pbr 이 보임)",
+        "보안·공격자 모델 없음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [
+        {
+          "to": "vonzengen-2016-no-cost-distance",
+          "type": "extends",
+          "note": "InPhase 2016 의 실수값 자기상관+FFT(RDE) 추정을 복소값 CDE 로 대체 — schroeder-2022-inphase 본문이 \"이전 연구 RDE 대비 최대거리 2배·정밀도 향상\"으로 명시"
+        }
+      ],
+      "added": "2026-09-03",
+      "last_checked": "2026-09-03"
     }
   ]
 }
