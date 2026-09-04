@@ -2,6 +2,51 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-09-04 (25차: 신규 2건 — CS 자세 오차 첫 실측 arXiv 신간 전문 편입 + Dialog BLE ToF 석사논문(TU/e) 편입, 보강 3건 — Schröder IPIN 2019·2018 을 저자 박사학위논문(LEOPARD OA, Wayback)으로 장비·수치 확정, Pelka 학위논문 확인, 인용 11건 추가)
+
+어제 24차 직후라 신규 발행분은 arXiv 1건뿐이었고(cs.CR/eess.SP RSS·Crossref 9-01 이후 등록분·CCS 2026 accepted
+papers·USENIX Sec '26 목차 재확인, NDSS 2027·S&P 2027 목록은 아직 없음, S2 는 여전히 429/500), 나머지는 계보와
+우회 경로 발굴에 썼습니다. 새 경로 둘 — **DNB SRU API**(`services.dnb.de/sru/dnb?query=per="성, 이름"`)로 독일
+박사학위논문의 OA URL 을 바로 찾을 수 있고, TU Braunschweig **LEOPARD** 리포지터리는 PDF 요청에 JS 작업증명
+챌린지(`/pow-challenge`)를 걸지만 REST API(`/api/v1/objects/<id>/derivates/…/contents`)로 파일명을 알아낸 뒤
+**Wayback `id_` 경로**로 원본을 받을 수 있었습니다. TU/e `pure.tue.nl` 의 기밀 해제된 석사논문도 열려 있습니다.
+
+- 신규 (전문 확인): **IMU-Aided Correction of Orientation-Induced Ranging Error in Bluetooth Channel Sounding on
+  Commercial Hardware** (Bapat·Nagaraj, arXiv 2609.00650, 2026-09-01, 관련도 **보통**, `verified`). Silicon Labs
+  EFR32xG24 CS DK(BRD2606A, ICM-40627 IMU) 2 대, PBR + 이중 안테나 편파 다이버시티, 복도 9 거리 × 9 자세
+  44,576 측정. 같은 0.61 m 에서 자세만 바꿔 MAE 9.3 → 44.6 cm(5 배), roll 축이 pitch 축보다 1.24 배 나쁨,
+  roll left 90° 는 거리와 함께 발산. Random Forest 가 LOOO 에서 MAE 74.6 % 감소, LODO 는 16.1 %. 자연 자세 오차
+  대역이 탐지 임계값 하한을 올린다는 점과 RF 밖 센서가 거리 판정에 개입하는 첫 CS 사례라는 점을 relevance_note 에
+  적음. cites 10건(wieme·zand·gunia·nikodem·pnn·santra·wacsa·bintariq·vanmarter·suresh), relation implements →
+  wieme-2025(Wieme 의 IMU 향후 과제 실행).
+- 신규 (전문 확인): **Algorithms and Simulation set-up for realizing Bluetooth Low Energy based ranging**
+  (Ramachandran, TU/e 석사논문 · Dialog Semiconductor, 2016, 관련도 보통, `verified`, tier `thesis`). CS 8 년 전
+  Dialog DA14681 로 시도한 BLE ToF·2 주파 위상 거리측정의 실패 기록 — 비대칭 단일채널은 광고 간격 ≥100 ms 로
+  클럭 보상 불가(ToF σ 50~60 ns), 대칭 단일채널은 σ 5~6 ns ≈ 2 m 이나 AGC 단계별 군지연 편차 30 ns 보정표 필요,
+  2 채널 위상차는 프랙셔널-N PLL 의 채널별 임의 시작 위상으로 실측 붕괴(2.5~15 m 가 전부 9~11 m). CS 가
+  마이크로초급 타이밍·양방향 교환·위상 연속성을 규격화한 이유의 하드웨어 실증이고, 수신 전력 의존 군지연은
+  RTT 조작 가설의 근거. cites 1건(pelka-2014), relation extends → pelka-2014.
+- 보강 (`partial` 유지, 장비·소프트웨어 verified·수치 전면 교체): **schroeder-2019-multipath-pbr** — 박사논문 4.3 절
+  (저자가 "이 논문에 기반"이라고 명시)로 InPhase 노드(ATmega1284P + AT86RF233), 공원 화이트보드 반사면 + 30°
+  Yagi-Uda, 플라자 테스트베드 10 노드·45 링크·90,000 측정(Leica 토탈스테이션 GT), LOS 24 / Multipath 48 / NLOS 18
+  링크 분류, MP iCDE 임계식 t = γ + (DQI − γ)·β 와 격자 탐색 파라미터(97 백분위, β 0.37), Table 4.7~4.10 전체
+  (전체 MAE 7.714 → 5.572 m, LOS 0.430 → 0.384, NLOS 26.4 → 21.6, Multipath 4.347 → 2.138), 허상 봉우리(25/55/70 m)
+  의 AR 원리 설명, 최악 오차의 원인(동기화 프레임 유실)까지 확보. 논문 본문 PDF 자체와 참고문헌은 여전히
+  미확보라 `verified` 로 올리지 않음.
+- 보강 (`partial` 유지, 장비·소프트웨어 verified·수치 보완): **schroeder-2018-cde** — 박사논문 3.5·4.1 절로 INGA +
+  AT86RF233, 레이저 거리계 GT(±1 mm), d_offset 1.09 m, 4 장면 환경 설명, CDE 정의식·B = 4096(잡음 σ 25.7 LSB
+  시뮬레이션, 분해능 73.2 mm)·iCDE 512 빈, DQI Youden 임계 0.289, 폐기 측정 표(Table 4.2), 4 장면 표의 나머지
+  칸(RDE/ESSR 최대값) 확보. 박사논문은 이 절을 TOSN 2022 기반으로 적고 있어 IPIN 2018 본문 고유 서술은 미확인.
+- 보강 (메모): **pelka-2014-phase-multi-frequency** — DNB 로 찾은 저자 박사논문(Lübeck 2017, OA)은 이 논문을
+  배경 인용만 하고 재수록하지 않음. Schröder 박사논문이 인용한 2 차 수치(PMU 잡음 σ 32.25 LSB, 무반향실 근거리
+  실험, 언랩 + 선형회귀) 를 출처 표기해 추가.
+- 인용: 11건 추가 (399 → 410). 신규 두 노드는 최신·비공개 문헌이라 역방향 인용 없음(캐시 전문 grep 확인).
+- 표준: 변경 없음 — Bluetooth SIG 규격 목록에 신규 없음(6.3 이 최신), IEEE P802.15.4ab 는 여전히 Active PAR
+  (SA 투표 진행), CCC 는 Digital Key 4 plugfest(2026-06) 이후 신규 릴리스 없음.
+- 실패: Schröder IPIN 2019·2018 본문 PDF(유료, IBR 에 슬라이드만, LEOPARD 는 박사논문만); Pelka IPIN 2014
+  본문(학위논문에 미수록); Sheikh VCC 2025·Xie TCOM 2026·Kumbul IPIN 2025 는 arXiv/기관 사본 없음; Boshoff TII
+  2026 은 경로 없음. IBR(TU-BS) 서버는 오늘 복구됐지만 새 파일은 없음.
+
 ## 2026-09-03 (24차: 신규 3건 — 협대역 PBR 계보의 뿌리 InPhase 원형(INFOCOM'16) 전문 편입 + Pelka IPIN'14·Schröder IPIN'18 허브 문헌 편입, 보강 1건 — WCL 신간 초록 확보, 인용 25건 추가)
 
 어제(23차) 직후라 신규 발행분은 없었고(arXiv cs.CR/eess.SP 신규 목록 무해당, Crossref 8-28 이후

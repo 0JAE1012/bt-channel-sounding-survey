@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-03",
-  "last_run": "2026-09-03",
+  "updated": "2026-09-04",
+  "last_run": "2026-09-04",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 399,
+  "citation_edges": 410,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -5583,32 +5583,39 @@
       ],
       "relevance": "high",
       "relevance_note": "**CS 보안의 식별가능성 문제를 공격자 없이 먼저 보여주는 논문**이다. 저자들은 2.4 GHz 협대역 PBR 이 직접경로가 아니라 **반사경로의 길이를 보고할 수 있다**고 실측으로 말하고, 통제 실험(직접 10 m + 반사 40 m)에서 정답 봉우리가 최대 봉우리가 아니게 되는 순간을 그림으로 보여준다. 이것이 중요한 이유는, 거리 조작 공격의 탐지 가설이 대부분 \"측정이 물리적으로 그럴듯한가\"에 기대는데 — 정상 채널에서도 측정이 직접경로를 놓치고 다른 경로로 넘어가는 일이 이미 일어나기 때문이다. 특히 MAE 4.3 → 2.1 m 개선에도 최악 오차는 150 m 대 그대로라는 슬라이드 부록 표는, **자연 다중경로가 만드는 극단 이상치가 공격이 만드는 이상치와 같은 크기 대역에 있다**는 뜻이어서 임계값 기반 탐지의 상한을 직접 정해 준다. riaz-2022 의 \"다중경로에서도 임의 거리축소가 된다\"는 주장과 짝을 이루는 방어측 자료이고, 같은 연구진의 schroeder-2022-inphase 가 그 플랫폼·알고리즘의 전모를 공개한다.",
-      "summary": "2.4 GHz 대역 위상 기반 거리측정(PBR)에 다중경로 전파가 미치는 영향을 실험으로 조사한다. PBR 시스템이 직접경로 대신 반사된 신호경로의 길이를 보고할 수 있음을 통제 실험으로 보인다 — 직접거리 10 m 링크 옆에 반사면을 두어 왕복 40 m 경로를 만들면 FFT 임펄스응답에 봉우리가 여러 개 생기고 그중 가장 높은 것이 정답이 아니게 되어, 최대 봉우리를 고르는 기존 CDE 알고리즘이 실패한다. 이어 센서노드 10 대(노드당 링크 9 개, 링크당 1000 회, 총 약 9만 측정)로 실제 환경을 측정해 LOS / Multipath / NLOS 세 조건으로 분류한다. 완화책으로 최대 봉우리가 아니라 첫 봉우리를 찾는 Multipath-aware iCDE(MP iCDE)를 제안하고, Multipath 조건에서 평균절대오차를 4.3 m 에서 2.1 m 로(51%) 줄인다. LOS 에서는 기존과 비슷하고 NLOS 오차는 줄지 않는다.",
+      "summary": "2.4 GHz 대역 위상 기반 거리측정(PBR)에 다중경로 전파가 미치는 영향을 실험으로 조사한다. 통제 실험(공원, 1×1.5 m 금속 화이트보드 반사면, 30° Yagi-Uda 안테나)에서 직접거리 10 m 링크 옆에 왕복 40 m 반사경로를 만들면 FFT 임펄스응답에 봉우리가 여러 개 생기고(10·25·40·55·70 m — 25/55/70 m 는 AR 원리의 두 위상 샘플이 서로 다른 경로에 걸려 생기는 허상), 최대 봉우리를 고르는 iCDE 가 77 % 는 39.5 m·23 % 는 25 m 를 보고한다. 이어 대학 건물 개방공간의 실환경 테스트베드(센서노드 10 대, 링크 45 개 양방향, 링크당 1000 회 = 90,000 측정, 직접거리 6.8~24.8 m)를 FFT 스펙트럼 형태로 LOS 24 / Multipath 48 / NLOS 18 링크로 분류한다. 완화책으로 최대 봉우리가 아니라 임계값 t = γ + (DQI − γ)·β 위의 첫 봉우리를 고르는 Multipath-aware iCDE(MP iCDE)를 제안하고(γ = FFT 결과의 97 백분위, β = 0.37 을 격자 탐색으로 결정), Multipath 링크에서 MAE 를 4.347 m 에서 2.138 m 로(51 %) 줄인다. LOS 에서는 iCDE 와 비슷하고 NLOS 오차는 줄지 않는다. (본문 PDF 대신 저자 박사학위논문 4.3 절 — 이 논문에 기반한 확장판 — 로 확인)",
       "hardware": [
-        "Phase Measurement Unit 을 가진 2.4 GHz 트랜시버 — 저자 발표 슬라이드에 AT86RF233 이 예시로 명시됨",
-        "측정 대역 2400~2500 MHz 의 위상응답을 사용 (슬라이드 그림 축 확인)",
-        "통제 실험: 직접거리 d_direct = 10 m, 반사면을 둬 2·d_r = 40 m 경로를 만들고 반사면 유무로 각각 1000 회 측정",
-        "실환경 실험: 센서노드 10 대, 노드당 링크 9 개, 링크당 1000 회 측정 — 약 90,000 측정",
-        "노드 플랫폼(보드) 모델명은 슬라이드에 없음 — 확인 필요 (같은 연구진의 schroeder-2022-inphase 가 같은 계열 플랫폼을 상술)"
+        "InPhase 센서노드 — ATmega1284P 메인보드 + AT86RF233 라디오 모듈(RP-SMA 안테나 커넥터), INGA 호환 (박사논문 3.2 절)",
+        "위상응답: 2.400~2.500 GHz 를 500 kHz 스텝으로 200 샘플 (d_max ≈ 299.8 m)",
+        "통제 실험: 공원, 1×1.5 m² 금속 표면 사무용 화이트보드를 평면 반사면으로 사용(Cimdins & Hellbrück 방식). d_direct = 10 m, 노드–반사면 20 m → 반사경로 40 m. 30° 빔폭 Yagi-Uda 지향성 안테나를 반사면 쪽으로 향함, 안테나 오프셋 3.080 m 보정. 반사면 유무 각 1000 회. 2.4 GHz 잡음바닥은 AT86RF233 이 유휴 채널 −94 dBm 보고로 확인",
+        "실환경 실험: TU Braunschweig 전산학관 플라자 테스트베드 — 센서노드 10 대를 벽·난간에 배치, 링크 45 개 × 양방향 × 1000 회 = 90,000 측정, 직접거리 6.8~24.8 m, 전방향 안테나(오프셋 0.955 m). Ground truth 는 Leica 토탈스테이션으로 3D 좌표 측정",
+        "RSSI: AT86RF233 의 Energy Detection 값(1 dBm 분해능)을 위상 샘플마다 기록 — 반사면이 있으면 주파수에 따른 간섭 무늬가 보임"
       ],
       "hardware_verified": true,
       "software": [
-        "확인 필요 — 슬라이드에는 알고리즘(CDE / iCDE / MP iCDE)만 있고 구현 툴체인·언어는 명시 없음"
+        "Contiki OS 위 InPhase 센서노드 컴포넌트 (github.com/ibr-cm/contiki-inphase) — AR 측정 중 스케줄러를 끄고 독점 실행",
+        "Python 3 InPhase 라이브러리 (github.com/ibr-cm/python-inphase, NumPy/SciPy) — iCDE / MP iCDE 구현·평가",
+        "MP iCDE 파라미터: 백분위 0~100 (1 스텝) × β 0~1 (0.01 스텝) 격자 탐색으로 중앙값 오차 최소화 → 97 백분위, β = 0.37",
+        "(위 항목은 저자 박사학위논문 3.3·4.3 절 기준 — 논문 본문에 툴체인이 어디까지 적혔는지는 미확인)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "통제 실험: 반사면이 없으면 FFT 임펄스응답에 뚜렷한 봉우리 하나, 반사면이 있으면 봉우리 여러 개가 생기고 정답 봉우리가 가장 높은 것이 아님 → 최대 봉우리를 고르는 CDE 가 실패 (슬라이드 확인)",
-        "Multipath 조건 MP iCDE 대 iCDE — 평균절대오차(MAE) 4.347 m → 2.138 m (51% 감소), 중앙값 1.863 m → 0.524 m, 표준편차 6.518 m → 3.834 m (슬라이드 부록 표 확인)",
-        "같은 표의 오차 범위는 iCDE −8.576 ~ 155.616 m, MP iCDE −10.108 ~ 152.760 m — 최악값은 거의 그대로다. 즉 51% 는 분포 중심의 개선이고 꼬리는 남는다",
-        "LOS 조건에서는 iCDE 와 MP iCDE 의 오차 CDF 가 거의 같음 (개선 없음)",
-        "NLOS 조건에서는 두 알고리즘 모두 똑같이 나쁨 — 저자 명시 \"NLOS errors can not be reduced\"",
-        "실환경 측정 규모: 노드 10 대 × 링크 9 개 × 1000 회 ≈ 90,000 측정을 LOS / Multipath / NLOS 로 분류"
+        "통제 실험: 반사면 없으면 10.7 m 보고(0.7 m 잔차는 안테나 측면 입사 보정 오차). 반사면 있으면 77 % 가 39.5 m(반사경로), 23 % 가 25 m — 정답 10 m 봉우리는 모든 측정에 존재하지만 항상 25/40 m 봉우리보다 낮아 iCDE 가 놓침",
+        "FFT 스펙트럼에 10·25·40·55·70 m 봉우리 — 25/55/70 m 는 AR 의 두 위상 샘플(I_n, R_n)이 서로 다른 경로에 트리거돼 생기는 허상 봉우리라고 저자 설명",
+        "실환경 분류: 90 링크 중 LOS 24 / Multipath 48 / NLOS 18 (각 24,000 / 48,000 / 18,000 측정). iCDE 는 거의 모든 오차가 양수 — 반사경로를 골라 과대추정",
+        "전체 데이터셋(90,000): iCDE MAE 7.714 m·중앙값 1.474·σ 11.353·범위 −8.576~182.409 m → MP iCDE MAE 5.572·중앙값 0.613·σ 9.411·범위 −15.646~152.760 m (Table 4.7)",
+        "LOS: iCDE 0.430 / MP iCDE 0.384 m MAE, 범위 각 −0.420~2.597 / −4.639~2.597 m — MP iCDE 가 가끔 앞쪽 봉우리를 잘못 골라 과소추정 (Table 4.8)",
+        "NLOS: iCDE MAE 26.408 m·중앙값 28.393, MP iCDE 21.647·23.374 — 둘 다 무의미, 직접경로 정보 자체가 없음 (Table 4.9)",
+        "Multipath: iCDE MAE 4.347·중앙값 1.863·σ 6.518 → MP iCDE 2.138·0.524·3.834 (51 % 감소); 범위 −8.576~155.616 → −10.108~152.760 m — 최악값은 유효 위상응답이 없는 무효 측정에서 나와 그대로 (Table 4.10)",
+        "최대 오차 150~180 m 대는 동기화 프레임 유실로 위상응답이 비어 있는 측정에서 알고리즘이 임의 봉우리를 고른 것 — 저자 설명"
       ],
       "limitations": [
-        "NLOS 오차는 줄일 수 없다 — 저자 명시. MP iCDE 는 다중경로 조건에만 듣는다",
-        "최악 오차(150 m 대)는 거의 개선되지 않음 — 개선은 중앙값·MAE 에 집중된다",
-        "공격자 없는 위협모델 — 자연 다중경로만 다룸",
-        "IEEE Xplore 유료이고 OA 사본이 없어 논문 본문은 여전히 미확보. 위 수치·장비는 저자가 IPIN 2019 에서 발표한 슬라이드(TU Braunschweig IBR 공개, 2026-08-27 확보)로 확인했다 — MP iCDE 의 수식, 파라미터 평가, 세 측정유형의 형식적 정의는 본문에만 있어 미확인"
+        "NLOS 오차는 줄일 수 없다 — 저자 명시. MP iCDE 는 다중경로 조건에만 듣고, NLOS 자동 식별·제거(예: 진폭 등 다른 신호 파라미터)를 향후 과제로 남김",
+        "MP iCDE 가 LOS 에서도 가끔 앞쪽 봉우리를 잘못 골라 과소추정(음의 오차) — 최소 오차가 −0.42 m 에서 −4.64 m 로 나빠짐",
+        "97 백분위·β 0.37 은 이 환경의 데이터로 최적화한 값이라 환경 특화일 수 있다 — 저자 명시",
+        "최악 오차(150 m 대)는 무효 측정에서 나와 개선되지 않음 — 51 % 는 분포 중심의 개선",
+        "공격자 없는 위협모델 — 자연 다중경로만 다룸 (관찰)",
+        "논문 본문 PDF 는 여전히 미확보(IEEE 유료, IBR OA 에는 슬라이드만). 위 내용은 저자 박사학위논문 \"InPhase — Localization in the Internet of Things\"(TU Braunschweig 2022, LEOPARD 리포지터리 OA, 2026-09-04 Wayback 보존본으로 확보) 4.3 절 — 저자가 \"이 논문에 기반\"이라고 명시한 확장판 — 에서 확인했다. 논문 자체의 참고문헌 목록은 못 봐 cites 는 비워 둔다"
       ],
       "artifacts": {
         "code": null,
@@ -5616,7 +5623,7 @@
       },
       "verification": "partial",
       "added": "2026-08-26",
-      "last_checked": "2026-09-03",
+      "last_checked": "2026-09-04",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -8525,10 +8532,12 @@
       "results": [
         "다주파수 위상 측정으로부터 거리를 추정하는 수학 모델과 오차원 분석 제시 (초록)",
         "목표 정확도 대비 PMU 분해능 요구조건 도출 (초록; 수치 미확인)",
-        "자체 하드웨어 예비 평가로 이론 확인 (초록; 오차 수치 미확인)"
+        "자체 하드웨어 예비 평가로 이론 확인 (초록; 오차 수치 미확인)",
+        "후속 문헌 인용값: 이 논문의 하드웨어에서 PMU 위상 잡음이 σ = 32.25 LSB 로 측정됐다고 Schröder 박사논문(2022) 4.2 절이 인용 (2 차 출처)",
+        "후속 문헌 인용값: 실험은 무반향실에서 근거리로 수행했고, 위상 언랩 후 선형회귀로 기울기를 구하는 방식이었다고 Schröder 박사논문 3.5.1 절이 서술 (2 차 출처)"
       ],
       "limitations": [
-        "전문 미확보 (2026-09-03): IEEE Xplore 유료(ielx7 경로 202), Unpaywall·OpenAlex 에 OA 사본 없음, TH Lübeck CoSA 페이지는 세미나 안내만 — 실험 조건·수치 미확인",
+        "전문 미확보 (2026-09-04): IEEE Xplore 유료(ielx7 경로 202), Unpaywall·OpenAlex 에 OA 사본 없음. 저자 박사학위논문 \"Analyse, Optimierung und systematischer Aufbau von Ortungssystemen\"(Universität zu Lübeck 2017, zhb.uni-luebeck.de/epubs/ediss1859.pdf, OA)은 이 논문을 배경으로 인용만 하고 재수록하지 않아 실험 조건·수치는 여전히 미확인",
         "von Zengen 2016 이 지적: 2 주파수 방식은 정확도와 최대 측정거리 사이의 트레이드오프를 가짐 (후속 문헌 기준)",
         "보안 관점 없음 (관찰)"
       ],
@@ -8541,7 +8550,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-03",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-04"
     },
     {
       "id": "schroeder-2018-cde",
@@ -8574,30 +8583,36 @@
       ],
       "relevance": "medium",
       "relevance_note": "CS 의 PBR 수신기가 하는 일 — 채널 위상응답을 복소 신호로 보고 IFFT 로 임펄스응답을 만든 뒤 **가장 높은 봉우리를 거리로 고르는** — 을 협대역 802.15.4 로 먼저 정식화한 Complex-valued Distance Estimation(CDE) 논문이다. 내 연구에 걸리는 지점은 추정기 선택이 오차 꼬리를 얼마나 바꾸는가다. 슬라이드 표에서 같은 데이터에 대해 CDE 는 최대 오차 3.2 m(사무실 복도)인데 실수값 RDE 는 −29.7 ~ +24.7 m, 슬로프 방식 ESSR 은 +297 m 까지 튄다 — 즉 **자연 이상치의 크기 대역은 추정기가 정한다**. 조작과 자연 오차를 가르는 식별가능성 실험은 추정기를 고정하지 않으면 의미가 없다는 뜻이고, CS 규격이 추정 알고리즘을 구현체에 맡긴 이상 같은 공격이 칩마다 다른 꼬리 위에 얹힌다. 또 잡음이 있으면 FFT 빈 4096 개에서 MAE 약 3 cm 바닥에 닿는다는 곡선은 협대역 PBR 의 잡음 바닥 대 양자화 바닥을 가른 수치다. 이 CDE 의 \"최대 봉우리\" 규칙이 다중경로에서 깨지는 것을 같은 저자들이 schroeder-2019-multipath-pbr 에서 보였고, riaz-2022 는 그 규칙을 공격 표면으로 썼다. 본문 대신 초록과 저자 슬라이드(Wayback 보존본)로 확인했다.",
-      "summary": "두 무선 트랜시버 사이의 위상 측정으로부터 거리를 계산하는 Complex-valued Distance Estimation(CDE) 알고리즘을 제안한다. 샘플링한 위상응답을 진폭 1/N 의 복소 신호로 만들어 FFT 하면 채널의 시간영역 임펄스응답이 나오고, 최대 봉우리 위치가 거리(전파속도 c 로 환산), 봉우리 높이가 Distance Quality Indicator(DQI)가 된다. 봉우리 보간으로 FFT 빈 수를 줄인 iCDE 도 제시한다. 실환경 4 장면(지하실·사무실 복도·아파트·공원)의 동일 데이터로 실수값 RDE 와 Oshiga 의 ESSR 과 비교해, 공원에서 평균절대오차 14.9 cm·표준편차 10.4 cm 를 달성했고 RDE/ESSR 은 정확도는 비슷하나 수십~수백 m 이상치를 낸다. 초록은 큰 오차 이상치 탐지 능력 평가와 정확도·정밀도를 해치지 않는 보간 최적화를 추가로 언급한다. (초록 + 저자 IPIN 2018 발표 슬라이드 기준, 본문 미확보)",
+      "summary": "두 무선 트랜시버 사이의 위상 측정으로부터 거리를 계산하는 Complex-valued Distance Estimation(CDE) 알고리즘을 제안한다. PMU 가 준 8 비트 위상값을 [−π, π) 로 바꿔 진폭 1/N 의 복소 신호 Z(i) = (1/N)·e^{jφ(i)} 로 만들고 FFT 하면 채널의 시간영역 임펄스응답 |F_Z|(n) 이 나오며, 최대 봉우리 위치가 거리(d_max ≈ 299.8 m 를 빈 수로 나눈 분해능), 봉우리 높이(0~1)가 Distance Quality Indicator(DQI)가 된다. 빈 수는 잡음(σ = 25.7 LSB)을 넣은 시뮬레이션에서 B = 4096 이상이면 MAE 가 더 줄지 않아 4096 으로 정했고(분해능 73.2 mm), 포물선 보간으로 512 빈에서 같은 성능을 내는 iCDE 도 제시한다. 실환경 4 장면(공원·아파트·사무실 복도·지하실, 총 2300 측정)의 동일 데이터로 실수값 RDE 와 Oshiga 의 ESSR 과 비교해, CDE 가 모든 장면에서 최고 MAE·σ 를 내고(공원 MAE 0.149 m·σ 0.104 m) RDE/ESSR 은 중앙값은 비슷하나 수십~수백 m 이상치를 낸다. DQI 임계값은 Youden 지수로 정해(CDE 0.289) 5 m 초과 이상치를 걸러낸다. (초록 + 저자 슬라이드 + 저자 박사학위논문 3.5·4.1 절 기준, 논문 본문 미확보)",
       "hardware": [
-        "위상측정유닛(PMU)을 가진 2.4 GHz 트랜시버 — 슬라이드에 AT86RF233 이 예시로 명시; 측정 대역 2400–2500 MHz",
-        "장면별 측정 수·거리(슬라이드 부록 표): 지하실 350 회 0.5–20 m, 사무실 복도 650 회 0.5–49 m, 아파트 350 회 1–7 m, 공원 950 회 0.5–100 m",
-        "노드 플랫폼(보드)·ground truth 는 슬라이드에 없음 — 확인 필요 (vonzengen-2016 과 같은 INGA 계열로 추정되나 미확인)"
+        "INGA 무선센서노드 + AT86RF233 트랜시버(PMU 내장) — 박사논문 4.1.2 절 명시. 하드웨어 오프셋 d_offset = 1.09 m (INGA 한 쌍, 근거리 측정 중앙값으로 결정)",
+        "위상응답: 2.400~2.500 GHz 를 500 kHz 스텝으로 200 샘플, PMU 값은 부호 없는 8 비트",
+        "Ground truth: 레이저 거리계 (통상 ±1 mm, 직사광선에서 최악 ±20 mm). 안테나는 서로 마주 보게, 장애물 없는 LOS",
+        "장면별 측정 수·거리(Table 4.1): 지하실 350 회 0.5~20 m(철근 콘크리트, 다중경로 강), 사무실 복도 650 회 0.5~49 m(석고보드, 802.11/802.15.4 간섭 강), 아파트 350 회 1~7 m(1930 년대 벽돌, 802.11 간섭 강), 공원 950 회 0.5~100 m(간섭·다중경로 최소)"
       ],
       "hardware_verified": true,
       "software": [
-        "확인 필요 — 슬라이드에는 알고리즘(CDE / iCDE / RDE / ESSR)만 있고 구현 언어·툴체인 없음"
+        "CDE B = 4096 빈, iCDE B = 512 + 포물선 보간(Julius Smith 방식), RDE 8192 빈(출력 분해능 맞춤), ESSR 최대 300 m 를 4096 거리로 탐색 — 박사논문 4.1.3 절",
+        "유효 측정 기준: CDE 는 FFT 빈 8 < n_max < 4088, 그 밖은 \"신호 없음\"으로 폐기; DQI 임계값은 Youden 지수 최대점(CDE 0.289, iCDE 0.288)",
+        "InPhase Python 3 라이브러리(NumPy/SciPy, github.com/ibr-cm/python-inphase)에 CDE/RDE/ESSR 구현; ESSR 구현은 원 논문 결과 재현으로 검증",
+        "(툴체인 항목은 박사논문 기준 — 논문 본문 표기는 미확인)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "공원: CDE MAE 0.149 m·σ 0.104 m (중앙값 0.131, 범위 −0.493 ~ +0.638 m); iCDE 0.151/0.103; RDE 0.706/4.292 (최소 −69.187 m); ESSR 2.555/19.653 (최대 +282.824 m) — 슬라이드 표",
-        "사무실 복도: CDE 0.550/0.738 (범위 −0.810 ~ +3.199 m); iCDE 0.542/0.730; RDE 0.850/2.218 (−29.686 ~ +24.734 m); ESSR 1.468/13.012 (최대 +296.961 m) — \"다중경로가 plateau 형 오측을 만든다\" (슬라이드)",
-        "아파트: CDE 0.376/0.146 (−0.701 ~ +0.140 m); iCDE 0.377/0.147; RDE 0.862/3.794; ESSR 3.313/26.353",
-        "지하실: CDE 0.414/0.548 (−2.136 ~ +2.329 m); iCDE 0.409/0.532; RDE 0.890/2.850; ESSR 0.766/0.601",
-        "FFT 빈 수: 잡음 없는 시뮬레이션은 빈이 늘수록 MAE 가 계속 줄지만(2^15 에서 ~2 mm), 잡음이 있으면 2^12 = 4096 빈에서 MAE 약 3 cm 바닥에 도달 (슬라이드 그래프)",
-        "보간(iCDE)은 결과에 영향 없이 빈 수를 줄임 — 충분 빈 수 값은 슬라이드 폰트 소실로 미확인",
+        "공원(Table 4.3): CDE MAE 0.149 m·σ 0.104·중앙값 0.131·범위 −0.493~+0.638 m; iCDE 0.151/0.103; RDE 0.706/4.292 (최소 −69.187 m); ESSR 2.555/19.653 (최대 +282.824 m)",
+        "아파트(Table 4.4): CDE 0.376/0.146 (−0.701~+0.140 m); iCDE 0.377/0.147; RDE 0.862/3.794 (최대 41.818); ESSR 3.313/26.353 (최대 294.078) — 전체가 음의 오프셋, 다른 기기 세트라 d_offset 이 달랐을 것이라고 저자 설명",
+        "사무실 복도(Table 4.5): CDE 0.550/0.738 (−0.810~+3.199 m); iCDE 0.542/0.730; RDE 0.850/2.218 (−29.686~+24.734); ESSR 1.468/13.012 (최대 296.961) — 특정 위치에서 모든 알고리즘이 높은 DQI 로 틀린 거리를 보고해 CDF 에 plateau (다중경로)",
+        "지하실(Table 4.6): CDE 0.414/0.548 (−2.136~+2.329 m); iCDE 0.409/0.532; RDE 0.890/2.850 (최대 29.598); ESSR 0.766/0.601",
+        "폐기 측정(Table 4.2, 2300 중): CDE 신호없음 80 + DQI 미달 91 = 171; iCDE 172; RDE 52 + 573 = 625; ESSR 0 + 525 = 525 — ESSR 은 신호 없는 측정을 못 걸러내고 임의 거리를 보고",
+        "FFT 빈 수: 잡음 없는 시뮬레이션은 빈이 늘수록 MAE 가 계속 줄지만, σ = 25.7 LSB 잡음을 넣으면 B = 2^12 = 4096 이상에서 정확도가 거의 안 늘어 4096 채택 (분해능 73.2 mm); iCDE 는 B = 512 에서 포화",
+        "CDE 는 RDE 대비 최대 측정거리 2 배(자기상관을 안 써 d_max ≈ 299.8 m 전체 사용)",
         "초록: 전 장면 종합 MAE 14.9 cm·σ 10.4 cm (공원 표와 일치)"
       ],
       "limitations": [
-        "본문 미확보 (2026-09-03): IEEE Xplore 유료, IBR 서버 접속 불가(ECONNREFUSED)라 Wayback 보존 슬라이드로 대체 — 수식, DQI 필터링 결과, 이상치 탐지 평가는 본문에만 있어 미확인",
-        "최대 봉우리 선택 규칙 — 다중경로에서 반사경로 봉우리가 더 높으면 실패 (같은 저자들의 schroeder-2019-multipath-pbr 이 보임)",
-        "보안·공격자 모델 없음 (관찰)"
+        "최대 봉우리 선택 규칙 — 다중경로에서 반사경로 봉우리가 더 높으면 실패 (같은 저자들의 schroeder-2019-multipath-pbr 이 보임; 박사논문 4.1.6 절도 사무실 복도·지하실의 plateau 를 다중경로로 설명)",
+        "아파트 장면의 음의 오프셋을 현재 AR 수학 모델로 설명 못 함 — 저자 명시",
+        "보안·공격자 모델 없음 (관찰)",
+        "논문 본문 PDF 미확보(IEEE 유료). 초록·IPIN 2018 슬라이드에 더해 저자 박사학위논문(TU Braunschweig 2022, OA) 3.5·4.1 절로 확인 — 다만 박사논문은 이 절이 TOSN 2022 논문에 기반한다고 적고 있어(4 장면 데이터셋은 IPIN 2018 슬라이드 표와 수치가 일치), IPIN 2018 본문 고유의 서술·참고문헌은 여전히 미확인"
       ],
       "artifacts": {
         "code": null,
@@ -8614,7 +8629,185 @@
         }
       ],
       "added": "2026-09-03",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-04"
+    },
+    {
+      "id": "bapat-2026-imu-cs-orientation",
+      "title": "IMU-Aided Correction of Orientation-Induced Ranging Error in Bluetooth Channel Sounding on Commercial Hardware",
+      "authors": [
+        "Mihir Bapat",
+        "Santosh Nagaraj"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv:2609.00650 [eess.SY], 2026-09-01 (저자 명시: IEEE 에 투고 중, 미심사)",
+      "tier": "preprint",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2609.00650",
+      "preprint": "https://arxiv.org/abs/2609.00650",
+      "doi": null,
+      "topics": [
+        "channel-sounding",
+        "pbr",
+        "device-orientation",
+        "antenna-polarization",
+        "imu",
+        "machine-learning",
+        "ranging-accuracy",
+        "efr32xg24",
+        "commercial-hardware"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "상용 CS 개발키트에서 **기기 자세만 바꿔도 같은 거리에서 오차가 5 배(9.3 → 44.6 cm) 벌어진다**는 첫 실측이다. 내 연구에 걸리는 지점은 셋이다. 첫째, 식별가능성 — wieme-2025·varughese-2026 이 자세를 고정하고 잰 오차 분포 위에, 자세가 만드는 자연 오차 대역(단거리 9~58 cm, roll 90° 는 거리와 함께 발산)이 하나 더 얹힌다. 거리 조작을 \"물리적으로 그럴듯하지 않은 값\"으로 걸러내는 정책은 이 대역까지 정상으로 받아야 하므로 탐지 임계값의 하한이 그만큼 올라간다. 둘째, 수신기 판정 정책 — IMU 특징으로 학습한 Random Forest 가 미학습 자세에서 MAE 74.6 % 를 줄이는데, 이는 RF 채널 밖의 센서가 거리 판정에 개입하는 첫 CS 사례다. 공격자가 RF 로는 건드릴 수 없는 정보이지만, 반대로 보정 모델이 \"이 자세면 이만큼 빼라\"를 학습한 상태라면 조작된 거리에 같은 보정이 얹히는 것이므로 방어 층이 아니라 오차 층이다(가설). 셋째, 플랫폼 — Silicon Labs EFR32xG24 CS DK(BRD2606A) 가 nRF54L15 에 이어 두 번째 상용 CS 실험 플랫폼으로 등장했고, 이중 안테나 편파 다이버시티와 RTL 라이브러리의 필터된 출력(약 8.9 Hz)이라는 구성이 기록됐다. Nordic 단일 안테나 실험과 대비할 때 안테나 구성 차이가 어느 정도 오차를 만드는지의 참고점이다. 고등학생 제1저자·단일 복도·미심사라는 점은 감안해야 한다.",
+      "summary": "Bluetooth 6.0 Channel Sounding 의 거리 오차가 기기 자세(orientation)에 따라 어떻게 달라지는지를 상용 하드웨어로 처음 측정하고, 온보드 IMU 로 보정하는 방법을 제안한다. 6축 IMU(ICM-40627)가 내장된 유일한 상용 CS 플랫폼인 Silicon Labs EFR32xG24 CS 개발키트 두 대로 PBR 모드·이중 안테나 편파 다이버시티 구성을 쓰고, 실내 직선 복도에서 9 개 거리(0.30~9.14 m) × 9 개 자세(평면 기준, roll ±30°/90°, pitch ±30°/60°, 뒤집음, 세움)를 각 60 초씩 기록해 44,576 개 측정을 얻었다. 단거리(0.3~0.9 m)에서 자세에 따라 MAE 가 9.3 cm 에서 57.6 cm 까지 벌어지고, roll 축 자세가 pitch 축보다 평균 1.24 배 나쁘며(보드 인쇄 안테나가 수평면에 최적화된 탓), roll left 90° 는 거리가 멀어질수록 발산한다. IMU 기울기와 오차의 상관은 약하지만 유의하고(|r| 0.156, p < 0.001), 자세 하나를 통째로 빼고 학습하는 LOOO 교차검증에서 Random Forest 가 MAE 74.6 % 감소, 거리 하나를 빼는 LODO 에서는 16.1 % 감소를 보인다.",
+      "hardware": [
+        "Silicon Labs EFR32xG24 Channel Sounding Development Kit (BRD2606A) 2 대 — 저자 표현으로 6축 IMU 가 통합된 유일한 상용 CS 플랫폼",
+        "온보드 IMU: ICM-40627 6축 (가속도 원시 ADC ±16 g, 2048 LSB/g; 자이로 ±2000 °/s, 16.4 LSB/(°/s))",
+        "Reflector: Silicon Labs 표준 reflector 이미지, 유휴 노트북에 연결·평면 자세 고정. Initiator: IMU 를 함께 읽도록 개조한 이미지, 호스트 노트북 연결",
+        "CS 구성: PBR 모드, 양쪽 보드 모두 이중 안테나 편파 다이버시티(dual-antenna polarization diversity). RTL 라이브러리가 필터된 거리를 약 8.9 Hz 로 출력",
+        "환경: 실내 직선 복도 1 곳. 거리 9 개 — 1/2/3/5/8/12/18/25/30 ft (0.30~9.14 m). 자세 9 개 — flat, roll left/right 30°, roll left 90°, pitch toward/away 30°, pitch toward 60°, face down, upright",
+        "데이터 규모: 구성당 60 초(520~1,185 샘플), 81 세션, 총 44,576 측정",
+        "Ground truth: 거리를 ft 단위로 배치했다고만 적혀 있고 측정 도구는 본문에 미기재 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Initiator 펌웨어 개조: 각 CS 측정 직후 메인 루프에서 IMU 를 SPI 로 읽음 — BLE 이벤트 콜백 안에서 읽으면 reflector 쪽 버퍼 고갈이 나서 메인 루프로 옮겼다고 명시",
+        "Silicon Labs RTL 라이브러리 (필터된 거리 출력)",
+        "기울기 계산: 3축 가속도계 표준 tilt 공식 (Freescale AN3461)",
+        "보정 모델: Random Forest, Linear Regression, MLP(64×64) — 학습 프레임워크·언어는 명시 없음",
+        "공개 코드·데이터 없음 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "전체 MAE 164.17 cm, RMSE 207.24 cm — 장거리 오차가 지배. 1~3 ft 에서는 MAE 19.70~39.15 cm, 5 ft 이상에서는 195~266 cm (실내 다중경로)",
+        "단거리 자세 효과: 최저 MAE 9.29 cm (2 ft, pitch toward 30°), 최고 57.57 cm (3 ft, roll left 90°). 같은 2 ft 에서 자세만 바꿔 9.3 → 44.6 cm, 약 5 배",
+        "roll 축 자세 평균 MAE 165.0 cm vs pitch 축 140.9 cm (비 1.24) — 보드의 인쇄 안테나 두 개가 수평면에 최적화되어 roll 이 편파 정렬을 깨기 때문이라는 해석. pitch 는 reflector 쪽으로 기울일 때가 반대보다 일관되게 좋음",
+        "roll left 90° 는 18·25 ft 에서 전 조합 중 최대 MAE 이고 거리에 따라 계속 나빠지는 반면, 다른 자세는 12~18 ft 이후 평탄 (Fig. 2)",
+        "IMU 기울기–오차 상관: 부호 오차 r = 0.126, 절대 오차 r = 0.156, p < 0.001 (N = 44,576). 자이로 크기 r = −0.136 은 받침 진동 때문이라 무의미하다고 저자 명시",
+        "보정: 무작위 80/20 분할은 96.9 % 감소지만 인접 샘플 누설로 신뢰 불가라고 저자 명시. LOOO(자세 1 개 제외) 교차검증 MAE 감소 — Random Forest 74.6 % (자세별 61.5~83.7 %), Linear Regression 56.6 %, MLP 30.7 %. LODO(거리 1 개 제외)는 Random Forest 16.1 %"
+      ],
+      "limitations": [
+        "실내 직선 복도 한 곳 — 저자가 다른 환경으로 일반화 검증을 향후 과제로 명시",
+        "Reflector 자세는 평면 고정 — reflector 쪽 자세 효과는 미조사 (저자 명시)",
+        "LODO 16.1 % 는 LOOO 74.6 % 보다 훨씬 작음 — 거리가 자세보다 오차를 더 지배하므로 보정이 거리 일반화에는 약함 (저자 인정)",
+        "Ground truth 측정 방법 미기재; 단거리 MAE 가 10 cm 내외라 ground truth 오차가 결과에 섞였을 가능성 (관찰)",
+        "미심사 arXiv 판(IEEE 투고 중), 제1저자 고등학생 — 학습 모델 세부(하이퍼파라미터·특징 목록)와 코드가 없어 재현 불가 (관찰)",
+        "보안 관점 없음 — 자세 보정 모델이 조작된 거리에 어떻게 반응하는지는 다루지 않음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-04",
+      "last_checked": "2026-09-04",
+      "cites": [
+        "suresh-2025-cs-vehicle-access",
+        "wieme-2025-cs-commercial-hw",
+        "zand-2019-ble-pbr",
+        "gunia-2026-cs-metrological",
+        "nikodem-2025-mcpd-ble",
+        "pnn-2025-cs-distance-estimation",
+        "santra-2024-cs-indoor",
+        "wacsa-2025-nn-ranging-fusion",
+        "bintariq-2024-dl-ble-ranging",
+        "vanmarter-2023-svr-ble-ranging"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "wieme-2025-cs-commercial-hw",
+          "type": "implements",
+          "note": "Wieme 가 향후 과제로 남긴 \"온보드 IMU 로 자세 오차 보정\"을 실제로 수행 (본문 서론에서 명시)"
+        },
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "CS PBR 모드를 상용 EFR32xG24 DK 에서 자세별로 실측"
+        }
+      ],
+      "category": "estimation"
+    },
+    {
+      "id": "ramachandran-2016-ble-tof-thesis",
+      "title": "Algorithms and Simulation set-up for realizing Bluetooth Low Energy based ranging",
+      "authors": [
+        "Sai Janani Ramachandran"
+      ],
+      "venue": "TU/e 석사논문",
+      "venue_full": "Master Thesis, Eindhoven University of Technology (EIT ICT Labs Embedded Systems) · Dialog Semiconductor Advanced Technology 협업, Aug. 2016 (2017-08-10 까지 비공개였던 Company Confidential 논문)",
+      "tier": "thesis",
+      "year": 2016,
+      "url": "https://pure.tue.nl/ws/files/52027199/20170831_bb_855412_Ramachandran_2016.pdf",
+      "preprint": "https://pure.tue.nl/ws/files/52027199/20170831_bb_855412_Ramachandran_2016.pdf",
+      "doi": null,
+      "topics": [
+        "ble-tof",
+        "rtt",
+        "narrowband-ranging",
+        "phase-domain-tof",
+        "clock-offset",
+        "fractional-n-pll",
+        "agc-group-delay",
+        "two-frequency-pbr",
+        "pre-cs"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 규격(2024) 8 년 전에 BLE 칩 회사(Dialog)가 자사 SoC 로 ToF 와 2 주파 위상 거리측정을 시도하고 **무엇 때문에 실패했는지**를 적어 둔 산업 기록이다. 세 가지가 CS 보안 연구에 그대로 쓰인다. 첫째, 한쪽만 개조한 비대칭 단일채널 ToF 는 BLE 스택이 광고 패킷 간격을 100 ms 아래로 못 줄여 두 기기의 클럭 오프셋을 보상하지 못했다(ToF 분산 50~60 ns). 이것이 CS 가 T_IP·T_FCS 같은 마이크로초급 타이밍과 양방향 교환을 규격으로 못박은 이유의 실증이고, 공격자가 교환 타이밍을 늘리거나 왕복 중 하나를 대신 응답하면 같은 오차원이 되살아난다는 뜻이다. 둘째, 2 채널 위상 방식은 시뮬레이션에서 1 m 급이었지만 실물에서는 프랙셔널-N PLL 이 채널을 옮길 때마다 임의 위상으로 시작해 전부 무너졌다 — CS 의 PBR 이 mode-0 보정과 톤 위상 연속성을 요구하는 이유이며, staat-2022 의 아날로그 릴레이처럼 채널 호핑을 따라가는 공격자도 같은 위상 연속성 조건을 만족해야 한다는 점을 뒷받침한다. 셋째, 1 MHz 채널 필터의 군지연(약 500 ns)이 AGC 이득 단계에 따라 최대 30 ns 흔들려 보정표가 필요했다 — 수신 전력에 따라 수신기 내부 지연이 달라진다는 것은, 송신 전력을 조절하는 공격자가 RTT 를 수 m 단위로 밀 수 있다는 가설(receiver-policy 축)의 하드웨어 근거다. zand-2019(imec) 보다 앞선 BLE 거리측정 시도로 계보상 pelka-2014 를 직접 잇는다.",
+      "summary": "Dialog Semiconductor 의 BLE SoC DA14681 에서 위상 영역 ToF 로 거리를 재는 알고리즘 세 가지를 MATLAB 시뮬레이션과 실측으로 평가한 석사논문이다. (1) 비대칭 단일채널 — Dialog 기기 한 대가 임의 BLE 광고자의 패킷 위상을 LMS 로 맞춰 주파수 오프셋·ToF 를 추정. 시뮬레이션(SNR 30 dB)에서 1 m 급이나 실측에서는 광고 패킷 간격(≥100~250 ms) 동안 크리스털이 \"숨쉬어\" 클럭 보상이 안 돼 ToF 분산 50~60 ns 로 거리 변화가 보이지 않음. (2) 대칭 단일채널 — Dialog 기기 두 대가 SCAN_REQ/SCAN_RSP 를 서로 처리해 클럭 오프셋을 상쇄. 분산 5~6 ns(≈2 m)로 0~15 m 에서 기울기 1 의 직선을 얻었으나, 채널 필터의 AGC 단계별 군지연 편차(최대 30 ns)를 보정표로 빼고 패킷 간 하드웨어 리셋을 없애야 했음. (3) 비대칭 다중채널 — 두 광고 채널의 위상차로 거리 산출(Pelka 2014 에서 착안). 시뮬레이션은 <1 m 였지만 실측에서는 아날로그 프랙셔널-N PLL 이 채널마다 임의 시작 위상을 가져 거리 정보가 사라졌고, 실제 2.5~15 m 에서 추정치가 9~11 m 로 고정됐다. 저자는 위상 보존 PLL 을 차세대 칩 요구사항으로 남겼다.",
+      "hardware": [
+        "Dialog Semiconductor DA14681 BLE SoC (DA14680 objective specification 인용) — 복조기 앞단에서 I/Q 를 추출, IF 1 MHz",
+        "수신 체인: 1 MHz 채널 필터(군지연 약 500 ns, AGC 이득 설정 10 단계) + LNA — AGC 단계에 따라 ToF 추정이 최대 30 ns 흔들려 보정표 사용",
+        "실측 벤치는 동반 트랙(Y. He, \"Experimental setup for Bluetooth Low Energy ranging solutions\", Dialog 2016, 미공개)이 구축 — 안테나·케이블·ground truth 도구는 본 논문에 미기재 (전문 확인)",
+        "실측 범위: 실내·실외 0~15 m, 대칭 방식은 상호작용 약 1000 회로 피팅; 다중채널 방식은 실내 5 회·실외 8 회 측정, 패킷 간격 1.5 ms",
+        "Cadence 로 뽑은 채널 필터 임펄스응답(hii/hiq/hqi/hqq, AGC 10 단계, 128 MHz 샘플)을 MATLAB 에 가져와 수신 체인을 모델링"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB — BLE GFSK 신호 생성·수신 체인 시뮬레이션·LMS 피팅 (Dialog 제공 스타터 킷 기반). 피팅 1 패킷당 0.04 ms",
+        "BLE 스택 패치: 광고 패킷 간격을 250 ms → 100 ms 로 단축, SCAN_REQ/SCAN_RSP 캡처, 두 채널 데이터 추출",
+        "공개 코드 없음 (회사 기밀 논문)"
+      ],
+      "software_verified": true,
+      "results": [
+        "비대칭 단일채널: 시뮬레이션 SNR 30 dB 에서 ToF 평균 22.22 ns·σ 0.11 ns, 주파수 오프셋 σ 3.1 Hz — 정확도 약 1 m. 실측은 광고 간격 250→100 ms 로 줄여도 ToF σ 50~60 ns, 거리별 차이 없음. 10 ns 급 보상에는 약 40 ms 간격이 필요한데 BLE 스택이 허용하지 않음. 크리스털의 125 ns 랩 주기가 패킷마다 변하는 \"breathing\" 관찰",
+        "대칭 단일채널: ToF σ 5~6 ns ≈ 2 m (0~15 m). 상관 시작점 오차가 62.5 ns 간격의 두 봉우리를 만들어 접어서 처리. AGC 보정표 적용 후 실거리 vs 추정거리가 기울기 1 직선 (절대 오프셋은 하드웨어 상수라 미평가)",
+        "다중채널(2 주파 위상차): 시뮬레이션 10 m 에서 평균 10.1 m·spread 0.6 m, 주파수 오프셋 σ 35 Hz; SNR 20 dB 면 spread 4 m, 10 dB 면 10 m. 광고 채널 쌍에 따른 비모호 최대거리 12.5 / 5.5 / 3.8 m — RSSI(로그 정규 모델)로 모호성 해소 시도, <10 m 에서만 선형",
+        "다중채널 실측(Table 5.2): 실거리 2.5/5/7.5/10/15 m → 추정 9.21/11.21/9.53/9.92/10.04 m, 주파수 오프셋 636~975 Hz — 거리 정보 없음. 패킷 간 위상차가 이론 9~10 사이클 대신 0.2 사이클로 상수",
+        "원인: 아날로그 프랙셔널-N PLL 이 채널 전환 시 n 가지 가능 위상 중 임의로 시작 — 송신·수신 양쪽에서 발생. 위상 보존 PLL 이 있으면 <5 m 정확도 추정",
+        "Dialog 차세대 PLL 설계 요구사항으로 \"위상 보존\"이 기록됨"
+      ],
+      "limitations": [
+        "실측 세부(장비 배치·ground truth·환경 도면)는 동반 논문(He 2016, 미공개)에 있어 본문에 없음",
+        "비대칭 단일채널·다중채널은 실물에서 실패 — 결과는 2016 년 Dialog 칩 세대의 한계이지 방식 자체의 한계는 아님 (저자 명시: 스택 간격 단축, 위상 보존 PLL 이 있으면 각각 <2 m, <5 m 기대)",
+        "대칭 방식은 Dialog–Dialog 전용 (프로프라이어터리)",
+        "다중경로 처리 없음, 보안 관점 없음 (관찰)",
+        "석사논문·단일 저자·회사 기밀 해제본 — 동료심사 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-04",
+      "last_checked": "2026-09-04",
+      "cites": [
+        "pelka-2014-phase-multi-frequency"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "pelka-2014-phase-multi-frequency",
+          "type": "extends",
+          "note": "다중채널(2 주파 위상차) 알고리즘을 Pelka 2014 에서 착안했다고 본문 명시 — 802.15.4 PMU 대신 BLE 광고 채널로 옮김"
+        }
+      ],
+      "category": "estimation"
     }
   ]
 }
