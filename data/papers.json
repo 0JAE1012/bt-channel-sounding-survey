@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-04",
-  "last_run": "2026-09-04",
+  "updated": "2026-09-05",
+  "last_run": "2026-09-05",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 410,
+  "citation_edges": 466,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -268,7 +268,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-05",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -280,7 +280,10 @@
         "rasmussen-2010-rf-distance-bounding",
         "singh-2021-4z-security-analysis",
         "singh-2022-v-range",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "hancke-2005-rfid-db",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "kuhn-2010-uwb-ir-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -351,7 +354,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-05",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -359,7 +362,9 @@
         "olafsdottir-2017-carrier-phase",
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-ed",
-        "ranganathan-2012-chirp-attacks"
+        "ranganathan-2012-chirp-attacks",
+        "hancke-2005-rfid-db",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -428,13 +433,14 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-05",
       "cites": [
         "flury-2010-distance-decreasing",
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1112,7 +1118,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-05",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
@@ -1120,7 +1126,8 @@
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "hancke-2005-rfid-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1324,7 +1331,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-05",
       "cites": [
         "aad-2026-fast-uwb-testing",
         "anliker-2023-time-for-change",
@@ -1336,7 +1343,8 @@
         "secure-ranging-4z-hrp-2024",
         "singh-2021-4z-security-analysis",
         "staat-2022-analog-relay",
-        "leu-2021-multicarrier-tof"
+        "leu-2021-multicarrier-tof",
+        "hancke-2008-tof-db-attacks"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1359,6 +1367,11 @@
           "to": "leu-2020-mtac",
           "type": "confirms",
           "note": "상관 기반 ToA 검증이 안전하지 않다는 MTAC 의 논증을 CS 의 NADM 에서 실측으로 확인한 셈이 된다"
+        },
+        {
+          "to": "hancke-2008-tof-db-attacks",
+          "type": "extends",
+          "note": "서론에서 Clulow 2006 의 긴 심볼 문제가 \"RFID/433 MHz ASK/FSK [13](Hancke 2008)\" 등 여러 거리측정 기술 공격의 기반이 됐다고 계보를 적고, 심볼 복호가 필요 없는 상관 기반 ToA 조작으로 ED/LC 계열을 협대역으로 넓힘"
         }
       ],
       "category": "attack"
@@ -1423,7 +1436,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-05",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1431,7 +1444,8 @@
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding",
-        "zhang-2014-unambiguous-distance"
+        "zhang-2014-unambiguous-distance",
+        "hancke-2008-tof-db-attacks"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1439,6 +1453,11 @@
           "to": "clulow-2006-long-symbols",
           "type": "extends",
           "note": "심볼 타이밍 문제를 반송파 위상 영역으로 옮겨 세 가지 공격 유형을 정의했다"
+        },
+        {
+          "to": "hancke-2008-tof-db-attacks",
+          "type": "extends",
+          "note": "관련연구에서 \"ED/LC 의 실현 가능성은 ISO 14443 RFID 에서 [19](Hancke 2008)가 실증\" 이라 쓰고, 같은 물리계층 공격 문제를 반송파 위상 거리측정으로 넓힘"
         }
       ],
       "category": "attack"
@@ -1503,7 +1522,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-05",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1513,7 +1532,9 @@
         "rasmussen-2010-rf-distance-bounding",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
-        "ranganathan-2012-chirp-attacks"
+        "ranganathan-2012-chirp-attacks",
+        "hancke-2005-rfid-db",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1670,7 +1691,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-05",
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
@@ -1679,7 +1700,8 @@
         "rasmussen-2010-rf-distance-bounding",
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "hancke-2005-rfid-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1984,13 +2006,14 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-05",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
         "francillon-2011-pkes-relay",
         "poturalski-2011-db-802-15-4a",
-        "rasmussen-2010-rf-distance-bounding"
+        "rasmussen-2010-rf-distance-bounding",
+        "hancke-2008-tof-db-attacks"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2059,8 +2082,10 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-10",
-      "cites": [],
+      "last_checked": "2026-09-05",
+      "cites": [
+        "hancke-2005-rfid-db"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "category": "analysis"
@@ -2575,7 +2600,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-05",
       "cites": [
         "clulow-2006-long-symbols",
         "coppola-2024-pure",
@@ -2589,7 +2614,9 @@
         "singh-2022-v-range",
         "uwb-sv-2023-ccs",
         "ranganathan-2012-chirp-attacks",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "hancke-2008-tof-db-attacks",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -2759,7 +2786,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-05",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2767,7 +2794,10 @@
         "rasmussen-2010-rf-distance-bounding",
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "hancke-2005-rfid-db",
+        "hancke-2008-tof-db-attacks",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3186,12 +3216,13 @@
       "verification": "verified",
       "cites": [
         "zand-2019-ble-pbr",
-        "abidin-2021-narrowband-ranging"
+        "abidin-2021-narrowband-ranging",
+        "lu-2021-ble-phase-positioning"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-03",
-      "last_checked": "2026-08-03"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "kravets-2025-ble-pbr-wifi",
@@ -3613,7 +3644,8 @@
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3624,7 +3656,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "schepers-2021-ftm-security",
@@ -4026,7 +4058,8 @@
         "uwb-sv-2023-ccs",
         "uwbad-2024-jamming",
         "heinrich-2023-smartphones-uwb",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4037,7 +4070,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "coppola-2024-pure",
@@ -4194,7 +4227,9 @@
       "verification": "verified",
       "cites": [
         "clulow-2006-long-symbols",
-        "flury-2010-distance-decreasing"
+        "flury-2010-distance-decreasing",
+        "hancke-2005-rfid-db",
+        "hancke-2008-tof-db-attacks"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4205,7 +4240,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-08-27"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "flury-2010-distance-decreasing",
@@ -4276,7 +4311,9 @@
       },
       "verification": "verified",
       "cites": [
-        "clulow-2006-long-symbols"
+        "clulow-2006-long-symbols",
+        "hancke-2005-rfid-db",
+        "hancke-2008-tof-db-attacks"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4287,7 +4324,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-08-15"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "poturalski-2011-db-802-15-4a",
@@ -4357,7 +4394,10 @@
       "verification": "verified",
       "cites": [
         "clulow-2006-long-symbols",
-        "flury-2010-distance-decreasing"
+        "flury-2010-distance-decreasing",
+        "hancke-2005-rfid-db",
+        "hancke-2008-tof-db-attacks",
+        "kuhn-2010-uwb-ir-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4368,7 +4408,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-08-15"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "schwarzbach-2026-cross-tech-ranging",
@@ -4601,7 +4641,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-05",
       "cites": [
         "francillon-2011-pkes-relay",
         "leu-2020-mtac",
@@ -4610,7 +4650,8 @@
         "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
-        "flury-2010-distance-decreasing"
+        "flury-2010-distance-decreasing",
+        "hancke-2008-tof-db-attacks"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -4765,11 +4806,13 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-05",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
-        "rasmussen-2010-rf-distance-bounding"
+        "rasmussen-2010-rf-distance-bounding",
+        "hancke-2005-rfid-db",
+        "kuhn-2010-uwb-ir-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4839,9 +4882,11 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-05",
       "cites": [
-        "rasmussen-2010-rf-distance-bounding"
+        "rasmussen-2010-rf-distance-bounding",
+        "hancke-2005-rfid-db",
+        "kuhn-2010-uwb-ir-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4915,9 +4960,10 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-05",
       "cites": [
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "hancke-2005-rfid-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -5077,7 +5123,8 @@
         "francillon-2011-pkes-relay",
         "leu-2020-mtac",
         "singh-2019-uwb-ed",
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "hancke-2005-rfid-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5088,7 +5135,7 @@
         }
       ],
       "added": "2026-08-21",
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "yu-2026-ble-theft-auto",
@@ -5451,12 +5498,13 @@
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
-        "rasmussen-2010-rf-distance-bounding"
+        "rasmussen-2010-rf-distance-bounding",
+        "hancke-2005-rfid-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-24",
-      "last_checked": "2026-08-24"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "schroeder-2022-inphase",
@@ -7274,12 +7322,13 @@
         "vanmarter-2023-svr-ble-ranging",
         "stanciu-2021-narrowband-distance",
         "pelka-2014-phase-multi-frequency",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "lu-2021-ble-phase-positioning"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "wang-2025-cs-device-free-sensing",
@@ -7794,12 +7843,15 @@
       "cites": [
         "clulow-2006-long-symbols",
         "rasmussen-2010-rf-distance-bounding",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "hancke-2005-rfid-db",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "kuhn-2010-uwb-ir-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "vanmarter-2023-svr-ble-ranging",
@@ -8167,12 +8219,14 @@
         "clulow-2006-long-symbols",
         "rasmussen-2010-rf-distance-bounding",
         "cremers-2012-distance-hijacking",
-        "francillon-2011-pkes-relay"
+        "francillon-2011-pkes-relay",
+        "hancke-2005-rfid-db",
+        "hancke-2008-tof-db-attacks"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-01",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -8237,7 +8291,10 @@
       "verification": "verified",
       "cites": [
         "clulow-2006-long-symbols",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "hancke-2005-rfid-db",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "kuhn-2010-uwb-ir-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8248,7 +8305,7 @@
         }
       ],
       "added": "2026-09-01",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-05"
     },
     {
       "id": "gunia-2026-cs-uwb-rss-positioning",
@@ -8808,6 +8865,380 @@
         }
       ],
       "category": "estimation"
+    },
+    {
+      "id": "hancke-2005-rfid-db",
+      "title": "An RFID Distance Bounding Protocol",
+      "authors": [
+        "Gerhard P. Hancke",
+        "Markus G. Kuhn"
+      ],
+      "venue": "SecureComm",
+      "venue_full": "First International Conference on Security and Privacy for Emerging Areas in Communications Networks (IEEE/CreateNet SecureComm 2005), Athens, pp. 67–73",
+      "tier": "other",
+      "year": 2005,
+      "url": "https://doi.org/10.1109/SECURECOMM.2005.56",
+      "preprint": "https://www.cl.cam.ac.uk/~mgk25/sc2005-distance.pdf",
+      "doi": "10.1109/SECURECOMM.2005.56",
+      "topics": [
+        "distance-bounding",
+        "rapid-bit-exchange",
+        "relay-attack",
+        "rfid",
+        "uwb-pulse-channel",
+        "foundational",
+        "protocol-design"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 의 RTT 교환을 프로토콜 계층에서 보면 이 논문의 구조 — 검증기 nonce 로 양쪽이 미리 두 벌의 응답열 R0·R1 을 계산해 두고, 시간 임계 구간에서는 1 비트 챌린지에 대해 비동기 룩업으로 즉답한다 — 와 같은 계보다(코퍼스 20 건이 인용하는 \"Hancke–Kuhn 구조\"). CS 연구에서 쓰이는 지점은 셋이다. (1) 추측 확률 3/4 와 잡음 허용 k-of-n 판정(pFA·pFR 식)은 CS RTT 의 랜덤 시퀀스 길이·판정 정책을 설계할 때의 기준식이다. (2) \"분해능 r ≈ c/B, ISO 14443 의 300 kHz 대역폭은 km 급\" 논증은 CS 1–2 MHz 채널(단순 계산으로 150–300 m)의 협대역 RTT 한계를 말할 때 가장 오래된 출처다. (3) 프로세싱 지연 td 가 전파지연 tp 보다 크면 거리 오차가 커진다는 지적은 CS 의 T_PM·수신-송신 전환 시간이 왜 규격에 고정돼 있는지의 배경이다. 비동기 회로로 오버클럭 공격을 막는다는 발상은 CS 응답기의 타이밍이 소프트웨어가 아닌 하드웨어에 묶여야 한다는 논거로도 쓸 수 있다.",
+      "summary": "ISO 14443 근접 카드가 릴레이 공격에 취약하다는 문제에서 출발해, 저전력·비동기 하드웨어만으로 구현 가능한 거리 바운딩 프로토콜을 제안한다. 검증기가 nonce N_V 를 보내면 양쪽이 h(K, N_V) 로 두 n 비트열 R0·R1 을 미리 계산하고, 이후 검증기가 1 비트 챌린지 C_i 를 보낼 때마다 prover 는 C_i 로 선택한 R^{C_i}_i 를 즉시 돌려준다. 시간 임계 구간에 암호 연산이 없어 응답 지연이 게이트 지연 수준으로 짧고 예측 가능하며, 비동기 회로라 클럭 가속(오버클럭) 공격이 통하지 않는다. 채널로는 13.56 MHz 반송파를 시간 기준으로 삼되 챌린지·응답을 짧은 UWB 펄스(BPM)로 보내는 구조를 제안하고, 잡음 채널에서 n 중 k 비트만 맞아도 수락하는 판정과 그때의 오수락·오거부 확률식을 준다. Brands–Chaum 대비 추측 확률이 1/2 → 3/4 로 올라 비트 수가 두 배 필요하지만, 잡음 채널에서 커밋·MAC 재전송이 필요 없어 전체 완료 시간은 오히려 짧다고 논증한다.",
+      "hardware": [
+        "실험 장비 없음 — 프로토콜 제안 논문. 구현은 향후 과제로 명시(4절). 3.2·3.3절에 2 비트 메모리 단일 룩업의 비동기 회로, 검증기 측 가변 지연 t_t·t_s 또는 단발(single-shot) 샘플링 구상만 서술"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 시뮬레이션·구현 도구를 사용하지 않음"
+      ],
+      "software_verified": true,
+      "results": [
+        "프로토콜: V→P nonce N_V, 양쪽이 R0‖R1 := h(K, N_V) 계산, 이후 n 회의 1 비트 챌린지 C_i 에 R^{C_i}_i 로 즉답. 응답에 쓰이지 않은 다른 절반은 영원히 공개되지 않음",
+        "공격자의 응답 추측 확률 3/4(Brands–Chaum 은 1/2) — 같은 보안 수준에 비트 수 약 2 배 필요하나, 잡음 채널에서 Brands–Chaum 이 요구하는 C·R 전체 재전송과 MAC(느린 신뢰 채널) 이 불필요해 전체 완료 시간은 짧음",
+        "잡음 허용 판정: n 비트 중 k 비트 이상 맞으면 수락. 오수락 확률 pFA = Σ_{i=k..n} C(n,i)(3/4)^i(1/4)^{n−i}, 비트 오류율 ε 일 때 오거부 확률 pFR = Σ_{i=0..k−1} C(n,i)(1−ε)^i ε^{n−i}",
+        "거리 분해능 r ≈ c/B — ISO 14443A 의 데이터 대역폭 ≈300 kHz 는 km 급 분해능이라 거리 바운딩에 부적합. UWB 펄스 채널이면 cm 급 가능(당시 UWB 위치 시스템 분해능 30 cm 언급)",
+        "시간 기준: prover 는 수정 발진기 없이 13.56 MHz 반송파의 영교차를 트리거로 씀. 대역통과 필터(동조 루프 안테나)가 2 배 이상의 클럭 가속을 막는 조악한 신뢰 시계 역할",
+        "응답 지연 td 는 비동기 룩업 한 번의 게이트 지연 수준 — 암호 연산(수 ms)은 시간 임계 구간 밖에서 미리 수행. tp < td 이면 td 의 변동이 거리 추정을 크게 흔든다고 지적(식 1)",
+        "시간 민감 조정(t_t·t_s 탐색)은 전부 검증기가 담당 — 토큰은 가변 지연·고속 클럭·정밀 기준 주파수가 필요 없음",
+        "요구 보안 파라미터: K·N_V·N_P·n 은 대칭키 수준(80–256 비트), 오류 대비 n 을 더 키우려면 h 로 시드한 PRNG 로 R0‖R1 생성"
+      ],
+      "limitations": [
+        "구현·실측 없음 — 저자가 \"향후 연구는 실제 시연\" 이라고 명시. 실증은 Kuhn 2010(WPNC)·Tippenhauer 2015(WiSec) 로 이어짐",
+        "prover 가 더 가까운 제 3 자와 공모하는 경우(terrorist fraud)는 위협 모델에서 제외",
+        "UWB 펄스 채널은 구상 수준 — 다중경로·동기화 오차·규제 전력은 다루지 않음",
+        "위치의 제 3 자 부인방지 없음 — 검증기를 믿는 당사자에게만 근접성을 증명"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-05",
+      "last_checked": "2026-09-05",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [],
+      "category": "protocol"
+    },
+    {
+      "id": "hancke-2008-tof-db-attacks",
+      "title": "Attacks on Time-of-Flight Distance Bounding Channels",
+      "authors": [
+        "Gerhard P. Hancke",
+        "Markus G. Kuhn"
+      ],
+      "venue": "WiSec",
+      "venue_full": "Proceedings of the First ACM Conference on Wireless Network Security (WiSec '08), Alexandria, VA, pp. 194–202",
+      "tier": "wireless",
+      "year": 2008,
+      "url": "https://doi.org/10.1145/1352533.1352566",
+      "preprint": "https://www.cl.cam.ac.uk/~mgk25/wisec08-distance.pdf",
+      "doi": "10.1145/1352533.1352566",
+      "topics": [
+        "distance-bounding",
+        "late-commit",
+        "early-detect-late-commit",
+        "overclocking",
+        "receiver-latency",
+        "demodulation",
+        "rfid",
+        "foundational"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "high",
+      "relevance_note": "Clulow 2006 이 개념으로만 제시한 late-commit 을 상용 수신기 두 종에 실제로 구현한 첫 논문이자, \"수신기의 복조·판정 단계 지연이 곧 공격자의 시간 이득\" 이라는 명제의 실증 출처다. CS 연구에 직접 닿는 지점은 셋이다. (1) 저역 데이터 필터·적분기·상관기가 앞부분의 틀린 값을 걸러 준다는 사실 — CS RTT 의 정합필터·상호상관 ToA 추정도 심볼 전체를 적분하므로 같은 구조이며, Anliker 2026 은 이 논문을 인용하며 심볼 복호 없이 상관 자체를 조작하는 쪽으로 넓혔다. (2) 수신기가 필터 차단 주파수보다 빠른 데이터도 복조한다는 관찰 — 공격자가 심볼보다 짧은 펄스를 넣을 수 있다는 뜻으로, CS 1 µs 심볼 안에 late-commit 전환을 넣는 공격의 전제다. (3) 대응책 \"비트 구간의 앞쪽만 샘플링하면 TA 는 줄지만 BER 이 오른다\" 는 CS 의 fractional timing estimate 와 잡음 강건성 사이의 같은 트레이드오프다. 오버클럭 공격은 CS 응답기의 타이밍이 상대 클럭에 종속되면 어떻게 되는지를 묻는 출발점이다(CS 는 T_PM 고정·자체 클럭이라 직접 적용은 안 됨).",
+      "summary": "거리 바운딩 채널의 보안이 프로토콜이 아니라 수신기의 복조·판정 지연에 달려 있음을 상용 RF 칩으로 보인다. 433.92 MHz ASK/FSK 수신기(Maxim MAX1471)에서는 AM 복조기와 데이터 슬라이서의 저역 필터가 짧은 오답을 걸러 주므로 응답 시작 후 20–22 µs(광속 6.6 km) 뒤에 값을 바꿔도 검증기는 정상 데이터로 읽는다. ISO 14443A 리더(NXP MF RC531)에서는 상관기 출력이 임계값을 넘기 전에만 바꾸면 되어 비트 구간의 약 1/4 인 2–2.5 µs(750 m)를 번다. 적분기 입력 전압에 한계가 있을 때의 최적 전략(임계 수준 V_m/2 를 유지하다가 마지막에 전환), NRZ·Manchester·다수결 샘플링 복호기별 시간 이득, PLL·카운터 클럭 복원을 가속해 prover 를 일찍 응답시키는 오버클럭 공격(13.56 MHz 반송파를 +1/+2 MHz 올려 ISO 14443A 토큰 응답을 최대 15/30 µs 앞당김)까지 다룬다. 결론은 \"기존 수신기 구조는 거리 바운딩에 부적합하며 전용 저지연 채널이 필요하다\" 이고, HF RFID 용 채널 제안 세 가지(Munilla, Reid, 자신들의 UWB 펄스 채널)의 약점을 비교한다.",
+      "hardware": [
+        "Maxim MAX1471 315/434 MHz ASK/FSK 슈퍼헤테로다인 수신기 평가보드 (433.92 MHz)",
+        "RF Solutions RRFQ2 433.92 MHz FM 수신기",
+        "HP E4421B RF 신호발생기 — 수신기 안테나 입력에 직결(유선 주입)",
+        "FPGA 보드 (모델 미기재) — 변조 데이터 스트림 생성",
+        "NXP MF RC531 비접촉 리더 IC + ISO 14443A 호환 테스트 PICC(106 kbit/s Manchester 부하변조), 디버그 출력으로 수신기 내부 파형 관측",
+        "동조 픽업 코일 — 오버클럭 실험에서 토큰 응답 회수",
+        "Melexis MLX90121 13.56 MHz RFID 트랜시버 — 수신기 구조 분석의 참조 (실험 대상 아님)",
+        "오실로스코프 (모델 미기재)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "명시 없음 — FPGA 데이터 스트림 생성 도구·언어 미기재. 시뮬레이션 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "MAX1471 late-commit: 응답 시작 후 TA = 20–22 µs 까지 값 변경 가능, 초기 오답은 저역 데이터 필터가 제거 → 광속 환산 6.6 km 의 거리 확장(Figure 6)",
+        "NXP RC531 상관기 late-commit: 상관 출력이 임계값을 넘기 전에 전환하면 됨 → TA ≈ 2–2.5 µs(비트 구간의 약 1/4, 750 m)(Figure 7)",
+        "수신기는 데이터 필터 차단 주파수보다 빠른 데이터도 복조 — −100 dBm 에서 MAX1471·RRFQ2 가 차단 9.6/4.8 kHz 임에도 15 kbit/s NRZ 를 복조. 공격자가 심볼보다 짧은 펄스를 넣을 수 있음의 근거",
+        "최적 late-commit 전략: 복조 출력이 0–V_m 으로 제한될 때 초기값을 V_m/2 로 두어 적분기를 임계값 방향으로 유지, 마지막에 0 또는 V_m 으로 전환하면 TA 최대",
+        "반 비트 길이의 거리 환산: 9.6 kbit/s 센서노드 채널 > 15 km, 100 kbit/s RFID 채널 1.5 km — T_B 가 길수록 취약(Clulow 2006 원칙 3 재확인)",
+        "오버클럭(ISO 14443A 토큰): 반송파 +1 MHz 에서 첫 에지 ≈5 µs·마지막 에지 ≈15 µs 앞당김, +2 MHz 에서 ≈10/≈30 µs. 표준의 ±7 kHz 허용오차를 토큰이 강제하지 않음을 확인(Figure 10)",
+        "PLL·카운터(16× 샘플링 클럭) 기반 Manchester 클럭 복원은 에지 전이를 앞당기면 샘플링이 앞당겨져 응답이 빨라짐 — 적합한 IC 가 없어 개념 실증",
+        "HF RFID 전용 채널 비교: Munilla(선제 응답 → distance fraud 미방지, 분해능 <1 µs), Reid(고정 사이클 응답, 4–5 cm 에서 300 ns 분해능, 오버클럭 가정에 의존), Hancke–Kuhn UWB 펄스(비동기 회로로 오버클럭 무력화, 높은 BER 감내 프로토콜 필요)",
+        "대응책: 비트 구간 초반만 샘플링하면 TA 감소하나 BER 상승·정밀 동기 필요, 0/1 별도 임계값도 BER 상승 — 결국 T_B 최소화(전용 채널)가 근본 해법"
+      ],
+      "limitations": [
+        "공격 대상이 433 MHz ASK/FSK 와 13.56 MHz HF RFID 수신기 — 2.4 GHz 광대역·GFSK 수신기에 대한 실측 없음",
+        "신호발생기를 안테나 입력에 직결한 유선 주입 실험 — 무선 환경의 동기·전력·다중경로는 다루지 않음",
+        "오버클럭 공격은 적합한 IC 가 없어 PLL·카운터 복원기에 대한 개념 실증 수준. 토큰 오버클럭은 13.56 MHz 에서만 실측",
+        "공격 성공률·BER 등 통계 수치 없이 파형 예시(오실로스코프 트레이스)로 제시",
+        "전용 거리 바운딩 채널 제안은 HF RFID 환경에 국한된다고 저자 명시 — 추가 연구 필요"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-05",
+      "last_checked": "2026-09-05",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "hancke-2005-rfid-db"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "implements",
+          "note": "Clulow 2006 이 개념으로 제시한 deferred bit signalling·late-commit 을 상용 수신기(MAX1471, MF RC531)에서 실제 구현 — 저자들이 \"[1] 에서 도입한 발상을 여기서 구현\" 이라고 명시"
+        },
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "extends",
+          "note": "2005 년 제안한 UWB 펄스 DB 채널의 필요성을 기존 수신기 공격으로 뒷받침하고, HF RFID 용 채널 제안들과 비교"
+        }
+      ],
+      "category": "attack"
+    },
+    {
+      "id": "tippenhauer-2015-uwb-rapid-bit-exchange",
+      "title": "UWB Rapid-Bit-Exchange System for Distance Bounding",
+      "authors": [
+        "Nils Ole Tippenhauer",
+        "Heinrich Luecken",
+        "Marc Kuhn",
+        "Srdjan Capkun"
+      ],
+      "venue": "WiSec",
+      "venue_full": "Proceedings of the 8th ACM Conference on Security & Privacy in Wireless and Mobile Networks (WiSec '15), New York, Article 2, pp. 1–12",
+      "tier": "wireless",
+      "year": 2015,
+      "url": "https://doi.org/10.1145/2766498.2766504",
+      "preprint": "https://research.scy-phy.net/tippenhauer15uwb.pdf",
+      "doi": "10.1145/2766498.2766504",
+      "topics": [
+        "distance-bounding",
+        "rapid-bit-exchange",
+        "uwb",
+        "fpga",
+        "processing-delay",
+        "energy-detector",
+        "distance-commitment",
+        "early-detect-late-commit"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "거리 바운딩의 rapid-bit-exchange 를 무선으로 끝까지 구현한 첫 시스템으로, CS 연구에는 두 수치와 한 개념이 쓰인다. 첫째, prover 처리지연 δB = 96 ns 와 적분창 T_int = 4 ns 에서 악의적 prover 의 최대 거리 이득 δB + 2T_int = 15.6 m, 외부 공격자 2T_int = 1.2 m 라는 산식 — CS RTT 에서도 응답기 고정 지연(T_PM 등)과 수신기 적분창(심볼 1 µs)이 공격자 이득 상한을 결정하므로 같은 식으로 CS 의 이론 상한(µs 급 → 수백 m)을 계산해 UWB 와 대비할 수 있다. 둘째, 4 ns 창이 ED/LC 이득을 1 m 미만으로 묶는다는 점은 Poturalski 2011 의 EDD 대응책을 실제로 구현한 사례이고, CS 가 같은 대응을 쓸 수 없는 이유(협대역)를 대비로 보여 준다. 개념으로는 \"distance commitment\" — 프리앰블 송신 시각이 곧 거리 약속이며, 프리앰블만 앞당기면 데이터 샘플링 창도 앞당겨져 복조가 깨진다 — 가 CS 의 CS_SYNC 프리앰블 기반 ToA 와 그 뒤 랜덤 시퀀스의 관계를 분석할 때 그대로 적용된다. Anliker 2026 이 상관 기반 ToA 를 심볼 복호 없이 조작한 것은 이 약속 구조의 어디가 CS 에서 무너지는지를 보는 문제다.",
+      "summary": "Brands–Chaum·Hancke–Kuhn 형 거리 바운딩의 핵심인 rapid-bit-exchange 를 UWB 펄스 라디오와 FPGA 로 완전히 구현한다. 설계 원칙은 (1) 짧은 심볼(펄스 2 ns, 적분창 4 ns, 심볼 주기 512 ns)로 ED/LC 이득을 제한하고 (2) 비동기 에너지 검출 수신기로 복조 지연을 최소화하며 (3) BPPM/BPSK 대신 on-off 펄스를 써 심볼 내부 구조를 없애는 것이다. 챌린지 펄스를 ADC → 제곱 → 적분 → 판정 → 비밀과 XOR → DAC 로 처리하는 임계 경로가 125 MHz 클럭 12 사이클 = 96 ns 이며, 이 중 절반이 ADC/DAC 인터페이스와 FPGA 간 버스 지연이다. Tekmicro Triton VXS-5 보드 2 대(Virtex-5 ×3, 2 GS/s ADC/DAC)와 Mini-Circuits 부품으로 만든 3.5–4 GHz 대역 아날로그 프런트엔드로 30–255 cm 16 지점을 각 1,000 회 측정해 평균 오차 10.9 cm, 평균 BER 2.72 % 를 얻었다. 최대 거리 이득은 악의적 prover 15.6 m, 외부 공격자 1.2 m 로 계산되며, 프리앰블 타이밍이 거리 약속(distance commitment) 역할을 해 프리앰블만 앞당기는 공격이 통하지 않음을 논증한다.",
+      "hardware": [
+        "Tekmicro Triton VXS-5 ×2 (각 Xilinx Virtex-5 FPGA 3 개: ADC 측 BOT, DAC 측 TOP, 제어용) — prover/verifier 한 쌍",
+        "ADC/DAC 2 GS/s, 외부 2 GHz 클럭 공급, FPGA 와 250 MHz DDR 병렬 버스(사이클당 4 샘플), 로직 클럭 125 MHz",
+        "TX 프런트엔드: Mini-Circuits ZX95-4040-S VCO(4 GHz) + ZX05-C60-S+ 믹서, Fractus FR05-107 UWB 안테나, DAC 출력 5 dBm",
+        "RX 프런트엔드: ZX60-542LN-S+ LNA ×2(각 23 dB), VHF-2700A+ 고역통과(2.4 GHz 대역 제거), 대역통과, ZX95-3605-S+ VCO(3.5 GHz) + ZX05-153-S+ 믹서 → IF 500 MHz, VLF-1400+ 저역통과",
+        "오실로스코프 (모델 미기재) — 처리지연·메시지 트레이스 관측",
+        "호스트 노트북(Ethernet 제어), JTAG 체인으로 펌웨어 로드",
+        "측정 셋업: 응답만 무선, 챌린지는 유선 링크. 정지 채널, LOS, 최대 2.55 m"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "VHDL",
+        "Xilinx ISE (설계·합성·시뮬레이션; 참고문헌에 ISE Design Suite 10)",
+        "자체 Ethernet API — 동기 임계값·공유 비밀·챌린지·RX/TX 전력 설정",
+        "32 비트 LFSR 로 챌린지 난수화"
+      ],
+      "software_verified": true,
+      "results": [
+        "prover 임계 경로 12 사이클 × 8 ns = 96 ns (< 100 ns) — ADC 인터페이스 16, 제곱 8, 적분 24(log2 8 = 3 사이클), 복조 8, FPGA 버스 16, 응답 생성 8, DAC 인터페이스 16 ns. 개발킷 기본 ADC/DAC 블록(각 60 ns)을 16 ns 로 재설계(Table 1)",
+        "프리앰블 검출은 > 400 ns 이나 데이터 심볼 응답은 ≈100 ns(오실로스코프, Figure 10a). 심볼 주기 T_s = 512 ns, 펄스폭 2 ns, 적분창 T_int = 4 ns",
+        "거리 측정: 30–255 cm 16 지점 × 1,000 회, 평균 오차 10.9 cm, 통상 2 ns(30 cm) 이내. 분산 0.05–3.96 ns(Table 2)",
+        "BER 평균 2.72 % — 절반의 지점에서 < 1 %, 9/16 지점에서 무오류 메시지 > 90 %; 나쁜 지점 90 cm 7.91 %, 120 cm 15.01 %(무오류 50 %), 195 cm 5.61 %(무오류 29 %)",
+        "최대 거리 이득: 악의적 prover δB + 2T_int = 96 + 8 = 104 ns → 15.6 m; 외부 공격자(적분창 이동) 2T_int = 8 ns → 1.2 m. 보장: \"n m 이내로 검증되면 최강 공격자도 n + 15.6 m 이내\"",
+        "4 ns 적분창으로 late-commit·early-detect 이득 < 4 ns(방향당 < 1 m)",
+        "distance commitment: 프리앰블 도착 시각이 데이터 샘플링 창을 정하므로 프리앰블만 앞당기면 정직한 prover 의 데이터 펄스가 창 밖으로 나가 무작위 복조 — 최대 T_int 만큼만 앞당길 수 있고 그러면 BER 급증",
+        "기존 구현 비교: 유선 FPGA DB(5 ns 분해능, 처리 8 ns), RFID 근접장 DB(정확도 낮음, 범위 ~30 cm), Rasmussen 2010(상용 UWB 플랫폼, 1 ns 정밀도, ED/LC 못 막음, distance fraud 최대 56 µs = 7.5 km), Poturalski 2011(802.15.4a 적응, 128 ns 창 → EDD 제안)"
+      ],
+      "limitations": [
+        "테스트베드 한계로 최대 2.5 m, LOS·정지 채널만 — 설계 목표 10 m·다중경로·NLOS 미평가(저자 명시)",
+        "챌린지는 유선, 응답만 무선 — 완전 무선 왕복은 아님",
+        "FPGA 프로토타입 — 제품화에는 ASIC 필요(저자 명시). 처리지연의 절반이 ADC/DAC·버스 인터페이스",
+        "거리 이득 상한 15.6 m 가 실험 최대 거리보다 큼 — 짧은 거리에서의 신뢰성으로 정당화",
+        "일부 거리에서 BER 5–15 % 로 높고 비트 오류 정정 없음 — 오류 허용 프로토콜(Hancke–Kuhn 류) 전제",
+        "측정 정확도·BER 개선은 향후 과제로 남김"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-05",
+      "last_checked": "2026-09-05",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "cremers-2012-distance-hijacking",
+        "francillon-2011-pkes-relay",
+        "hancke-2005-rfid-db",
+        "kuhn-2010-uwb-ir-db",
+        "poturalski-2011-db-802-15-4a",
+        "ranganathan-2012-chirp-attacks",
+        "rasmussen-2010-rf-distance-bounding"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "kuhn-2010-uwb-ir-db",
+          "type": "implements",
+          "note": "\"[23] 의 개념 위에 프로토콜 설계를 확장하고 구현을 제시\" — 2010 년 아날로그 트랜시버 구상을 FPGA 시스템으로 실현"
+        },
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "implements",
+          "note": "Hancke–Kuhn 구조(미리 계산한 응답, 비동기 1 비트 즉답)의 파생 프로토콜을 실행할 수 있는 rapid-bit-exchange 를 구현"
+        },
+        {
+          "to": "poturalski-2011-db-802-15-4a",
+          "type": "implements",
+          "note": "Poturalski 가 제안한 작은 적분창(EDD) 대응책을 4 ns 창으로 구현해 ED/LC 이득을 < 1 m 로 제한; BPPM/BPSK 심볼을 의도적으로 배제"
+        },
+        {
+          "to": "rasmussen-2010-rf-distance-bounding",
+          "type": "complementary",
+          "note": "Rasmussen 2010 은 prover 지연 최소화 설계만 제시하고 거리 측정·물리계층 프로토콜은 다루지 않았다고 지적하며, 복조하는 prover 로는 처음으로 무선 완전 구현"
+        }
+      ],
+      "category": "defense"
+    },
+    {
+      "id": "kuhn-2010-uwb-ir-db",
+      "title": "UWB Impulse Radio Based Distance Bounding",
+      "authors": [
+        "Marc Kuhn",
+        "Heinrich Luecken",
+        "Nils Ole Tippenhauer"
+      ],
+      "venue": "WPNC",
+      "venue_full": "2010 7th Workshop on Positioning, Navigation and Communication (WPNC 2010), Dresden, pp. 28–37",
+      "tier": "other",
+      "year": 2010,
+      "url": "https://doi.org/10.1109/WPNC.2010.5653801",
+      "preprint": null,
+      "doi": "10.1109/WPNC.2010.5653801",
+      "topics": [
+        "distance-bounding",
+        "uwb",
+        "processing-delay",
+        "analog-transceiver",
+        "rapid-bit-exchange"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "prover 의 \"챌린지 수신 → 응답 송신\" 처리지연이 거리 바운딩 보안을 결정한다는 문제를 처음 트랜시버 구조 수준에서 다룬 논문으로, Tippenhauer 2015 구현의 설계 출발점이다. CS 연구에서는 응답기 처리지연을 하드웨어로 얼마나 줄일 수 있는가의 하한 참조로 쓴다 — Tippenhauer 2015 가 인용한 바로는 단일 IC 로 최적화하면 δB ≤ 4 ns(distance fraud 이득 3.6 m, mafia fraud 1.5 m 이내, 10 m 설계 범위)로 추정했다. CS 의 RTT 는 규격이 T_PM 등 µs 급 고정 지연을 두므로 이 하한과의 격차 자체가 협대역 RTT 의 구조적 한계 논거가 된다. 코퍼스 6 건(Anliker 2023, Cremers 2012, Francillon 2011, Nkrow 2024 ×2, Poturalski 2011)이 인용하는 허브 문헌.",
+      "summary": "(초록 기준) 웜홀·릴레이 공격을 막는 거리 바운딩 프로토콜을 UWB 로 저비용 구현하려 할 때, 시간 분해능 못지않게 prover 의 처리지연이 보안을 좌우한다고 지적한다. 기존 UWB 트랜시버는 상당한 처리지연을 더해 보안을 떨어뜨리므로, 들어오는 UWB 펄스를 검출하고 최소 지연으로 응답을 송신하는 새로운 아날로그 UWB 트랜시버 구조를 제안·분석한다.",
+      "hardware": [
+        "확인 필요 — 초록만 확인. 아날로그 UWB 트랜시버 구조 제안(구현 여부 미확인)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요"
+      ],
+      "software_verified": false,
+      "results": [
+        "(2 차 출처: Tippenhauer 2015 3.3절) 단일 IC 최적화 시 prover 처리지연 δB ≤ 4 ns 로 추정 → distance fraud 최대 이득 3.6 m, mafia fraud 정확도 1.5 m 이내, 설계 범위 10 m",
+        "초록: 처리지연이 보안을 떨어뜨리는 핵심 요인임을 분석하고 최소 지연 아날로그 검출·응답 구조 제안"
+      ],
+      "limitations": [
+        "확인 필요 — 전문 미확보(IEEE 유료, Unpaywall·OpenAlex closed)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "added": "2026-09-05",
+      "last_checked": "2026-09-05",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [],
+      "category": "protocol"
+    },
+    {
+      "id": "lu-2021-ble-phase-positioning",
+      "title": "Indoor Positioning Experiment Based on Phase Ranging with Bluetooth Low Energy (BLE)",
+      "authors": [
+        "Xingyu Lu",
+        "Yufang Yin",
+        "Na Zhao",
+        "Hua Wei"
+      ],
+      "venue": "J. Phys.: Conf. Ser.",
+      "venue_full": "Journal of Physics: Conference Series, vol. 1971, 012044 (International Conference on Electronic Engineering and Informatics 2021)",
+      "tier": "other",
+      "year": 2021,
+      "url": "https://doi.org/10.1088/1742-6596/1971/1/012044",
+      "preprint": "https://iopscience.iop.org/article/10.1088/1742-6596/1971/1/012044/pdf",
+      "doi": "10.1088/1742-6596/1971/1/012044",
+      "topics": [
+        "ble",
+        "phase-based-ranging",
+        "mcpr",
+        "indoor-positioning",
+        "least-squares",
+        "pre-cs"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "low",
+      "relevance_note": "CS 채택(2024) 이전에 상용 BLE 칩의 사양 외 위상 거리측정 기능으로 실내 측위를 시도한 기록 — Dialog DA14695 는 Ramachandran 2016 석사논문(DA14681)과 같은 Dialog 계보의 후속 칩이다. Nikodem 2025 와 Sheikh 2023 이 \"BLE 다중반송파 위상 거리측정이 실제로 시도됐다\" 는 근거로 인용한다. CS 연구에서는 CS 이전 BLE PBR 의 성능 수준을 말할 때 인용처로만 쓰고, 수치는 전문 확보 뒤에 채운다.",
+      "summary": "(초록 기준) 실내 측위의 비용과 정확도 사이의 모순을 풀기 위해 BLE 위상 거리측정 기반 실내 측위를 제안·시연한다. BLE 다중반송파 위상 거리측정을 Dialog Semiconductor DA14695 BLE 모듈로 실험하고, 선형화한 의사거리 관측식과 최소제곱 추정으로 측위 플랫폼을 구성해 효과를 검증한다. 저자들은 BLE 위상 거리측정 기반 실내 측위가 높은 정확도를 보이며 저전력·저비용 이점으로 실용 가능하다고 결론짓는다.",
+      "hardware": [
+        "Dialog Semiconductor DA14695 BLE 모듈 (초록 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "확인 필요"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록은 \"높은 측위 정확도\" 라고만 서술 — 오차 수치 미확인"
+      ],
+      "limitations": [
+        "확인 필요 — 전문 미확보. OA(CC-BY 3.0)이나 IOP 사이트가 봇 차단(Radware)이고 Wayback 스냅샷 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "added": "2026-09-05",
+      "last_checked": "2026-09-05",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [],
+      "category": "measurement"
     }
   ]
 }

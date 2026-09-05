@@ -2,6 +2,49 @@
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
 
+## 2026-09-05 (26차: 신규 5건 — ED/LC·거리 바운딩 계보의 뿌리 Hancke–Kuhn 2005·2008 과 첫 무선 rapid-bit-exchange 구현 Tippenhauer WiSec'15 전문 편입, Kuhn WPNC'10·Lu JPCS'21 허브 문헌 partial 편입, 인용 56건 추가)
+
+어제 25차 직후라 신규 발행분은 없었고(arXiv cs.CR/eess.SP RSS·pastweek 목록 무해당, Crossref 9-01 이후 등록분에서
+관련 신규 없음 — "channel sounding" 질의는 Sounding Out! 팟캐스트 DOI 로 오염, S2 429·OpenAlex 검색 클러스터 정지),
+캐시된 전문 89건의 참고문헌을 스크립트로 훑어 코퍼스에 없는 피인용 상위 문헌을 골랐습니다. 결과는 거리 바운딩 계보의
+뿌리 — 코퍼스 20건이 인용하는 Hancke–Kuhn 2005 와 10건이 인용하는 Hancke–Kuhn 2008(late-commit 첫 실증) — 가
+빠져 있었다는 것입니다. Kuhn 의 Cambridge 홈페이지와 Tippenhauer 의 scy-phy 서버에서 OA PDF 를 받았습니다.
+
+- 신규 (전문 확인): **Attacks on Time-of-Flight Distance Bounding Channels** (Hancke·Kuhn, ACM WiSec 2008, 관련도
+  **높음**, `verified`). Clulow 2006 의 late-commit 을 상용 수신기에 처음 구현 — Maxim MAX1471 433.92 MHz ASK/FSK
+  수신기는 저역 데이터 필터 때문에 응답 시작 후 20–22 µs(6.6 km) 뒤에 값을 바꿔도 정상 복조, NXP MF RC531 ISO 14443A
+  리더는 상관기 임계 전까지 2–2.5 µs(750 m). 수신기가 필터 차단 주파수(9.6/4.8 kHz) 이상의 15 kbit/s 데이터도 복조한다는
+  관찰, 적분기 입력 V_m/2 유지 최적 전략, 13.56 MHz 반송파 +1/+2 MHz 오버클럭으로 토큰 응답 최대 15/30 µs 앞당김,
+  HF RFID 전용 채널 3종(Munilla·Reid·Hancke–Kuhn UWB) 비교. Anliker 2026 이 "Clulow 의 긴 심볼 문제가 RFID/433 MHz
+  [13] 등 공격의 기반" 이라고 계보에 넣은 문헌이라 relation extends(anliker-2026·olafsdottir-2017 → 이 논문) 추가.
+- 신규 (전문 확인): **An RFID Distance Bounding Protocol** (Hancke·Kuhn, IEEE/CreateNet SecureComm 2005, 관련도
+  보통, `verified`, tier other). "Hancke–Kuhn 구조" 의 원전 — nonce 로 R0·R1 을 미리 계산, 1 비트 챌린지에 비동기
+  룩업 즉답, 추측 확률 3/4, n 중 k 판정의 pFA·pFR 식, 분해능 r ≈ c/B(ISO 14443A 300 kHz → km 급) 논증, 13.56 MHz
+  반송파 영교차 + UWB BPM 펄스 채널 구상. 구현 없음(향후 과제 명시).
+- 신규 (전문 확인): **UWB Rapid-Bit-Exchange System for Distance Bounding** (Tippenhauer·Luecken·Kuhn·Capkun, ACM
+  WiSec 2015, 관련도 보통, `verified`, category defense). 무선 rapid-bit-exchange 첫 완전 구현 — Tekmicro Triton VXS-5
+  ×2(Virtex-5 ×3, 2 GS/s ADC/DAC), Mini-Circuits 3.5–4 GHz 프런트엔드(부품 번호 전부 확보), 펄스 2 ns·적분창 4 ns·
+  심볼 512 ns, prover 임계 경로 12 사이클 × 8 ns = 96 ns(Table 1 블록별 지연), 30–255 cm 16 지점 × 1,000 회 평균 오차
+  10.9 cm·BER 2.72 %(Table 2 전체), 최대 거리 이득 악의적 prover 15.6 m·외부 공격자 1.2 m 산식, "distance commitment"
+  (프리앰블 타이밍 = 거리 약속) 개념. cites 8건, relation implements → kuhn-2010·hancke-2005·poturalski-2011(EDD 4 ns 창),
+  complementary → rasmussen-2010.
+- 신규 (초록 + Tippenhauer 2015 의 2차 서술, `partial`): **UWB Impulse Radio Based Distance Bounding** (Kuhn·Luecken·
+  Tippenhauer, WPNC 2010, 관련도 보통). 코퍼스 6건이 인용하는 처리지연 최소화 아날로그 UWB 트랜시버 구상 — 단일 IC 시
+  δB ≤ 4 ns(distance fraud 3.6 m). 유료(Unpaywall·OpenAlex closed).
+- 신규 (초록만, `partial`): **Indoor Positioning Experiment Based on Phase Ranging with BLE** (Lu·Yin·Zhao·Wei, J. Phys.:
+  Conf. Ser. 1971, 2021, 관련도 낮음). Nikodem 2025·Sheikh 2023 이 인용하는 CS 이전 BLE 다중반송파 PBR 실측(Dialog
+  DA14695). CC-BY OA 이지만 IOP 사이트가 Radware 봇 차단이고 Wayback 스냅샷 없음 — 전문 미확보.
+- 인용: 56건 추가 (410 → 466). 캐시 전문의 정규화 제목 대조 + 저자명 확인으로 역방향 인용 46건(hancke-2005 18건,
+  hancke-2008 10건, tippenhauer-2015 10건, kuhn-2010 6건, lu-2021 2건) 과 신규 노드의 정방향 10건.
+- 보강: `partial` → `verified` 상향 없음. Nishikawa ICC'26·Andreadis IPIN'25·Rashidi IoT-J'25·Fujii ICST/GCCE'25·Boer
+  VTC'20(TU/e 포털 403)·Stanciu MWSCAS'21(NXP, OA 없음)의 arXiv·기관 사본을 WebSearch 로 재확인했으나 전부 없음.
+  기존 항목은 인용·관계 갱신(olafsdottir-2017·anliker-2026 relation 추가, 20건 last_checked)만.
+- 표준: 변경 없음 — Bluetooth SIG 규격 목록에 6.3 이후 신규 없음(Inline PCT Transfer 는 여전히 VSr01_PR 초안), IEEE
+  P802.15.4ab 는 SA 페이지상 Active PAR(PAR 2021-09-23) 유지, CCC 신규 릴리스 없음.
+- 실패: Lu 2021 전문(IOP Radware 차단·Wayback 없음); Kuhn WPNC 2010 전문(유료); 부수 후보 "Bluetooth Signal Transient
+  Start Detection Based on Fast AIC"(Franklin Open, 2026-08)는 Elsevier linkinghub 리다이렉트만 돌아와 초록 미확인 —
+  ToA 검출인지 RF 지문인지 판단 불가라 미등재.
+
 ## 2026-09-04 (25차: 신규 2건 — CS 자세 오차 첫 실측 arXiv 신간 전문 편입 + Dialog BLE ToF 석사논문(TU/e) 편입, 보강 3건 — Schröder IPIN 2019·2018 을 저자 박사학위논문(LEOPARD OA, Wayback)으로 장비·수치 확정, Pelka 학위논문 확인, 인용 11건 추가)
 
 어제 24차 직후라 신규 발행분은 arXiv 1건뿐이었고(cs.CR/eess.SP RSS·Crossref 9-01 이후 등록분·CCS 2026 accepted
