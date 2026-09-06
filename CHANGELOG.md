@@ -1,6 +1,20 @@
 # 변경 기록
 
 주간 서베이가 무엇을 바꿨는지 여기에 남깁니다. 최신이 위입니다.
+## 2026-09-06 (27차: 신규 5건 — S2 인용그래프로 BLE Direction Finding 위상주입 공격 SaDiF(MobiHoc'25)·CS 낙상탐지(Sensors'26) 전문 편입, UWB ML 거리기만 Urey-ML(TIFS'26)·UWBAD+(TMC'25)·Bayesian 위상거리추정(EUSIPCO'25) 초록 편입, 인용 10건 추가)
+
+3일 주기라 신규 발행분은 arXiv cs.CR/eess.SP pastweek·Crossref 9-04 이후·ESORICS 2026 목록에 해당 없었고(RAID 2026 accepted 아직 비어 있음), Semantic Scholar 인용그래프가 오늘은 응답해 코퍼스 허브 20여 건의 2025~2026 피인용을 훑어 후보를 골랐습니다. 전문 2건은 ACM DL(SaDiF)·Europe PMC(낙상)에서 브라우저 UA 로 받았고, 나머지 3건은 유료라 Xplore REST·S2 초록으로 partial 편입했습니다.
+
+- 신규 (전문 확인): **SaDiF: Spoofing Attack on BLE Direction Finding Based Localization System** (Runting Zhang 외, ACM MobiHoc 2025, 관련도 **보통**, `verified`, category attack, tech ble-cs). BLE 5.1 DF 의 CTE reference period 위상만 주입해 AoA 를 조작 — 패킷·프리앰블·RSSI 불변이라 BlueID·BlueShield 를 우회율 >91.5 %(MitM 6.7 %·jamming 3.7 %). Ettus USRP N210 공격자, Silicon Labs BG22 4×4 dual-pol locator, EFR32BG22 Thunderboard·TI CC2640·nRF52810 태그. still-point 위치편차 0.199 m·trajectory 0.250 m, PSF(rb=4) AoA 편차 3.31°. 대응책은 전체 CTE CFO 지문. cites leu-2022-ghost-peak.
+- 신규 (전문 확인): **Exploring the Feasibility of Fall Detection Using BLE Channel Sounding in Residential Environments** (Paulikas·Paulikienė, Sensors 26(6):1930, 2026, 관련도 보통, `verified`, category measurement, tech ble-cs). nRF54L15 2 대(6 m·1.2 m)로 controller PBR 스칼라 거리만 10 Hz 로깅, 정적 무동작 σ 5.8 cm(평균 5.940 m) — 상용 CS 위상잡음 바닥값. XGBoost 민감도 96.9 %·정확도 98.4 %(기본), sensitivity-first 100 %. cites 9건(gunia-2026·pnn-2025·santra-2024·suresh-2025·wieme-2025·sheikh-2025-interference·kumbul-2025·ble6-2026·wang-2025), relation extends → wang-2025-cs-device-free-sensing.
+- 신규 (초록, `partial`): **Urey-ML: ML-Based Distance Deception Attack Against Apple UWB Interaction Frameworks** (Yang Liu 외, IEEE TIFS 21:3366–3381, 2026, 관련도 보통, tech uwb, attack). Apple ANIF 의 ranging-awareness 방어를 강화학습으로 우회한 첫 사례 — 방어 통과율 25.79 %(선행 0.56 %), centimeter 급 기만, ANIF 키협상 메시지 미보호. 유료 closed.
+- 신규 (초록, `partial`): **A Practical DoS Attack on Commercial UWB Ranging Systems** (Yongzhao Zhang 외, IEEE TMC 24(10):10492–10509, 2025, 관련도 보통, tech uwb, attack). 코퍼스 UWBAD(CCS'24)의 저널 확장판 UWBAD+ — NCC 취약성 이용한 반응형·선택 재밍, Apple·NXP·Qorvo 실공격, OEM 5,000 달러 포상. relation extends → uwbad-2024-jamming. 유료 closed.
+- 신규 (초록, `partial`): **Bayesian Distance Estimation with Incoherent Multi-Frequency Two-Way Phase Measurements** (Kansanen·Forbord·Suárez, EUSIPCO 2025, pp. 1972–1976, NTNU, 관련도 보통, tech ble-cs, estimation). 위상 오프셋을 nuisance 로 둔 MAP 추정기가 MCRLB 도달, 고 SNR·BLE 파라미터에서 기존 대비 6 dB 우수. 유료 closed.
+- 인용: 10건 추가 (466 → 476). SaDiF 1건 + 낙상 9건(전부 코퍼스 내 CS 논문, 참고문헌 26~40·wang 확인).
+- 보강: `partial` → `verified` 상향 없음. sheikh-2025-cs-interference·kumbul-2025 등 기존 partial 은 arXiv·기관 사본 여전히 없음(유료 closed 재확인). 신규 5건의 last_checked·관계만 신규.
+- 표준: 변경 없음 — Bluetooth SIG Core 6.3 이후 신규 없음(Ranging Profile/Service v1.0 adopted 유지, Inline PCT Transfer 는 여전히 VSr01_PR 초안), IEEE P802.15.4ab 상태 변화 없음, CCC 신규 릴리스 없음(다음 회의 2026-10 Vancouver).
+- 실패: Urey-ML·UWBAD+·Kansanen·Sheikh VCC·Boer·Stanciu 전문(전부 유료 IEEE/EUSIPCO closed, arXiv·기관 OA 없음); Lu 2021 IOP(Radware 봇 차단 재확인).
+
 
 ## 2026-09-05 (26차: 신규 5건 — ED/LC·거리 바운딩 계보의 뿌리 Hancke–Kuhn 2005·2008 과 첫 무선 rapid-bit-exchange 구현 Tippenhauer WiSec'15 전문 편입, Kuhn WPNC'10·Lu JPCS'21 허브 문헌 partial 편입, 인용 56건 추가)
 
