@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-06",
-  "last_run": "2026-09-06",
+  "updated": "2026-09-07",
+  "last_run": "2026-09-07",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 476,
+  "citation_edges": 484,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -9555,7 +9555,7 @@
       "category": "estimation",
       "year": 2025,
       "url": "https://doi.org/10.23919/eusipco63237.2025.11226184",
-      "preprint": null,
+      "preprint": "https://eurasip.org/Proceedings/Eusipco/Eusipco2025/pdfs/0001972.pdf",
       "doi": "10.23919/eusipco63237.2025.11226184",
       "topics": [
         "phase-based-ranging",
@@ -9569,10 +9569,99 @@
         "ble-cs"
       ],
       "relevance": "medium",
-      "relevance_note": "CS PBR 의 핵심 문제 — 두 기기 사이 미지의 위상 오프셋을 안고 다중 주파수 위상에서 거리를 뽑는 것 — 을 정면으로 다룬 추정이론 논문이다. 위상 오프셋을 nuisance 파라미터로 두고 MAP 추정기를 1 원리에서 유도하고 Modified Cramér-Rao 하한(MCRLB) 에 도달함을 보인다. 내 연구에는 CS 거리추정의 이론적 성능 상한(어떤 추정기도 넘을 수 없는 분산) 을 세우는 기준선이 되며, 고 SNR 에서 BLE 파라미터 기준 기존 알고리즘보다 6 dB 우수하다는 결과는 정확도개선 축의 비교 대상이다. 전문 미확보(유료, closed) 라 초록 기준 partial.",
-      "summary": "다중 주파수 two-way 위상 측정으로 두 라디오 사이 거리를 재는 문제에서, 각 주파수의 미지 위상 오프셋을 nuisance 파라미터로 처리한 MAP 추정기를 1 원리에서 유도한다. 단일 전파경로 채널을 가정하고 Modified Cramér-Rao 하한을 유도해 추정기가 그 하한에 도달함을 확인한다. 기존 최신 추정기·성능 한계와 비교해, 고 SNR 에서 BLE 시스템 파라미터 기준 모든 알려진 알고리즘보다 6 dB 우수하다고 보고한다.",
+      "relevance_note": "CS PBR 의 핵심 문제 — 두 기기 사이 미지의 위상 오프셋을 안고 다중 주파수 위상에서 거리를 뽑는 것 — 을 정면으로 다룬 추정이론 논문이다. 기존 방법(MCPD·선형회귀·IFFT)이 initiator·reflector 위상을 더해 오프셋을 소거하는 것과 달리, 오프셋을 균등분포 nuisance 로 두고 주파수별로 주변화해 MAP 추정기를 유도하며, 그 결과 Modified CRB 가 기존 CRLB 의 1/4(6 dB) 로 내려간다. 내 연구에는 (1) CS 거리추정의 이론적 성능 하한을 세우는 기준선, (2) 위상 오프셋을 '더해서 없애는' CS 규격 관행이 정보를 절반 버린다는 논거, (3) 사후 metric 의 국소 최댓값이 ±2.4 m(77 채널·1 MHz 간격의 비모호 구간 특성) 마다 서는 구조가 공격자에게 '그럴듯한 오답 봉우리' 를 준다는 식별가능성 관점의 단서로 쓰인다. 단일 경로·시뮬레이션 전용이라 다중경로 실측과의 결합은 후속 과제다.",
+      "summary": "다중 주파수 two-way 위상 측정으로 두 라디오 사이 거리를 재는 문제에서, 각 주파수의 미지 위상 오프셋 Δφ_k 를 균등분포 nuisance 파라미터로 처리해 주변화한 MAP 추정기를 1 원리에서 유도한다. 사후 metric 은 각 주파수의 (θ_R+θ_I)/2 항에 대한 log I₀ 합으로 떨어지고, 단순 경사탐색이 SNR 5 dB 이상에서 10 회 미만 반복으로 수렴한다. 단일 경로 채널에서 Modified Cramér-Rao 하한(MCRB) 을 유도해 기존 추정기의 CRLB 와 비가 2(2K_f+1)/(K_f−1)≈4 임을 보이고, BLE 파라미터(2402–2480 MHz, 77 반송파, 1 MHz 간격) 시뮬레이션에서 고 SNR 시 MCRB 도달·기존 대비 6 dB 이득을 확인한다. 초기값은 MCPD 또는 IFFT(Schröder 2018) 추정으로 주며, IFFT 초기화가 약 6 dB 낮은 SNR 에서 MCRB 에 닿는다.",
       "hardware": [
-        "확인 필요 (전문 미확보 — 이론·시뮬레이션으로 보이나 미확인)"
+        "없음 — 시뮬레이션 전용 (전문 확인: 실측 장비 없음, BLE 파라미터 Table I 만 사용)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이션 (도구 미명시 — 전문 확인)",
+        "Forbord 2023 NTNU 석사논문의 추정기 식(2.31)–(2.34)·(A.24) 을 기반으로 유도"
+      ],
+      "software_verified": true,
+      "results": [
+        "MCRB = 3c₀² / (8γπ²Δf² K_f(K_f+1)(2K_f+1)) — 기존 CRLB 대비 비 2(2K_f+1)/(K_f−1) ≈ 4 (MSE 1/4, SNR 6 dB 이득)",
+        "BLE 파라미터(2402–2480 MHz, K_f=77, Δf=1 MHz)·γ=10 dB 사후 metric: 참값 주위 약 ±2.4 m 마다 국소 최댓값 — 선형탐색은 초기값에 따라 국소해로 수렴",
+        "경사탐색 δs=0.01·종료 δM=10⁻³ 로 SNR 5 dB 이상에서 대개 10 회 미만 수렴; ±2.4 m 지점 metric 재평가로 국소해 판정·재초기화하는 LGMS 제안",
+        "MSE 비교(Fig. 2): 고 SNR 에서 초기화 방식과 무관하게 MCRB 도달 → MCPD·선형회귀·IFFT 대비 6 dB; IFFT 초기화는 MCPD 초기화보다 약 6 dB 낮은 SNR 에서 MCRB 도달; MCPD+LGMS 는 순수 MCPD 초기화보다 우수하나 IFFT 초기화엔 못 미침",
+        "추정기는 진폭 a_R=a_I 완전 지식 가정 — 단일 경로에선 주파수 간 진폭이 완전 상관이라 K_f 가 크면 고정밀 추정 가능"
+      ],
+      "limitations": [
+        "단일 전파경로 채널 가정 — 다중경로 확장 없음 (저자 명시: 단일 경로 시나리오에 집중)",
+        "시뮬레이션 전용 — 실제 BLE 하드웨어 실측 없음",
+        "중간 SNR 에서 성능이 초기값 정밀도에 좌우 — MCPD 초기화는 인접 국소해로 수렴 빈번",
+        "진폭 완전 지식·채널 상호성(a_R=a_I) 가정",
+        "사전분포 p(r) 를 쓰지 않은 형태로만 평가 (포함은 straightforward 하다고만 언급)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "pelka-2014-phase-multi-frequency",
+        "zand-2019-ble-pbr",
+        "schroeder-2018-cde",
+        "boer-2020-pbr-multipath",
+        "shoudha-2022-reduced-complexity-ble-ranging",
+        "vanmarter-2023-svr-ble-ranging",
+        "sheikh-2023-pbr-missing-tones"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "zand-2019-ble-pbr",
+          "type": "extends",
+          "note": "Zand 2019 의 시스템·관측 모델을 그대로 따르되, 위상 오프셋을 더해 소거하는 대신 nuisance 로 주변화하는 Bayesian 추정으로 확장 (본문 §I 명시)"
+        },
+        {
+          "to": "schroeder-2018-cde",
+          "type": "complementary",
+          "note": "Schröder 2018 의 IFFT 추정치를 MAP 경사탐색의 초기값으로 사용 — IFFT 초기화가 MCRB 도달 SNR 을 약 6 dB 낮춤"
+        }
+      ],
+      "added": "2026-09-06",
+      "last_checked": "2026-09-07"
+    },
+    {
+      "id": "ma-2025-safelead-random-sts",
+      "title": "SafeLead: Detecting and Excluding Random STS Attack in UWB Ranging System",
+      "authors": [
+        "Zhuo Ma",
+        "Jiayu Jin",
+        "Yang Liu",
+        "Yilong Yang",
+        "Xinjing Liu",
+        "Teng Li",
+        "Junwei Zhang",
+        "Jianfeng Ma"
+      ],
+      "venue": "IEEE INFOCOM",
+      "venue_full": "IEEE INFOCOM 2025 — IEEE Conference on Computer Communications, pp. 1–10, May 2025 — Xidian University",
+      "tier": "wireless",
+      "category": "defense",
+      "year": 2025,
+      "url": "https://doi.org/10.1109/INFOCOM55648.2025.11044672",
+      "preprint": null,
+      "doi": "10.1109/INFOCOM55648.2025.11044672",
+      "topics": [
+        "uwb",
+        "802-15-4z",
+        "sts",
+        "leading-edge-detection",
+        "distance-reduction",
+        "attack-detection",
+        "ghost-peak"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "Ghost Peak 류 random STS 공격(잘못된 STS 로 선행 에지 검출을 흔들어 거리를 줄임) 에 대해 '탐지 후 폐기' 가 아니라 '공격 성분을 걸러내고 정당한 선행 에지를 되살리는' 수신기 정책을 제안한다. 내 연구에는 수신기와 판정 정책 축의 참고가 된다 — 공격 검출 시 세션을 버리면 랜징 빈도가 떨어져 오히려 '옛 거리 유지' 같은 상위 계층 정책이 무단 접근을 돕는다는 문제 제기는 CS 에도 그대로 적용된다. 선행 에지 분산 기반 임계와 서브템플릿 간 상관으로 정당 타임스탬프를 복원하는 구조는, CS RTT 의 sounding sequence 상관에서 비정상 봉우리를 걸러내는 방어 설계의 출발점으로 쓸 수 있다. 전문 미확보(유료, closed) 라 초록 기준 partial. Urey-ML(TIFS'26) 과 같은 Xidian 그룹.",
+      "summary": "802.15.4z 의 STS 기반 인증 랜징에서 공격자가 random STS 를 쏘아 선행 에지 검출을 교란하고 실제보다 짧은 거리를 위조할 수 있다는 점(Ghost Peak 류) 을 전제로, 기존 방어가 탐지에 그쳐 후속 대응이 비어 있음을 지적한다. 공격이 집중된 신호를 통째로 버리면 랜징 빈도가 급감하거나 서비스가 끊겨 오히려 무단 접근을 돕는다. SafeLead 는 선행 에지 분산 기반의 새 임계로 환경 변화에 따른 불확실성을 피해 공격을 탐지하고, 서브템플릿 간 상관을 이용해 무질서한 선행 에지를 배제하고 정당한 타임스탬프를 되살리는 선행 에지 검출 알고리즘이다. 시뮬레이션에서 공격 탐지율 90 % 이상·랜징 정확도 90 % 이상으로, 최신 기법 대비 87 % 정확도 개선을 보고한다.",
+      "hardware": [
+        "확인 필요 (전문 미확보 — 초록은 시뮬레이션만 언급)"
       ],
       "hardware_verified": false,
       "software": [
@@ -9580,13 +9669,79 @@
       ],
       "software_verified": false,
       "results": [
-        "MAP 추정기가 Modified Cramér-Rao 하한(MCRLB) 에 도달 (초록)",
-        "고 SNR·BLE 파라미터에서 기존 최신 알고리즘 대비 6 dB 우수 (초록)",
-        "단일 전파경로 채널 가정 (초록)"
+        "공격 탐지율 90 % 초과 (초록, 시뮬레이션)",
+        "랜징 정확도 90 % 이상 — 최신 기법 대비 87 % 개선 (초록)",
+        "선행 에지 분산 기반 임계 + 서브템플릿 상관 기반 정당 에지 복원 (초록)"
       ],
       "limitations": [
-        "전문 미확보 — 다중경로 확장·실측 여부 미확인",
-        "단일 경로 가정 — 실내 다중경로에서의 성능 불명"
+        "전문 미확보 — 공격 모델·시뮬레이션 조건·COTS 검증 여부 미확인",
+        "초록상 시뮬레이션 결과만 — 실제 802.15.4z 칩 구현 여부 불명"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "defends",
+          "note": "초록이 기술하는 'random STS 로 선행 에지 검출을 교란해 짧은 거리를 위조' 는 Ghost Peak 공격 모델 — 탐지에 더해 정당 에지 복원까지 시도 (가설: 참고문헌 미확인)"
+        }
+      ],
+      "added": "2026-09-07",
+      "last_checked": "2026-09-07"
+    },
+    {
+      "id": "komma-2025-puf-ofdm-secure-ranging",
+      "title": "Secure Ranging for Proximity-Based Authentication Using Physical Unclonable Functions in OFDM",
+      "authors": [
+        "Demba Komma",
+        "Jiyoon Han",
+        "Mingyan Liu",
+        "Hun-Seok Kim"
+      ],
+      "venue": "IEEE GLOBECOM",
+      "venue_full": "GLOBECOM 2025 — 2025 IEEE Global Communications Conference, pp. 2126–2131, Dec. 2025 — University of Michigan",
+      "tier": "other",
+      "category": "defense",
+      "year": 2025,
+      "url": "https://doi.org/10.1109/GLOBECOM59602.2025.11431956",
+      "preprint": null,
+      "doi": "10.1109/GLOBECOM59602.2025.11431956",
+      "topics": [
+        "secure-ranging",
+        "ofdm",
+        "puf",
+        "keyless-entry",
+        "distance-reduction",
+        "proximity-authentication",
+        "sdr"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "협대역 OFDM 위에서 '예측 불가능한 잡음형 시그니처' 를 변조에 심어 거리 축소 공격을 막는 설계 — CS 가 규격 수준에서 채택한 랜덤 sounding sequence(CS SYNC) 와 같은 발상을 PUF 로 구현한 사례다. 내 연구에는 (1) 예측 불가 시퀀스가 협대역에서 ED/LC·상관 봉우리 조작을 얼마나 막는지 실증 데이터, (2) 키리스 엔트리를 명시 표적으로 둔 USRP X310 실시간 구현이라 CS 의 SDR 공격·방어 실험 설계의 비교군이 된다. 다만 PUF 시그니처가 검증자에게 어떻게 공유되는지, 어떤 공격 모델(ED/LC·릴레이·MitM) 을 실험했는지는 초록만으로 알 수 없다. 전문 미확보(유료, closed) 라 partial.",
+      "summary": "OFDM 과 물리적 복제불가 함수(PUF) 를 결합한 근접 인증용 보안 거리측정 시스템을 제안한다. 키리스 엔트리처럼 정확하고 변조 저항적인 거리측정이 필요한 응용을 표적으로, PUF 기반 잡음형 시그니처를 OFDM 변조 과정에 심어 공격자의 거리 조작을 완화한다. USRP X310 에 소프트웨어·하드웨어 처리를 나눠 실시간으로 구현했고, 무선 채널 실험에서 데시미터급 정확도와 거리 축소 공격 저항을 보였다고 보고한다.",
+      "hardware": [
+        "Ettus USRP X310 (초록 명시)",
+        "기타 안테나·계측·ground truth 확인 필요 (전문 미확보)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 (전문 미확보 — 소프트웨어+하드웨어 분할 처리로 실시간 구현이라고만 언급)"
+      ],
+      "software_verified": false,
+      "results": [
+        "USRP X310 실시간 구현, 무선 채널 실험에서 데시미터급 정확도 (초록)",
+        "거리 축소 공격 저항 확인 (초록 — 공격 모델·수치 미확인)"
+      ],
+      "limitations": [
+        "전문 미확보 — 공격 모델(ED/LC·릴레이)·성공률·대역폭·거리 범위 미확인",
+        "PUF 시그니처의 공유·동기화 방식 불명 — 검증자가 시그니처를 알아야 상관 가능"
       ],
       "artifacts": {
         "code": null,
@@ -9596,8 +9751,221 @@
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
-      "added": "2026-09-06",
-      "last_checked": "2026-09-06"
+      "added": "2026-09-07",
+      "last_checked": "2026-09-07"
+    },
+    {
+      "id": "sheikh-2025-bp-dsm-uwb-sts",
+      "title": "Efficient Bit Flipping-Based Digital Side Lobe Mitigation for Secure UWB Ranging",
+      "authors": [
+        "Alireza Sheikh",
+        "Mohieddine El Soussi",
+        "Amirashkan Farsaei"
+      ],
+      "venue": "IEEE WCNC",
+      "venue_full": "2025 IEEE Wireless Communications and Networking Conference (WCNC), pp. 1–7, Mar. 2025 — imec Eindhoven",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2025,
+      "url": "https://doi.org/10.1109/WCNC61545.2025.10978379",
+      "preprint": null,
+      "doi": "10.1109/WCNC61545.2025.10978379",
+      "topics": [
+        "uwb",
+        "802-15-4z",
+        "sts",
+        "cir",
+        "side-lobe",
+        "nlos",
+        "secure-ranging"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "STS 의 의사난수 구조 때문에 CIR 추정에 생기는 사이드로브가 강한 NLoS 성분 옆의 약한 LoS 를 가려 거리 오차를 키운다는 문제와, 구조적 비트 뒤집기로 사이드로브를 줄이는 피드포워드 알고리즘이다. 내 연구에는 CS 의 RTT 가 쓰는 랜덤 sounding sequence 상관에도 같은 사이드로브 문제가 있고(Anliker 2026 의 협대역 상호상관 분석과 맞물림), 시퀀스가 예측 불가여야 하는 보안 요구와 사이드로브가 낮아야 하는 정확도 요구가 충돌하는 지점을 정량화한 자료로 쓰인다. imec 의 Sheikh 는 코퍼스 sheikh-2023(누락 톤 PBR) 의 저자로, 같은 그룹이 협대역 PBR 과 UWB STS 양쪽을 다룬다는 점도 참고. 전문 미확보(유료, closed) 라 partial.",
+      "summary": "IEEE 802.15.4z 는 UWB 패킷에 암호화된 STS 시퀀스를 넣어 보안 랜징을 가능케 했지만, STS 로 추정한 CIR 은 의사난수 구조 때문에 사이드로브를 가진다. 강한 NLoS 경로의 사이드로브가 약한 LoS 를 가리거나 왜곡해 랜징 성능이 나빠진다. 저자들은 구조적 비트 뒤집기 기반의 디지털 사이드로브 완화(BP-DSM) 를 제안해 STS CIR 의 사이드로브 크기를 줄이며, STS CIR 을 이용한 거리 추정 정밀도를 최대 10 배 개선한다. 완전 피드포워드라 완전탐색 방식처럼 비트 뒤집기 시도마다 사이드로브를 재계산할 필요가 없어, 처리 시간·전력이 제한된 보안 UWB 거리 추정에 적합하다.",
+      "hardware": [
+        "확인 필요 (전문 미확보 — 시뮬레이션 여부 불명)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 (전문 미확보)"
+      ],
+      "software_verified": false,
+      "results": [
+        "STS CIR 기반 거리 추정 정밀도 최대 10 배 개선 (초록)",
+        "피드포워드 구조 — 완전탐색 대비 사이드로브 재계산 불필요 (초록)"
+      ],
+      "limitations": [
+        "전문 미확보 — 평가 조건(채널 모델·SNR·STS 길이)·계산량 수치 미확인",
+        "사이드로브 완화가 STS 의 보안 성질(예측 불가성) 에 미치는 영향은 초록에 언급 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [],
+      "added": "2026-09-07",
+      "last_checked": "2026-09-07"
+    },
+    {
+      "id": "bedin-2026-mm-carrier-phase-multiband",
+      "title": "Millimeter-Scale Absolute Carrier Phase-Based Localization in Multi-Band Systems",
+      "authors": [
+        "Andrea Bedin",
+        "Joerg Widmer",
+        "Melanny Davila",
+        "Marco Canil",
+        "Rafael Ruiz"
+      ],
+      "venue": "ACM SenSys",
+      "venue_full": "Proceedings of the 2026 ACM/IEEE International Conference on Embedded Artificial Intelligence and Sensing Systems (SenSys 2026) — IMDEA Networks · Politecnico di Milano",
+      "tier": "wireless",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://doi.org/10.1145/3774906.3800494",
+      "preprint": "https://arxiv.org/abs/2511.05204",
+      "doi": "10.1145/3774906.3800494",
+      "topics": [
+        "carrier-phase",
+        "multi-band",
+        "integer-ambiguity",
+        "phase-unwrapping",
+        "absolute-localization",
+        "5g-nr",
+        "fr3",
+        "c-ran",
+        "open-hardware"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS PBR 의 본질인 '위상은 정밀하지만 정수 모호성이 있다' 를 다중 대역(3.25 GHz → 10.25 GHz) 의 우도 최대화로 한 번에 푸는 시스템이다. CS 가 77 개 1 MHz 채널로 비모호 구간을 만드는 것과 같은 원리를 대역 간 λ 비율로 구현하되, 대역별 안테나가 물리적으로 같은 점에 있을 수 없다는 mm 급 문제까지 다룬다. 내 연구에 쓰이는 대목은 셋이다. (1) 초기 추정 오차가 약 41 mm 를 넘으면 CDF 가 계단처럼 꺾이며 잘못된 봉우리(FR1 6 cm·FR3 2.5 cm 간격) 로 튀는 구조 — CS 의 다중경로·공격 상황에서 '틀린 봉우리 선택' 이 어떤 오차 분포를 만드는지에 대한 실측 모델이며 이상치 탐지 규칙의 근거가 된다. (2) 다중경로가 LoS 위상에 주는 편향의 상한 |Δφ| ≤ tan⁻¹(α/(2·B·Δτ)) 논증 — 협대역 CS 에서 이 상한이 얼마나 커지는지 계산하는 출발점. (3) 100 € 미만 FR3 변환기·ZCU208 기반 8×8 코히어런트 플랫폼과 5G Rel-18 파형을 쓴 실험 설계 — SDR 기반 CS 재현·공격 실험의 비교군. 셀룰러 C-RAN 을 전제해 CS 의 two-way 비동기 구조와는 다르지만, 위상 모호성 해소의 정량 근거로 가치가 있다.",
+      "summary": "6G 의 mm 급 측위 요구를 겨냥해, 일반 무선망에서 저복잡도·저대역폭으로 절대 3D 위치를 mm 정확도로 얻는 첫 시스템을 제시한다. cm 급 초기 추정을 받아 3.25 GHz(FR1) 우도맵으로 mm 단위 봉우리를 고른 뒤 10.25 GHz(FR3) 우도맵으로 다시 다듬는 one-shot 반송파 위상 정련이며, 위상 추적·언래핑에 의존하지 않아 추적이 끊겨도 동작한다. 대역별 TX 안테나 변위·RX 안테나 위치 오차·위상중심 변화를 50 점 보정 함수로 흡수하고, 4 개 RX 안테나만으로 3D 를 풀어 차폐에 강하다. RFSoC ZCU208 과 자체 제작 FR3 상하향 변환기로 5G Rel-18 PUSCH 파형을 송수신해 1.2 m×1.2 m 갠트리에서 약 58k 지점 × 6 회(반사체 0–8 개) ≈ 35 만 측정을 모았고, 중앙값 370–940 µm·90 백분위 0.9–2.4 mm 를 얻었다. 바퀴 인코더·자력계·TDoA 를 칼만 융합한 로봇 실험에서도 중앙값 500 µm·90 백분위 1.16 mm 로 기준선 대비 25 배 개선했다. FR3 하드웨어는 공개 예정.",
+      "hardware": [
+        "AMD/Xilinx RFSoC ZCU208 기반 베이스밴드 (Lacruz MobiSys'21 플랫폼, 8×8 코히어런트 MIMO, 최대 400 MHz, NCO 직접변환) — 2 TX(FR1 3.25 GHz 직접, FR3 IF)·8 RX(FR1 4 + FR3 IF 750 MHz 4)",
+        "자체 FR3(9–12 GHz) 모듈 PCB 4 종(FR4 기판): 하향변환기(GVA-123+ 증폭·TCBT-123+ 바이어스티·HFCW-9000+ HPF·LFCN-113+ LPF·HMC220B 믹서), 상향변환기(+HMC3653LP3BE PA, P1dB 15 dBm@10 GHz), LO 분배보드(PS3216GT2 스플리터 8 채널), 능동 안테나(패치 + PMA-183PLN+ LNA) — 부품가 변환기 <100 €·능동안테나 <50 €·LO 보드 <400 €",
+        "이중채널 신시사이저 LO: TX 7 GHz / RX 9.5 GHz (비코히어런트 TX–RX)",
+        "TX 안테나 모듈: 상용 3.25 GHz 휩 + 자체 10.25 GHz 모노폴 (회전 시 위상변동 4.35° RMS), 패치 안테나 3.3° RMS(±75°)",
+        "Ground truth: 알루미늄 XY 갠트리 1.2 m×1.2 m(정밀도 200 µm, 열팽창 30 K 에 <0.8 mm), FLIR PTU-D47 팬틸트(분해능 ~0.05°, ±150°)",
+        "로봇 실험: 바퀴 인코더 + HMC5883L 자력계(보정 후 0.86°)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB 5G Toolbox — 5G Rel-18 준수 상향링크 PUSCH 파형(DM-RS type 1, 심볼 2·7·11; FR1 30 kHz SCS·133 RB, FR3 240 kHz SCS·139 RB·400 MHz) 생성·CFR 추출",
+        "CIR: IFFT 32 배 업샘플링 후 최초 봉우리 = LoS, 그 복소진폭 argument 를 위상으로 사용; 3 DM-RS 심볼 평균(meanangle 로 래핑 회피)",
+        "MATLAB comm.phasenoise 로 위상잡음 시뮬레이션(상용 PLL 프로파일 +20 dB 보수), 3GPP TDL-D 채널 10 만 실현",
+        "칼만 필터(등속 모델, 의사측정) 로 인코더·자력계·TDoA 융합 — σx=σy=300 mm, σv=5 m/s, σa=50 m/s²",
+        "FR3 하드웨어 설계 공개 예정 (arXiv 판 참고문헌 [10] 은 익명 처리, 링크 미공개)"
+      ],
+      "software_verified": true,
+      "results": [
+        "정련 성능(합성 초기오차 ε=10 mm, Nc=50): 초기 1 cm → FR1 단계 중앙값 ≈2.5 mm → FR3 단계 ≈600 µm; 6 회 실행(반사체 0–8 개) 전체 중앙값 ~370–940 µm·90 백분위 ~0.9–2.4 mm, 다중경로·보정점 수(25–100) 영향 <2.5 배",
+        "위상 안정도: 고정점 2000 회/30 분 RMS ≤1.5°(FR3)·≤0.4°(FR1); 실행 1↔2 차이 ~1.2°/1.5°, 1↔4(반사체 6 개) ~14.9°/16.5° RMS",
+        "합성 위상잡음 σp=10° 추가(총 13–21°) 에도 중앙값 <1.1 mm·90 백분위 <2.3 mm; σp=30°(총 >40°) 에서야 FR3 봉우리 오선택으로 긴 꼬리",
+        "초기 추정 오차 임계 ≈41 mm(로봇 실험 37 mm) — 넘으면 FR1 봉우리 오선택으로 >6 cm 오차, CDF 계단형 → 이상치 탐지에 활용 가능; 방위 오차 허용 ≈8.5°(오선택 시 FR3 봉우리 간격 ~2.5 cm 오차)",
+        "TX 회전(±150°, 반경 50 mm 원 궤적) 중앙값 900 µm; 이동(82.5 mm/s, 20 ms 간격, 사람 2 명 활동, RX 높이 30 cm–1 m 변경) RMSE 987 µm",
+        "로봇 SMD 조립 궤적: 최고 실행 중앙값 400 µm·90 백분위 840 µm, 최악 중앙값 645 µm(90 백분위 71 mm — 계단 확률 0.85), 전체 중앙값 ~500 µm·90 백분위 1.16 mm — TDoA+칼만 기준선 대비 25 배",
+        "다중경로 위상 편향 상한 예: 반사계수 0.5·초과거리 3 m(10 ns)·100 MHz → |Δφ| ≤ 26.5°; TDL-D 10 만 실현 중 최대 탭/LoS ≥0.5 는 0.1 %; 위상잡음 유발 위상오차 σ 2.6°",
+        "3.25 GHz λ=8.5 cm·10.25 GHz 조합으로 1.5 cm 모호성 해소 — 4 개 RX 안테나(3D 최소) 만 필요, 20 사이트 배치 시 16 개 차폐 허용"
+      ],
+      "limitations": [
+        "C-RAN 식 코히어런트 처리·공유 LO 전제 — 저자 명시: 아직 널리 배치되지 않았고 OTA 위상동기가 향후 과제",
+        "cm 급(≈41 mm 이내) 초기 추정이 필수 — 방법 자체는 초기 추정 방식에 무관하나 그 정확도가 성패를 가름",
+        "평가는 2D(갠트리 제약)·1.2 m×1.2 m 영역 — 넓은 영역·긴 거리는 SNR·온도 관리 조건부",
+        "50 점 보정 함수 필요(안테나 위치·위상중심 오차 흡수) — 보정 절차 간소화(다중 TX 완드 등) 는 향후 과제",
+        "RX 안테나 4 개(2D 는 3 개) LoS 필요; 다중경로 반사체를 가상 앵커로 쓰는 것은 반사점 정의 문제로 어려움",
+        "mmWave·sub-THz 확장은 공기 굴절률·클럭 절대정확도·건물 열팽창 등 100 ppm 급 계측 문제에 부딪힘"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "helwa-2023-csi-wifi-ranging-gap"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-07",
+      "last_checked": "2026-09-07"
+    },
+    {
+      "id": "shourezari-2026-multiband-cpp-6g",
+      "title": "Multi-band Carrier Phase Positioning toward 6G: Performance Bounds and Efficient Estimators",
+      "authors": [
+        "Ehsan Shourezari",
+        "Ossi Kaltiokallio",
+        "Mehmet C. Ilter",
+        "Jukka Talvitie",
+        "Gonzalo Seco-Granados",
+        "Henk Wymeersch",
+        "Mikko Valkama"
+      ],
+      "venue": "IEEE TWC",
+      "venue_full": "IEEE Transactions on Wireless Communications, 2026 (early access, DOI 10.1109/TWC.2026.3694524) — Tampere University · Universitat Autònoma de Barcelona · Chalmers; 학회판 'Multi-band Carrier Phase Positioning toward 6G: Performance Bounds and Design Insights' (IEEE ICC 2026, 10.1109/ICC59461.2026.11587499)",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://doi.org/10.1109/TWC.2026.3694524",
+      "preprint": "https://arxiv.org/abs/2601.05178",
+      "doi": "10.1109/TWC.2026.3694524",
+      "topics": [
+        "carrier-phase",
+        "multi-band",
+        "integer-ambiguity",
+        "cramer-rao-bound",
+        "mixed-integer-crb",
+        "narrowband",
+        "5g-nr",
+        "6g",
+        "clock-offset",
+        "carrier-aggregation"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "다중 대역 반송파 위상 측위의 정수 모호성을 포함한 mixed-integer Cramér-Rao 하한(MICRB) 을 유도하고, 지연(ToA)+위상 2 단계 추정기와 협대역용 탐색 변형을 제안한 이론 논문이다. CS 는 위상(PBR)+RTT 를 함께 쓰는 two-way 구조라 이 논문의 '지연으로 정수를 고정하고 위상으로 다듬는' 틀과 정확히 대응한다. 내 연구에 쓰이는 결과는 (1) 단일 대역에선 반송파 주파수가 5 GHz(기본 전력)/9 GHz(2 배 전력) 를 넘으면 정수 모호성 해소 확률이 떨어져 MICRB 가 known-integer 하한에서 이탈하지만 두 대역만 합쳐도 이탈이 없다는 정량 결과, (2) 탐색 없는 추정기는 13.5 MHz 미만 대역폭에서 지연 추정이 정수 고정에 부족하고 1000 점 탐색이면 2.65 MHz 까지 내려간다는 협대역 IoT 결과 — CS 의 RTT 정밀도가 PBR 정수 고정을 담보할 수 있는지 판단하는 기준선이다. (3) 망 측 클럭 오프셋을 확률변수로 모델링해 하한에 포함한 방식은 CS 의 initiator–reflector 위상 오프셋 취급(Kansanen 2025 의 nuisance 주변화) 과 비교된다. 셀룰러 하향링크·다중 기지국 전제라 CS 의 1:1 two-way 와는 다르다.",
+      "summary": "5G NR 진화와 6G 를 겨냥해 FR1·FR2·FR3 대역 간/내 반송파 집성(CA) 을 쓰는 다중 대역 반송파 위상 측위(CPP) 를 정식화한다. 다중 기지국 하향링크의 지연·위상 관측 모델에서 정수 모호성을 명시하고, 그에 맞춘 mixed-integer CRB(MICRB) 와 비교용 delay-only·known-integer 하한을 유도하며, 망 측 클럭 오프셋·다중경로 등 실제 불완전성을 확률변수로 포함해 확장한다. 1 단계 지연 기반 TDoA 로 초기해를 얻고 2 단계에서 완화 정수를 ILS 로 풀어 WLS 정련하는 2 단계 추정기와, 저대역폭에서도 효율을 유지하는 탐색 기반 변형을 제안한다. 6 기지국·30 kHz SCS·612 부반송파·0 dBm·1000 회 Monte-Carlo 시뮬레이션에서 두 반송파만 합쳐도 정수 모호성 해소와 클럭·다중경로 강건성이 크게 좋아짐을 보이고, 기지국별 대역이 다르거나 완전히 분리된 경우로 하한·추정기를 확장한다.",
+      "hardware": [
+        "없음 — 시뮬레이션 전용 (전문 확인: 실측 없음, 기지국 6 개 N(0,(0.1 km)²) 랜덤 배치 시나리오)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이션 (도구 미명시 — 전문 확인); 기본 파라미터: SCS 30 kHz, 612 부반송파(51 RB)/대역, 잡음 −174 dBm/Hz, NF 13 dB, Ptx 0 dBm/대역, fc 3.5/28/12 GHz(FR1/FR2/FR3), λref 3 cm 기준 경로손실, Niter=2, Ns=1, Nmc=1000"
+      ],
+      "software_verified": true,
+      "results": [
+        "단일 대역 MICRB 는 fc < 5 GHz(기본 전력)/9 GHz(2 배 전력) 에서만 known-integer PEB 와 일치, 그 이상에선 짧은 파장 때문에 정수 오해소로 이탈; 이중 대역은 fc,2 전 범위에서 이탈 없음",
+        "다중 대역 MICRB 는 대역 융합(band-fusion) 보다 적은 기지국 수에서 수렴 — 상호 연관 정수 집합이 모호성 추정을 안정화",
+        "FR1+FR3 이중 대역 추정기: 1 단계(delay-only) RMSE 는 2 MHz 부터 PEB_delay 도달; 탐색 없음(Ns=1) 은 13.5 MHz 미만에서 정수 오류로 최종 RMSE 가 delay-only 보다 나빠짐; Ns=1000 이면 수렴점 2.65 MHz, Ns=10⁵ 이면 전 대역폭 수렴(복잡도 대가)",
+        "전력 예산(FR1 20 MHz·FR2 100 MHz): 단일 FR1 은 0 dBm 부터 수렴, FR1&FR1 은 −9 dBm, FR1&FR2 는 −6 dBm 부터 수렴하며 점근 RMSE 더 낮음",
+        "2 단계 반복 Niter=2 로 충분(3 회부터 수렴); 복잡도는 WLS O(K³)·정수 탐색 항 포함으로 유의미한 연산 부담",
+        "기지국별 대역이 부분/완전 분리된 경우로 하한·추정기 확장 — 대역 간 위상 오프셋 보정의 중요성 강조"
+      ],
+      "limitations": [
+        "시뮬레이션 전용 — 실측·프로토타입 없음",
+        "정적 UE 가정 — 이동 UE 추적·동적 시나리오는 향후 과제(저자 명시)",
+        "추정기 복잡도 높음 — 저복잡도 효율 추정기 개발이 향후 과제(저자 명시)",
+        "셀룰러 하향링크·다중 기지국·망 측 동기 전제 — 1:1 two-way 협대역 랜징(CS) 에 직접 적용하려면 모델 재구성 필요",
+        "다중경로는 강건성 분석 수준 — 명시적 다중경로 추정기는 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-07",
+      "last_checked": "2026-09-07"
     }
   ]
 }
