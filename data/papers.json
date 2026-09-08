@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-07",
-  "last_run": "2026-09-07",
+  "updated": "2026-09-08",
+  "last_run": "2026-09-08",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 484,
+  "citation_edges": 587,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -83,7 +83,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-21",
+      "last_checked": "2026-09-08",
       "cites": [
         "abidin-2021-narrowband-ranging",
         "clulow-2006-long-symbols",
@@ -95,7 +95,9 @@
         "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "ranganathan-2017-are-we-really-close",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -184,14 +186,16 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-08",
       "cites": [
         "francillon-2011-pkes-relay",
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
-        "flury-2010-distance-decreasing"
+        "flury-2010-distance-decreasing",
+        "poturalski-2010-cicada-attack",
+        "poturalski-2012-secure-precise-ir-uwb"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -268,7 +272,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -283,7 +287,10 @@
         "avoine-2018-db-survey",
         "hancke-2005-rfid-db",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
-        "kuhn-2010-uwb-ir-db"
+        "kuhn-2010-uwb-ir-db",
+        "poturalski-2010-cicada-attack",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -354,7 +361,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -364,7 +371,12 @@
         "singh-2019-uwb-ed",
         "ranganathan-2012-chirp-attacks",
         "hancke-2005-rfid-db",
-        "tippenhauer-2015-uwb-rapid-bit-exchange"
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "poturalski-2010-cicada-attack",
+        "capkun-2005-secure-positioning",
+        "vasisht-2016-chronos",
+        "ranganathan-2017-are-we-really-close",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -433,14 +445,16 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "flury-2010-distance-decreasing",
         "leu-2020-mtac",
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr",
         "avoine-2018-db-survey",
-        "tippenhauer-2015-uwb-rapid-bit-exchange"
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "vasisht-2016-chronos"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1046,7 +1060,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-18",
+      "last_checked": "2026-09-08",
       "cites": [
         "anliker-2023-time-for-change",
         "francillon-2011-pkes-relay",
@@ -1054,7 +1068,8 @@
         "secure-ranging-4z-hrp-2024",
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
-        "uwb-sv-2023-ccs"
+        "uwb-sv-2023-ccs",
+        "poturalski-2010-cicada-attack"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1118,7 +1133,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
@@ -1127,7 +1142,10 @@
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
         "avoine-2018-db-survey",
-        "hancke-2005-rfid-db"
+        "hancke-2005-rfid-db",
+        "poturalski-2010-cicada-attack",
+        "ranganathan-2017-are-we-really-close",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1331,7 +1349,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "aad-2026-fast-uwb-testing",
         "anliker-2023-time-for-change",
@@ -1344,7 +1362,8 @@
         "singh-2021-4z-security-analysis",
         "staat-2022-analog-relay",
         "leu-2021-multicarrier-tof",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "poturalski-2010-cicada-attack"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1436,7 +1455,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1445,7 +1464,10 @@
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding",
         "zhang-2014-unambiguous-distance",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "poturalski-2010-cicada-attack",
+        "vasisht-2016-chronos",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1522,7 +1544,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1534,7 +1556,11 @@
         "singh-2019-uwb-pr",
         "ranganathan-2012-chirp-attacks",
         "hancke-2005-rfid-db",
-        "tippenhauer-2015-uwb-rapid-bit-exchange"
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "poturalski-2010-cicada-attack",
+        "capkun-2005-secure-positioning",
+        "vasisht-2016-chronos",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1617,7 +1643,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-27",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -1625,7 +1651,11 @@
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
-        "ranganathan-2012-chirp-attacks"
+        "ranganathan-2012-chirp-attacks",
+        "poturalski-2010-cicada-attack",
+        "capkun-2005-secure-positioning",
+        "vasisht-2016-chronos",
+        "ranganathan-2017-are-we-really-close"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1691,7 +1721,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
@@ -1701,7 +1731,10 @@
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
         "avoine-2018-db-survey",
-        "hancke-2005-rfid-db"
+        "hancke-2005-rfid-db",
+        "poturalski-2010-cicada-attack",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1779,7 +1812,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-01",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -1789,7 +1822,10 @@
         "riaz-2022-pbr-multipath-security",
         "schepers-2021-ftm-security",
         "staat-2022-analog-relay",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "vasisht-2016-chronos",
+        "ranganathan-2017-are-we-really-close",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1931,9 +1967,12 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-04",
+      "last_checked": "2026-09-08",
       "cites": [
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "capkun-2005-secure-positioning",
+        "vasisht-2016-chronos",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2006,14 +2045,15 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
         "francillon-2011-pkes-relay",
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "poturalski-2010-cicada-attack"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2082,9 +2122,11 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
-        "hancke-2005-rfid-db"
+        "hancke-2005-rfid-db",
+        "capkun-2005-secure-positioning",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -2600,7 +2642,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "coppola-2024-pure",
@@ -2616,7 +2658,9 @@
         "ranganathan-2012-chirp-attacks",
         "avoine-2018-db-survey",
         "hancke-2008-tof-db-attacks",
-        "tippenhauer-2015-uwb-rapid-bit-exchange"
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "capkun-2005-secure-positioning",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -2786,7 +2830,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2797,7 +2841,8 @@
         "avoine-2018-db-survey",
         "hancke-2005-rfid-db",
         "hancke-2008-tof-db-attacks",
-        "tippenhauer-2015-uwb-rapid-bit-exchange"
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2878,11 +2923,12 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-08-30",
+      "last_checked": "2026-09-08",
       "cites": [
         "santra-2024-cs-indoor",
         "zand-2019-ble-pbr",
-        "zand-2019-concurrent-pbr"
+        "zand-2019-concurrent-pbr",
+        "ranganathan-2017-are-we-really-close"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3645,7 +3691,10 @@
         "poturalski-2011-db-802-15-4a",
         "singh-2019-uwb-pr",
         "avoine-2018-db-survey",
-        "tippenhauer-2015-uwb-rapid-bit-exchange"
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "vasisht-2016-chronos",
+        "ranganathan-2017-are-we-really-close",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3656,7 +3705,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "schepers-2021-ftm-security",
@@ -3733,7 +3782,11 @@
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
         "singh-2019-uwb-ed",
-        "singh-2019-uwb-pr"
+        "singh-2019-uwb-pr",
+        "poturalski-2010-cicada-attack",
+        "vasisht-2016-chronos",
+        "ranganathan-2017-are-we-really-close",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3744,7 +3797,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-08-27"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "varughese-2026-ble6-pedestrian",
@@ -4150,7 +4203,9 @@
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
         "singh-2021-4z-security-analysis",
-        "avoine-2018-db-survey"
+        "avoine-2018-db-survey",
+        "poturalski-2010-cicada-attack",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4161,7 +4216,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-01"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "rasmussen-2010-rf-distance-bounding",
@@ -4229,7 +4284,9 @@
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
         "hancke-2005-rfid-db",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "capkun-2005-secure-positioning",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4240,7 +4297,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "flury-2010-distance-decreasing",
@@ -4313,7 +4370,8 @@
       "cites": [
         "clulow-2006-long-symbols",
         "hancke-2005-rfid-db",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4324,7 +4382,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "poturalski-2011-db-802-15-4a",
@@ -4397,7 +4455,9 @@
         "flury-2010-distance-decreasing",
         "hancke-2005-rfid-db",
         "hancke-2008-tof-db-attacks",
-        "kuhn-2010-uwb-ir-db"
+        "kuhn-2010-uwb-ir-db",
+        "poturalski-2010-cicada-attack",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4408,7 +4468,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "schwarzbach-2026-cross-tech-ranging",
@@ -4557,7 +4617,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-09-03",
+      "last_checked": "2026-09-08",
       "cites": [
         "francillon-2011-pkes-relay",
         "olafsdottir-2017-carrier-phase",
@@ -4565,7 +4625,8 @@
         "cremers-2012-distance-hijacking",
         "vonzengen-2016-no-cost-distance",
         "pelka-2014-phase-multi-frequency",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "vasisht-2016-chronos"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4641,7 +4702,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "francillon-2011-pkes-relay",
         "leu-2020-mtac",
@@ -4651,7 +4712,11 @@
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
         "flury-2010-distance-decreasing",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "poturalski-2010-cicada-attack",
+        "vasisht-2016-chronos",
+        "ranganathan-2017-are-we-really-close",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -4717,7 +4782,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-08-24",
+      "last_checked": "2026-09-08",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
@@ -4725,7 +4790,8 @@
         "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "singh-2021-4z-security-analysis",
-        "uwb-sv-2023-ccs"
+        "uwb-sv-2023-ccs",
+        "poturalski-2012-secure-precise-ir-uwb"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4806,13 +4872,14 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
-        "kuhn-2010-uwb-ir-db"
+        "kuhn-2010-uwb-ir-db",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4882,11 +4949,12 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
-        "kuhn-2010-uwb-ir-db"
+        "kuhn-2010-uwb-ir-db",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4960,10 +5028,11 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "avoine-2018-db-survey",
-        "hancke-2005-rfid-db"
+        "hancke-2005-rfid-db",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -5124,7 +5193,8 @@
         "leu-2020-mtac",
         "singh-2019-uwb-ed",
         "singh-2019-uwb-pr",
-        "hancke-2005-rfid-db"
+        "hancke-2005-rfid-db",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5135,7 +5205,7 @@
         }
       ],
       "added": "2026-08-21",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "yu-2026-ble-theft-auto",
@@ -5499,12 +5569,13 @@
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
         "rasmussen-2010-rf-distance-bounding",
-        "hancke-2005-rfid-db"
+        "hancke-2005-rfid-db",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-24",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "schroeder-2022-inphase",
@@ -5906,12 +5977,13 @@
         "staat-2022-analog-relay",
         "leu-2022-ghost-peak",
         "singh-2021-4z-security-analysis",
-        "flury-2010-distance-decreasing"
+        "flury-2010-distance-decreasing",
+        "poturalski-2010-cicada-attack"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-27",
-      "last_checked": "2026-08-27"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "zhang-2017-rips-multipath-correction",
@@ -6118,12 +6190,13 @@
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
         "joo-2020-hodor",
-        "olafsdottir-2017-carrier-phase"
+        "olafsdottir-2017-carrier-phase",
+        "ranganathan-2017-are-we-really-close"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "bonczyk-2026-learning-phase-estimation",
@@ -6546,12 +6619,13 @@
       "cites": [
         "francillon-2011-pkes-relay",
         "nishikawa-2026-sub-ghz-pbr-icc",
-        "pelka-2014-phase-multi-frequency"
+        "pelka-2014-phase-multi-frequency",
+        "ranganathan-2017-are-we-really-close"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "morano-2026-one-way-channel-reconstruction",
@@ -6705,7 +6779,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "xie-2026-multipath-toa-binary-ambiguity",
@@ -6768,7 +6842,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "nie-2025-ransac-root-music-cs",
@@ -7058,7 +7132,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "rashidi-2025-ble-uwb-positioning-survey",
@@ -7240,7 +7314,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "nikodem-2025-mcpd-ble",
@@ -7538,12 +7612,13 @@
         "boer-2020-pbr-multipath",
         "zand-2019-ble-pbr",
         "pelka-2014-phase-multi-frequency",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "vasisht-2016-chronos"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "helwa-2023-csi-wifi-ranging-gap",
@@ -7620,12 +7695,13 @@
         "zand-2019-ble-pbr",
         "zand-2019-concurrent-pbr",
         "pelka-2014-phase-multi-frequency",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "vasisht-2016-chronos"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "simoncic-2025-freq-switching-mcpd",
@@ -7846,12 +7922,13 @@
         "avoine-2018-db-survey",
         "hancke-2005-rfid-db",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
-        "kuhn-2010-uwb-ir-db"
+        "kuhn-2010-uwb-ir-db",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "vanmarter-2023-svr-ble-ranging",
@@ -8221,12 +8298,13 @@
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
         "hancke-2005-rfid-db",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-01",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -8294,7 +8372,8 @@
         "avoine-2018-db-survey",
         "hancke-2005-rfid-db",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
-        "kuhn-2010-uwb-ir-db"
+        "kuhn-2010-uwb-ir-db",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8305,7 +8384,7 @@
         }
       ],
       "added": "2026-09-01",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "gunia-2026-cs-uwb-rss-positioning",
@@ -8460,7 +8539,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-02",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "vonzengen-2016-no-cost-distance",
@@ -8925,8 +9004,11 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-05",
-      "cites": [],
+      "last_checked": "2026-09-08",
+      "cites": [
+        "capkun-2005-secure-positioning",
+        "brands-1993-distance-bounding"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "category": "protocol"
@@ -9093,7 +9175,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [
         "clulow-2006-long-symbols",
         "cremers-2012-distance-hijacking",
@@ -9102,7 +9184,9 @@
         "kuhn-2010-uwb-ir-db",
         "poturalski-2011-db-802-15-4a",
         "ranganathan-2012-chirp-attacks",
-        "rasmussen-2010-rf-distance-bounding"
+        "rasmussen-2010-rf-distance-bounding",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "brands-1993-distance-bounding"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9178,7 +9262,7 @@
       },
       "verification": "partial",
       "added": "2026-09-05",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -9234,7 +9318,7 @@
       },
       "verification": "partial",
       "added": "2026-09-05",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-08",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -9464,7 +9548,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-06",
-      "last_checked": "2026-09-06"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "zhang-2025-uwbad-plus",
@@ -9539,7 +9623,7 @@
         }
       ],
       "added": "2026-09-06",
-      "last_checked": "2026-09-06"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "kansanen-2025-bayesian-phase",
@@ -9692,7 +9776,7 @@
         }
       ],
       "added": "2026-09-07",
-      "last_checked": "2026-09-07"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "komma-2025-puf-ofdm-secure-ranging",
@@ -9752,7 +9836,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-07",
-      "last_checked": "2026-09-07"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "sheikh-2025-bp-dsm-uwb-sts",
@@ -9810,7 +9894,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-07",
-      "last_checked": "2026-09-07"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "bedin-2026-mm-carrier-phase-multiband",
@@ -9888,12 +9972,13 @@
       },
       "verification": "verified",
       "cites": [
-        "helwa-2023-csi-wifi-ranging-gap"
+        "helwa-2023-csi-wifi-ranging-gap",
+        "vasisht-2016-chronos"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-07",
-      "last_checked": "2026-09-07"
+      "last_checked": "2026-09-08"
     },
     {
       "id": "shourezari-2026-multiband-cpp-6g",
@@ -9966,6 +10051,552 @@
       "relations": [],
       "added": "2026-09-07",
       "last_checked": "2026-09-07"
+    },
+    {
+      "id": "poturalski-2010-cicada-attack",
+      "title": "The Cicada Attack: Degradation and Denial of Service in IR Ranging",
+      "authors": [
+        "Marcin Poturalski",
+        "Manuel Flury",
+        "Panos Papadimitratos",
+        "Jean-Pierre Hubaux",
+        "Jean-Yves Le Boudec"
+      ],
+      "venue": "ICUWB",
+      "venue_full": "2010 IEEE International Conference on Ultra-Wideband (ICUWB 2010), vol. 2, pp. 1–4 — EPFL LCA",
+      "tier": "other",
+      "category": "attack",
+      "year": 2010,
+      "url": "https://doi.org/10.1109/ICUWB.2010.5616900",
+      "preprint": "https://infoscience.epfl.ch/handle/20.500.14299/50833",
+      "doi": "10.1109/icuwb.2010.5616900",
+      "topics": [
+        "uwb",
+        "802.15.4",
+        "time-of-arrival",
+        "distance-reduction",
+        "interference",
+        "jamming",
+        "energy-detection",
+        "physical-layer",
+        "foundational"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 16 건이 인용하는 '동기화도 코드 지식도 없는 간섭형 거리 축소' 의 원형이다. 공격자는 수신기가 첫 경로를 찾는 back-search 창 안에 균일 간격 펄스를 계속 뿌리기만 하면 되고, 신호가 피해자보다 약하면 ToA 가 앞당겨지고(degradation) 강하면 패킷이 죽는다(denial). CS 연구에 쓰이는 지점은 셋이다. (1) CS RTT 의 ToA 추정도 상호상관 봉우리 주변에서 첫 경로·분수 타이밍을 찾는 탐색 단계가 있으므로(Anliker 2026 이 이 논문을 인용하는 이유), 랜덤 CS_SYNC 시퀀스를 모르는 공격자가 협대역 톤·주기 신호로 탐색 창을 오염시켜 거리를 줄일 수 있는지가 그대로 열린 질문이다. (2) '공격자 SNR 이 탐지 문턱과 DoS 문턱 사이에 있을 때만 축소가 일어난다' 는 degradation triangle 은 CS 를 2.4 GHz 간섭(Sheikh VCC'25)·반응형 재밍(UWBAD) 아래 평가할 때 결과를 정리할 좌표계다 — 간섭 실측이 '오차 증가' 로만 끝나면 방향성(항상 짧아지는가)을 놓친다. (3) 대응책으로 든 '무조건 간섭 상쇄·엄격한 self-interference 문턱은 정상 성능을 깎는다' 는 결론은 NADM 류 탐지가 겪을 같은 트레이드오프의 선례다.",
+      "summary": "IEEE 802.15.4a IR-UWB 의 에너지 검출(ED) 수신기가 정밀도를 위해 첫 도착 경로를 back-search 로 찾는 구조를 노려, 악의적 송신기가 프리앰블 코드를 모른 채 균일 간격 펄스열(매미 울음 같은 'cicada' 신호)을 계속 송신하는 공격을 제안한다. 공격 신호가 피해자보다 약하면 수신기는 정상 신호에 락을 잡되 back-search 가 공격 펄스를 첫 경로로 오인해 ToA 가 앞당겨지고(거리 축소), 강하면 동기화·SFD·복조가 실패해 DoS 가 된다. 기본 ED, min-filter(MINF), PICNIC 세 수신기를 패킷 수신 전 과정 시뮬레이션(802.15.4a 주거 NLOS 채널, LPRF 모드, 코드 5)으로 평가해 세 수신기 모두 100 % 가까운 degradation 과 사실상 100 % denial 을 보였고, 비밀 확산 코드를 써도 DoS 는 막지 못한다. ToA MAE 24–56 ns(7–17 m)가 나왔으며, 대응책(fine sync 제거·시간도약 프리앰블·엄격한 SIT 문턱·무조건 간섭 상쇄)은 예비 평가 수준으로 정상 성능 저하 또는 우회 가능성을 남긴다.",
+      "hardware": [
+        "해당 없음 — 시뮬레이션 전용(동기화→복조 전 과정). 시뮬레이터·하드웨어 미명시"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "원문 미명시 — 패킷 수신 전 과정 자체 시뮬레이션, 도구·언어명 없음(전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "공격 조건: 공격자는 단순 IR 송신기만 필요, 프리앰블 코드 지식·동기화 불필요('does not require the knowledge of the preamble code'); 조정 변수는 심볼당 펄스 수 Np(i-attack)·침묵 패턴 Aj·전력·위치",
+        "판정 기준: degradation = 추정 ToA 가 실제보다 2·Tint = 4 ns 이상 앞당겨짐, denial = 패킷 수신 실패(coarse sync·SFD·복조 중 하나)",
+        "시뮬레이션 파라미터: 802.15.4a LPRF 모드, Npsym = 64, Npcode = 31, Tpcode = 128 ns, 프리앰블 코드 5, 500 MHz BPF + 제곱 + 적분(Tint = 2 ns), 템플릿 NG = 16 심볼, back-search 창 TBS = 64 ns, MINF Wmin = 8, 주거 (약)NLOS 채널 모델(04/662r1), SNR = Ep/N0",
+        "기본 ED(SNR_T = 20 dB, 연속 1-attack): SNR_M ≈ −2 dB 부터 degradation 시작, ≈15 dB 에서 최대 약 70 %, SNR_M ≈ 22 dB 에서 denial 100 %; 2-attack 은 80 % 까지",
+        "PICNIC: denial 이 기본보다 약 5 dB 먼저 시작(PID 필터가 cicada 봉우리를 1 로 바꿔 coarse sync 실패); 간헐(1/3 심볼) 공격이면 상관 봉우리가 1/3 로 줄어 degradation 구간이 훨씬 넓어짐; degradation 최대 98 %",
+        "MINF: 모든 코드 심볼에 있는 cicada 신호를 min filter 가 제거 못 함 — degradation 이 덜한 것은 보수적 back-search 문턱 때문",
+        "degradation 은 SNR_M 하한선과 SNR_M = SNR_T + 상수 선 사이의 '삼각형' 영역에서만 발생, 그 위는 denial",
+        "ToA MAE 24–56 ns(거리 오차 7–17 m), SNR_M 이 커질수록 증가; TBS = 64 ns 에 못 미치는 것은 self-interference test 때문",
+        "클럭 드리프트 40 ppm(802.15.4a 최대 허용)은 공격 성능에 영향 없음",
+        "대응책(예비): fine sync 제거는 정상 NLOS 성능 저하 + 반응형 공격에 여전히 취약; 잡음 기반 여유 C 를 둔 엄격한 SIT 는 degradation <10 % 이나 정상 정밀도 손실; PICNIC 무조건 IC 는 degradation 완전 차단·단일 사용자 성능 영향 미미하나 MUI 환경 성능 저하 우려·정교한 cicada 구조로 우회 가능성"
+      ],
+      "limitations": [
+        "ED 수신기 3 종만 평가 — rake·코히어런트 수신기는 '취약할 것으로 보이나 추가 조사 필요' 로 남김",
+        "시뮬레이션만 — 하드웨어 실증은 후속 TWC 2012(On Secure and Precise IR-UWB Ranging) 부록에서 EPFL 테스트베드로 수행",
+        "대응책 평가는 예비 수준, 공격 변형·대응책 개발을 향후 과제로 명시",
+        "절대 송신 전력·공격 거리 수치 없음 — SNR_M 상대값으로만 제시"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-08",
+      "last_checked": "2026-09-08",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": []
+    },
+    {
+      "id": "poturalski-2012-secure-precise-ir-uwb",
+      "title": "On Secure and Precise IR-UWB Ranging",
+      "authors": [
+        "Marcin Poturalski",
+        "Manuel Flury",
+        "Panos Papadimitratos",
+        "Jean-Pierre Hubaux",
+        "Jean-Yves Le Boudec"
+      ],
+      "venue": "IEEE TWC",
+      "venue_full": "IEEE Transactions on Wireless Communications, vol. 11, no. 3, pp. 1087–1099, Mar. 2012 — EPFL LCA · KTH",
+      "tier": "journal",
+      "category": "attack",
+      "year": 2012,
+      "url": "https://doi.org/10.1109/TWC.2012.011812.110483",
+      "preprint": "https://infoscience.epfl.ch/handle/20.500.14299/76402",
+      "doi": "10.1109/twc.2012.011812.110483",
+      "topics": [
+        "uwb",
+        "802.15.4",
+        "time-of-arrival",
+        "distance-reduction",
+        "interference",
+        "energy-detection",
+        "rake",
+        "defense",
+        "physical-layer",
+        "multipath"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "high",
+      "relevance_note": "'정밀도(첫 경로 탐색)와 보안(탐색 창의 공격 표면)이 정면으로 충돌한다' 는 명제를 처음 정량화한 논문이며, 그 결론 — 안전하면서 정밀한 ToA 를 얻으려면 패킷이 한 자릿수 배 길어진다 — 은 CS 에서 RTT 정밀도를 위해 분수 타이밍·다중경로 보정을 넣을 때 그대로 되돌아오는 질문이다. 내 연구에 쓰이는 지점: (1) 외부 간섭·릴레이·악의적 prover 세 공격이 수신기 관점에서 '동등' 하다는 환원(III-C)은 CS 위협 모델을 단순화하는 근거로 쓸 수 있다 — 어느 하나만 막아도 되는 것이 아니라 하나를 막으면 셋이 같이 막힌다. (2) 대응책 셋(PIDH·EDD/EDDG·분산 검사)의 비교 프레임 — 공격 성공확률을 2⁻¹⁶ 으로 고정하고 정상 정밀 ToA 율·실패율·패킷 길이를 견주는 방식 — 은 CS 의 NADM/랜덤 시퀀스 길이 정책을 평가하는 형식으로 바로 옮길 수 있다. (3) 분산 검사(M 회 측정의 ToA 분산이 문턱을 넘으면 거절)는 CS 가 여러 서브이벤트·채널에서 얻는 다중 RTT 표본에 가장 쉽게 적용되는 방어이며, 이 논문은 그것이 8-attack 아래 실패율 100 % 로 무너지는 경우까지 보여 준다. (4) 부록의 EPFL 테스트베드 실측(PIDH 아래 축소 0)은 Cicada 계보에서 유일한 하드웨어 실증이다.",
+      "summary": "IR-UWB 랜징에서 정밀도를 얻으려면 가장 강한 경로가 아니라 첫 도착 경로를 찾아야 하고(back-search), 그 탐색 단계가 채널 확산(10–20 m)만큼 거리를 줄일 수 있는 새 공격 표면이 됨을 보인다. 악의적 prover·거리축소 릴레이·외부 간섭 세 공격이 수신기 관점에서 동등함을 논증한 뒤 가장 쉬운 외부 간섭(cicada·coded cicada·반응형·코드 인지 공격)을 ED·rake 수신기와 vanilla/PID/MINF 알고리즘에 대해 MATLAB 자체 시뮬레이터(100 ps 해상도, 802.15.4a CM2 NLOS)로 평가한다. 대응책으로 전력 무관 검출을 해밍 거리로 확장한 PIDH, 데이터 검출 창을 극단적으로 줄이는 EDD 와 완만 저하판 EDDG, 그리고 M 회 ToA 분산 검사를 제안·비교해 EDDG 를 권고한다. 부록에서 EPFL ImpulseRadio 테스트베드(PRF 10 MHz, 500 MHz@4.25 GHz, 2.842 GS/s ADC+FPGA)로 cicada 공격을 실측해 vanilla 20 %·PID 35 %·MINF 10 % 축소, PIDH 0 을 확인한다.",
+      "hardware": [
+        "EPFL ImpulseRadio 테스트베드(부록 A, cicada 공격 실측 전용): 자체 IR-UWB 송신 프런트엔드 + 변조기, PRF 10 MHz, on/off 변조, 대역폭 500 MHz @ 4.25 GHz",
+        "수신기: 에너지 검출 프런트엔드 + ADC 2.842 GS/s · 8 bit + FPGA(메모리 140 Kb) → PC, 수신 알고리즘은 MATLAB 오프라인 처리",
+        "실험 환경: 10 m × 10 m 전기공학 실험실 구석, 거리 ≈1 m, 구성 (B) 는 은박 장애물; 공통 클럭 없음 → 비피복 심볼의 ToA 를 ground truth 로 사용",
+        "상용 칩·모델명 없음(프로토타입 하드웨어)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB 자체 시뮬레이터(물리계층 100 ps 해상도, 동기화→복조 전 과정)",
+        "IEEE 802.15.4a 채널 모델 CM2(약 NLOS, 확산 ≈60 ns, 문서 04/662r1)"
+      ],
+      "software_verified": true,
+      "results": [
+        "공격 표면: 첫 경로 back-search 가 채널 확산 크기(10–20 m)의 거리 축소를 허용 — 기존 외부 PHY 공격(릴레이)보다 훨씬 쉽고 비밀 프리앰블 코드로도 못 막음; 선행 ED/LC 계열은 ≈10 m 한계였음",
+        "기본 파라미터: 프레임 256 ns, 프리앰블 64×31, 데이터 32 심볼, 코드 5, TBS = 64 ns, tdet = 128 ns, Tint = 2 ns, λ = 8, Tdd = 4 ns",
+        "ED vanilla(SNR_H = 20 dB, λ = 1): SNR_A ≈ 0 dB 부터 축소 시작, ≈15 dB 에서 최대 ≈36 %, ≥25 dB 에서 denial 100 %; 일반적으로 축소 구간은 SNR_A ≈ 0 dB ~ SNR_H",
+        "MINF 는 축소 시작이 vanilla 보다 ≈7 dB 늦고, PID 는 종료가 ≈5 dB 빠름; 프리앰블 시간도약 + 16-attack 에서 MINF 도 ≈20 % 축소",
+        "rake vanilla(시간도약 없음, 코드 5, SNR_H = 10 dB): 축소 80–100 %; zero-sum 템플릿이면 0 % 이나 시간도약 프리앰블에서는 다시 통함(coded cicada)",
+        "코드 인지 공격(프리앰블 복제 k ns 선행): 넓은 SNR_A 범위에서 사실상 100 % 축소; k = 20 ns 일 때 |ToA 오차| 5/95 백분위 10/22 ns(SNR_A 10 dB)·17/22 ns(15 dB)",
+        "클럭 드리프트 40 ppm: ED 에 무시할 수준, rake 는 공격 시작점 5 dB 이동",
+        "분산 검사: tdet = 64 ns, TBS = 128 ns, Tvar = (5 ns)², 공격 목표 ≥3 m 축소일 때 P_attack ≤ 2⁻¹⁶ 를 위해 M ≥ 11 필요, 프레임 길이 2 배",
+        "대응책 비교(P_attack = 2⁻¹⁶, 정밀 ToA = 오차 <2 ns, CM2): 정상에서 EDD/EDDG 가 PIDH 보다 우수, N_nonce ≈ N_toa 의 5–7 배; 실패율 PIDH·EDDG 는 N >100 에서 무시 수준, EDD 2–3 %, 분산 검사 <1 %",
+        "8-attack(SNR_A = 8 dB) 아래: EDDG·PIDH 정밀 ToA 율 ≈80 %·실패율 ≈5 %, 분산 검사는 실패율 ≈100 %",
+        "비용: 안전+정밀 랜징은 취약한 알고리즘 대비 패킷 길이가 한 자릿수 배 증가",
+        "하드웨어 실측(구성 A, SNR_H ≈ 22 dB·SNR_A ≈ 21 dB, 1000 회): vanilla 최대 ≈20 %(coverage >0.3 이면 denial 우세), MINF ≈10 %, PID ≈35 % 축소, PIDH 는 축소 0"
+      ],
+      "limitations": [
+        "간섭 공격의 축소량은 채널 확산(10–20 m) 수준 — 수백 m~km 급 ED/LC·릴레이 공격보다 작다고 저자가 명시",
+        "보안 비용이 크다: 정밀 ToA 를 지키려면 패킷 길이가 한 자릿수 배 늘고 대응책은 뚜렷한 성능 저하를 보임",
+        "분산 검사의 보안은 특정 파라미터에서만 추정, 일반화 어려움; EDD 는 첫 경로가 약하면 정상 성능 나쁨",
+        "테스트베드는 개발 중·공통 클럭 없음·FPGA 메모리 부족으로 전체 패킷 미저장, EDD·분산 검사 미실측, 실험 SNR 이 시뮬레이션보다 훨씬 높음",
+        "명시적 future work 절 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-08",
+      "last_checked": "2026-09-08",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "rasmussen-2010-rf-distance-bounding",
+        "flury-2010-distance-decreasing",
+        "poturalski-2011-db-802-15-4a",
+        "francillon-2011-pkes-relay",
+        "hancke-2005-rfid-db",
+        "hancke-2008-tof-db-attacks",
+        "kuhn-2010-uwb-ir-db",
+        "poturalski-2010-cicada-attack",
+        "brands-1993-distance-bounding"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "poturalski-2010-cicada-attack",
+          "type": "extends",
+          "note": "ICUWB'10 cicada 공격을 rake 수신기·coded/반응형/코드 인지 변형으로 넓히고 대응책 3 종과 하드웨어 실측을 추가한 저널 확장판"
+        },
+        {
+          "to": "poturalski-2011-db-802-15-4a",
+          "type": "complementary",
+          "note": "TWC'11 이 페이로드(ED/LC) 공격을 다뤘다면 이 논문은 프리앰블 ToA 추정 단계를 공격 — 같은 표준의 다른 면"
+        },
+        {
+          "to": "kuhn-2010-uwb-ir-db",
+          "type": "complementary",
+          "note": "Kuhn 2010 의 20 ns 짧은 심볼(축소 3–6 m)이 페이로드 축을 막는 접근이라면, 이 논문은 프리앰블 축이 여전히 열려 있음을 보임"
+        }
+      ]
+    },
+    {
+      "id": "capkun-2005-secure-positioning",
+      "title": "Secure positioning of wireless devices with application to sensor networks",
+      "authors": [
+        "Srdjan Čapkun",
+        "Jean-Pierre Hubaux"
+      ],
+      "venue": "INFOCOM",
+      "venue_full": "Proceedings IEEE INFOCOM 2005 (24th Annual Joint Conference of the IEEE Computer and Communications Societies), vol. 3, pp. 1917–1928 — EPFL LCA",
+      "tier": "wireless",
+      "category": "defense",
+      "year": 2005,
+      "url": "https://doi.org/10.1109/INFCOM.2005.1498470",
+      "preprint": "https://infoscience.epfl.ch/handle/20.500.14299/195745",
+      "doi": "10.1109/infcom.2005.1498470",
+      "topics": [
+        "distance-bounding",
+        "distance-enlargement",
+        "localization",
+        "positioning",
+        "verifiable-multilateration",
+        "foundational",
+        "protocol-design",
+        "uwb",
+        "sensor-networks"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "거리 바운딩이 '축소만 막고 확대는 못 막는다' 는 한계를 시스템 계층에서 뒤집은 논문이다 — 세 검증기 삼각형 안에서는 어느 거리를 늘리면 다른 거리를 줄여야 위치가 맞으므로, 축소 불가능성만으로 위치 위조가 검출된다(Verifiable Multilateration). CS 연구에 쓰이는 지점은 둘이다. (1) 표 I 의 '기술 × 공격자 → 가능한 조작 방향' 표는 CS 의 두 모드를 놓고 다시 그려야 하는 표다: RTT(RF ToF 바운딩)는 외부 공격자가 확대만 가능하지만, PBR(위상)은 Ólafsdóttir 2017 이 보인 대로 외부 공격자가 축소·확대 모두 할 수 있다. 따라서 CS PBR 거리로 다중 앵커 위치를 구하는 시스템은 VM 의 안전성 논증을 상속받지 못하며, RTT 로 PBR 을 상한 검증해야 한다는 설계 주장이 여기서 나온다. (2) '주어진 면적을 덮는 검증기 수 n = (2L/R+3)(2L/R+1)/2, 안전한 위치결정은 비안전 대비 노드 밀도 80 → 110/100 m² 필요' 같은 비용 계산은 CS 실내 측위 배치(RAS 다중 반사기)에서 보안이 요구하는 추가 앵커 수를 논할 때의 템플릿이다.",
+      "summary": "적대적 환경에서의 무선 노드 위치 결정 문제를 처음 체계화한 논문. 외부 공격자와 손상 노드가 GPS·초음파·RSS·RF ToF·거리 바운딩 각각에 대해 거리를 줄일 수 있는지 늘릴 수 있는지를 표로 정리하고, RF 거리 바운딩(Brands–Chaum 식 1 비트 챌린지·응답)은 둘 다 확대만 가능함을 근거로 Verifiable Multilateration(VM)을 제안한다: 3 개 이상 검증기가 각각 거리 바운딩을 수행하고, MMSE 위치 추정이 각 바운드와 δ(≈3σ) 이내로 맞으며 검증기 삼각형 안에 들어올 때만 수락한다. 삼각형 내부의 두 점 사이에서는 세 거리 중 최소 하나가 줄어야 한다는 정리로 위조 불가능성을 증명하고, 3-D 는 사면체 4 개 검증기로 확장한다. 이를 센서망에 적용한 SPINE 은 이웃 간 거리 바운딩(SECTOR)→VM 기반 기본 거리 검증(BDV)→범위 기반 측위 3 단계이며, 노드 분리 삼각형 k 개면 최대 2k 개 거리 확대에 견딤을 보인다. 시뮬레이션(500×500~2000×2000 m², 전력 범위 250 m; 100×100 m² 에 50–500 노드, 범위 25 m)으로 검증기 배치 효율과 밀도 요구를 평가하고, 복제 장치 공격·경계 노드 미커버 등 한계를 명시한다.",
+      "hardware": [
+        "해당 없음 — 설계·시뮬레이션 논문. 인용된 Multispectral Solutions UWB PAL(수 cm 정밀도, 실내 100 m·실외 2 km, 태그 ≈40 g)과 UWB 2 km 에서 15 cm 오차는 실현 가능성 근거로만 언급"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "원문 미명시 — 자체 시뮬레이션(100 회 평균·95 % CI), 시뮬레이터명 없음(전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "표 I(공격 가능 방향): RSS·초음파 ToF 는 손상 노드·외부 공격자 모두 축소·확대 가능; RF ToF 는 외부 공격자 확대만; 초음파 바운딩은 손상 노드 확대만·외부 공격자 둘 다; RF 거리 바운딩은 둘 다 확대만; 민간 GPS 는 위치 스푸핑(시뮬레이터 1–5 만 달러 또는 월 1 천 달러 임대)",
+        "VM 알고리즘: 검증기별 거리 바운딩 → MMSE 위치 → δ-test(δ ≈ 3σ) + 삼각형 내부 test; 정리 1: 삼각형 안 두 점 p≠p′ 사이에서 세 거리 중 최소 1·최대 2 개가 줄어듦",
+        "검증기 3 개만 있어도 어느 거리든 확대는 항상 검출되나 어느 거리인지는 못 가림; 인증된 거리 추정(바운딩 대신)으로 쓰면 외부 공격자만 방어",
+        "복제 장치 공격: 검증기마다 복제 장치를 두고 메시지를 지연시키면 임의 위치 위조 가능 — 내탬퍼성 또는 송신기 지문으로 완화",
+        "최적 배치: 한 변 = 전력 범위 R 인 정삼각형 격자, L×L 면적에 n = (2L/R + 3)(2L/R + 1)/2 개, 내부 검증기는 6 삼각형(육각형) 공유; 무작위 배치보다 훨씬 효율적(500²–2000² m², R = 250 m, 100 회 평균·95 % CI)",
+        "SPINE 밀도(100×100 m², R = 25 m): 이웃 10 개 평균은 80 노드에서 달성되나 검증 가능 거리 10 개는 110 노드 이상 필요; 120 노드에서 대부분 노드가 최소 1 개 검증 삼각형에 포함, 경계 노드는 미커버",
+        "BDV 내성: 단일 삼각형은 거리 1 개 확대만 방어, 노드 분리 k 삼각형은 2k 개, 변 공유는 k+1 개; 시뮬레이션에서 밀도·배치에 따라 최대 100 개 거리 확대까지 견딤",
+        "정밀도 전제: 1 ns ↔ 30 cm, prover 의 XOR 처리와 검증기 타이머가 ns 급이어야 함(전용 하드웨어 필요); 초음파 대체는 ms 급으로 마이크·802.11 카드로 가능"
+      ],
+      "limitations": [
+        "ns 급 처리·시간 측정은 전용 하드웨어에서만 가능함을 저자가 인정, 구현 없음",
+        "VM 의 안전성은 검증 삼각형(사면체) 내부에서만 성립, 전력 범위가 삼각형을 다 덮지 못하면 검증 영역이 더 작아지고 경계 노드는 미커버",
+        "복제 장치(다중 장치) 공격에는 VM 이 무너짐, 제안한 완화책(내탬퍼성·지문)도 한계 명시",
+        "사후 중앙 검증만 가능하고 분산 환경에서의 안전한 구현은 어려움",
+        "향후: 거리 바운딩·위치 검증의 상세 분석과 구현, BDV 의 기존 측위 알고리즘 적용"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-08",
+      "last_checked": "2026-09-08",
+      "cites": [
+        "brands-1993-distance-bounding"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "extends",
+          "note": "두 노드 간 거리 상한 증명을 3 개 이상 검증기의 위치 검증(VM)으로 끌어올림 — 축소 불가능성만으로 확대까지 검출"
+        }
+      ]
+    },
+    {
+      "id": "vasisht-2016-chronos",
+      "title": "Decimeter-Level Localization with a Single WiFi Access Point",
+      "authors": [
+        "Deepak Vasisht",
+        "Swarun Kumar",
+        "Dina Katabi"
+      ],
+      "venue": "USENIX NSDI",
+      "venue_full": "13th USENIX Symposium on Networked Systems Design and Implementation (NSDI '16), Santa Clara, pp. 165–178 — MIT CSAIL · CMU",
+      "tier": "wireless",
+      "category": "estimation",
+      "year": 2016,
+      "url": "https://www.usenix.org/conference/nsdi16/technical-sessions/presentation/vasisht",
+      "preprint": "https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-vasisht.pdf",
+      "doi": null,
+      "topics": [
+        "wifi",
+        "phase-based-ranging",
+        "multicarrier",
+        "frequency-hopping",
+        "time-of-flight",
+        "ambiguity",
+        "multipath",
+        "super-resolution",
+        "csi",
+        "cots",
+        "localization"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "high",
+      "relevance_note": "Bluetooth CS PBR 과 물리가 같은 Wi-Fi 판이다 — 여러 반송파 주파수에서 위상을 재고 그 차이로 ToF 를 복원하며, 코퍼스 14 건(Ólafsdóttir·Leu MCPR·Schepers·Singh·Shoudha·Riaz·Bedin 등)이 이를 위상 기반 랜징의 대표 사례로 인용한다. CS 연구에 옮겨 쓸 수 있는 장치가 셋 있다. (1) 순방향·역방향 CSI 를 곱해 PLL 위상 오프셋과 CFO 를 상쇄하는 트릭은 CS 가 initiator·reflector 의 PCT 를 곱(또는 위상 합)해 로컬 오실레이터 위상을 지우는 것과 같은 수학이며, 상반성 가정이 깨질 때(공격자가 한쪽만 조작) 무엇이 남는지를 따지는 출발점이다. (2) 최소 주파수 간격 5 MHz 가 60 m 모듈로 모호성을 만든다는 계산은 CS 1 MHz 채널 간격 → 300 m 모호성의 근거식이고, 비균일 주파수가 LCM 을 키워 모호성을 넓힌다는 관찰은 CS 채널 선택(랜덤 채널 맵)의 보안·모호성 트레이드오프로 이어진다. (3) 검출 지연은 기저대역에서 생기므로 0 번 부반송파 위상에는 실리지 않는다는 주장(Claim 4.1)은 CS RTT 의 ToA 오프셋과 PBR 위상이 서로 다른 오차원을 가진다는 논증의 원형이다. 보안은 다루지 않으므로 Ólafsdóttir 2017 의 지연-릴레이 공격을 이 설계에 대입하면 '정상 정밀도 14 cm 시스템이 왜 방어력 0 인가' 를 보여 주는 대비 사례가 된다.",
+      "summary": "상용 Wi-Fi 카드 한 대(단일 AP)로 데시미터급 위치를 얻는 Chronos 를 제안한다. 2.4/5 GHz 의 35 개 Wi-Fi 대역(총 ≈1 GHz 폭)을 84 ms 에 훑으며 각 대역의 채널 위상을 모아 광대역 라디오를 흉내 내고, 위상→ToF 의 정수 모호성은 중국인 나머지 정리 구조(실제 구현은 비균일 DFT + 희소성 제약의 근접 경사법)로 해소한다. 패킷 검출 지연(중앙값 177 ns, ToF 의 8 배)은 기저대역에서 생겨 0 번 부반송파 위상에 실리지 않음을 보이고 30 개 부반송파를 3 차 스플라인으로 보간해 제거하며, 주파수 도약마다 바뀌는 PLL 위상·CFO 는 순방향·역방향 CSI 를 곱해 상쇄한다(첫 봉우리가 2·ToF 에 나타남). Intel 5300 + 수정 iwlwifi/CSI Tool 로 사무실·카페·가정에서 400 회 측위: ToF 중앙 오차 0.47 ns(LOS)/0.69 ns(NLOS), 거리 14.1/20.7 cm, 위치 65/98 cm, 점유 감지 94.3 %·지오펜싱 97 %, 드론 거리 유지 RMSE 4.2 cm, TCP 처리량 저하 18.5 %.",
+      "hardware": [
+        "Intel 5300 Wi-Fi 카드(3 안테나, 2.4·5 GHz, DFS 대역 포함)",
+        "클라이언트: ASUS EEPC 10\" 넷북(안테나 간격 12 cm); AP: ThinkPad W300/W530 노트북(안테나 간격 30 cm, 본문에 두 모델명 병기)",
+        "드론: AscTec Hummingbird + AscTec Atomboard, GoPro 카메라, Yei Technology 모션 센서",
+        "ground truth: 건물 도면 + Bosch GLM50 레이저 거리계(50 m, ±1.5 mm); 드론은 VICON 모션캡처(6 m × 5 m 방)",
+        "환경: 사무실 건물·카페·4 인 거주 가정, AP 3–19 대, 400 회 측위(AP 15 m 이내), 지오펜싱 100 회, 트래픽 시험 30 회"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "수정 iwlwifi 드라이버(Ubuntu Linux 커널 3.5.7) + 802.11 CSI Tool, hrtimers 로 대역 도약(2–3 ms 마다), 모니터 모드 패킷 주입으로 자체 ACK, hostapd 로 AP 에뮬레이션",
+        "C++ · MEX · MATLAB 처리(희소 NDFT 근접 경사법 3.1 s, fmincon 위치 최적화 0.09 s), 3 차 스플라인 보간"
+      ],
+      "software_verified": true,
+      "results": [
+        "ToF 중앙 오차 0.47 ns(LOS) / 0.69 ns(NLOS), 95 백분위 1.96 / 4.01 ns — 기존 SourceSync 류 최대 20 ns",
+        "거리 중앙 오차 14.1 cm(LOS) / 20.7 cm(NLOS); 거리별로 ≈10 cm 에서 12–15 m 에서 최대 26 cm 로 증가(SNR 감소)",
+        "위치 중앙 오차 65 cm(LOS) / 98 cm(NLOS), 단일 AP",
+        "패킷 검출 지연 중앙값 177 ns(표준편차 24.8 ns) — ToF 의 ≈8 배; 0 번 부반송파에서는 소거됨(Claim 4.1)",
+        "모호성: 최소 주파수 간격 5 MHz → 시간 모호성 200 ns = 60 m 모듈로(실내에선 무시); 2.4 GHz 단일 주파수면 12 cm 모듈로",
+        "35 대역 스윕 84 ms(초당 12 회), 실내 코히어런스 시간 이내; 다중경로 프로파일 지배 봉우리 평균 5.05 개(σ 1.95)",
+        "TCP 처리량 저하 18.5 %(t = 6 s), VLC 스트림 끊김 없음",
+        "응용: 재실 감지 94.3 %, 지오펜싱 97 %(30 cm 버퍼 시 오수락 5 %), 드론 1.4 m 거리 유지 RMSE 4.2 cm(중앙 4.17 cm)",
+        "Intel 5300 2.4 GHz 펌웨어가 위상을 π/2 모듈로만 보고 → h⁴ 로 알고리즘 수행해 우회; 하드웨어 지연은 카드당 1 회 캘리브레이션"
+      ],
+      "limitations": [
+        "희소성 제약으로 매우 약한 경로의 지연을 잃음 — 직접 경로가 크게 감쇠되면 측위 성능 저하(두 벽·옷장 통과 시 재실 감지 오류)",
+        "거리가 멀어지면 SNR 저하로 거리 오차 증가(12–15 m 에서 26 cm)",
+        "도약 중 경쟁(contention) 비활성화로 다른 Wi-Fi 패킷과 충돌 시 잡음; 잦은 측위 + 큰 트래픽이면 전용 AP/비콘 권고",
+        "60 m 모듈로 모호성은 실내 가정으로 무시; 순방향·역방향 CSI 가 동시가 아니라 작은 위상 오차(평균으로 완화)",
+        "보안 위협 모델 없음 — 지연-릴레이(Ólafsdóttir 2017)·외부 위상 주입에 대한 방어가 설계에 없음(관찰된 한계)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-08",
+      "last_checked": "2026-09-08",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "olafsdottir-2017-carrier-phase",
+          "type": "motivates",
+          "note": "Ólafsdóttir 2017 이 '데시미터급 Wi-Fi 위상 측위' 의 대표 사례로 인용하며 위상 기반 랜징 전반의 지연-릴레이 취약성을 논증 — 이 설계는 방어 장치가 없다(가설: 직접 공격 실증은 아님)"
+        }
+      ]
+    },
+    {
+      "id": "ranganathan-2017-are-we-really-close",
+      "title": "Are We Really Close? Verifying Proximity in Wireless Systems",
+      "authors": [
+        "Aanjhan Ranganathan",
+        "Srdjan Čapkun"
+      ],
+      "venue": "IEEE S&P Magazine",
+      "venue_full": "IEEE Security & Privacy, vol. 15, no. 3, pp. 52–58, May/June 2017 — ETH Zurich",
+      "tier": "journal",
+      "category": "survey",
+      "year": 2017,
+      "url": "https://doi.org/10.1109/MSP.2017.56",
+      "preprint": "https://aanjhan.com/assets/ieeemag_secureranging.pdf",
+      "doi": "10.1109/msp.2017.56",
+      "topics": [
+        "secure-ranging",
+        "relay-attack",
+        "distance-reduction",
+        "early-detect-late-commit",
+        "phase-based-ranging",
+        "rssi",
+        "time-of-flight",
+        "uwb",
+        "802.15.4",
+        "keyless-entry",
+        "survey",
+        "design-requirements"
+      ],
+      "tech": [
+        "uwb",
+        "other"
+      ],
+      "relevance": "high",
+      "relevance_note": "코퍼스 11 건(Staat·Schepers·Leu MCPR·Singh·Suresh CS 차량 접근 등)이 인용하는 '안전한 근접 증명의 세 요건' — (1) 왕복 ToF 를 쓸 것, (2) 챌린지·응답으로 RTT 를 잴 것, (3) 심볼을 짧게 할 것 — 을 제시한 글이다. Bluetooth CS 를 이 세 요건에 대입하면 연구 질문이 바로 나온다: CS 는 RTT 모드(1)와 랜덤 CS_SYNC 시퀀스(2)를 갖췄지만, 1 Mb/s GFSK 심볼 1 µs 는 이 글이 802.15.4a 의 32 ns 심볼로 '10 m 축소' 를 계산한 식으로 보면 150 m 급 ED/LC 여지가 있어 (3)을 정면으로 위반한다 — Anliker 2026 의 협대역 ToA 공격이 실증한 것이 정확히 이 지점이다. 또 표 1 은 RSS(amplify-and-relay)·위상(delay-and-relay, >50 m 축소)·ToF(ED/LC) 각각에 '근접 증명 가능 여부' 를 None/Partial/Yes 로 매겼는데, CS PBR 은 위상 행(None)에, CS RTT 는 ToF-긴 심볼 행(Partial)에 놓인다. CS 논문의 위협 모델·배경 절을 쓸 때 이 표를 CS 두 모드로 확장하는 것이 가장 짧은 서술이다. 매거진 글이라 자체 실험은 없다.",
+      "summary": "차량 PKES·비접촉 결제·스마트폰 잠금 등에서 쓰이는 근접 판정을 RSS·위상·ToF 세 방식으로 나누고 각각의 물리계층 거리 축소 공격을 정리한 개관 논문. RSS 는 증폭·중계(amplify-and-relay)로 무력화되며 SecuKey 류 전력 감쇠 대책도 고이득 증폭기로 우회된다. 다중반송파 위상 랜징(Atmel AVR2152 등)은 위상이 2π 에서 되감기므로 응답을 지연시켜 중계하면 50 m 이상 떨어진 prover 를 1 m 로 보이게 할 수 있다. ToF 는 결정적 신호 사용(802.15.4a 프리앰블·페이로드 예측으로 140 m 축소, Cicada)과 긴 심볼(ED/LC: CSS 160–700 m, IR-UWB 32 ns 심볼에서도 10 m) 이 문제다. 표 1 에서 RSS·위상은 근접 증명 불가, 802.15.4a CSS/IR-UWB 는 부분, 짧은 심볼 IR-UWB 만 가능으로 매기고, 안전한 설계 요건으로 왕복 ToF·챌린지-응답 프로토콜·짧은 심볼 길이 세 가지(+Cicada 대비 특수 변조·복호)를 제시한다. 3db Midas 가 독자 PHY 로 1 m 미만 축소·200 m 이상 측정을 주장함을 소개한다.",
+      "hardware": [
+        "해당 없음 — 매거진 개관 논문, 자체 실험 없음. 언급 제품: Apple iBeacon, Atmel AVR2152, PulsON, 3db Midas, DecaWave, Zebra, SecuKey, NearLock, Blue Proximity"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "RSS: 신호 세기는 거리 제곱에 반비례 — amplify-and-relay 로 무력화; PKES 전력 감쇠 대책(SecuKey)은 고이득 증폭기·안테나로 우회; Bluetooth RSS 잠금(NearLock·Blue Proximity)도 원격 해제 가능",
+        "위상(다중반송파): 위상 0–2π 되감기로 최대 측정 거리도 되감김 — 응답을 Δt 지연해 중계하면 >50 m 축소, 50 m 밖 prover 가 ≈1 m 로 보임(Ólafsdóttir 2016 인용)",
+        "ToF: 10 ns 오차 = 1.5 m; 802.15.4a 는 거리 축소 공격에 대한 보안이 없고 프리앰블·페이로드 >99 % 예측으로 140 m 축소(Poturalski·Flury 인용); Cicada 는 prover 보다 강한 '1' 펄스 연속 송신으로 ED 수신기 거리 축소",
+        "ED/LC: CSS 는 >160 m·최대 700 m 축소; IR-UWB 펄스는 2–3 ns 지만 802.15.4a 심볼은 32 ns–8 µs 라 최소 32 ns 에서도 10 m 축소",
+        "표 1: RSS(amplify-and-relay)·위상(delay-and-relay) → 근접 증명 None; ToF 802.15.4a CSS/IR-UWB(ED/LC) → Partial; 짧은 심볼 IR-UWB → Yes(챌린지-응답 구현 시)",
+        "설계 요건 3 가지: 왕복 ToF(공격자가 단순 중계로는 못 이김), 챌린지-응답 프로토콜(802.15.4a/f 는 인증된 ACK 규정 없음 → Cicada·재전송 공격에 취약), 짧은 심볼(현행 표준은 긴 심볼 허용 → 취약; 대가로 최대 측정 거리 감소)",
+        "3db Midas: 독자 IR-UWB PHY(짧은 심볼 + 특수 변조·ToA 추정)로 최대 축소 <1 m·200 m 이상 측정 주장(제조사 주장 인용)"
+      ],
+      "limitations": [
+        "자체 실험 없음 — 모든 수치는 참고문헌 [5]–[10] 인용",
+        "거리 축소 공격만 다루고 거리 확대는 범위 밖; RSS·위상·ToF 외(GPS·주변 감지)는 미포함",
+        "명시적 open problem 절 없음 — 짧은 심볼 vs 측정 거리 트레이드오프와 표준(802.15.4a/f) 의 인증 ACK 부재만 지적"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-08",
+      "last_checked": "2026-09-08",
+      "cites": [
+        "olafsdottir-2017-carrier-phase",
+        "ranganathan-2012-chirp-attacks",
+        "clulow-2006-long-symbols",
+        "flury-2010-distance-decreasing",
+        "poturalski-2011-db-802-15-4a",
+        "francillon-2011-pkes-relay",
+        "poturalski-2010-cicada-attack",
+        "vasisht-2016-chronos"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "flury-2010-distance-decreasing",
+          "type": "generalizes",
+          "note": "ED/LC(Clulow·Flury·Ranganathan 2012)·Cicada·위상 delay-and-relay 를 '왕복 ToF + 챌린지-응답 + 짧은 심볼' 세 요건으로 일반화"
+        },
+        {
+          "to": "olafsdottir-2017-carrier-phase",
+          "type": "generalizes",
+          "note": "위상 기반 랜징의 >50 m 지연-릴레이 축소를 RSS·ToF 와 한 표에 놓고 '근접 증명 불가(None)' 로 분류"
+        }
+      ]
+    },
+    {
+      "id": "brands-1993-distance-bounding",
+      "title": "Distance-Bounding Protocols",
+      "authors": [
+        "Stefan Brands",
+        "David Chaum"
+      ],
+      "venue": "EUROCRYPT",
+      "venue_full": "Advances in Cryptology — EUROCRYPT '93 (Lofthus, May 1993), LNCS vol. 765, Springer, pp. 344–359 (1994 출판)",
+      "tier": "other",
+      "category": "protocol",
+      "year": 1993,
+      "url": "https://doi.org/10.1007/3-540-48285-7_30",
+      "preprint": null,
+      "doi": "10.1007/3-540-48285-7_30",
+      "topics": [
+        "distance-bounding",
+        "rapid-bit-exchange",
+        "relay-attack",
+        "mafia-fraud",
+        "distance-fraud",
+        "foundational",
+        "protocol-design"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "거리 바운딩 계보의 뿌리로, 코퍼스 29 건(Hancke–Kuhn·Clulow·Rasmussen·Flury·Poturalski·Singh·Leu·Abidin·Staat·Schepers 등)이 첫 문단에서 인용한다. 코퍼스 문헌들이 이 논문에서 가져다 쓰는 것은 세 가지다. (1) 단일 비트 챌린지·응답의 RTT 로 상한 거리를 재고, 라운드마다 공격자의 추측 확률을 1/2 로 묶는 구조 — CS RTT 의 랜덤 CS_SYNC 시퀀스가 하는 일의 프로토콜 원형이다. (2) mafia fraud(중계)와 distance fraud(prover 스스로 가까운 척)를 구분한 위협 분류 — CS 의 릴레이 공격(Staat 2022)과 악의적 reflector 공격을 나누는 어휘가 여기서 나온다. (3) 응답 비트를 미리 커밋하고 사후 서명으로 묶는 '느린 단계 – 빠른 단계' 구조 — CS 가 LL 절차(느림)와 CS 이벤트(빠름)를 분리한 것과 같은 설계 문법이다. 원문은 미확보(Springer 유료, OA 없음) 이므로 아래 서술은 코퍼스 내 2 차 문헌(Avoine 2018 서베이 Algorithm 1, Hancke–Kuhn 2005, Čapkun–Hubaux 2005 Fig. 1)에 근거한다.",
+      "summary": "[2 차 문헌 기준] 검증기와 prover 사이의 물리적 거리 상한을 암호학적으로 증명하는 '거리 바운딩' 개념을 처음 제안한 논문. prover 가 무작위 비트열 m₁…mₙ 에 먼저 커밋하고, 검증기가 무작위 1 비트 챌린지 cᵢ 를 보내면 prover 가 rᵢ = cᵢ ⊕ mᵢ 를 즉시 되돌리는 n 라운드의 빠른 비트 교환을 RTT 로 재어 거리를 상한하며, 끝에 prover 가 챌린지·응답 전체를 서명(또는 MAC)하고 커밋을 열어 정직성을 묶는다. 중계 공격(mafia fraud)과 prover 자신이 가깝다고 속이는 distance fraud 두 위협을 정의했고, 라운드마다 공격자의 응답 추측 확률이 1/2 이라 n 라운드에서 2⁻ⁿ 로 줄어든다. 후속 연구에서 terrorist fraud(white-box) 와 distance hijacking(Cremers 2012)에는 저항하지 못함이 지적되었고, Hancke–Kuhn 2005·Rasmussen–Čapkun 2010·MAD 등이 직접 후손이다(Avoine 2018 Fig. 1).",
+      "hardware": [
+        "확인 필요 — 원문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 원문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "[Avoine 2018 Algorithm 1] 설정 단계: prover 가 무작위 비트열에 커밋; 빠른 단계: n 라운드 1 비트 챌린지 cᵢ ∈ {0,1} → 응답 rᵢ = cᵢ ⊕ mᵢ, 라운드마다 타이머 측정; 검증 단계: prover 가 c‖r 을 서명하고 커밋을 개봉",
+        "[Hancke–Kuhn 2005] 공격자의 라운드별 추측 확률 1/2(Hancke–Kuhn 은 3/4 로 비트 수 2 배지만 잡음 채널 재전송·MAC 불필요)",
+        "[Čapkun–Hubaux 2005 Fig. 1] 실용 변형: nonce 커밋, 챌린지 비트 반전 전송, 즉답 N_u ⊕ N_v, 마지막 챌린지 비트~응답 사이 타이머, 이후 MAC_K 로 인증",
+        "[Avoine 2018] mafia fraud 와 distance fraud 를 함께 방어하는 첫 프로토콜; terrorist fraud(white-box)·distance hijacking 에는 비저항"
+      ],
+      "limitations": [
+        "원문 미확보 — 서술 전부 코퍼스 내 2 차 문헌(avoine-2018-db-survey·hancke-2005-rfid-db·capkun-2005-secure-positioning) 기준",
+        "물리계층(변조·심볼 길이·ED/LC)은 다루지 않음 — Clulow 2006·Hancke–Kuhn 2008 이 이 공백을 지적",
+        "구현·실험 없음(이론 프로토콜)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "unverified",
+      "added": "2026-09-08",
+      "last_checked": "2026-09-08",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": []
+    },
+    {
+      "id": "fu-2026-range-only-localization-attack",
+      "title": "Attack for Range-Only Localization Systems: A Learning-Based Robust Optimization Approach",
+      "authors": [
+        "Yuan Fu",
+        "Zheng Zhang",
+        "Guangyang Zeng",
+        "Xiaoqiang Ren"
+      ],
+      "venue": "IEEE IoT-J",
+      "venue_full": "IEEE Internet of Things Journal, vol. 13, no. 16, pp. 36165–36178, 15 Aug. 2026 — Shanghai University · Shanghai AI Laboratory · HIT Shenzhen",
+      "tier": "journal",
+      "category": "attack",
+      "year": 2026,
+      "url": "https://doi.org/10.1109/JIOT.2026.3698447",
+      "preprint": null,
+      "doi": "10.1109/JIOT.2026.3698447",
+      "topics": [
+        "localization",
+        "range-only",
+        "positioning",
+        "distance-enlargement",
+        "machine-learning",
+        "collaborative-attack",
+        "robust-optimization"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "거리 자체를 조작하는 물리계층 공격이 아니라, 여러 거리 센서 중 어느 것을 얼마나 흔들지 고르는 상위 계층(시스템 구성) 공격이다. CS 로 다중 앵커 측위를 할 때 '앵커별 거리 오차 예산이 주어졌을 때 위치 편차를 지정 방향으로 최대화하는 공격자' 라는 문제 정식화와, 그것을 Čapkun–Hubaux 2005 의 Verifiable Multilateration 이 얼마나 막는지를 견주는 데 쓸 수 있다. S2 인용그래프상 Singh 2021(802.15.4z 보안 분석)을 인용하나 원문 미확보라 cites 에는 넣지 않았다.",
+      "summary": "[초록 기준] 레인징 센서 기반 위치추정(range-only localization)이 창고·실내 항법에 널리 쓰이므로 그 보안이 중요하다는 전제에서, 공격자가 공격할 센서를 전략적으로 골라 에너지를 배분해 위치 추정을 지정 방향으로 최대한 벗어나게 하는 협력 공격 설계법을 제안한다. 목표 위치가 불확정 집합으로만 알려진 상황에서 혼합 행동공간 위 max–min 최적화를 세우고, 목적함수를 손실로 직접 쓰는 독립 학습 신경 최적화기 3 개로 빠르고 강건한 해를 얻는다. 시뮬레이션과 실험에서 비협력·무작위 공격 대비 훨씬 큰 표적 편차를 냈다고 보고한다.",
+      "hardware": [
+        "확인 필요 — 초록에 '실험' 언급만 있고 랜징 기술·장비 미확인"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요"
+      ],
+      "software_verified": false,
+      "results": [
+        "[초록] 센서 선택 + 에너지 배분 협력 공격을 max–min 강건 최적화로 정식화, 3 개 신경 최적화기 독립 학습",
+        "[초록] 시뮬레이션·실험에서 baseline(비협력·무작위) 대비 유의하게 큰 표적 위치 편차 — 수치는 초록에 없음"
+      ],
+      "limitations": [
+        "초록만 확인(IEEE 유료) — 대상 랜징 기술(UWB 등)·실험 장비·수치 미확인",
+        "거리 측정 자체의 조작 가능성은 가정으로 두고 상위 최적화만 다룸(초록 기준 관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "added": "2026-09-08",
+      "last_checked": "2026-09-08",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": []
     }
   ]
 }
