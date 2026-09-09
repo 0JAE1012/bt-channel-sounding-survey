@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-08",
-  "last_run": "2026-09-08",
+  "updated": "2026-09-09",
+  "last_run": "2026-09-09",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 587,
+  "citation_edges": 590,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -3062,7 +3062,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-09-02",
+      "last_checked": "2026-09-09",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -3119,7 +3119,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-09-02",
+      "last_checked": "2026-09-09",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -3535,7 +3535,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-03",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "antonijevic-2026-secure-wifi-ranging",
@@ -5425,7 +5425,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-24",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "gou-2024-uwb-channel-reciprocity",
@@ -6470,7 +6470,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "wu-2026-cs-twr-phase-offset",
@@ -6779,7 +6779,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "xie-2026-multipath-toa-binary-ambiguity",
@@ -6842,7 +6842,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "nie-2025-ransac-root-music-cs",
@@ -6903,7 +6903,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "fujii-2025-dual-antenna-cs-sim",
@@ -6960,7 +6960,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "fujii-2025-pbr-indoor-experimental",
@@ -7074,7 +7074,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "andreadis-2025-phase-ble-localization-ml",
@@ -7132,7 +7132,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "rashidi-2025-ble-uwb-positioning-survey",
@@ -7191,7 +7191,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "qi-2026-cs-hadm-iot",
@@ -8078,7 +8078,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "stanciu-2021-narrowband-distance",
@@ -8135,7 +8135,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "bintariq-2024-dl-ble-ranging",
@@ -8539,7 +8539,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-02",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "vonzengen-2016-no-cost-distance",
@@ -8686,7 +8686,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-03",
-      "last_checked": "2026-09-04"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "schroeder-2018-cde",
@@ -9262,7 +9262,7 @@
       },
       "verification": "partial",
       "added": "2026-09-05",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-09",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -9318,7 +9318,7 @@
       },
       "verification": "partial",
       "added": "2026-09-05",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-09",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -9623,7 +9623,7 @@
         }
       ],
       "added": "2026-09-06",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "kansanen-2025-bayesian-phase",
@@ -9836,7 +9836,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-07",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "sheikh-2025-bp-dsm-uwb-sts",
@@ -9894,7 +9894,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-07",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-09"
     },
     {
       "id": "bedin-2026-mm-carrier-phase-multiband",
@@ -10597,6 +10597,174 @@
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": []
+    },
+    {
+      "id": "hofhammer-2026-privacyshield",
+      "title": "PrivacyShield: Relaying BLE Beacons to Counter Unsolicited Tracking",
+      "authors": [
+        "Florian Hofhammer",
+        "Daniele Antonioli",
+        "Mathias Payer"
+      ],
+      "venue": "USENIX Security",
+      "venue_full": "35th USENIX Security Symposium (USENIX Security '26), Baltimore, MD, USA, pp. 3103–3122",
+      "tier": "top4",
+      "category": "defense",
+      "year": 2026,
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/hofhammer",
+      "preprint": "https://www.usenix.org/system/files/usenixsecurity26-hofhammer.pdf",
+      "doi": null,
+      "topics": [
+        "ble",
+        "relay-attack",
+        "find-my",
+        "location-spoofing",
+        "anti-stalking",
+        "offline-finding-network",
+        "proximity-service"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "거리를 재지 않는 BLE 근접 서비스(Find My)에서 인증 없는 광고 패킷의 릴레이가 무엇을 할 수 있는지를 상용 네트워크 end-to-end 로 보인 논문이다. CS 연구에는 세 방향으로 걸린다. 첫째, 릴레이가 공격이 아니라 방어로 뒤집힌 사례 — 같은 물리 동작(비컨 복사·재송출)이 위협 모델에 따라 정반대 의미를 가지므로, CS 의 릴레이 위협을 서술할 때 \"릴레이 = 거리 축소\" 로 단순화하지 않도록 주의를 준다. 둘째, 위치 보고 계층의 판정 정책 관측이다 — Find My 가 상충하는 보고를 합치지 않고 보고 수가 많은 쪽만 택하거나 아예 갱신을 멈춘다는 관찰(f ≥ 2 Hz 면 no ≫ nr 이어도 릴레이 위치가 이김)은 코퍼스의 receiver-policy 축에서 \"상위 계층이 조작 입력을 어떻게 수락하는가\"의 상용 사례로 쓸 수 있고, 저자들이 제안한 대응책(초 단위 타임스탬프 검사는 ms 릴레이에 무력, 비현실적 이동 패턴 탐지)은 CS 의 NADM·이동 궤적 검사와 같은 논리다. 셋째, gegenhuber-2026-airtag-relay 와 같은 대상을 같은 해에 반대편(피해자 보호)에서 다룬 짝 논문이라 계보 정리에 필요하다. 레인징 자체는 다루지 않으므로 관련도는 낮다.",
+      "summary": "Apple Find My·Google Find My Device 같은 오프라인 탐색 네트워크의 스토킹 방지 조치(전용 태그, 소유자 분리 모드, 연속 탐지, 비정지 탐지의 네 전제 PR1–PR4)를 체계화하고, 각각을 낮은 비용으로 우회하는 공격 A1–A4(비태그 기기 위장 — ESP32 로 AirTag 광고의 기기유형 비트만 바꿔 재송출, 30 분·3 km 미만의 조기 분리 태그 추적, OpenHaystack 으로 식별자를 자주 회전, 스피커 제거 태그)를 실증한다. 그 위에서 오프라인 탐색 비컨이 인증되지 않아 어디로든 릴레이될 수 있다는 점을 거꾸로 이용해, 피해자 주변 스마트폰이 포착한 AirTag 비컨을 서버로 올리고 원격 ESP32 중계기가 재송출해 제3자 기기들이 잘못된 위치를 보고하게 만드는 릴레이 네트워크 PrivacyShield 를 제안한다. iPhone 11/11 Pro 여러 대와 AirTag 1 개, 약 4 km 떨어진 두 지점으로 실험해 릴레이 송출 빈도 f 와 양쪽 수신 기기 수(no, nr)에 따른 위치 은닉 성공 조건을 표로 정리하고, 운영자 측 개선안(모든 기기 클래스에 경보, 소유자 등록, 정품 클라이언트 증명, 비현실적 이동 패턴 탐지)을 제시한다.",
+      "hardware": [
+        "Apple AirTag 1 개 — 공격자(스토커) 태그 역할",
+        "Apple iPhone 11 / 11 Pro 여러 대 — 1 대는 AirTag 와 같은 Apple ID(공격자), 나머지는 다른 Apple ID(제3자 보고 기기)",
+        "Espressif ESP32 개발보드 — 중계기 펌웨어 및 A1 공격용 커스텀 태그. 보드 1 달러 미만, SIM 모듈·태양광·배터리 포함 중계국 약 15 달러",
+        "두 실험 지점 A(태그)·B(중계기)는 약 4 km 거리, 혼잡 역사 실험에서 nr 또는 no ≈ 70 으로 추정"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "AirGuard Android 앱을 확장한 스니퍼 — AirTag 비컨을 파싱해 서버로 업로드, Android BLE API 의 RSSI·링크계층 주소로 자기 기기만 필터",
+        "ESP32 커스텀 중계 펌웨어 — Wi-Fi 로 서버에서 비컨을 받아 BLE 로 재송출",
+        "Python Flask 서버 — RESTful API, 공개키 라운드로빈 반환, 키 유효기간 24 h",
+        "OpenHaystack — 커스텀 태그·식별자 회전 공격(A3)에 사용",
+        "Apple iCloud API 로 위치 보고·신뢰도 점수 회수",
+        "공개 코드: https://github.com/HexHive/privacyshield (Zenodo 10.5281/zenodo.17964521)"
+      ],
+      "software_verified": true,
+      "results": [
+        "A1 실증: AirTag 광고를 녹음해 기기유형 플래그만 바꿔 ESP32 로 재송출하면 iPhone 으로 위장되어 추적 경보가 뜨지 않으면서 Find My 로 위치 조회 가능",
+        "추적 경보 조건 실측: AirTag 를 약 3 km·30 분 이상 동반해야 경보. 정지 태그의 위치 보고 이상치는 실제 위치에서 최대 500 m",
+        "RQ1: no = nr = 1, f = 2 Hz(500 ms 간격)로 릴레이하면 AirTag 가 공격자 Find My 앱에 안정적으로 중계기 위치(B)로 표시됨",
+        "RQ2: f = 0.5 Hz(원래 AirTag 송출 주기)로 같은 수의 보고가 양쪽에서 올라오면 Find My 가 위치를 갱신하지 않음(상충 보고를 합치지 않고 폐기). f = 1 Hz 는 A·B 를 오가고 f ≥ 2 Hz 면 B 로 고정",
+        "RQ3: 중계기를 혼잡 역사에 두어 nr ≈ 70, no = 1 이면 f = 0.5 Hz 로도 항상 B 표시. 반대로 AirTag 가 혼잡지(no ≈ 70)에 있으면 실제 위치 보고 325 건 대 릴레이 18 건 상황에서 nr = 2·f ≥ 2 Hz 일 때만 A·B 를 오감 — 보고 기기 수가 결정적이지만 no ≫ nr 이어도 은닉 가능",
+        "iPhone 은 5–10 분마다 위치 보고를 올리고 신뢰도 점수를 붙이며, 비컨 수신 빈도가 높을수록 점수가 높아짐(문서화되지 않은 동작 관측)",
+        "Find My 의 타임스탬프 해상도는 1 초인데 릴레이 지연은 수 ms 라 타임스탬프로 릴레이 보고를 걸러낼 수 없음"
+      ],
+      "limitations": [
+        "커스텀 클라이언트로 모든 위치 보고를 복호해 통계 분석하는 공격자(식별자 잦은 회전 + 인접 비컨 위치 중첩)는 릴레이 보고를 걸러낼 수 있음 — 저자는 현실적 궤적을 따라 릴레이하는 확장으로 대응 가능하다고 주장",
+        "피해자의 기존 정보(집 주소 등)를 아는 공격자에게는 부분 보호만 제공",
+        "중계국이 적으면 위조 위치가 비현실적(예: 뉴욕→샌프란시스코)이어서 공격자가 의심할 수 있음",
+        "보호받는 피해자의 BLE 도달 범위 안에 있는 정당한 태그의 추적도 일시적으로 저하됨 — 도난품 은닉 등 악용 가능성을 저자가 인정",
+        "GPS 트래커 등 비-BLE 추적 기술에는 무력",
+        "구현·실험이 Apple Find My·AirTag 에 한정(Google Find My Device 는 분석만)",
+        "거리측정이 아니라 위치 보고 계층의 문제 — 물리계층 레인징 보안과는 층위가 다름"
+      ],
+      "artifacts": {
+        "code": "https://github.com/HexHive/privacyshield",
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-09",
+      "last_checked": "2026-09-09",
+      "cites": [
+        "staat-2022-analog-relay",
+        "francillon-2011-pkes-relay"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "gegenhuber-2026-airtag-relay",
+          "type": "complementary",
+          "note": "같은 인증 없는 AirTag 비컨 릴레이를, Gegenhuber 는 분실 태그 위치 위조·회수 방해(공격)로, 이 논문은 스토킹 피해자 위치 은닉(방어)으로 쓴다. 서로 인용하지는 않음(2026 동시 발표)"
+        }
+      ]
+    },
+    {
+      "id": "zhu-2026-wild-wps-attack",
+      "title": "WILD Attack: Stealthy Undermining of Wi-Fi-Based Geolocation Through Remote Crowdsourced Data Injection",
+      "authors": [
+        "Changjia Zhu",
+        "Xiao Han",
+        "Parush Gera",
+        "Zhuo Lu",
+        "Tempestt Neal",
+        "Yao Liu"
+      ],
+      "venue": "USENIX Security",
+      "venue_full": "35th USENIX Security Symposium (USENIX Security '26), Baltimore, MD, USA, pp. 379–397",
+      "tier": "top4",
+      "category": "attack",
+      "year": 2026,
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/zhu-changjia",
+      "preprint": "https://www.usenix.org/system/files/usenixsecurity26-zhu-changjia.pdf",
+      "doi": null,
+      "topics": [
+        "wifi-positioning",
+        "wps",
+        "location-spoofing",
+        "crowdsourcing",
+        "database-poisoning",
+        "localization-infrastructure",
+        "attack"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "물리계층 거리측정을 전혀 건드리지 않고 측위 인프라(BSSID→좌표 조회표)를 원격으로 오염시켜 수 주 동안 지속되는 위치 오류를 만드는 공격이다. CS 연구에는 두 지점에서 대조군이 된다. 첫째, 위협 모델의 경계 — CS·UWB 의 보안 랜징은 \"측정 시점에 공격자가 무선 채널을 조작한다\"를 가정하는데, 이 논문은 측정이 완벽해도 그 측정을 좌표로 바꾸는 데이터베이스가 오염되면 결과가 틀린다는 것을 4 개 상용 제공자(Google·Apple·A-Map·WiGLE)에서 보인다. system-composition 축에서 \"거리 검증이 끝이 아니다\"를 말할 때 fu-2026-range-only-localization-attack(상위 계층 협력 공격)과 함께 인용할 수 있다. 둘째, 제공자별 상충 보고 판정 정책(다수결·최신 우선·건수 누적·제로트러스트)의 비교는 코퍼스 receiver-policy 주제의 인프라 판이다 — 제로트러스트(상충 시 항목 삭제)가 은밀한 오염을 막는 대신 가용성을 잃는다는 절충은 CS 에서 NADM 이 의심 측정을 버릴 때의 절충과 구조가 같다. 레인징이 아니므로 관련도는 낮다.",
+      "summary": "Wi-Fi 측위 시스템(WPS)은 단말이 관측한 BSSID 목록을 제공자에게 보내고 제공자가 Location Lookup Table(LLT)에서 좌표를 찾아 돌려준다. 기존 WPS 스푸핑은 피해자 근처에서 위조 AP 를 세워야 해 은밀성·지속성이 없었다. WILD 공격은 대신 크라우드소싱 보고 경로를 노린다 — 공격자가 ESP32 로 표적 AP 의 BSSID 를 담은 위조 비컨을 자기 위치에서 뿌리면 주변(또는 자기) 단말들이 정상 절차대로 \"이 BSSID 가 여기 있다\"는 보고를 올리고, 제공자는 이를 받아들여 LLT 를 갱신한다. 저자들은 Google·Apple·A-Map·WiGLE 네 제공자가 모두 위조 보고를 수용하며, 약 200 m 안의 보고는 협력으로·먼 보고는 경쟁으로 취급하고, 경쟁 시 Google 은 다수결, WiGLE 은 각 보고 누적, Apple·A-Map 은 제로트러스트(상충 항목 삭제)로 해소함을 실험으로 밝힌다. 그 결과 LLT 항목 변조(Google)와 삭제(Apple·A-Map)라는 두 패턴이 생기고 공격 중단 후 4 주가 지나도 회복되지 않는다. 표적 BSSID 는 Apple 지오로케이션 API 가 이웃 BSSID 를 돌려주는 성질을 이용한 hop-by-hop 확장과 마지막 16진수 열거로 원격에서 평균 91.1 % 수집된다. 대규모 DoS(탈린 10 km 반경 262,073 BSSID), 승차호출 오유도, GPS 없는 기기의 서비스 오염 세 사례로 영향을 보이고 제공자에 책임 공개했다.",
+      "hardware": [
+        "Espressif ESP32 — 표적 BSSID 를 담은 위조 Wi-Fi 비컨 송출(1 대 약 1 달러, 약 50 BSSID 동시 모사)",
+        "보고 제출용 모바일 단말 3 대 (기종 미기재)",
+        "정당 보고 대조군용 신품 AP 5 대 (모델 미기재)",
+        "실험 지점: 대학 캠퍼스(고밀도)·도심 주거단지(중밀도)·외곽(저밀도) 세 곳, 공격자 위치와 1–11 km"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "LLT 프로빙 도구 — 제공자 지오로케이션 API 로 항목 갱신 여부·좌표를 추적",
+        "표적 BSSID 발견 도구 — Apple Geolocation API 이웃 반환을 이용한 hop-by-hop 확장(DFS 백트래킹) + 마지막 16진수 열거",
+        "공개 아티팩트: https://zenodo.org/records/17834160 (프로빙 도구, BSSID 발견 도구, BSSID–좌표 데이터셋)"
+      ],
+      "software_verified": true,
+      "results": [
+        "네 제공자 모두 물리 AP 없이 위조 보고만으로 LLT 에 가짜 항목 생성 가능",
+        "두 지점 보고가 183 m 떨어지면 협력으로 취급되어 항목이 더 빨리 생성되고, 392 m 면 경쟁으로 취급되어 Google 은 평균 23 일 뒤 한쪽 좌표만 기록",
+        "2,500 m 떨어진 상충 보고: Google 은 다수결(NA > NB 면 A), WiGLE 은 위조 보고 1 건에도 항목이 이동, Apple·A-Map 은 제로트러스트로 항목 삭제 — Apple 은 3 일, A-Map 은 2 일 만에 전 표적 항목 제거",
+        "Google 은 항목별 신뢰도 점수 때문에 2 단계로 이동(7–13 일, 13–20 일). 30 일째 공격을 멈춘 뒤 2 주·4 주가 지나도 원상 복구 없음(고밀도 지점에서 AP 2 개만 회복)",
+        "표적 BSSID 원격 수집: 9 개 지점에서 hop-by-hop + 마지막 16진수 열거로 물리 스캔 대비 평균 91.1 % 커버리지, Apple API 이웃 반환 범위는 최대 300 m",
+        "대규모 사례: 탈린 중심 10 km 반경 262,073 BSSID 를 원격 수집. ESP32 약 5,242 대(≈5,242 달러)로 도시 전체 Apple WPS 항목 삭제(DoS) 또는 Google WPS 좌표 변조 가능하다고 추산(실제 대규모 오염은 윤리상 미실행)",
+        "승차호출 사례: Apple WPS 항목 삭제 후 iOS Uber 앱이 셀룰러 측위로 후퇴해 픽업 지점이 실제 위치에서 100 m 가량 어긋남(정상 WPS 정확도는 12 m)",
+        "책임 공개: Google 은 Bug Hunters 로 접수·내부 검토, Apple Product Security 는 추가 자료 요청, A-Map 은 개선 반영 예정, WiGLE 은 사용자 신뢰도·클러스터링으로 막힌다고 답했으나 신규 계정으로도 오염이 재현됨"
+      ],
+      "limitations": [
+        "윤리 제약으로 각 지점에서 소수 AP 만 표적화해 실제 피해 규모를 축소 평가 — 실제 공격자는 모든 주변 AP 를 오염시킬 수 있음",
+        "공격자의 위조 보고 좌표는 자기 물리 위치로 제한되지만 USRP 등 SDR 로 GPS 스푸핑을 병행하면 임의 좌표로 변조 가능(논의만, 미실험)",
+        "제공자 정책 추정은 블랙박스 실험 관측이며 정확한 거리 임계값(약 200 m)은 확정하지 않음",
+        "단말 최종 위치는 GPS·셀룰러와 융합되므로 GPS 가 양호한 야외에서는 영향이 줄어듦 — 실내·도심 협곡·GPS 없는 기기에서 효과가 큼",
+        "물리계층 거리측정과 무관 — 코퍼스 관점에서는 시스템 구성 계층의 대조군"
+      ],
+      "artifacts": {
+        "code": "https://zenodo.org/records/17834160",
+        "dataset": "https://zenodo.org/records/17834160"
+      },
+      "verification": "verified",
+      "added": "2026-09-09",
+      "last_checked": "2026-09-09",
+      "cites": [
+        "vasisht-2016-chronos"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "fu-2026-range-only-localization-attack",
+          "type": "complementary",
+          "note": "둘 다 거리측정 물리계층이 아닌 상위 계층(범위 융합 / 측위 인프라 DB)을 공격해 위치를 틀리게 만든다. 서로 인용하지 않음"
+        }
+      ]
     }
   ]
 }
