@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-09",
-  "last_run": "2026-09-09",
+  "updated": "2026-09-11",
+  "last_run": "2026-09-11",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 590,
+  "citation_edges": 601,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -83,7 +83,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-11",
       "cites": [
         "abidin-2021-narrowband-ranging",
         "clulow-2006-long-symbols",
@@ -97,7 +97,8 @@
         "singh-2019-uwb-pr",
         "zand-2019-ble-pbr",
         "ranganathan-2017-are-we-really-close",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "giovanelli-2018-rssi-or-tof-ble"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3039,7 +3040,8 @@
       "relevance_note": "CS의 PBR이 어디서 왔는지를 알려주는 계보의 뿌리다. BLE 표준과 호환되는 다중반송파 위상 거리측정을 제시하고, 무엇보다 BLE 링크 계층의 제약 — 느린 채널 호핑, 긴 패킷, 연속 통신 사이의 프레임 간격 T_IFS — 이 수정 오프셋과 위상 잡음과 결합해 거리 오차로 번역되는 수학 모델을 세웠다. 두 방향으로 쓰인다. 첫째, CS의 스텝 타이밍과 채널 스케줄이 왜 그렇게 정해졌는지를 규격 이전의 논증으로 읽을 수 있다. 둘째, 공격자가 조작해야 하는 물리량을 링크 계층 파라미터 단위로 짚는 출발점이 된다. abidin-2021, staat-2022, schex-2026이 모두 이 논문을 인용하므로 인용 계보의 상류 노드이기도 하다.",
       "summary": "BLE가 스마트 태그·스마트폰에 널리 깔린 상황에서 측위와 자산추적을 위해 기기 간 거리를 위상으로 계산하는 방법을 다룬다. BLE 표준과 호환되는 다중반송파 위상 기반 거리측정을 제시하고, BLE의 채널 호핑을 활용해 2.4 GHz 전 대역에서 톤을 교환함으로써 다중경로 페이딩을 완화한다. BLE 표준의 느린 채널 호핑, 긴 패킷 크기, 연속 통신 사이의 프레임 간격(T_IFS)이 수정 오프셋과 위상 잡음이 있을 때 거리 오차에 영향을 준다는 점을 지적하고, 링크 계층 프로토콜이 거리 오차에 미치는 영향을 분석하는 새로운 수학 모델을 도입한다. 실측 결과를 반영한 모델링으로 제안 방식의 정확도를 평가하고 오차 모델의 정확성을 검증한다.",
       "hardware": [
-        "확인 필요 (초록에 실측 결과 반영을 언급하나 장비 미확인 — 원문 미확보)"
+        "확인 필요 (초록에 실측 결과 반영을 언급하나 장비 미확인 — 원문 미확보)",
+        "2차 문헌 단서: De Cock IPIN 2024 §III-A 가 '[5](이 논문) 에서 개발된 플랫폼은 NXP FRDM-KW38 BLE MCU 기반' 이라고 서술 — 원문 미확인이므로 참고만"
       ],
       "hardware_verified": false,
       "software": [
@@ -3062,7 +3064,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-09-09",
+      "last_checked": "2026-09-11",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -3263,12 +3265,13 @@
       "cites": [
         "zand-2019-ble-pbr",
         "abidin-2021-narrowband-ranging",
-        "lu-2021-ble-phase-positioning"
+        "lu-2021-ble-phase-positioning",
+        "giovanelli-2018-rssi-or-tof-ble"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-03",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-11"
     },
     {
       "id": "kravets-2025-ble-pbr-wifi",
@@ -7029,52 +7032,91 @@
         "Guido Dolmans"
       ],
       "venue": "IPIN",
-      "venue_full": "2025 International Conference on Indoor Positioning and Indoor Navigation (IPIN), Tampere, pp. 1–6, Sept. 2025 (imec)",
+      "venue_full": "2025 International Conference on Indoor Positioning and Indoor Navigation (IPIN), Tampere, Finland, pp. 1–6, Sept. 2025 (imec / TU Eindhoven; SUPERIOT 과제)",
       "tier": "other",
       "category": "measurement",
       "year": 2025,
       "url": "https://ieeexplore.ieee.org/document/11213442/",
-      "preprint": null,
+      "preprint": "https://zenodo.org/records/18107255",
       "doi": "10.1109/IPIN66788.2025.11213442",
       "topics": [
         "phase-based-ranging",
         "ble",
+        "channel-sounding",
         "localization",
         "multilateration",
+        "maximum-likelihood",
         "cots",
+        "nrf52833",
         "field-measurement"
       ],
       "tech": [
         "ble-cs"
       ],
       "relevance": "medium",
-      "relevance_note": "sheikh-2023-pbr-missing-tones·sheikh-2025-cs-interference 의 imec 계보(Sheikh·Dolmans) 가 **상용 BLE 기기의 위상 측정**으로 여러 거리 추정법을 비교하고 다변측량 측위까지 실측한 논문이다. 고정밀 위상 기반 추정이 다른 방법을 앞서 평균 절대 측위 오차가 선택 궤적에서 12 cm 이내로 최대우도 측위에 근접했다고 한다. 내 연구에서의 쓸모는 **집계 단계의 실측 참조**다 — gunia-2026 이 지적한 '거리 이상치가 위치까지 살아남는가' 를, 앵커 여러 대가 있는 다변측량이 얼마나 눌러 주는지의 수치가 여기 있을 것이고, 동시에 앵커 다수 구성은 boshoff-2026 이 지적하듯 두 기기만의 거리측정에는 없는 방어라는 대비가 된다. 어떤 '상용 BLE 기기' 인지(CS 규격 칩인지 imec 자체 PBR 인지) 는 전문에서 확인해야 한다. 유료 벽이라 초록만 확인.",
-      "summary": "BLE 시스템의 실내 측위를 탐구한다. 상용 BLE 기기의 위상 기반 측정으로 서로 다른 거리 추정법을 써서 거리를 구하고, 각 앵커의 거리 정보로 해석적 다변측량을 돌려 미지 노드의 좌표를 계산한다. 거리 추정법별 다변측량 측위 성능을 실험으로 비교하고 최대우도 측위를 상한 기준으로 삼는다. 고정밀 위상 기반 거리 추정이 다른 접근을 앞서 절대 측위 오차가 가장 작았고, 특히 평균 절대 측위 오차가 최대우도에 근접해 선택 궤적에서 12 cm 이내였다. (출판사 초록 기준)",
+      "relevance_note": "sheikh-2023-pbr-missing-tones·sheikh-2025-cs-interference 의 imec 계보(Sheikh·Dolmans) 가 **상용 CS 개발키트(Nordic nRF52833-DK 5 대)** 가 내놓는 네 가지 거리 출력 — RSSI·phase slope·IFFT·high-precision(MCPD+MUSIC) — 을 같은 궤적에서 나란히 재고, 그 거리로 해석적 다변측량과 최대우도(GMM 잡음모델) 측위를 돌린 실측 참조다. 내 연구에서의 쓸모는 세 가지다. (1) **집계 단계의 기준선** — gunia-2026 이 지적한 '거리 이상치가 위치까지 살아남는가' 에 대해, 4 m×3 m 테스트 영역에 앵커 4 대를 두면 high-precision 거리로 위치 오차 Q90 18 cm·MAE 12 cm 이고 최대우도 상한(Q90 19 cm·MAE 10 cm) 과 거의 같다는 수치가 나온다. 즉 이 밀도에서는 다변측량이 거리 잡음을 거의 못 누르고 그대로 통과시키므로, 한 앵커의 거리 조작이 위치에 그대로 반영된다는 뜻이기도 하다. (2) **추정기 선택이 오차 규모를 열 배 이상 가른다** — 같은 IQ 데이터에서 phase slope 는 MAE 262 cm, IFFT 23 cm, high-precision 12 cm. 공격 실험에서 '어느 추정기를 표적으로 삼느냐' 에 따라 기준 잡음 폭이 달라지므로, 탐지 임계값 설계와 거리축소 은닉 가능 폭을 논할 때 이 표가 필요하다. (3) 앵커 다수 구성은 boshoff-2026 이 지적하듯 두 기기만의 거리측정에는 없는 방어라는 대비. 보안 고려는 없으며, 신호 처리는 개발키트 펌웨어의 출력을 그대로 쓴다.",
+      "summary": "상용 BLE 개발키트(Nordic nRF52833-DK) 의 위상 기반 측정으로 실내 측위를 실험한다. §II 에서 active-reflector 개념의 다중 반송파 위상차(MCPD) 거리 추정을 정리하고(1 MHz 간격 → 150 m 비모호 거리, K = 80 톤), §III 에서 해석적 다변측량(Norrdine 의 대수해, 잡음 무시·실시간) 과 GMM 잡음모델 기반 최대우도(ML) 측위(EM 으로 성분 추정, 격자탐색) 를 세운다. 4 m×3 m 영역 네 모서리에 앵커 4 대, 노드 1 대를 (1,1) m 에서 20 cm 씩 16 스텝 L 자 궤적으로 옮기며 스텝당 100 회 측정을 개발키트가 내놓는 네 가지 거리 출력(RSSI·phase slope·IFFT·high-precision) 으로 기록한다. 첫 스텝에서 다변측량 위치 오차 Q90 은 high-precision 0.17 m, IFFT 0.41 m, RSSI 1.08 m, phase slope 2.75 m 이고, 전 스텝 합산에서는 high-precision 다변측량 Q90 18 cm·MAE 12 cm 로 ML 상한(Q90 19 cm·MAE 10 cm) 에 근접한다. 저자들은 이 수치를 BLE 기술 간 비교의 벤치마크로 제시한다.",
       "hardware": [
-        "확인 필요 — '상용 BLE 기기' 라고만 초록에 있음, 모델 미상, 전문 미확보"
+        "Nordic Semiconductor nRF52833-DK 5 대 — 앵커 4 대(A1=(0,0)·A2=(4,0)·A3=(0,3)·A4=(4,3) m, 4 m×3 m 테스트 영역 모서리) + 이동 노드 1 대 (Fig. 2·Fig. 3)",
+        "노드·앵커 안테나 방향은 수신 신호가 최대가 되도록 조정 (본문 명시)",
+        "이동 노드 궤적: (1,1) m 시작, 20 cm 씩 x 또는 y 로 이동, N_t = 16 스텝 L 자, 스텝당 N_m = 100 회 측정 — ground truth 는 격자 좌표(별도 측위 계측기 없음)",
+        "개발키트가 계산한 거리값을 USB 로 PC 에 전송해 후처리",
+        "MCPD 파라미터: 반송파 간격 Δf = 1 MHz(비모호 거리 150 m), K = 80 톤"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 전문 미확보"
+        "nRF52833-DK 펌웨어가 제공하는 4 가지 거리 추정 출력 — RSSI, phase slope(주파수별 MCPD 기울기 평균 [Boer 2020]), IFFT(스펙트럼 IFFT 지연 추정), high-precision(MCPD + MUSIC 초해상 [Sheikh 2023]) — SDK 이름·버전은 논문 미기재",
+        "PC 후처리: 해석적 다변측량(식 (11)–(12), Norrdine 2012 대수해)·GMM-EM 잡음모델 최대우도 측위(식 (14), 최적화 툴박스 또는 격자탐색) — 도구 이름 미기재"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "고정밀 위상 기반 거리 추정 + 해석적 다변측량: 평균 절대 측위 오차 12 cm 이내(선택 궤적), 최대우도 측위에 근접 (초록)"
+        "첫 스텝 (1,1) m 다변측량 2D 위치 오차 Q90: high-precision 0.17 m(MAE 0.10) · IFFT 0.41 m(0.36) · RSSI 1.08 m(1.04) · phase slope 2.75 m(2.65) (Fig. 4)",
+        "high-precision 스텝별 다변측량 최대 오차 0.09 m(최선)–0.28 m(최악), ML 은 0.07–0.26 m (Fig. 7)",
+        "전 16 스텝 합산 (Fig. 8): high-precision 다변측량 Q90 18 cm·MAE 12 cm, high-precision ML Q90 19 cm·MAE 10 cm(상한), IFFT Q90 50 cm·MAE 23 cm, RSSI Q90 57 cm·MAE 71 cm, phase slope Q90 313 cm·MAE 262 cm",
+        "다변측량은 잡음 추정 없이 실시간·오프라인 측정 불필요, ML 은 잡음분포 추정 필요로 복잡도 증가 — 둘의 성능 차는 MAE 2 cm 수준",
+        "MCPD 이론: f_c = 2.4 GHz 단일 톤 비모호 거리 0.06 m, Δf = 1 MHz 차분으로 150 m — 간격을 줄이면 잡음 민감도 상승, 80 톤 다중 교환으로 보완"
       ],
       "limitations": [
-        "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인)",
-        "보안 고려 없음 (초록 기준)"
+        "보안 고려 없음 — 공격·조작 시나리오 부재 (전문 확인)",
+        "단일 방(4 m×3 m)·정적 스텝 측정·단일 궤적 — 다중경로 강한 환경·이동 중 측정·NLOS 미평가",
+        "안테나 방향을 수신 최대로 최적화한 조건 — 실사용의 임의 방향 성능 미확인",
+        "거리 추정 네 방법은 개발키트 펌웨어 출력이라 내부 파라미터·SDK 버전 미기재, 원시 IQ 처리 재현 불가",
+        "ML 측위는 실제 위치를 알고 잡음 GMM 을 맞춘 상한 벤치마크 — 실전 적용치가 아님",
+        "앵커 4 대 밀집 배치에서 다변측량이 ML 과 거의 같다는 것은 거리 잡음이 집계에서 거의 안 눌린다는 뜻 — 앵커 수·기하 변화 실험 없음"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
-      "relations": [],
+      "verification": "verified",
+      "cites": [
+        "giovanelli-2018-rssi-or-tof-ble",
+        "zand-2019-ble-pbr",
+        "boer-2020-pbr-multipath",
+        "sheikh-2023-pbr-missing-tones",
+        "bintariq-2024-dl-ble-ranging",
+        "decock-2024-pbr-pedestrian-tracking"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "sheikh-2023-pbr-missing-tones",
+          "type": "applies-to",
+          "note": "high-precision 거리 추정(MCPD+MUSIC) 을 [14] Sheikh 2023 의 기법으로 명시하고, 그 출력을 측위 단계에 적용해 실측"
+        },
+        {
+          "to": "boer-2020-pbr-multipath",
+          "type": "applies-to",
+          "note": "phase slope 추정을 [13] Boer 2020 의 방법으로 명시 — 같은 궤적에서 MAE 262 cm 로 가장 나쁨"
+        },
+        {
+          "to": "decock-2024-pbr-pedestrian-tracking",
+          "type": "complementary",
+          "note": "같은 imec 계열 BLE PBR 을 De Cock 은 보행자 착용·IMU 융합으로, 이 논문은 정적 스텝·COTS 키트 출력으로 측위 — 앵커 4 대 구성이 같음"
+        }
+      ],
       "added": "2026-08-30",
-      "last_checked": "2026-09-09"
+      "last_checked": "2026-09-11"
     },
     {
       "id": "andreadis-2025-phase-ble-localization-ml",
@@ -10765,6 +10807,171 @@
           "note": "둘 다 거리측정 물리계층이 아닌 상위 계층(범위 융합 / 측위 인프라 DB)을 공격해 위치를 틀리게 만든다. 서로 인용하지 않음"
         }
       ]
+    },
+    {
+      "id": "decock-2024-pbr-pedestrian-tracking",
+      "title": "On the Feasibility of Phase-based BLE Ranging for Accurate Pedestrian Tracking",
+      "authors": [
+        "Cedric De Cock",
+        "Emmeric Tanghe",
+        "Chris Marshall",
+        "Nikos Kouvelas",
+        "David Plets"
+      ],
+      "venue": "IPIN",
+      "venue_full": "2024 14th International Conference on Indoor Positioning and Indoor Navigation (IPIN), Kowloon, Hong Kong, pp. 1–7, Oct. 2024 (IMEC-WAVES/Ghent University · imec-Netherlands)",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2024,
+      "url": "https://ieeexplore.ieee.org/document/10786118/",
+      "preprint": "https://biblio.ugent.be/publication/01JJ9BNKAGH33C89TVE4ANQNFM",
+      "doi": "10.1109/IPIN62893.2024.10786118",
+      "topics": [
+        "phase-based-ranging",
+        "ble",
+        "pedestrian-tracking",
+        "body-shadowing",
+        "imu-fusion",
+        "particle-filter",
+        "range-error-correction",
+        "nxp-kw38",
+        "field-measurement"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "imec BLE 위상기반 거리측정(Zand 2019 플랫폼, NXP FRDM-KW38 기반) 을 **사람 몸에 달았을 때** 거리 오차가 어떻게 생기는지를 mocap ground truth 로 잰 유일한 논문이다. 내 연구 관점에서 값진 것은 방어·탐지 쪽 수치다. (1) **정상 오차의 폭** — 원시 거리 오차가 −1.6 m·+1.9 m 두 봉우리의 다봉 분포이고 90 % 가 ±3.5 m 안, 9.5 % 는 +3.5 m 초과·최대 +15 m 로 오른쪽으로 치우친다. 인체 차폐 아래 정당한 측정이 이 정도로 흔들리면, 수 m 의 거리축소·확대 공격이 잡음 안에 숨을 여지가 크고 탐지 임계값을 낮게 못 잡는다는 뜻이다. (2) **품질 지표에 의한 게이팅** — 코디네이터가 IQ 처리 시 MUSIC 고유값 최댓값을 정규화한 'likeliness' 를 내고, 0.2 미만이면 큰 과소추정이 몰려 있어 버린다. CS 의 NADM·품질 지표와 같은 구실을 하는 수신기 정책이며, 공격자가 이 지표를 높게 유지하면서 거리를 바꿀 수 있는가가 receiver-policy 질문이 된다. (3) 거리 오차가 거리·상대 방위각·likeliness 와 상관이므로 SVM 으로 보정하면 평균 오차 50 → 18 cm — 즉 상위 계층이 물리 오차를 학습으로 깎는 구조인데, 이런 보정기는 학습 분포 밖의 조작 입력에 무방비일 수 있다. 부수 정보로 Zand 2019 의 하드웨어 플랫폼이 NXP KW38 임을 밝혀 준다. 보안 고려는 없다.",
+      "summary": "imec 의 위상기반 BLE 거리측정 플랫폼(NXP FRDM-KW38, 80 개 ISM 대역 두-방향 IQ 측정 + 초해상 알고리즘, 기기당 수평·수직 안테나 2 개로 4 안테나쌍 결합) 을 보행자 가슴에 달아 산업 실험실 9 m×7 m 영역 앵커 4 대로 두 궤적을 걷게 하고(궤적당 4,496 거리·15 분·44 m), Raspberry Pi 가 ICM-20948 IMU 를 100 Hz 로 읽어 MQTT 로 모으며 mocap 이 100 Hz ground truth 를 준다. 원시 거리 오차는 −1.6/+1.9 m 봉우리의 다봉·우편향 분포(90 % 가 ±3.5 m, 최대 +15 m) 이고, 앵커 다각형 밖(>15 m)·likeliness<0.2 측정을 버리면(9 % 제거) 90 % 가 [−2.9, 3.3] m, 거리·상대방위각·likeliness 를 특징으로 한 SVM 보정 후 [−2.2, 2.2] m·평균 18 cm(원시 50 cm) 가 된다. PDR 을 과정모델, 보정 거리와 GMM 잡음모델을 관측모델로 하는 입자필터(PF-PDR-CGMM) 가 중앙값 0.70 m·p75 1.03 m·p99 1.96 m 로, BLE 거리만 쓴 PF(중앙값 4.50 m, 최대 17 m)·순수 PDR(2.84 m)·가우시안 PF-PDR(1.04/1.42 m) 을 앞선다. 저자 결론: 위상기반 BLE 단독은 보행자 추적에 아직 부족하나 IMU 융합 시 RSS 기반 하이브리드(중앙값 >1 m) 를 능가한다.",
+      "hardware": [
+        "NXP FRDM-KW38 BLE MCU 기반 imec 위상기반 거리측정 플랫폼 (Zand 2019 [5] 에서 개발, Bluetooth 동작을 일시 중단해 반송파 송수신) — 기기당 수평·수직 안테나 2 개, 4 안테나쌍 측정 결합",
+        "앵커 4 대 (3D 프린트 벽 마운트, 약 9 m×7 m 직사각형, 최대 앵커 간 거리 12 m), 그중 1 대 호스트 노트북 연결; 노트북이 코디네이터(연결 개시·IQ 처리) — 거리 갱신률 1–1.5 Hz",
+        "착용 프레임: K'NEX 플라스틱 프레임 + 액션캠 가슴 마운트, 태그·IMU·Raspberry Pi·적외선 mocap 마커 7 개 부착, 태그 안테나 가슴 높이",
+        "IMU: ICM-20948 (OpenLog Artemis 모듈 내장), Raspberry Pi 가 시리얼 100 Hz 로 읽어 Wi-Fi/MQTT 전송, 보조배터리 급전",
+        "ground truth: 모션캡처 시스템 3D 위치·자세 100 Hz (ENU 좌표계)",
+        "실험: 산업 실험실 개방 영역, 1 인 보행, 궤적 2 개, 궤적당 거리 4,496 개·15 분, 궤적 길이 44 m"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "코디네이터 IQ 처리: 초해상 알고리즘 + 신호/잡음 부공간 고유값 분해 (Boer 2020 [7] 방식), 정규화 고유값 최댓값 'likeliness' 출력",
+        "Python + scikit-learn (SVM 거리오차 예측기 K-fold, GMM-EM 잡음모델), Madgwick AHRS, 자력계 보정 [10], SmartPDR 스텝 검출·방향 [11], 스텝 길이 모델 [12], 입자필터",
+        "MQTT 브로커로 IMU·거리·mocap 데이터 수집 (Wi-Fi)",
+        "코드 공개 여부 미기재"
+      ],
+      "software_verified": true,
+      "results": [
+        "원시 위상기반 BLE 거리 오차: 다봉 분포(−1.6 m·+1.9 m 봉우리), 90 % 가 [−3.5, 3.5] m, 0.5 % < −3.5 m, 9.5 % > +3.5 m, 이상치 최대 +15 m (우편향, 착용 UWB-ToF 와 같은 경향)",
+        "전처리(>15 m 폐기 + likeliness<0.2 폐기, 9 % 제거) 후 90 % 가 [−2.9, 3.3] m; SVM 보정(특징: likeliness·참거리·상대방위각) 후 [−2.2, 2.2] m·단봉, 평균 오차 18 cm (원시 50 cm)",
+        "PDR: 스텝 길이 p95 오차 20 cm, 스텝 방향 p95 55° (AHRS yaw 보다 평균 10° 나쁨)",
+        "측위 중앙값/p75: PF(BLE 만) 4.50 m(최대 17 m) · PDR 2.84 m(첫 60 s 는 1.72/2.70 m) · PF-PDR 1.04/1.42 m · PF-PDR-C 0.88/1.36 m · PF-PDR-GMM 0.78/1.14 m · PF-PDR-CGMM 0.70/1.03 m(p99 1.96 m)",
+        "비교 기준 RSS 기반 BLE/PDR 하이브리드 [14]: 중앙값 >1 m·p75 >1.5 m — 보정 없는 PF-PDR 도 소폭 상회"
+      ],
+      "limitations": [
+        "거리오차 예측 모델 학습에 ground truth 필요 (저자 명시 단점)",
+        "위상기반 BLE 단독 PF 는 중앙값 4.50 m 로 보행자 추적 부적합 — 이상치 탐지 없는 단순 PF 만 시험 (저자 명시)",
+        "1 인·1 환경·2 궤적 — 다른 환경·여러 사람·역동적 동작은 향후 과제 (저자 명시)",
+        "한 궤적으로 학습해 다른 궤적으로 평가 — 같은 방·같은 앵커 배치라 일반화 미검증",
+        "보안 고려 없음 — likeliness 게이팅·SVM 보정이 조작 입력에 어떻게 반응하는지는 다루지 않음",
+        "코디네이터(노트북) 중앙 처리 구조 — 태그·앵커는 IQ 만 전송, 상용 CS 의 온칩 추정과 다름"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "zand-2019-ble-pbr",
+        "sheikh-2023-pbr-missing-tones",
+        "boer-2020-pbr-multipath"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "zand-2019-ble-pbr",
+          "type": "extends",
+          "note": "Zand 2019 플랫폼(이동 플랫폼 실험) 을 착용형 보행자 추적으로 넓혀 인체 차폐 아래 거리 오차 분포를 처음 측정 (본문 §I·§III-A 명시)"
+        },
+        {
+          "to": "boer-2020-pbr-multipath",
+          "type": "implements",
+          "note": "Boer 2020 의 초해상·고유값 분해 다중경로 처리를 코디네이터에 구현하고, 그 고유값 최댓값을 'likeliness' 품질 지표로 써서 0.2 미만 측정을 폐기"
+        }
+      ],
+      "added": "2026-09-11",
+      "last_checked": "2026-09-11"
+    },
+    {
+      "id": "giovanelli-2018-rssi-or-tof-ble",
+      "title": "RSSI or Time-of-flight for Bluetooth Low Energy based localization? An experimental evaluation",
+      "authors": [
+        "Davide Giovanelli",
+        "Elisabetta Farella"
+      ],
+      "venue": "WMNC",
+      "venue_full": "2018 11th IFIP Wireless and Mobile Networking Conference (WMNC), Prague, pp. 1–8 (IFIP Open DL pp. 32–39), Sept. 2018 (Fondazione Bruno Kessler)",
+      "tier": "other",
+      "category": "measurement",
+      "year": 2018,
+      "url": "https://ieeexplore.ieee.org/document/8480847/",
+      "preprint": "https://opendl.ifip-tc6.org/db/conf/wmnc/wmnc2018/05_1570454372.pdf",
+      "doi": "10.23919/WMNC.2018.8480847",
+      "topics": [
+        "ble",
+        "rtt",
+        "time-of-flight",
+        "rssi",
+        "t-ifs",
+        "cots",
+        "nrf52840",
+        "open-source",
+        "field-measurement"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS RTT 의 조상 격 실험이다. 규격 수정 없이 BLE 연결 이벤트의 고정 T_IFS(150 µs) 를 이용해 '내 송신 종료 → 상대 응답 첫 심볼 수신' 간격을 nRF52840 의 16 MHz 타이머로 재고 왕복 ToF 를 뽑는다. 내 연구에 쓰이는 지점은 세 가지다. (1) **RTT 의 물리적 한계와 평균화 의존** — 타이머 1 틱 62.5 ns 가 왕복 9.4 m 라, 클럭 드리프트·위상잡음을 디더링 삼아 1,000 샘플(7.5 s) 을 평균해야 RMSE 3–5 m 가 나온다. CS 가 RTT 를 fractional timing·다수 이벤트 평균으로 다듬은 이유가 여기서 보이고, '샘플 수를 줄이면 오차가 어떻게 커지는가' 곡선(100 샘플 이후 포화) 은 RTT 공격에서 필요한 조작 지속 시간을 가늠하게 한다. (2) **응답 지연이 스택 구현에 좌우된다** — 명목 오프셋 199.65 µs 보다 수백 ns 긴 값이 SoC·SDK 조합(nRF52840/S140, nRF52832/S132, TI CC2650) 마다 달라지고 바이너리 스택이라 해석이 불가능하다는 관찰은, T_IFS 를 기준으로 삼는 RTT 에서 응답 시점 조작(릴레이의 응답 단축·지연) 이 정당한 구현 편차와 구분되기 어렵다는 receiver-policy 논점의 근거다. (3) 채널별 RSSI 는 두-경로 반사로 크게 흔들리지만 ToF 는 채널 무관 — CS 가 RSSI 대신 RTT/PBR 을 택한 물리적 이유의 실측 근거. staat-2022·sheikh-2023·kumbul-2025 가 배경으로 인용한다. 보안 고려는 없다.",
+      "summary": "BLE 에서 RSSI 대신 ToF 를 거리 지표로 쓸 수 있는지를 COTS 하드웨어로 검증한다. BLE 연결 이벤트마다 중앙(local) 이 송신을 끝낸 뒤 주변(remote) 이 T_IFS = 150 µs 후 응답하는 규격을 이용해, nRF52840 의 라디오 이벤트가 PPI 로 16 MHz 타이머를 자동 시작·정지하게 하고 t = T_IFS + T_nbit(40 bit 프리앰블+액세스 주소 = 40 µs) + T_D(47.65 µs) + 2·t_OW 로 왕복 ToF 를 얻는다. 1 틱 62.5 ns 가 왕복 9.4 m 라 클럭 비동기 잡음을 디더링으로 삼아 1,000 연결 이벤트를 평균한다. 0.2–20 m 실내·실외 × LoS/NLoS(몸통 30 cm 차폐) 4 조건에서 학습·시험 세트를 다른 날 수집해 로그정규(RSSI)·선형(ToF) 모델로 거리를 맞춘 결과, ToF RMSE 가 모든 학습 조건에서 RSSI 보다 낮고(같은 조건 3.0–4.3 m 대 3.3–4.0 m, 교차 조건 평균 4.4–5.6 m 대 6.3–19.6 m) RSSI 는 NLoS·교차 조건에서 최대 60 m 까지 발산한다. 평균 샘플 100 개(0.75 s) 이후 ToF 오차는 포화하고, RSSI 는 채널(주파수) 에 강하게 종속되지만 ToF 는 그렇지 않다. 측정 오버헤드는 최악 +3.2 µA, 연결을 거리측정만을 위해 열면 1–1.5 mA. ToF 라이브러리를 공개한다.",
+      "hardware": [
+        "Nordic nRF52840 (local = Central, 측정 주체) + nRF52840 (remote = Peripheral, 일반 BLE 비컨 동작) — 라디오 이벤트 → PPI → 16 MHz 타이머 자동 시작/정지",
+        "재현성 시험: nRF52832 (SoftDevice S132 v5.0.0)·Texas Instruments CC2650 (BLE stack v2.2) 를 비컨으로 추가, 동일 모델 여러 개체",
+        "노드를 지상 40 cm 스탠드에 고정, 거리 0.2·0.5·1 m 및 1 m 간격 20 m 까지, 지점당 연결 이벤트 1,000 개 — 별도 ground truth 계측기 없음(거리 지정)",
+        "실내·실외 × LoS/NLoS(사람 몸통이 local 노드 30 cm 앞에 서서 차폐) 4 조건, 학습·시험 세트를 다른 날 2 회 수집"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Nordic SoftDevice S140 v5.0.0-2alpha (nRF52840), S132 v5.0.0 (nRF52832), TI BLE stack v2.2 (CC2650) — Bluetooth 4.0 기능만 사용",
+        "공개 ToF 측정 라이브러리 (bitbucket.org/dgiovane/time_of_flight_ble, 2018-07 접근) — 표준 스택 수정 없음",
+        "MATLAB 으로 시각화·모델 학습(선형회귀)·RMSE 평가; 삼중항(ToF, RSSI, 주파수) 을 텍스트로 PC 전송, CRC 오류 이벤트는 다음 이벤트로 대체"
+      ],
+      "software_verified": true,
+      "results": [
+        "왕복 ToF 명목 오프셋 T_IFS + T_nbit + T_D = 199.65 µs, 1 틱 62.5 ns = 왕복 9.4 m 분해능 — 1,000 샘플 평균(최소 CI 7.5 ms 라 7.5 s) 으로 분해능 확보",
+        "Table I(같은 조건 학습/시험 RMSE, RSSI 대 ToF): 실외 LoS 3.26 대 3.02 m · 실내 LoS 4.01 대 3.48 m · 실외 NLoS 3.25 대 4.31 m · 실내 NLoS 3.64 대 2.89 m; 학습 조건별 4 시험 평균 RMSE 는 ToF 4.40–5.62 m, RSSI 6.26–19.55 m (실내 generic 학습 시 RSSI 19.55 m — 실외 NLoS 시험에서 RMSE 58.91 m 발산)",
+        "평균 샘플 수 의존: 약 70 % 조건에서 평균화로 RMSE ≥1 m 개선, 100 샘플(0.75 s) 이후 추가 개선 없음; RSSI 는 평균화 효과 거의 없음 (단일 샘플 분해능 1 dB ≈ 7.5 cm–1.7 m)",
+        "ToF 선형 모델 기울기가 c 가 아니라 약 180,000 km/s 에 해당 — 원인 미해명(반사 2 차 효과로 추정)",
+        "SoC/SDK 를 바꾸면 오프셋이 수백 ns 달라지되 같은 조합 개체 간에는 안정 — 오프셋을 광고 페이로드로 방송하는 보정 제안",
+        "채널(37 개 데이터 채널) 별 원시값: RSSI 는 채널에 강하게 종속(두-경로 반사), ToF 는 채널 무관 (Fig. 4, 20 m 실외 LoS)",
+        "전력: 타이머 최대 120 µA·듀티 0.0274 → 최악 평균 +3.2 µA; 거리측정 전용 연결 시 1–1.5 mA (빈 패킷 교환 Central 수준)"
+      ],
+      "limitations": [
+        "단일 샘플 분해능 9.4 m — 수백~수천 샘플 평균이 필수라 지연 0.75–7.5 s (저자 명시)",
+        "ToF 단독은 측위에 충분히 신뢰할 수 없고 RSSI 보조 지표로 제안 (저자 결론)",
+        "모델 기울기가 광속과 다른 이유 미해명 (저자 명시)",
+        "SoC·SDK 별 오프셋이 바이너리 스택에 좌우돼 해석 불가, 재현성 평가는 정성적·예비 수준 (저자 명시)",
+        "ground truth 계측기 없이 지정 거리, 1 인 몸통 차폐만의 NLoS, 단일 실내·실외 장소",
+        "보안 고려 없음 — 응답 시점 조작·릴레이는 범위 밖"
+      ],
+      "artifacts": {
+        "code": "https://bitbucket.org/dgiovane/time_of_flight_ble",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-11",
+      "last_checked": "2026-09-11"
     }
   ]
 }
