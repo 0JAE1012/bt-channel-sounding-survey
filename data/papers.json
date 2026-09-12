@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-11",
-  "last_run": "2026-09-11",
+  "updated": "2026-09-12",
+  "last_run": "2026-09-12",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 601,
+  "citation_edges": 624,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -2046,7 +2046,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-12",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -2054,7 +2054,8 @@
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2008-tof-db-attacks",
-        "poturalski-2010-cicada-attack"
+        "poturalski-2010-cicada-attack",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2831,7 +2832,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-12",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2843,7 +2844,8 @@
         "hancke-2005-rfid-db",
         "hancke-2008-tof-db-attacks",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4289,7 +4291,8 @@
         "hancke-2005-rfid-db",
         "hancke-2008-tof-db-attacks",
         "capkun-2005-secure-positioning",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4300,7 +4303,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-12"
     },
     {
       "id": "flury-2010-distance-decreasing",
@@ -4460,7 +4463,8 @@
         "hancke-2008-tof-db-attacks",
         "kuhn-2010-uwb-ir-db",
         "poturalski-2010-cicada-attack",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4471,7 +4475,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-12"
     },
     {
       "id": "schwarzbach-2026-cross-tech-ranging",
@@ -4785,7 +4789,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-12",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
@@ -4794,7 +4798,8 @@
         "poturalski-2011-db-802-15-4a",
         "singh-2021-4z-security-analysis",
         "uwb-sv-2023-ccs",
-        "poturalski-2012-secure-precise-ir-uwb"
+        "poturalski-2012-secure-precise-ir-uwb",
+        "chen-2024-spoofing-evident-uwb-localization"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4875,14 +4880,15 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-12",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
         "kuhn-2010-uwb-ir-db",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5495,7 +5501,8 @@
         "leu-2022-ghost-peak",
         "poturalski-2011-db-802-15-4a",
         "singh-2021-4z-security-analysis",
-        "uwb-sv-2023-ccs"
+        "uwb-sv-2023-ccs",
+        "chen-2024-spoofing-evident-uwb-localization"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5506,7 +5513,7 @@
         }
       ],
       "added": "2026-08-24",
-      "last_checked": "2026-08-24"
+      "last_checked": "2026-09-12"
     },
     {
       "id": "jangid-2026-association-privacy",
@@ -7965,12 +7972,13 @@
         "hancke-2005-rfid-db",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "kuhn-2010-uwb-ir-db",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-12"
     },
     {
       "id": "vanmarter-2023-svr-ble-ranging",
@@ -8415,7 +8423,8 @@
         "hancke-2005-rfid-db",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "kuhn-2010-uwb-ir-db",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8426,7 +8435,7 @@
         }
       ],
       "added": "2026-09-01",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-12"
     },
     {
       "id": "gunia-2026-cs-uwb-rss-positioning",
@@ -9264,7 +9273,7 @@
         "Nils Ole Tippenhauer"
       ],
       "venue": "WPNC",
-      "venue_full": "2010 7th Workshop on Positioning, Navigation and Communication (WPNC 2010), Dresden, pp. 28–37",
+      "venue_full": "2010 7th Workshop on Positioning, Navigation and Communication (WPNC 2010), Dresden, pp. 28–37 — ETH Zürich Communication Technology Lab / System Security Group",
       "tier": "other",
       "year": 2010,
       "url": "https://doi.org/10.1109/WPNC.2010.5653801",
@@ -9281,33 +9290,63 @@
         "uwb"
       ],
       "relevance": "medium",
-      "relevance_note": "prover 의 \"챌린지 수신 → 응답 송신\" 처리지연이 거리 바운딩 보안을 결정한다는 문제를 처음 트랜시버 구조 수준에서 다룬 논문으로, Tippenhauer 2015 구현의 설계 출발점이다. CS 연구에서는 응답기 처리지연을 하드웨어로 얼마나 줄일 수 있는가의 하한 참조로 쓴다 — Tippenhauer 2015 가 인용한 바로는 단일 IC 로 최적화하면 δB ≤ 4 ns(distance fraud 이득 3.6 m, mafia fraud 1.5 m 이내, 10 m 설계 범위)로 추정했다. CS 의 RTT 는 규격이 T_PM 등 µs 급 고정 지연을 두므로 이 하한과의 격차 자체가 협대역 RTT 의 구조적 한계 논거가 된다. 코퍼스 6 건(Anliker 2023, Cremers 2012, Francillon 2011, Nkrow 2024 ×2, Poturalski 2011)이 인용하는 허브 문헌.",
+      "relevance_note": "prover 의 \"챌린지 수신 → 응답 송신\" 처리지연이 거리 바운딩 보안을 결정한다는 문제를 처음 트랜시버 구조 수준에서 다룬 논문으로, Tippenhauer 2015 구현의 설계 출발점이다. CS 연구에서는 응답기 처리지연을 하드웨어로 얼마나 줄일 수 있는가의 하한 참조로 쓴다 — 전문 확인: 단일 IC 로 최적화하면 δB ≤ 4 ns(distance fraud 이득 3.6 m, mafia fraud 1.5 m 이내, 10 m 설계 범위)로 추정했다. CS 의 RTT 는 규격이 T_PM 등 µs 급 고정 지연을 두므로 이 하한과의 격차 자체가 협대역 RTT 의 구조적 한계 논거가 된다. 코퍼스 6 건(Anliker 2023, Cremers 2012, Francillon 2011, Nkrow 2024 ×2, Poturalski 2011)이 인용하는 허브 문헌. 전문에서 확인한 핵심은 유효 거리 상한의 분해식 — 왕복 전파 + forward 심볼 + backward 심볼 + 처리지연 — 이다. CS RTT 에 같은 식을 대입하면 1 µs 심볼(CS_SYNC)이 forward·backward 각각 심볼 한 개분(≈ 150 m)의 ED/LC 이득을 허용한다는 계산이 바로 나오며, SEM 처럼 \"심볼을 짧게\" 가 유일한 근본 대책이라는 결론이 Ranganathan–Čapkun 2017 의 세 요건과 일치한다.",
       "summary": "(초록 기준) 웜홀·릴레이 공격을 막는 거리 바운딩 프로토콜을 UWB 로 저비용 구현하려 할 때, 시간 분해능 못지않게 prover 의 처리지연이 보안을 좌우한다고 지적한다. 기존 UWB 트랜시버는 상당한 처리지연을 더해 보안을 떨어뜨리므로, 들어오는 UWB 펄스를 검출하고 최소 지연으로 응답을 송신하는 새로운 아날로그 UWB 트랜시버 구조를 제안·분석한다.",
       "hardware": [
-        "확인 필요 — 초록만 확인. 아날로그 UWB 트랜시버 구조 제안(구현 여부 미확인)"
+        "해당 없음 — 구현 없는 시스템 개념·해석 논문. 제안 prover 수신기: LNA(20 dB, NF 5 dB) → 대역통과(fc 3.75 GHz, B 500 MHz, 군지연 1.798 ns) → AGC → 제곱기 → 저역통과(fLP 100 MHz, 군지연 1.592 ns) 의 아날로그 에너지 검출(ED) 구조(Table I), XOR 후 즉시 응답",
+        "검증기는 정합필터(MF) 코히런트 수신기 가정; 채널은 AWGN + 자유공간 경로손실(LoS, 출입문 배지 시나리오)",
+        "처리지연 추정 근거는 학생 프로젝트 기술보고서 [18](Schaub·Schulthess, ETH 2009) 의 부품 군지연 조사"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요"
+        "해당 없음 — 해석적 BER/FRR/FAR 계산과 곡선(시뮬레이터명 없음)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "(2 차 출처: Tippenhauer 2015 3.3절) 단일 IC 최적화 시 prover 처리지연 δB ≤ 4 ns 로 추정 → distance fraud 최대 이득 3.6 m, mafia fraud 정확도 1.5 m 이내, 설계 범위 10 m",
-        "초록: 처리지연이 보안을 떨어뜨리는 핵심 요인임을 분석하고 최소 지연 아날로그 검출·응답 구조 제안"
+        "프로토콜: Brands–Chaum 원형을 그대로 쓰되 forward BPPM(Tppm 10 ns, Ts 20 ns)·backward BPSK(Ts 10 ns), R 라운드 응답을 max 함수로 집계, 허용 오류 N 개",
+        "prover 처리지연 Tproc ≈ 3.71 ns(≈ 4 ns) — 대역통과·저역통과 필터 군지연이 지배, 증폭기·제곱기·XOR 은 ps 급",
+        "FCC 준수 PTX = −14.3 dBm 에서 약 15 m 까지 허용 BER; dmax = 10 m 기준 R = 20·N = 0 이면 FRR ≈ 10⁻²·FAR < 10⁻⁶, N = 1 허용 시 FRR ≈ 10⁻⁴·FAR ≈ 2×10⁻⁵",
+        "유효 거리 상한: 왕복 전파 66.67 ns + Ts,f 20 + Ts,b 10 + Tproc 4 = 100.67 ns 판정 창; 릴레이는 원리상 실패, 처리지연 0 인 악의적 prover 는 0.6 m 이득, 이상적 ED/LC 까지 갖추면 34 ns = 5.1 m",
+        "Security Enhanced Modulation(SEM, forward 심볼을 Tppm 10 ns 로 단축): 최악 이득 24 ns = 3.6 m 로 축소; Fig. 8 — 펄스 대역폭 200–1000 MHz 에 따른 최대 거리 이득, SEM 이 BPPM 보다 낮음",
+        "검증기 위장 공격: 공격자가 무작위 챌린지 R 개로 비밀 s 를 캐낼 수 있어 세션당 s 재생성 필요(II-C)"
       ],
       "limitations": [
-        "확인 필요 — 전문 미확보(IEEE 유료, Unpaywall·OpenAlex closed)"
+        "구현·실측 없음 — 처리지연 3.71 ns 는 부품 군지연 합산 추정, 채널은 AWGN/LoS 만(다중경로·NLoS 미고려)",
+        "이상적 ED/LC 공격자에 대해서도 3.6–5.1 m 의 거리 이득이 남음 — 저자는 \"대부분 응용에 충분히 조밀\" 이라 평가",
+        "ED 수신기 임계값은 BPPM 이면 0 으로 고정되나 SEM 은 forward 만 개선, backward BPSK 10 ns 는 그대로",
+        "보안 분석이 mafia·distance fraud 와 ED/LC 에 한정, terrorist fraud·다중 prover 미고려"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-09",
-      "cites": [],
-      "cites_source": "no-fulltext",
-      "relations": [],
+      "last_checked": "2026-09-12",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "clulow-2006-long-symbols",
+        "hancke-2008-tof-db-attacks"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "implements",
+          "note": "원형 DB 프로토콜을 아날로그 UWB IR ED 트랜시버 구조로 옮겨 처리지연·FRR/FAR 을 해석"
+        },
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "defends",
+          "note": "ED/LC 이득을 forward 심볼 단축(SEM 10 ns)으로 5.1 → 3.6 m 로 줄임 — 완전 방어는 아님"
+        },
+        {
+          "to": "tippenhauer-2015-uwb-rapid-bit-exchange",
+          "type": "motivates",
+          "note": "여기서 추정한 ≤ 4 ns 처리지연·3.6 m 이득이 2015 UWB rapid bit exchange 구현의 설계 목표가 됨(2015 논문이 인용)"
+        }
+      ],
       "category": "protocol"
     },
     {
@@ -9320,7 +9359,7 @@
         "Hua Wei"
       ],
       "venue": "J. Phys.: Conf. Ser.",
-      "venue_full": "Journal of Physics: Conference Series, vol. 1971, 012044 (International Conference on Electronic Engineering and Informatics 2021)",
+      "venue_full": "Journal of Physics: Conference Series, vol. 1971, 012044 (EEI 2021 — International Conference on Electronic Engineering and Informatics), CC BY 3.0 — Chengdu Univ. of Information Technology / Chengdu Technological Univ.",
       "tier": "other",
       "year": 2021,
       "url": "https://doi.org/10.1088/1742-6596/1971/1/012044",
@@ -9341,28 +9380,39 @@
       "relevance_note": "CS 채택(2024) 이전에 상용 BLE 칩의 사양 외 위상 거리측정 기능으로 실내 측위를 시도한 기록 — Dialog DA14695 는 Ramachandran 2016 석사논문(DA14681)과 같은 Dialog 계보의 후속 칩이다. Nikodem 2025 와 Sheikh 2023 이 \"BLE 다중반송파 위상 거리측정이 실제로 시도됐다\" 는 근거로 인용한다. CS 연구에서는 CS 이전 BLE PBR 의 성능 수준을 말할 때 인용처로만 쓰고, 수치는 전문 확보 뒤에 채운다.",
       "summary": "(초록 기준) 실내 측위의 비용과 정확도 사이의 모순을 풀기 위해 BLE 위상 거리측정 기반 실내 측위를 제안·시연한다. BLE 다중반송파 위상 거리측정을 Dialog Semiconductor DA14695 BLE 모듈로 실험하고, 선형화한 의사거리 관측식과 최소제곱 추정으로 측위 플랫폼을 구성해 효과를 검증한다. 저자들은 BLE 위상 거리측정 기반 실내 측위가 높은 정확도를 보이며 저전력·저비용 이점으로 실용 가능하다고 결론짓는다.",
       "hardware": [
-        "Dialog Semiconductor DA14695 BLE 모듈 (초록 확인)"
+        "Dialog Semiconductor DA14695 BLE 5.2 모듈(DA1469x, Arm Cortex-M33) — Dialog 의 wireless ranging 응용(톤 스위칭·RF-ADC IQ 로 MCPR)을 2차 개발; 본문은 DA14695/DA14696 표기를 혼용",
+        "측위: 기지국 4 대를 (±3, ±3) m 모서리에 높이 160 cm, 태그 높이 50 cm, 빈 실험동 실내; 거리 실측 0.5–3.5 m 장애물 없음 3 회 반복",
+        "ground truth: 줄자 등 방법 미기재(좌표계 설정값)"
       ],
       "hardware_verified": true,
       "software": [
-        "확인 필요"
+        "자체 측위 코드(언어 미기재) — 선형화 의사거리 관측식 + 최소제곱 + 평활 필터, 출력 60 회",
+        "Dialog 거리측정 펌웨어 — SDK 명·버전 미기재"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "초록은 \"높은 측위 정확도\" 라고만 서술 — 오차 수치 미확인"
+        "Table 1 거리 실측(0.5–3.5 m, 3 회 평균): 0.47/1.00/1.40/1.93/2.43/2.93/3.47 m — 오차 10 cm 이내(최대 −10 cm@1.5 m)",
+        "실험 I 태그 (0,0): 평활 후 원점 주변에 분포, 기지국 거리 실측은 이상치 제외 시 실제 4.24 m 근접, X 오차 0–0.1 m·Y 오차 0–0.2 m",
+        "실험 II 태그 (−1.5,0): 비평활 거리 원시값이 실제 3.35 m·5.4 m 에 근접, X 오차 0–0.25 m·Y 오차 0–0.1 m",
+        "오차 원인은 주변 무선 간섭·거리 데이터 불안정으로 추정(저자)"
       ],
       "limitations": [
-        "확인 필요 — 전문 미확보. OA(CC-BY 3.0)이나 IOP 사이트가 봇 차단(Radware)이고 Wayback 스냅샷 없음"
+        "정지 태그 2 위치·60 회만 실험, 이동 태그는 향후 과제(저자 명시)",
+        "거리 실측이 3.5 m 이내 LoS 뿐이고 통계량(표준편차·CDF) 없이 3 회 평균만 보고",
+        "측정 원리 서술이 Dialog 문서 수준(톤 스위칭·IQ)이며 톤 수·주파수 간격·NADM 류 보안 요소 언급 없음",
+        "SDK·펌웨어 버전·ground truth 방법 미기재"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
+      "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-09",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-09-12",
+      "cites": [
+        "olafsdottir-2017-carrier-phase"
+      ],
+      "cites_source": "fulltext",
       "relations": [],
       "category": "measurement"
     },
@@ -10241,7 +10291,7 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-12",
       "cites": [
         "clulow-2006-long-symbols",
         "rasmussen-2010-rf-distance-bounding",
@@ -10252,7 +10302,8 @@
         "hancke-2008-tof-db-attacks",
         "kuhn-2010-uwb-ir-db",
         "poturalski-2010-cicada-attack",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -10529,56 +10580,63 @@
         "David Chaum"
       ],
       "venue": "EUROCRYPT",
-      "venue_full": "Advances in Cryptology — EUROCRYPT '93 (Lofthus, May 1993), LNCS vol. 765, Springer, pp. 344–359 (1994 출판)",
+      "venue_full": "Advances in Cryptology — EUROCRYPT '93 (Lofthus, May 1993), LNCS vol. 765, Springer, pp. 344–359 (1994 출판; \"Extended abstract\") — CWI Amsterdam / DigiCash",
       "tier": "other",
       "category": "protocol",
       "year": 1993,
       "url": "https://doi.org/10.1007/3-540-48285-7_30",
-      "preprint": null,
+      "preprint": "https://link.springer.com/content/pdf/10.1007/3-540-48285-7_30.pdf",
       "doi": "10.1007/3-540-48285-7_30",
       "topics": [
+        "commitment",
         "distance-bounding",
-        "rapid-bit-exchange",
-        "relay-attack",
-        "mafia-fraud",
         "distance-fraud",
         "foundational",
-        "protocol-design"
+        "mafia-fraud",
+        "protocol-design",
+        "rapid-bit-exchange",
+        "relay-attack",
+        "wallets-with-observers"
       ],
       "tech": [
         "other"
       ],
       "relevance": "medium",
-      "relevance_note": "거리 바운딩 계보의 뿌리로, 코퍼스 29 건(Hancke–Kuhn·Clulow·Rasmussen·Flury·Poturalski·Singh·Leu·Abidin·Staat·Schepers 등)이 첫 문단에서 인용한다. 코퍼스 문헌들이 이 논문에서 가져다 쓰는 것은 세 가지다. (1) 단일 비트 챌린지·응답의 RTT 로 상한 거리를 재고, 라운드마다 공격자의 추측 확률을 1/2 로 묶는 구조 — CS RTT 의 랜덤 CS_SYNC 시퀀스가 하는 일의 프로토콜 원형이다. (2) mafia fraud(중계)와 distance fraud(prover 스스로 가까운 척)를 구분한 위협 분류 — CS 의 릴레이 공격(Staat 2022)과 악의적 reflector 공격을 나누는 어휘가 여기서 나온다. (3) 응답 비트를 미리 커밋하고 사후 서명으로 묶는 '느린 단계 – 빠른 단계' 구조 — CS 가 LL 절차(느림)와 CS 이벤트(빠름)를 분리한 것과 같은 설계 문법이다. 원문은 미확보(Springer 유료, OA 없음) 이므로 아래 서술은 코퍼스 내 2 차 문헌(Avoine 2018 서베이 Algorithm 1, Hancke–Kuhn 2005, Čapkun–Hubaux 2005 Fig. 1)에 근거한다.",
-      "summary": "[2 차 문헌 기준] 검증기와 prover 사이의 물리적 거리 상한을 암호학적으로 증명하는 '거리 바운딩' 개념을 처음 제안한 논문. prover 가 무작위 비트열 m₁…mₙ 에 먼저 커밋하고, 검증기가 무작위 1 비트 챌린지 cᵢ 를 보내면 prover 가 rᵢ = cᵢ ⊕ mᵢ 를 즉시 되돌리는 n 라운드의 빠른 비트 교환을 RTT 로 재어 거리를 상한하며, 끝에 prover 가 챌린지·응답 전체를 서명(또는 MAC)하고 커밋을 열어 정직성을 묶는다. 중계 공격(mafia fraud)과 prover 자신이 가깝다고 속이는 distance fraud 두 위협을 정의했고, 라운드마다 공격자의 응답 추측 확률이 1/2 이라 n 라운드에서 2⁻ⁿ 로 줄어든다. 후속 연구에서 terrorist fraud(white-box) 와 distance hijacking(Cremers 2012)에는 저항하지 못함이 지적되었고, Hancke–Kuhn 2005·Rasmussen–Čapkun 2010·MAD 등이 직접 후손이다(Avoine 2018 Fig. 1).",
+      "relevance_note": "거리 바운딩 계보의 뿌리로, 코퍼스 29 건(Hancke–Kuhn·Clulow·Rasmussen·Flury·Poturalski·Singh·Leu·Abidin·Staat·Schepers 등)이 첫 문단에서 인용한다. 코퍼스 문헌들이 이 논문에서 가져다 쓰는 것은 세 가지다. (1) 단일 비트 챌린지·응답의 RTT 로 상한 거리를 재고, 라운드마다 공격자의 추측 확률을 1/2 로 묶는 구조 — CS RTT 의 랜덤 CS_SYNC 시퀀스가 하는 일의 프로토콜 원형이다. (2) mafia fraud(중계)와 distance fraud(prover 스스로 가까운 척)를 구분한 위협 분류 — CS 의 릴레이 공격(Staat 2022)과 악의적 reflector 공격을 나누는 어휘가 여기서 나온다. (3) 응답 비트를 미리 커밋하고 사후 서명으로 묶는 '느린 단계 – 빠른 단계' 구조 — CS 가 LL 절차(느림)와 CS 이벤트(빠름)를 분리한 것과 같은 설계 문법이다. 원문은 미확보(Springer 유료, OA 없음) 이므로 아래 서술은 코퍼스 내 2 차 문헌(Avoine 2018 서베이 Algorithm 1, Hancke–Kuhn 2005, Čapkun–Hubaux 2005 Fig. 1)에 근거한다. 전문을 확인하니 §2.4 의 첫 해법 — 검증기가 챌린지를 두 이산 시각 중 무작위로 보내 prover 가 응답 시점을 예측 못 하게 하는 것 — 이 CS 의 톤 확장 슬롯 송신 여부 무작위화·DRBG 기반 스텝 타이밍 예측 불가성의 30 년 전 원형이며, 응답을 챌린지에 XOR 로 종속시키는 두 번째 해법이 CS_SYNC 의 random sequence 에 해당한다. 물리 한계는 \"거의 모른다\" 고 저자가 적은 것이 Clulow 2006 이후 계보 전체의 출발점이다.",
+      "summary": "검증기 V 가 증명자 P 까지의 물리적 거리 상한을 얻는 \"distance bounding\" 기법을 처음 제안한 논문. 핵심은 1 비트 챌린지 → 즉시 1 비트 응답을 k 회 반복(rapid bit exchange)하고 최대 지연으로 거리 상한을 계산하는 것이다. §2.3 은 2k 비트 전사를 P 가 서명해 mafia fraud(제3자 중계) 를 막고(성공 확률 ≤ 2^-k), §2.4 는 P 가 응답을 미리 보내는 사기를 막기 위해 V 가 두 이산 시각 중 무작위로 챌린지를 보내거나 응답을 βᵢ = αᵢ ⊕ mᵢ 로 챌린지에 종속시키며, §2.5 가 둘을 합쳐 P 가 mᵢ 에 커밋 → 빠른 교환 → 커밋 개봉 + 서명으로 두 사기를 동시에 막는다. §3 은 Fiat–Shamir·Schnorr 식별 스킴에 서명 없이 통합(XOR 챌린지, 검증기가 스스로 계산 못 하는 정보를 얻지 않음, Proposition 2·3), §4 는 wallets-with-observers 3자 설정에서 관찰자와의 거리 바운딩으로 observer fraud 와 common coinflip 을 막는 프로토콜을 준다. §5 에서 물리 구현·한계는 \"거의 모른다\" 고 실험을 권했고 terrorist fraud 는 미해결로 남겼다.",
       "hardware": [
-        "확인 필요 — 원문 미확보"
+        "해당 없음 — 이론 프로토콜 논문. 실현 가능성 근거로 \"오늘의 전자회로는 수 ns 타이밍을 다루고 빛은 1 ns 에 약 30 cm\", \"50 MHz 클럭 한 주기면 빛이 3 m 왕복\", \"10113 (ECL) 칩의 XOR 게이트 처리량 2 ns\" 를 언급(전문 확인)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 원문 미확보"
+        "해당 없음 — 구현·시뮬레이션 없음(전문 확인)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "[Avoine 2018 Algorithm 1] 설정 단계: prover 가 무작위 비트열에 커밋; 빠른 단계: n 라운드 1 비트 챌린지 cᵢ ∈ {0,1} → 응답 rᵢ = cᵢ ⊕ mᵢ, 라운드마다 타이머 측정; 검증 단계: prover 가 c‖r 을 서명하고 커밋을 개봉",
-        "[Hancke–Kuhn 2005] 공격자의 라운드별 추측 확률 1/2(Hancke–Kuhn 은 3/4 로 비트 수 2 배지만 잡음 채널 재전송·MAC 불필요)",
-        "[Čapkun–Hubaux 2005 Fig. 1] 실용 변형: nonce 커밋, 챌린지 비트 반전 전송, 즉답 N_u ⊕ N_v, 마지막 챌린지 비트~응답 사이 타이머, 이후 MAC_K 로 인증",
-        "[Avoine 2018] mafia fraud 와 distance fraud 를 함께 방어하는 첫 프로토콜; terrorist fraud(white-box)·distance hijacking 에는 비저항"
+        "§2.1 원리: 1 비트 챌린지·즉답 k 회, 최대 지연으로 거리 상한; 근거 수치 — 1 ns ≈ 30 cm, 50 MHz 클럭 한 주기 ≈ 3 m 왕복, XOR 게이트 2 ns",
+        "§2.2 선행 대응책 비판: Desmedt 의 위치 서명(위치 검출·사용자 협조 필요), Beth–Desmedt 의 전송시간 정밀 측정(계산 속도 변동으로 무용), Bengio 의 Faraday 케이지(검증기 신뢰·특수 장비 필요)",
+        "§2.3 mafia fraud 방지(Fig. 2): V 의 αᵢ·P 의 βᵢ 를 미리 생성, 교환 후 2k 비트 연접 m 을 P 가 서명 — Proposition 1: 서명이 안전하고 P 가 멀면 성공 확률 ≤ 1/2^k",
+        "§2.4 응답 조기 송신 방지: (a) V 가 클럭 펄스 3i 또는 3i+1 중 무작위 시각에 송신, 또는 (b) 응답 βᵢ = αᵢ ⊕ mᵢ 로 공개 비트열 m 에 종속 — 각각 ≤ 1/2^k",
+        "§2.5 통합 프로토콜(Fig. 4): P 가 mᵢ 에 커밋 → 교환 βᵢ = αᵢ ⊕ mᵢ → 커밋 개봉 + 2k 비트 서명, 최대 지연으로 상한",
+        "§3 식별 스킴 통합(Fig. 5·7): Fiat–Shamir 병렬판·Schnorr 에 XOR 챌린지로 편입, 검증기는 자기가 계산 못 할 정보를 못 얻음(전사가 서명으로 전용 불가) — Proposition 2(영지식성), Proposition 3(mafia fraud ≤ 1/2^k); 커밋은 P·V 어느 쪽이 해도 무방",
+        "§4 wallets with observers: 관찰자–검증기 거리 상한을 사용자 모듈이 inflow/outflow/common coinflip 없이 보장 — observer fraud 방지",
+        "§5 미해결: 물리 한계·구현 방법을 거의 모르므로 실험 필요; terrorist fraud(원거리 키 보유자 + 근거리 협력자)는 미방어"
       ],
       "limitations": [
-        "원문 미확보 — 서술 전부 코퍼스 내 2 차 문헌(avoine-2018-db-survey·hancke-2005-rfid-db·capkun-2005-secure-positioning) 기준",
-        "물리계층(변조·심볼 길이·ED/LC)은 다루지 않음 — Clulow 2006·Hancke–Kuhn 2008 이 이 공백을 지적",
-        "구현·실험 없음(이론 프로토콜)"
+        "물리계층 전혀 없음 — 변조·심볼 길이·ED/LC·잡음 채널을 다루지 않으며 저자 스스로 \"물리 한계를 거의 모른다\" 고 명시(§5); Clulow 2006·Hancke–Kuhn 2008 이 이 공백을 채움",
+        "terrorist fraud 미방어(§5 명시), distance hijacking(Cremers 2012) 은 당시 개념 없음",
+        "잡음 채널 재전송·비트 오류 허용이 없어 무선 구현에는 Hancke–Kuhn 2005 식 변형이 필요",
+        "구현·실험 없음(이론 프로토콜, \"Extended abstract\")"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-12",
       "cites": [],
-      "cites_source": "no-fulltext",
+      "cites_source": "fulltext",
       "relations": []
     },
     {
@@ -10972,6 +11030,188 @@
       "relations": [],
       "added": "2026-09-11",
       "last_checked": "2026-09-11"
+    },
+    {
+      "id": "chen-2024-spoofing-evident-uwb-localization",
+      "title": "Spoofing Evident and Spoofing Deterrent Localization Using Ultrawideband (UWB) Active–Passive Ranging",
+      "authors": [
+        "Haige Chen",
+        "Ashutosh Dhekne"
+      ],
+      "venue": "IEEE J-ISPIN",
+      "venue_full": "IEEE Journal of Indoor and Seamless Positioning and Navigation, vol. 2, pp. 12–24, 2024 (CC BY 4.0 골드 OA) — Georgia Institute of Technology; IPIN 2023 'UnSpoof' 의 확장판",
+      "tier": "journal",
+      "category": "defense",
+      "year": 2024,
+      "url": "https://doi.org/10.1109/JISPIN.2023.3343336",
+      "preprint": "https://ieeexplore.ieee.org/document/10360231",
+      "doi": "10.1109/jispin.2023.3343336",
+      "topics": [
+        "uwb",
+        "localization",
+        "positioning",
+        "distance-spoofing",
+        "distance-reduction",
+        "distance-enlargement",
+        "verifiable-multilateration",
+        "passive-ranging",
+        "tdoa",
+        "two-way-ranging",
+        "attack-detection",
+        "receiver-policy"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "거리 조작을 물리계층이 아니라 측위 계층의 잔차로 잡는 수신기 정책의 실측 사례다. 태그가 타임스탬프를 거짓 보고해 거리를 줄이거나 늘려도, 능동 앵커 1 대와 표준 TWR 을 엿듣는 수동 앵커들이 ToF·TDoA 를 독립적으로 얻어 범위 원의 불일치(측정 거리 대 사후 거리의 RMSE)를 임계값과 비교해 검출한다. CS 연구에 쓰이는 지점은 셋이다. (1) 거리 잡음 σ = 5 cm 인 링크에서 볼록 껍질 안 축소 15 cm·확대 25 cm 가 검출 한계였고, 임계값을 낮추면 오검출이 늘어난다 — CS 의 거리 σ(수십 cm)를 대입하면 다변측량 잔차로 잡을 수 있는 조작 크기의 하한이 어떻게 커지는지 가늠하는 척도가 된다. (2) 축소가 확대보다 검출하기 쉽고, 앵커 볼록 껍질 밖에서는 DoP 때문에 확대 검출이 무너진다 — Čapkun–Hubaux VM 의 '삼각형 안에서만 안전' 을 실측으로 재확인한 것이며, 앵커 4 대 밀집에서 다변측량 ≈ ML 이던 Kumbul IPIN'25 와 함께 한 앵커 거리 조작이 위치에 그대로 반영되는 조건을 정한다. (3) 조작한 태그의 위치를 태그 보고값 없이 TDoA 로 되짚어(억제) 75 % 50 cm 로 찾는다 — CS 릴레이·응답지연 공격자를 물리적으로 찾는 상위 계층 대응의 참고가 된다. 다만 위협 모델이 내부 공격자(태그가 자기 타임스탬프를 조작)뿐이고 외부 물리계층 공격(Ghost Peak·Cicada 류)은 다루지 않는다.",
+      "summary": "UWB 태그가 능동 앵커 1 대와 표준 TWR 을 수행하는 동안 여러 수동 앵커가 메시지를 엿듣기만 해 자기 ToF 와 TDoA 를 얻는 새 수식을 제안하고(응답시간 설정에 무관하게 σ 5 cm, 기존 수동 TWR 은 설정에 따라 정밀도 변동), 이를 이용해 정직한 태그는 ToF 다변측량으로 측위하며 거짓 타임스탬프를 보고하는 태그는 범위 잔차 임계값으로 검출(spoofing evident)하고 태그 보고값 없이 TDoA 로 위치를 되짚어 검거(spoofing deterrent)하는 UnSpoof 를 구현했다. DWM1000 7 대(능동 앵커 1·수동 앵커 5·태그 1)를 변 2 m 정육각형으로 놓고 13 위치에서 측정 — 정직 태그 ToF 측위 75 % 20 cm(최악 30 cm), TDoA 측위 75 % 50 cm, 볼록 껍질 안에서 축소 15 cm·확대 25 cm 검출, 밖에서는 안으로 들어오려는 축소는 검출되나 확대는 DoP 로 약화. 10×10 m 몬테카를로로 임계값·앵커 기하 영향을 분석했고 시뮬레이션 코드를 공개했다.",
+      "hardware": [
+        "Qorvo/Decawave DWM1000 UWB 모듈 7 대(능동 앵커 1·수동 앵커 5·태그 1), 각각 Cortex-M0 마이크로컨트롤러가 제어(보드명 미기재)",
+        "수동 거리측정 검증(Fig. 3): Decawave DW1000 3 대, 응답시간 D_A 를 바꿔 가며 반복",
+        "Intel i7 Dell 노트북 — 앵커 데이터 중앙 수집·측위",
+        "앵커 배치 정육각형(변 2 m, 면적 10.39 m²), 태그 정지 위치 13 곳(껍질 안 T1–T5·밖 T6–T13), 앵커 위치는 사전 측정(방법 미기재)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자체 펌웨어(표준 TWR 메시지 교환, 언어 미기재)",
+        "MATLAB — 측위 솔버(Levenberg–Marquardt) 및 검출",
+        "몬테카를로 시뮬레이션 코드 공개: github.com/haigeandychen/UnSpoof-Simulation (10×10 m, 거리 σ 5 cm, 임계값·조작거리·앵커 기하 A/B/C)"
+      ],
+      "software_verified": true,
+      "results": [
+        "수동 거리측정 수식 (1): 응답시간 D_A 설정과 무관하게 거리 오차 σ 5 cm; 기존 수동 TWR(Laadung 2020) 은 설정에 따라 정밀도가 크게 변동 — 드리프트 항은 서브피코초로 무시 가능",
+        "정직 태그 ToF 측위(수동 앵커 5): 대부분 위치에서 75 백분위 ≈ 20 cm, 최악 30 cm",
+        "조작 태그 TDoA 측위(태그 보고값 미사용): 대부분 위치 75 백분위 50 cm, DoP 나쁜 위치는 더 나쁨 — 검거 용도로 충분하다고 주장",
+        "수동 앵커 수를 줄이면 ToF·TDoA 모두 정밀도 하락, ToF 쪽 하락폭이 작음",
+        "검출 실측(Fig. 10): 껍질 안 T1–T5 에서 축소 15 cm·확대 25 cm 검출; 껍질 밖 T6–T13 은 안으로 위장하는 축소는 신뢰성 있게 검출, 확대는 범위 원 확장 방향이 일치해(Fig. 13) 검출 어려움",
+        "검출 지표: 측정 거리 벡터와 추정 위치에서 되계산한 사후 거리 벡터의 RMSE 를 임계값과 비교; 임계값이 낮으면 오검출↑, 높으면 검출 영역 축소(Fig. 4·11) — 임계값은 거리측정 기술의 정밀도에 종속",
+        "시뮬레이션: 같은 1 m 조작이라도 축소가 확대보다 검출 영역이 넓음; 앵커 기하 B·C 에서도 껍질 안 검출·축소 우위가 유지"
+      ],
+      "limitations": [
+        "통제된 실험실·단거리·LoS 만, 장거리·NLoS 검증은 제품화 과제로 남김(저자 명시)",
+        "위협 모델이 내부 공격자(태그의 타임스탬프 조작)뿐 — 외부 물리계층 조작(Ghost Peak·Cicada·릴레이)은 범위 밖이며, 조작도 실제 공격 대신 타임스탬프 섭동으로 모사",
+        "실측 앵커 배치는 정육각형 하나, 비정형 배치는 시뮬레이션만",
+        "검출 임계값이 거리 잡음에 종속되어 정밀도 낮은 기술에서는 검출 하한이 커짐; 껍질 밖 확대 검출은 원리적으로 약함",
+        "저자는 Wi-Fi FTM 에도 적용 가능하다고 언급하나 검증 없음"
+      ],
+      "artifacts": {
+        "code": "https://github.com/haigeandychen/UnSpoof-Simulation",
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-12",
+      "last_checked": "2026-09-12",
+      "cites": [
+        "leu-2022-ghost-peak",
+        "singh-2019-uwb-ed",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "capkun-2005-secure-positioning",
+          "type": "extends",
+          "note": "VM 의 '삼각형 안에서는 축소 불가능성만으로 위조 검출' 을 수동 앵커 엿듣기 + 잔차 임계값으로 COTS UWB 에 구현·실측(인용은 JSAC 2006 판) — 축소·확대 검출 한계 15/25 cm 와 껍질 밖 붕괴를 수치로 확인"
+        },
+        {
+          "to": "singh-2019-uwb-ed",
+          "type": "complementary",
+          "note": "UWB-ED 가 단일 링크 물리계층에서 확대를 잡는다면 UnSpoof 는 측위 계층 잔차로 잡음 — 저자가 관련연구에서 대비"
+        }
+      ]
+    },
+    {
+      "id": "tippenhauer-2009-id-based-db",
+      "title": "ID-Based Secure Distance Bounding and Localization",
+      "authors": [
+        "Nils Ole Tippenhauer",
+        "Srdjan Čapkun"
+      ],
+      "venue": "ESORICS",
+      "venue_full": "Computer Security – ESORICS 2009, LNCS 5789, pp. 621–636 — ETH Zürich",
+      "tier": "other",
+      "category": "defense",
+      "year": 2009,
+      "url": "https://doi.org/10.1007/978-3-642-04444-1_38",
+      "preprint": "https://tippenhauer.de/publication/tippenhauer-09-idbased/",
+      "doi": "10.1007/978-3-642-04444-1_38",
+      "topics": [
+        "distance-bounding",
+        "secure-localization",
+        "verifiable-multilateration",
+        "uwb",
+        "cots-ranging",
+        "implementation",
+        "early-detect-late-commit",
+        "aggregation",
+        "moving-target"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "'챌린지 비트를 실을 수 없는 상용 거리측정 장치 위에 어떻게 거리 바운딩을 얹는가' 에 대한 최초의 답이다 — 매 라운드 검증기가 비밀 ID 열의 진짜 ID 또는 무작위 ID 에 거리를 묻고 정직한 prover 만 진짜 ID 에 응답하므로, 응답 여부 자체가 1 비트 챌린지-응답이 되어 라운드당 공격 성공률 1/2 을 얻는다. CS 연구에 쓰이는 지점은 셋이다. (1) CS 도 PHY 를 바꿀 수 없는 상용 칩 위에서 RTT 를 재는 구조라, 프로토콜 계층에서 무작위성을 주입하는 이 발상은 CS 절차 수준 대응(어느 채널·어느 스텝에 응답할지)을 설계할 때의 원형이다. (2) 거리 바운딩이 요구하는 '최대값 집계' 가 잡음 많은 링크에서 오차를 3 배로 키우고, 중앙값은 절반 미만 오염에 면역이라는 실측은 CS 다중 스텝 거리 결과를 어떻게 합칠지(receiver-policy)의 근거다. (3) 검증기 3 대와 순차 측정으로 VM 을 처음 구현하면서 드러난 이동 표적 공격(측정 사이에 표적을 옮김)과 무작위 순서·칼만 추적 대응은, CS 앵커 여러 대와 순차 절차로 위치를 검증할 때 그대로 재현되는 문제다. 다만 구현은 prover 를 신뢰하는 '인증된 거리측정' 이고 56 µs 패킷의 ESLC 는 방어하지 못한다고 저자가 밝힌다.",
+      "summary": "상용 UWB 거리측정 장치(MSSI, 6.1–6.6 GHz)처럼 챌린지를 실을 수도 XOR 을 계산할 수도 없는 플랫폼에서 안전한 거리 바운딩을 구현하는 ID 기반 프로토콜을 제안했다. A·B 가 공유 키에서 ID 열을 유도하고, 라운드마다 A 가 확률 1/2 로 진짜 ID_i 또는 무작위 ID 에 거리를 물어 정직한 B 만 ID_i 에 응답하게 하며, 유효 측정의 최대값을 거리 상한으로 삼는다(라운드당 공격 성공 1/2, 통신 오버헤드 ≈ 20 %). PC 가 시리얼로 제어하는 MSSI 장치 2 대로 구현해 LoS·NLoS 각 1000 회(≤ 40 m)를 측정했고(라운드 ≈ 20 ms, 측정당 ≈ 40 ms), 같은 프로토콜로 검증기 3 대의 Verifiable Multilateration 을 최초로 RF ToA 에 구현해 집계 함수(최대·중앙·평균)의 정확도-보안 상충과 이동 표적 공격·무작위 순서 대응을 다뤘다.",
+      "hardware": [
+        "Multispectral Solutions (MSSI) 상용 UWB 거리측정 장치 — 6.1–6.6 GHz, 시리얼 명령으로 거리 측정, 16 비트 ID 변경 가능, 패킷 길이 56 µs; 거리 바운딩 2 대, VM 은 검증기 3 + 대상 1",
+        "장치 제어 PC(시리얼), PC 간 프로토콜 메시지는 IEEE 802.11 TCP/IP",
+        "실험 환경: 실외 LoS·실내 사무실 NLoS, 5–40 m, 각 1000 회; VM 은 검증기–대상 10–20 m"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자체 제어 프로그램(초기 인증·키 설정·ID 변경·라운드 동기, 언어 미기재)",
+        "MATLAB — 참고문헌 [17] 로 인용, 구체 용도는 본문에 미기재"
+      ],
+      "software_verified": true,
+      "results": [
+        "보안: 외부 공격자·부정직 B 모두 라운드당 1/2 확률로만 축소 가능, b 라운드 후 2^-b; 선제 챌린지 공격은 ID 변경–측정 간 < 20 ms 에 ≤ 400 (< 2^9) ID 조회 가능해 라운드당 상한 2^-7",
+        "통신 비용: 기존 UWB 는 ≈ 10 바이트 프리앰블이 필수라 16 비트 ID 를 실어도 Brands–Chaum 대비 ≈ 20 % 오버헤드",
+        "구현 속도: 라운드 ≈ 20 ms(시리얼 지연), 측정당 평균 ≈ 40 ms(라운드의 50 % 만 측정) vs 비보안 거리측정 16 회/53 ms",
+        "Table 1 (1000 회): LoS σ 9.0–10.2 cm, 평균 오차 −5.0 cm(5 m) → +44 cm(35 m), 최대−d 9–66 cm, 40 m 에서 +290/304 cm; NLoS σ 8.6–19.5 cm(35 m 253 cm), 평균 오차 41–240 cm, 최대−d 57–722 cm — 최대값 집계는 NLoS 에서 수 m 상한",
+        "ESLC: 56 µs 패킷의 조기 송신·후속 완성 공격은 불완전 패킷 감시로 막고 나면 신호 길이 절반 이득만 남음(Clulow 2006 인용)",
+        "VM 집계: 10 라운드 이상이면 최대값 집계의 누적 제곱 오차가 중앙값·평균의 3 배; 중앙값은 50 % 미만 오염에 면역, 평균은 한 라운드 오염에도 흔들림(Fig. 6a 영향-검출확률 상충)",
+        "이동 표적: 10 라운드 × 3 검증기 ≈ 600 ms 라 2.78 m/s 표적이 1.5 m 이동; 순차 VM 에서 측정 사이 표적을 옮기는 공격 가능 → 검증기 순서 무작위화 + 칼만 예측 잔차 임계값으로 대응"
+      ],
+      "limitations": [
+        "구현은 B 를 신뢰하는 '인증된 거리측정(trusting DB)' — 부정직 prover 에 대한 완전한 거리 바운딩은 분석만",
+        "MSSI 시리얼 인터페이스가 느려 라운드 20 ms·측정 40 ms, 실시간 이동 표적에는 불리",
+        "56 µs 패킷 수준 ESLC 와 신호 수준 조기 검출은 하드웨어 변경 없이는 남음(저자 명시)",
+        "최대값 집계가 잡음·NLoS 에서 상한을 크게 부풀림, 중앙값은 보안 가정(오염 < 50 %) 필요",
+        "키 설정·측면 채널은 범위 밖"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-12",
+      "last_checked": "2026-09-12",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "clulow-2006-long-symbols",
+        "hancke-2008-tof-db-attacks"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "extends",
+          "note": "챌린지 비트를 XOR 하는 대신 '어느 ID 에 묻는가/응답하는가' 로 1 비트 챌린지-응답을 상용 거리측정 명령만으로 구현"
+        },
+        {
+          "to": "capkun-2005-secure-positioning",
+          "type": "implements",
+          "note": "Verifiable Multilateration 을 RF ToA 상용 UWB 장치 3 대로 처음 구현(인용은 JSAC 2006 판), 집계 함수·이동 표적 공격까지 실측"
+        },
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "defends",
+          "note": "56 µs 패킷의 ESLC 를 불완전 패킷 감시로 완화하되 신호 수준 이득은 남는다고 인정"
+        }
+      ]
     }
   ]
 }

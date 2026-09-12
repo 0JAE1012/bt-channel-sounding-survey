@@ -1,6 +1,6 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-30",
+  "updated": "2026-09-12",
   "standards": [
     {
       "id": "bt-core-6-0",
@@ -167,7 +167,7 @@
       "title": "IEEE 802.15.4ab — Next Generation UWB",
       "body": "IEEE",
       "kind": "standard",
-      "date": "초안 D04, SA 투표 단계 (LMSC 조건부 승인 2026-02)",
+      "date": "초안 D04, SA 투표 단계 — 초기 SA 투표 2026-02-03~03-06 찬성 81 %(의견 386건, 미처리 76건), SA 재순환 투표 진행 중(2026-09-14 마감 예정), PAR 만료 2027-12-31 (2026-09-12 확인)",
       "status": "in-progress",
       "url": "https://standards.ieee.org/ieee/802.15.4ab/10694/",
       "relevance": "medium",
@@ -344,6 +344,26 @@
       ],
       "notes_for_research": "CS 공격/방어를 UWB 계보에 잇는 실험 도구. 핵심 매핑은 dwt_readstsquality(STS 품질) ↔ CS NADM(NCC/PMSE/DFT)로, 둘 다 인증된 earliest-path 존재가 아니라 파형 일치도에 의존한다. anliker-2023이 dwt_readstsquality를, anliker-2026이 NADM을 우회한 것이 같은 구조의 실패이며, 이것이 seo-2026과 anliker-2026을 잇는 축이다. 대역폭 차이(UWB ch5/9 ~500 MHz vs CS 협대역)가 fhss-tracking-is-the-real-barrier 인사이트의 배경.",
       "added": "2026-08-03"
+    },
+    {
+      "id": "bt-cs-tech-overview",
+      "title": "Bluetooth® Channel Sounding: A Technical Overview (Martin Woolley, Bluetooth SIG)",
+      "body": "Bluetooth SIG",
+      "kind": "reference",
+      "date": "Version 1.0, 2024-07-09 표기 — 그러나 본문에 Core 6.2 진폭 공격 내성·6.3 Inline PCT 절(3.15)이 포함되어 있어 페이지가 제자리 갱신됨 (2026-09-12 확인)",
+      "status": "reference",
+      "url": "https://www.bluetooth.com/channel-sounding-tech-overview/",
+      "relevance": "high",
+      "summary": "SIG 가 공식으로 낸 CS 기술 개요 문서. 코퍼스 논문들이 [Woolley 2024] 로 인용하는 그 문서다. 아키텍처(Host/Controller·HCI·LL 절차), 이벤트–서브이벤트–스텝 구조, 모드 0–3, 위상차 산출, 안테나 스위칭, 채널 선택, RTT 옵션(Access Address·32/96 비트 sounding sequence·32/64/96/128 비트 random sequence 와 fractional timing estimate), LE 2M 2BT PHY, SNR 제어(SOI 0–4 = 18–30 dB), 보안(3.13: PBR–RTT 교차검증, CS_IV/CS_IN/CS_PV → DRBG 로 매 스텝 Access Address·random sequence·sounding sequence 마커(0b1100/0b0011)·톤 확장 슬롯 송신 여부·안테나 경로 순서를 무작위화, NADM 0x00–0x06/0xFF 표, 2BT 로 짧은 펄스, CS 보안 수준 4 단계), 그리고 3.15 에 6.2 의 DFT 기반 진폭 NADM 과 6.3 의 Inline PCT 를 요약한다.",
+      "key_sections": [
+        "3.10 RTT Options and Accuracy — RTT_Type 별 ToA 산출 방법과 fractional timing estimate (LL Part H 3.3·3.4)",
+        "3.12 SNR Control — SOI 0–4 ↔ 18/21/24/27/30 dB, 모드 1·3 CS_Sync 에만 적용",
+        "3.13 Security — 3.13.2 PBR–RTT 교차검증 논리, 3.13.4 DRBG 가 무작위화하는 다섯 요소, 3.13.5 sounding sequence 의 두 톤으로 단일 패킷 PBR+RTT, 3.13.6 NADM 표, 3.13.7 LE 2M 2BT, 3.13.8 SNR 제어와 RTT 보안, 3.13.11 진폭 기반 공격 내성",
+        "3.15 Enhancements — 3.15.1 6.2 DFT 기반 진폭 NADM(심볼 주파수·고조파 에너지), 3.15.2 6.3 Inline PCT",
+        "4. Core Specification 변경 요약 — Host/Controller/HCI 명령 목록"
+      ],
+      "notes_for_research": "SIG 가 CS 보안을 어떻게 '주장' 하는지를 한 문서에서 확인할 수 있는 1차 출처다. 특히 (1) 3.13.2 가 'PBR 과 RTT 를 동시에 일관되게 조작하는 복잡도가 매우 높다고 보안 전문가들이 본다' 고 쓴 문장은 Anliker 2026 등이 반박하는 바로 그 전제라 인용 대상이 된다. (2) 3.13.4 의 DRBG 무작위화 다섯 요소(Access Address·random sequence·sounding sequence 마커·톤 확장 슬롯·안테나 경로)는 공격자가 예측할 수 없다고 가정된 것들의 목록이므로, 각 항목에 대해 '예측 없이도 되는 공격'(ED/LC·릴레이·진폭 조작)과 '예측이 필요한 공격' 을 나눠 위협 모델을 정리할 때 체크리스트가 된다. (3) 3.13.8 SNR 제어의 근거 서술('잡음을 섞어 공격자 분석을 느리게 한다')은 정량 근거가 없어, SNR 제어가 실제로 ED/LC 성공률을 얼마나 낮추는지가 열린 질문이다. (4) 문서가 Version 1.0·2024-07-09 를 유지한 채 6.2·6.3 내용을 덧붙이므로 인용 시 접근일을 반드시 적을 것 — 논문들이 인용한 2024 판에는 3.15 가 없었을 가능성이 크다. 로컬 텍스트 사본은 .cache/txt/bt-cs-tech-overview.txt.",
+      "added": "2026-09-12"
     }
   ]
 }
