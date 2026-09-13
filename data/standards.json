@@ -1,6 +1,6 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-12",
+  "updated": "2026-09-13",
   "standards": [
     {
       "id": "bt-core-6-0",
@@ -186,11 +186,11 @@
       "title": "CCC Digital Key Release 3.x / 4.x",
       "body": "Car Connectivity Consortium",
       "kind": "industry-spec",
-      "date": "3.0: 2021 / 4.0: 2024 / V3.1.4 · V4.1.0 배포 중 (2026-08-30 확인)",
+      "date": "3.0: 2021 / 4.0: 2024 / V3.1.4 · V4.1.0 배포 중 (2026-09-13 확인)",
       "status": "adopted",
       "url": "https://carconnectivity.org/digital-key/",
       "relevance": "high",
-      "summary": "차량 디지털 키 표준. R3.0에서 UWB 기반 보안 측위를 도입했다. CS는 이 영역에 대한 BLE 네이티브 대안으로 포지셔닝된다. 2026-08 현재 CCC 사양 다운로드 페이지는 V3.1.4 와 V4.1.0 을 제공하며(신청 양식 필요), 2026-06 Plugfest #18(DEKRA Lausitzring) 에서 Version 4 상호운용성·인증 시험을 진행했다.",
+      "summary": "차량 디지털 키 표준. R3.0에서 UWB 기반 보안 측위를 도입했다. CS는 이 영역에 대한 BLE 네이티브 대안으로 포지셔닝된다. 2026-08 현재 CCC 사양 다운로드 페이지는 V3.1.4 와 V4.1.0 을 제공하며(신청 양식 필요), 2026-06 Plugfest #18(DEKRA Lausitzring) 에서 Version 4 상호운용성·인증 시험을 진행했고, 2026-09-07~10 Plugfest #19(Ningbo, Geely 주최) 에서 Version 3·4 구현 상호운용 시험에 BLE 스니핑 시험과 BLE·UWB 시험장비 제공사 참여를 포함했다(Apple·Ellisys·COMPRION·DEKRA·VW China 등 참가).",
       "key_sections": [
         "보안 측위 요구사항",
         "릴레이 공격 대응 요구사항",
