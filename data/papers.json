@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-14",
-  "last_run": "2026-09-14",
+  "updated": "2026-09-16",
+  "last_run": "2026-09-16",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 717,
+  "citation_edges": 740,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -775,7 +775,7 @@
       },
       "verification": "partial",
       "added": "2026-07-28",
-      "last_checked": "2026-08-26",
+      "last_checked": "2026-09-16",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [],
@@ -832,7 +832,7 @@
       },
       "verification": "partial",
       "added": "2026-07-28",
-      "last_checked": "2026-09-13",
+      "last_checked": "2026-09-16",
       "cites": [
         "boer-2020-pbr-multipath",
         "santra-2024-cs-indoor",
@@ -3074,7 +3074,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-09-14",
+      "last_checked": "2026-09-16",
       "cites": [
         "pelka-2014-phase-multi-frequency"
       ],
@@ -3134,7 +3134,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-09-13",
+      "last_checked": "2026-09-16",
       "cites": [
         "boer-2020-pbr-multipath",
         "eriksson-2024-cs-multipath-poster",
@@ -3559,7 +3559,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-03",
-      "last_checked": "2026-09-13"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "antonijevic-2026-secure-wifi-ranging",
@@ -3634,7 +3634,9 @@
       "verification": "verified",
       "cites": [
         "schepers-2021-ftm-security",
-        "leu-2021-multicarrier-tof"
+        "leu-2021-multicarrier-tof",
+        "kosek-szott-2026-wifi-ftm-survey",
+        "singh-2023-wifi-ftm-iot-benchmark"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3645,7 +3647,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-08-27"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "leu-2021-multicarrier-tof",
@@ -4567,12 +4569,13 @@
       },
       "verification": "verified",
       "cites": [
-        "suresh-2025-cs-vehicle-access"
+        "suresh-2025-cs-vehicle-access",
+        "kosek-szott-2026-wifi-ftm-survey"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-15",
-      "last_checked": "2026-08-15"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "riaz-2022-pbr-multipath-security",
@@ -5459,7 +5462,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-24",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "gou-2024-uwb-channel-reciprocity",
@@ -6301,11 +6304,13 @@
         "dataset": null
       },
       "verification": "verified",
-      "cites": [],
+      "cites": [
+        "kosek-szott-2026-wifi-ftm-survey"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "lyu-2026-radiorange",
@@ -6444,11 +6449,13 @@
         "dataset": null
       },
       "verification": "verified",
-      "cites": [],
+      "cites": [
+        "singh-2023-wifi-ftm-iot-benchmark"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "zand-2019-concurrent-pbr",
@@ -6515,7 +6522,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-13"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "wu-2026-cs-twr-phase-offset",
@@ -6835,7 +6842,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "xie-2026-multipath-toa-binary-ambiguity",
@@ -6908,7 +6915,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "nie-2025-ransac-root-music-cs",
@@ -7040,7 +7047,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-13"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "fujii-2025-pbr-indoor-experimental",
@@ -7101,7 +7108,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-13"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "kumbul-2025-ble-localization-ranging-methods",
@@ -7258,7 +7265,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "rashidi-2025-ble-uwb-positioning-survey",
@@ -7448,7 +7455,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-13"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "nikodem-2025-mcpd-ble",
@@ -8219,7 +8226,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-13"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "stanciu-2021-narrowband-distance",
@@ -8282,7 +8289,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "bintariq-2024-dl-ble-ranging",
@@ -8687,7 +8694,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-02",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "vonzengen-2016-no-cost-distance",
@@ -9744,7 +9751,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-06",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "zhang-2025-uwbad-plus",
@@ -9819,7 +9826,7 @@
         }
       ],
       "added": "2026-09-06",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "kansanen-2025-bayesian-phase",
@@ -9985,7 +9992,7 @@
         }
       ],
       "added": "2026-09-07",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "komma-2025-puf-ofdm-secure-ranging",
@@ -10113,7 +10120,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-07",
-      "last_checked": "2026-09-14"
+      "last_checked": "2026-09-16"
     },
     {
       "id": "bedin-2026-mm-carrier-phase-multiband",
@@ -10820,7 +10827,7 @@
       },
       "verification": "partial",
       "added": "2026-09-08",
-      "last_checked": "2026-09-13",
+      "last_checked": "2026-09-16",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": []
@@ -11625,6 +11632,382 @@
       "last_checked": "2026-09-14",
       "cites": [],
       "cites_source": "no-fulltext",
+      "relations": []
+    },
+    {
+      "id": "glass-2010-toa-ranging-insecurity-80211",
+      "title": "The Insecurity of Time-of-Arrival Distance-Ranging in IEEE 802.11 Wireless Networks",
+      "authors": [
+        "Steve Glass",
+        "Vallipuram Muthukkumarasamy",
+        "Marius Portmann"
+      ],
+      "venue": "ICDCS Workshops",
+      "venue_full": "2010 IEEE 30th International Conference on Distributed Computing Systems Workshops (ICDCSW 2010), Genoa, pp. 227–233 — NICTA Queensland Research Laboratory · Griffith University · University of Queensland (7쪽, Griffith Research Online 저자 사본)",
+      "tier": "other",
+      "category": "attack",
+      "year": 2010,
+      "url": "https://ieeexplore.ieee.org/document/5628770",
+      "preprint": "http://hdl.handle.net/10072/39007",
+      "doi": "10.1109/ICDCSW.2010.59",
+      "topics": [
+        "wifi-toa-ranging",
+        "rtt",
+        "reply-delay-manipulation",
+        "sifs",
+        "distance-reduction",
+        "distance-enlargement",
+        "man-in-the-middle",
+        "wormhole",
+        "802-11v-tmf",
+        "authenticated-ack"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS RTT 의 **반사기(reflector) 응답 지연 조작** 문제를 2010년에 802.11 에서 그대로 정식화한 논문이다. 2-way ToA(DATA/ACK 왕복) 에서 대상 국이 SIFS 를 δ 만큼 앞당기거나 늦추면 보고 거리가 v·δ/2 로 바뀐다 — 1 µs 가 약 150 m 이고, 실제 Atheros 카드에서 SIFS 를 6.75 µs 까지 낮춰 약 750 m 가까이 보이게 했다. CS 의 RTT 는 reflector 가 T_IFS 뒤에 CS_SYNC 를 되돌려 주는 구조라 '응답 시각을 상대가 정한다' 는 점이 같고, 저자가 도출한 조건 — 필요조건 = 대상이 정직할 것, 충분조건 = 시간 측정 대상 교환 전체가 인증되고 적시(timely)일 것 — 은 CS 가 보안 모드(DRBG 랜덤 CS_SYNC·PBR–RTT 교차검증)로 채우려는 빈칸을 정확히 가리킨다. 또 802.11v TMF(처리 지연 보정값)를 평문으로 보내면 MITM 이 보정값을 고쳐 거리를 조작할 수 있다는 지적은, CS 의 T_IFS·처리지연 보정 파라미터가 어느 계층에서 보호되는지 확인해야 하는 이유가 된다. 제안 대응책(ACK 인증으로 MITM/웜홀에 '전부 중계' 를 강제해 추가 지연을 드러냄)은 CS SYNC 랜덤 시퀀스 검증의 조상격 논리다. Kosek-Szott 2026 서베이가 FTM 보안 계보의 출발점으로 이 논문을 두고 Schepers 2021 이 이를 FTM 에서 구체화했다고 적는다(Schepers 원문에는 인용 없음).",
+      "summary": "IEEE 802.11 MANET·메시망에서 쓰이는 2-way ToA 거리측정(DATA/ACK, RTS/CTS/DATA/ACK 4-way 포함)이 비적대 환경을 전제한다는 점을 지적하고, 대상 국이 WNIC 의 SIFS 레지스터를 조정해 보고 거리를 임의로 줄이거나 늘리는 공격을 상용 하드웨어로 실증한다. 식 (4) d = v(t_rx − t_tx − t_p − SIFS + δ)/2 에서 δ = −1 µs 가 약 150 m 축소다. FullMAC 설계의 드라이버가 SIFS 타이머를 노출하므로 구현은 드라이버 수정만으로 된다. 실험은 Atheros AR5213A 기반 메시 라우터·클라이언트와 PRISM II·AR5213A 모니터 2대를 3 m 안에 두고 iperf 트래픽을 tcpdump 로 잡아 SIFS 기대값 대 관측값을 비교했다(66만 회 교환). 관측 SIFS 는 기대값보다 평균 2–3 µs 크고, 최저 평균 6.75 µs 까지 낮출 수 있어 약 750 m 가까이 보이게 할 수 있으며, 4 µs 아래로는 수신→송신 전환 한계로 더 줄지 않는다. 부산물로 상용 WNIC 타임스탬프의 한계(MadWiFi-NG 65–75 ms 점프, ath5k 1/63 µs 이봉 분포, PRISM II 프레임 길이 오류 1608/17008)를 정리한다. 결론은 2-way·4-way ToA 는 보안 프리미티브로 부적합하며, 안전 사용의 필요조건은 대상의 정직, 충분조건은 교환 전체의 인증·적시성이라는 것이다. 802.11v TMF 도 평문이라 MITM 이 보정값을 조작할 수 있다고 지적하고, ACK 인증을 대응책으로 제안한다(향후 연구).",
+      "hardware": [
+        "무선 메시 라우터: 1.6 GHz AMD Sempron, Atheros AR5213A 802.11abg WNIC ×2",
+        "무선 메시 클라이언트: Atheros AR5213A 802.11bg WNIC ×1 (공격 대상, SIFS 조정)",
+        "모니터 1: IBM T22 노트북 + Intersil PRISM II 802.11b WNIC (수신 감도·프레임 시작 타임스탬프 목적)",
+        "모니터 2: Lenovo T61p 노트북 + Atheros AR5213A WNIC (MadWiFi-NG / ath5k 이중 캡처)",
+        "외장 저이득(약 5 dB) 수평 무지향 안테나, 전 장비 실험실 3 m 이내, 802.11b 5.5 Mb/s, RTS/CTS 보호"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "GNU/Linux 커스텀 커널 2.6.30.4 (draft IEEE 802.11s 메시 지원) — 메시 라우터·클라이언트",
+        "수정한 ath5k 드라이버: sysfs 로 하드웨어 SIFS 레지스터 조정, 802.11b 모드 고정, 하드웨어 리셋 후 SIFS 값 복원",
+        "HostAP 드라이버 (PRISM II), MadWiFi-NG (커널 2.6.24) — 모니터 스테이션",
+        "iperf (트래픽 생성), tcpdump 모니터 모드 캡처, Wireshark (프레임 길이 오류 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "SIFS 조정 δ = −1 µs → 보고 거리 약 150 m 축소, +1 µs → 같은 폭 확대 (식 4; v ≈ 2.998×10⁸ m/s)",
+        "관측 SIFS 는 기대값보다 평균 2–3 µs 큼; 최저 평균 SIFS 6.75 µs(정상 대비 −5.25 µs) → 약 750 m 가까이 보이게 가능; SIFS 설정 4 µs 아래로는 수신→송신 전환 최소시간 때문에 더 줄지 않음 (그림 3)",
+        "Golden–Bateman 보고 인용: 시험 하드웨어의 ACK 가 SIFS 만료 후 2–3 µs 뒤 생성 → 300–450 m 오차 가능",
+        "DATA/ACK 교환 663,349 회 중 573 회(0.086 %)가 '점프 타임스탬프' 로 필터됨; MadWiFi-NG 타임스탬프가 가끔 65–75 ms 점프(TSF 확장 버그 추정)",
+        "ath5k 타임스탬프는 SIFS 가 1 µs 또는 63 µs 로 이봉 분포·425 ms 이상치 — 2-way ToA 에 부적합; PRISM II 는 17,008 회 4-way 교환 중 1,608 회에 프레임 길이 오류(1500 옥텟 초과로 팽창)",
+        "타이밍 보정 표 I: SIFS 평균 MadWiFi-NG 10.55 µs / PRISM II 10.56 µs / ath5k 214.77 µs / PRISM II 10.5 µs (802.11b 공칭 10 µs)",
+        "결론: 2-way·4-way ToA 는 대상의 정직한 협력을 전제하므로 위치 기반 인증·보안 측위 프리미티브로 부적합; 802.11v TMF 보정값도 평문이라 MITM/웜홀이 수정 가능"
+      ],
+      "limitations": [
+        "802.11b 5.5 Mb/s·실험실 3 m 이내 단일 링크 실험 — 실제 거리·다중경로 환경 없음",
+        "상용 WNIC 타임스탬프 해상도 1 µs(≈300 m) 라 거리측정 자체가 조잡; 공격 효과는 SIFS 조정량으로만 측정",
+        "공격은 WNIC 가 SIFS 레지스터를 노출하는 FullMAC 설계를 전제 (저자: 일반적으로 성립하나 설계 의존)",
+        "대응책(ACK 인증 MAC 수정)은 제안만 하고 구현·평가 없음, 향후 연구로 남김; TSC 기반 타임스탬핑도 미완",
+        "FTM(802.11-2016) 이전 논문 — TMF(802.11v 초안) 기준 논의"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-16",
+      "last_checked": "2026-09-16",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "clulow-2006-long-symbols",
+        "hancke-2008-tof-db-attacks"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "complementary",
+          "note": "Clulow 는 PHY 계층(심볼 조기 판정·지연 커밋)에서, Glass 는 MAC 계층(응답 지연 SIFS 조작)에서 ToA 거리 축소가 가능함을 보인다 — 같은 문제의 다른 계층. Glass 가 관련 연구에서 Clulow·Hancke 를 인용"
+        }
+      ]
+    },
+    {
+      "id": "kosek-szott-2026-wifi-ftm-survey",
+      "title": "Indoor Positioning with Wi-Fi Location: A Survey of IEEE 802.11mc/az/bk Fine Timing Measurement Research",
+      "authors": [
+        "Katarzyna Kosek-Szott",
+        "Szymon Szott",
+        "Wojciech Ciezobka",
+        "Maksymilian Wojnar",
+        "Krzysztof Rusek",
+        "Jonathan Segev"
+      ],
+      "venue": "Computer Communications",
+      "venue_full": "Computer Communications, vol. 247, art. 108400 (2026-02; 온라인 2025-12-12); arXiv:2509.03901 [cs.NI] 2025-09-04 (36쪽) — AGH University of Krakow · Intel",
+      "tier": "journal",
+      "category": "survey",
+      "year": 2026,
+      "url": "https://doi.org/10.1016/j.comcom.2025.108400",
+      "preprint": "https://arxiv.org/abs/2509.03901",
+      "doi": "10.1016/j.comcom.2025.108400",
+      "topics": [
+        "wifi-ftm",
+        "802-11mc",
+        "802-11az",
+        "802-11bk",
+        "survey",
+        "ftm-security",
+        "secure-ltf",
+        "narrowband-ranging",
+        "datasets",
+        "ml-ranging"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "medium",
+      "relevance_note": "Wi-Fi FTM 연구 약 180편을 정리한 서베이인데 CS 연구에 쓰이는 대목은 넷이다. (1) §7·§8 이 FTM 보안 문헌(Glass 2010 → Schepers 2021/2022 → Singh 2023)과 **IEEE 802.11 TGaz 의 보안 설계 문서** — Abramovsky 'Secured location threat model'(17/0120), Wang–Want 'Relay threat model'(17/1118), Lindskog 'CP replay attack protection'(17/1372), Tian·Batra·Shellhammer 의 secure LTF 설계(20/0836·20/1855·20/1863) — 를 mentor 링크째 모아 두어, CS 보안 모드(DRBG 랜덤 CS_SYNC·NADM)와 802.11az secure LTF 를 설계 수준에서 비교할 때 바로 쓸 참고 목록이 된다. (2) Table 12 가 FTM 공격을 거리 축소·확대(응답 스푸핑·세션/단일 응답 재생)·MAC 주소 추적으로 정리하고 Fig. 12 로 time-advance 공격을 그린다 — CS RTT 위협 목록과 1:1 로 대응시켜 빈칸을 찾을 수 있다. (3) §11.4 가 '협대역 위상기반(BLE, Zand 2019 인용) 대 광대역 첫경로 ToF 의 성능 비교' 를 미해결 연구 과제로 명시한다 — 내 연구가 답하려는 질문이 Wi-Fi 쪽에서도 열려 있다는 근거. (4) Table 2 가 UWB / BTCS / 802.11 을 대역폭(40×2 MHz)·PSD(17 dBm/MHz)·잡음 바닥(−111 dBm)·LOS 정확도(BTCS 1–2 m, 11az 0.4 m, 11bk <0.1 m)·범위(10 m) 로 비교하는데, BTCS 값은 2차 출처[211] 라 코퍼스의 실측(Wieme·Dzafic: 수십 cm) 보다 보수적이다 — 인용 시 그 점을 밝혀야 한다.",
+      "summary": "IEEE 802.11mc FTM 과 후속 802.11az(2022)·802.11bk(2025) 기반 실내 측위 연구를 튜토리얼과 함께 약 180편 리뷰한 서베이다. 연구 질문 다섯 축 — 실제 정확도(§3), 정확도 개선(거리측정·측위, §4), 타 기술 융합(RSS·온보드 센서·핑거프린팅, §5), 응용(§6), 보안(§7) — 으로 문헌을 표로 비교하고, 802.11az 의 진화(트리거/비트리거·수동 거리측정·NDP·160 MHz·secure LTF)와 802.11bk 320 MHz 를 §8 에서 설명한다. §9 데이터셋·시뮬레이터, §10 서지 통계에 이어 §11 은 열린 과제로 프라이버시·보안(Cicada·ED/LC 류 물리계층 공격이 FTM 에도 해당, 802.11bh/bi), 펑처링, 협대역 위상기반 대 광대역 ToF 비교, 통신 서비스 활용, 잔여 주파수 오프셋(3-way 소딩)을 든다. 결론은 네 가지 성능 과제(환경·기기별 보정, NLOS, 밀집 오버헤드, 프라이버시·보안)와 두 공백(802.11az/bk 실측 부족, 데이터셋 부족), 세 기회(mmWave, ML, 6 GHz 실내 판정) 로 요약된다.",
+      "hardware": [
+        "없음 — 문헌 서베이 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "없음 — 문헌 서베이; §9 에 FTM 시뮬레이터·데이터셋 링크 목록 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "약 180편을 5개 연구 질문(정확도 실측·개선·융합·응용·보안)으로 분류, 각 절에 표 비교 (Table 3~12)",
+        "보안(§7, Table 12): 학술 문헌 6편 — Banin 2019(수동 거리측정으로 프라이버시), Schepers 2021(거리 축소·확대: 응답 스푸핑·세션/단일 응답 재생, 대응 = 랜덤 지연·RTT 암호화·인증·MAC 랜덤화 카운터 리셋), Schepers–Ranganathan 2022(MAC 랜덤화 누출·시퀀스 번호 부채널·FTM 파라미터 지문), Mohsen 2023, [178] 2023, Singh 2023(WPA3/PMF·PN 검사·재키잉·MFA 권고)",
+        "802.11az 보안: TGaz 위협모델(도청자가 다중 FTM 교환의 차분 ToA 로 다변측위, 스푸퍼의 time-advance 공격 Fig. 12), secure LTF(Qualcomm·Apple 2020 설계 문서) 와 프레임 보호로 대응",
+        "Table 2 (출처 [211]): BTCS 40×2 MHz · 2 Mb/s · PSD 17 dBm/MHz · 잡음바닥 −111 dBm · LOS 정확도 1–2 m · LOS 범위 10 m · 데이터/거리측정 공존 = 선점 — vs UWB <0.1 m·<15 m, 802.11az 0.4 m / 11bk <0.1 m·50 m+",
+        "§11.4: 협대역 위상기반(BLE CS·802.11bp 2 MHz 채널) 대 광대역 첫경로 ToF 의 성능 비교를 미해결 과제로 제시; §11.6: 20 ppm 발진기 → 최대 30 cm 오차, 3-way 소딩 제안",
+        "결론: 성능 과제 4개(보정·NLOS·밀집 오버헤드·프라이버시/보안), 공백 2개(11az/bk 실측·데이터셋), 기회 3개(mmWave·ML·6 GHz 실내 판정)"
+      ],
+      "limitations": [
+        "BTCS 비교표 값이 2차 출처[211] 기반 — 코퍼스 실측(수십 cm)보다 보수적이므로 원출처를 따로 대조해야 함",
+        "보안 절이 FTM 학술 문헌 6편 수준으로 얕고 2026년 논문(antonijevic-2026 등)은 미포함 (arXiv 2025-09 기준)",
+        "802.11az/bk 실측 연구 부족을 스스로 공백으로 지적 — 표의 정확도 값 상당수가 시뮬레이션·초기 실측",
+        "CS 는 비교표·§11.4 에서만 언급, CS 보안 논의 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-16",
+      "last_checked": "2026-09-16",
+      "cites": [
+        "glass-2010-toa-ranging-insecurity-80211",
+        "poturalski-2010-cicada-attack",
+        "zand-2019-ble-pbr",
+        "schepers-2021-ftm-security",
+        "singh-2023-wifi-ftm-iot-benchmark"
+      ],
+      "cites_source": "fulltext",
+      "relations": []
+    },
+    {
+      "id": "sartayeva-2023-indoor-positioning-security-survey",
+      "title": "A Survey on Indoor Positioning Security and Privacy",
+      "authors": [
+        "Yerkezhan Sartayeva",
+        "Henry C. B. Chan"
+      ],
+      "venue": "Computers & Security",
+      "venue_full": "Computers & Security, vol. 131, art. 103293 (2023-08) — The Hong Kong Polytechnic University; 저자 최종본 42쪽 (PolyU IRA hdl 10397/99765)",
+      "tier": "journal",
+      "category": "survey",
+      "year": 2023,
+      "url": "https://doi.org/10.1016/j.cose.2023.103293",
+      "preprint": "http://hdl.handle.net/10397/99765",
+      "doi": "10.1016/j.cose.2023.103293",
+      "topics": [
+        "indoor-positioning",
+        "security-survey",
+        "privacy",
+        "relay",
+        "distance-estimation-attack",
+        "distance-bounding",
+        "fingerprinting",
+        "collaborative-positioning",
+        "contact-tracing",
+        "ble-beacon"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스의 거리 조작 공격을 **측위 시스템 전체의 위협 지도** 안에 놓아 주는 서베이다. 측위 방법을 비협력(근접·기하·핑거프린팅)·협력·기타로 나누고 단계별 흐름도(Figure 4·9·10·12)에 공격 지점을 표시하는데, 거리 기반 방법의 핵심 위협을 '거리 추정 공격 = compromised ranging' 하나로 묶고 Tippenhauer 2015 의 prover/verifier 용어로 목록화한 뒤 relay 는 기술 공통, DB 는 물리계층 구현이라 하드웨어 종속이어서 접근성이 낮다고 정리한다(ToF 는 RSS 와 달리 증폭 공격에 내성 — Avoine 2018; TWR 은 내장 DB 가 있으나 확장성 때문에 ToA 로 옮겨가 DB 를 잃는다 — Leu 2020; STS·CS 가 802.15.4z 에 들어감 — Stocker 2020). §6.4 가 '하드웨어 비종속 거리 검증 기법' 을 미해결 과제로 지목하는데, 스마트폰 상용 칩에 내장된 CS 보안 모드가 바로 그 답이 될 수 있는지가 내 연구의 시스템 구성(system-composition) 축 질문이다. BLE 를 221회 언급하지만 전부 RSSI 근접·비컨 하이재킹(사례 3.1.1)·접촉추적 프라이버시이고 CS 는 없다 — 2023년 시점에 'BLE = 거리측정 불가' 로 보던 인식을 보여 주는 대조군. singh-2019-uwb-pr·leu-2020-mtac·clulow-2006·tippenhauer-2015·ranganathan-2017·avoine-2018·cremers-2012·schepers-2021·olafsdottir-2017·brands-1993 열 편을 인용하는 허브라 인용 그래프의 연결도 좋아진다.",
+      "summary": "PRISMA 체계적 검색과 표적 검색으로 실내 측위 방법 자체의 보안·프라이버시를 다룬 문헌을 모아, 측위 방법을 비협력(근접 기반·기하·핑거프린팅)·협력(모바일 근접·모바일 기하)·기타로 분류하고 방법마다 개요와 위협·대응을 정리한 42쪽 서베이다. 동기 사례로 BLE 비컨을 뒤섞은 병원 자산 측위 하이재킹, 접촉추적 비익명화, 쇼핑몰 Wi-Fi 핑거프린트 평문 전송을 든다. 기하 방법의 위협으로 참조 노드 공격·재생·재밍·거리 추정 공격을 다루고, DB(Brands–Chaum 원형 소개)·MTAC·STS/CS·TWR 내장 DB 를 대응으로 설명한다. 핑거프린팅은 DB 프라이버시(동형암호·PIR 등) 문헌이 대부분임을 보이고, 협력 측위는 거리 행렬 구성 공격·악성 노드 문제가 열려 있다고 본다. 표 4·5 로 기밀성(사용자 위치·DB 프라이버시)·무결성 이슈를 요약하고, §6 에서 정확도–프라이버시 트레이드오프, 저사양 노드용 경량 기법, 하드웨어 비종속 거리 검증, 협력 측위 보안, 메타버스·양자를 향후 과제로 든다.",
+      "hardware": [
+        "없음 — 문헌 서베이 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "없음 — 문헌 서베이 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "분류: 비협력(근접·기하·핑거프린팅)·협력(모바일 근접·모바일 기하)·기타; 각 방법의 흐름도에 공격 단계 표기 (Figure 4·9·10·12)",
+        "거리 추정 공격을 'compromised ranging' 으로 통합하고 Tippenhauer 2015 prover/verifier 용어로 목록화; relay 는 기술 공통(RFID/NFC 특히 취약, Tu–Piramuthu 2020), 대응은 주변 조건 비교와 DB",
+        "기술별 내성: ToF 는 증폭 공격에 내성·RSS 는 아님(Avoine 2018); TWR 은 내장 DB 지만 확장성 때문에 ToA 로 이동(Leu 2020); 802.15.4z STS/CS(Stocker 2020); Wi-Fi FTM 은 Schepers 2021 권고",
+        "핑거프린팅 보안·프라이버시 문헌이 다수 — 서버로부터 사용자 위치 은닉(동형암호·PIR·차분 프라이버시), DB 오염 방어(인증)",
+        "협력 측위: 거리 행렬 구성 공격·악성 노드(앵커 등록 없음) 문제, 이상 탐지 기반 블랙리스트 제안 — 연구 부족",
+        "향후 과제 §6: 정확도–프라이버시 최적화, 저사양 노드용 경량 기법, 하드웨어 비종속 거리 검증(DB 접근성), 설계 단계 보안, 메타버스·양자"
+      ],
+      "limitations": [
+        "2023년 서베이라 Bluetooth CS(2024)·802.11az 보안 파형 미포함; BLE 는 RSSI 근접·비컨 관점만",
+        "물리계층 거리 공격(ED/LC·Cicada·ghost peak) 은 요약 수준 — 기술별 깊이는 avoine-2018·코퍼스 원논문이 필요",
+        "체계적 검색 결과의 편수·연도 분포는 본문 표 위주라 재사용 시 원문 표를 직접 대조해야 함"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-16",
+      "last_checked": "2026-09-16",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "clulow-2006-long-symbols",
+        "cremers-2012-distance-hijacking",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "olafsdottir-2017-carrier-phase",
+        "ranganathan-2017-are-we-really-close",
+        "avoine-2018-db-survey",
+        "singh-2019-uwb-pr",
+        "leu-2020-mtac",
+        "schepers-2021-ftm-security"
+      ],
+      "cites_source": "fulltext",
+      "relations": []
+    },
+    {
+      "id": "singh-2023-wifi-ftm-iot-benchmark",
+      "title": "Benchmarking and Security Considerations of Wi-Fi FTM for Ranging in IoT Devices",
+      "authors": [
+        "Govind Singh",
+        "Anshul Pandey",
+        "Monika Prakash",
+        "Martin Andreoni",
+        "Michael Baddeley"
+      ],
+      "venue": "CPS-IoT Week Workshops",
+      "venue_full": "Proceedings of Cyber-Physical Systems and Internet of Things Week 2023 (CPS-IoT Week '23 Workshops), San Antonio, ACM, pp. 67–71, 2023-05-09; arXiv:2303.03766 (2023-03-07) — Technology Innovation Institute (UAE)",
+      "tier": "other",
+      "category": "measurement",
+      "year": 2023,
+      "url": "https://doi.org/10.1145/3576914.3587520",
+      "preprint": "https://arxiv.org/abs/2303.03766",
+      "doi": "10.1145/3576914.3587520",
+      "topics": [
+        "wifi-ftm",
+        "802-11mc",
+        "rtt",
+        "commercial-hardware",
+        "esp32",
+        "benchmark",
+        "replay",
+        "location-tracking",
+        "ftm-security"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "low",
+      "relevance_note": "상용 Wi-Fi FTM 칩셋 3종(Qualcomm WCN3990·QCA4019, Espressif ESP32-S2)의 거리측정 실측과 위협–완화 표(Table 3) 를 5쪽에 담은 워크숍 논문으로, CS 연구에서는 **비교군의 상용 기준값과 위협 어휘** 로만 쓴다. 수치는 VHT80(5 GHz) 이면 실내 0.5–1.5 m·실외 ~10 m 전 구간에서 sub-m 이고 HT20 은 근거리 실내에서 부진하다는 것 — CS 가 2 MHz 채널 40개(80 MHz 등가) 로 얻는 정확도와 대역폭 대비로 놓을 수 있다. 보안은 분석만인데, 'FTM 은 요청–응답이라 응답기 무결성에 의존하고 비연관 모드에서는 제어 프레임이 미보호' 라는 진단과 대응(WPA3/WPA2+PMF 연관 모드·LMAC PN 검사·재키잉·MFA) 은 CS 가 '반사기 신뢰' 문제를 링크 계층 암호와 랜덤 CS_SYNC 로 푸는 구조와 대비된다. Kosek-Szott 2026 서베이와 antonijevic-2026·rajendran-2025 가 인용한다.",
+      "summary": "IEEE 802.11mc FTM(Wi-Fi RTT) 의 원리(단일·버스트 모드, 4 타임스탬프 식)와 정확도 요인(대역폭 2배 → 오차 절반, 2×2 안테나 약 30 % 개선, 다중경로, 송신전력, 타임스탬핑 해상도) 을 정리한 뒤, 상용 칩셋 3종을 세 구성 — Google Pixel 4a(WCN3990) ↔ Google Wi-Fi Mesh AP(QCA4019) VHT80 native, FeatherS2 NEO(ESP32-S2) 두 대 HT20 native, WCN3990 HT20 Wi-Fi Aware — 로 실내(0.5–1.5 m)·실외(~10 m) 에서 380 ms 간격 25 s 표본으로 벤치마크한다. VHT80 은 전 거리에서 sub-m·작은 표준편차, HT20 칩은 근거리 실내에서 부정확(수신 감도 원인 추정)했다. 보안 절은 FTM 제어 프레임이 기본 미보호라 위치 추적·재생·불량 장치·권한 상승 위협이 있다고 보고 Table 3 에 완화책(WPA3/WPA2+PMF, LMAC PN 검사, 연관 모드 재키잉, MFA, 비연관 모드 MAC 랜덤화)을 대응시킨다.",
+      "hardware": [
+        "Google Pixel 4a (Qualcomm WCN3990) — 개시자; Wi-Fi Aware(NAN) 모드로 HT20 개시·응답 겸용",
+        "Google Wi-Fi Mesh AP (Qualcomm QCA4019) — VHT80 5 GHz 응답기",
+        "Unexpected Maker FeatherS2 NEO (ESP32-S2) ×2 — HT20 2.4 GHz 개시·응답 'native' 모드",
+        "실내 0.5 / 1.0 / 1.5 m, 실외 3 / 5 / 10 m; 표본 간격 380 ms, 25 s"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Espressif esp-idf `examples/wifi/ftm` (ESP32-S2 FTM 개시·응답)",
+        "Android Wi-Fi Aware / Wi-Fi RTT API (Pixel 4a) — 앱 이름 미기재; AOSP 거리측정 프레임워크 언급"
+      ],
+      "software_verified": true,
+      "results": [
+        "구성 1 (WCN3990 ↔ QCA4019, VHT80): 실내·실외 전 거리에서 sub-m 정확도, 작은 표준편차 (그림 3c·3d)",
+        "구성 2·3 (ESP32-S2 HT20, WCN3990 HT20): 근거리 실내(0.5–1.5 m) 에서 추정 거리가 크게 벗어남 — 저자는 HT20 장치의 낮은 수신 감도를 원인으로 추정; 실외 장거리에서는 상대적으로 양호",
+        "Table 1 정확도 요인: 6/5 GHz > 2.4 GHz, 대역폭 2배 → 오차 약 절반(20/40/80/160 MHz), 2×2 안테나 약 30 % 개선, 1 ns 지연 ≈ 30 cm",
+        "Table 3 위협–완화: 위치 추적 ↔ WPA3/WPA2+PMF(802.11w); 재생 ↔ LMAC PN 검사; 불량 장치 탐지 ↔ 연관 모드 재키잉; 권한 상승 ↔ MFA; 비연관 모드 ↔ MAC 랜덤화"
+      ],
+      "limitations": [
+        "5쪽 워크숍 논문 — 거리 지점 6개, 결과는 그림으로만 제시돼 수치 재사용 제한적",
+        "보안은 분석·권고 수준, 공격 실험 없음",
+        "ESP32-S2 와 WCN3990 만 개시·응답 겸용이라 구성 간 조건이 다름(대역·모드가 동시에 바뀜)",
+        "다중경로·NLOS 조건 통제 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-16",
+      "last_checked": "2026-09-16",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": []
+    },
+    {
+      "id": "fan-2026-wifi-rtt-enterprise-wlan",
+      "title": "WiP: Meter-Level Wi-Fi RTT Localization on a Production Enterprise WLAN",
+      "authors": [
+        "Enguang Fan",
+        "Binh Minh Tran",
+        "Klara Nahrstedt"
+      ],
+      "venue": "MobiCom (WiP)",
+      "venue_full": "ACM MobiCom '26 Work-in-Progress, Austin, 2026-10-26~30, 3쪽, CC BY 4.0; arXiv:2609.13795 [cs.NI] 2026-09-12 — University of Illinois Urbana-Champaign",
+      "tier": "wireless",
+      "category": "measurement",
+      "year": 2026,
+      "url": "https://doi.org/10.1145/3795866.3844758",
+      "preprint": "https://arxiv.org/abs/2609.13795",
+      "doi": "10.1145/3795866.3844758",
+      "topics": [
+        "wifi-ftm",
+        "rtt",
+        "enterprise-wlan",
+        "smartphone",
+        "indoor-positioning",
+        "nlos",
+        "multipath",
+        "calibration",
+        "commercial-hardware"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "low",
+      "relevance_note": "Wi-Fi RTT 를 측위용으로 배치하지 않은 **운영 중인 캠퍼스 WLAN** 에서 상용 스마트폰으로 실측한 3쪽 WiP 로, CS 연구에서는 '스마트폰 + 기존 인프라' 관점의 비교군이다(xu-2026-cs-beyond-proximity-ipin 이 CS 쪽에서 같은 질문을 던지는 것으로 보임). 쓸 대목은 둘이다. 첫째, AP 별 잔차가 크기와 부호가 달라(드라이월 NLOS 는 양의 편이, 화이트보드 반사는 분산 확대) 단일 전역 보정으로는 부족하고 AP 인지 보정이 필요하다는 결론 — CS 의 장치별 오프셋·자세 의존성(Wieme 2025·Dzafic 2026)과 같은 구조의 문제다. 둘째, AP 가 비컨에 FTM 응답 능력을 광고하지 않아도 스캔 메타데이터로 응답기 정보를 직접 넣어 2-sided FTM 요청을 보내면 응답한다는 관찰 — '광고되지 않은 거리측정 능력을 클라이언트가 강제로 쓸 수 있다' 는 점은 CS 에서 CS 기능 비트·보안 수준 협상이 어떻게 강제되는지 확인할 때 대비할 사례다. 보안 내용은 없다.",
+      "summary": "커버리지·용량 기준으로 배치된 운영 중 캠퍼스 WLAN(IllinoisNet, Aruba AP-635)에서 AP 교체·재배치·거리측정 보정 없이 Wi-Fi RTT 측위가 되는지를 본다. 50 m × 30 m 사무실 층 10개 정적 지점에서 상용 Android 폰 5대를 삼각대 1.25 m 에 올려 30 s 씩(지점당 50회) 보이는 AP 전부와 FTM 을 돌렸고, 2.4 GHz 20 MHz 채널 3개와 5 GHz 80 MHz 채널군 5개가 섞인 26,054 스캔 관측을 다뤘다. AP 가 FTM 응답 능력을 비컨에 광고하지 않지만 스캔 결과의 응답기 정보로 2-sided FTM 요청을 만들면 응답한다. RSSI 가중 비선형 최소제곱으로 중앙값 1.21 m·90 % 2.68 m(RSSI 다변측위 기준선 3.17 / 5.60 m)를 얻었다. 잔차 분석에서 드라이월 NLOS 는 잔차를 양으로 편이시키고 화이트보드 근처는 분산과 양의 이상치를 키우며 AP 마다 크기가 달라, 단일 전역 보정 대신 AP 인지 소프트웨어 보정을 향후 과제로 든다.",
+      "hardware": [
+        "Aruba AP-635 (IllinoisNet 캠퍼스 WLAN, 컨트롤러가 2.4/5 GHz 채널 동적 배정) — AP 교체·재배치 없음",
+        "Google Pixel 4a / 6a / 7 / 7a, Samsung Galaxy S21 — 삼각대 높이 1.25 m",
+        "실험장: 50 m × 30 m 사무실 층 한쪽 날개(건물 층 105 m × 62 m), 정적 지점 10개, LOS·NLOS(드라이월)·다중경로(화이트보드·금속 캐비닛)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Android FTM 2-sided 요청을 스캔 메타데이터의 응답기 정보로 직접 구성하는 수집 앱 (이름 미기재)",
+        "RSSI 가중 비선형 최소제곱 측위(식 1), RSSI 로그거리 경로손실 다변측위 기준선"
+      ],
+      "software_verified": true,
+      "results": [
+        "측위 오차 중앙값 1.21 m · 90 % 2.68 m (RTT) vs 3.17 m · 5.60 m (RSSI 다변측위) — 10개 지점 CDF (그림 4)",
+        "스캔 관측 26,054건: 2.4 GHz ch 6/11 (20 MHz) 각 13 % 대, 5 GHz 80 MHz 채널군 42/58/106/122/155 각 10–15 % (Table 1)",
+        "지점당 30 s·50회 측정, 폰 5대 × 보이는 AP 전부",
+        "잔차: 드라이월 1·2벽 NLOS 는 양의 편이, 화이트보드 근처는 분산 확대·양의 이상치; AP 마다 크기·부호 다름 (그림 3)",
+        "FTM 미광고 AP 도 스캔 정보로 만든 2-sided FTM 요청에 응답 — AP 펌웨어·설정 변경 없음"
+      ],
+      "limitations": [
+        "3쪽 WiP — 정적 지점 10개, 단일 층, 이동 시나리오 없음",
+        "AP 좌표를 수작업 측량 — 자동 AP 위치 추정은 향후 과제",
+        "AP 인지 보정은 제안만, 구현·평가 없음",
+        "보안·프라이버시 논의 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-09-16",
+      "last_checked": "2026-09-16",
+      "cites": [],
+      "cites_source": "fulltext",
       "relations": []
     }
   ]
