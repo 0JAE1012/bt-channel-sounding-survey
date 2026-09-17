@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-16",
-  "last_run": "2026-09-16",
+  "updated": "2026-09-17",
+  "last_run": "2026-09-17",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 740,
+  "citation_edges": 767,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -83,7 +83,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-11",
+      "last_checked": "2026-09-17",
       "cites": [
         "abidin-2021-narrowband-ranging",
         "clulow-2006-long-symbols",
@@ -98,7 +98,8 @@
         "zand-2019-ble-pbr",
         "ranganathan-2017-are-we-really-close",
         "brands-1993-distance-bounding",
-        "giovanelli-2018-rssi-or-tof-ble"
+        "giovanelli-2018-rssi-or-tof-ble",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -362,7 +363,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-17",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -377,7 +378,9 @@
         "capkun-2005-secure-positioning",
         "vasisht-2016-chronos",
         "ranganathan-2017-are-we-really-close",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "kim-2008-swiss-knife-db",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -832,7 +835,7 @@
       },
       "verification": "partial",
       "added": "2026-07-28",
-      "last_checked": "2026-09-16",
+      "last_checked": "2026-09-17",
       "cites": [
         "boer-2020-pbr-multipath",
         "santra-2024-cs-indoor",
@@ -1552,7 +1555,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-17",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1568,7 +1571,8 @@
         "poturalski-2010-cicada-attack",
         "capkun-2005-secure-positioning",
         "vasisht-2016-chronos",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "kim-2008-swiss-knife-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2839,7 +2843,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-09-12",
+      "last_checked": "2026-09-17",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2852,7 +2856,8 @@
         "hancke-2008-tof-db-attacks",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "brands-1993-distance-bounding",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "kim-2008-swiss-knife-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3134,7 +3139,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-09-16",
+      "last_checked": "2026-09-17",
       "cites": [
         "boer-2020-pbr-multipath",
         "eriksson-2024-cs-multipath-poster",
@@ -4398,7 +4403,9 @@
         "clulow-2006-long-symbols",
         "hancke-2005-rfid-db",
         "hancke-2008-tof-db-attacks",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "kim-2008-swiss-knife-db",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4409,7 +4416,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "poturalski-2011-db-802-15-4a",
@@ -4485,7 +4492,9 @@
         "kuhn-2010-uwb-ir-db",
         "poturalski-2010-cicada-attack",
         "brands-1993-distance-bounding",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "kim-2008-swiss-knife-db",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4496,7 +4505,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-12"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "schwarzbach-2026-cross-tech-ranging",
@@ -4980,12 +4989,14 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-17",
       "cites": [
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
         "kuhn-2010-uwb-ir-db",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "kim-2008-swiss-knife-db",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5462,7 +5473,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-24",
-      "last_checked": "2026-09-16"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "gou-2024-uwb-channel-reciprocity",
@@ -6234,12 +6245,13 @@
         "francillon-2011-pkes-relay",
         "joo-2020-hodor",
         "olafsdottir-2017-carrier-phase",
-        "ranganathan-2017-are-we-really-close"
+        "ranganathan-2017-are-we-really-close",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "bonczyk-2026-learning-phase-estimation",
@@ -6249,14 +6261,14 @@
         "Jakub Nikonowicz",
         "Łukasz Matuszewski"
       ],
-      "venue": "arXiv",
-      "venue_full": "arXiv:2606.11332v2 [eess.SP], 2026-06-09 (v2 2026-08-18), Poznan University of Technology — 16쪽, Elsevier 투고 양식",
-      "tier": "preprint",
+      "venue": "Physical Communication",
+      "venue_full": "Physical Communication (Elsevier), art. no. 103382, online 2026-09-15 (권·호 미배정) — Poznan University of Technology; arXiv:2606.11332v2 [eess.SP] 2026-06-09/08-18 저자판 16쪽 기준으로 전문 확인, 게재판은 유료(OA 아님)",
+      "tier": "journal",
       "category": "estimation",
       "year": 2026,
-      "url": "https://arxiv.org/abs/2606.11332",
+      "url": "https://doi.org/10.1016/j.phycom.2026.103382",
       "preprint": "https://arxiv.org/abs/2606.11332",
-      "doi": null,
+      "doi": "10.1016/j.phycom.2026.103382",
       "topics": [
         "carrier-phase-ranging",
         "multicarrier-phase",
@@ -6310,7 +6322,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-16"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "lyu-2026-radiorange",
@@ -8065,12 +8077,13 @@
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "kuhn-2010-uwb-ir-db",
         "brands-1993-distance-bounding",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "kim-2008-swiss-knife-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-12"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "vanmarter-2023-svr-ble-ranging",
@@ -8453,12 +8466,14 @@
         "francillon-2011-pkes-relay",
         "hancke-2005-rfid-db",
         "hancke-2008-tof-db-attacks",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "kim-2008-swiss-knife-db",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-01",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -8528,7 +8543,8 @@
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "kuhn-2010-uwb-ir-db",
         "brands-1993-distance-bounding",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "kim-2008-swiss-knife-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8539,7 +8555,7 @@
         }
       ],
       "added": "2026-09-01",
-      "last_checked": "2026-09-12"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "gunia-2026-cs-uwb-rss-positioning",
@@ -9244,10 +9260,11 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-05",
+      "last_checked": "2026-09-17",
       "cites": [
         "clulow-2006-long-symbols",
-        "hancke-2005-rfid-db"
+        "hancke-2005-rfid-db",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9337,7 +9354,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-17",
       "cites": [
         "clulow-2006-long-symbols",
         "cremers-2012-distance-hijacking",
@@ -9348,7 +9365,9 @@
         "ranganathan-2012-chirp-attacks",
         "rasmussen-2010-rf-distance-bounding",
         "poturalski-2012-secure-precise-ir-uwb",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "kim-2008-swiss-knife-db",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9751,7 +9770,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-06",
-      "last_checked": "2026-09-16"
+      "last_checked": "2026-09-17"
     },
     {
       "id": "zhang-2025-uwbad-plus",
@@ -10425,7 +10444,7 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-12",
+      "last_checked": "2026-09-17",
       "cites": [
         "clulow-2006-long-symbols",
         "rasmussen-2010-rf-distance-bounding",
@@ -10437,7 +10456,9 @@
         "kuhn-2010-uwb-ir-db",
         "poturalski-2010-cicada-attack",
         "brands-1993-distance-bounding",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "kim-2008-swiss-knife-db",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11321,12 +11342,13 @@
       },
       "verification": "verified",
       "added": "2026-09-12",
-      "last_checked": "2026-09-12",
+      "last_checked": "2026-09-17",
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
         "clulow-2006-long-symbols",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "reid-2007-timing-relay-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11571,7 +11593,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-14",
-      "last_checked": "2026-09-14",
+      "last_checked": "2026-09-17",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": []
@@ -11629,7 +11651,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-14",
-      "last_checked": "2026-09-14",
+      "last_checked": "2026-09-17",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": []
@@ -12009,6 +12031,187 @@
       "cites": [],
       "cites_source": "fulltext",
       "relations": []
+    },
+    {
+      "id": "reid-2007-timing-relay-detection",
+      "title": "Detecting Relay Attacks with Timing-Based Protocols",
+      "authors": [
+        "Jason Reid",
+        "Juan M. González Nieto",
+        "Tee Tang",
+        "Bouchra Senadji"
+      ],
+      "venue": "ASIACCS",
+      "venue_full": "Proceedings of the 2nd ACM Symposium on Information, Computer and Communications Security (ASIACCS 2007), Singapore, pp. 204–213 — Queensland University of Technology (Information Security Institute · School of Engineering Systems), 22쪽 저자판(QUT ePrints / CORE 사본)",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2007,
+      "url": "https://doi.org/10.1145/1229285.1229314",
+      "preprint": "https://static.aminer.org/pdf/PDF/000/084/189/detecting_relay_attacks_with_timing_based_protocols.pdf",
+      "doi": "10.1145/1229285.1229314",
+      "topics": [
+        "distance-bounding",
+        "terrorist-fraud",
+        "relay-attack",
+        "rapid-bit-exchange",
+        "rfid",
+        "iso-14443",
+        "timing-resolution",
+        "group-delay",
+        "side-channel-communication",
+        "early-detect",
+        "foundational",
+        "protocol-design"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 연구에 쓰이는 지점은 프로토콜보다 4절의 채널 논증이다. (1) Hancke–Kuhn 이 \"거리 분해능 ≈ c/B 이므로 협대역(ISO 14443, 106 kbit/s = 비트당 2.8 km)으로는 거리 바운딩이 불가능하고 UWB 가 필요하다\"고 한 주장을 정면으로 반박한다 — 분해능은 대역폭이 아니라 *응답 변조를 시작할 수 있는 시각의 분해능*(반송파 반주기 1/2f_c = 37 ns) 이 결정하며, 그것을 깎아먹는 것은 대역폭이 아니라 \"공격자가 비트 기간 중간에 응답 비트를 추측해 변조 패턴을 바꿀 수 있는가\" 다. 이것은 Clulow 2006 의 ED/LC 와 같은 관찰을 독립적으로 한 것이고, CS 의 1 MHz 협대역 RTT 가 원리적으로 안전할 수 있는지를 논할 때 c/B 논증만 인용하면 반쪽이라는 뜻이다(Anliker 2026 의 협대역 ToA 공격이 실제로 파고든 지점이 바로 이 '심볼 기간 중 조작' 이다). (2) \"릴레이 장치는 회로 군지연을 피할 수 없으므로 왕복 약 40 ns 가 누적되고, 따라서 약 50 ns 를 검출하면 고급 근거리 릴레이도 잡힌다\" 는 정량 주장은 CS RTT 판정 임계값을 정할 때 공격자 지연의 하한을 어디에 둘지의 오래된 출처다 — Staat 2022 의 아날로그 릴레이(수십 ns 지연) 가 이 하한을 실제 값으로 채운 셈이며, 두 논문을 같이 놓으면 'CS RTT 의 ns 급 정밀도가 릴레이 군지연을 잡을 수 있는가' 가 정량 질문이 된다. (3) Hancke–Kuhn 구조에 테러리스트 사기 저항을 처음 붙인 대칭키 DB 프로토콜(응답 비트 = 세션키 k 의 비트 또는 장기키 암호문 c 의 비트)로, 이후 Swiss-Knife·Avoine 계열의 출발점이자 코퍼스 11 편이 인용하는 계보 노드다. CS 보안 모드가 DB 프로토콜을 아예 두지 않았다는 점을 지적할 때 '무엇을 빼먹었는가' 의 기준선으로 쓴다.",
+      "summary": "ISO 14443 근접 카드의 릴레이 공격(Hancke 2005·Kfir–Wool 2005)을 배경으로 두 기여를 한다. 첫째, Hancke–Kuhn 프로토콜이 mafia fraud 에는 안전하지만 prover 가 공모자에게 r·l 을 넘기면 terrorist fraud 에 뚫린다는 점을 보이고, Bussard 의 공개키 ZK 방식 아이디어(공모하려면 장기키를 넘겨야 하게 만든다)를 대칭키로 옮긴 Protocol 2 를 제안한다 — 양쪽이 KDF(s, ID_A‖ID_B‖r_A‖r_B) 로 세션키 k 를 만들고 c = E_k(s) 를 계산한 뒤, 빠른 교환 단계에서 챌린지 비트가 0 이면 c_i, 1 이면 k_i 를 즉답한다. k 와 c 를 함께 넘기면 s = D_k(c) 가 드러나므로 공모가 곧 장기키 유출이 된다. 표 1 에서 Brands–Chaum·Sastry·Čapkun·Hancke–Kuhn·Bussard 와 대칭/비대칭·단방향/상호·거리·mafia·terrorist 저항을 비교한다. 둘째, 거리 바운딩 채널의 요구조건이 비트율이 아니라 지연이라는 점을 분석해, 카드가 응답 비트를 계산하는 순간의 전력 부채널(특수 XOR 명령이 부하 저항을 스위칭)을 검증기가 반송파 진폭 피크로 직접 읽는 '부채널 통신' 을 제안한다. Philips Mifare Pegoda 리더의 안테나 수신 회로에 200 MHz 샘플링 오실로스코프를 붙여 세 종류 카드의 REQA 응답을 캡처하고, MATLAB 피크 검출기(직전 8 피크 평균 대비 임계값, 1000 트레이스로 전압별 임계값 도출)로 첫 변조 피크 검출 시점을 측정했다. 안테나 전압 500 mV 까지는 첫 반주기에 검출돼 분해능 37 ns(1/2f_c), 500–800 mV 는 75 % 검출, 그 이상은 평균 300 ns(4–5 cm 거리)였다. 릴레이 장치의 군지연이 왕복 약 40 ns 누적되므로 약 50 ns 검출이면 충분하다고 논증하고, 따라서 UWB 없이도 정교한 근거리 릴레이를 잡을 수 있다고 결론짓되 동작 거리가 수 mm 로 줄어드는 단점을 인정한다.",
+      "hardware": [
+        "Philips Mifare Pegoda 개발키트 리더 (ISO 14443 Type A, USB 전원 — 10 cm 동작 불가, 7.5 cm 가 신뢰 한계)",
+        "디지털 오실로스코프, 200 MHz 샘플링 — 리더 안테나 수신 회로에 직결",
+        "ISO 14443A 카드 3종: 이중 인터페이스 마이크로프로세서 카드, Mifare 4K, Mifare Ultra Lite (저가)",
+        "제안 방식 자체는 카드 측 특수 XOR 명령 + 부하 저항 스위칭 회로 구상 — 실제 카드 개조는 하지 않음(기존 부하 변조로 타이밍만 측정)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB — 진폭 피크 검출 회로 모델(직전 8 피크 평균 대비 임계값 비교), 전압 의존 임계값 함수 도출(1000 트레이스, 오검출 20 회 미만 ≈ 1 % 기준)"
+      ],
+      "software_verified": true,
+      "results": [
+        "Hancke–Kuhn 프로토콜은 terrorist fraud 에 취약: 시간 임계 구간 전에 r·l 을 공모자에게 넘겨도 장기키 s 는 노출되지 않음 (2절)",
+        "Protocol 2: k = KDF(s, ID_A‖ID_B‖r_A‖r_B), c = E_k(s); 챌린지 0 → c_i, 1 → k_i 응답. distance·mafia·terrorist fraud 에 대해 공격자 성공확률이 n 에 대해 무시 가능함을 증명(KDF 의사난수·E 의 IND 가정; 실제로는 E 를 XOR 로 구현)",
+        "표 1: Brands–Chaum I/II(asym/zk, mafia O, terrorist X), Sastry(sym, mafia X), Čapkun et al.(sym, 상호, terrorist X), Čapkun–Hubaux(sym), Hancke–Kuhn(sym, terrorist X), Bussard(zk, terrorist O), 제안(sym, terrorist O) — 대칭키로 terrorist fraud 저항을 준 첫 프로토콜",
+        "채널 논증: ISO 14443 106 kbit/s 는 비트당 전파거리 2.8 km 지만, 단일 비트를 반송파 임의 주기에서 변조 시작할 수 있으면 분해능은 1/f_c = 74 ns, 반주기 검출이면 1/2f_c = 37 ns — 분해능은 대역폭이 아니라 변조 시작 지연이 결정",
+        "공격자 관점: 비트당 128 반송파 주기가 있으면 응답 비트를 추측해 변조를 시작하고 틀리면 비트 기간 중간에 패턴을 바꿔 릴레이 지연을 흡수할 수 있음(ED/LC 와 동일한 관찰) — 그래서 서브캐리어 부하변조 대신 주반송파 피크 검출로 바꿔야 함",
+        "릴레이 장치 군지연: 시판 마이크로파 수신기도 <15 ns(10 MHz 대역) 급이므로 왕복 2 대 통과 시 약 40 ns 누적 → 약 50 ns 검출 능력이면 고급 근거리 릴레이도 검출 가능 (UWB 불필요 논증의 핵심)",
+        "실측: 안테나 전압 ≤500 mV 에서 첫 변조 피크 즉시 검출 → 분해능 37 ns; 500–800 mV 에서 첫 피크 검출 75 %; 고전압(먼 거리)에서는 평균 300 ns — Hancke 의 개념증명 릴레이 지연(≈15 µs = 300 ns × 50)의 1/50",
+        "50 ns 미만 분해능은 카드가 리더에서 수 mm 이내(접촉) 여야 얻어짐; 300 ns 는 4–5 cm 에서 달성",
+        "클럭 가속 방어: 반송파 유도 클럭은 ±7 kHz(0.05 %) 만 허용 → 계산 클럭당 2–3 ns 지연 흡수 한계; PLL 또는 대역통과 필터로 가속 차단"
+      ],
+      "limitations": [
+        "부채널 통신은 동작 거리를 수 mm–5 cm 로 줄임 — 저자가 명시한 단점, 고가치 응용(결제·물리 출입)에서 '접촉' 을 요구하는 것으로 정당화",
+        "리더 1 종·카드 3 종·실험실 환경만 측정, RF 잡음 환경·Type B 카드는 미조사(6절 향후 과제); USB 전원 리더가 저출력이었을 가능성 언급",
+        "카드 측 특수 XOR 명령·저항 스위칭은 구상 — 실제 개조 카드 없음, 기존 부하 변조의 타이밍만 측정",
+        "M-FAR 를 (3/4)^n 으로 주장했으나 Piramuthu 가 (7/8)^n 임을 보임(Kim 2008 표 1 기준); 신원을 평문으로 보내 프라이버시 없음(Kim 2008 지적)",
+        "ISO 14443 의 FDT(프레임 지연 시간) 비트 격자 제약을 분석에서 무시 — 실제 표준 안에서는 단일 비트 즉답이 불가"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "extends",
+          "note": "Hancke–Kuhn 구조에 terrorist fraud 저항(응답 = 세션키 비트 또는 장기키 암호문 비트)을 처음 추가한 대칭키 DB"
+        },
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "contradicts",
+          "note": "'협대역 ISO 14443 으로는 DB 불가, UWB 필요' 주장을 반박 — 분해능은 c/B 가 아니라 변조 시작 지연(1/2f_c = 37 ns)이 결정하고, 릴레이 군지연(≈40 ns)이 검출 여유를 준다"
+        },
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "complementary",
+          "note": "'응답 비트를 추측해 비트 기간 중간에 변조를 바꿔 지연을 흡수한다' 는 관찰이 ED/LC 와 같음 — 그래서 주반송파 피크 검출로 심볼을 짧게 만들자는 처방"
+        }
+      ],
+      "added": "2026-09-17",
+      "last_checked": "2026-09-17"
+    },
+    {
+      "id": "kim-2008-swiss-knife-db",
+      "title": "The Swiss-Knife RFID Distance Bounding Protocol",
+      "authors": [
+        "Chong Hee Kim",
+        "Gildas Avoine",
+        "François Koeune",
+        "François-Xavier Standaert",
+        "Olivier Pereira"
+      ],
+      "venue": "ICISC",
+      "venue_full": "Information Security and Cryptology – ICISC 2008 (11th International Conference, Seoul, Dec. 2008), LNCS vol. 5461, Springer, pp. 98–115 (2009) — Université catholique de Louvain, 18쪽 저자판(Standaert 홈페이지)",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2008,
+      "url": "https://doi.org/10.1007/978-3-642-00730-9_7",
+      "preprint": "https://perso.uclouvain.be/fstandae/PUBLIS/60.pdf",
+      "doi": "10.1007/978-3-642-00730-9_7",
+      "topics": [
+        "distance-bounding",
+        "terrorist-fraud",
+        "mafia-fraud",
+        "relay-attack",
+        "rapid-bit-exchange",
+        "rfid",
+        "privacy",
+        "error-tolerance",
+        "mutual-authentication",
+        "key-recovery-attack",
+        "protocol-design"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "거리 바운딩 프로토콜을 '어떤 성질을 한꺼번에 만족해야 하는가' 의 체크리스트로 정리한 논문이라, CS 보안 모드(랜덤 CS_SYNC·DRBG 시퀀스)에 프로토콜 계층 DB 를 얹자는 제안을 평가할 때의 채점표로 쓴다 — 표 1 의 여섯 축(mafia fraud 오수락률 M-FAR, terrorist fraud T-FAR, 채널 오류 내성, 프라이버시, 상호 인증, 태그 측 PRF 연산 수)을 그대로 대면 CS 는 'M-FAR 만 있고 나머지는 비어 있는' 상태임이 드러난다. 두 번째 쓰임은 3절의 Tu–Piramuthu 공격이다: 빠른 교환 단계 응답에 장기키 비트가 섞여 있으면(c_i = k_i ⊕ x_i), 능동 공격자가 챌린지 비트 하나를 뒤집고 리더의 수락/거부만 관찰해 키 비트를 한 개씩 복원한다. CS 의 RTT 랜덤 시퀀스가 세션키에서 DRBG 로 파생되고 반사기가 수신 시퀀스를 검증한 뒤 응답하는 구조에서, '검증 실패가 관측 가능한가' 가 같은 종류의 오라클이 될 수 있는지 점검해야 한다는 경고다. 셋째, 잡음 채널에서 임계값 T 개 오류까지 수락하는 판정과 그것이 M-FAR 을 얼마나 깎는지(5.3절)는 CS 처럼 비트 오류가 흔한 협대역 RTT 에서 '몇 비트 틀려도 수락' 정책의 보안 비용을 계산하는 틀이다. 코퍼스 11 편(Flury·Poturalski·Cremers·Tippenhauer·Singh·Leu·Nkrow·Avoine 서베이)이 인용하는 DB 계보의 표준 참조점이다.",
+      "summary": "RFID 릴레이 공격(mafia·terrorist fraud)에 대한 거리 바운딩 프로토콜들이 각각 일부 성질만 갖는다는 문제에서 출발해, 한 프로토콜로 모든 성질을 만족하는 'Swiss-Knife' 를 제안한다. 먼저 Tu–Piramuthu 2007 프로토콜이 능동 공격자에게 장기키를 통째로 내준다는 새 공격을 보인다 — 빠른 교환 단계에서 리더→태그 챌린지 비트 q_i 만 뒤집고 리더의 수락 여부를 보면 x_i 가 결정된다. 제안 프로토콜은 Bellare–Rogaway MAP1.1 상호인증에 빠른 비트 교환을 더한 구조로, 태그가 a = f_x(C_B, N_B) 를 계산해 Z0 = a, Z1 = a ⊕ x 를 두고(x 는 장기키, 따라서 Z0·Z1 을 다 알면 키가 새므로 terrorist fraud 저항) 챌린지 c_i 에 Z^{c_i}_i 로 즉답한 뒤, 느린 단계에서 t_B = f_x(c'_1…c'_n, ID, N_A, N_B) 로 실제 수신한 챌린지 값을 묶어 보내 리더가 채널 오류와 조작을 구분하게 한다. 리더는 전체 키 목록에 대해 exhaustive search 로 태그를 식별하므로 프라이버시가 유지되고, 오류 T 개까지 허용하는 판정, 선택적 상호인증(리더가 f_x(N_B) 반환), 태그 연산 2회(상호인증 시 3회, 그중 1회는 사전계산)가 특징이다. 5.2절은 해밍 무게 m 의 마스크 d 로 질문 위치를 제한하는 효율 변형을 준다. 표 1 에서 Brands–Chaum·Hancke–Kuhn·Reid·Singelée–Preneel·Čapkun·Nikov–Vauclair 와 비교해 M-FAR (1/2)^n, T-FAR (3/4)^v, 오류 내성·프라이버시·상호인증을 모두 갖춘 유일한 프로토콜이라고 주장한다.",
+      "hardware": [
+        "실험 장비 없음 — 프로토콜 제안·보안 증명 논문. 구현·실측 없음"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 시뮬레이션·구현 도구를 사용하지 않음"
+      ],
+      "software_verified": true,
+      "results": [
+        "Tu–Piramuthu 2007 에 대한 키 복원 공격: 챌린지 비트 q_i 를 뒤집고 리더의 수락(→ x_i = 0)/거부(→ x_i = 1) 를 관찰 — 실행 n 회로 장기키 n 비트 전부 복원 (3.2절)",
+        "표 1 비교 — M-FAR: BC (1/2)^n, HK (3/4)^n, Reid (7/8)^n(저자는 (3/4)^n 주장, Piramuthu 정정), SP (1/2)^n, Čapkun MAD (1/2)^n, NV (1/2)^n, 제안 (1/2)^n; T-FAR: Reid·제안만 (3/4)^v, 나머지 없음; 오류 내성: HK·SP·Reid·제안; 프라이버시: 제안만; 상호인증: Čapkun·제안(MA); 태그 PRF 연산: BC 2, HK 1, Reid 2, SP 1+ECC, Čapkun 4, NV 2k, 제안 3(2)/2(1) — 괄호는 온라인 연산",
+        "프로토콜 골격: N_A(리더) → N_B, a = f_x(C_B, N_B), Z0 = a, Z1 = a ⊕ x → 빠른 교환 n 회(c_i → Z^{c_i}_i, 리더가 RTT 측정) → t_B = f_x(c'_1‖…‖c'_n, ID, N_A, N_B), N_B → 리더가 후보 키 전수 탐색으로 태그 식별·오류 수 ≤ T 확인 → (선택) t_A = f_x(N_B) 로 리더 인증",
+        "채널 오류 처리: t_B 에 태그가 실제 수신한 챌린지 c' 를 묶어 보내므로 리더가 '오류로 틀린 응답' 과 '조작' 을 구분해 T 개까지 허용; 임계값 T 가 클수록 M-FAR 이 커지는 상충을 5.3절에서 분석",
+        "효율 변형(5.2): 리더가 해밍 무게 m 인 마스크 d 를 먼저 보내 Z0·Z1 의 m 개 위치만 질문 — 통신량은 줄지만 terrorist 공모 시 매 실행마다 키 m 비트가 새므로 키가 빠르게 소진됨을 근거로 안전성 유지",
+        "프라이버시: 신원을 평문으로 보내지 않고 리더가 모든 키로 t_B 를 재계산해 식별 — 태그 수에 비례하는 리더 부담을 저자가 인정"
+      ],
+      "limitations": [
+        "구현·실측·채널 모델 없음 — 빠른 교환의 물리계층(1 비트 즉답 채널·타이밍 분해능)은 다루지 않음",
+        "리더 측 exhaustive key search 로 프라이버시를 얻으므로 태그 수가 많으면 식별 비용이 큼(저자 명시)",
+        "이후 문헌(Avoine 2018 서베이 등)에서 Swiss-Knife 도 변형 공격·정형 분석 대상이 됨 — 이 논문의 '모든 성질 만족' 주장은 당시 기준",
+        "terrorist fraud 정의가 '장기키를 넘기지 않는 공모' 로 제한됨 — 키를 일부만 넘기는 변형은 5.2 변형에서만 정성 논의"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "reid-2007-timing-relay-detection"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "extends",
+          "note": "HK 의 두 응답열 구조에 terrorist fraud 저항(Z1 = a ⊕ x)·오류 내성·프라이버시·상호인증을 한꺼번에 추가"
+        },
+        {
+          "to": "reid-2007-timing-relay-detection",
+          "type": "extends",
+          "note": "Reid 의 terrorist fraud 저항 아이디어를 계승하되 M-FAR 을 (7/8)^n → (1/2)^n 으로 낮추고 프라이버시를 추가"
+        }
+      ],
+      "added": "2026-09-17",
+      "last_checked": "2026-09-17"
     }
   ]
 }
