@@ -1788,6 +1788,7 @@
     }
 
     function fit() {
+      cancelZoomTween();
       view.w = fitW();
       view.h = view.w * aspect();
       view.x = (m.width - view.w) / 2;
@@ -1804,9 +1805,13 @@
       };
     };
 
-    function zoomAt(clientX, clientY, factor) {
+    const clampW = (w) => {
       const full = fitW();
-      const next = Math.min(Math.max(view.w / factor, full / 14), full * 1.6);
+      return Math.min(Math.max(w, full / 14), full * 1.6);
+    };
+
+    function zoomAt(clientX, clientY, factor) {
+      const next = clampW(view.w / factor);
       const k = next / view.w;
       if (k === 1) return;
       const { gx, gy } = toGraph(clientX, clientY);
@@ -1816,15 +1821,47 @@
       applyView();
     }
 
+    // 휠은 목표만 옮기고, 실제 뷰는 프레임마다 목표 쪽으로 감쇠시킨다.
+    // 확대 중에도 커서 아래의 그래프 좌표는 그대로 붙잡아 둔다.
+    let zoomTo = null, zoomRaf = 0;
+    function zoomStep() {
+      zoomRaf = 0;
+      if (!zoomTo) return;
+      const diff = zoomTo.w - view.w;
+      // 남은 거리의 22 % 씩. 0.5 px 밑으로 내려오면 붙이고 끝낸다.
+      view.w = Math.abs(diff) < 0.5 ? zoomTo.w : view.w + diff * 0.22;
+      const r = svg.getBoundingClientRect();
+      view.h = view.w * aspect();
+      view.x = zoomTo.gx - (zoomTo.cx - r.left) / r.width * view.w;
+      view.y = zoomTo.gy - (zoomTo.cy - r.top) / r.height * view.h;
+      applyView();
+      if (view.w !== zoomTo.w) zoomRaf = requestAnimationFrame(zoomStep);
+      else zoomTo = null;
+    }
+
     svg.addEventListener("wheel", (e) => {
       e.preventDefault();
-      zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1.18 : 1 / 1.18);
+      // deltaMode 0=px, 1=줄, 2=페이지. 환산하지 않으면 마우스와 트랙패드의
+      // 체감 속도가 몇 배씩 달라진다.
+      // Chrome 은 노치당 deltaY 100(px), Firefox 는 3(줄). 33 을 곱해야 체감이 맞는다.
+      const unit = e.deltaMode === 1 ? 33 : e.deltaMode === 2 ? 400 : 1;
+      // 한 이벤트가 낼 수 있는 폭을 묶어 큰 delta 하나로 튀지 않게 한다.
+      const d = Math.max(-120, Math.min(120, e.deltaY * unit));
+      const factor = Math.exp(-d * 0.00058);   // 노치(100) 하나에 약 6 %
+      const anchor = toGraph(e.clientX, e.clientY);
+      const base = zoomTo ? zoomTo.w : view.w;
+      zoomTo = { w: clampW(base / factor), cx: e.clientX, cy: e.clientY, gx: anchor.gx, gy: anchor.gy };
+      if (!zoomRaf) zoomRaf = requestAnimationFrame(zoomStep);
     }, { passive: false });
+
+    // 드래그·맞춤·버튼이 들어오면 진행 중인 휠 감쇠를 놓아준다.
+    function cancelZoomTween() { zoomTo = null; if (zoomRaf) { cancelAnimationFrame(zoomRaf); zoomRaf = 0; } }
 
     // 끌어서 이동. 포인터 두 개면 핀치 확대.
     const pts = new Map();
     let drag = null, pinch = null, moved = 0, pressed = null;
     svg.addEventListener("pointerdown", (e) => {
+      cancelZoomTween();
       pts.set(e.pointerId, e);
       // 포인터 캡처를 걸면 뒤따르는 click 의 target 이 SVG 루트로 바뀌어
       // closest(".g-node") 가 null 이 된다. 그래서 누른 노드를 여기서 기억해 둔다.
