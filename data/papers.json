@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-17",
-  "last_run": "2026-09-17",
+  "updated": "2026-09-18",
+  "last_run": "2026-09-18",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 767,
+  "citation_edges": 812,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -5402,7 +5402,8 @@
       },
       "verification": "verified",
       "cites": [
-        "vonzengen-2016-no-cost-distance"
+        "vonzengen-2016-no-cost-distance",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5413,7 +5414,7 @@
         }
       ],
       "added": "2026-08-24",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "sheikh-2025-cs-interference",
@@ -5694,7 +5695,7 @@
       },
       "verification": "verified",
       "added": "2026-08-26",
-      "last_checked": "2026-09-03",
+      "last_checked": "2026-09-18",
       "cites": [
         "schroeder-2019-multipath-pbr",
         "zand-2019-ble-pbr",
@@ -5702,7 +5703,8 @@
         "boer-2020-pbr-multipath",
         "vonzengen-2016-no-cost-distance",
         "pelka-2014-phase-multi-frequency",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -6613,12 +6615,13 @@
         "schroeder-2019-multipath-pbr",
         "shoudha-2022-reduced-complexity-ble-ranging",
         "stanciu-2021-narrowband-distance",
-        "vonzengen-2016-no-cost-distance"
+        "vonzengen-2016-no-cost-distance",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "nishikawa-2026-digital-phase-compensation",
@@ -6775,12 +6778,14 @@
         "bintariq-2024-dl-ble-ranging",
         "vonzengen-2016-no-cost-distance",
         "pelka-2014-phase-multi-frequency",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "bintariq-2024-signal-subspace-ble-ranging",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "boshoff-2026-secure-indoor-ranging",
@@ -7550,12 +7555,13 @@
         "stanciu-2021-narrowband-distance",
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
-        "lu-2021-ble-phase-positioning"
+        "lu-2021-ble-phase-positioning",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-05"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "wang-2025-cs-device-free-sensing",
@@ -7766,12 +7772,13 @@
         "zand-2019-ble-pbr",
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
-        "vasisht-2016-chronos"
+        "vasisht-2016-chronos",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "helwa-2023-csi-wifi-ranging-gap",
@@ -7925,12 +7932,13 @@
         "zand-2019-ble-pbr",
         "zand-2019-concurrent-pbr",
         "pelka-2014-phase-multi-frequency",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "simoncic-2026-cfo-mcpd",
@@ -8003,12 +8011,13 @@
         "zand-2019-ble-pbr",
         "zand-2019-concurrent-pbr",
         "simoncic-2025-freq-switching-mcpd",
-        "pelka-2014-phase-multi-frequency"
+        "pelka-2014-phase-multi-frequency",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "nkrow-2024-tof-resiliency",
@@ -8378,7 +8387,8 @@
         "shoudha-2022-reduced-complexity-ble-ranging",
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
-        "stanciu-2021-narrowband-distance"
+        "stanciu-2021-narrowband-distance",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8389,7 +8399,7 @@
         }
       ],
       "added": "2026-08-31",
-      "last_checked": "2026-09-02"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "avoine-2018-db-survey",
@@ -8637,7 +8647,8 @@
         "schroeder-2022-inphase",
         "vonzengen-2016-no-cost-distance",
         "pelka-2014-phase-multi-frequency",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8648,7 +8659,7 @@
         }
       ],
       "added": "2026-09-02",
-      "last_checked": "2026-09-03"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "wang-2026-svt-ifft-music-ble",
@@ -8660,7 +8671,7 @@
         "Fengyun Zhang"
       ],
       "venue": "IEEE WCL",
-      "venue_full": "IEEE Wireless Communications Letters, Early Access, vol. PP, pp. 1–1 (온라인 2026-08-31) — Tongji University (Shanghai Institute of Intelligent Science and Technology / College of Electronics and Information Engineering)",
+      "venue_full": "IEEE Wireless Communications Letters, vol. 15, pp. 5219–5223, 2026 (Early Access 2026-08-31 → 정식 게재) — Tongji University (Shanghai Institute of Intelligent Science and Technology / College of Electronics and Information Engineering)",
       "tier": "journal",
       "category": "estimation",
       "year": 2026,
@@ -8699,18 +8710,27 @@
       "limitations": [
         "전문 미확보 (2026-09-03): IEEE Xplore REST abstract 엔드포인트로 초록·소속·키워드는 확보했으나 유료(isOpenAccess=false), ielx8 경로 202, arXiv 판 없음 — 하드웨어·대역·거리·기준선 미확인",
         "보안 관점 없음 — 저계수 완성이 조작된 톤을 어떻게 전파하는지는 다루지 않음 (관찰)",
-        "WCL 서한이라 분량 4쪽 안팎 — 실험 규모는 제한적일 가능성 (관찰)"
+        "WCL 서한이라 분량 4쪽 안팎 — 실험 규모는 제한적일 가능성 (관찰)",
+        "인용 관계는 2026-09-18 IEEE Xplore REST /references(정식 게재판 vol. 15, 참고문헌 17건) 대조로 채움 — 본문은 여전히 미확보"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
       "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "cites": [
+        "zand-2019-ble-pbr",
+        "schroeder-2019-multipath-pbr",
+        "sheikh-2023-pbr-missing-tones",
+        "boer-2020-pbr-multipath",
+        "shoudha-2022-reduced-complexity-ble-ranging",
+        "vanmarter-2023-svr-ble-ranging",
+        "bintariq-2024-signal-subspace-ble-ranging"
+      ],
+      "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-02",
-      "last_checked": "2026-09-16"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "vonzengen-2016-no-cost-distance",
@@ -9759,18 +9779,33 @@
       ],
       "limitations": [
         "전문 미확보 — 실험 장비·데이터셋·상세 수치 미확인",
-        "초록 기준: 성공률·거리·기기 범위의 조건 불명"
+        "초록 기준: 성공률·거리·기기 범위의 조건 불명",
+        "인용 관계는 2026-09-18 IEEE Xplore REST /references(참고문헌 30건) 대조로 채움 — 본문은 여전히 미확보; Compagno 2016(TIFS)·Taponecco 2014·KNOB·BLE 다운그레이드는 코퍼스 밖"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
       "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "cites": [
+        "singh-2019-uwb-ed",
+        "singh-2021-4z-security-analysis",
+        "leu-2022-ghost-peak",
+        "anliker-2023-time-for-change",
+        "uwbad-2024-jamming",
+        "uwb-sv-2023-ccs",
+        "poturalski-2011-db-802-15-4a",
+        "poturalski-2010-cicada-attack",
+        "leu-2020-mtac",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "singh-2019-uwb-pr",
+        "tschirschnitz-2021-method-confusion"
+      ],
+      "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-06",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "zhang-2025-uwbad-plus",
@@ -9828,15 +9863,21 @@
       ],
       "limitations": [
         "전문 미확보 — 성공률·전력이득·거리 등 수치 미확인",
-        "가용성 공격 — 거리 값 조작이 아니라 갱신 차단"
+        "가용성 공격 — 거리 값 조작이 아니라 갱신 차단",
+        "인용 관계는 2026-09-18 IEEE Xplore REST /references(참고문헌 30건) 대조로 채움 — 본문은 여전히 미확보; SnapLoc·Neirynck 2016 alt-DS-TWR 는 코퍼스 밖"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
       "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "cites": [
+        "francillon-2011-pkes-relay",
+        "leu-2022-ghost-peak",
+        "singh-2019-uwb-pr",
+        "uwb-sv-2023-ccs"
+      ],
+      "cites_source": "fulltext",
       "relations": [
         {
           "to": "uwbad-2024-jamming",
@@ -9845,7 +9886,7 @@
         }
       ],
       "added": "2026-09-06",
-      "last_checked": "2026-09-16"
+      "last_checked": "2026-09-18"
     },
     {
       "id": "kansanen-2025-bayesian-phase",
@@ -10840,7 +10881,8 @@
       ],
       "limitations": [
         "초록만 확인(IEEE 유료) — 대상 랜징 기술(UWB 등)·실험 장비·수치 미확인",
-        "거리 측정 자체의 조작 가능성은 가정으로 두고 상위 최적화만 다룸(초록 기준 관찰)"
+        "거리 측정 자체의 조작 가능성은 가정으로 두고 상위 최적화만 다룸(초록 기준 관찰)",
+        "인용 관계는 2026-09-18 IEEE Xplore REST /references(참고문헌 30건) 대조로 채움 — 본문은 여전히 미확보; Compagno 2016 은 코퍼스 밖"
       ],
       "artifacts": {
         "code": null,
@@ -10848,9 +10890,13 @@
       },
       "verification": "partial",
       "added": "2026-09-08",
-      "last_checked": "2026-09-16",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "last_checked": "2026-09-18",
+      "cites": [
+        "sartayeva-2023-indoor-positioning-security-survey",
+        "singh-2019-uwb-ed",
+        "leu-2022-ghost-peak"
+      ],
+      "cites_source": "fulltext",
       "relations": []
     },
     {
@@ -11445,7 +11491,7 @@
       },
       "verification": "verified",
       "added": "2026-09-13",
-      "last_checked": "2026-09-13",
+      "last_checked": "2026-09-18",
       "cites": [
         "ble6-2026-utility-basement",
         "boer-2020-pbr-multipath",
@@ -11457,7 +11503,8 @@
         "vanmarter-2023-svr-ble-ranging",
         "wieme-2025-cs-commercial-hw",
         "zand-2019-ble-pbr",
-        "zand-2019-concurrent-pbr"
+        "zand-2019-concurrent-pbr",
+        "bintariq-2024-signal-subspace-ble-ranging"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -12212,6 +12259,161 @@
       ],
       "added": "2026-09-17",
       "last_checked": "2026-09-17"
+    },
+    {
+      "id": "bintariq-2024-signal-subspace-ble-ranging",
+      "title": "A Data-Driven Signal Subspace Approach for Indoor Bluetooth Ranging",
+      "authors": [
+        "Zaid Bin Tariq",
+        "Jayson P. Van Marter",
+        "Anand G. Dabak",
+        "Naofal Al-Dhahir",
+        "Murat Torlak"
+      ],
+      "venue": "IEEE JISPIN",
+      "venue_full": "IEEE Journal of Indoor and Seamless Positioning and Navigation, vol. 2, pp. 292–303, 2024 (수리 2024-11-11, 게재 2024-11-18, CC BY 4.0) — UT Dallas · Texas Instruments",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2024,
+      "url": "https://ieeexplore.ieee.org/document/10756722",
+      "preprint": "https://ieeexplore.ieee.org/ielx8/9955032/10378862/10756722.pdf?arnumber=10756722",
+      "doi": "10.1109/JISPIN.2024.3501973",
+      "topics": [
+        "phase-based-ranging",
+        "ble",
+        "mcpd",
+        "signal-subspace",
+        "music",
+        "deep-learning",
+        "lstm",
+        "single-snapshot",
+        "low-complexity",
+        "multipath",
+        "pre-cs"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "UTD·TI 계보(shoudha-2022 MUSIC → vanmarter-2023 SVR → bintariq-2024 SepCNN)의 네 번째 논문으로, 코퍼스에서 morano-2026·dzafic-2026·wang-2026 이 인용하는데 빠져 있어 골드 OA(JISPIN, CC BY) 전문으로 편입했다. 내 연구에 쓰이는 지점은 추정기의 **경로 선택 규칙 자체**다. 제안한 SSD 는 신호부분공간의 고유벡터 하나하나에 대해 IFFT 의사스펙트럼을 구하고, 첫 고유벡터의 최고 피크보다 **더 짧은 지연에 있는 피크** 를 다른 고유벡터에서 찾아 \"첫 피크 대비 크기 비율이 임계값 안이면 직접경로\" 로 채택한 뒤 그 최소 지연을 거리로 낸다(Algorithm 1·2). 즉 \"가장 이른 그럴듯한 피크를 믿는다\" 는 정책이 명시적으로 코드화돼 있고, 이는 Ghost Peak 류 거리축소 공격이 노리는 구조와 같다 — 공격자가 만든 이른 피크가 임계값만 넘기면 알고리즘이 그것을 설계대로 선택한다. CS 의 PBR 추정기(MUSIC·IFFT·NADM 전 단계)에 ML 보정을 얹는 제안을 평가할 때, 이 논문의 \"SSD 가 낮은 SNR 에서 MUSIC 보다 안정적\" 이라는 결과는 잡음이 아니라 조작 신호에 대해서도 같은 안정성이 성립하는지 되묻게 한다. 또 하나, 단일 스냅샷·단일 안테나(RMSE 0.84 m)가 MUSIC 4 안테나(약 0.95 m)보다 낫다는 수치는 CS 처럼 스냅샷이 적은 프로토콜에서 부분공간 크기 추정(MDL/AIC 대신 피크 비율)이 성능을 좌우한다는 증거다. 하드웨어 모델명은 이 계보의 다른 논문과 마찬가지로 미기재다.",
+      "summary": "BLE two-way MCPD 는 CFR 을 곱해 시간·위상 오프셋을 지우지만 다중경로 성분이 2L−1 개로 늘고 잡음항도 AWGN 이 아니게 되어, 스냅샷이 적을 때 MUSIC 이 흔들린다. 저자들은 MUSIC 처럼 잡음부분공간 전체를 쓰는 대신 신호부분공간의 **개별 고유벡터** 마다 빔포밍 의사스펙트럼을 구해 직접경로가 강한 반사파에 가려지는 것을 막는 SSD(signal subspace decomposition) 거리추정을 제안한다. 첫 고유벡터의 피크보다 짧은 지연의 피크를 다른 고유벡터에서 찾되, 첫 피크 대비 크기 비율 임계값 β 로 잡음 피크를 걸러 최소 지연을 거리로 삼는다. 부분공간 크기는 MDL/AIC 대신 이 비율로 정하고, 무작위 저계수 근사(RLA, 스케칭 p = M/3)와 N-점 IFFT 로 고유분해·격자 탐색을 대체해 연산량을 줄인다(Enhanced SSD). 여기에 각 고유벡터 스펙트럼의 피크 지연·크기·폭 열(S = 10)을 은닉 1 유닛 LSTM 에 넣어 거리를 회귀하는 SSD-LSTM 을 만든다. TI 제공 4 안테나 BLE 태그로 75 채널 × 1 MHz two-way CFR 을 실내 3 환경(약 600·700·580 sq ft, 최대 5.5 m)에서 2,340 회 측정해 leave-one-environment-out(J−1) 으로 평가했더니, SSD-LSTM 의 전체 RMSE 는 단일 안테나 0.84 m(MUSIC 대비 48 %·79 cm 개선), 4 안테나 0.60 m(37 %·35 cm 개선)이고 SVR 보다 31 %/19 % 낫다. SSD 단독도 MUSIC 보다 약 24 % 낫고, FLOPs 는 SSD·SSD-LSTM 이 MUSIC·SVR 보다 적다.",
+      "hardware": [
+        "다중 안테나(4 안테나) BLE 태그 — Texas Instruments 제공(감사의 글), 모델명·칩셋 본문 미기재 (전문 확인)",
+        "two-way CFR 을 75개 BLE 채널 × 1 MHz(총 75 MHz)로 측정, 안테나 구성 4×1 / 1×4 / 2×2 (P=4) 및 단일 안테나(P=1); Initiator 만 one-way CFR 을 모아 USB 로 PC 에 전송",
+        "실내 3 환경(평면도 각각 다름, 약 600 / 700 / 580 sq ft), Initiator–Reflector 직선거리 최대 5.5 m, 기기 높이 약 0.9 m, NLOS 는 벽 차폐 기준",
+        "데이터셋: 위치당 시간축 20회 측정(추정은 단일 스냅샷) → 총 2,340 CFR 측정",
+        "기준 거리: 레이저 거리계(분해능 1 mm)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "전처리: two-way CFR(K = 75) → Hankel 행렬 공간 스무딩(M = 38) + forward-backward 평균 → 무작위 저계수 근사(RLA, 균일 열 샘플링, 과샘플링 p = M/3) 로 신호부분공간 근사",
+        "SSD: 고유벡터별 빔포밍 의사스펙트럼을 N-점 IFFT 로 근사(식 15·20), MATLAB findpeaks() 로 피크 위치·폭 추출, 첫 고유벡터 피크 대비 크기 비율 임계값 β 로 잡음 피크 배제 후 최소 지연 채택 (Algorithm 1·2)",
+        "SSD-LSTM: 고유벡터별 피크 (지연·크기·폭) 열 S = 10(부족분 0 패딩), 입력 차원 d = 4, 은닉 h = 1 LSTM → dropout 10 % → 완전연결 5·1 → 거리; MSE 손실; 다중 안테나는 공분산 평균(SAP) 후 하나로 입력",
+        "평가 프로토콜: J = 3 환경 중 J−1 로 학습, 나머지 1개로 시험(미세조정 없음); 비교 기준 MUSIC(IAP, MDL)·SVR(vanmarter-2023)",
+        "복잡도: FLOPs 로 비교 — MUSIC 탐색 격자 Jm = 400, SVR 지원벡터 Nsv = 1500, 부분공간 크기 q = 6 가정; 학습 프레임워크·옵티마이저·에폭 미기재, 코드 공개 없음 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "전체 RMSE: SSD-LSTM 0.84 m(P=1) / 0.60 m(P=4) — MUSIC 대비 48 % / 37 % 개선(RMSE 79 cm / 35 cm 감소), SVR 대비 31 % / 19 % 개선 (Fig. 4·5)",
+        "SSD 단독은 단일·다중 안테나 모두 MUSIC 대비 약 24 % 개선; LSTM 결합이 SSD 대비 추가로 31 %(P=1) / 17 %(P=4) 개선",
+        "단일 안테나 SSD-LSTM 이 4 안테나 MUSIC 보다 낫다 — 안테나 수 대신 알고리즘으로 자원 절감 가능",
+        "90 퍼센타일 오차(P=4): SSD-LSTM < 1 m, SVR 1.25 m, MUSIC 1.5 m, SSD 는 MUSIC 보다 약 30 cm 낮음; (P=1): SSD-LSTM 1.2 m, SSD 2 m, SVR 2.25 m, MUSIC 2.7 m",
+        "LOS/NLOS 분리: 4 안테나 LOS 에서 SSD-LSTM 은 MUSIC 대비 34 %, SSD 는 10 % 개선; 단일 안테나에서는 SSD 27 % 이상(NLOS 28 %), SSD-LSTM 47 % 이상 개선; SSD 와 SVR 은 비슷",
+        "RMSE vs SNR(Fig. 6): 단일 안테나 MUSIC 은 저 SNR 구간에서 RMSE 2 m 초과, SSD 계열은 저·고 SNR 모두 안정",
+        "복잡도(Fig. 7·8): SSD·SSD-LSTM 이 같은 안테나 수의 MUSIC 보다 FLOPs 훨씬 적고 SVR 보다도 적음; P=4 에서는 공분산 평균 덕에 SSD-LSTM 이 SSD 보다 빠름"
+      ],
+      "limitations": [
+        "하드웨어 모델·학습 프레임워크·하이퍼파라미터(옵티마이저·에폭)·임계값 β 값 미기재 (관찰)",
+        "일반화 시험은 같은 캠페인의 실내 3 환경 안에서의 leave-one-out — 다른 건물·장비·실외로의 일반화는 미검증 (관찰)",
+        "RMSE 총괄값은 SSD-LSTM 만 본문에 있고 MUSIC·SVR·SSD 는 개선율과 90 퍼센타일로만 제시 (관찰)",
+        "\"가장 이른 그럴듯한 피크\" 를 택하는 규칙이라 조작된 이른 피크에 대한 내성은 논의 없음 — 보안 관점 부재 (전문 확인)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "vanmarter-2023-svr-ble-ranging",
+        "shoudha-2022-reduced-complexity-ble-ranging",
+        "zand-2019-ble-pbr",
+        "boer-2020-pbr-multipath",
+        "stanciu-2021-narrowband-distance",
+        "gunia-2017-phase-positioning-off-the-shelf"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "shoudha-2022-reduced-complexity-ble-ranging",
+          "type": "extends",
+          "note": "같은 그룹의 MUSIC-IAP/SAP 기준선을 개별 고유벡터 의사스펙트럼(SSD)으로 대체, 단일 스냅샷·저 SNR 에서 24 % 개선"
+        },
+        {
+          "to": "vanmarter-2023-svr-ble-ranging",
+          "type": "extends",
+          "note": "SVR 의 공분산 원소 입력을 모델 기반 SSD 피크 열로 바꿔 LSTM 에 넣는 하이브리드 — SVR 대비 19~31 % 개선, 연산량도 적음"
+        }
+      ],
+      "added": "2026-09-18",
+      "last_checked": "2026-09-18"
+    },
+    {
+      "id": "gunia-2017-phase-positioning-off-the-shelf",
+      "title": "Setting up a phase-based positioning system using off-the-shelf components",
+      "authors": [
+        "Marco Gunia",
+        "Adrian Zinke",
+        "Niko Joram",
+        "Frank Ellinger"
+      ],
+      "venue": "IEEE WPNC",
+      "venue_full": "2017 14th Workshop on Positioning, Navigation and Communications (WPNC), pp. 1–6, 2017-10 — TU Dresden, Chair of Circuit Design and Network Theory (CCN)",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2017,
+      "url": "https://ieeexplore.ieee.org/document/8250065",
+      "preprint": null,
+      "doi": "10.1109/WPNC.2017.8250065",
+      "topics": [
+        "phase-based-ranging",
+        "mcpr",
+        "narrowband-ranging",
+        "positioning",
+        "off-the-shelf",
+        "system-design",
+        "pre-cs"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 12편(UTD·TI 계보 shoudha-2022·bintariq-2024 ×2, TU Dresden 후속 gunia-2026 ×2, TU-BS schroeder-2022-inphase, nikodem-2025, morano-2026, simoncic-2025/2026, wu-2026)이 인용하는 위상 기반 거리측정 \"시스템 구축\" 원조 논문이라 인용 그래프의 허브로 편입했다(캐시 참고문헌 캐기, 초록만 확보). 초록은 레이더(정확·고가)와 Bluetooth/WLAN(저가·부정확) 사이에서 상용 UWB IC 와 나란히 **위상 측정(phase measurement)** 을 \"거의 주목받지 못한 대안\" 으로 놓고, 상용 부품으로 동작하는 위상 기반 측위 시스템의 하드웨어·소프트웨어 설계 단계를 기술한다. 내 연구에서의 쓰임은 둘이다. 첫째, CS 이전의 협대역 MCPR 실장 계보(pelka-2014 → 이 논문 → schroeder-2018/2019 → InPhase → CS 상용화)에서 \"상용 트랜시버로 PBR 을 실제로 굴린 첫 보고\" 위치이며, schroeder-2022-inphase 는 이 논문이 pelka-2014 의 위상 기울기 직접 추출법보다 오차가 크다는 것을 보였다고 인용한다 — 즉 CS PBR 추정기 선택(기울기 vs 스펙트럼)의 실증 근거 중 하나다. 둘째, UTD·TI 계보가 CFR 위상 기울기 기반 ToF 추정의 기준 문헌으로 이 논문을 든다(bintariq-2024 관련연구: \"LOS 에선 잘 되나 NLOS 에서 정확도 저하\"). 사용 트랜시버·대역·정확도 수치는 전문을 못 열어 미확인이라, CS 와의 물리 계층 대응(2.4 GHz 여부)도 확인 전이다.",
+      "summary": "[초록 기준] 측위 연구는 전용 하드웨어(레이더: 정확하지만 비용·개발기간이 큼)와 통신 인프라 재사용(Bluetooth·WLAN: 저가지만 부정확)으로 갈린다. 최근 첫 상용 UWB IC 가 저비용·고정확을 잇는 다리로 주목받는 반면, 같은 목표를 가진 위상 측정(phase measurement) 방식은 거의 주목받지 못했다. 이 논문은 상용(off-the-shelf) 부품으로 완전히 동작하는 위상 기반 측위 시스템을 구축한 단계와 필요한 배경지식을 제시하며, 하드웨어·소프트웨어 설계를 구체적으로 기술한다.",
+      "hardware": [
+        "확인 필요 — 초록은 \"off-the-shelf components\" 라고만 하고 트랜시버 모델·주파수 대역·안테나 구성은 전문 미확보로 미확인"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "확인 필요 — 초록에 정량 결과 없음(전문 미확보)"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-09-18): IEEE 유료(isOpenAccess=false, Unpaywall·S2 closed), ielx7 경로 0 바이트; 저자 박사학위논문(TU Dresden 2023, Vogt Verlag 단행본 ISBN 978-3-95947-068-1)은 DNB 사본 403·Qucosa 미등재 — 초록은 Xplore REST abstract 로 확인",
+        "워크숍 6쪽 시스템 구축 보고 — 정확도 평가·다중경로 분석은 후속(schroeder-2022-inphase 의 인용 문맥상 pelka-2014 와의 오차 비교 포함)으로 추정되나 본문 미확인 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [],
+      "added": "2026-09-18",
+      "last_checked": "2026-09-18"
     }
   ]
 }
