@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-18",
-  "last_run": "2026-09-18",
+  "updated": "2026-09-19",
+  "last_run": "2026-09-19",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 812,
+  "citation_edges": 860,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -188,7 +188,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-19",
       "cites": [
         "francillon-2011-pkes-relay",
         "leu-2020-mtac",
@@ -197,7 +197,8 @@
         "singh-2021-4z-security-analysis",
         "flury-2010-distance-decreasing",
         "poturalski-2010-cicada-attack",
-        "poturalski-2012-secure-precise-ir-uwb"
+        "poturalski-2012-secure-precise-ir-uwb",
+        "neirynck-2016-alt-ds-twr"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -274,7 +275,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-19",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -292,7 +293,8 @@
         "kuhn-2010-uwb-ir-db",
         "poturalski-2010-cicada-attack",
         "poturalski-2012-secure-precise-ir-uwb",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "neirynck-2016-alt-ds-twr"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -363,7 +365,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-19",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -380,7 +382,8 @@
         "ranganathan-2017-are-we-really-close",
         "brands-1993-distance-bounding",
         "kim-2008-swiss-knife-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "capkun-2006-secure-positioning-jsac"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1071,7 +1074,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-19",
       "cites": [
         "anliker-2023-time-for-change",
         "francillon-2011-pkes-relay",
@@ -1080,7 +1083,8 @@
         "singh-2019-uwb-pr",
         "singh-2021-4z-security-analysis",
         "uwb-sv-2023-ccs",
-        "poturalski-2010-cicada-attack"
+        "poturalski-2010-cicada-attack",
+        "neirynck-2016-alt-ds-twr"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1144,7 +1148,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-19",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
@@ -1156,7 +1160,8 @@
         "hancke-2005-rfid-db",
         "poturalski-2010-cicada-attack",
         "ranganathan-2017-are-we-really-close",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "coppens-2022-uwb-standards-overview"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1360,7 +1365,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-19",
       "cites": [
         "aad-2026-fast-uwb-testing",
         "anliker-2023-time-for-change",
@@ -1374,7 +1379,8 @@
         "staat-2022-analog-relay",
         "leu-2021-multicarrier-tof",
         "hancke-2008-tof-db-attacks",
-        "poturalski-2010-cicada-attack"
+        "poturalski-2010-cicada-attack",
+        "gezici-2005-uwb-localization-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1555,7 +1561,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-19",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1572,7 +1578,8 @@
         "capkun-2005-secure-positioning",
         "vasisht-2016-chronos",
         "brands-1993-distance-bounding",
-        "kim-2008-swiss-knife-db"
+        "kim-2008-swiss-knife-db",
+        "capkun-2006-secure-positioning-jsac"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1733,7 +1740,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-19",
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
@@ -1746,7 +1753,9 @@
         "hancke-2005-rfid-db",
         "poturalski-2010-cicada-attack",
         "poturalski-2012-secure-precise-ir-uwb",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "capkun-2006-secure-positioning-jsac",
+        "neirynck-2016-alt-ds-twr"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2135,11 +2144,12 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-19",
       "cites": [
         "hancke-2005-rfid-db",
         "capkun-2005-secure-positioning",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "capkun-2006-secure-positioning-jsac"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -2583,8 +2593,10 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-03",
-      "cites": [],
+      "last_checked": "2026-09-19",
+      "cites": [
+        "coppens-2022-uwb-standards-overview"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "category": "survey"
@@ -2843,7 +2855,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-19",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2857,7 +2869,9 @@
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
-        "kim-2008-swiss-knife-db"
+        "kim-2008-swiss-knife-db",
+        "gezici-2005-uwb-localization-survey",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4318,7 +4332,8 @@
         "hancke-2008-tof-db-attacks",
         "capkun-2005-secure-positioning",
         "brands-1993-distance-bounding",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "gezici-2005-uwb-localization-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4329,7 +4344,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-12"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "flury-2010-distance-decreasing",
@@ -4405,7 +4420,10 @@
         "hancke-2008-tof-db-attacks",
         "brands-1993-distance-bounding",
         "kim-2008-swiss-knife-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "capkun-2006-secure-positioning-jsac",
+        "gezici-2005-uwb-localization-survey",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4416,7 +4434,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "poturalski-2011-db-802-15-4a",
@@ -4494,7 +4512,10 @@
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
         "kim-2008-swiss-knife-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "capkun-2006-secure-positioning-jsac",
+        "gezici-2005-uwb-localization-survey",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4505,7 +4526,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "schwarzbach-2026-cross-tech-ranging",
@@ -4820,7 +4841,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-09-12",
+      "last_checked": "2026-09-19",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
@@ -4830,7 +4851,8 @@
         "singh-2021-4z-security-analysis",
         "uwb-sv-2023-ccs",
         "poturalski-2012-secure-precise-ir-uwb",
-        "chen-2024-spoofing-evident-uwb-localization"
+        "chen-2024-spoofing-evident-uwb-localization",
+        "coppens-2022-uwb-standards-overview"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4911,7 +4933,7 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-12",
+      "last_checked": "2026-09-19",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -4919,7 +4941,9 @@
         "hancke-2005-rfid-db",
         "kuhn-2010-uwb-ir-db",
         "brands-1993-distance-bounding",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "capkun-2006-secure-positioning-jsac",
+        "gezici-2005-uwb-localization-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4989,14 +5013,15 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-19",
       "cites": [
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
         "kuhn-2010-uwb-ir-db",
         "brands-1993-distance-bounding",
         "kim-2008-swiss-knife-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5542,7 +5567,8 @@
         "poturalski-2011-db-802-15-4a",
         "singh-2021-4z-security-analysis",
         "uwb-sv-2023-ccs",
-        "chen-2024-spoofing-evident-uwb-localization"
+        "chen-2024-spoofing-evident-uwb-localization",
+        "coppens-2022-uwb-standards-overview"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5553,7 +5579,7 @@
         }
       ],
       "added": "2026-08-24",
-      "last_checked": "2026-09-12"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "jangid-2026-association-privacy",
@@ -8012,12 +8038,13 @@
         "zand-2019-concurrent-pbr",
         "simoncic-2025-freq-switching-mcpd",
         "pelka-2014-phase-multi-frequency",
-        "gunia-2017-phase-positioning-off-the-shelf"
+        "gunia-2017-phase-positioning-off-the-shelf",
+        "neirynck-2016-alt-ds-twr"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-18"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "nkrow-2024-tof-resiliency",
@@ -8087,12 +8114,13 @@
         "kuhn-2010-uwb-ir-db",
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
-        "kim-2008-swiss-knife-db"
+        "kim-2008-swiss-knife-db",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "vanmarter-2023-svr-ble-ranging",
@@ -8478,12 +8506,14 @@
         "hancke-2008-tof-db-attacks",
         "brands-1993-distance-bounding",
         "kim-2008-swiss-knife-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "capkun-2006-secure-positioning-jsac",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-01",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -9280,11 +9310,12 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-19",
       "cites": [
         "clulow-2006-long-symbols",
         "hancke-2005-rfid-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9374,7 +9405,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-19",
       "cites": [
         "clulow-2006-long-symbols",
         "cremers-2012-distance-hijacking",
@@ -9387,7 +9418,9 @@
         "poturalski-2012-secure-precise-ir-uwb",
         "brands-1993-distance-bounding",
         "kim-2008-swiss-knife-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "capkun-2006-secure-positioning-jsac",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9472,12 +9505,13 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-12",
+      "last_checked": "2026-09-19",
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
         "clulow-2006-long-symbols",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "gezici-2005-uwb-localization-survey"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -10332,11 +10366,13 @@
         "dataset": null
       },
       "verification": "verified",
-      "cites": [],
+      "cites": [
+        "gezici-2005-uwb-localization-survey"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-07",
-      "last_checked": "2026-09-07"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "poturalski-2010-cicada-attack",
@@ -10485,7 +10521,7 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-19",
       "cites": [
         "clulow-2006-long-symbols",
         "rasmussen-2010-rf-distance-bounding",
@@ -10499,7 +10535,9 @@
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
         "kim-2008-swiss-knife-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "capkun-2006-secure-positioning-jsac",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11302,12 +11340,15 @@
       },
       "verification": "verified",
       "added": "2026-09-12",
-      "last_checked": "2026-09-12",
+      "last_checked": "2026-09-19",
       "cites": [
         "leu-2022-ghost-peak",
         "singh-2019-uwb-ed",
         "poturalski-2012-secure-precise-ir-uwb",
-        "tippenhauer-2015-uwb-rapid-bit-exchange"
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "coppens-2022-uwb-standards-overview",
+        "capkun-2006-secure-positioning-jsac",
+        "neirynck-2016-alt-ds-twr"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11388,13 +11429,15 @@
       },
       "verification": "verified",
       "added": "2026-09-12",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-19",
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
         "clulow-2006-long-symbols",
         "hancke-2008-tof-db-attacks",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "capkun-2006-secure-positioning-jsac",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -12152,7 +12195,8 @@
       "verification": "verified",
       "cites": [
         "brands-1993-distance-bounding",
-        "hancke-2005-rfid-db"
+        "hancke-2005-rfid-db",
+        "capkun-2006-secure-positioning-jsac"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -12173,7 +12217,7 @@
         }
       ],
       "added": "2026-09-17",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "kim-2008-swiss-knife-db",
@@ -12242,7 +12286,8 @@
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "singelee-2007-db-noisy-environments"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -12258,7 +12303,7 @@
         }
       ],
       "added": "2026-09-17",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-19"
     },
     {
       "id": "bintariq-2024-signal-subspace-ble-ranging",
@@ -12414,6 +12459,431 @@
       "relations": [],
       "added": "2026-09-18",
       "last_checked": "2026-09-18"
+    },
+    {
+      "id": "oluwafunke-2026-ml-music-ble-phase-ranging",
+      "title": "A Robust ML–MUSIC-Based BLE Phase Ranging Algorithm For Indoor Localization",
+      "authors": [
+        "Otunniyi Temidayo Oluwafunke"
+      ],
+      "venue": "IJASIS",
+      "venue_full": "International Journal of Advances in Signal and Image Sciences (XLE Science), vol. 12, no. 8s, pp. 88–111, 2026 (온라인 2026-08-01) — Vaal University of Technology, South Africa (단독 저자)",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://doi.org/10.29284/njqk1t24",
+      "preprint": "https://xlescience.org/index.php/IJASIS/article/download/2132/1023",
+      "doi": "10.29284/njqk1t24",
+      "topics": [
+        "phase-based-ranging",
+        "multi-channel-phase",
+        "music",
+        "maximum-likelihood",
+        "kalman-filter",
+        "rts-smoother",
+        "indoor-localization",
+        "super-resolution",
+        "ble",
+        "channel-sounding-claimed"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "low",
+      "relevance_note": "Crossref 신규 색인(9-18)에서 'BLE Channel Sounding' 을 표방한 위상 기반 거리측정 논문으로 잡혀 전문(24쪽, OJS 무료 PDF)을 읽었으나, CS 연구에 쓸 만한 실증은 없다고 판단해 '이 제목을 만나면 인용하지 말 것' 이라는 경고 노드로 편입한다. 근거는 본문 내부 불일치다 — Table II 의 반송파 범위 2.402–2.562 GHz(BLE 대역 상한 2.480 GHz 를 82 MHz 초과)·채널 간격 10 MHz·채널 16 개는 CS 의 1 MHz 격자(최대 72 채널)와도 옛 BLE PBR 과도 맞지 않고, 기준 위치 수가 96·105·98 로 세 곳에서 다르며, 위치 오차가 MAE 15.6–30.4 m(Table IV)·2 m 이내 비율 0.2–1.4 %(Table V)로 코퍼스의 어떤 BLE PBR 실측(wieme-2025 0.2–0.5 m, zand-2019 sub-m)보다 한두 자릿수 나쁘고, 저자 기여란에 'Supervision: To be completed' 가 남아 있다. 하드웨어·데이터 취득 경로(어느 칩으로 어떤 CS 패킷을 받았는지)는 한 줄도 없다. 그럼에도 참고문헌 16·17 로 wieme-2025 와 zand-2019 를, 11·14·15 로 Core 6.0/6.3 과 SIG CS 기술 개요를 인용해 CS 계보에 스스로를 놓고 있어, 앞으로 'CS + MUSIC' 검색에 계속 걸릴 것이다. 내 연구에서의 쓰임은 하나뿐이다: ML 정제 + 대각 로딩 + Kalman/RTS 라는 처리 사슬 자체는 CS PBR 에 흔히 붙는 구성이라, 이런 후처리가 이른 피크 주입 공격에 대해 무엇을 바꾸는지를 논할 때 '평활화는 조작을 감추는 쪽으로도 작용한다' 는 관찰의 예시로 들 수는 있다.",
+      "summary": "BLE 의 협대역 때문에 ToF 분해능이 낮다는 문제에, 여러 반송파의 위상 진행을 가상 광대역 관측으로 묶어 MUSIC 으로 지연을 초분해능 추정하고, 결정론적 ML(뉴턴 반복 최대 8회) 로 피크를 정제한 뒤 공분산에 대각 로딩(10)을 넣고, 2-D 위치를 Kalman 필터(상태 4차원)·RTS 평활기로 시간 필터링하는 사슬을 제안한다(Algorithm 1: CS 패킷 수집 → 위상 추정 → 정규화 → 공분산 → 고유분해 → MUSIC 격자 1500점 → ML 정제 → 다중 비컨 융합 → KF/RTS). '실제 BLE 실내 측위 데이터셋' 은 동기화된 BLE 비컨 16개, 기준 위치 105개 설계·98개 유효(초록과 기여란에는 96개), 총 640 측정, 사무실·실험실·복도 환경으로만 기술되고 취득 칩·펌웨어·CS 절차는 없다. 결과(Table IV)는 conventional MUSIC MAE 30.38 m / RMSE 34.39 m / CEP50 31.0 m → +ML+DL 19.73/23.17/17.65 m → +Kalman 16.68/19.99/13.53 m → +RTS 15.63/18.59/12.92 m 이고, 2 m 이내 비율은 1.0 → 1.4 → 0.3 → 0.2 %, 30 m 이내는 48.7 → 89.3 %(Table V). Table VI 의 '최신 방법 비교' 는 수치 없이 정성 표다. 데이터·MATLAB 코드는 '채택 후 기관 리포지터리 공개 예정' 으로만 적혀 있다.",
+      "hardware": [
+        "명시 없음 — '동기화된 BLE 비컨 16개' 외에 칩셋·보드·수신기·ground truth 장비를 밝히지 않음 (전문 확인)",
+        "Table II: 'Carrier Frequency Range 2.402–2.562 GHz', 'Channel Spacing 10 MHz', 채널 16개 — BLE 대역(2.402–2.480 GHz)과 불일치 (전문 확인, 관찰)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB 구현(데이터 가용성 절에 언급, 미공개)",
+        "MUSIC(격자 1500점) + 뉴턴 ML 정제(최대 8회) + 대각 로딩 10 + Kalman(상태 4) + RTS (Table III)"
+      ],
+      "software_verified": true,
+      "results": [
+        "Table IV(위치 오차): conventional MUSIC MAE 30.376 m·RMSE 34.389 m·CEP50 31.006 m; MUSIC+ML+DL 19.732/23.168/17.653 m; +Kalman 16.677/19.993/13.531 m; +RTS(제안) 15.627/18.590/12.920 m",
+        "Table V(임계값 이내 비율): 2 m — 1.0 / 1.4 / 0.3 / 0.2 %; 10 m — 12.5 / 24.2 / 32.7 / 33.0 %; 15 m — 19.7 / 42.0 / 54.8 / 59.0 %; 30 m — 48.7 / 81.2 / 88.5 / 89.3 % (MUSIC / +ML+DL / +KF / +RTS)",
+        "Fig. 1: 대표 샘플(#288)의 MUSIC 추정 5.446 m 와 대각 로딩 추정 비교 의사스펙트럼; Fig. 7: 40샘플 창 이동 MSE",
+        "Table VI '최신 BLE 측위 비교' 는 RSSI 핑거프린팅·LS 위상·MUSIC·딥러닝을 정성(초분해능 여부·시간 필터 여부)으로만 나열, 수치 비교 없음"
+      ],
+      "limitations": [
+        "내부 불일치(관찰): 반송파 범위 2.402–2.562 GHz 는 BLE 대역 밖; 기준 위치 96/105/98 로 초록·기여·Table II 가 다름; 오차 15–30 m 는 실내 위상 거리측정 문헌의 수십 배",
+        "측정 장비·CS 절차·데이터 취득 방법 미기재, 데이터·코드 미공개('채택 후 공개 예정'), 단독 저자·'Supervision: To be completed' 잔존 — 재현·검증 불가 (관찰)",
+        "저자 명시: 정적 측정만, 2-D, 미래 과제로 동적 추적·NLOS 식별·다중 대역 융합 언급 (VII절)",
+        "XLE Science 발행 IJASIS — 색인·심사 기준 미확인 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "wieme-2025-cs-commercial-hw",
+        "zand-2019-ble-pbr",
+        "gezici-2005-uwb-localization-survey"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-19",
+      "last_checked": "2026-09-19"
+    },
+    {
+      "id": "coppens-2022-uwb-standards-overview",
+      "title": "An Overview of UWB Standards and Organizations (IEEE 802.15.4, FiRa, Apple): Interoperability Aspects and Future Research Directions",
+      "authors": [
+        "Dieter Coppens",
+        "Adnan Shahid",
+        "Sam Lemey",
+        "Ben Van Herbruggen",
+        "Chris Marshall",
+        "Eli De Poorter"
+      ],
+      "venue": "IEEE Access",
+      "venue_full": "IEEE Access, vol. 10, pp. 70219–70241, 2022 (CC BY; arXiv:2202.02190v2, 2022-06-29) — Ghent University–imec IDLab, imec-NL",
+      "tier": "journal",
+      "category": "survey",
+      "year": 2022,
+      "url": "https://doi.org/10.1109/ACCESS.2022.3187410",
+      "preprint": "https://arxiv.org/abs/2202.02190",
+      "doi": "10.1109/ACCESS.2022.3187410",
+      "topics": [
+        "uwb",
+        "802.15.4z",
+        "fira",
+        "apple-nearby-interaction",
+        "ccc-digital-key",
+        "interoperability",
+        "sts",
+        "device-discovery",
+        "out-of-band-ble",
+        "pulse-shape",
+        "chipset-comparison",
+        "802.15.4ab"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 5편(chen-2024, gou-2024, gou-2025, secure-ranging-4z-hrp-2024, vehicular-positioning-survey-2026)이 UWB 표준·칩셋 현황의 기준 문헌으로 인용하는 서베이라 캐시 참고문헌 캐기로 편입했다(arXiv 저자판 전문). CS 연구에서의 쓰임은 셋이다. (1) Table 2·5·7·8·10 이 Apple U1·Qorvo DW1000/DW3000·NXP SR040/SR150/NCJ29D5·imec ULP·3db·Zebra 의 지원 채널·프리앰블·SFD·STS 를 칩 단위로 대조한 유일한 공개 표라, 'CS 대 UWB' 비교 실험에서 상대편 장비의 능력(예: DW1000 은 STS 없음 = 4z 보안 모드 불가)을 고르는 근거가 된다. (2) §VIII 이 FiRa·Apple NI 모두 UWB 탐색·설정을 **BLE 대역외 채널**(FiRa: UWB_CAPABILITY/UWB_CONFIGURATION RESTful 메시지, Apple: Accessory/Shareable Configuration Data)로 한다는 점과 §IX-C 의 '협대역이 MAC 기능에 본질적으로 더 적합할 수 있다' 는 가설을 적어 두어, CS 가 UWB 세션의 부트스트랩 채널과 같은 무선(BLE)을 쓴다는 사실 — 즉 CS 공격면과 UWB 세션 설정 공격면이 겹친다는 점 — 을 논할 때의 출처다. (3) §V-2 의 '표준 준수 펄스끼리도 폭이 달라 half-amplitude 타이밍이면 거리 편이가 생긴다' 는 실측(DW1000 vs NCJ29D5, LeCroy LabMaster 10 Zi-A 160 GS/s)은 CS 의 이기종 칩 간 RTT 편이(wieme-2025 의 ToA 대 ToD 보정 문제)와 같은 종류의 문제이며, 4ab 의 목표(2022 시점 PHY 제안 마감 5월·MAC 7월, 표준 목표 2023 말)를 당시 시각으로 기록해 두어 4ab 지연을 추적할 때 기준점이 된다. 보안 자체는 §V-d 에서 STS 생성(DRBG 128비트 키+논스, 1–4 세그먼트)을 설명하고 Poturalski 2011 을 인용하는 수준이다.",
+      "summary": "UWB 칩이 늘어나며 생긴 '어느 표준·설정이 상호운용성을 좌우하는가' 를 계층별로 정리한 서베이. §II 는 기존 UWB 서베이(Table 1)와의 차이를, §III 는 IEEE 802.15.4/4z·FiRa·Apple Nearby Interaction·CCC Digital Key 3.0·omlox·ISO 24730 을, §IV 는 상용 칩(Apple U1, Qorvo DW1000·DW3000, NXP SR040/SR150·NCJ29D5, imec ULP IR-UWB, 3db 3DB6830, Zebra)과 지원 표준(Table 2)을 정리한다. §V PHY 호환성은 HRP/LRP 모드(Table 3), 채널(모든 칩이 ch 5 지원, DW1000 만 ch 9 미지원), 펄스 형상(RRC β=0.5 기준 교차상관 주엽 ≥0.8·부엽 <0.3 — 준수하더라도 폭이 다를 수 있음을 DW1000·NCJ29D5 오실로스코프 실측 Fig. 4 로 보임), 프레임 구조 4종(STS 위치), 프리앰블·SFD 코드(Table 7·8), PHR 형식(Table 9), STS 지원(Table 10: DW1000 만 미지원), 변조·부호화(RS+컨볼루션, BPRF/HPRF, Table 11·12) 를 칩별로 대조한다. §VI MAC 프레임 형식, §VII 측위 기법(TWR·TDoA·AoA), §VIII 장치 탐색(FiRa 는 BLE/NFC 대역외 RESTful 메시지, Apple 은 임의 채널)을 다루고, §IX 미래 과제로 안테나 시스템 지표(SFF·DEE), 4ab, AoA 표준화 부재, UWB 레이더 표준 부재, 펄스 폭 차이의 거리 오차, MAC 프로토콜 표준화(협대역이 MAC 에 더 적합할 가능성), 탐색 방식 성능 비교, 링크 설정 결정 알고리즘을 든다.",
+      "hardware": [
+        "Qorvo DW1000, NXP NCJ29D5 — 기본 펄스를 케이블로 Teledyne LeCroy LabMaster 10 Zi-A 오실로스코프(160 GS/s)에 연결해 시간영역 측정 (Fig. 4)",
+        "비교 대상 칩(문헌·데이터시트 기반): Apple U1, Qorvo DW3000 계열, NXP SR040/SR150, imec ULP IR-UWB, 3db Access 3DB6830, Zebra UWB"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 표준 문서·데이터시트 대조 중심의 서베이, 시뮬레이터·SDK 언급 없음 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "Table 2: 조사 칩 8종 중 IEEE 802.15.4z 가 가장 널리 지원되는 PHY; 3db·Zebra 만 LRP, 나머지는 HRP 전용",
+        "채널: 모든 칩이 HRP ch 5 지원, DW1000 을 제외한 전부가 ch 9 지원 → ch 5 가 호환성 최소공배수",
+        "Fig. 4: 표준 펄스 마스크(주엽 ≥0.8 for T_w, 부엽 <0.3) 를 모두 만족해도 DW1000 과 NCJ29D5 의 펄스 폭이 다름 — half-amplitude 타이밍 시 거리 편이 가능(정량치는 제시하지 않음)",
+        "Table 10: STS 미지원 칩은 DW1000 뿐 — 4z 보안 거리측정(키리스 등) 은 4z 칩 필수; STS = DRBG(128비트 키+128비트 논스) 의사난수 펄스, 1–4 세그먼트, 키 분배는 표준 밖(상위 계층·다른 무선)",
+        "Table 11: HPRF 는 선택 — DW3000 은 4z 지원이지만 HPRF 미지원; Table 12: PRF 증가가 데이터율을 높이지 않음(목표는 거리측정 정확도·보안)",
+        "§VIII: FiRa 는 BLE/NFC 대역외로 UWB_CAPABILITY→UWB_CONFIGURATION 교환 후 UWB 세션, Apple NI 는 탐색 채널 무관(LAN·클라우드 가능) — 두 표준은 상호 비호환",
+        "§IX-B: 4ab PHY 제안 마감 2022-05·MAC 2022-07, 표준 목표 '2023 말/2024 초' (실제로는 2026-09 현재 SA 재순환 중)"
+      ],
+      "limitations": [
+        "저자 명시: 안테나 통합 플랫폼 효과·AoA·UWB 레이더·MAC 프로토콜·탐색 방식 비교는 미해결 과제로만 제시(§IX)",
+        "펄스 폭 차이의 거리 오차는 정성 지적에 그치고 정량 실험 없음; 칩 대조표는 공개 데이터시트 기준이라 비공개 기능 누락 가능 (관찰)",
+        "보안은 STS 필드 설명에 한정 — 4z 보안 모드의 공격 문헌(Ghost Peak 등, 2022 당시 미발표)은 다루지 않음 (관찰)",
+        "2022 시점 스냅샷 — DW3000 HPRF·4ab 일정 등은 이후 변함 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "poturalski-2011-db-802-15-4a"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "ieee-802-15-4z",
+          "type": "applies-to",
+          "note": "4z PHY/MAC 규정(채널·펄스 마스크·프리앰블·SFD·STS·PHR·PRF)을 상용 칩 8종의 실제 지원 범위와 대조해 상호운용 조건을 도출"
+        }
+      ],
+      "added": "2026-09-19",
+      "last_checked": "2026-09-19"
+    },
+    {
+      "id": "gezici-2005-uwb-localization-survey",
+      "title": "Localization via Ultra-Wideband Radios: A Look at Positioning Aspects for Future Sensor Networks",
+      "authors": [
+        "Sinan Gezici",
+        "Zhi Tian",
+        "Georgios B. Giannakis",
+        "Hisashi Kobayashi",
+        "Andreas F. Molisch",
+        "H. Vincent Poor",
+        "Zafer Sahinoglu"
+      ],
+      "venue": "IEEE Signal Processing Magazine",
+      "venue_full": "IEEE Signal Processing Magazine, vol. 22, no. 4, pp. 70–84, July 2005 — Princeton, Michigan Tech, U. Minnesota, MERL",
+      "tier": "journal",
+      "category": "survey",
+      "year": 2005,
+      "url": "https://doi.org/10.1109/MSP.2005.1458289",
+      "preprint": "https://www.ee.bilkent.edu.tr/~gezici/papers/2005_SPM.pdf",
+      "doi": "10.1109/MSP.2005.1458289",
+      "topics": [
+        "uwb",
+        "time-of-arrival",
+        "cramer-rao-bound",
+        "matched-filter",
+        "first-path-detection",
+        "multipath",
+        "nlos",
+        "positioning",
+        "fundamental-limits",
+        "foundational",
+        "two-step-toa"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 8편(abidin-2021, anliker-2026, flury-2010, francillon-2011, kuhn-2010, poturalski-2011, rasmussen-2010, shourezari-2026; 오늘 편입한 oluwafunke-2026 도)이 'UWB 가 왜 ToA 에 유리한가' 의 출처로 드는 표준 서베이라 캐시 참고문헌 캐기로 편입했다(저자 홈페이지 저자판 전문). CS 연구에서의 쓰임은 협대역 대 광대역 논증의 정량 기준선이다. (1) §IV 의 ToA CRLB — 분산이 SNR 과 유효 대역폭 β 의 제곱에 반비례(1.5 GHz 펄스, SNR 0 dB 에서 1 인치 미만) — 는 anliker-2026 이 '협대역 CS SYNC 의 ToA 추정은 이 한계 자체가 아니라 교차상관 피크 판정의 조작 가능성이 문제' 라고 짚을 때 대조하는 기준이고, abidin-2021 이 협대역 거리측정의 이론 한계를 세울 때 출발점이다. (2) §III 의 오차원(다중경로·다중접속 간섭·NLOS·높은 시간 분해능 때문에 생기는 탐색 구간 확대)과 '매치드 필터 피크가 첫 경로가 아닐 수 있다 → 첫 경로 검출(leading-edge) 필요' 라는 정식화는 CS PBR·RTT 의 첫 경로 판정 문제와 같은 구조이며, Ghost Peak 류 공격이 노리는 지점이 바로 이 '첫 경로 선택 규칙' 임을 설명할 때 원류 문헌으로 인용한다. (3) §V 의 NLOS 노드가 섞인 위치 추정 CRLB(LOS 노드 신호만으로 결정)는 CS 다중 앵커 측위에서 조작된 앵커 하나가 전체 위치에 미치는 영향을 셈할 때의 틀이다. 보안은 다루지 않는다.",
+      "summary": "UWB 신호(상대 대역폭 >20 % 또는 절대 >500 MHz)를 이용한 측위를 개괄한다. §II 는 AoA·신호세기(SS)·시간기반(ToA/TDoA) 기법과 각각의 CRLB 를 비교해 ToA 가 가장 높은 정확도를 준다고 정리하고(SS 는 거리·경로손실 지수에 따라 수 m, ToA 는 대역폭 β 와 SNR 에 반비례), 하이브리드(ToA+SS) 도 언급한다. §III 는 시간기반 UWB 측위의 오차원 — 다중경로(매치드 필터 최대 상관이 첫 경로가 아님), 다중접속 간섭, NLOS(양의 편이, 첫 도착 펄스가 가장 강한 것이 아님), UWB 의 높은 시간 분해능 자체가 만드는 탐색 불확실 구간 — 을 든다. §IV 는 다중경로 채널에서의 ToA CRLB(데이터 보조·블라인드, 수정 CRLB)와 그것에 근접하는 저복잡도 두 단계(coarse→fine) 타이밍 추정기(심볼률 상관·에너지 검출 기반)를 제시한다. §V 는 M 개 NLOS·N−M 개 LOS 노드가 있을 때 위치 추정 CRLB 가 LOS 노드 신호로만 결정됨을 보이고(NLOS 지연 통계 불필요), 점근 최적 수신기 구조(Fig. 5)와 ToA+SS 하이브리드 위치 추정을 다룬다. §VI 는 센서망(ZigBee 급 거리 수십 m)에서의 UWB 측위 적용을 논한다.",
+      "hardware": [
+        "해당 없음 — 이론·서베이 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 수치 예는 해석적 CRLB 계산 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "ToA 정확도 예시: 수신 UWB 펄스 대역폭 1.5 GHz, SNR 0 dB 에서 1 인치(2.54 cm) 미만 (§II-C)",
+        "ToA CRLB(AWGN): √Var(τ̂) ≥ 1/(2√2 π √SNR β), β = 유효(RMS) 대역폭 — 매치드 필터/상관기 ToA 가 고 SNR 에서 점근 달성 (§II-C, 식 (3))",
+        "SS 기반 거리 CRLB: √Var(d̂) ≥ (ln10/10)·(σ_sh/n_p)·d — 거리 d 와 섀도잉 σ_sh 에 비례해 나빠짐, 근거리 외엔 부적합 (§II-B)",
+        "다중경로 ToA CRLB(식 (10)) 는 실내 밀집 다중경로에선 도달하기 어렵고, 실외 저산란 채널에 더 적합; 두 단계 추정기(심볼률 상관 + 미세 타이밍)로 저복잡도 근접 (§IV)",
+        "위치 추정 CRLB(식 (25)): NLOS 노드의 신호는 정보에 기여하지 않고 LOS 노드만으로 결정 — NLOS 지연 통계 정보가 없어도 동일 (§V-A)",
+        "Fig. 5: 각 기준 노드가 첫 경로 ToA 만 추정해 넘기면 점근 최적 위치 추정이 가능(NLOS 통계 불필요)"
+      ],
+      "limitations": [
+        "2005 시점 — 802.15.4a 표준화 이전, 상용 칩·실측 없음, 보안(적대적 조작) 은 범위 밖 (관찰)",
+        "CRLB 는 AWGN·완전 동기·기지 파형 가정; 실내 밀집 다중경로에선 저자 스스로 '도달 어렵다' 고 인정 (§IV)",
+        "NLOS 식별 기법은 인용으로 처리, 첫 경로 검출 알고리즘의 실패 모드(조기·후기 검출) 정량화 없음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-19",
+      "last_checked": "2026-09-19"
+    },
+    {
+      "id": "capkun-2006-secure-positioning-jsac",
+      "title": "Secure Positioning in Wireless Networks",
+      "authors": [
+        "Srdjan Čapkun",
+        "Jean-Pierre Hubaux"
+      ],
+      "venue": "IEEE JSAC",
+      "venue_full": "IEEE Journal on Selected Areas in Communications, vol. 24, no. 2, pp. 221–232, February 2006 (Special Issue on Security in Wireless Ad Hoc Networks) — EPFL LCA; Infoscience 저자판(handle 20.500.14299/239590)",
+      "tier": "journal",
+      "category": "defense",
+      "year": 2006,
+      "url": "https://doi.org/10.1109/JSAC.2005.861380",
+      "preprint": "https://infoscience.epfl.ch/handle/20.500.14299/239590",
+      "doi": "10.1109/JSAC.2005.861380",
+      "topics": [
+        "secure-positioning",
+        "verifiable-multilateration",
+        "distance-bounding",
+        "authenticated-ranging",
+        "distance-enlargement",
+        "distance-reduction",
+        "uwb",
+        "sensor-networks",
+        "spine",
+        "attacker-model",
+        "foundational"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "INFOCOM 2005 판(capkun-2005-secure-positioning)의 저널 확장판으로, 코퍼스 13편(avoine-2018, chen-2024, clulow-2006, flury-2010, francillon-2011, leu-2020, poturalski-2011/2012, reid-2007, singh-2019-uwb-pr, tippenhauer-2009/2015, uwb-sv-2023)이 INFOCOM 판이 아니라 이 JSAC 판을 인용한다 — 인용 그래프의 허브를 채우기 위해 별도 노드로 편입했다(EPFL Infoscience 저자판 전문). 내용상 CS 연구에 더 쓸모 있는 것은 §III 의 **거리 바운딩 대 인증된 거리측정(authenticated ranging)** 구분이다: 인증된 거리측정(Fig. 2)은 claimant 가 ns 급 즉답을 할 필요 없이 처리 지연을 보고하는 방식이라 외부 공격자의 축소만 막고 내부(손상) 노드의 축소는 못 막는다고 정식화하는데, CS 의 RTT(reflector 가 ToA−ToD 차를 보고) 는 정확히 이 '인증된 거리측정' 쪽 구조라 CS 보안 모드가 어떤 공격자 유형까지를 목표로 하는지 말할 때 이 분류를 그대로 쓴다(VM-RF-AR 은 VM-RF-DB 의 성질 (3)(4)만 가짐). 또 §IV-C '최대 공격자 영향' 을 Multispectral UWB 실측(0–50 m 에서 σ 0–1 m)으로 δ ≈ 3σ 위치 오차로 환산한 계산은, CS 의 거리 분산을 알면 '검출 없이 밀어낼 수 있는 최대 거리' 를 같은 방식으로 구할 수 있음을 보여 주는 틀이다. 복제 장치(claimant 를 검증기마다 하나씩 두는) 공격과 장치 지문 완화, IB-VM 의 위치 프라이버시 한계도 여기서 명시된다.",
+      "summary": "적대적 환경의 측위 문제를 체계화한 INFOCOM 2005 논문의 저널판. §II 는 노드 중심·인프라 중심 시스템과 내부·외부 공격자를 구분하고 GPS(시뮬레이터 스푸핑)·초음파(ToF 축소 가능)·RF(RSS 조작, ToF 는 외부 공격자 확대만; Brands–Chaum 거리 바운딩은 내부 공격자도 확대만) 의 취약점을 Table I 로 정리한다. §III 는 RF 거리 바운딩(Fig. 1: ns 급 즉답, 1 ns = 30 cm, Multispectral UWB 자산 추적기 실측 수 cm·실내 100 m 를 근거로 실현 가능)과 인증된 거리측정(Fig. 2: claimant 가 처리 지연을 보고, 즉답 불필요, 외부 공격자만 방어)을 제시한다. §IV Verifiable Multilateration 은 3 개 이상 검증기의 거리 바운드 + MMSE 위치 + δ-테스트 + 검증 삼각형 내부 테스트로 위치를 수락하며, 삼각형 안에서 위치를 옮기면 최소 하나의 거리가 줄어야 한다는 성질로 위조를 막고, 확대된 거리 검출(Fig. 5), 복제 장치·공모 공격(Fig. 6, 장치 지문으로 완화), 최대 공격자 영향(Fig. 7: Multispectral 실측 σ 로 계산한 삼각형 내 위치 표준편차), VM-RF-DB/VM-US-DB/VM-RF-AR 의 성질 비교, IB-VM 프라이버시 한계를 다룬다. §V 는 센서망 위협(노드 이동·웜홀·거짓 위치 전파, Fig. 8)과 검증 삼각형 커버리지 시뮬레이션(100 회 평균·95 % 신뢰구간, Fig. 9: 최적 배치가 무작위보다 훨씬 적은 검증기 필요), 협력 측위 SPINE(이웃 간 거리 바운딩 → VM 기반 기본 거리 검증 → 범위 기반 측위) 을 제시한다.",
+      "hardware": [
+        "해당 없음 — 프로토콜 설계·시뮬레이션; UWB 실현 가능성 근거로 Multispectral Solutions 의 UWB 정밀 자산 추적 시스템 공개 실측(수 cm, 실내 100 m·실외 2 km, 태그 약 40 g)을 인용 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이터 미명시 — 검증기 커버리지 시뮬레이션(100 회 평균, 경계 영역 10 %) 수행 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "Table I: RSS·초음파 ToF 는 내부·외부 공격자 모두 축소·확대 가능; RF ToF 는 외부 공격자 확대만·내부 노드는 축소도 가능; RF 거리 바운딩은 둘 다 확대만 → RF ToF 계열이 최선",
+        "거리 바운딩 요구: claimant 즉답 지연 수 ns, 검증기 ns 급 시간 측정(1 ns = 30 cm); 초음파는 처리 지연 여유가 커 구현 쉬우나 소리보다 빠른 RF 릴레이로 축소 가능",
+        "인증된 거리측정(Fig. 2): 즉답 대신 처리 지연 보고 — 외부 공격자 축소 방지·내부 노드 축소는 불가; VM-RF-AR 은 VM-RF-DB 성질 (3)(4)만 보유",
+        "VM 성질: (1) 검증기 3 개면 어떤 거리 확대도 검출(어느 거리인지는 미식별), (2) 삼각형 안 위치 위조 불가, 복제 장치 공격(검증기마다 복제 claimant 배치)으로는 임의 위치 가능 → 내탬퍼성/장치 지문 필요",
+        "최대 공격자 영향: Multispectral 실측(거리 0–50 m 에서 σ 0–1 m) 을 MMSE 로 환산한 삼각형 내 위치 σ(Fig. 7) 의 δ ≈ 3σ 만큼이 검출 없이 밀 수 있는 최대치",
+        "Fig. 9: 면적 L×L 을 검증 삼각형으로 덮는 데 필요한 검증기 수 — 최적 배치가 무작위 배치보다 훨씬 효율적(100 회 평균, 95 % CI); 다만 보안상 무작위·이동 배치가 복제 공격을 막는 데 유리"
+      ],
+      "limitations": [
+        "저자 명시: 복제 장치·다중 공모 공격은 VM 만으로 못 막음(내탬퍼 하드웨어 또는 송신기 지문 필요); IB-VM 은 인프라가 위치를 알게 되어 프라이버시 미보장; 검증기 전력 범위가 삼각형을 덮어야 함",
+        "실험 없이 시뮬레이션과 타사 공개 실측 인용 — 실제 UWB 거리 바운딩 구현은 후속(Rasmussen 2010 등)으로 미룸 (관찰)",
+        "INFOCOM 2005 판과 내용 대부분 중복 — 별도 노드는 인용 그래프 정합을 위한 것 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "capkun-2005-secure-positioning",
+          "type": "extends",
+          "note": "INFOCOM 2005 판의 저널 확장 — 인증된 거리측정 프로토콜(Fig. 2)과 VM-RF-DB/US-DB/RF-AR 성질 비교, Multispectral 실측 기반 최대 공격자 영향 계산, IB-VM 프라이버시 논의 추가"
+        },
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "extends",
+          "note": "두 노드 간 거리 상한을 3 개 이상 검증기의 위치 검증(VM)으로 확장"
+        }
+      ],
+      "added": "2026-09-19",
+      "last_checked": "2026-09-19"
+    },
+    {
+      "id": "neirynck-2016-alt-ds-twr",
+      "title": "An alternative double-sided two-way ranging method",
+      "authors": [
+        "Dries Neirynck",
+        "Eric Luk",
+        "Michael McLaughlin"
+      ],
+      "venue": "IEEE WPNC",
+      "venue_full": "2016 13th Workshop on Positioning, Navigation and Communications (WPNC), Bremen, pp. 1–4, 2016-10 — Decawave Ltd, Dublin",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2016,
+      "url": "https://ieeexplore.ieee.org/document/7822844",
+      "preprint": null,
+      "doi": "10.1109/WPNC.2016.7822844",
+      "topics": [
+        "two-way-ranging",
+        "ds-twr",
+        "asymmetric-ds-twr",
+        "clock-drift",
+        "time-of-flight",
+        "uwb",
+        "decawave",
+        "dw1000",
+        "802.15.4z",
+        "foundational"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 6편(anliker-2023-time-for-change, leu-2022-ghost-peak, chen-2024, simoncic-2026, uwb-sv-2023, uwbad-2024)이 802.15.4z·상용 UWB 의 거리측정 절차를 설명할 때 '비대칭 DS-TWR(AltDS-TWR)' 의 출처로 드는 4쪽 워크숍 논문이라 캐시 참고문헌 캐기로 편입했다(유료, Xplore REST 초록·참고문헌만). 초록 기준으로, 대칭 DS-TWR 이 요구하는 '양쪽 응답 지연이 같아야 한다' 는 비현실적 제약을 없애면서 오차를 대칭 DS-TWR 최선치와 같은 자릿수로 유지하고, 오차가 **한쪽 장치의 클럭 드리프트에만** 의존하게 만드는 계산식을 제안한다. CS 연구에서의 쓰임은 둘이다. (1) CS RTT 는 단일 왕복(SS-TWR 에 해당) 에 reflector 의 ToA−ToD 보고를 더한 구조라 클럭 드리프트 오차가 응답 지연에 비례해 남는데, UWB 가 왜 DS-TWR(세 메시지) 로 갔는지와 그 대가(공격면이 되는 메시지 수 증가 — Time for Change·Ghost Peak 가 노리는 지점)를 설명할 때 이 논문이 그 계산식의 원전이다. (2) '오차가 한쪽 클럭에만 의존' 한다는 성질은 CS 에서 initiator 와 reflector 중 어느 쪽 기준 클럭이 좋은가에 따라 RTT 오차 예산이 달라진다는 논의로 옮길 수 있다. simoncic-2026 이 BLE MCPD 의 CFO 보정 맥락에서 이 논문을 인용하는 것이 그 다리다. 본문 수식·실험은 미확인이다.",
+      "summary": "[초록 기준] 대칭 DS-TWR 은 비동기 장치 간 ToF 측정에서 클럭 드리프트를 상쇄하는 잘 알려진 기법이지만 양쪽 응답 지연이 대칭이어야 한다는 요구가 실제로는 자주 충족되지 않는다. 이 논문은 그 제약 없이 DS-TWR 측정을 처리하는 대안 계산법을 제시한다. 제안 방식의 오차는 대칭 DS-TWR 의 최선 오차와 같은 자릿수이며, 결정적으로 한쪽 장치의 클럭 드리프트에만 의존하므로 한쪽이 더 좋은 시간 기준을 가진 경우 이를 활용할 수 있다. Xplore REST 참고문헌은 3건(IEEE 802.15.4-2011, 802.15.4a 개정, Decawave DW1000 데이터시트)이다.",
+      "hardware": [
+        "확인 필요 — 초록·참고문헌 기준 Decawave DW1000 이 대상 플랫폼으로 추정되나 실험 여부·구성은 전문 미확보로 미확인"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: 제안 비대칭 DS-TWR 의 오차는 대칭 DS-TWR 최선 오차와 같은 자릿수, 오차가 한쪽 장치 클럭 드리프트에만 의존 — 정량 수치는 전문 미확보로 미확인"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-09-19): IEEE 유료(isOpenAccess=false, S2 CLOSED), arXiv 없음, ResearchGate 요청본만 — 초록·저자 소속·참고문헌은 Xplore REST 로 확인",
+        "4쪽 워크숍 논문 — 실측 범위·클럭 모델 가정은 미확인 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-19",
+      "last_checked": "2026-09-19"
+    },
+    {
+      "id": "singelee-2007-db-noisy-environments",
+      "title": "Distance Bounding in Noisy Environments",
+      "authors": [
+        "Dave Singelée",
+        "Bart Preneel"
+      ],
+      "venue": "ESAS",
+      "venue_full": "Security and Privacy in Ad-hoc and Sensor Networks — 4th European Workshop, ESAS 2007, Cambridge, LNCS 4572, pp. 101–115, Springer, 2007 — KU Leuven COSIC",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2007,
+      "url": "https://doi.org/10.1007/978-3-540-73275-4_8",
+      "preprint": null,
+      "doi": "10.1007/978-3-540-73275-4_8",
+      "topics": [
+        "distance-bounding",
+        "noisy-channel",
+        "error-correcting-codes",
+        "rapid-bit-exchange",
+        "mafia-fraud",
+        "distance-fraud",
+        "hancke-kuhn",
+        "protocol-design",
+        "foundational"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "코퍼스 11편(abidin-2021, avoine-2018, cremers-2012, flury-2010, hancke-2008, kim-2008, nkrow-2024-tof-resiliency, poturalski-2011/2012, tippenhauer-2009/2015)이 인용하는 거리 바운딩 계보 노드라 캐시 참고문헌 캐기로 편입했다(Springer 유료, 초록만). 초록 기준으로 Hancke–Kuhn 이 잡음 채널에 대해 둔 해법(오류 허용 임계값)을 대신해 빠른 비트 교환의 비트 오류를 **이진 오류정정부호**로 고치는 프로토콜을 제안해 같은 보안 수준에서 통신 라운드를 약 50 % 줄인다. CS 연구에서의 쓰임은 간접적이다 — CS 는 비트 단위 빠른 교환 자체가 없어 이 프로토콜은 옮겨 쓸 수 없지만, '잡음 허용 임계값 T 를 두면 공격자 성공확률이 (·)^n 에서 얼마나 나빠지는가' 라는 잡음–보안 교환 문제(Swiss-Knife 표 1 의 T-FAR 축)는 CS 의 NADM/PCT 검증 임계값을 설계할 때 그대로 나타나는 질문이며, 이 논문은 그 교환을 부호화로 우회한 첫 시도로서 계보상 위치가 있다. 후속(Munilla–Peinado void-challenge, Avoine 2018 서베이의 잡음 절)에서 이 프로토콜의 mafia fraud 저항이 재분석되었다는 점은 avoine-2018 을 볼 것.",
+      "summary": "[초록 기준] 위치 정보로 무선 애드혹 망의 상호 개체 인증을 강화할 수 있다. Brands–Chaum(Eurocrypt '93) 의 거리 바운딩은 distance fraud·mafia fraud(원격 정직 사용자를 악용하는 근접 위장자)를 막으며, Hancke–Kuhn 은 잡음 채널을 다루는 해법을 제안했다. 이 논문은 잡음 채널용 개선 거리 바운딩 프로토콜을 제시해 Hancke–Kuhn 대비 통신 라운드를 약 50 % 줄인다. 핵심은 빠른 비트 교환 중 발생하는 비트 오류를 이진 부호로 정정하는 것이며, 저가·잡음 무선 환경에 적합하다고 주장한다.",
+      "hardware": [
+        "해당 없음(프로토콜 논문으로 추정) — 전문 미확보로 미확인"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: Hancke–Kuhn 대비 통신 라운드 약 50 % 감소 — 보안 확률·오류율 수치는 전문 미확보로 미확인"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-09-19): Springer content/pdf 경로가 HTML('Access this chapter') 반환, Crossref 서지 검색은 미색인(랜딩 페이지 메타태그로 DOI·쪽수 확인), 저자 OA 사본 미탐색",
+        "후속 문헌이 mafia fraud 저항을 재분석(avoine-2018 참조) — 본문 미확인이라 상세 미기재 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "extends",
+          "note": "Hancke–Kuhn 의 잡음 허용 방식을 이진 오류정정부호로 대체해 라운드 수 약 50 % 감소 (초록 기준)"
+        }
+      ],
+      "added": "2026-09-19",
+      "last_checked": "2026-09-19"
     }
   ]
 }
