@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-19",
-  "last_run": "2026-09-19",
+  "updated": "2026-09-20",
+  "last_run": "2026-09-20",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 860,
+  "citation_edges": 874,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -1833,7 +1833,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-20",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -1846,7 +1846,8 @@
         "avoine-2018-db-survey",
         "vasisht-2016-chronos",
         "ranganathan-2017-are-we-really-close",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "jiokeng-2020-ftm-music"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3655,7 +3656,8 @@
         "schepers-2021-ftm-security",
         "leu-2021-multicarrier-tof",
         "kosek-szott-2026-wifi-ftm-survey",
-        "singh-2023-wifi-ftm-iot-benchmark"
+        "singh-2023-wifi-ftm-iot-benchmark",
+        "jiokeng-2020-ftm-music"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3666,7 +3668,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-09-16"
+      "last_checked": "2026-09-20"
     },
     {
       "id": "leu-2021-multicarrier-tof",
@@ -4333,7 +4335,8 @@
         "capkun-2005-secure-positioning",
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
-        "gezici-2005-uwb-localization-survey"
+        "gezici-2005-uwb-localization-survey",
+        "lee-2002-uwb-dense-multipath-ranging"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4344,7 +4347,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-09-20"
     },
     {
       "id": "flury-2010-distance-decreasing",
@@ -6423,11 +6426,13 @@
         "dataset": null
       },
       "verification": "verified",
-      "cites": [],
+      "cites": [
+        "lee-2002-uwb-dense-multipath-ranging"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-20"
     },
     {
       "id": "rajendran-2025-11mc-vs-11az",
@@ -6490,12 +6495,13 @@
       },
       "verification": "verified",
       "cites": [
-        "singh-2023-wifi-ftm-iot-benchmark"
+        "singh-2023-wifi-ftm-iot-benchmark",
+        "jiokeng-2020-ftm-music"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-16"
+      "last_checked": "2026-09-20"
     },
     {
       "id": "zand-2019-concurrent-pbr",
@@ -10621,9 +10627,10 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-20",
       "cites": [
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "lee-2002-uwb-dense-multipath-ranging"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11817,11 +11824,12 @@
       },
       "verification": "verified",
       "added": "2026-09-16",
-      "last_checked": "2026-09-16",
+      "last_checked": "2026-09-20",
       "cites": [
         "brands-1993-distance-bounding",
         "clulow-2006-long-symbols",
-        "hancke-2008-tof-db-attacks"
+        "hancke-2008-tof-db-attacks",
+        "gunther-2005-wlan-rtt"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11897,13 +11905,15 @@
       },
       "verification": "verified",
       "added": "2026-09-16",
-      "last_checked": "2026-09-16",
+      "last_checked": "2026-09-20",
       "cites": [
         "glass-2010-toa-ranging-insecurity-80211",
         "poturalski-2010-cicada-attack",
         "zand-2019-ble-pbr",
         "schepers-2021-ftm-security",
-        "singh-2023-wifi-ftm-iot-benchmark"
+        "singh-2023-wifi-ftm-iot-benchmark",
+        "jiokeng-2020-ftm-music",
+        "gunther-2005-wlan-rtt"
       ],
       "cites_source": "fulltext",
       "relations": []
@@ -12676,11 +12686,13 @@
         "dataset": null
       },
       "verification": "verified",
-      "cites": [],
+      "cites": [
+        "lee-2002-uwb-dense-multipath-ranging"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-19",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-09-20"
     },
     {
       "id": "capkun-2006-secure-positioning-jsac",
@@ -12829,12 +12841,12 @@
         "Bart Preneel"
       ],
       "venue": "ESAS",
-      "venue_full": "Security and Privacy in Ad-hoc and Sensor Networks — 4th European Workshop, ESAS 2007, Cambridge, LNCS 4572, pp. 101–115, Springer, 2007 — KU Leuven COSIC",
+      "venue_full": "Security and Privacy in Ad-hoc and Sensor Networks — 4th European Workshop, ESAS 2007, Cambridge, LNCS 4572, pp. 101–115, Springer, 2007 — KU Leuven ESAT-COSIC (Lirias 저자판 15쪽)",
       "tier": "other",
       "category": "protocol",
       "year": 2007,
       "url": "https://doi.org/10.1007/978-3-540-73275-4_8",
-      "preprint": null,
+      "preprint": "https://lirias.kuleuven.be/retrieve/354278e0-236c-4ab5-b510-7f9593e7a666",
       "doi": "10.1007/978-3-540-73275-4_8",
       "topics": [
         "distance-bounding",
@@ -12843,7 +12855,10 @@
         "rapid-bit-exchange",
         "mafia-fraud",
         "distance-fraud",
+        "terrorist-fraud",
+        "false-acceptance-ratio",
         "hancke-kuhn",
+        "mutual-authentication",
         "protocol-design",
         "foundational"
       ],
@@ -12851,39 +12866,288 @@
         "other"
       ],
       "relevance": "low",
-      "relevance_note": "코퍼스 11편(abidin-2021, avoine-2018, cremers-2012, flury-2010, hancke-2008, kim-2008, nkrow-2024-tof-resiliency, poturalski-2011/2012, tippenhauer-2009/2015)이 인용하는 거리 바운딩 계보 노드라 캐시 참고문헌 캐기로 편입했다(Springer 유료, 초록만). 초록 기준으로 Hancke–Kuhn 이 잡음 채널에 대해 둔 해법(오류 허용 임계값)을 대신해 빠른 비트 교환의 비트 오류를 **이진 오류정정부호**로 고치는 프로토콜을 제안해 같은 보안 수준에서 통신 라운드를 약 50 % 줄인다. CS 연구에서의 쓰임은 간접적이다 — CS 는 비트 단위 빠른 교환 자체가 없어 이 프로토콜은 옮겨 쓸 수 없지만, '잡음 허용 임계값 T 를 두면 공격자 성공확률이 (·)^n 에서 얼마나 나빠지는가' 라는 잡음–보안 교환 문제(Swiss-Knife 표 1 의 T-FAR 축)는 CS 의 NADM/PCT 검증 임계값을 설계할 때 그대로 나타나는 질문이며, 이 논문은 그 교환을 부호화로 우회한 첫 시도로서 계보상 위치가 있다. 후속(Munilla–Peinado void-challenge, Avoine 2018 서베이의 잡음 절)에서 이 프로토콜의 mafia fraud 저항이 재분석되었다는 점은 avoine-2018 을 볼 것.",
-      "summary": "[초록 기준] 위치 정보로 무선 애드혹 망의 상호 개체 인증을 강화할 수 있다. Brands–Chaum(Eurocrypt '93) 의 거리 바운딩은 distance fraud·mafia fraud(원격 정직 사용자를 악용하는 근접 위장자)를 막으며, Hancke–Kuhn 은 잡음 채널을 다루는 해법을 제안했다. 이 논문은 잡음 채널용 개선 거리 바운딩 프로토콜을 제시해 Hancke–Kuhn 대비 통신 라운드를 약 50 % 줄인다. 핵심은 빠른 비트 교환 중 발생하는 비트 오류를 이진 부호로 정정하는 것이며, 저가·잡음 무선 환경에 적합하다고 주장한다.",
+      "relevance_note": "코퍼스 11편(abidin-2021, avoine-2018, cremers-2012, flury-2010, hancke-2008, kim-2008, nkrow-2024-tof-resiliency, poturalski-2011/2012, tippenhauer-2009/2015)이 인용하는 거리 바운딩 계보 노드다. CS 연구에서 직접 쓰이는 것은 프로토콜이 아니라 §6 의 **잡음–보안 교환의 정량화**다. (1) 검증기가 x 개의 비트 오류를 허용하는 순간 공격자는 틀린 추측을 잡음 탓으로 돌릴 수 있어, 같은 n=37 에서 허용 오류를 0→4 로 늘리면 Hancke–Kuhn 의 오수락률이 2.4×10⁻⁵ → 0.028 로 세 자릿수 나빠진다(표 1). CS 의 NADM 판정·PCT 일관성 검사도 '정상 잡음 때문에 몇 %는 튀어도 받아 준다' 는 허용 임계값을 두어야 하므로 같은 구조의 교환이 생기며, 이 표는 '허용 임계값 하나가 공격 성공률을 어디까지 끌어올리는가' 를 계산해 보여 주는 가장 오래된 예다. (2) 저자의 해법은 임계값이 아니라 **부호화** — 비트열 자체에 (n,k) 오류정정부호를 걸어 첫 k 라운드만 보안에 기여하게 하고 오수락률을 (1/2)^k 로 못박는다. 임계값 완화(Hancke–Kuhn 3/4 확률·(n−x) 비트 추측)와 부호화(1/2 확률·k 비트 추측)의 차이가 지수적으로 증폭돼 같은 오수락률에 라운드가 절반이 되는데, 이는 CS 에서 '탐지 임계값을 느슨하게 두는 것' 과 '측정 자체에 검증 구조를 넣는 것(예: 랜덤 톤 순서·서명된 위상)' 의 차이를 논할 때 인용할 정량 선례다. (3) 대가는 오거부율 상승(라운드 실패 확률 2P_b 대 (3/2)P_b, 표 2)이며 이 오거부 쪽 비용도 함께 적혀 있어 CS 임계값 설계의 양쪽 비용 표본으로 쓸 수 있다. CS 는 비트 단위 빠른 교환이 없어 프로토콜 자체는 옮겨 쓸 수 없고, 테러리스트 사기 저항은 신뢰 하드웨어에 맡긴다는 점(§7)은 후속 Swiss-Knife 가 채운다.",
+      "summary": "Brands–Chaum(Eurocrypt '93) 과 그 상호인증 확장 MAD(Čapkun–Buttyán–Hubaux SECTOR) 는 빠른 비트 교환 중 비트 오류 하나로 실패하고, Hancke–Kuhn(SecureComm '05) 은 x 개의 오류를 허용해 잡음에 견디지만 라운드당 공격자 성공확률이 3/4 이다. 이 논문은 MAD 를 잡음 내성으로 바꾸는 방법을 제안한다 — 양쪽이 (n,k) 이진 오류정정부호(최소 해밍거리 d_min, x = ⌊(d_min−1)/2⌋)에 합의하고, 각자 k 비트 난수를 n 비트 부호어(r_1…r_n, s_1…s_n)로 늘려 해시 커밋한 뒤, n 라운드에서 α_i = r_i ⊕ β_{i−1}, β_i = s_i ⊕ α_i 를 교환하며 최대 왕복시간으로 거리 상한을 정한다. 교환 후 ECC 로 오류를 고쳐 상대의 k 비트를 복원하고 MAC_K(r‖s) 와 커밋 개봉으로 인증한다. §6 에서 대칭·독립 비트오류(P_b)를 가정해 라운드 실패 확률(Hancke–Kuhn (3/2)P_b, MAD 2P_b), 오거부율 P_FR, 오수락률 P_FA(Hancke–Kuhn Σ C(n,i)(3/4)^i(1/4)^{n−i}, i ≥ n−x; MAD (1/2)^k)를 유도한다. n=37·P_b=0.01 에서 허용 오류 x=4→0 에 따라 Hancke–Kuhn P_FA 는 0.0284→2.38×10⁻⁵, MAD 는 (37,16)→(37,37) 부호로 1.53×10⁻⁵→7.28×10⁻¹²; n=63·P_b=0.02 에서 x=13→1 에 Hancke–Kuhn 0.261→2.96×10⁻⁷, MAD 2.44×10⁻⁴→6.94×10⁻¹⁸. 오거부율은 MAD 가 약간 높다(n=37: x=6 에서 1.18×10⁻⁶ 대 7.78×10⁻⁶). 같은 오수락률에 Hancke–Kuhn 은 라운드가 약 2 배(상호인증이면 4 배) 필요하다(Fig. 5, x=5·P_b=0.005). 테러리스트 사기 저항은 신뢰 하드웨어 실행으로만 얻는다.",
       "hardware": [
-        "해당 없음(프로토콜 논문으로 추정) — 전문 미확보로 미확인"
+        "해당 없음 — 프로토콜 설계·확률 분석 논문, 구현·실측 없음(전문 확인)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요 — 전문 미확보"
+        "해당 없음 — 오류정정부호 표는 Jaffe(선형)·Litsyn(비선형) 온라인 표에서 선택, 수치 계산 도구 미기재"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "초록: Hancke–Kuhn 대비 통신 라운드 약 50 % 감소 — 보안 확률·오류율 수치는 전문 미확보로 미확인"
+        "라운드 실패 확률: Hancke–Kuhn (3/2)P_b (챌린지 오류 시 1/2 확률로 우연히 정답), 잡음 내성 MAD 2P_b (α 또는 β 오류면 반드시 실패)",
+        "오수락률: Hancke–Kuhn Σ_{i=n−x}^{n} C(n,i)(3/4)^i(1/4)^{n−i} — 허용 오류 x 만큼 공격자가 틀려도 됨; MAD (1/2)^k — 처음 k 라운드만 보안에 기여, 나머지 n−k 비트는 부호로 계산 가능",
+        "표 1 (n=37, P_b=0.01): x=4/3/2/1/0 에 Hancke–Kuhn P_FA 0.0284/0.0089/0.0021/3.18×10⁻⁴/2.38×10⁻⁵; MAD (37,16)/(37,22)/(37,26)/(37,31)/(37,37) 에 1.53×10⁻⁵/2.38×10⁻⁷/1.49×10⁻⁸/4.66×10⁻¹⁰/7.28×10⁻¹²",
+        "표 2 (n=37, P_b=0.01) 오거부율: x=6…0 에 Hancke–Kuhn 1.18×10⁻⁶ … 0.4283, MAD 7.78×10⁻⁶ … 0.5265 — MAD 가 약간 높음; n=47 이면 MAD 에 오류 1–2 개 더 허용하면 동급(x=9 1.80×10⁻⁹ ≈ x=10 1.84×10⁻⁹)",
+        "표 3 (n=63, P_b=0.02): x=13/10/7/5/3/1 에 Hancke–Kuhn 0.2611/0.0584/0.0052/5.11×10⁻⁴/2.30×10⁻⁵/2.96×10⁻⁷; MAD (63,12)/(63,18)/(63,28)/(63,37)/(63,47)/(63,57) 에 2.44×10⁻⁴/3.81×10⁻⁶/3.73×10⁻⁹/7.28×10⁻¹²/7.11×10⁻¹⁵/6.94×10⁻¹⁸ — Hancke–Kuhn x=1 (2.96×10⁻⁷) 이 MAD x=7 (3.73×10⁻⁹) 보다 나쁨",
+        "Fig. 5 (x=5, P_b=0.005): 같은 오수락률에 Hancke–Kuhn 은 라운드 약 2 배, 상호인증까지 요구하면 4 배",
+        "커밋: 128 비트 난수 ‖ n 비트열의 해시(무조건 은닉·조건부 결속); 인증 MAC 은 CBC-MAC/HMAC 류 의사난수함수",
+        "설계 원칙으로 Clulow 2006 의 네 가지(광속 매체·비트 즉시 반응·짧은 심볼·비트 오류 허용)를 인용"
       ],
       "limitations": [
-        "전문 미확보 (2026-09-19): Springer content/pdf 경로가 HTML('Access this chapter') 반환, Crossref 서지 검색은 미색인(랜딩 페이지 메타태그로 DOI·쪽수 확인), 저자 OA 사본 미탐색",
-        "후속 문헌이 mafia fraud 저항을 재분석(avoine-2018 참조) — 본문 미확인이라 상세 미기재 (관찰)"
+        "빠른 채널을 대칭·독립 비트오류로 가정하고 챌린지·응답 동시 오류는 무시(저자 명시)",
+        "느린 채널로 보내는 비트가 Hancke–Kuhn 보다 조금 많고, 총비용은 매체 특성·요구 보안 수준에 좌우(저자 명시)",
+        "테러리스트 사기 저항은 신뢰 하드웨어 실행에 의존 — 프로토콜 자체에는 없음(저자 명시); 대칭키만으로 저항하는 것은 Reid 2007·Swiss-Knife 2008 의 몫",
+        "구현·실측·물리계층(심볼 길이·ED/LC) 논의 없음; 후속(avoine-2018 서베이)이 mafia fraud 저항을 재분석 (관찰)"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "clulow-2006-long-symbols",
+        "hancke-2005-rfid-db"
+      ],
+      "cites_source": "fulltext",
       "relations": [
         {
           "to": "hancke-2005-rfid-db",
           "type": "extends",
-          "note": "Hancke–Kuhn 의 잡음 허용 방식을 이진 오류정정부호로 대체해 라운드 수 약 50 % 감소 (초록 기준)"
+          "note": "Hancke–Kuhn 의 '오류 x 개 허용' 대신 (n,k) 오류정정부호로 잡음 내성을 얻어 오수락률을 (1/2)^k 로 낮추고 같은 보안에 라운드를 약 절반으로"
+        },
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "extends",
+          "note": "Brands–Chaum 의 상호인증 확장 MAD(SECTOR)에 오류정정부호를 넣어 잡음 채널에서도 성립하게 함"
+        },
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "implements",
+          "note": "Clulow 의 네 번째 설계 원칙('빠른 비트 교환 중 비트 오류에 대처하라')을 프로토콜 수준에서 구현"
         }
       ],
       "added": "2026-09-19",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-09-20"
+    },
+    {
+      "id": "jiokeng-2020-ftm-music",
+      "title": "When FTM Discovered MUSIC: Accurate WiFi-based Ranging in the Presence of Multipath",
+      "authors": [
+        "Kevin Jiokeng",
+        "Gentian Jakllari",
+        "Alain Tchana",
+        "André-Luc Beylot"
+      ],
+      "venue": "IEEE INFOCOM",
+      "venue_full": "IEEE INFOCOM 2020 — IEEE Conference on Computer Communications, Toronto (virtual), July 2020, pp. 1857–1866 — IRIT-INPT/ENSEEIHT, University of Toulouse · ENS Lyon (HAL hal-03001578 저자판 11쪽)",
+      "tier": "wireless",
+      "category": "estimation",
+      "year": 2020,
+      "url": "https://doi.org/10.1109/INFOCOM41043.2020.9155464",
+      "preprint": "https://hal.science/hal-03001578v1/document",
+      "doi": "10.1109/INFOCOM41043.2020.9155464",
+      "topics": [
+        "wifi-ftm",
+        "802-11mc",
+        "round-trip-time",
+        "music",
+        "csi",
+        "super-resolution",
+        "nlos",
+        "multipath",
+        "sensor-fusion",
+        "commodity-hardware",
+        "indoor-localization",
+        "mean-excess-delay"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 가 RTT(시간)와 PBR(다중반송파 위상)을 한 절차에 묶어 두는 이유를, Wi-Fi 에서 같은 두 축(FTM RTT + CSI-MUSIC)을 손으로 결합해 보인 논문이다. CS 연구에 옮겨 쓸 관찰이 셋이다. (1) RTT 기반 거리는 LOS 가 가려져 반사파가 더 강해지는 순간 무너지지만, 오차는 '반사 경로 길이' 가 아니라 직접파와 반사파의 상대 세기에 따라 직접 경로와 반사 경로 사이 어딘가에 놓인다(Fig. 5(b)·Fig. 8) — CS RTT 의 fractional timing 이 다중경로에서 어떻게 편향되는지를 예측하는 모델(세기 가중 평균 초과지연)이고, 이는 곧 공격자가 강한 지연 경로를 주입하면 RTT 가 '그 경로로 점프' 하는 게 아니라 '그쪽으로 끌린다' 는 뜻이다. (2) 상용 칩의 CSI 에 MUSIC 을 걸면 절대 ToF 는 30–60 m 씩 틀리지만(칩 내부 지연·패킷마다 6.9 m 표준편차), **경로 간 ToF 차이는 정확**하다(§III-C, 12.3 m 고정 오프셋) — CS PBR 의 절대 위상도 같은 이유로 보정이 필요하고, 다중경로 분해로 얻는 것은 '상대 지연' 이라는 점이 동일하다. 절대값은 RTT 가, 상대값은 위상이 담당한다는 분업이 CS 의 RTT+PBR 이중 구조와 정확히 같다. (3) '직접파가 지배적이지 않아도 RTT 가 맞는 경우가 있다' 는 관찰(Fig. 7(b)) 때문에 보정 여부를 세기 비율 R(=P(1)/ΣP(k)) 임계값 0.5 로 결정하는데, 이 R 은 CS 의 NADM 이 하려는 판정과 같은 부류의 통계량이다 — 공격자가 R 을 임계값 위에 머물게 하면서 지연 경로를 주입하면 보정이 꺼진 채 RTT 만 끌려간다는 것이 이 구조의 약점이며, CS 의 NADM 임계값 설계에도 그대로 적용되는 가설이다. 코퍼스 4편(antonijevic-2026·kosek-szott-2026·rajendran-2025·tschirschnitz-2026)이 인용하는 Wi-Fi FTM 계보의 정확도 노드다.",
+      "summary": "802.11mc FTM 을 지원하는 첫 상용 NIC(Intel 8260, Qualcomm IPQ4018)로 FTM 의 다중경로 문제를 신호 수준에서 분석하고, FTM 출력과 CSI 만으로 NLOS 오차를 고치는 FUSIC 을 제안한다. 복도 LOS 1–60 m 에서 FTM 평균 오차 0.76 m(90 % 1.56 m)지만, 벽 반사체가 있는 통제 환경에서 사람이 LOS 를 막으면 오차가 D=6 m 에서 3.03 m, D=8 m 에서 7.62 m 까지 커진다. 다만 FTM 출력은 반사 경로 길이가 아니라 직접 경로와 반사 경로 사이 값이며, 그 위치는 직접파의 상대 세기가 정한다(축구장 실외 실험으로 사람의 유전율 영향은 무시할 수준임을 확인). 상용 CSI 에 MUSIC 을 걸면 절대 ToF 는 32–61.8 m 틀리지만 경로 간 차이는 100 패킷 내내 12.3 m 로 일정해 정확하다. FUSIC 은 MUSIC 스펙트럼에서 직접파 세기 비율 R 을 계산해 R ≥ 0.5 이면 FTM 값을 그대로 쓰고, 아니면 세기 가중 평균 초과지연 τ̄ 를 빼서 보정한다(d = d_FTM − τ̄·c). 표준·AP 변경이 없고 initiator 측 응용으로 구현 가능하다. 통제 환경에서 중앙값 0.68 m/90 % 2.12 m(FTM 4.38/7.8 m), 식당·창고·라운지 122 지점에서 1.27/3.41 m(FTM 2.32/5.28 m), 최소제곱 삼변측량 위치오차 1.94/3.77 m(FTM 3.64/5.79 m; 창고 1.9 m 대 5.04 m).",
+      "hardware": [
+        "Initiator: Dell Latitude 5480 노트북 + Intel 8260 Wi-Fi NIC (FTM 지원, Wi-Fi Location 인증)",
+        "Responder: Asus Wireless-AC1300 RT-AC58U 라우터 3대 (Qualcomm IPQ4018, FTM 지원) — 80 MHz 대역폭, 5 GHz",
+        "CSI 수집: 각 라우터 옆에 Dell Vostro 15 3000 + Intel 5300 NIC 를 붙여 Linux CSI Tool 로 기록(라우터 자체는 CSI 미보고) — 분석 편의상 FUSIC 을 라우터 측에서 실행",
+        "Ground truth: 30 m 줄자; 실내 3곳(대학 식당 23×13.5 m, 기술 창고 13×12.5 m, 라운지 15×13.5 m) 122 지점 + 통제 다중경로(벽 반사체 D=6/8 m, L=2–10 m) + 실외 축구장(사람 0–3명)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Initiator: Ubuntu 16.04, Linux 4.14.0, Intel iwlwifi 백포트 LinuxCore30 의 수정판(Ibrahim MobiCom '18 오픈 플랫폼)",
+        "Responder: OpenWrt snapshot r1834-0f04829, Linux 4.9.86, FTM 지원 ath10k 드라이버·펌웨어; 빔포밍 비활성",
+        "FTM 요청: FTM 기능을 추가한 iw 수정판(패치 p.sipsolutions.net/bef149ad0c1b8c8f.txt)",
+        "Linux 802.11n CSI Tool(Halperin), MUSIC(주파수 영역 ToF), R_threshold = 0.5, 최소제곱 삼변측량; 측정 30회 반복 평균"
+      ],
+      "software_verified": true,
+      "results": [
+        "LOS 복도 1–60 m: FTM 평균 오차 0.76 m, 90 % 1.56 m (5회 반복)",
+        "NLOS(벽 반사체 + 사람 1명): 오차 최대 3.03 m(D=6 m), 7.62 m(D=8 m); FTM 출력은 직접 경로와 반사 경로 기하 길이 사이에 놓임",
+        "실외 축구장(다중경로 없음): 사람 0–3명이 LOS 를 막아도 거리 추정 변화 무시 수준(RSSI 는 감소) — 유전율 영향이 아니라 다중경로가 원인",
+        "직접파 세기 비율 R 이 클수록 오차 작음(Fig. 8, 사람 최대 8명); R 이 반사파와 비슷해도 FTM 은 대체로 정확, 반사파가 뚜렷이 강할 때만 붕괴",
+        "상용 CSI + MUSIC: 5 m 실제 거리에 대해 추정 32–61.8 m(약 12배), 패킷 간 표준편차 6.9 m → 정적 보정 불가; 그러나 두 경로 추정 차이는 100 패킷 내내 12.3 m 로 일정(실제 경로차와 일치)",
+        "FUSIC 통제 환경(L·D 변화, LOS 차단): 중앙값 0.68 m·90 % 2.12 m vs FTM 4.38 m·7.8 m; 시간 변화 실험(180°·360° 회전)에서도 추정 유지",
+        "실내 3곳 122 지점 종합: FUSIC 중앙값 1.27 m·90 % 3.41 m vs FTM 2.32 m·5.28 m; 장애물이 가장 적은 라운지에서 차이 최소",
+        "위치추정(최소제곱): FUSIC 1.94 m·3.77 m vs FTM 3.64 m·5.79 m; 창고 중앙값 1.9 m vs 5.04 m"
+      ],
+      "limitations": [
+        "상용 라우터가 CSI 를 보고하지 않아 Intel 5300 별도 장치로 CSI 를 흉내냄 — 실제 제품에서는 initiator NIC 의 CSI 보고(당시 iwlwifi 예정 기능)가 전제",
+        "R_threshold = 0.5 는 경험적 선택(보정을 덜 하는 쪽으로 보수적), 임계값 경계의 오동작 정량화 없음",
+        "MUSIC 스펙트럼의 최소 ToF 피크를 직접파로 가정 — 직접파가 분해되지 않는 경우(강한 차폐)의 동작 미평가",
+        "보안 고려 없음 — R 을 임계값 위로 유지하면서 지연 경로를 주입하면 보정이 꺼진 채 RTT 만 끌려가는 구조 (관찰)",
+        "향후 과제: 기기 추적·실내 지도 등 다른 거리 기반 응용으로 확장"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "vasisht-2016-chronos"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-20",
+      "last_checked": "2026-09-20"
+    },
+    {
+      "id": "gunther-2005-wlan-rtt",
+      "title": "Measuring Round Trip Times to Determine the Distance Between WLAN Nodes",
+      "authors": [
+        "André Günther",
+        "Christian Hoene"
+      ],
+      "venue": "IFIP Networking",
+      "venue_full": "NETWORKING 2005 (4th International IFIP-TC6 Networking Conference, Waterloo), LNCS 3462, Springer, pp. 768–779 — Telecommunication Networks Group (TKN), TU Berlin; TKN-04-016 기술보고서의 축약·보강판",
+      "tier": "other",
+      "category": "measurement",
+      "year": 2005,
+      "url": "https://doi.org/10.1007/11422778_62",
+      "preprint": "https://link.springer.com/content/pdf/10.1007/11422778_62.pdf",
+      "doi": "10.1007/11422778_62",
+      "topics": [
+        "wifi",
+        "802-11",
+        "round-trip-time",
+        "time-of-flight",
+        "commodity-hardware",
+        "clock-drift",
+        "quantization",
+        "beat-frequency",
+        "rssi-vs-tof",
+        "foundational",
+        "indoor-localization"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "low",
+      "relevance_note": "상용 무선 칩의 MAC 타임스탬프로 패킷 왕복시간을 재서 거리를 얻는 방식의 원전으로, 코퍼스에서 glass-2010(802.11 ToA 거리측정의 불안전성)이 공격 대상 절차로, kosek-szott-2026 이 FTM 의 전사(前史)로 인용한다. CS 연구에 쓰이는 지점은 두 가지다. (1) **양자화보다 훨씬 작은 지연을 다수 관측의 평균으로 뽑아내는 논리**: 1 µs(=300 m) 해상도의 타이머로 수 m 급 거리를 얻는 근거가 열잡음뿐 아니라 두 수정 발진기의 상대 드리프트가 만드는 맥놀이(3.5 Hz ≈ 3.5 ppm)라는 설명이며, 이는 CS RTT 가 1 µs 심볼 시계 위에서 ns 급 fractional timing 을 얻는 것과 같은 계열의 논증이다 — 공격 관점에서는 '평균으로 정밀도를 사는 절차는 관측마다 작은 조작을 누적 주입하는 공격에 취약하다' 는 Glass 2010 의 출발점이 된다. (2) MAC 처리시간이 표준(SIFS)이 아니라 칩셋·펌웨어별 절대 오프셋으로 나타나 모델별 보정이 필요하다는 관찰은, CS 의 reflector 처리지연 보고가 왜 신뢰 경계 문제인지의 가장 오래된 실증이다. 정확도 자체(표준편차 3.3–25 m)는 CS 와 비교 대상이 아니다.",
+      "summary": "IEEE 802.11 의 데이터–즉시 ACK 쌍을 이용해, 송신 시작부터 ACK 수신까지(remote delay)와 수신부터 ACK 송신까지(local delay)의 차이로 전파시간을 구하고 2·distance = c·(d_remote − d_local) 로 거리를 낸다. 운영체제 인터럽트 지연을 피하려고 WLAN 카드 하드웨어 타임스탬프(1 µs 해상도)를 쓰되, 카드가 수신 타임스탬프만 주므로 송신 측 옆에 모니터 PC 를 두어 송수신을 함께 캡처한다. 1 µs = 300 m 의 양자화를 넘기 위해 다수 관측의 평균을 취하며, 그것이 되는 이유를 가우스 잡음·확률공명·그리고 두 수정 발진기의 상대 드리프트가 만드는 맥놀이(양자화 오차의 주기적 변화)로 설명하고, 델타 펄스 모델로 평균 = 2·d_prop + 1, 분산 = {2d_prop} − {2d_prop}² 임을 유도한다. 체육관(Prism2 카드, 5–40 m)과 1년 뒤 시골 야외(Netgear FWAG114 AP, Atheros AR5212·Prism GT 카드, 100 m 까지) 두 캠페인에서 RTT 가 거리와 뚜렷이 상관하고 RSSI 보다 나음을 보였다. 원격 지연의 자기상관이 감쇠 코사인이고 FFT 에서 거리와 무관한 3.5 Hz 성분이 나와 클럭 드리프트 ≈ 3.5 ppm 으로 해석했고, 위치당 500–1000 관측이면 거의 최적 정확도에 도달하므로 1 s 의 연속 전송으로 8 m 이내 오차가 가능하다고 결론짓는다.",
+      "hardware": [
+        "1차 캠페인(체육관): D-Link 카드, Intersil(현 Conexant) Prism2 칩셋; PC Suse 6.4 Linux, 커널 2.4.17",
+        "2차 캠페인(시골 야외): AP Netgear FWAG114(802.11b/g); Netgear WAG-511 카드(Atheros AR5212) 및 Longshine LCS-8531G(Prism GT, ISL3890 MAC); PC Suse 9.1, 특수 2.6 커널; 송신기는 플라스틱 탁자, 수신기는 1.5 m 사다리 위(프레넬 존 확보), 안테나 정대향",
+        "모니터 PC 1대를 송신 노드 옆에 두어 송수신 패킷을 스니핑(카드가 송신 타임스탬프를 제공하지 않아서)",
+        "ICMP ping 20 ms/10 ms 간격, 프레임 65 B·ACK 14 B, 802.11g 36/54 Mbit/s 등 7가지 구성, 위치당 15 분/4 분 측정"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "1차: 측정 도구 'Snuffle' 로 MAC 계층 직접 스니핑",
+        "2차: Madwifi 드라이버(CVS 2004-08-30), prism54.org 드라이버(2004-06-28, 펌웨어 1.0.4.3.arm), tcpdump/libpcap(prism 링크계층 헤더 출력하도록 수정), R 로 평균·분산·자기상관 분석"
+      ],
+      "software_verified": true,
+      "results": [
+        "하드웨어 타임스탬프 해상도 1 µs = 300 m; 유효 관측을 [323 µs, 324 µs] 구간으로 필터링(322·325 µs 는 오차로 폐기)",
+        "델타 펄스 모델: 평균 rtt = 2·d_prop + 1, 분산 = {2d_prop} − {2d_prop}² ≤ 1/4 → 양자화만으로 표준편차 최대 18.75 m(62.5 ns); 실측 표준편차 3.3–25 m 라 열잡음 등 다른 요인도 지배적",
+        "1차 캠페인: 계산 거리가 실제보다 항상 큼(카드가 바닥에 있어 프레넬 존 위반), 35 m 지점은 크게 이탈; RSSI 는 반사 때문에 거리와 상관 거의 없음(R² 0.09–0.14)",
+        "2차 캠페인: 거리–계산 거리 상관 뚜렷, 거리가 멀수록(링크 품질 나쁠수록) 신뢰구간 확대; rtt 분산 곡선이 이론식 (6)과 유사 → 맥놀이 설명 타당",
+        "원격 지연 자기상관 = 감쇠 코사인, FFT 3.5 Hz 성분(거리 무관, 패킷 오류율 낮을수록 강함) → 상대 클럭 드리프트 ≈ 3.5 ppm(소비자 수정 허용치 25 ppm 이내); 이 효과는 Prism GT 에서만 관찰",
+        "MAC 처리가 1 µs 단위로 이뤄져 SIFS 가 다음 µs 로 올림됨; 카드 모델별 절대 지연 오프셋 필요",
+        "클럭 안정도 ±25 ppm 가정 시 전송열 60 µs/320 µs 에서 최대 오차 0.9 m/4.8 m; 건물 자재(철근콘크리트 ε≈9)에서는 전파속도 1/3",
+        "위치당 500–1000 관측이면 거의 최적 정확도; 1000 패킷(1 s 미만)으로 8 m 이내 오차 전망"
+      ],
+      "limitations": [
+        "카드가 송신 타임스탬프를 주지 않아 제3의 모니터 PC 필요; 펌웨어 개조는 법적 제약으로 불가(저자 명시) — 제조사 펌웨어 갱신을 촉구",
+        "1차 캠페인은 안테나 방향 미기록·바닥 배치로 프레넬 존 위반, 결과가 체계적으로 과대",
+        "Prism GT 에서만 나타난 교대 자기상관의 원인은 미해명(MAC 클럭·수정 안정도 추정), 추가 연구 필요(저자 명시)",
+        "야외 LOS 위주라 실내 다중경로·NLOS 영향은 정성적 언급에 그침; 보안 고려 없음(Glass 2010 이 이 절차의 조작 가능성을 다룸) (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-20",
+      "last_checked": "2026-09-20"
+    },
+    {
+      "id": "lee-2002-uwb-dense-multipath-ranging",
+      "title": "Ranging in a Dense Multipath Environment Using an UWB Radio Link",
+      "authors": [
+        "Joon-Yong Lee",
+        "Robert A. Scholtz"
+      ],
+      "venue": "IEEE JSAC",
+      "venue_full": "IEEE Journal on Selected Areas in Communications, vol. 20, no. 9, pp. 1677–1683, December 2002 — Ultra-Wideband Radio Laboratory (UltRa Lab), University of Southern California (ONR N00014-00-0221)",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2002,
+      "url": "https://doi.org/10.1109/JSAC.2002.805060",
+      "preprint": "https://web.archive.org/web/2020id_/http://ultra.usc.edu/assets/001/35661.pdf",
+      "doi": "10.1109/JSAC.2002.805060",
+      "topics": [
+        "ir-uwb",
+        "time-of-arrival",
+        "direct-path-detection",
+        "leading-edge",
+        "generalized-maximum-likelihood",
+        "multipath",
+        "nlos",
+        "early-false-alarm",
+        "two-way-ranging",
+        "threshold-design",
+        "propagation-measurement",
+        "foundational"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "'직접 경로는 가장 강한 경로가 아니라 가장 이른 경로' 라는 원칙과, 그것을 찾는 탐색기가 반드시 **조기 오경보(early false alarm) 대 직접경로 누락(missed direct path)** 의 교환에 놓인다는 틀을 처음 정식화한 논문이다. 코퍼스의 UWB 보안 계보(rasmussen-2010·capkun-2005·gezici-2005·lyu-2026)가 ToA 거리측정의 정의로 인용한다. CS 연구에 옮겨지는 지점은 셋이다. (1) 잡음만 있는 구간에서 임계값 δ 를 낮추면 조기 오경보가 늘고 높이면 직접경로를 놓친다는 Fig. 5 의 교환은, 바로 공격자가 파고드는 자리다 — 조기 오경보를 유발하는 에너지를 주입하면 거리 축소, 직접경로를 묻어 버리면 거리 확대가 되며, 후속 Ghost Peak·UWB-ED 류가 공격하는 수신기 임계값은 이 틀의 후손이다. CS RTT 의 fractional timing 이 '가장 이른 그럴듯한 피크' 를 어떻게 정하느냐(Tariq 2024 의 의사스펙트럼 조기 피크 채택과 동형)를 논할 때 기준 어휘가 된다. (2) 탐색 구간 상한 τ_L(70 ns)과 상대 세기 임계값 δ(0.2)를 실측 통계(622 신호 중 직접파가 최강인 경우 15 %)로 정하는 방법은, CS 다중경로 실측에서 NADM/PCT 판정 임계값을 정하는 절차의 원형이다. (3) 차폐물 속 초과 전파지연이 수 ns 남는다는 결론은 CS 의 '벽 너머 거리 측정' 편향의 하한을 말해 준다. 보안 논문은 아니므로 관련도는 보통이다.",
+      "summary": "UWB 펄스의 분해능(서브 ns)보다 다중경로 시간 퍼짐이 100–1000 배 크고 LOS 가 가려지면 반사파가 직접파보다 강해지므로, 최강 성분에 동기하는 거리측정은 큰 오차를 낸다. 저자들은 직접 경로를 '가장 이른 도착' 으로 정의하고, 최강 경로 이전 구간을 잘라 각 성분의 도착시각·세기를 순차 추정하는 일반화 최대우도(GML) 탐색기를 제안한다. 탐색은 최강 경로로부터 τ_L 이내로 제한하고, 상대 세기 δ 미만의 경로가 더 없으면 멈추며, 검출된 경로보다 늦은 성분은 무시해 계산량을 줄인다. Win 의 사무실 전파 데이터(LOS 차폐 622 신호, τ_L=70 ns·δ=0.2 로 추출)에서 직접파가 최강인 경우는 95 건뿐이었고, 반사파가 더 강한 527 신호로 직접파 상대 세기·상대 지연의 주변분포를 곡선맞춤하고 카이제곱(117.2 < 임계 118.5, 10 %)으로 독립성을 받아들여 결합밀도를 만든다. 이 모델로 조기 오경보 확률(잡음 구간 고수준 교차 확률, Rice)과 직접경로 누락 확률을 유도해 peak SNR 별로 두 오차의 합이 최소가 되는 δ 를 찾는다(Fig. 5). USC 지하 18 지점(20.5 GHz 샘플링 스코프, 512 회 평균) 독립 측정에서 알고리즘을 시험해 차폐물 통과로 인한 수 ns 초과지연을 관찰했고 장거리·복잡한 차폐에서 오차가 커졌다. 끝으로 상관기 + 병렬 샘플러 뱅크 수신기와, 공통 시계 없이 시분할로 왕복시간을 재고 응답 지연을 몇 비트로 알려 주는 양방향 거리측정 방식을 개략 설계한다.",
+      "hardware": [
+        "전파 측정(USC 지하, 18 지점, 금속 스터드·석고보드 내벽): 서브 ns 폭 펄스 1 µs 간격 송신, 디지털 샘플링 스코프 20.5 GHz 샘플링, 512 스윕 평균; 수직 편파 diamond dipole 안테나, 바닥 위 약 5 ft; 지점 16–18 은 엘리베이터(금속)로 직접파 측정 불가",
+        "통계 모델링용 데이터: Win 의 사무실 건물 전파 측정(LOS 차폐 622 신호)",
+        "제안 수신기(설계만): 상관기 + 병렬 샘플러(개별 샘플러·ADC 뱅크, 프레임당 샘플 적분) — 구현 결과 없음"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자체 GML ToA 탐색 알고리즘(순차 비선형 계획, 정지 규칙 δ, 탐색 상한 τ_L); 곡선맞춤 주변분포·카이제곱 독립성 검정; 고수준 교차 시간의 몬테카를로(가우스 벡터 100 회) 곡선맞춤 — 도구명 미기재"
+      ],
+      "software_verified": true,
+      "results": [
+        "LOS 차폐 622 신호 중 직접파가 최강인 경우 95 건(≈15 %); 반사파가 더 강한 527 신호로 직접파 상대 세기·지연 분포 모델링",
+        "직접파 상대 세기와 상대 지연의 독립성: Pearson 통계량 117.2 < 임계값 118.5(자유도 100, 유의수준 10 %) → 독립 가정 채택",
+        "추출 시 임계값 τ_L = 70 ns, δ = 0.2; 일부 대규모 오차는 임계값 수동 조정으로 정정(저자 명시)",
+        "오차 분류: 조기 오경보(잡음 구간 고수준 교차, Rice 근사) vs 직접경로 누락 — peak SNR 별로 합이 최소가 되는 δ 존재(Fig. 5, τ_L=100 ns); 시험 예: δ = 0.050(지점 9), 0.154(지점 13)",
+        "측정 파형 시험(지점 9·13): 재구성 파형의 선두와 실제 거리 기준 LOS 도착시각 사이 수 ns 차이 — 차폐물 내 초과 전파지연으로 해석",
+        "거리 오차(Fig. 7): 장거리·복잡한 차폐 지점에서 더 큼; 차폐 초과지연이 UWB 관통 거리측정의 한계 요인",
+        "양방향 거리측정: 두 라디오가 주기 T 로 송수신을 번갈아 하며 왕복시간 = 2·t_prop + 응답지연 + 잠금경로–직접경로 오프셋; 응답 지연은 몇 비트로 통보"
+      ],
+      "limitations": [
+        "차폐물 재질의 초과 전파지연은 재질 정보 없이는 추정 불가 — 저자가 결론에서 UWB 관통 거리측정의 한계 요인으로 명시",
+        "거리측정 시스템은 회로도 수준 설계, 구현·실측 없음; 간섭은 0 으로 가정",
+        "직접파 = 최초 도착 가정 — 직접 경로가 물리적으로 없는 경우(금속 차폐)는 범위 밖",
+        "일부 신호의 대규모 오차를 임계값 수동 조정으로 고침 → 자동 임계값 선택의 실패 사례가 통계에서 빠짐 (관찰)",
+        "보안 고려 없음 — 조기 오경보/누락 교환이 공격자에게 어떻게 쓰이는지는 후속(rasmussen-2010·poturalski-2011 등)의 몫 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-20",
+      "last_checked": "2026-09-20"
     }
   ]
 }
