@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-20",
-  "last_run": "2026-09-20",
+  "updated": "2026-09-23",
+  "last_run": "2026-09-23",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 874,
+  "citation_edges": 904,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -1365,7 +1365,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-23",
       "cites": [
         "aad-2026-fast-uwb-testing",
         "anliker-2023-time-for-change",
@@ -1380,7 +1380,8 @@
         "leu-2021-multicarrier-tof",
         "hancke-2008-tof-db-attacks",
         "poturalski-2010-cicada-attack",
-        "gezici-2005-uwb-localization-survey"
+        "gezici-2005-uwb-localization-survey",
+        "stocker-2020-secure-scalable-uwb"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2856,7 +2857,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-23",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2872,7 +2873,8 @@
         "tippenhauer-2009-id-based-db",
         "kim-2008-swiss-knife-db",
         "gezici-2005-uwb-localization-survey",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "drimer-2007-smartcard-relay-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4252,7 +4254,9 @@
         "singh-2021-4z-security-analysis",
         "avoine-2018-db-survey",
         "poturalski-2010-cicada-attack",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "drimer-2007-smartcard-relay-db",
+        "kfir-2005-virtual-pockets-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4263,7 +4267,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "rasmussen-2010-rf-distance-bounding",
@@ -4336,7 +4340,8 @@
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
         "gezici-2005-uwb-localization-survey",
-        "lee-2002-uwb-dense-multipath-ranging"
+        "lee-2002-uwb-dense-multipath-ranging",
+        "drimer-2007-smartcard-relay-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4347,7 +4352,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-20"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "flury-2010-distance-decreasing",
@@ -4426,7 +4431,8 @@
         "reid-2007-timing-relay-detection",
         "capkun-2006-secure-positioning-jsac",
         "gezici-2005-uwb-localization-survey",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "kfir-2005-virtual-pockets-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4437,7 +4443,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "poturalski-2011-db-802-15-4a",
@@ -4518,7 +4524,9 @@
         "reid-2007-timing-relay-detection",
         "capkun-2006-secure-positioning-jsac",
         "gezici-2005-uwb-localization-survey",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "drimer-2007-smartcard-relay-db",
+        "kfir-2005-virtual-pockets-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4529,7 +4537,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "schwarzbach-2026-cross-tech-ranging",
@@ -4936,7 +4944,7 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-23",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -4946,7 +4954,8 @@
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
         "capkun-2006-secure-positioning-jsac",
-        "gezici-2005-uwb-localization-survey"
+        "gezici-2005-uwb-localization-survey",
+        "drimer-2007-smartcard-relay-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -6206,12 +6215,13 @@
       "cites": [
         "olafsdottir-2017-carrier-phase",
         "staat-2020-paak-relay",
-        "suresh-2025-cs-vehicle-access"
+        "suresh-2025-cs-vehicle-access",
+        "stocker-2020-secure-scalable-uwb"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-08-30"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "staat-2020-paak-relay",
@@ -8514,12 +8524,14 @@
         "kim-2008-swiss-knife-db",
         "reid-2007-timing-relay-detection",
         "capkun-2006-secure-positioning-jsac",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "drimer-2007-smartcard-relay-db",
+        "kfir-2005-virtual-pockets-relay"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-01",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -9316,12 +9328,13 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-23",
       "cites": [
         "clulow-2006-long-symbols",
         "hancke-2005-rfid-db",
         "reid-2007-timing-relay-detection",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "drimer-2007-smartcard-relay-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9411,7 +9424,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-23",
       "cites": [
         "clulow-2006-long-symbols",
         "cremers-2012-distance-hijacking",
@@ -9426,7 +9439,8 @@
         "kim-2008-swiss-knife-db",
         "reid-2007-timing-relay-detection",
         "capkun-2006-secure-positioning-jsac",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "drimer-2007-smartcard-relay-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -10527,7 +10541,7 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-23",
       "cites": [
         "clulow-2006-long-symbols",
         "rasmussen-2010-rf-distance-bounding",
@@ -10543,7 +10557,8 @@
         "kim-2008-swiss-knife-db",
         "reid-2007-timing-relay-detection",
         "capkun-2006-secure-positioning-jsac",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "drimer-2007-smartcard-relay-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11015,10 +11030,11 @@
       },
       "verification": "verified",
       "added": "2026-09-09",
-      "last_checked": "2026-09-09",
+      "last_checked": "2026-09-23",
       "cites": [
         "staat-2022-analog-relay",
-        "francillon-2011-pkes-relay"
+        "francillon-2011-pkes-relay",
+        "drimer-2007-smartcard-relay-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11347,7 +11363,7 @@
       },
       "verification": "verified",
       "added": "2026-09-12",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-23",
       "cites": [
         "leu-2022-ghost-peak",
         "singh-2019-uwb-ed",
@@ -11355,7 +11371,8 @@
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "coppens-2022-uwb-standards-overview",
         "capkun-2006-secure-positioning-jsac",
-        "neirynck-2016-alt-ds-twr"
+        "neirynck-2016-alt-ds-twr",
+        "stocker-2020-secure-scalable-uwb"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11436,7 +11453,7 @@
       },
       "verification": "verified",
       "added": "2026-09-12",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-23",
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
@@ -11444,7 +11461,8 @@
         "hancke-2008-tof-db-attacks",
         "reid-2007-timing-relay-detection",
         "capkun-2006-secure-positioning-jsac",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "drimer-2007-smartcard-relay-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11978,7 +11996,7 @@
       },
       "verification": "verified",
       "added": "2026-09-16",
-      "last_checked": "2026-09-16",
+      "last_checked": "2026-09-23",
       "cites": [
         "brands-1993-distance-bounding",
         "clulow-2006-long-symbols",
@@ -11989,7 +12007,8 @@
         "avoine-2018-db-survey",
         "singh-2019-uwb-pr",
         "leu-2020-mtac",
-        "schepers-2021-ftm-security"
+        "schepers-2021-ftm-security",
+        "stocker-2020-secure-scalable-uwb"
       ],
       "cites_source": "fulltext",
       "relations": []
@@ -12206,7 +12225,8 @@
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
-        "capkun-2006-secure-positioning-jsac"
+        "capkun-2006-secure-positioning-jsac",
+        "kfir-2005-virtual-pockets-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -12227,7 +12247,7 @@
         }
       ],
       "added": "2026-09-17",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "kim-2008-swiss-knife-db",
@@ -13148,6 +13168,277 @@
       "relations": [],
       "added": "2026-09-20",
       "last_checked": "2026-09-20"
+    },
+    {
+      "id": "drimer-2007-smartcard-relay-db",
+      "title": "Keep Your Enemies Close: Distance Bounding Against Smartcard Relay Attacks",
+      "authors": [
+        "Saar Drimer",
+        "Steven J. Murdoch"
+      ],
+      "venue": "USENIX Security",
+      "venue_full": "16th USENIX Security Symposium, Boston, August 2007, pp. 87–102 — University of Cambridge Computer Laboratory",
+      "tier": "top4",
+      "category": "defense",
+      "year": 2007,
+      "url": "https://www.usenix.org/conference/16th-usenix-security-symposium/keep-your-enemies-close-distance-bounding-against-smartcard",
+      "preprint": "https://www.usenix.org/legacy/events/sec07/tech/drimer/drimer.pdf",
+      "doi": null,
+      "topics": [
+        "relay-attack",
+        "distance-bounding",
+        "hancke-kuhn",
+        "rapid-bit-exchange",
+        "emv",
+        "chip-and-pin",
+        "smartcard",
+        "iso-7816",
+        "wired-channel",
+        "fpga",
+        "early-detect-late-commit",
+        "overclocking",
+        "delay-line",
+        "mafia-fraud",
+        "round-trip-time",
+        "foundational"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 11편(abidin-2021, avoine-2018, coppola-2024, francillon-2011, hancke-2008, poturalski-2011/2012, rasmussen-2010, tippenhauer-2009/2015, hofhammer-2026)이 '거리 바운딩의 첫 완전 구현'으로 인용하는 허브. CS 연구에 쓰이는 지점은 둘이다. (1) §4.1 의 '응답을 고정 지연 뒤에 내게 하면 릴레이를 막을 수 있는가' 분석 — 예측 가능한 페이로드는 미리 받아 두면 되므로 논스가 든 단계에서만 지연이 거리를 뜻하고, 그마저도 비트 샘플 구간(ISO 7816 20–80 %)을 앞당겨 읽고 늦게 보내면 비트폭의 절반(5 MHz 에서 37 µs = 11 km)을, 카드를 1 % 오버클록하면 100 ms 연산에서 300 km 를 번다는 셈법은 CS RTT(T_SY_CENTER_DELTA 고정 지연 + 랜덤 CS_SYNC)가 왜 '랜덤 시퀀스 + 즉시 응답'이어야 하는지를 가장 짧게 보여 준다. (2) §5.5 의 공격 목록(추측 75 %·같은 논스 재실행·조기 검출/지연 커밋·지연선 냉각·오버클록)과 §5.6 의 '광속 공격자라도 약 6 m 안에 있어야 한다'는 상한은 anliker-2026(협대역 상호상관 ToA 공격)이 CS 에서 다시 재는 항목들의 유선 원형이다. 200 MHz 검증기 클록 = 1.5 m 분해능이라는 관계는 CS RTT 의 나노초 분수 타이밍 추정과 같은 물리량(왕복 지연 → 거리)을 다른 매체로 재는 것이라 비교 기준선이 된다.",
+      "summary": "영국 EMV(Chip & PIN)에 대한 릴레이 공격을 실제로 만들어 상점 단말기에서 성공시키고, 그 대응으로 Hancke–Kuhn 프로토콜을 유선 반이중 ISO 7816 채널에 맞게 고쳐 FPGA 에 구현한 논문이다. 위조 단말기(eBay 50 달러 단말 + Spartan-3 보드 + USB 리더)와 위조 카드(진짜 카드의 본딩을 갈아내고 배선 → 1.5 m 케이블 → Spartan-3E 보드)를 노트북 두 대가 802.11b TCP 로 잇는데, 3 초를 더 지연시켜도 거래가 성립할 만큼 단말기의 시간 허용이 크다. 방어 후보(변조 방지 단말·타이밍 제약·카드번호 대조·전자 대리인·NFC 폰)를 비용·우회 가능성으로 비교한 뒤, 타이밍 제약만으로는 예측 가능한 응답 선취·비트 샘플 구간 조작·오버클록으로 우회된다고 논증한다. 거리 바운딩 구현은 검증기 200 MHz(분해능 1.5 m), 증명기 fV/128 ≈ 1.56 MHz, 64 비트 응답 레지스터 2개, 30 cm 전송선에서 td = 2.16 ns 를 오실로스코프로 확인했고, 추측 성공률 (3/4)^64 ≈ 2^-26, 모든 물리 공격을 합쳐도 공격자가 약 6 m 안에 있어야 한다고 계산한다. 마지막으로 단말기가 왕복시간을 정직하게 보고해야 한다는 부인방지 문제와 책임 배분을 논한다.",
+      "hardware": [
+        "위조 단말기: eBay 50 달러 Chip & PIN 단말(키패드·LCD 만 남김) + 200 달러 Xilinx Spartan-3 소형 USB 개발보드 + 40 달러 GemPC Twin USB 리더(APDU 수준 버퍼링)",
+        "위조 카드: 진짜 Chip & PIN 카드의 와이어 본딩을 갈아내고 뒷면 패드에 납작 배선 → 1.5 m 케이블 → 150 달러 Xilinx Spartan-3E FPGA Starter Kit(ISO 7816 ↔ RS-232 변환), 390 Ω 직렬 저항(5 V 비허용), Maxim 1740/1 레벨 변환기(2 달러 미만)",
+        "노트북 2대(USB·RS-232) 를 802.11b 무선 TCP 로 연결; PIN 은 음성 합성으로 공범에게 전달",
+        "시험 리더: VASCO CAP 리더(1 MHz 클록, Barclays PINsentry 동종), GemPC Twin(4 MHz), 상점의 실제 Chip & PIN 단말(상인·카드 소유자 동의 하) — BBC Watchdog 2007-02-06 방영",
+        "거리 바운딩 프로토타입: Xilinx XUP 보드(Virtex-II Pro 30 FPGA) 한 칩에 검증기·증명기를 넣고 같은 길이의 I/O·클록 전송선(1 m 차폐 케이블; 2.0/1.0/0.3 m 시험, 50 Ω 30 cm PCB 선)으로 루프백; 오실로스코프로 단일 비트 교환 파형 측정"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "위조 단말기·카드 제어: Python 자작 소프트웨어(14개 명령 코드별 방향 테이블 필요 — T=0 프로토콜)",
+        "거리 바운딩 회로: Verilog FPGA 설계 — 64 비트 시프트 레지스터 4개, 3-상태 양방향 I/O, 라우팅 지연으로 tp 조정(최소 500 ps)",
+        "자원: 플립플롭 37개 + LUT 93개(로직 64·경유 13·시프트 레지스터 16), FPGA 자원의 0.5 % 미만"
+      ],
+      "software_verified": true,
+      "results": [
+        "릴레이: 명령–응답 사이에 3 초를 추가 지연해도 CAP 리더·GemPC Twin·상점 실제 단말 모두에서 거래 성공 — 광속 기준 450,000 km 상당의 허용치",
+        "타이밍 제약 우회 셈법: ISO 7816 샘플 구간 20–80 % 를 앞당겨 읽고 늦게 보내면 양방향 비트폭 절반 = 5 MHz 에서 37 µs(11 km); 카드 1 % 오버클록 → 100 ms DES 에서 300 km; 예측 가능한 11 바이트 선취 → 98 µs(29 km); 서명 없는 CDOL 을 바꿔 논스를 앞으로 옮기면 27 ms(8,035 km)",
+        "거리 바운딩: 검증기 클록 fV = 200 MHz → 분해능 c/fV = 1.5 m; 증명기 fP = fV/128 ≈ 1.56 MHz(ISO 7816 1–5 MHz 호환); 양 에지 샘플링으로 분해능 2배 가능",
+        "오실로스코프(30 cm 50 Ω PCB 선): tn = 10 ns, tm = 5 ns, tp = 8 ns, td = 2.16 ns(전파속도 1.4×10^8 m/s), tq_fail = 15 ns 은 너무 이르고 tq_pass = 20 ns(한 클록 뒤)에 응답 0 을 정확히 샘플; FPGA I/O 자체 지연 3–5 ns",
+        "보안: 추측 공격 기대 성공률 75 %/비트 → 64 비트 레지스터에서 (3/4)^64 ≈ 1/2^26; 카드 논스 추가로 같은 논스 재실행(전부 1 → 전부 0) 차단; 모든 물리 공격을 합쳐 광속으로 중계해도 공격자는 약 6 m 이내여야 함",
+        "비용: 카드 측 추가는 시프트 레지스터 2개 + 상태기계 + 새 명령(기존 DES 엔진·거래 카운터 재사용), 단말 측은 고속 발진기 또는 지연선"
+      ],
+      "limitations": [
+        "유선 반이중 동기 채널(ISO 7816) 전용 — 무선 변형·상호 거리 바운딩·다른 응용은 향후 과제(저자 명시)",
+        "FPGA 프로토타입이라 ASIC 보다 타이밍 여유가 큼; ASIC 전환 비용은 신뢰할 만한 변환식이 없어 추정 불가(저자 명시)",
+        "지연선 tp 를 냉각 등으로 줄이면 멀티플렉서가 안정되기 전에 두 응답이 모두 I/O 에 실릴 수 있음 — 온도 보상 지연선이 비경제적이면 tp 를 최소화하고 단말이 tp = 0 으로 가정(저자 명시)",
+        "부인방지 없음: 왕복시간을 단말이 정직하게 보고해야 하므로 변조된 단말이면 프로토콜 성공 기록도 믿을 수 없음 — 책임 배분 제도가 따라야 함(저자 명시)",
+        "릴레이 실증은 카드 앞면이 진짜처럼 보이지만 뒷면 배선이 노출됨 — 상인이 카드를 살피면 발각(저자 명시, RFID 카드로 무선화하면 회피 가능하다고 지적)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "clulow-2006-long-symbols"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "implements",
+          "note": "Hancke–Kuhn 의 빠른 비트 교환을 유선 반이중 ISO 7816 채널용으로 고쳐(초기 거리 추정 단계 생략, 카드 논스 추가) FPGA 에 최초로 구현"
+        },
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "extends",
+          "note": "Clulow 의 '용도에 맞지 않은 채널 위 거리 바운딩은 우회된다' 논증을 유선 프로토콜(ISO 7816 샘플 구간 20–80 %·오버클록)에 적용해 타이밍 제약 방어가 실패하는 거리를 계산"
+        },
+        {
+          "to": "kfir-2005-virtual-pockets-relay",
+          "type": "complementary",
+          "note": "Kfir–Wool 이 비접촉(ISO 14443) 릴레이의 도달 범위를 시뮬레이션했다면, 이 논문은 접촉식(ISO 7816) 릴레이를 실제 결제 단말에서 실증하고 방어까지 구현 — 서로 인용하지 않음"
+        }
+      ],
+      "added": "2026-09-23",
+      "last_checked": "2026-09-23"
+    },
+    {
+      "id": "kfir-2005-virtual-pockets-relay",
+      "title": "Picking Virtual Pockets using Relay Attacks on Contactless Smartcard Systems",
+      "authors": [
+        "Ziv Kfir",
+        "Avishai Wool"
+      ],
+      "venue": "IEEE SecureComm",
+      "venue_full": "First International Conference on Security and Privacy for Emerging Areas in Communications Networks (SecureComm 2005), Athens, September 2005, pp. 47–58 — Tel Aviv University School of Electrical Engineering; IACR ePrint 2005/052",
+      "tier": "other",
+      "category": "analysis",
+      "year": 2005,
+      "url": "https://doi.org/10.1109/SECURECOMM.2005.32",
+      "preprint": "https://eprint.iacr.org/2005/052.pdf",
+      "doi": "10.1109/SECURECOMM.2005.32",
+      "topics": [
+        "relay-attack",
+        "ghost-and-leech",
+        "contactless-smartcard",
+        "iso-14443",
+        "nfc",
+        "rfid",
+        "near-field",
+        "range-extension",
+        "mafia-fraud",
+        "link-budget",
+        "simulation",
+        "foundational"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "코퍼스 5편(avoine-2018, coppola-2024, flury-2010, poturalski-2011, reid-2007)이 '결제 시스템 릴레이 공격은 2005년에 이미 제시됐다'는 출처로 인용하는 뿌리 문헌이며, 거리 바운딩 문헌이 쓰는 '고스트(리더에게 카드인 척)·리치(카드에게 리더인 척)' 용어의 원전이다. CS 연구에서 직접 쓸 수치는 없지만 두 논점이 유효하다. (1) '10 cm 라는 짧은 통신 거리가 곧 물리적 근접의 증명'이라는 가정이 능동 중계기로 무너진다는 논증은 BLE 의 '연결 가능 거리 = 근접' 가정(coppola-2024 PURE, hofhammer-2026 PrivacyShield 의 BLE 비콘 중계)과 같은 구조라 CS 가 왜 RTT/PBR 을 별도로 요구하는지의 배경이 된다. (2) ISO 14443 의 시간 허용(충돌 방지 5 ms, 데이터 전송 최대 5 s)이 릴레이 지연을 전혀 제약하지 못한다는 지적은 CS 이전 BLE 연결 이벤트 타이밍(수 ms) 도 같은 처지였음을 상기시키는 대조군이다.",
+      "summary": "ISO 14443 비접촉 스마트카드(13.56 MHz, 106 kbps, 설계 거리 10 cm)에 대해 리더에게 카드 행세를 하는 '고스트'와 카드에게 리더 행세를 하는 '리치' 두 장치로 릴레이를 구성하면 어떤 상위 보안 프로토콜과도 무관하게 카드를 원격으로 쓸 수 있음을 논증한다. 실제 장치를 만들지는 않고 NEDAP 유도 결합 모델을 ISO 14443 파라미터로 맞춰 도달 거리를 시뮬레이션했다. 고스트는 규제 한도를 무시하고 부반송파 측파대에 DSB 로 직접 송신하면 리더에서 50 m 까지(인공 잡음 모델), 리치는 전류 4 A·40×40 cm² 안테나로 10 → 40 cm, 재전송 다수결로 50 cm, 재전송 프레임 인터리빙 필터링(K=16)으로 55 cm 까지 늘어난다고 계산한다. 시간 허용(5 ms/5 s)이 커서 릴레이 지연은 문제가 아니라고 보며, 대응책으로 패러데이 케이지·카드 소유자 활성화·2요소 인증만 논하고 거리 바운딩은 다루지 않는다.",
+      "hardware": [
+        "해당 없음 — 실제 장치 미제작, 설계 스케치만: NFC 기기 둘레에 결합 루프를 감고 반송파 필터·증폭기·구리관 자작 안테나(TI HF 안테나 앱노트 11-08-26-001/003/007)로 고스트·리치를 구성하는 안(전문 확인)",
+        "시뮬레이션 파라미터: 리더 안테나 10×10 cm² 단권, 카드 안테나 5×8 cm², 부반송파 847 kHz, 데이터 대역폭 212 kHz(ISO 14443 Type B, Type A 도 유사), 리치 안테나 전류 상한 4 A(배터리 휴대기기·버스트 동작 가정)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "NEDAP 유도식 ID 시스템 모델(Fockens 2000, C 프로그램)을 ISO 14443 파라미터로 개조해 판독 거리 계산; 결과 정밀도 1 cm",
+        "BER–SNR 관계는 Proakis Digital Communications, 다수결 확률은 초등 조합론"
+      ],
+      "software_verified": true,
+      "results": [
+        "고스트–리더 거리: 인공 잡음 모델(ITU-R P.372, 'Business' c=76.8·d=27.7 → Extnoise −27.41 dBµV/m/Hz, SNR 10 dB, BW 106 kHz, Hmax −4.3 dBµA/m @10 m)에서 50 m 초과 — 명목 10 cm 의 3자릿수 배; RFID 간섭 모델에서는 간섭 리더보다 3.16배 가까워야 함",
+        "리치–카드 거리: 표준 10 cm → 전류+안테나 최적화 40 cm(3.5배, 1–4 A 에서 최적 안테나 약 40×40 cm²) → 소프트웨어 재전송 다수결 50 cm(ΔSNR 10 dB 에서 +30 %, 재전송 최대 5회) → 신호처리 인터리빙 55 cm(K=16, +40 %)",
+        "비용·난도(표 I): 표준 0 달러/전류+안테나 <100 달러(중간 지식)/+소프트웨어 <100 달러(높음)/+신호처리 >5,000 달러(매우 높음)",
+        "물리 한계: 활성화 거리 상한 c/(2πf) = 3.52 m(13.56 MHz 근접장 경계), 근접장 감쇠 60 dB/decade, 원거리장 20 dB/decade",
+        "타이밍: ISO 14443 충돌 방지 타임아웃 5 ms, 데이터 전송 타임아웃 최대 5 s — 어떤 디지털 링크도 충족하므로 릴레이 지연은 제약이 아님"
+      ],
+      "limitations": [
+        "전부 시뮬레이션(NEDAP 모델)이며 프로토타입·실측 없음 — 거리 수치는 모델 가정(잡음·안테나 최적화·규제 무시)에 의존(관찰)",
+        "재전송 기법은 리치 하드웨어가 CRC 실패 프레임도 드라이버에 넘겨 주고 낮은 SNR 에서 락온된다는 가정이 필요(저자 명시)",
+        "대응책으로 차폐·소유자 활성화·2요소만 논하고 거리 바운딩·타이밍 검증은 언급 없음 — 같은 학회의 Hancke–Kuhn(hancke-2005) 이 그 빈칸을 채움(관찰)",
+        "ISO 14443 Type B 파라미터 기준, Type A 는 '유사하다'고만 서술(저자 명시)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-23",
+      "last_checked": "2026-09-23"
+    },
+    {
+      "id": "stocker-2020-secure-scalable-uwb",
+      "title": "Towards Secure and Scalable UWB-based Positioning Systems",
+      "authors": [
+        "Michael Stocker",
+        "Bernhard Großwindhager",
+        "Carlo Alberto Boano",
+        "Kay Römer"
+      ],
+      "venue": "IEEE MASS",
+      "venue_full": "2020 IEEE 17th International Conference on Mobile Ad Hoc and Sensor Systems (MASS), Delhi (virtual), December 2020, pp. 247–255 — Graz University of Technology, Institute of Technical Informatics",
+      "tier": "other",
+      "category": "analysis",
+      "year": 2020,
+      "url": "https://doi.org/10.1109/MASS50613.2020.00039",
+      "preprint": "https://www.carloalbertoboano.com/documents/stocker20secure.pdf",
+      "doi": "10.1109/MASS50613.2020.00039",
+      "topics": [
+        "uwb",
+        "tdoa",
+        "quasi-simultaneous-responses",
+        "concurrent-transmissions",
+        "802-15-4z",
+        "sts",
+        "ciphered-sequence",
+        "hrp",
+        "lrp",
+        "replay-attack",
+        "wormhole-attack",
+        "synchronization-attack",
+        "cicada",
+        "early-detect-late-commit",
+        "power-increasing",
+        "cancellation",
+        "over-shading",
+        "packet-leashes",
+        "security-analysis",
+        "design-guidelines"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 4편(anliker-2026, chen-2024, sartayeva-2023, suresh-2025)이 인용하며, anliker-2026 은 'TDoA 거리측정에 대한 공격' 항목으로 든다. CS 연구에서 쓸 지점은 세 가지다. (1) §IV-A 의 ToA 공격 분류(Cicada·ED/LC·전력 증가·상쇄·오버셰이딩)를 STS(상관 기반)와 CS(펄스 유무 복호 기반)가 각각 막는지/못 막는지로 정리한 표는, CS 의 RTT(랜덤 CS_SYNC 상관)와 PBR(톤 위상)에 같은 다섯 공격을 대응시킬 때 바로 쓰는 체크리스트다 — 특히 '전력 증가 공격은 4z 가 벤더에 맡긴다'는 지적과 '비동조 수신기는 상쇄 공격이 어렵다'는 논점. (2) 단방향·멀티캐스트·동기화 의존이 왜 4z 보안을 무력화하는지의 논증은 Bluetooth 의 연결 없는(PAwR) CS 제안(schex-2026)이나 방송형 위치추정에 같은 형태로 적용된다 — STS 는 비밀을 미리 공유해야 하므로 악의적 태그 하나가 전체를 노출시키고, 단방향이면 챌린지·응답이 없어 재생·웜홀을 막을 수 없다. (3) 준동시 응답에서 '첫 앵커의 펄스 극성을 보고 나머지 앵커 펄스를 앞당겨 보내는' 공격은 다중 응답자·다중 안테나 CS 에서 첫 응답이 나머지의 비밀을 새게 하는지 점검할 때의 원형이다.",
+      "summary": "UWB 보안 연구와 802.15.4z 가 두 장치 간 양방향 TWR 만 다루는 사이, 실제 RTLS 는 확장성을 위해 TDoA·준동시 응답(SnapLoc·Chorus, tdelay ≈ 200 ns 슬롯)으로 옮겨 갔음을 짚고 그 구조가 4z 를 써도 안전하지 않음을 분석한다. 먼저 ToA 공격 다섯 가지(Cicada, ED/LC, 전력 증가, 상쇄, 오버셰이딩)를 STS 와 Ciphered Sequence 가 어떻게 막는지 정리한 뒤, 확장형 시스템의 네 속성 — 멀티캐스트(STS 비밀을 모든 태그와 공유 → 악의적 태그 하나면 전체 노출; CS 는 사후 공개라 면역), 단방향(챌린지·응답 없음 → 재생·웜홀 방어 불가, 수신 방해 후 재생), 앵커 동기화 의존(SYNC 재생·지향성 안테나로 tdelay 조작 → 모든 태그 오염), 준동시 응답(첫 앵커 펄스로 극성 파악 후 나머지 앵커 펄스 선취) — 가 만드는 공격을 열거한다. 설계 지침으로 앵커 간 3-way 핸드셰이크 동기화, 태그 가입 시 1회 보안 TWR 로 시각 동기 + 타임슬롯별 STS_i = φ(i, k_STS), 첫 라운드의 ToF 로 시간 리시·이후 지리 리시, 4z 의 '메시지당 STS 최대 4개' 를 앵커별 개별 STS 로 재활용하는 안을 제시한다. 구현·평가는 없다.",
+      "hardware": [
+        "해당 없음 — 보안 분석·설계 지침 논문, 구현·실측 없음(전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 시뮬레이션·코드 없음(전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "ToA 공격 대 4z 기법(§IV-A): Cicada → STS 저상관·CS 불일치로 차단; ED/LC → 심볼당 펄스 1개라 STS·CS 모두 차단(대안: 짧은 심볼 또는 UWB-PR 식 펄스 순서 랜덤화); 전력 증가 → 4z 는 완화를 벤더에 위임, CS 는 첫 오추측이 곧 불일치라 면역, 상관기는 펄스당 에너지 제한·분산 검사(MTAC)로 완화; 상쇄 → 안테나 위치·반송파 위상·시퀀스를 다 알아야 해서 드묾, HRP 는 공개 프리앰블이라 취약, 비동조 LRP 는 랜덤 위상으로 완화; 오버셰이딩 → 4z 지침 없음, 고분해능 ADC 로 이상 에너지 탐지 가능",
+        "멀티캐스트: STS 는 수신 전 비밀 필요 → 동적 가입 태그 전부와 공유 → 악의적 태그 E 하나로 모든 태그가 선행 공격에 노출; Ciphered Sequence 는 수신 후 대조라 서명으로 사후 공개 가능",
+        "단방향: 재생 방어를 '사용된 논스 거부'로 하려면 모든 이전 메시지를 정상 수신했어야 함 — 스팸·재밍·SHR 불일치 유발(McLaughlin 특허)로 수신을 막은 뒤 재생하면 임의 시점 선행/지연 가능; 웜홀은 d_upper 로 잡을 거리 자체가 없음",
+        "동기화 공격: 단방향 SYNC 재생·중계 + 앵커 위치가 고정·공지라 상쇄 공격 성공 가능성 상승; 지향성 안테나로 앵커별 tdelay 개별 조작 → 주변 모든 태그의 TDoA 오염",
+        "준동시 응답: HRP 에서 STS 를 써도 앵커 수만큼 펄스가 겹쳐 심볼당 다중 펄스가 되므로 첫 앵커 펄스 극성으로 나머지를 선취 — 첫 앵커를 제외한 모든 ToA 를 정밀 선행 가능",
+        "지침: 앵커 간 3-way 핸드셰이크(M1–M5, 태그 전력 소모 없음, d̂ > d 면 라운드 중단); 태그 가입 시 1회 보안 TWR 로 시각 동기·k_STS 교환; 타임슬롯 i 별 STS_i = φ(i, k_STS)(AES-128), CS 는 (i, r_i, 앵커 개인키) 서명; 같은 슬롯 후속 메시지 폐기; 시간 리시(첫 라운드 ToF) → 지리 리시(이후 라운드); 4z 의 메시지당 STS ≤ 4 를 앵커별 STS_{i,n} 으로 전용"
+      ],
+      "limitations": [
+        "구현·시뮬레이션·평가 없음 — 분석과 지침만이며 4z 초안 차기 개정의 입력이라고 자리매김(저자 명시)",
+        "하류(downstream) TDoA 만 다룸; 상류 TDoA 는 확장성·프라이버시가 낮다는 이유로 제외(저자 명시)",
+        "위치 인프라 전체가 하나의 비밀을 공유하고 앵커 위치가 배포 시 고정돼 있다고 가정(저자 명시)",
+        "Dolev-Yao 모델이라 펄스 차단은 공격자 능력에서 제외 — 그러나 각주 1 에서 스팸·재밍·SHR 불일치로 수신 방해가 가능하다고 인정(관찰)",
+        "지침의 시간 리시는 첫 라운드에 앵커 송신 시각을 메시지에 실어야 하고, 이후 재동기는 계산된 위치에 의존 — 위치 오차가 동기 오차로 되먹임되는 문제는 미논의(관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "rasmussen-2010-rf-distance-bounding",
+        "poturalski-2010-cicada-attack",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "singh-2019-uwb-pr",
+        "singh-2019-uwb-ed",
+        "leu-2020-mtac"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "ieee-802-15-4z",
+          "type": "applies-to",
+          "note": "4z 의 STS·Ciphered Sequence 가 TWR 밖(단방향 TDoA·멀티캐스트·준동시 응답)에서는 재생·웜홀·선취 공격을 막지 못함을 분석하고 표준 기능(메시지당 STS 4개)을 재활용하는 보완안 제시"
+        },
+        {
+          "to": "poturalski-2012-secure-precise-ir-uwb",
+          "type": "extends",
+          "note": "Poturalski 의 ToA 공격 분류(Cicada·ED/LC·전력 증가)를 상쇄·오버셰이딩까지 넓혀 STS 대 CS 면역 여부로 재정리하고, 두 장치 TWR 이 아닌 확장형 TDoA 구조에 적용"
+        },
+        {
+          "to": "singh-2019-uwb-ed",
+          "type": "extends",
+          "note": "UWB-ED 등 TWR 기반 거리 확대 탐지가 단방향·멀티캐스트 시스템에서는 비밀 사전 공유 요구 때문에 그대로 쓰이지 못함을 지적"
+        }
+      ],
+      "added": "2026-09-23",
+      "last_checked": "2026-09-23"
     }
   ]
 }
