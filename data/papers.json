@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-23",
-  "last_run": "2026-09-23",
+  "updated": "2026-09-24",
+  "last_run": "2026-09-24",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 904,
+  "citation_edges": 944,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -83,7 +83,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-17",
+      "last_checked": "2026-09-24",
       "cites": [
         "abidin-2021-narrowband-ranging",
         "clulow-2006-long-symbols",
@@ -99,7 +99,8 @@
         "ranganathan-2017-are-we-really-close",
         "brands-1993-distance-bounding",
         "giovanelli-2018-rssi-or-tof-ble",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "hancke-2005-practical-relay-iso14443"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1473,7 +1474,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-24",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1485,7 +1486,8 @@
         "hancke-2008-tof-db-attacks",
         "poturalski-2010-cicada-attack",
         "vasisht-2016-chronos",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "xiong-2015-tonetrack"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1741,7 +1743,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-09-24",
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
@@ -1756,7 +1758,9 @@
         "poturalski-2012-secure-precise-ir-uwb",
         "brands-1993-distance-bounding",
         "capkun-2006-secure-positioning-jsac",
-        "neirynck-2016-alt-ds-twr"
+        "neirynck-2016-alt-ds-twr",
+        "hancke-2005-practical-relay-iso14443",
+        "boureanu-2015-practical-provable-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1834,7 +1838,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-20",
+      "last_checked": "2026-09-24",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -1848,7 +1852,8 @@
         "vasisht-2016-chronos",
         "ranganathan-2017-are-we-really-close",
         "brands-1993-distance-bounding",
-        "jiokeng-2020-ftm-music"
+        "jiokeng-2020-ftm-music",
+        "xiong-2015-tonetrack"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2857,7 +2862,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-09-23",
+      "last_checked": "2026-09-24",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2874,7 +2879,8 @@
         "kim-2008-swiss-knife-db",
         "gezici-2005-uwb-localization-survey",
         "singelee-2007-db-noisy-environments",
-        "drimer-2007-smartcard-relay-db"
+        "drimer-2007-smartcard-relay-db",
+        "boureanu-2015-practical-provable-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3835,7 +3841,9 @@
         "poturalski-2010-cicada-attack",
         "vasisht-2016-chronos",
         "ranganathan-2017-are-we-really-close",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "hancke-2005-practical-relay-iso14443",
+        "ibrahim-2018-ftm-verification"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3846,7 +3854,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "varughese-2026-ble6-pedestrian",
@@ -4611,12 +4619,13 @@
       "verification": "verified",
       "cites": [
         "suresh-2025-cs-vehicle-access",
-        "kosek-szott-2026-wifi-ftm-survey"
+        "kosek-szott-2026-wifi-ftm-survey",
+        "ammad-2026-hymn-dataset-descriptor"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-15",
-      "last_checked": "2026-09-16"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "riaz-2022-pbr-multipath-security",
@@ -4687,7 +4696,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-24",
       "cites": [
         "francillon-2011-pkes-relay",
         "olafsdottir-2017-carrier-phase",
@@ -4696,7 +4705,8 @@
         "vonzengen-2016-no-cost-distance",
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
-        "vasisht-2016-chronos"
+        "vasisht-2016-chronos",
+        "xiong-2015-tonetrack"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5107,11 +5117,12 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-24",
       "cites": [
         "avoine-2018-db-survey",
         "hancke-2005-rfid-db",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "boureanu-2015-practical-provable-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -5658,12 +5669,13 @@
         "francillon-2011-pkes-relay",
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "boureanu-2015-practical-provable-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-24",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "schroeder-2022-inphase",
@@ -5733,7 +5745,7 @@
       },
       "verification": "verified",
       "added": "2026-08-26",
-      "last_checked": "2026-09-18",
+      "last_checked": "2026-09-24",
       "cites": [
         "schroeder-2019-multipath-pbr",
         "zand-2019-ble-pbr",
@@ -5742,7 +5754,8 @@
         "vonzengen-2016-no-cost-distance",
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
-        "gunia-2017-phase-positioning-off-the-shelf"
+        "gunia-2017-phase-positioning-off-the-shelf",
+        "ibrahim-2018-ftm-verification"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -6287,12 +6300,13 @@
         "joo-2020-hodor",
         "olafsdottir-2017-carrier-phase",
         "ranganathan-2017-are-we-really-close",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "hancke-2005-practical-relay-iso14443"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "bonczyk-2026-learning-phase-estimation",
@@ -6437,12 +6451,13 @@
       },
       "verification": "verified",
       "cites": [
-        "lee-2002-uwb-dense-multipath-ranging"
+        "lee-2002-uwb-dense-multipath-ranging",
+        "ibrahim-2018-ftm-verification"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-20"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "rajendran-2025-11mc-vs-11az",
@@ -6506,12 +6521,13 @@
       "verification": "verified",
       "cites": [
         "singh-2023-wifi-ftm-iot-benchmark",
-        "jiokeng-2020-ftm-music"
+        "jiokeng-2020-ftm-music",
+        "ibrahim-2018-ftm-verification"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-20"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "zand-2019-concurrent-pbr",
@@ -7898,12 +7914,13 @@
         "zand-2019-concurrent-pbr",
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
-        "vasisht-2016-chronos"
+        "vasisht-2016-chronos",
+        "xiong-2015-tonetrack"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-08"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "simoncic-2025-freq-switching-mcpd",
@@ -8131,12 +8148,13 @@
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
         "kim-2008-swiss-knife-db",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "boureanu-2015-practical-provable-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "vanmarter-2023-svr-ble-ranging",
@@ -8602,7 +8620,8 @@
         "kuhn-2010-uwb-ir-db",
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
-        "kim-2008-swiss-knife-db"
+        "kim-2008-swiss-knife-db",
+        "boureanu-2015-practical-provable-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8613,7 +8632,7 @@
         }
       ],
       "added": "2026-09-01",
-      "last_checked": "2026-09-17"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "gunia-2026-cs-uwb-rss-positioning",
@@ -9250,10 +9269,11 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-24",
       "cites": [
         "capkun-2005-secure-positioning",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "hancke-2005-practical-relay-iso14443"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -10728,8 +10748,10 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-08",
-      "cites": [],
+      "last_checked": "2026-09-24",
+      "cites": [
+        "xiong-2015-tonetrack"
+      ],
       "cites_source": "fulltext",
       "relations": [
         {
@@ -12226,7 +12248,8 @@
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
         "capkun-2006-secure-positioning-jsac",
-        "kfir-2005-virtual-pockets-relay"
+        "kfir-2005-virtual-pockets-relay",
+        "hancke-2005-practical-relay-iso14443"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -12247,7 +12270,7 @@
         }
       ],
       "added": "2026-09-17",
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "kim-2008-swiss-knife-db",
@@ -13017,12 +13040,14 @@
       },
       "verification": "verified",
       "cites": [
-        "vasisht-2016-chronos"
+        "vasisht-2016-chronos",
+        "xiong-2015-tonetrack",
+        "ibrahim-2018-ftm-verification"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-20",
-      "last_checked": "2026-09-20"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "gunther-2005-wlan-rtt",
@@ -13245,7 +13270,8 @@
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
-        "clulow-2006-long-symbols"
+        "clulow-2006-long-symbols",
+        "hancke-2005-practical-relay-iso14443"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -13266,7 +13292,7 @@
         }
       ],
       "added": "2026-09-23",
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-09-24"
     },
     {
       "id": "kfir-2005-virtual-pockets-relay",
@@ -13439,6 +13465,545 @@
       ],
       "added": "2026-09-23",
       "last_checked": "2026-09-23"
+    },
+    {
+      "id": "schwarzbach-2026-hymn-benchmark",
+      "title": "From Least Squares to Deep Learning: Benchmarking Indoor Positioning on the HYMN Multi-Technology Dataset",
+      "authors": [
+        "Paul Schwarzbach",
+        "Muhammad Ammad"
+      ],
+      "venue": "IPIN",
+      "venue_full": "arXiv preprint arXiv:2609.25835 (2026-09-22) — 저자가 IPIN 2026 논문의 동반 코드라고 밝힘; TUD Dresden University of Technology, Chair of Transport Systems Information Technology",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2609.25835",
+      "preprint": "https://arxiv.org/abs/2609.25835",
+      "doi": null,
+      "topics": [
+        "ble-phase-based-ranging",
+        "uwb",
+        "wifi-ftm",
+        "multi-technology-fusion",
+        "least-squares",
+        "huber-weighting",
+        "bayesian-grid-filter",
+        "resnet",
+        "spatial-generalisation",
+        "benchmark",
+        "dataset",
+        "open-code"
+      ],
+      "tech": [
+        "ble-cs",
+        "uwb",
+        "wifi"
+      ],
+      "relevance": "medium",
+      "relevance_note": "HYMN 실측(`schwarzbach-2026-cross-tech-ranging` 와 같은 토르가우 캠페인)을 거리 잔차가 아니라 **측위 단계**에서 벤치마크한 후속작이다. 내 연구에 쓰이는 지점은 둘이다. 첫째, 기술별 거리 품질이 두 자릿수 차이(UWB 중앙값 0.27 m · Wi-Fi FTM 1.46 m · BLE PBR 4.76 m)라 앵커를 동등 가중하는 기하 해법은 BLE 한 개가 해를 지배한다는 관찰 — CS 거리를 UWB·Wi-Fi 와 융합하는 시스템에서 **조작된 한 앵커의 영향이 가중치 설계에 따라 어떻게 증폭·억제되는지**를 따질 때 그대로 논거가 된다(Huber 가중 RLS 가 ILS 대비 중앙값 3.62 → 1.07 m). 둘째, 학습 기반 측위의 '무작위 분할' 성능이 보간이지 일반화가 아니라는 증거(ResNet 중앙값 0.55 m → 기준점 보류 시 3.22 m) — CS 거리 조작 탐지에 ML 을 쓰는 논문들의 평가 프로토콜을 같은 잣대로 의심할 근거다. 코드·데이터 MIT 공개라 CS 거리를 넣어 재현할 수 있다.",
+      "summary": "HYMN 다중기술 데이터셋(독일 토르가우 44 m × 18 m 산업 홀, 기준점 48개, Leica TS16 밀리미터 기준값)에서 UWB TWR 앵커 10개·BLE PBR 비컨 5개·Wi-Fi FTM AP 6개의 거리를 융합해 네 가지 측위 방법 — 반복 최소제곱(ILS), Huber 가중 강건 최소제곱(RLS), 베이지안 격자 필터(BGF), 우도 지도 입력 ResNet 회귀 — 를 같은 거리 측정 모델 아래 비교한다. 기술별 거리 잔차 중앙값은 UWB 0.27 m, Wi-Fi 1.46 m, BLE 4.76 m 로 두 자릿수 차이가 나며 이것이 기하 기반 해법의 상한을 정한다. BGF 가 중앙값 0.44 m 로 가장 낮지만 P95 6.29 m 의 꼬리를 가지고, ResNet 은 무작위 분할에서 중앙값 0.55 m·P95 1.31 m 로 꼬리를 지배하나 기준점을 통째로 보류하면 중앙값 3.22 m 로 수 배 나빠진다. 데이터셋(Zenodo)과 평가 코드(GitHub TUD-ITVS)를 MIT 로 공개한다.",
+      "hardware": [
+        "UWB: 양방향 거리측정(TWR) 앵커 10개 (본문은 모델 미기재; 동반 서술자 `ammad-2026-hymn-dataset-descriptor` 에 ZigPos RTLS)",
+        "BLE: 위상 기반 거리측정(PBR) 비컨 5개 (본문 모델 미기재; 서술자에 Metirionic DMK-215)",
+        "Wi-Fi: FTM 액세스포인트 6개 (본문 모델 미기재; 서술자에 HPE Aruba 630)",
+        "기준값: Leica TS16 토탈스테이션, 밀리미터 정밀도, 공통 국소 좌표계",
+        "현장: 독일 토르가우 산업 홀 44 m × 18 m, 양측 게이트 개방(실내 36 + 전이 12 = 48 기준점, 점당 정지 3분, 기술당 원시 샘플 60k 초과)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "평가 코드: https://github.com/TUD-ITVS/hymn-localization-ipin2026 (MIT, release v1.1-ipin2026, Zenodo 아카이브) — 전처리·네 방법 구현·두 평가 프로토콜·모든 표/그림 재현 스크립트, requirements.txt 고정",
+        "ILS: Gauss–Newton, SVD 로 풀이, 앵커 중심 초기화, 최대 7회, 종료 1e-6",
+        "RLS: Huber 손실 IRLS",
+        "BGF: 기술별 우도 σ = (UWB 0.27, BLE 4.76, Wi-Fi 1.46) m 를 거리 잔차 중앙값에서 설정, 정속 랜덤워크 확산(v̄ 0.1 m/s, σ_v 0.2 m/s, Δt 하한 0.2 s)",
+        "ResNet: 거리 우도 지도 입력 회귀, Adam, 무작위 분할(RandomSplit)·기준점 보류(SpatialHoldout) 두 프로토콜; 학습 체크포인트는 미배포(재학습)"
+      ],
+      "software_verified": true,
+      "results": [
+        "거리 잔차 ECDF: UWB 중앙값 0.27 m·P95 1.18 m·평균 1.11 m(n=62,745, 상위 5 % 극단 이상치가 평균을 끌어올림); Wi-Fi FTM 중앙값 1.46 m·P95 12.25 m(n=63,121); BLE PBR 중앙값 4.76 m·P95 26.77 m(n=49,745)",
+        "표 I 수평 측위 오차(중앙값/P75/P95, m): ILS 3.62/5.95/18.66(n=6075) · RLS 1.07/1.93/5.68 · BGF 0.44/0.79/6.29 · ResNet-RandomSplit 0.55/0.81/1.31(n=1823) · ResNet-SpatialHoldout 3.22/4.79/7.57(n=1833)",
+        "BGF 가 P75 까지 ResNet 보다 좋고, 그 위에서는 격자 경계에 붙은 추정이 누적돼 곡선이 평탄해지며 ResNet 이 역전",
+        "ILS 오차는 앵커 기하가 나빠지는 홀 주변부에서 커지고, RLS·BGF 는 같은 주변부에 잔차가 몰리나 절대값이 낮음",
+        "기준점 보류 시 ResNet 중앙값이 수 배(0.55 → 3.22 m) 커져 무작위 분할 성능은 보간임을 노출"
+      ],
+      "limitations": [
+        "단일 데이터셋·단일 현장 — 방법 순위가 다른 현장에서도 유지되는지는 미검증(저자 명시, 교차 데이터셋 평가를 향후 과제로)",
+        "고전 방법(전체 유효 에포크 n=6075)과 ResNet(보류 시험 분할 n≈1830)의 표본 수가 달라 표 I 의 행간 비교는 엄밀한 짝비교가 아님(저자 명시)",
+        "정지 측정만 — 이동 수신기·동적 환경은 미포함; 5G 거리·간헐 GNSS 융합, 앵커 기하 도메인 무작위화, 학습 표본 수 대비 정확도는 향후 과제(저자 명시)",
+        "BLE 거리는 CS 이전 세대 PBR(Metirionic) 이라 현재 Bluetooth Channel Sounding 성능을 대표하지 않음 — 관찰된 한계",
+        "논문 본문에 각 기술의 하드웨어 모델명이 없고 동반 서술자·`[12],[13]` 를 가리킴"
+      ],
+      "artifacts": {
+        "code": "https://github.com/TUD-ITVS/hymn-localization-ipin2026",
+        "dataset": "https://doi.org/10.5281/zenodo.17979434"
+      },
+      "verification": "verified",
+      "cites": [
+        "schwarzbach-2026-cross-tech-ranging",
+        "ammad-2026-hymn-dataset-descriptor"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schwarzbach-2026-cross-tech-ranging",
+          "type": "extends",
+          "note": "같은 HYMN 캠페인의 거리 잔차 분석을 측위(융합) 단계로 넓힘 — 거리 품질의 두 자릿수 차이가 동등 가중 기하 해법의 상한이 된다는 논증"
+        },
+        {
+          "to": "ammad-2026-hymn-dataset-descriptor",
+          "type": "applies-to",
+          "note": "서술자가 공개한 HYMN 데이터셋(Zenodo 17979434)을 그대로 입력으로 써서 네 측위 방법을 벤치마크"
+        }
+      ],
+      "added": "2026-09-24",
+      "last_checked": "2026-09-24"
+    },
+    {
+      "id": "ammad-2026-hymn-dataset-descriptor",
+      "title": "Descriptor: A Hybrid Indoor and Indoor-Outdoor Positioning Multi-Technology Dataset (HYMN)",
+      "authors": [
+        "Muhammad Ammad",
+        "Albrecht Michler",
+        "Paul Schwarzbach",
+        "Jonas Ninnemann",
+        "Hagen Ußler",
+        "Oliver Michler"
+      ],
+      "venue": "arXiv",
+      "venue_full": "arXiv preprint arXiv:2604.20349 (2026-04-22), 데이터 서술자 형식 — TUD Dresden University of Technology, Institute of Traffic Telematics",
+      "tier": "preprint",
+      "category": "measurement",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2604.20349",
+      "preprint": "https://arxiv.org/abs/2604.20349",
+      "doi": null,
+      "topics": [
+        "dataset",
+        "ble-phase-based-ranging",
+        "uwb",
+        "wifi-ftm",
+        "5g-nr",
+        "gnss",
+        "indoor-outdoor-transition",
+        "ground-truth",
+        "ranging-residual",
+        "open-data",
+        "zenodo"
+      ],
+      "tech": [
+        "ble-cs",
+        "uwb",
+        "wifi",
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "BLE 위상 기반 거리(Metirionic DMK-215)의 **원시 로그**가 UWB·Wi-Fi FTM·5G·GNSS 와 시간 동기화되고 밀리미터 기준값이 붙은 채로 공개된 데이터셋이다. CS 연구에 쓰이는 이유는 (1) 협대역 2.4 GHz 위상 거리의 실제 잔차 분포(중앙값 4.81 m, P95 26.74 m, 표준편차 12.93 m)를 UWB(중앙값 0.20 m)와 같은 자리에서 대조할 수 있는 몇 안 되는 공개 자료라 CS 의 개선 폭을 실측 기준선으로 말할 수 있고, (2) 잔차의 무거운 꼬리(UWB 조차 P99 15.18 m)가 기술마다 다른 형태라 조작 탐지 임계값이 어떤 분포를 전제하는지 되묻게 하며, (3) 5개 기술의 시각 정렬(NTP 공통 기준)이 되어 있어 **교차 기술 일관성 검사** — 한 기술의 거리가 조작됐을 때 다른 기술로 잡는 방어 — 를 실데이터로 시험할 수 있기 때문이다. 벤치마크 후속작 `schwarzbach-2026-hymn-benchmark` 와 짝이다.",
+      "summary": "독일 토르가우 산업 홀(44 m × 18 m, 양측 게이트)에서 GNSS·UWB·BLE·Wi-Fi·5G NR 다섯 측위 기술을 한 이동 측정판에 실어 48개 기준점(실내 36·전이 12)에서 각 3분씩 정지 수집한 HYMN 데이터셋의 서술자다. 기준값은 Leica TS16 토탈스테이션(프리즘 기준, 판 위 센서 오프셋 보정)이고, 모든 장치는 공개 NTP 풀로 시각을 맞춘 뒤 측정 ID 로 병합된다. 처리 데이터(csv·parquet·pickle)·원시 로그·기준 데이터·전처리 파이프라인을 Zenodo/GitHub 에 공개하며, 거리 잔차 통계(표 4)로 UWB 중앙값 0.20 m, Wi-Fi 1.44 m, BLE 4.81 m 를 보고한다. 동적 수집·스마트폰 직접 수집은 향후 과제로 남긴다.",
+      "hardware": [
+        "GNSS: NovAtel PwrPak 7 (의사거리; 앵커 수 가변)",
+        "UWB: ZigPos RTLS, 앵커 10개, TWR/RTT",
+        "BLE: Metirionic DMK-215, 비컨 5개, 위상 기반 거리측정(PBR)",
+        "Wi-Fi: HPE Aruba 630 Series AP 6대, FTM(RTT)",
+        "5G NR: 산업용 스몰셀 시스템 3기, 핑거프린팅(SNR·TDOA 기반)",
+        "기준값: Leica TS16 토탈스테이션(정지 모드), 측정판 약 30 × 30 cm 에 프리즘·BLE 모듈·UWB 트랜시버 2개·Wi-Fi 측정용 스마트폰·5G 안테나·GNSS 수신기 고정, 판 방향 고정(방향 오차 10° 라도 수 cm)",
+        "현장: 토르가우 산업 홀 44 m × 18 m, 기준점 48개(실내 36·전이 12), 점당 3분"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "데이터·코드: https://github.com/TUD-ITVS/HYMN-dataset, DOI 10.5281/zenodo.17979434 — 처리 데이터(csv/parquet/pickle), 원시 로그, 기준 데이터, preprocessing_pipeline.py, example_iterator.py·coordinate_plot.py",
+        "Python 3.8+ (gnss_lib_py 의존성 때문에 3.13 미만), NumPy·Pandas",
+        "시각 동기화: 모든 로깅 장치가 공개 NTP 풀에서 벽시계 기준을 받고, 후처리에서 측정 ID 로 병합(merged 테이블 = 타임스탬프 → 기술별 행 인덱스 조회표)",
+        "GNSS 검증: 위성 간 단일 차분(BSSD)"
+      ],
+      "software_verified": true,
+      "results": [
+        "표 4 거리 잔차(m; 개수/평균/중앙값/P75/P95/P99/σ): BLE 49,745 / 8.07 / 4.81 / 8.64 / 26.74 / 47.68 / 12.93 · UWB 62,745 / 1.03 / 0.20 / 0.36 / 1.00 / 15.18 / 9.00 · Wi-Fi 63,121 / 3.30 / 1.44 / 4.48 / 12.20 / 18.27 / 4.11",
+        "UWB 는 잔차 90 % 가 2 m 이하로 빠르게 수렴하지만 P99 15.18 m 의 이상치 존재; BLE 는 가장 큰 계통 편향(평균 8.07 m)과 산포",
+        "GNSS 코드 의사거리 BSSD 경험 표준편차 6.8 m(전 구역)",
+        "공개 데이터 이용 논문 22.4 %, 데이터+코드 공개 7.9 % 라는 분야 현황을 들어 데이터셋의 필요를 논증"
+      ],
+      "limitations": [
+        "정지 수집만 — 토탈스테이션이 정지 모드라 동적 수집은 범위 밖(저자 명시, 향후 과제)",
+        "스마트폰 직접 수집이 아니라 측정판 장비 — 단말 안테나·하드웨어 특성은 미반영(저자 명시, 향후 과제)",
+        "5G·UWB·BLE 는 인프라 측 처리, GNSS·Wi-Fi 는 단말 측 처리라 시각 정렬이 시스템마다 파이프라인 지연에 의존(저자 명시)",
+        "원시 로그에 세션 재시작·링크 단절로 인한 빈 행·불완전 레코드가 남아 있음(저자 명시, 전처리에서 제거)",
+        "BLE 거리는 CS 이전 세대 PBR 이라 Bluetooth Channel Sounding 의 성능이 아님 — 관찰된 한계"
+      ],
+      "artifacts": {
+        "code": "https://github.com/TUD-ITVS/HYMN-dataset",
+        "dataset": "https://doi.org/10.5281/zenodo.17979434"
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schwarzbach-2026-cross-tech-ranging",
+          "type": "complementary",
+          "note": "같은 캠페인 — 이 서술자는 데이터 구조·수집 절차·공개 방식을, 예비 분석 논문은 구역별 잔차 물리를 다룸"
+        }
+      ],
+      "added": "2026-09-24",
+      "last_checked": "2026-09-24"
+    },
+    {
+      "id": "hancke-2005-practical-relay-iso14443",
+      "title": "A Practical Relay Attack on ISO 14443 Proximity Cards",
+      "authors": [
+        "Gerhard P. Hancke"
+      ],
+      "venue": "Tech report",
+      "venue_full": "Project report, University of Cambridge Computer Laboratory, posted January 2005 (미출판 기술보고서; 저자 사이트 rfidblog.org.uk 배포)",
+      "tier": "other",
+      "category": "attack",
+      "year": 2005,
+      "url": "http://www.rfidblog.org.uk/hancke-rfidrelay.pdf",
+      "preprint": "https://web.archive.org/web/2015id_/http://www.rfidblog.org.uk/hancke-rfidrelay.pdf",
+      "doi": null,
+      "topics": [
+        "relay-attack",
+        "contactless-smartcard",
+        "iso-14443",
+        "mifare",
+        "near-field",
+        "proxy-and-mole",
+        "timing-constraints",
+        "distance-bounding",
+        "physical-layer-defense",
+        "foundational"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 7편(drimer-2007, hancke-2005-rfid-db, reid-2007, schepers-2021, staat-2020/2022, uwb-sv-2023)이 '릴레이 공격의 첫 실물 실증' 으로 인용하는 원전이다. Kfir–Wool(2005)이 시뮬레이션으로 도달 범위를 논했다면 이 보고서는 Proxy(위조 카드)와 Mole(위조 리더)을 100 파운드 미만 부품으로 만들어 ISO 14443A 카드를 50 m 떨어진 리더에 통과시켰다. 내 연구에 두 가지가 그대로 이어진다. 첫째, **규격의 타이밍 제약이 방어가 못 된다는 계량적 증거** — 안티콜리전 응답이 91/86 µs 비트 그리드에 묶여 있어도 15–20 µs 의 릴레이 지연을 리더가 정상 처리했고, FWT 는 최대 5 s 라 의미가 없다. CS 의 RTT 가 '타이밍 제약' 을 어떻게 잡아야 하는지의 반례 계보가 여기서 시작한다. 둘째, 응용 계층 암호(AES·DES·상호인증)가 릴레이에 무력하므로 방어는 물리 계층(거리 바운딩)이어야 한다는 결론 — 같은 저자의 Hancke–Kuhn 프로토콜(`hancke-2005-rfid-db`)이 이 보고서의 '남은 문제' 에서 나왔다.",
+      "summary": "ISO 14443A(Mifare 호환) 비접촉 스마트카드에 대한 릴레이 공격을 자작 하드웨어로 실증한 2005년 케임브리지 기술보고서다. 리더 앞에서 카드 행세를 하는 Proxy 와 피해자 카드 곁에서 리더 행세를 하는 Mole 을 UHF ASK/OOK 무선 두 채널로 이어, 아날로그 변복조만 하고 비트를 즉시 중계하는 값싼 방식을 택했다. 시스템 지연 15–20 µs 에도 리더는 정상 동작했고 최대 50 m 거리에서 공격이 성공했다. 안티콜리전 타이밍(REQA/SELECT 응답 91·86 µs)과 FWT(최대 5 s)가 방어가 되지 않으며, 응용 계층 암호로는 막을 수 없으므로 패러데이 차폐·엄격 시간 검사·거리 바운딩 같은 물리 계층 대책이 필요하다고 결론짓는다. 위치 시스템(ToA·TDoA·초음파·RSS) 문헌을 짚으며 초음파 거리 바운딩(Echo)은 무선 릴레이로 거리를 줄일 수 있다고 지적한다.",
+      "hardware": [
+        "Proxy(위조 카드): ISO 14443 HF 인터페이스(13.56 MHz 공진회로, 반송파 ÷16 이진 카운터로 847 kHz 부반송파 복원 → Manchester 데이터 혼합 후 스위치로 부하변조), ASK 포락선 검파 + 비교기, 전이중 무선 채널",
+        "Mole(위조 리더): OEM 리더 — Philips MF RC530 ISO 14443A 리더 IC + Microchip PIC16F876 8비트 마이크로컨트롤러(펌웨어 재작성), MFIN/MFOUT 핀으로 변복조 위임",
+        "Proxy–Mole 링크: Micrel QwikRadio UHF ASK/OOK 송수신 IC 로 반이중 채널 2개 = 전이중; 유휴 시 논리 1 송신(AGC 잡음 증폭 방지), Manchester 반전·펄스 정형 비교기",
+        "프로토타입은 스트립보드·대형 IC 패키지의 비은폐 개념증명; 전체 부품비 100 파운드 미만(대부분 OEM 리더)",
+        "계측: 리더 안테나에서 REQA/ATQA 파형 관측(그림 5·6, 오실로스코프 모델 미기재)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "PIC16F876 펌웨어 재프로그래밍(OEM 리더 기능 재구성) — 언어·툴체인 미기재",
+        "디지털 신호처리 없음: 패킷 버퍼링 대신 아날로그 변복조 후 비트 즉시 중계 설계"
+      ],
+      "software_verified": true,
+      "results": [
+        "릴레이 성공 거리 최대 50 m(Proxy–Mole 무선 링크)",
+        "시스템 지연 15–20 µs 삽입에도 리더 정상 동작 — ISO 14443-3 응답시간 (n·128+84)/fc·(n·128+20)/fc, REQA 최소 타임아웃 ≈ 500 µs, FWT = (256·16/fc)·2^FWI (300 µs–5 s, 기본 4.8 ms) 어느 것도 걸리지 않음",
+        "안티콜리전 비트 그리드(응답 91/86 µs)는 Proxy 가 Mole 이 미리 읽어 둔 카드 ID 로 제때 답하면 우회 — 다만 리더 앞에 다른 진짜 카드가 함께 있으면 비트 미정렬로 충돌 판정(그림 6)",
+        "Mole 도달 범위는 송신전력·안테나 지름·Q 로 늘릴 수 있음(FCC/ETSI 한계를 공격자는 지키지 않음) — 서류가방·옷 속 루프 안테나 제안",
+        "대책 평가: 응용 계층 암호(AES/DES/RSA/SHA-1/Crypto1)·프라이버시 기법(블로커 태그 등) 전부 무력, 패러데이 차폐는 사용 시 노출, 20 µs 지연의 엄격 시간 검사는 REQA/SELECT 에만 가능하고 데이터 전송 지연은 규격 밖, 거리 바운딩(Brands–Chaum)이 해법이나 저비용 수동 토큰 구현이 미해결"
+      ],
+      "limitations": [
+        "미출판 기술보고서 — 동료심사 없음; 실험 통계(성공률·반복 횟수) 없이 '성공' 만 보고",
+        "타이밍 제약 우회는 REQA/SELECT 만 다루고 응용 계층 T=1 프레임 타이밍은 규격에 없다는 이유로 미측정",
+        "거리 바운딩을 저비용 수동 토큰에 구현하는 문제를 미해결로 남김(저자 명시) — 같은 해 Hancke–Kuhn SecureComm 논문이 답함",
+        "프로토타입은 은폐·소형화하지 않았고(저자 명시) 링크 거리 50 m 이상은 시험하지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "motivates",
+          "note": "응용 계층 암호로는 릴레이를 못 막는다는 실증에서 '거리 바운딩만이 해법' 이라 결론 — 저비용 토큰 구현이 남은 문제라고 지적"
+        },
+        {
+          "to": "kfir-2005-virtual-pockets-relay",
+          "type": "complementary",
+          "note": "Kfir–Wool 이 고스트·리치 도달 범위를 시뮬레이션했다면 이 보고서는 같은 해 Proxy·Mole 을 실제로 만들어 50 m 릴레이를 실증"
+        }
+      ],
+      "added": "2026-09-24",
+      "last_checked": "2026-09-24"
+    },
+    {
+      "id": "xiong-2015-tonetrack",
+      "title": "ToneTrack: Leveraging Frequency-Agile Radios for Time-Based Indoor Wireless Localization",
+      "authors": [
+        "Jie Xiong",
+        "Karthikeyan Sundaresan",
+        "Kyle Jamieson"
+      ],
+      "venue": "MobiCom",
+      "venue_full": "Proceedings of the 21st Annual International Conference on Mobile Computing and Networking (MobiCom 2015), Paris, September 2015, pp. 537–549 — University College London / NEC Labs",
+      "tier": "wireless",
+      "category": "estimation",
+      "year": 2015,
+      "url": "https://doi.org/10.1145/2789168.2790125",
+      "preprint": "https://www.sigmobile.org/mobicom/2015/papers/p537-xiongA.pdf",
+      "doi": "10.1145/2789168.2790125",
+      "topics": [
+        "time-of-arrival",
+        "tdoa",
+        "music",
+        "super-resolution",
+        "channel-combination",
+        "bandwidth-stitching",
+        "frequency-agile",
+        "spectrum-identification",
+        "triangle-inequality",
+        "warp",
+        "wifi",
+        "multipath"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 6편(vasisht-2016-chronos, olafsdottir-2017, riaz-2022, jiokeng-2020, helwa-2023, tschirschnitz-2026)이 인용하는 '여러 협대역 채널을 이어 붙여 ToA 분해능을 올린다' 는 발상의 원전이다. Bluetooth CS 의 PBR 은 정확히 이 원리 — 2.4 GHz ISM 대역을 1 MHz 채널로 훑어 위상을 이어 붙여 가상 광대역 CIR 을 얻는 것 — 위에 서 있고, ToneTrack 이 밝힌 두 조건이 CS 에도 그대로 적용된다. (1) 채널을 잇기 전에 **시간 정렬(부표본 지연 제거 → 주파수 영역 위상 기울기 일치)과 주파수 정렬(채널 경계 위상 연속)** 이 필요하며 이것이 틀리면 결합이 오히려 나빠진다 — CS 의 '위상 연속성 조작' 공격 지점이 여기다. (2) 20 MHz 에서 MUSIC 의 분해 한계는 약 6 m 이고, 두 경로가 합쳐진 피크는 **직접파가 더 세면 직접파 쪽으로 치우친다** 는 관찰 — 협대역 다중경로에서 '가장 이른 피크' 를 고르는 CS 수신기 정책의 근거이자 한계다. 또 인접 채널만 결합하고 비인접 결합(격자 로브)은 미해결로 남겨 CS 의 채널 셔플링·건너뛴 채널 문제와 맞닿는다.",
+      "summary": "Wi-Fi·LTE 단말이 채널을 옮겨 다니는 주파수 민첩성을 이용해, AP 가 엿들은 여러 20 MHz 채널의 전송을 시간·주파수 영역에서 정렬해 하나의 넓은 대역처럼 결합(채널 결합)하고 MUSIC 초분해능 ToA 스펙트럼의 분해능을 올리는 수동 실내 측위 시스템이다. 2탭 케이블 채널 에뮬레이터로 20 MHz MUSIC 의 분해 한계가 약 6 m 임을 보이고, 합쳐진 피크가 직접파 쪽으로 치우치는지·단일 피크인지(로브 폭 임계)를 판정하는 스펙트럼 식별, AP 쌍의 TDoA 삼각부등식·군집화로 직접파가 완전히 막힌 AP 를 걸러내는 단계를 더한다. Rice WARP v3 AP 4대(각 FMC-RF-2X245 로 채널 1·5·9 동시 수신)로 25 × 20 m 사무실 40개 지점에서 3채널 결합 시 중앙값 0.9 m(90 % 약 2 m), 2채널 1.3 m, 1채널 1.9 m 를 얻었다.",
+      "hardware": [
+        "AP: Rice WARP v3 Kit 4대(+ 2대 추가 실험), 각 FMC-RF-2X245 모듈로 라디오 4개 중 3개를 채널 1·5·9 에 배정, 결합기로 단일 안테나에 연결, LMR-400 저손실 케이블",
+        "클라이언트: WARP 1대(송신), 채널 호핑 또는 세 채널 동시 송신",
+        "2.4 GHz 20 MHz 채널, 802.11 롱 트레이닝 심볼(LTS) 64 샘플로 채널 주파수응답 추정",
+        "채널 에뮬레이터: RF 분배·결합기 + 길이 다른 케이블 2경로(경로차 13.5 m → 2.7 m 가변)",
+        "실험장: 25 × 20 m 사무실, 클라이언트 위치 40곳(12곳은 AP 와 다른 방), AP 4대 완전 동기화"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "WARPLab 7.3",
+        "MUSIC ToA 초분해능(64 × 64 행렬, 채널 결합 시 선형 증가), 부표본 시간 정렬 + 채널 경계 위상 정렬, 스펙트럼 식별 4단계(피크 간격 > 분해한계 / 상대 진폭 / 단일·병합 판정 로브 폭 임계 W_t / 치우침 방향), TDoA 쌍곡선 교차 + 삼각부등식·군집 이상치 제거",
+        "AP 보정: 케이블 길이로 계산한 위상 기울기 2πΔf·t 로 부반송파별 진폭·위상 비선형 일회 보정",
+        "코드 공개 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "측위 중앙값: 3채널 결합 0.9 m(90 % ≈ 2 m), 2채널 1.3 m, 1채널 1.9 m; 1채널만으로도 제안 기법 없는 MUSIC 대비 중앙값 40 % 감소",
+        "스펙트럼 식별 효과: 중앙값 116 cm → 90 cm",
+        "20 MHz MUSIC 분해 한계 약 6 m(중·고 SNR 에서 안정); 병합 피크는 직접파가 더 세면 위치 오차가 작음",
+        "AP 간 시각 동기 오차(SourceSync 분포 차용) 95 % 5 ns / 10 ns 에서 3채널 중앙값 1.05 m / 1.4 m",
+        "AP 3대 vs 4대 사이에 뚜렷한 격차(3대면 식별·삼각부등식 적용 불가), 그 이상은 완만한 개선",
+        "단일 신호 로브 폭은 SNR 6 dB 이상에서 2.5 m 미만 유지 — 임계 W_t 는 6 dB 이하 저 SNR 에서만 오판"
+      ],
+      "limitations": [
+        "인접(연속) 채널 결합만 — 비인접 채널 결합은 격자 로브·비선형 위상 오프셋 문제로 향후 과제(저자 명시)",
+        "TDoA 방식이라 AP 간 나노초급 시각 동기가 필요 — 실험은 완전 동기, 분산 MIMO 동기 오차는 차용 데이터로만 평가(저자 명시)",
+        "AP 최소 3대, 식별·삼각부등식 적용에는 4대 이상 필요; 최적 AP 군 선택은 미해결(저자 명시)",
+        "로브 폭 임계 W_t 가 단일 상수 — SNR 적응은 향후 과제(저자 명시)",
+        "2.4 GHz WARP 실험만, 상용 Wi-Fi 칩 미검증; 보안 관점 없음 — 관찰된 한계"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "vasisht-2016-chronos",
+          "type": "complementary",
+          "note": "둘 다 여러 Wi-Fi 채널을 이어 가상 광대역을 만들지만 ToneTrack 은 다중 AP TDoA(상대 ToA·인접 채널 결합), Chronos 는 단일 AP 절대 ToF(전 대역 호핑·CRT 정수 모호성 해소) — Chronos 가 ToneTrack 을 인용"
+        }
+      ],
+      "added": "2026-09-24",
+      "last_checked": "2026-09-24"
+    },
+    {
+      "id": "ibrahim-2018-ftm-verification",
+      "title": "Verification: Accuracy Evaluation of WiFi Fine Time Measurements on an Open Platform",
+      "authors": [
+        "Mohamed Ibrahim",
+        "Hansi Liu",
+        "Minitha Jawahar",
+        "Viet Nguyen",
+        "Marco Gruteser",
+        "Richard Howard",
+        "Bo Yu",
+        "Fan Bai"
+      ],
+      "venue": "MobiCom",
+      "venue_full": "Proceedings of the 24th Annual International Conference on Mobile Computing and Networking (MobiCom 2018), New Delhi, October–November 2018, pp. 417–427 — Rutgers WINLAB / General Motors R&D",
+      "tier": "wireless",
+      "category": "measurement",
+      "year": 2018,
+      "url": "https://doi.org/10.1145/3241539.3241555",
+      "preprint": "https://winlab.rutgers.edu/~hansiiii/papers/Verification_Accuracy_Evaluation_of_WiFi_Fine_Time.pdf",
+      "doi": "10.1145/3241539.3241555",
+      "topics": [
+        "wifi-ftm",
+        "802-11mc",
+        "round-trip-time",
+        "ranging-accuracy",
+        "open-platform",
+        "intel-8260",
+        "calibration-offset",
+        "underestimation",
+        "bandwidth",
+        "multipath",
+        "most-probable-estimator",
+        "trilateration"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 5편(schepers-2021, jiokeng-2020, schroeder-2022, rajendran-2025, lyu-2026)이 인용하는 **상용 칩 RTT 거리측정의 첫 공개 플랫폼 실측**이다. CS RTT 연구에 직접 옮겨 쓸 관찰이 셋이다. (1) 같은 벤더 칩끼리(Intel 8260↔8260) 재면 1 m 거리에서 −6.8 m, 즉 **음의 왕복시간** 이 나온다 — 빛보다 빨리 올 수 없으므로 펌웨어 내부 보정·다중경로 보상의 산물이며, 이 '음의 거리' 는 CS 에서 거리 단축 공격과 정상 보정 오차를 가르는 기준이 얼마나 칩 의존적인지를 보여준다. (2) 20 MHz 에서는 LOS 라도 실내 오차가 5 m 급이고 80 MHz 라야 미터급 — 협대역 RTT 의 다중경로 한계는 CS 의 1 MHz 채널 RTT 가 왜 단독으로는 못 쓰이고 PBR 과 결합돼야 하는지의 실측 근거다. (3) 평균 대신 **최빈값(히스토그램 최빈 구간) 추정기가 중앙값 0.3 m** 로 평균(0.7–2.2 m)을 크게 이긴다 — 다중경로가 과대추정만 만든다는 물리를 이용한 것으로, 공격자가 이 추정기를 속이려면 어느 쪽으로 분포를 밀어야 하는지가 정해진다.",
+      "summary": "IEEE 802.11-2016 에 표준화된 FTM(RTT) 거리측정의 정확도 주장을 검증하려고, Intel Dual Band Wireless-AC 8260/8265 와 백포트 IWLWIFI 드라이버를 고쳐 만든 공개 리눅스 플랫폼(iw 패치로 FTM 개시, hostapd 로 응답 AP)을 소개하고 반복 가능한 측정 틀로 평가한다. 개활지 실외에서는 고정 오프셋(같은 칩 쌍 −6.8 m)을 보정하면 1 m 이내 정확도가 나오지만, 실내 사무실·실험실에서는 20 MHz 대역폭에서 LOS 여도 거리·삼변측량 오차가 약 5 m 로 커지고, Qualcomm IPQ4018 기반 ASUS AP 로 5 GHz 80 MHz 를 쓰면 미터급으로 회복된다. 버스트당 샘플 수·직접파 차단·이중 반사체·고속도로 동적 환경·실내 AP–실외 STA 등 요인을 하나씩 분리해 재며, 다중경로가 과대추정만 낸다는 성질로 창 내 최빈값 추정(중앙값 0.3 m)과 단말 이동량을 아는 공간 필터링을 제안한다.",
+      "hardware": [
+        "STA/AP(WiFi card A): Intel Dual Band Wireless-AC 8260 및 8265 — AP 모드는 2.4 GHz 20/40 MHz 만, STA 로는 80 MHz 까지 확인; 소형 폼팩터 PC 2대에 장착",
+        "AP B: ASUS AC1300 RT-ACRH13(Qualcomm IPQ4018), 출고 상태로 FTM 응답, 5 GHz 80 MHz 지원",
+        "안테나: 6 dBi 무지향 2개, 6 ft CNT-240 케이블(속도 0.83c, 2.4 GHz 감쇠 12.9 dB/100 ft)로 높이 연장(0.7 m·1.4 m)",
+        "환경: 개활 잔디·자갈 마당, 7층 건물 평행, 두 반사체, 고속도로변(72.5 m/72.3 m), 큐비클 사무실(하중 기둥 0.8 × 0.7 m 2개), 실내 AP–실외 STA(단층·7층 3층 창가)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Linux 3.19.0-61-lowlatency, IWLWIFI 백포트 LinuxCore30 + 펌웨어 31, hostapd 2.6(AP 응답 활성화 드라이버 패치 공개), iw FTM 패치로 개시, RTT 는 펌웨어 계산(t1·t4 후속 프레임 전달)",
+        "삼변측량: 반복 비선형 최소제곱; 최빈값 추정기: 버스트 10개 × 30 패킷 창 히스토그램",
+        "플랫폼 한계: CSI·안테나별 위상 추출은 펌웨어 제약으로 불가(저자 명시)"
+      ],
+      "software_verified": true,
+      "results": [
+        "표 1(실제 1 m 에서 평균 추정, STA = card A): AP card A 2.4 GHz 20/40 MHz −6.8 m; AP B 2.4 GHz 20/40 MHz 부정확(−1000/−998 m), 5 GHz 20 MHz −15 m, 40 MHz −5 m, 80 MHz 1.8 m",
+        "개활지: 고정 오프셋 보정 후 1 m 이내, 그래도 간헐적 과소추정; 이종 칩 쌍(card A ↔ AP B)은 과소추정 없음",
+        "고속도로변 정지 측정 1000회/6분: 기준 72.5/72.3 m 에 중앙값 72.79 m(보정 전 66.56 m)/72.61 m",
+        "실내 큐비클 삼변측량(AP 3대): card A AP 중앙값 5.2 m·90 % 11.6 m, AP B 3.8 m·6.2 m; AP 별 거리 보정 후 4.2 m·8.2 m / 3.5 m·4.7 m",
+        "최빈값 추정 중앙값 0.3 m·90 % 0.78 m, 최소값 추정 0.4 m·1 m, 평균 0.7–2.2 m",
+        "직접파 차단·반사체 추가는 과대추정만 유발; 실내 AP–실외 STA 는 20 m 이상에서 신호 약화·불안정, 차량 사이 이동 시 28 m·36 m 에서 완전 차단"
+      ],
+      "limitations": [
+        "펌웨어가 RTT 를 계산하고 내부 보정을 해 음의 거리 원인을 확정 못 함 — 칩 내부 다중경로 보상으로 추정(저자 명시)",
+        "CSI·안테나별 측정 불가, card A 는 AP 모드 40 MHz 까지 — 대역폭 효과는 이종 AP 로만 확인(저자 명시)",
+        "실내 20 MHz 는 LOS 여도 약 5 m — 밀집 AP 로 80 MHz 를 써야 미터급(저자 명시)",
+        "정지 측정 위주, 공간 필터링은 단말 이동량을 안다고 가정; 보안 관점 없음 — 관찰된 한계"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "vasisht-2016-chronos",
+        "gunther-2005-wlan-rtt",
+        "xiong-2015-tonetrack"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "gunther-2005-wlan-rtt",
+          "type": "extends",
+          "note": "Günther–Hoene 의 1 µs 타임스탬프 WLAN RTT 를 표준화된 802.11mc FTM 상용 칩에서 다시 검증 — 미터급은 개활지에서만 성립함을 보임"
+        },
+        {
+          "to": "xiong-2015-tonetrack",
+          "type": "complementary",
+          "note": "ToneTrack·Chronos 가 연구용 라디오로 대역 결합·ToA 를 다뤘다면, 이 논문은 상용 칩 FTM 이 표준대로 무엇을 내놓는지를 잰다"
+        }
+      ],
+      "added": "2026-09-24",
+      "last_checked": "2026-09-24"
+    },
+    {
+      "id": "boureanu-2015-practical-provable-db",
+      "title": "Practical and Provably Secure Distance-Bounding",
+      "authors": [
+        "Ioana Boureanu",
+        "Aikaterini Mitrokotsa",
+        "Serge Vaudenay"
+      ],
+      "venue": "JCS",
+      "venue_full": "Journal of Computer Security, vol. 23, no. 2, pp. 229–257, 2015 (학회판: ISC 2013, LNCS 7807 pp. 248–258; 확장판 IACR ePrint 2013/465) — EPFL / Chalmers",
+      "tier": "journal",
+      "category": "defense",
+      "year": 2015,
+      "url": "https://doi.org/10.3233/JCS-140518",
+      "preprint": "https://eprint.iacr.org/2013/465.pdf",
+      "doi": "10.3233/JCS-140518",
+      "topics": [
+        "distance-bounding",
+        "provable-security",
+        "ski-protocol",
+        "terrorist-fraud",
+        "collusion-fraud",
+        "mafia-fraud",
+        "distance-hijacking",
+        "prf-masking",
+        "circular-keying",
+        "leakage-scheme",
+        "secret-sharing",
+        "noise-tolerance",
+        "formal-model"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 6편(abidin-2021, nkrow-2024 ×2, uwb-sv-2023, bogner-2026, jangid-2026)이 '증명 가능하게 안전한 첫 실용 거리 바운딩' 으로 인용하는 이론 허브다. CS 연구에서 이 논문은 **위협 모델의 어휘와 경계** 를 준다. (1) 거리 사기·MiM(마피아 일반화)·공모 사기(테러리스트 일반화)·거리 하이재킹을 하나의 형식 안에 넣고, 시간 임계 라운드를 '모든 송수신에 최대 전파속도가 걸린다' 로 모델링해 게으른 단계와 시간 임계 단계의 구분을 없앤다 — CS 의 PBR/RTT 가 '어느 단계가 시간 임계인가' 를 따질 때 이 모델이 상한이다. (2) 잡음 허용(응답 오류 확률 p_noise, Chernoff 완전성)이 테러리스트 사기 저항을 무너뜨릴 수 있다는 Hancke(2012) 관찰을 SKI 의 누설 스킴·비밀 공유로 정면 처리한다 — CS 가 NADM 같은 잡음 허용 판정을 둘 때 같은 틈이 생기는지 물어야 한다. (3) PRF 마스킹·순환 키(circular-keying)라는, 챌린지–응답 테이블이 키에 선형으로 의존할 때 생기는 증명 구멍을 메운다. 다만 CS 규격은 프로토콜 계층에 비트 교환 DB 가 없으므로 직접 적용이 아니라 **CS 위에 얹을 DB 층의 설계 기준** 으로 쓴다.",
+      "summary": "거리 바운딩(DB) 프로토콜에 대해 통신·공격자 모델을 포함한 일반 형식을 세우고 거리 사기, 중간자(마피아 사기 일반화), 공모 사기(테러리스트 사기 일반화), 거리 하이재킹 저항을 잡음 통신까지 포함해 정의한 뒤, Boureanu 외의 SKI 프로토콜 계열(SKI_pro: q=2, t=3 챌린지, SKI_lite: t=2, SKI_shamir, SKI_4)이 이 모든 사기에 증명 가능하게 안전함을 보인다. 핵심 부품은 PRF 출력에 무작위 마스크를 씌우는 PRF 마스킹, 키의 선형 재사용을 허용하는 PRF 의 순환 키 안전성, 테러리스트 사기 저항을 위한 누설 스킴과 비밀 공유(F-스킴의 선형·쌍별 균일·t-누설 성질), 응답 오류 확률 p_noise 를 둔 완전성(Chernoff 경계)이다. 응답 계산은 7 NAND 게이트 수준의 표 조회로 가능하다.",
+      "hardware": [
+        "해당 없음 — 이론·증명 논문(구현 없음)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 응답 함수 F 는 SKI_pro 에서 7 NAND 게이트 회로 또는 사전계산 표 조회로 구현 가능하다고 논증"
+      ],
+      "software_verified": true,
+      "results": [
+        "정리 14: F-스킴이 선형·δ-유계이고 PRF 가 (ε, nN, C)-순환 PRF 이면 SKI 는 거리 사기·MiM·공모 사기에 각각 확률 상한으로 저항 — 거리 사기 저항 β = B(n, τ, ·) 꼴 이항 꼬리",
+        "보조정리 7: τ ≤ (1 − p_noise − ε)n 이면 SKI 는 (1 − e^{−2ε²n})-완전(Chernoff–Hoeffding)",
+        "보조정리 15: SKI_shamir·SKI_pro·SKI_4 의 F-스킴은 선형·쌍별 균일·t-누설, SKI_lite 는 t-누설이 아님(순환 키 가정 불필요 대신 테러리스트 사기 미보장)",
+        "기존 프로토콜의 지위 정리: Bussard–Bagga·Hancke–Kuhn·Munilla–Peinado·Kim–Avoine(Swiss-Knife)은 테러리스트 사기에 취약, Kim 외는 1비트 챌린지/응답으로는 세 사기를 다 못 막는다고 주장, Reid 외·TDB(Avoine)의 비밀 공유 아이디어를 일반화",
+        "잡음 허용을 악용한 Hancke(2012)의 테러리스트 사기가 기존 거의 모든 프로토콜을 무너뜨리는데, 누설 스킴은 잡음 섞인 L(x) 누설로도 복원 가능하도록 설계"
+      ],
+      "limitations": [
+        "1비트 응답·소수 챌린지(t=3) 설계로 문헌과 맞췄으나 오늘날 RFID/NFC 카드는 다비트 응답도 가능하다고 저자 스스로 언급 — 다비트 변형은 부록에만",
+        "물리 계층 없음: 시간 임계 라운드가 정확히 구현된다고 가정, ED/LC·조기 검출 같은 물리 공격은 모델 밖 — 관찰된 한계",
+        "순환 키 안전성은 새 가정(랜덤 오라클 모델에서 성립 확인) — 표준 PRF 가정만으로는 증명 안 됨",
+        "공모 사기는 반증 불가능(non-falsifiable)이라 정의 자체가 테러리스트 사기의 본질적 한계를 물려받음(저자 명시)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "reid-2007-timing-relay-detection",
+        "kim-2008-swiss-knife-db",
+        "singelee-2007-db-noisy-environments",
+        "drimer-2007-smartcard-relay-db",
+        "rasmussen-2010-rf-distance-bounding",
+        "francillon-2011-pkes-relay",
+        "cremers-2012-distance-hijacking"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "extends",
+          "note": "Hancke–Kuhn 의 빠른 비트 교환 구조를 유지하면서 테러리스트 사기·잡음 허용 악용에 대한 증명 가능한 저항을 더함(SKI)"
+        },
+        {
+          "to": "kim-2008-swiss-knife-db",
+          "type": "contradicts",
+          "note": "Swiss-Knife 를 테러리스트 사기 취약 프로토콜로 분류하고, '1비트 챌린지/응답으로는 세 사기를 다 못 막는다' 는 Kim 외 주장을 SKI 로 반박"
+        },
+        {
+          "to": "cremers-2012-distance-hijacking",
+          "type": "generalizes",
+          "note": "거리 하이재킹을 위협 모델에 흡수해 거리 사기의 일반화(여러 정직 증명자 존재)로 형식화"
+        },
+        {
+          "to": "singelee-2007-db-noisy-environments",
+          "type": "complementary",
+          "note": "같은 잡음 허용 문제를 Singelée 는 오류정정으로, 이 논문은 p_noise 완전성 + 누설 스킴으로 다룸"
+        }
+      ],
+      "added": "2026-09-24",
+      "last_checked": "2026-09-24"
     }
   ]
 }
