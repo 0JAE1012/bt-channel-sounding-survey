@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-24",
-  "last_run": "2026-09-24",
+  "updated": "2026-09-25",
+  "last_run": "2026-09-25",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 944,
+  "citation_edges": 971,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -453,7 +453,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-25",
       "cites": [
         "flury-2010-distance-decreasing",
         "leu-2020-mtac",
@@ -462,7 +462,8 @@
         "avoine-2018-db-survey",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "poturalski-2012-secure-precise-ir-uwb",
-        "vasisht-2016-chronos"
+        "vasisht-2016-chronos",
+        "guvenc-2005-threshold-toa"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -722,9 +723,10 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-10",
+      "last_checked": "2026-09-25",
       "cites": [
-        "santra-2024-cs-indoor"
+        "santra-2024-cs-indoor",
+        "guvenc-2005-threshold-toa"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1474,7 +1476,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-24",
+      "last_checked": "2026-09-25",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1487,7 +1489,8 @@
         "poturalski-2010-cicada-attack",
         "vasisht-2016-chronos",
         "brands-1993-distance-bounding",
-        "xiong-2015-tonetrack"
+        "xiong-2015-tonetrack",
+        "francis-2010-nfc-p2p-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1665,7 +1668,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-25",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -1677,7 +1680,8 @@
         "poturalski-2010-cicada-attack",
         "capkun-2005-secure-positioning",
         "vasisht-2016-chronos",
-        "ranganathan-2017-are-we-really-close"
+        "ranganathan-2017-are-we-really-close",
+        "kempke-2016-surepoint"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1743,7 +1747,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-24",
+      "last_checked": "2026-09-25",
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
@@ -1760,7 +1764,8 @@
         "capkun-2006-secure-positioning-jsac",
         "neirynck-2016-alt-ds-twr",
         "hancke-2005-practical-relay-iso14443",
-        "boureanu-2015-practical-provable-db"
+        "boureanu-2015-practical-provable-db",
+        "francis-2010-nfc-p2p-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1995,12 +2000,13 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-25",
       "cites": [
         "singh-2019-uwb-pr",
         "capkun-2005-secure-positioning",
         "vasisht-2016-chronos",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "kempke-2016-surepoint"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2862,7 +2868,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-09-24",
+      "last_checked": "2026-09-25",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2880,7 +2886,8 @@
         "gezici-2005-uwb-localization-survey",
         "singelee-2007-db-noisy-environments",
         "drimer-2007-smartcard-relay-db",
-        "boureanu-2015-practical-provable-db"
+        "boureanu-2015-practical-provable-db",
+        "francis-2010-nfc-p2p-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4264,7 +4271,8 @@
         "poturalski-2010-cicada-attack",
         "brands-1993-distance-bounding",
         "drimer-2007-smartcard-relay-db",
-        "kfir-2005-virtual-pockets-relay"
+        "kfir-2005-virtual-pockets-relay",
+        "francis-2010-nfc-p2p-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4275,7 +4283,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-09-25"
     },
     {
       "id": "rasmussen-2010-rf-distance-bounding",
@@ -8149,12 +8157,13 @@
         "tippenhauer-2009-id-based-db",
         "kim-2008-swiss-knife-db",
         "singelee-2007-db-noisy-environments",
-        "boureanu-2015-practical-provable-db"
+        "boureanu-2015-practical-provable-db",
+        "elikplim-2023-wifi-ftm-industrial"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-24"
+      "last_checked": "2026-09-25"
     },
     {
       "id": "vanmarter-2023-svr-ble-ranging",
@@ -8544,12 +8553,13 @@
         "capkun-2006-secure-positioning-jsac",
         "singelee-2007-db-noisy-environments",
         "drimer-2007-smartcard-relay-db",
-        "kfir-2005-virtual-pockets-relay"
+        "kfir-2005-virtual-pockets-relay",
+        "francis-2010-nfc-p2p-relay"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-01",
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-09-25"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -8621,7 +8631,8 @@
         "brands-1993-distance-bounding",
         "tippenhauer-2009-id-based-db",
         "kim-2008-swiss-knife-db",
-        "boureanu-2015-practical-provable-db"
+        "boureanu-2015-practical-provable-db",
+        "elikplim-2023-wifi-ftm-industrial"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8632,7 +8643,7 @@
         }
       ],
       "added": "2026-09-01",
-      "last_checked": "2026-09-24"
+      "last_checked": "2026-09-25"
     },
     {
       "id": "gunia-2026-cs-uwb-rss-positioning",
@@ -10825,7 +10836,7 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-25",
       "cites": [
         "olafsdottir-2017-carrier-phase",
         "ranganathan-2012-chirp-attacks",
@@ -10834,7 +10845,8 @@
         "poturalski-2011-db-802-15-4a",
         "francillon-2011-pkes-relay",
         "poturalski-2010-cicada-attack",
-        "vasisht-2016-chronos"
+        "vasisht-2016-chronos",
+        "francis-2010-nfc-p2p-relay"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11309,11 +11321,13 @@
         "dataset": null
       },
       "verification": "verified",
-      "cites": [],
+      "cites": [
+        "kempke-2016-surepoint"
+      ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-11",
-      "last_checked": "2026-09-11"
+      "last_checked": "2026-09-25"
     },
     {
       "id": "chen-2024-spoofing-evident-uwb-localization",
@@ -11945,7 +11959,7 @@
       },
       "verification": "verified",
       "added": "2026-09-16",
-      "last_checked": "2026-09-20",
+      "last_checked": "2026-09-25",
       "cites": [
         "glass-2010-toa-ranging-insecurity-80211",
         "poturalski-2010-cicada-attack",
@@ -11953,7 +11967,8 @@
         "schepers-2021-ftm-security",
         "singh-2023-wifi-ftm-iot-benchmark",
         "jiokeng-2020-ftm-music",
-        "gunther-2005-wlan-rtt"
+        "gunther-2005-wlan-rtt",
+        "elikplim-2023-wifi-ftm-industrial"
       ],
       "cites_source": "fulltext",
       "relations": []
@@ -14004,6 +14019,443 @@
       ],
       "added": "2026-09-24",
       "last_checked": "2026-09-24"
+    },
+    {
+      "id": "francis-2010-nfc-p2p-relay",
+      "title": "Practical NFC Peer-to-Peer Relay Attack Using Mobile Phones",
+      "authors": [
+        "Lishoy Francis",
+        "Gerhard Hancke",
+        "Keith Mayes",
+        "Konstantinos Markantonakis"
+      ],
+      "venue": "RFIDSec",
+      "venue_full": "Radio Frequency Identification: Security and Privacy Issues — 6th International Workshop, RFIDSec 2010, Istanbul, June 2010, LNCS 6370, pp. 35–49 — Royal Holloway University of London, Information Security Group / Smart Card Centre; IACR ePrint 2010/228",
+      "tier": "other",
+      "category": "attack",
+      "year": 2010,
+      "url": "https://doi.org/10.1007/978-3-642-16822-2_4",
+      "preprint": "https://eprint.iacr.org/2010/228",
+      "doi": "10.1007/978-3-642-16822-2_4",
+      "topics": [
+        "relay-attack",
+        "nfc",
+        "peer-to-peer",
+        "mafia-fraud",
+        "off-the-shelf-attack-platform",
+        "mobile-phone",
+        "bluetooth-relay-bearer",
+        "jsr-257",
+        "location-proof",
+        "countermeasure-survey",
+        "proximity-assumption",
+        "foundational"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 6편(abidin-2021·avoine-2018·coppola-2024·olafsdottir-2017·ranganathan-2017·uwb-sv-2023)이 '릴레이 공격은 상용 기기만으로 된다' 는 근거로 인용하는 원전이다. Hancke 2005 의 릴레이가 맞춤 하드웨어(100 파운드 회로)였다면, 이 논문은 **무수정 상용 휴대폰 4대 + 공개 API 의 MIDlet 소프트웨어만으로** 근접 채널을 릴레이해 공격자 비용·기술 장벽을 사실상 0 으로 끌어내렸다. Bluetooth CS 연구에서 쓰이는 지점은 둘이다. 첫째, 위협 모델의 하한 — CS 가 막아야 할 릴레이 공격자는 SDR 을 든 전문가가 아니라 앱을 설치한 누구나이며, 이 논문이 그 주장의 표준 인용이다. 둘째, 대응책 절이 '타임아웃은 증명자 처리시간 편차 때문에 실용적이지 않다 → 거리 바운딩이 필요하나 NFC 류 통신 채널은 그에 부적합(Hancke–Kuhn 2008)' 이라는 논증으로 물리계층 거리측정의 필요성을 도출하고, 대신 위치 정보(Cell-ID/GPS 위치 증명)를 근접 검증에 쓰자고 제안한다 — CS 의 거리 결과를 상위 계층 위치 증명과 결합하는 설계를 논할 때 이 대안의 한계(실내 GPS 불가·운영자 의존·정확도 수십 m~수 km)가 그대로 비교 기준이 된다. 릴레이 채널이 Bluetooth L2CAP 였다는 점도 역설적으로 흥미롭다.",
+      "summary": "NFC 능동(peer-to-peer) 모드 거래를 대상으로, 공격자가 자기 소유의 NFC 휴대폰 두 대(Proxy-A·Proxy-B)에 MIDlet 을 설치해 정당한 두 휴대폰(Phone-A·Phone-B) 사이의 교환을 Bluetooth 로 중계하는 릴레이 공격을 실제로 구현했다. 보안 요소(SE) 접근·코드 서명·하드웨어 개조가 전혀 필요 없고, 공개 API(JSR 257 Contactless Communication 확장 + JSR 82 Bluetooth) 만 쓴다. Nokia 6212 Classic(S40 5th FP1) 두 대와 Nokia 6131 NFC(S40 3rd FP1) 두 대로 2바이트 명령–응답 교환을 실험실에서 성공적으로 중계해, 근접 채널의 '가까이 있다' 가정이 상용 기기만으로 무너짐을 보였다. 대응책으로 왕복시간 타임아웃·거리 바운딩·RF 지문·다중채널 프로토콜을 검토한 뒤, 휴대폰 환경에서는 Cell-ID/GPS 기반 위치 증명(서명·타임스탬프 포함)을 거래에 넣어 근접을 검증하는 방식이 실용적이라고 제안하고 그 한계(운영자 정책·실내 GPS·망별 Cell-ID 차이)를 논한다.",
+      "hardware": [
+        "Phone-A·Proxy-B: Nokia 6212 Classic NFC × 2 (Symbian S40 5th Edition FP1) — Initiator·Target 모두 능동 P2P 지원",
+        "Phone-B·Proxy-A: Nokia 6131 NFC × 2 (Symbian S40 3rd Edition FP1) — Initiator 는 능동, Target 은 수동 모드만",
+        "릴레이 베어러: 프록시 간 Bluetooth(2.45 GHz, 약 720 kbps, 10–100 m) L2CAP, MTU 672 바이트, authenticate/encrypt 해제",
+        "NFC: 13.56 MHz, ISO 18092/ECMA-340 능동 P2P, 동작 거리 ≤ 10 cm; SE 는 Java Card 2.2.1·Global Platform 2.1.1·Mifare Classic 에뮬레이션 지원(공격에는 미사용)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Phone-A/B MIDlet: MIDP 2.1/2.0, 3 KB, JSR 257 확장 API 로 NFC P2P 읽기/쓰기 모드 전환",
+        "Proxy-A/B MIDlet: 14 KB, JSR 257 확장(NFC) + JSR 82(Bluetooth L2CAP 서버/클라이언트, DiscoveryAgent·L2CAPConnection)",
+        "코드 서명 없음 — untrusted 3rd-party 도메인에서 실행, 접속 권한만 '항상 허용' 으로 설정",
+        "공개 코드 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "네 대의 상용 NFC 휴대폰만으로 P2P NFC 거래의 2바이트 명령–응답 교환을 Bluetooth 경유로 끝까지 중계 성공(실험실 개념증명) — Phone-A 는 Proxy-B 를, Phone-B 는 Proxy-A 를 정당한 상대로 인식",
+        "SE·코드 서명·하드웨어 개조 불필요: 공격 기능 전체가 공개 API(JSR 257 + JSR 82) MIDlet 으로 구현됨을 확인",
+        "릴레이 지연·거리 등 정량 수치는 보고하지 않음(개념증명 성격) — 관찰",
+        "대응책 검토: RTT 타임아웃은 증명자 처리시간 편차로 부적합, 거리 바운딩은 채널 의존적이라 NFC 류 채널에 부적합[Hancke–Kuhn 2008], RF 지문은 대규모 기기군 등록이 비현실적, 다중채널 프로토콜은 사용자 개입 필요 → 위치 증명(Cell-ID MCC/MNC/LAC 또는 GPS 위경도 + 서명 + 타임스탬프, Hu–Perrig–Johnson 지리적 리시 원리) 제안"
+      ],
+      "limitations": [
+        "실험실 개념증명 — 2바이트 임의 메시지 교환만 중계했고 실제 결제·페어링 프로토콜에 대한 시연은 없음(저자 명시: 'simple application in a controlled laboratory environment')",
+        "릴레이 지연·성공률·최대 거리 등 정량 평가 없음 — 관찰된 한계",
+        "제안 대응책(위치 증명)의 구현·평가 없음; Cell-ID 정확도 수십 m~수십 km, 실내 GPS 불가, 운영자 정책 의존을 저자가 한계로 명시",
+        "NFC 수동 모드(카드 에뮬레이션) 릴레이는 SE 접근이 필요해 이 논문 범위 밖(후속 Francis 2011/2013 에서 다룸)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "clulow-2006-long-symbols",
+        "hancke-2008-tof-db-attacks",
+        "kfir-2005-virtual-pockets-relay"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-practical-relay-iso14443",
+          "type": "extends",
+          "note": "Hancke 의 맞춤 하드웨어 릴레이(Proxy·Mole)를 상용 NFC 휴대폰 + 소프트웨어만으로 재현 가능함을 보여 공격자 비용·기술 장벽을 낮춤"
+        },
+        {
+          "to": "kfir-2005-virtual-pockets-relay",
+          "type": "implements",
+          "note": "Kfir–Wool 이 시뮬레이션으로 논한 근접 채널 릴레이를 실제 기기로 구현(NFC P2P)"
+        },
+        {
+          "to": "hancke-2008-tof-db-attacks",
+          "type": "motivates",
+          "note": "'NFC 류 채널은 거리 바운딩에 부적합' 논거로 인용하며, 그래서 위치 증명이라는 상위 계층 대안을 제안"
+        }
+      ],
+      "added": "2026-09-25",
+      "last_checked": "2026-09-25"
+    },
+    {
+      "id": "elikplim-2023-wifi-ftm-industrial",
+      "title": "Wi-Fi Fine Time Measurement: Is it a Viable Alternative to Ultrawideband for Ranging in Industrial Environments?",
+      "authors": [
+        "Nkrow Raphael Elikplim",
+        "Bruno Silva",
+        "Gerhard Hancke",
+        "Adnan M. Abu-Mahfouz",
+        "Lei Shu"
+      ],
+      "venue": "IEEE IEM",
+      "venue_full": "IEEE Industrial Electronics Magazine, vol. 17, no. 3, pp. 33–41, September 2023 — University of Pretoria / City University of Hong Kong / CSIR / Nanjing Agricultural University; 저자판(UPSpace 리포지터리, 17쪽)",
+      "tier": "journal",
+      "category": "measurement",
+      "year": 2023,
+      "url": "https://doi.org/10.1109/MIE.2022.3205431",
+      "preprint": "https://repository.up.ac.za/server/api/core/bitstreams/4a9bca68-54d9-47f2-b3d5-982a70039e02/content",
+      "doi": "10.1109/MIE.2022.3205431",
+      "topics": [
+        "wifi-ftm",
+        "802-11mc",
+        "uwb",
+        "two-way-ranging",
+        "ss-twr",
+        "industrial-environment",
+        "los-nlos",
+        "through-wall",
+        "ranging-accuracy",
+        "ranging-stability",
+        "permittivity",
+        "deployment-guidelines",
+        "dw1000",
+        "pixel-2"
+      ],
+      "tech": [
+        "wifi",
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 3편(nkrow-2024 두 편·kosek-szott-2026 FTM 서베이)이 인용하는, Hancke 그룹(Pretoria/CityU)의 FTM 대 UWB 동일 조건 실측이다. 이 그룹은 이후 nkrow-2024-tof-resiliency·persistent-db·boshoff-2026 으로 **협대역 ToF 거리측정의 보안**으로 넘어가는데, 그 출발점이 이 측정이다. CS 연구에 쓰이는 지점은 세 가지다. 첫째, 같은 위치·같은 200 ms 간격으로 잰 UWB(DW1000 SS-TWR, 500 MHz) 와 Wi-Fi FTM(160 MHz) 의 오차·표준편차 표(표 II) 는 대역폭이 ToF 거리측정 정밀도를 어떻게 정하는지의 실측 기준선이며, CS RTT(1 MHz 협대역)의 위치를 그 축 위에 놓을 때 인용할 수 있다. 둘째, 24.7 cm 철근 콘크리트 벽 뒤(하드 NLOS)에서는 UWB(MSE 4.66 m²)가 Wi-Fi(2.44 m²)보다 나빠지는 역전 — 직접파가 감쇠하면 첫 경로 검출이 반사파로 미끄러지는 현상은 CS RTT·PBR 이 NLOS 에서 겪는 것과 같은 메커니즘이고, 공격자가 만드는 '인위적 NLOS' 의 효과 크기를 가늠하는 데 쓰인다. 셋째, 벽 0.5 m 이내 배치 시 두 기술 모두 1–2 m 구간에서 오차가 커진다는 관찰과 저주파 채널 권고는 CS 실험 설계의 체크리스트가 된다. Wi-Fi 측은 Pixel 2 상용 스택이라 내부 알고리즘은 블랙박스다.",
+      "summary": "산업 환경을 대표하는 네 조건 — LOS 저반사 석고보드 복도, LOS 고반사 금속 복도, 하드 NLOS(24.7 cm 철근 콘크리트 벽), 소프트 NLOS(15 cm 석고보드 벽) — 에서 UWB SS-TWR(Decawave 1001 앵커–태그, 채널 5, PRF 64 MHz)과 Wi-Fi FTM(Google WiFi AP + Pixel 2/Android 11, 5 GHz, 최대 160 MHz)의 거리측정 정확도와 안정성을 같은 위치·같은 200 ms 측정 간격으로 비교했다. 1 m 씩 늘리며 지점당 100 샘플을 모아 10/50/100 샘플 평균의 MSE·MAE 를 표로 정리했다. LOS 에서는 UWB 가 우세(환경 1 MSE 0.197 대 0.611 m², 환경 2 0.296 대 0.442 m²; σ 0.14 대 0.33 m), NLOS 에서는 Wi-Fi 가 우세(하드 NLOS MSE 2.44 대 4.66 m², 소프트 NLOS 0.488 대 0.858 m²)로 역전된다. 결론으로 LOS 는 UWB, 고유전율 장애물이 있는 NLOS 는 Wi-Fi 를 권하고, 모듈 배치(벽에서 떨어뜨릴 것), DS-TWR 대 SS-TWR, 저주파 채널 선택, 데이터율·프리앰블 길이에 관한 배치 지침을 제시한다.",
+      "hardware": [
+        "UWB: Decawave 1001 UWB 모듈 × 2 (원문 표기 그대로 — 정확한 모듈명 DWM1001 여부는 원문에 없음), 앵커 1·태그 1, SS-TWR, 채널 5(6240–6739.2 MHz, 중심 6489.6 MHz), PRF 64 MHz, 802.15.4 프레임, 앵커에 연결한 PC 로 로깅",
+        "Wi-Fi: Google WiFi 라우터(AP, 5 GHz, 802.11mc, 최대 160 MHz) + Google Pixel 2(STA, Android 11)",
+        "측정 절차: 앵커/AP 고정, 태그/STA 를 1 m 부터 1 m 씩 이동, 지점당 100 샘플, 측정 간격 200 ms(두 기술 동일), AP 와 UWB 앵커 동일 높이",
+        "환경: LOS 1 석고보드 복도(≈9 m 사진), LOS 2 금속 측벽 복도(≈14 m 사진), NLOS 1 24.7 cm 철근 콘크리트 벽(1 m 부터), NLOS 2 15 cm 석고보드 벽(3 m 사진)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Wi-Fi: Android WifiRttManager API(Android 9+) 로 자체 앱 작성 — RTT 거리와 RSS 를 동시에 100 샘플 로깅(공개 WifiRttScan 앱도 언급)",
+        "UWB: Decawave 모듈 기본 펌웨어(SS-TWR 옵션), PC 로깅",
+        "공개 코드 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "표 II (10/50/100 샘플 평균) Wi-Fi LOS1 MSE 0.611/0.470/0.403 m², MAE 0.530/0.560/0.494 m; Wi-Fi LOS2 MSE 0.442/0.432/0.397 m²; UWB LOS1 MSE 0.197/0.200/0.199 m²; UWB LOS2 MSE 0.296/0.190/0.175 m²",
+        "표 II NLOS: Wi-Fi 하드 NLOS MSE 2.435/2.084/2.154 m², UWB 하드 NLOS MSE 4.666/4.061/4.000 m², MAE 1.967/1.812/1.793 m; Wi-Fi 소프트 NLOS MSE 0.488/0.675/0.497 m², UWB 소프트 NLOS MSE 0.858/0.848/0.843 m",
+        "거리값 표준편차(10 샘플): LOS1 UWB 0.140 대 Wi-Fi 0.330 m, LOS2 0.136 대 0.400 m; 하드 NLOS UWB 0.893 대 Wi-Fi 0.788 m — LOS 는 UWB, 고유전율 벽 NLOS 는 Wi-Fi 가 안정적",
+        "두 기술 모두 벽에서 약 0.5 m 이내에 모듈을 두면 1–2 m 구간 오차가 커짐; 샘플 평균을 늘리면 대체로 오차 감소",
+        "지침: LOS → UWB, 고유전율 장애물 NLOS → Wi-Fi(2.4 GHz 채널 선호); DS-TWR 이 SS-TWR 보다 정밀하나 에너지 부담; UWB 저주파 채널이 NLOS 에 유리; 데이터율은 정확도에 무영향, 프리앰블 길이가 ToA 타임스탬프 품질에 영향"
+      ],
+      "limitations": [
+        "1:1 거리측정만 — 측위(삼변측량)·다중 앵커 실험 없음; 지점당 정지 측정",
+        "Wi-Fi 측은 상용 스택(Pixel 2 펌웨어)이라 ToA 추정 알고리즘·보정 불명, UWB 도 모듈 기본 펌웨어 — 관찰된 한계",
+        "환경 4곳·거리 범위 수 m~14 m 로 제한, 실제 공장 현장(이동 장비·금속 반사체 다수)은 대표 구성으로 대체(저자 명시)",
+        "보안(거리 조작) 관점 없음 — 후속 nkrow-2024 두 편이 이 실측을 출발점으로 ToF 거리측정 보안으로 확장"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "gezici-2005-uwb-localization-survey",
+        "ibrahim-2018-ftm-verification"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "ibrahim-2018-ftm-verification",
+          "type": "extends",
+          "note": "Ibrahim 의 개방 플랫폼 FTM 정확도 검증을 산업형 LOS/NLOS 네 환경에서 UWB SS-TWR 과 동일 조건 비교로 확장"
+        },
+        {
+          "to": "nkrow-2024-tof-resiliency",
+          "type": "motivates",
+          "note": "같은 그룹의 FTM 대 UWB 실측 기준선 — nkrow-2024 두 편이 이를 출발점으로 협대역 ToF 거리측정의 공격 내성으로 넘어감"
+        },
+        {
+          "to": "nkrow-2024-persistent-db",
+          "type": "motivates",
+          "note": "동일 그룹 선행 실측; 지속 거리 바운딩 설계의 배경 측정"
+        }
+      ],
+      "added": "2026-09-25",
+      "last_checked": "2026-09-25"
+    },
+    {
+      "id": "kempke-2016-surepoint",
+      "title": "SurePoint: Exploiting Ultra Wideband Flooding and Diversity to Provide Robust, Scalable, High-Fidelity Indoor Localization",
+      "authors": [
+        "Benjamin Kempke",
+        "Pat Pannuto",
+        "Bradford Campbell",
+        "Prabal Dutta"
+      ],
+      "venue": "SenSys",
+      "venue_full": "Proceedings of the 14th ACM Conference on Embedded Network Sensor Systems (SenSys 2016), Stanford, November 2016, pp. 318–331 — University of Michigan EECS (Lab11)",
+      "tier": "wireless",
+      "category": "protocol",
+      "year": 2016,
+      "url": "https://doi.org/10.1145/2994551.2994570",
+      "preprint": "https://patpannuto.com/pubs/kempke16surepoint.pdf",
+      "doi": "10.1145/2994551.2994570",
+      "topics": [
+        "uwb",
+        "dw1000",
+        "two-way-ranging",
+        "broadcast-ranging",
+        "frequency-diversity",
+        "antenna-diversity",
+        "polarization",
+        "percentile-estimator",
+        "glossy-flooding",
+        "constructive-interference",
+        "low-power-wireless-bus",
+        "multi-tag-scheduling",
+        "calibration",
+        "tripoint-module",
+        "indoor-localization"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 3편(singh-2019-uwb-ed·singh-2022-v-range·giovanelli-2018)이 'DW1000 기반 UWB 측위 시스템의 대표' 로 인용한다. Bluetooth CS 연구에 쓰이는 지점은 CS 규격이 채택한 설계와 겹치는 세 가지 경험칙이다. 첫째, **다이버시티 표본의 하위 백분위수(12th percentile)를 거리 추정치로 취하면** 중앙값 오차가 0.17 → 0.08 m 로 반감된다 — 다중경로는 거리를 늘리기만 하므로 '가장 짧은 그럴듯한 값' 이 참에 가깝다는 논리인데, 이는 CS 의 여러 채널·안테나 경로(ACI) 조합 결과를 어떻게 합칠지, 그리고 거리 축소 공격자가 바로 이 하위 백분위 선택을 이용할 수 있다는 점(짧은 가짜 표본 하나가 최종값을 지배)에서 양날이다. 둘째, 3 안테나 × 3 안테나 × 3 채널 = 27 조합의 브로드캐스트 거리측정을 80 ms 에 끝내는 프로토콜은 CS 의 다중 안테나 경로·채널 순열 절차와 구조가 같고, 공격자가 순열 중 일부만 노려도 되는지를 따질 때 비교 대상이 된다. 셋째, DW1000 의 송수신 지연 보정(칩마다 다른 안테나 지연, 3 노드 라운드로빈 기준 보정)과 1.39 ppm 수정 정확도 요구는 CS 의 RTT 보정(FAE·ToF 오프셋)이 왜 필요한지의 실측 근거다. 보안은 다루지 않는다.",
+      "summary": "DW1000 상용 UWB 라디오 위에 만든 실내 측위 시스템. 3 안테나(120° 배치, 교차 편파 널 회피) × 3 채널의 27 개 독립 채널 관측을 브로드캐스트 거리측정 한 번(약 80 ms)에 모으고, 채널 모델과 실측에서 도출한 12 백분위수 추정기로 합쳐 원시 TWR 대비 중앙값 오차 0.17 → 0.08 m, 95 백분위 0.59 → 0.31 m, 99 백분위 1.30 → 0.53 m 로 줄였다. 여러 태그를 지원하기 위해 Glossy 홍수 기반 Low-Power Wireless Bus 를 802.15.4a UWB 로 옮기고, UWB 에서도 보강 간섭이 성립함(수정 정확도 ≥ 1.39 ppm, DW1000 5비트 크리스탈 튜닝)을 보였다. 9 앵커·50 지점 정지 실험에서 위치 중앙값 0.29 m·정밀도 0.12 m, PolyPoint 대비 99 백분위 2.02 → 0.77 m, 2.4 m/s 이동 추적 가능, 태그 1개 12 Hz → 태그 5개 2–2.4 Hz. DW1000 + STM32F0 + RF 스위치를 I2C 주변장치로 묶은 TriPoint 모듈(5 cm², STM32 18.9 mA 대 DW1000 수신 145 mA)과 TriDev 보정 보드도 제시한다.",
+      "hardware": [
+        "TriPoint 모듈: DecaWave DW1000 UWB 트랜시버 + STM32F0 ARM MCU + RF 스위치 + 안테나 3개(120° 배치), 5 cm², I2C 인터페이스; TriTag 캐리어 보드(BLE 포함); TriDev 보정 보드(SMA·동축 직결)",
+        "DW1000 타임스탬프 정밀도 15.65 ps, 6.8 Mbps 프리앰블 심볼 64.10 ns, 수신 전류 145 mA, SPI 20 MHz 상한(연속 수신 ≈ 1 kHz), 5비트 크리스탈 튜닝",
+        "평가: 약 20 m 급 실내(가구·탁구 치는 사람 포함) 9 앵커, 50 지점 × 15 s, 바닥 타일 1 ft 간격 기준점; PolyPoint 와 같은 십자 실험 재현",
+        "채널: 802.15.4a 채널 3개 비중첩 사용(채널 번호는 본문 미기재)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "SurePoint 펌웨어 전체가 TriPoint 의 STM32 에 탑재(태그·앵커 모드 런타임 전환), I2C 명령 표(표 1)",
+        "Glossy 홍수 + Low-Power Wireless Bus(LWB) 변형 스케줄러: 라운드 1 Hz, 80 ms 슬롯 12개, 경쟁 슬롯으로 가입",
+        "위치 해법: 삼변측량 + 반복 솔버(잔차 > 10 cm 이면 앵커 제거), 3점 중앙값 필터는 선택",
+        "공개 코드: GitHub lab11/polypoint 저장소(tripoint·pcb·calibration·software 디렉터리 포함, 본문에는 링크 없음 — GitHub 에서 확인) 및 lab11/polypoint-data(PolyPoint·SurePoint 원시 트레이스)"
+      ],
+      "software_verified": true,
+      "results": [
+        "다이버시티 27 관측의 12 백분위 추정: 거리 중앙값 0.17 → 0.08 m, 95 % 0.59 → 0.31 m, 99 % 1.30 → 0.53 m (초록: 중앙값 53 % 감소)",
+        "정지 50 지점: 위치 중앙값 0.29 m·정밀도 0.12 m, 99 % 오차 PolyPoint 2.02 → 0.77 m, 3점 중앙값 필터 후 최대 0.76 m; 평균 가청 앵커 7.3/9(PolyPoint 4/15); 스케줄 840 라운드 중 837 참여(99.6 %), 10,044 슬롯 전부 거리 확보",
+        "이동: 2.4 m/s 까지 품질 저하 없음; 축별 중앙값 오차 X 0.06 · Y 0.07 · Z 0.15 m(앵커 기하)",
+        "반복 솔버: 중앙값 0.01 m 개선뿐이나 99 % 1.63 → 0.86 m",
+        "다중 태그: 1개 12 Hz, 2개 6 Hz, 3개 4 Hz, 4개 3 Hz, 5개 2.4/2 Hz, 최대 12 태그; UWB 보강 간섭에 수정 정확도 ≥ 1.39 ppm 필요",
+        "TriPoint 비용: PCB 약 0.60 달러 + STM32 1.01 달러(소량), STM32 활성 18.9 mA·슬립 2.3 µA"
+      ],
+      "limitations": [
+        "DW1000 SPI 20 MHz 상한으로 연속 수신 약 1 kHz, 단일 태그 갱신율 제한; 태그 수에 반비례하는 갱신율(저자 명시)",
+        "전 태그 동일 갱신율 가정, 전력 최적화·다중 RF 구역·핸드오프는 향후 과제(저자 명시)",
+        "보안 고려 없음 — 12 백분위 선택기는 짧은 가짜 표본 하나에 끌려갈 수 있으나 논의되지 않음(관찰)",
+        "Z 축 오차가 X/Y 의 약 3배(앵커 기하 한계)"
+      ],
+      "artifacts": {
+        "code": "https://github.com/lab11/polypoint",
+        "dataset": "https://github.com/lab11/polypoint-data"
+      },
+      "verification": "verified",
+      "cites": [
+        "lee-2002-uwb-dense-multipath-ranging",
+        "gezici-2005-uwb-localization-survey",
+        "vasisht-2016-chronos"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "lee-2002-uwb-dense-multipath-ranging",
+          "type": "complementary",
+          "note": "단일 채널 관측의 선두 경로 추정(Lee–Scholtz 류) 대신 채널·안테나 다이버시티 표본의 하위 백분위로 다중경로 편향을 줄이는 직교 접근 — 저자가 '보완적' 이라고 명시"
+        },
+        {
+          "to": "vasisht-2016-chronos",
+          "type": "complementary",
+          "note": "관련연구 표 2 에서 Chronos 와 정확도·SWaP 를 비교, 다중 태그·고갱신율을 차별점으로 제시"
+        }
+      ],
+      "added": "2026-09-25",
+      "last_checked": "2026-09-25"
+    },
+    {
+      "id": "guvenc-2005-threshold-toa",
+      "title": "Threshold-Based TOA Estimation for Impulse Radio UWB Systems",
+      "authors": [
+        "Ismail Guvenc",
+        "Zafer Sahinoglu"
+      ],
+      "venue": "IEEE ICU",
+      "venue_full": "2005 IEEE International Conference on Ultra-Wideband (ICU 2005), Zurich, September 2005, pp. 420–425 — Mitsubishi Electric Research Labs / University of South Florida; MERL TR2005-026",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2005,
+      "url": "https://doi.org/10.1109/ICU.2005.1570024",
+      "preprint": "https://www.merl.com/publications/docs/TR2005-026.pdf",
+      "doi": "10.1109/ICU.2005.1570024",
+      "topics": [
+        "uwb",
+        "toa-estimation",
+        "leading-edge-detection",
+        "energy-detection",
+        "threshold-selection",
+        "adaptive-threshold",
+        "maximum-energy-selection",
+        "search-back",
+        "802-15-4a-channel-model",
+        "mean-absolute-error",
+        "low-sampling-rate",
+        "foundational"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 2편(singh-2021-4z-security-analysis·lund-2026-cs-eval-improvements)이 '선두 경로 검출 임계값' 의 원전으로 인용한다. Singh 의 4z 보안 분석은 이 논문을 들어 '임계값이 낮으면 잡음을 정당한 피크로 인식해 ToA 를 전복할 수 있다' 고 쓰고(Ghost Peak·UWB-ED 가 파고드는 지점), Lund 의 CS 평가 논문은 CS 의 CIR(PBR 역변환)에서 지연 특징을 뽑을 때 이 논문의 **최소·최대 에너지 정규화 적응 임계값**을 그대로 가져다 쓴다. 즉 CS 의 '가장 이른 그럴듯한 피크' 선택 규칙과 그 규칙을 노리는 조기 검출 공격 양쪽의 수학적 뿌리가 여기 있다. 핵심 수치 — 최적 정규화 임계값이 LOS(CM1) 0.2–0.4, NLOS(CM2) 0.8 로 채널에 따라 갈리고, Eb/N0 < 20 dB 에서는 어떤 임계값도 서브미터 불가, 블록 4 ns → 1 ns 로 약 1 ns 개선 — 는 CS 협대역 CIR 에서 같은 규칙의 오류 바닥을 추정하는 출발 기준이 된다. 채널 모델·시뮬레이션 전용이라 실측은 없다.",
+      "summary": "제곱 검파(에너지 검출) 후 심볼율 표본만으로 IR-UWB ToA 를 추정하는 저복잡도 선두 경로 검출을 이론·시뮬레이션으로 분석한다. 세 알고리즘 — 최대 에너지 블록 선택(MES), 에너지 표본의 최소·최대값으로 정규화한 임계값 비교(TC), MES 뒤로 창(Wsb)만큼 되돌아 임계값 이하 첫 블록을 찾는 MES-SB — 를 정의하고, 고정 임계값 TC 의 평균 절대 오차(MAE)를 중심·비중심 카이제곱 분포로 닫힌 형식으로 유도해 시뮬레이션과 대조한다. IEEE 802.15.4a CM1(주거 LOS)·CM2(주거 NLOS) 채널 1000 실현, 8 GHz 표본화, Tc = 1 ns 상승 코사인 펄스, 블록 길이 Tb = 1/4 ns 에서: 최적 정규화 임계값은 CM2 ≈ 0.8 로 SNR 에 둔감, CM1 은 고 SNR 0.2·넓은 범위 0.4; Eb/N0 < 20 dB 에서는 MAE 가 서브미터 거리측정에 부적합; TC 는 고 SNR 에서 오류 바닥이 없고 MES 는 저 SNR 에서 유리; 되돌아 창은 CM1 30 ns·CM2 40 ns 가 적정; 블록 1 ns 는 4 ns 대비 약 1 ns 개선(정확도 ≈ 블록 길이의 1/4); CM1 이 저·중 SNR 에서 3–6 dB 유리하나 오류 바닥에서는 CM2 가 근소 우위.",
+      "hardware": [
+        "해당 없음 — 시뮬레이션 연구 (IEEE 802.15.4a CM1·CM2 채널 모델, 8 GHz 표본화, 1000 실현)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이션(도구 미기재) — 802.15.4a 채널 모델 실현, 상승 코사인 펄스 Tc = 1 ns, 균등 분포 ToA ∈ (0, Tf), 비중첩 에너지 창(Tb = 1 ns 또는 4 ns)",
+        "공개 코드 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "최적 정규화 임계값 ξ_norm: CM2(NLOS) ≈ 0.8 로 거의 모든 Eb/N0 에서 근최적, CM1(LOS) 고 SNR 0.2·광범위 0.4",
+        "Eb/N0 < 20 dB 에서는 임계값과 무관하게 MAE 가 서브미터 거리측정에 부적합",
+        "고정 임계값 0.1·Eb 의 이론 MAE 는 저 SNR 에서 시뮬레이션과 일치하나 고 SNR 에서 낙관적; ξ_norm = 0.5 는 Eb/N0 = 22 dB 최적치와 일치, 26 dB 에서는 수신 에너지를 아는 고정 임계값이 적응형보다 우수",
+        "되돌아 창 Wsb: CM1 30 ns·CM2 40 ns 적정(ξ_norm 0.4/0.8 고정 시)",
+        "TC 는 고 SNR 에서 오류 바닥 없음, MES 는 저 SNR 에서 유리(TC 는 잡음의 임계값 초과가 잦음); 블록 1 ns 가 4 ns 보다 약 1 ns 개선; CM1 이 저·중 SNR 에서 3–6 dB 유리, 오류 바닥에서는 CM2 근소 우위(Fig. 5: 선두 경로가 최대 블록에 더 가깝게 분포)",
+        "ξ_norm 과 첫 4개 에너지 블록의 상관계수 ≈ 0.6(Eb/N0 = 26 dB) — 정규화 임계값의 닫힌 형식 오차 분석이 어려운 이유"
+      ],
+      "limitations": [
+        "시뮬레이션 전용 — 실측·하드웨어 없음; 채널 모델은 802.15.4a CM1·CM2 뿐(사무실·산업 CM3–CM8 미포함)",
+        "적응 임계값의 이론 MAE 는 유도하지 않음(고정 임계값만), SNR 추정이 있으면 더 좋지만 UWB 저전력 특성상 어렵다고 저자 명시",
+        "공격자·적대적 신호는 고려하지 않음 — 낮은 임계값이 잡음을 피크로 오인한다는 관찰이 후속 보안 연구(Singh 2021)의 인용점(관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "lee-2002-uwb-dense-multipath-ranging"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "lee-2002-uwb-dense-multipath-ranging",
+          "type": "extends",
+          "note": "Lee–Scholtz 의 고표본율 GML 선두 경로 탐색을 심볼율 에너지 검출 + 정규화 임계값이라는 저복잡도 규칙으로 대체하고 MAE 를 닫힌 형식으로 분석"
+        }
+      ],
+      "added": "2026-09-25",
+      "last_checked": "2026-09-25"
+    },
+    {
+      "id": "guo-2025-carrier-phase-round-trip-ranging",
+      "title": "High-Accuracy Indoor Ranging Using Carrier Phase in Multipath Environments",
+      "authors": [
+        "Zhitao Guo",
+        "Dapeng Deng",
+        "Ling Wang",
+        "Zengwen Li",
+        "Yiwen Wang",
+        "Ze Li",
+        "Zengshan Tian"
+      ],
+      "venue": "IEEE ICSSIP",
+      "venue_full": "2025 2nd International Conference on Software System and Information Processing (ICSSIP), pp. 93–97, IEEE, 게재 2025-12-26 (Xplore 색인 2026-09-22) — Chongqing Changan Automobile / State Key Laboratory of Intelligent Vehicle Safety Technology / Chongqing University of Posts and Telecommunications",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11692720",
+      "preprint": null,
+      "doi": "10.1109/ICSSIP68411.2025.11692720",
+      "topics": [
+        "carrier-phase-ranging",
+        "round-trip-phase",
+        "phase-offset-cancellation",
+        "multipath-estimation",
+        "one-way-channel-recovery",
+        "orthogonal-matching-pursuit",
+        "frequency-hopping",
+        "mcpr",
+        "narrowband-ranging",
+        "automotive"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "초록·색인어만 확인한 항목이다. 왕복(round-trip) 위상으로 송수신기 위상 오프셋을 지우는 것은 Bluetooth CS 의 PBR 이 하는 일과 같고, 이 논문은 그 왕복 결합이 **가짜 다중경로(순방향·역방향 채널의 곱에서 생기는 교차항)** 를 만들어 오히려 다중경로 간섭을 늘린다는 점을 지적한 뒤, 한쪽(순방향 또는 역방향) 채널을 복원해 실제 다중경로만 추정하는 알고리즘(색인어에 직교 매칭 추적·주파수 도약)을 제안한다. CS 의 PCT 곱셈 결합에도 같은 교차항 문제가 있으므로, CS 거리 추정기의 다중경로 편향을 분석하거나 공격자가 한쪽 채널에만 주입한 반사파가 왕복 곱에서 어떻게 증폭되는지를 따질 때 비교 문헌이 된다. 제1저자 소속이 창안자동차(디지털 키 사업자)라는 점도 CS 응용 맥락을 시사한다. 무선 규격은 미확인이라 `other` 로 둔다.",
+      "summary": "IoT 실내 거리측정에서 RSS 는 정확도가 부족하고 초분해능 ToF 는 대역폭에 묶이므로, LoS 경로 거리를 반송파 위상으로 재는 방법을 제안한다. 측정 위상에 포함된 위상 오프셋은 왕복 신호로 제거하지만, 왕복 결합이 추가 가짜 다중경로를 만들어 다중경로 간섭이 커지는 문제가 생긴다. 이를 줄이기 위해 순방향 또는 역방향 채널을 복원하고 실제 다중경로를 추정하는 알고리즘을 쓰며, 실험으로 유효성을 검증했다고 초록에 밝힌다. 색인어에 직교 매칭 추적·주파수 도약·위상고정루프·전방향/지향성 안테나·Wireless InSite 가 있어 다중반송파 위상 거리측정을 시뮬레이션과 실측으로 평가한 것으로 보인다(전문 미확보).",
+      "hardware": [
+        "확인 필요 — 전문 미확보 (색인어에 위상고정루프·전방향·지향성 안테나, 참고문헌에 Wireless InSite 레이트레이싱)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보 (참고문헌에 Wireless InSite)"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: 왕복 위상으로 위상 오프셋 제거, 한쪽 채널 복원으로 가짜 다중경로 억제, 실험으로 유효성 검증 — 수치 미확인"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료(isOpenAccess false), arXiv·기관 판 없음 (2026-09-25); 무선 규격(Bluetooth 여부)·대역·거리 범위·오차 수치·비교 기준선 미확인",
+        "5쪽 지역 학회 논문이라 세부가 적을 가능성 — 관찰",
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(9건)을 코퍼스와 대조해 채움 — 본문은 미확보"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "vasisht-2016-chronos",
+        "boer-2020-pbr-multipath"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "boer-2020-pbr-multipath",
+          "type": "extends",
+          "note": "Boer 의 다중경로 하 고정밀 PBR 성능 분석을 인용하며, 왕복 결합이 만드는 가짜 다중경로를 한쪽 채널 복원으로 제거하는 추정기를 제안(초록 기준)"
+        }
+      ],
+      "added": "2026-09-25",
+      "last_checked": "2026-09-25"
     }
   ]
 }
