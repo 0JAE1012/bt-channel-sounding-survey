@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31",
+  "updated": "2026-09-25",
   "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
   "landscape": {
     "title": "Bluetooth Channel Sounding Security Landscape",
@@ -9,25 +9,32 @@
         "id": "foundations",
         "kind": "stage",
         "label": "Secure Ranging Foundations",
-        "period": "2006 – 2020",
-        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. Clulow 가 긴 심볼이 근본 문제임을 지적했고, Rasmussen 이 1 ns 미만 처리지연 플랫폼을 실제로 만들어 거리한정이 구현 가능함을 보였으며, Cremers 가 Distance Hijacking 이라는 네 번째 공격 유형을 정의했고, MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다.",
+        "period": "2005 – 2020",
+        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 증명 가능한 실용 프로토콜로 형식을 세웠고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며, MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
         "papers": [
           "clulow-2006-long-symbols",
+          "hancke-2008-tof-db-attacks",
           "rasmussen-2010-rf-distance-bounding",
+          "capkun-2005-secure-positioning",
+          "boureanu-2015-practical-provable-db",
           "cremers-2012-distance-hijacking",
-          "leu-2020-mtac"
+          "leu-2020-mtac",
+          "ranganathan-2017-are-we-really-close"
         ]
       },
       {
         "id": "relay-reduction",
         "kind": "stage",
         "label": "Relay / Distance Reduction",
-        "period": "2010 – 2012",
-        "summary": "공격이 실제 제품에서 성립한다는 것이 확인된 시기다. Francillon 이 8개 제조사 10개 차종 전부에서 PKES 릴레이로 문을 열고 시동까지 걸었고, Flury·Poturalski 가 IR-UWB 에서 ED/LC 의 정량적 한계를 잡았으며, Ranganathan 이 chirp 계열까지 같은 논리가 통함을 보였다.",
+        "period": "2005 – 2012",
+        "summary": "공격이 실제 제품에서 성립한다는 것이 확인된 시기다. Hancke 가 100 파운드 미만 부품으로 ISO 14443 카드를 50 m 떨어진 리더에 통과시켰고, Francis 는 같은 일을 개조 없는 휴대폰 두 대로 했다. Francillon 이 8개 제조사 10개 차종 전부에서 PKES 릴레이로 문을 열고 시동까지 걸었고, Flury·Poturalski 가 IR-UWB 에서 ED/LC 의 정량적 한계를 잡았으며, Cicada 는 **동기화도 코드 지식도 없이** 간섭만으로 ToA 를 앞당길 수 있음을 보였다.",
         "papers": [
+          "hancke-2005-practical-relay-iso14443",
+          "francis-2010-nfc-p2p-relay",
           "francillon-2011-pkes-relay",
           "flury-2010-distance-decreasing",
           "poturalski-2011-db-802-15-4a",
+          "poturalski-2010-cicada-attack",
           "ranganathan-2012-chirp-attacks"
         ]
       },
@@ -51,7 +58,8 @@
               "olafsdottir-2017-carrier-phase",
               "staat-2022-analog-relay",
               "riaz-2022-pbr-multipath-security",
-              "schroeder-2019-multipath-pbr"
+              "schroeder-2019-multipath-pbr",
+              "vasisht-2016-chronos"
             ]
           },
           {
@@ -59,12 +67,15 @@
             "label": "RTT / ToA Security",
             "items": [
               "ED/LC",
+              "첫 경로 back-search",
+              "Cicada 간섭",
               "Temporal masking",
               "Negative Group Delay"
             ],
-            "summary": "시간은 심볼이 끝나기 전에 판단하거나(ED/LC), 파형을 곱하거나(temporal masking), 음의 군지연 필터를 통과시켜 앞당긴다.",
+            "summary": "시간은 심볼이 끝나기 전에 판단하거나(ED/LC), 첫 경로를 찾는 탐색 창을 노리거나, 간섭 펄스를 뿌리거나, 파형을 곱하거나(temporal masking), 음의 군지연 필터를 통과시켜 앞당긴다. **정밀도를 올리려 탐색 창을 넓히면 공격 표면이 같이 넓어진다.**",
             "papers": [
               "flury-2010-distance-decreasing",
+              "poturalski-2012-secure-precise-ir-uwb",
               "leu-2021-multicarrier-tof",
               "leu-2022-ghost-peak",
               "anliker-2023-time-for-change",
@@ -78,13 +89,16 @@
         "kind": "stage",
         "label": "Bluetooth Channel Sounding",
         "period": "2024 – ",
-        "summary": "Core 6.0 이 두 측정을 하나의 절차 안에 넣었다. 상용 칩이 나오면서 실측 평가가 시작됐지만, 평가의 대부분은 보안이 아니라 정확도다 — 코퍼스의 CS 논문 39편 중 공격을 다루는 것은 2편뿐이다.",
+        "summary": "Core 6.0 이 두 측정을 하나의 절차 안에 넣었다. 상용 칩이 나오면서 실측 평가가 시작됐지만, 평가의 대부분은 보안이 아니라 정확도다. 그리고 그 정확도 연구들이 **거리 기울기와 구별되지 않는 편향원**을 하나씩 더 찾아내고 있다 — 발진기 CFO 기울기 차, 양방향 CFR 이 물리 채널의 제곱이라는 구조, 그리고 상대 보드 자세.",
         "papers": [
           "wieme-2025-cs-commercial-hw",
           "seo-2026-cs-perf-security",
           "droemmer-2026-cs-channel-modeling",
           "gunia-2026-cs-metrological",
-          "sheikh-2025-cs-interference"
+          "dzafic-2026-cs-orientation",
+          "simoncic-2026-cfo-mcpd",
+          "morano-2026-one-way-channel-reconstruction",
+          "wu-2026-cs-twr-phase-offset"
         ],
         "standards": [
           "bt-core-6-0",
@@ -114,8 +128,10 @@
         "kind": "open",
         "label": "Open Problems",
         "period": "지금",
-        "summary": "아래 네 갈래가 열려 있다. 각각은 Research Questions 탭의 RQ 와 연결된다.",
-        "papers": []
+        "summary": "아래 네 갈래가 열려 있다. 각각은 Research Questions 탭의 RQ 와 연결된다. **신규성 대조군**도 함께 둔다 — Bluetooth·UWB·Wi-Fi 의 보안 거리측정 프로토콜만 다루는 첫 종합 서베이라고 저자들이 주장하는 논문이 2026 년에 나왔고, 범위가 이 코퍼스와 크게 겹친다. 그 분류표와 참고문헌은 내 누락을 찾는 대조군이자 내 정리가 이미 남이 한 것인지 확인하는 대상이다.",
+        "papers": [
+          "boshoff-2026-secure-indoor-ranging"
+        ]
       }
     ]
   },
@@ -169,9 +185,77 @@
         "entry-cost-is-low"
       ],
       "maturity": "commercial"
+    },
+    {
+      "text": "CS 스택이 내주는 **유일한 온라인 품질 지표가 다중경로에서 무너진다.** Nordic 의 톤 품질 지표(TQI)를 이상치 게이트로 쓰면 잔디밭 LoS 에서는 참양성률 99.4~99.7 % 지만 아스팔트 51.6~56.8 %, 실내 복도 5.2~33.4 % 로 내려앉고 거짓양성률은 최대 27 % 다. 같은 실측에서 **상대 보드 자세만으로 보정 오프셋이 70 cm(Nordic)~138 cm(SiLabs 1×1) 흔들린다** — 환경 간 차이(32~49 cm)보다 크다.",
+      "evidence": [
+        "dzafic-2026-cs-orientation"
+      ],
+      "maturity": "commercial"
+    },
+    {
+      "text": "**수신기의 복조·판정 지연이 곧 공격자의 시간 이득이다.** 상용 433.92 MHz 수신기(MAX1471)에서는 응답 시작 후 20~22 µs 까지 값을 바꿔도 저역 데이터 필터가 앞부분의 틀린 값을 지워 정상으로 읽히고(광속 환산 6.6 km), ISO 14443A 리더(RC531)에서는 상관 출력이 임계를 넘기 전인 2~2.5 µs(750 m)를 번다. CS RTT 의 상호상관 ToA 추정도 심볼 전체를 적분하는 같은 구조다.",
+      "evidence": [
+        "hancke-2008-tof-db-attacks",
+        "anliker-2026-narrowband-toa"
+      ],
+      "maturity": "commercial"
+    },
+    {
+      "text": "**정밀도와 보안이 정면으로 충돌한다.** 정밀한 ToA 를 얻으려면 가장 강한 경로가 아니라 첫 도착 경로를 찾아야 하는데, 그 back-search 창 자체가 채널 확산 크기(10~20 m)만큼의 거리 축소를 허용한다 — 비밀 프리앰블 코드로도 막지 못하며 선행 ED/LC 계열의 ≈10 m 한계보다 크다. 안전하면서 정밀한 ToA 를 얻으려면 패킷이 한 자릿수 배 길어진다는 것이 저자들의 결론이다.",
+      "evidence": [
+        "poturalski-2012-secure-precise-ir-uwb",
+        "poturalski-2010-cicada-attack"
+      ],
+      "maturity": "simulated"
+    },
+    {
+      "text": "거리 기울기와 **구별되지 않는 편향원이 계속 발견되고 있다.** 두 기기의 CFO-주파수 기울기 차(CFOSD)는 MCPD 가 거리로 읽는 위상 기울기와 같은 꼴의 계통 편향을 만들고(10 Hz/MHz·ΔT₀ 120 µs 에서 약 18 cm), 양방향 CFR 은 물리 채널의 제곱이라 지연 영역에서 탭이 L(L+1)/2 개로 불어나고 LoS 탭이 약해지며 **비모호 거리가 반으로 준다.**",
+      "evidence": [
+        "simoncic-2026-cfo-mcpd",
+        "morano-2026-one-way-channel-reconstruction",
+        "zhang-2014-unambiguous-distance"
+      ],
+      "maturity": "conducted"
+    },
+    {
+      "text": "**협대역에서는 ToF 보다 위상이 낫다** — 같은 장비로 잰 야외 LoS 에서 ToF 6 m 대 PBR-MUSIC 7.5 cm(Q90 거리오차)다. 대역폭을 넓히면 ToF 가 따라오지만(25/50/100 MHz 에서 각각 약 50/30/15 cm) CS 가 쓸 수 있는 폭이 아니다. CS 가 PBR 을 주 측정으로 두는 이유가 여기 있고, 그래서 **위상 조작이 곧 거리 조작**이 된다.",
+      "evidence": [
+        "sheikh-2023-pbr-missing-tones",
+        "vohuu-2021-spectrum-flexible-ranging"
+      ],
+      "maturity": "conducted"
+    },
+    {
+      "text": "**보안수준을 비트로 재는 절차가 생겼다.** importance sampling 으로 매우 낮은 성공률도 적은 시행으로 추정한다 — Qorvo DWM3000 의 STS_NTM 기본값 12 에서 2⁻¹²·¹, 24 로 올리면 2⁻³⁷·², 문턱값 하나로 25 비트 이상이 갈린다. CS 의 NADM 문턱도 같은 방식으로 비교할 수 있다.",
+      "evidence": [
+        "aad-2026-fast-uwb-testing"
+      ],
+      "maturity": "commercial"
     }
   ],
   "broken": [
+    {
+      "text": "ISO 14443 근접카드 릴레이 — 100 파운드 미만 부품의 Proxy·Mole 로 50 m 떨어진 리더를 통과",
+      "evidence": [
+        "hancke-2005-practical-relay-iso14443"
+      ],
+      "year": 2005
+    },
+    {
+      "text": "ToF 거리한정 채널의 late-commit — 상용 수신기에서 응답 시작 후 20~22 µs(6.6 km) / 2~2.5 µs(750 m) 를 벌었다. 개념이 아니라 칩에서 성립함을 보인 첫 논문",
+      "evidence": [
+        "hancke-2008-tof-db-attacks"
+      ],
+      "year": 2008
+    },
+    {
+      "text": "Cicada — 동기화도 프리앰블 코드 지식도 없이 back-search 창에 균일 펄스를 뿌리는 것만으로 ToA 를 앞당기거나(degradation) 패킷을 죽인다(denial)",
+      "evidence": [
+        "poturalski-2010-cicada-attack"
+      ],
+      "year": 2010
+    },
     {
       "text": "다중반송파 위상 거리측정(MCPR)의 위상 조작 — phase-slope rollover, RF cycle slip, on-the-fly phase manipulation 세 유형",
       "evidence": [
@@ -221,6 +305,27 @@
         "sacchetti-2026-blerp",
         "antonioli-2023-bluffs",
         "cs-randomness-rests-on-pairing"
+      ],
+      "year": 2026
+    },
+    {
+      "text": "첫 경로 back-search 창을 노린 IR-UWB 거리 축소 — 채널 확산(10~20 m) 만큼, 비밀 코드로도 못 막음. 외부 간섭·릴레이·악의적 prover 세 공격이 수신기 관점에서 동등함을 함께 논증",
+      "evidence": [
+        "poturalski-2012-secure-precise-ir-uwb"
+      ],
+      "year": 2012
+    },
+    {
+      "text": "BLE Direction Finding 의 위상 주입(SaDiF) — CTE 기준구간 위상만 건드려 AoA 를 조작하며, 패킷·프리앰블·RSSI 를 그대로 두므로 물리계층 지문 방어(BlueID+BlueShield)를 **91.5 % 이상 우회**한다",
+      "evidence": [
+        "zhang-2025-sadif"
+      ],
+      "year": 2025
+    },
+    {
+      "text": "학습형 거리기만(Urey-ML) — Apple ANIF 의 ranging-awareness(정상 변동인지 판정) 방어를 강화학습으로 흉내 내 우회, 상용 UWB 제품에서 cm 급 기만",
+      "evidence": [
+        "liu-2026-urey-ml"
       ],
       "year": 2026
     }
@@ -296,6 +401,38 @@
       "blocks": [
         "todo-core-spec"
       ]
+    },
+    {
+      "text": "CS 는 안전한 근접 증명의 요건을 갖췄다",
+      "why_untested": "Ranganathan 의 개관이 정리한 세 요건은 (1) 왕복 ToF, (2) 챌린지·응답 RTT, (3) **짧은 심볼** 이다. CS 는 (1)(2)를 갖췄지만 1 Mb/s GFSK 의 1 µs 심볼은 (3)을 정면으로 위반한다 — 그 개관이 802.15.4a 의 32 ns 심볼로 '10 m 축소'를 계산한 식을 그대로 적용하면 CS 는 150 m 급 여지가 된다. Anliker 2026 이 실증한 것이 정확히 이 지점이고, **세 요건을 CS 파라미터로 다시 계산한 문헌이 없다.**",
+      "evidence": [
+        "ranganathan-2017-are-we-really-close",
+        "anliker-2026-narrowband-toa",
+        "clulow-2006-long-symbols"
+      ],
+      "blocks": [
+        "todo-step-timing"
+      ]
+    },
+    {
+      "text": "정확도를 높이는 개선은 보안과 무관하다",
+      "why_untested": "CS 정확도 연구는 탐색 창을 넓히거나(첫 경로·분수 타이밍), 교환 횟수를 늘리거나(Mirrored Tone Exchange), 일방향 CFR 을 복원하는 쪽으로 간다. 그런데 back-search 창은 그 자체가 공격 표면이고(Poturalski), 톤 교환 순서를 바꾸면 **공격자가 조작해야 할 관측량의 정의가 바뀐다.** 정확도 개선 논문 중 그 변경이 조작 저항성에 무슨 영향을 주는지 따진 것은 코퍼스에 없다.",
+      "evidence": [
+        "poturalski-2012-secure-precise-ir-uwb",
+        "wu-2026-cs-twr-phase-offset",
+        "morano-2026-one-way-channel-reconstruction"
+      ],
+      "blocks": []
+    },
+    {
+      "text": "통계적 정상성 검사나 물리계층 지문이 조작을 걸러낸다",
+      "why_untested": "두 방향에서 반증이 들어왔다. SaDiF 는 패킷·RSSI 를 건드리지 않고 위상만 주입해 지문 방어를 91.5 % 이상 우회했고, Urey-ML 은 '정상 변동인지' 판정하는 방어를 강화학습으로 흉내 내 뚫었다. **CS 의 NADM 과 TQI 도 정상 분포를 기준으로 걸러내는 같은 범주**인데, 학습형 공격에 대한 평가가 없다.",
+      "evidence": [
+        "zhang-2025-sadif",
+        "liu-2026-urey-ml",
+        "dzafic-2026-cs-orientation"
+      ],
+      "blocks": []
     }
   ],
   "open": [
@@ -337,10 +474,30 @@
     },
     {
       "id": "op-yardstick",
-      "text": "성공률 4%(Ghost Peak), 결정론적 100%(NGD), 탐지율 96.24%(UWB-SV) 를 하나의 운영 위험 단위로 환산하는 기준은 무엇인가",
+      "text": "성공률 4 %(Ghost Peak), 결정론적 100 %(NGD), 탐지율 96.24 %(UWB-SV)를 하나의 운영 위험 단위로 환산하는 기준은 무엇인가 — importance sampling 으로 비트 단위 보안수준을 재는 절차가 UWB 에 생겼으므로, CS 의 NADM 문턱에 같은 틀을 적용할 수 있는가",
       "theme": "receiver-policy",
       "evidence": [
-        "success-rate-has-no-common-yardstick"
+        "success-rate-has-no-common-yardstick",
+        "aad-2026-fast-uwb-testing"
+      ]
+    },
+    {
+      "id": "op-reciprocity",
+      "text": "순방향·역방향을 곱해 오실레이터 위상을 지우는 구조(CS 의 PCT, Chronos 의 CSI 곱)에서 공격자가 한쪽 방향만 조작하면 무엇이 남는가",
+      "theme": "identifiability",
+      "evidence": [
+        "vasisht-2016-chronos",
+        "wu-2026-cs-twr-phase-offset",
+        "morano-2026-one-way-channel-reconstruction"
+      ]
+    },
+    {
+      "id": "op-quality-gate",
+      "text": "CS 가 내주는 품질 지표(TQI·NADM)가 다중경로에서 이미 무너지는데, 그 위에 얹은 탐지 정책은 무엇을 보장할 수 있는가",
+      "theme": "receiver-policy",
+      "evidence": [
+        "dzafic-2026-cs-orientation",
+        "anliker-2026-narrowband-toa"
       ]
     }
   ],
@@ -410,10 +567,16 @@
           "evidence": [
             "anliker-2023-time-for-change"
           ]
+        },
+        {
+          "text": "상용 CS 스택이 내주는 품질 지표(Nordic TQI)를 이상치 게이트로 쓴 19만 샘플 실측에서, 다중경로가 있는 실내 복도의 참양성률이 5.2~33.4 % 까지 떨어지고 거짓양성률은 최대 27 % 였다 — 공격이 없는 상태에서도 큰 오차를 거의 못 거른다",
+          "evidence": [
+            "dzafic-2026-cs-orientation"
+          ]
         }
       ],
       "status": "challenged",
-      "status_note": "구현이 vendor-specific 이라 '어느 벤더의 NADM 이 무엇을 막는가'는 아직 아무도 측정하지 않았다.",
+      "status_note": "구현이 vendor-specific 이라 '어느 벤더의 NADM 이 무엇을 막는가'는 아직 아무도 측정하지 않았다. 한편 **공격이 없는 정상 측정조차 제대로 못 거른다**는 실측이 나왔으므로, 이제 질문은 '조작을 잡는가'가 아니라 '조작을 잡을 만한 여유가 애초에 있는가'다.",
       "experiment": "nRF54L15 두 장으로 RAS 를 통해 raw step data 와 NADM 값을 뽑을 수 있는지 확인하고, 가능하면 벤더 2종 이상에서 같은 조작 입력에 대한 NADM 응답을 비교한다.",
       "todo": null
     },
@@ -506,10 +669,16 @@
             "pawr-cs-security-void",
             "staat-2022-analog-relay"
           ]
+        },
+        {
+          "text": "Wi-Fi 에서 같은 구조가 이미 깨졌다 — 802.11az 의 secure FTM 은 WPA2-Personal 에서 **널리 공유된 passphrase** 의 비밀성에 기대고, WPA3-Personal 에서도 핸드셰이크가 특정 AP 에 결속되지 않아 evil-twin AP 가 유효 PTK 를 세우면 '보안' 레인징이 공격자와의 근접성을 증명해 준다",
+          "evidence": [
+            "antonijevic-2026-secure-wifi-ranging"
+          ]
         }
       ],
       "status": "conditional",
-      "status_note": "난수 자체가 깨졌다는 증거는 없다. 문제는 그 난수가 페어링 계층에 얹혀 있고, 그 계층이 따로 깨져 있다는 것이다. 키 유도 경로가 PK 인지 별도 CS 키인지는 규격 접근이 막혀 미확인.",
+      "status_note": "난수 자체가 깨졌다는 증거는 없다. 문제는 그 난수가 페어링 계층에 얹혀 있고 그 계층이 따로 깨져 있다는 것이다. **인접 기술에서는 이 구조가 이미 실증으로 깨졌다**(802.11az/WPA2·WPA3). CS 쪽은 키 유도 경로가 PK 인지 별도 CS 키인지가 규격 접근이 막혀 미확인이다.",
       "experiment": "Core 6.0/6.3 Vol 6 Part H 에서 CS Security Start 의 키 유도 입력을 확정한다. 별도 CS 전용 키면 이 주장은 유지되고, PK 파생이면 강등 공격이 그대로 닿는다.",
       "todo": "todo-core-spec"
     },
@@ -537,12 +706,94 @@
           "evidence": [
             "gunia-2026-cs-metrological"
           ]
+        },
+        {
+          "text": "공격자가 없어도 **상대 보드 자세만으로** 보정 오프셋이 70 cm(Nordic)~138 cm(SiLabs 1×1) 흔들린다. 환경 간 차이(32~49 cm)보다 크다",
+          "evidence": [
+            "dzafic-2026-cs-orientation"
+          ]
         }
       ],
       "status": "challenged",
       "status_note": "다만 우리 trace-replay 는 실외 LOS 계열에서 확정됐고, 실내 다중경로 데이터에서는 언랩 기반 추정기가 무너져(평균 오차 3.5 m) 정합필터로 바꿨다. 다중경로 하 공격 안정성은 우리 쪽에서 아직 재현하지 않았다.",
       "experiment": "Wieme 실내 창고 계열에 같은 군지연 주입을 적용해, 다중경로에서 조작량이 유지되는지 정합필터 추정기로 확인한다.",
       "todo": "todo-coherence-roc"
+    },
+    {
+      "id": "C-07",
+      "claim": "CS 의 거리 정확도를 높이는 개선(첫 경로 탐색, 분수 타이밍, 톤 교환 순서 변경, 일방향 CFR 복원)은 보안에 중립적이다.",
+      "source": "정확도 개선 논문들의 암묵적 전제 (보안 절을 두지 않음)",
+      "source_refs": [
+        "wu-2026-cs-twr-phase-offset",
+        "morano-2026-one-way-channel-reconstruction",
+        "nagaraj-2025-fbr"
+      ],
+      "supporting": [],
+      "counter": [
+        {
+          "text": "정밀한 ToA 를 위해 첫 경로를 찾는 back-search 창이 그 자체로 채널 확산(10~20 m) 만큼의 축소를 허용한다. 비밀 프리앰블 코드로도 막지 못한다",
+          "evidence": [
+            "poturalski-2012-secure-precise-ir-uwb"
+          ]
+        },
+        {
+          "text": "톤 교환 순서를 바꾸면(Mirrored Tone Exchange) 거리 정보가 위상 합에 두 번 실려 **공격자가 조작해야 하는 관측량의 정의 자체가 바뀐다** — 유리한지 불리한지 아무도 따지지 않았다",
+          "evidence": [
+            "wu-2026-cs-twr-phase-offset"
+          ]
+        },
+        {
+          "text": "양방향 CFR 을 일방향으로 되돌리면 반송파마다 ±1 부호 모호성이 생기고, 그 분기 선택이 잡음 낀 반송파 하나에 무너진다 — 새 조작 지점이다",
+          "evidence": [
+            "morano-2026-one-way-channel-reconstruction"
+          ]
+        }
+      ],
+      "status": "untested",
+      "status_note": "반대 방향의 증거만 있고 **정면으로 시험한 연구가 없다.** 정확도 논문은 보안 절을 두지 않고, 보안 논문은 규격 기본 구성만 공격한다. 이 빈칸이 곧 기여 지점이다.",
+      "experiment": "Mirrored Tone Exchange 와 기존 TWR 에 같은 군지연 τ 를 주입해 거리 이동량과 톤 정합도를 비교한다. 실측 I/Q 에 합성 주입으로 가능하다 — 하드웨어가 필요 없다.",
+      "todo": null
+    },
+    {
+      "id": "C-08",
+      "claim": "물리계층 지문이나 통계적 정상성 검사가 조작된 측정을 걸러낸다.",
+      "source": "BlueID·BlueShield 계열 방어와 Apple ANIF 의 ranging-awareness",
+      "source_refs": [
+        "joo-2020-hodor",
+        "gou-2024-uwb-channel-reciprocity"
+      ],
+      "supporting": [
+        {
+          "text": "RF 지문은 거리 검증 없이도 키리스 엔트리 릴레이를 막는 대안 경로로 제시됐다",
+          "evidence": [
+            "joo-2020-hodor"
+          ]
+        }
+      ],
+      "counter": [
+        {
+          "text": "SaDiF 는 패킷 내용·프리앰블·RSSI 를 건드리지 않고 CTE 기준구간의 위상만 주입해 BlueID+BlueShield 동시 방어를 **91.5 % 이상 우회**했다 (MitM 6.7 %, jamming 3.7 %)",
+          "evidence": [
+            "zhang-2025-sadif"
+          ]
+        },
+        {
+          "text": "Urey-ML 은 '정상 변동인지'를 판정하는 Apple 의 ranging-awareness 방어를 강화학습으로 흉내 내 우회했다 — 통계적 정상성 검사가 학습형 공격에 뚫린 첫 사례",
+          "evidence": [
+            "liu-2026-urey-ml"
+          ]
+        },
+        {
+          "text": "채널 특징에 얹은 신경망 판정기가 적대적 섭동에 무너질 수 있음은 같은 도메인에서 이미 보였다",
+          "evidence": [
+            "kolli-2024-keyfob-cir-adversarial"
+          ]
+        }
+      ],
+      "status": "challenged",
+      "status_note": "세 반증 모두 **CS 가 아닌 인접 기술**(BLE DF, UWB, 키포브)에서 나왔다. CS 의 NADM·TQI 가 같은 범주라는 것은 구조적 논증이지 실측이 아니다 — 그 간극이 이 주장의 남은 방어선이다.",
+      "experiment": "CS 의 NADM·TQI 를 목적함수로 두고, 거리는 옮기되 두 지표는 정상 범위에 남기는 섭동을 실측 I/Q 위에서 탐색한다. trace-replay 로 가능하다.",
+      "todo": null
     }
   ],
   "matrix": {
@@ -619,6 +870,7 @@
         "label": "ED/LC",
         "papers": [
           "clulow-2006-long-symbols",
+          "hancke-2008-tof-db-attacks",
           "flury-2010-distance-decreasing",
           "poturalski-2011-db-802-15-4a"
         ],
@@ -629,8 +881,9 @@
           },
           "rtt": {
             "state": "bypassed",
-            "note": "IR-UWB·chirp 에서 반복 실증됐다",
+            "note": "상용 수신기 두 종에서 20~22 µs(6.6 km) / 2~2.5 µs(750 m) 를 벌었다. IR-UWB·chirp 에서도 반복 실증",
             "evidence": [
+              "hancke-2008-tof-db-attacks",
               "flury-2010-distance-decreasing",
               "poturalski-2011-db-802-15-4a",
               "ranganathan-2012-chirp-attacks"
@@ -986,6 +1239,135 @@
             "note": "trace-replay 단계 — CS 보드 실측이 다음 단계"
           }
         }
+      },
+      {
+        "id": "back-search",
+        "label": "첫 경로 back-search",
+        "papers": [
+          "poturalski-2012-secure-precise-ir-uwb"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "not-applicable",
+            "note": "ToA 탐색 단계의 공격이라 위상 측정에는 직접 적용되지 않는다"
+          },
+          "rtt": {
+            "state": "bypassed",
+            "note": "채널 확산(10~20 m) 만큼의 축소. 선행 ED/LC 계열의 ≈10 m 한계보다 크다",
+            "evidence": [
+              "poturalski-2012-secure-precise-ir-uwb"
+            ]
+          },
+          "cross-check": {
+            "state": "not-evaluated"
+          },
+          "random-seq": {
+            "state": "bypassed",
+            "note": "비밀 프리앰블 코드를 알지 못해도 성립한다고 저자가 명시",
+            "evidence": [
+              "poturalski-2012-secure-precise-ir-uwb"
+            ]
+          },
+          "sounding-seq": {
+            "state": "not-evaluated",
+            "note": "CS 의 마커 구조에서 같은 탐색 창이 생기는지 미확인"
+          },
+          "nadm": {
+            "state": "not-evaluated",
+            "note": "저자들이 제안한 대응은 PIDH·EDD/EDDG·ToA 분산 검사 — CS 의 NADM 과 대응 관계가 정리되지 않았다"
+          },
+          "fhss": {
+            "state": "not-evaluated"
+          },
+          "ota-cs": {
+            "state": "not-evaluated"
+          }
+        }
+      },
+      {
+        "id": "cicada",
+        "label": "Cicada 간섭",
+        "papers": [
+          "poturalski-2010-cicada-attack"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "not-evaluated"
+          },
+          "rtt": {
+            "state": "bypassed",
+            "note": "back-search 창에 균일 펄스를 뿌리면 ToA 가 앞당겨지고(degradation), 세지면 패킷이 죽는다(denial)",
+            "evidence": [
+              "poturalski-2010-cicada-attack"
+            ]
+          },
+          "cross-check": {
+            "state": "not-evaluated"
+          },
+          "random-seq": {
+            "state": "bypassed",
+            "note": "동기화도 프리앰블 코드 지식도 필요 없다",
+            "evidence": [
+              "poturalski-2010-cicada-attack"
+            ]
+          },
+          "sounding-seq": {
+            "state": "not-evaluated"
+          },
+          "nadm": {
+            "state": "partial",
+            "note": "UWB 쪽에는 Cicada 계열을 겨냥한 탐지가 제안돼 있다",
+            "evidence": [
+              "singh-2019-uwb-ed"
+            ]
+          },
+          "fhss": {
+            "state": "not-evaluated"
+          },
+          "ota-cs": {
+            "state": "not-evaluated"
+          }
+        }
+      },
+      {
+        "id": "phase-injection-df",
+        "label": "위상 주입 (참고: BLE DF)",
+        "papers": [
+          "zhang-2025-sadif"
+        ],
+        "cells": {
+          "pbr": {
+            "state": "not-evaluated",
+            "note": "CTE 기준구간 위상 주입이 CS 의 톤 위상에 그대로 옮겨지는지 미확인 — 구조는 같다"
+          },
+          "rtt": {
+            "state": "not-applicable",
+            "note": "BLE 5.1 DF 에는 RTT 가 없다"
+          },
+          "cross-check": {
+            "state": "not-evaluated"
+          },
+          "random-seq": {
+            "state": "not-evaluated"
+          },
+          "sounding-seq": {
+            "state": "not-evaluated"
+          },
+          "nadm": {
+            "state": "bypassed",
+            "note": "패킷·프리앰블·RSSI 를 건드리지 않아 물리계층 지문 방어(BlueID+BlueShield)를 91.5 % 이상 우회",
+            "evidence": [
+              "zhang-2025-sadif"
+            ]
+          },
+          "fhss": {
+            "state": "not-evaluated"
+          },
+          "ota-cs": {
+            "state": "not-applicable",
+            "note": "BLE DF 대상 — CS 로의 이식은 미실증"
+          }
+        }
       }
     ]
   },
@@ -1022,7 +1404,8 @@
       "supporting": [
         "exp-dispersive",
         "exp-coverage",
-        "exp-estimator-threshold"
+        "exp-estimator-threshold",
+        "vohuu-2021-spectrum-flexible-ranging"
       ],
       "contradicting": [],
       "maturity": "simulated",
@@ -1043,14 +1426,16 @@
       "supporting": [
         "exp-estimator-threshold",
         "anliker-2026-narrowband-toa",
-        "leu-2020-mtac"
+        "leu-2020-mtac",
+        "dzafic-2026-cs-orientation",
+        "aad-2026-fast-uwb-testing"
       ],
       "contradicting": [
         "secure-ranging-4z-hrp-2024",
         "uwb-sv-2023-ccs"
       ],
       "maturity": "trace-replay",
-      "unknown": "벤더별 NADM 구현의 실제 방어력, 그리고 정합도 기반 탐지의 정상 LOS/NLOS 오탐률(ROC)이 없다. 성공률과 운영 위험을 잇는 공통 기준도 없다.",
+      "unknown": "벤더별 NADM 구현의 실제 방어력, 그리고 정합도 기반 탐지의 정상 LOS/NLOS 오탐률(ROC)이 없다. **상용 스택의 품질 지표는 공격이 없는 상태에서도 실내 참양성률이 5.2~33.4 % 에 그친다** — 조작을 걸러낼 여유가 애초에 얼마나 남는지부터 재야 한다.",
       "next_experiment": "Wieme 실내 NLOS 계열로 정합도 탐지의 ROC 곡선을 먼저 그린다 — 하드웨어 없이 가능하다.",
       "todos": [
         "todo-coherence-roc",
@@ -1067,7 +1452,8 @@
       "supporting": [
         "sacchetti-2026-blerp",
         "schex-2026-pawr-connectionless-cs",
-        "staat-2022-analog-relay"
+        "staat-2022-analog-relay",
+        "antonijevic-2026-secure-wifi-ranging"
       ],
       "contradicting": [],
       "maturity": "hypothesis",

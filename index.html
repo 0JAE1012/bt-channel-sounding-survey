@@ -158,6 +158,21 @@
   }
   .refchips a:hover { border-color: var(--accent); color: var(--accent); }
 
+  /* 판단 레이어 표류 배너. 초록이면 따라온 것, 노랑이면 벌어진 것. */
+  .drift {
+    display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: baseline;
+    margin: 14px 0 0; padding: 11px 14px; border-radius: var(--radius);
+    border: 1px solid var(--border); background: var(--bg-raised); font-size: 12.5px;
+  }
+  .drift.stale { border-color: var(--warn); background: var(--warn-soft); color: var(--warn); }
+  .drift.fresh { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .drift b { font-weight: 640; }
+  .drift .drift-ids { display: flex; flex-wrap: wrap; gap: 5px; }
+  .drift .drift-ids a {
+    font-family: var(--mono); font-size: 11px; padding: 1px 6px; border-radius: 5px;
+    background: var(--bg-raised); border: 1px solid currentColor; color: inherit; text-decoration: none;
+  }
+
   .ls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 14px; margin-top: 26px; align-items: start; }
   .ls-box {
     background: var(--bg-raised); border: 1px solid var(--border); border-left: 3px solid var(--fg-faint);
@@ -1308,6 +1323,34 @@
     </div>`;
   }
 
+  // 판단 레이어가 코퍼스를 얼마나 따라왔는가.
+  // 자동 서베이는 papers.json 만 갱신하므로, 아무도 안 보면 이 간극은 계속 벌어진다.
+  function driftBanner() {
+    if (!research.updated || !meta.papers) return "";
+    const lag = Math.round((Date.parse(meta.papers) - Date.parse(research.updated)) / 864e5);
+    const seen = new Set();
+    const KEYS = ["evidence", "supporting", "contradicting", "papers", "standards", "source_refs", "target_papers"];
+    const walk = (n, k) => {
+      if (Array.isArray(n)) return n.forEach((v) => walk(v, k));
+      if (n && typeof n === "object") return Object.entries(n).forEach(([kk, v]) => walk(v, kk));
+      if (typeof n === "string" && KEYS.includes(k)) seen.add(n);
+    };
+    walk(research, "root");
+    // 전문을 확보한 고관련 논문만 센다 — partial 은 인용할 수치가 없어 여기 쓸 수 없다.
+    const miss = papers.filter((p) => p.relevance === "high" && p.verification === "verified" && !seen.has(p.id));
+    const fresh = lag <= 14 && !miss.length;
+    return `<div class="drift ${fresh ? "fresh" : "stale"}">
+      <span><b>판단 갱신 ${esc(research.updated)}</b> · 코퍼스 ${esc(meta.papers)}
+        ${lag > 0 ? `(${lag}일 차)` : ""}</span>
+      <span>이 페이지가 가리키는 논문 <b>${seen.size ? papers.filter((p) => seen.has(p.id)).length : 0}</b>편</span>
+      ${miss.length
+        ? `<span>아직 판단에 들어오지 않은 <b>관련도 높음·전문 확보</b> 논문 ${miss.length}편</span>
+           <span class="drift-ids">${miss.slice(0, 6).map((p) =>
+             `<a href="#${esc(p.id)}">${esc(p.id)}</a>`).join("")}${miss.length > 6 ? " …" : ""}</span>`
+        : `<span>관련도 높음·전문 확보 논문은 모두 반영됨</span>`}
+    </div>`;
+  }
+
   function buildLandscape() {
     const L = research.landscape || {};
     const arrow = `<div class="flow-arrow">▼</div>`;
@@ -1334,6 +1377,7 @@
     document.getElementById("lspanel").innerHTML = `
       <p class="g-note" style="padding-left:0">${esc(L.subtitle || "")}
         이 페이지의 모든 문장은 근거 칩으로 원 레코드까지 되짚을 수 있습니다.</p>
+      ${driftBanner()}
       <h2 style="font-size:17px;margin:22px 0 0">${esc(L.title || "Landscape")}</h2>
       <div class="flow">${flow}</div>
       <div class="ls-grid">
