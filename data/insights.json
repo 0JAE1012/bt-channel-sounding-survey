@@ -1,6 +1,6 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-08-06",
+  "updated": "2026-09-26",
   "note": "코퍼스를 읽으며 나온 관찰과 연구 아이디어. 각 항목은 근거 논문 id에 연결되어 있고, 아직 남의 논문이 아니라 내 판단이므로 evidence를 직접 확인한 뒤 사용할 것.",
   "insights": [
     {
@@ -28,10 +28,11 @@
       "id": "nadm-is-vendor-shaped",
       "kind": "gap",
       "title": "NADM은 규격이 아니라 벤더 구현에 맡겨져 있는데, 벤더별 실측 비교가 없다",
-      "claim": "Bluetooth Core 6.0은 보안 설정에서 NADM을 요구하지만 구현은 vendor-specific이고 규격은 참조 지표 세 가지(NCC, PMSE, DFT)만 제시한다. Silicon Labs는 DFT 기반 지표를 문서에 명시하고, Nordic은 별도 구현을 가진다. Anliker 2026은 참조 지표 3종을 모두 우회했고, Time for Change는 Qorvo의 비공개 탐지 플래그도 우회했다. 즉 '구현에 맡긴 탐지'가 반복적으로 실패해 왔는데, CS에서 벤더별로 실제 방어력이 얼마나 다른지 측정한 연구가 없다. 이번에 확인한 바로는 격차가 NADM보다 훨씬 넓다. 규격은 거리 계산 알고리즘 자체를 정의하지 않고 원시 데이터 생성 절차만 규정한다. 즉 거리 추정기, PBR/RTT 결합 방식, 교차검증 여부와 허용오차가 전부 벤더와 Host 구현의 재량이다.",
+      "claim": "Bluetooth Core 6.0 은 보안 설정에서 NADM 을 요구하지만 구현은 vendor-specific 이고 규격은 참조 지표 세 가지(NCC, PMSE, DFT)만 제시한다. Anliker 2026 은 그 셋을 모두 우회했고 Time for Change 는 Qorvo 의 비공개 탐지 플래그도 우회했다. **2026 년에 첫 벤더 실측이 나왔는데 결과가 더 나쁘다** — Dzafic 이 Nordic 의 톤 품질 지표(TQI)를 이상치 게이트로 써 19 만 샘플을 재 보니, 공격이 없는 정상 측정에서도 참양성률이 잔디밭 LoS 99.4~99.7 % → 아스팔트 51.6~56.8 % → 실내 복도 5.2~33.4 % 로 무너지고 거짓양성률이 최대 27 % 다. 즉 '조작을 잡는가' 이전에 **정상 오차조차 거르지 못한다.** 벤더 둘을 같은 조작 입력에 대해 비교한 연구는 여전히 없다.",
       "evidence": [
         "anliker-2026-narrowband-toa",
         "anliker-2023-time-for-change",
+        "dzafic-2026-cs-orientation",
         "silabs-cs-fundamentals",
         "nordic-nrf54-cs",
         "bt-core-6-0"
@@ -40,11 +41,11 @@
       "research_idea": "동일한 공격 입력 파형 집합을 만들고, 여러 벤더 CS 칩(Nordic nRF54L15, Silicon Labs, NXP)에서 NADM 응답 분포를 측정해 벤더별 탐지 격차를 정량화한다. 규격이 요구하는 것과 각 벤더가 실제로 하는 것의 차이를 표로 만든다.",
       "first_experiment": "nRF54L15 두 장으로 RAS(Ranging Service)를 통해 raw step data와 NADM 값을 뽑을 수 있는지 확인한다. RAS는 벤더 중립 표준 경로이므로 여기서 값이 나오면 벤더 비교의 공통 기반이 생긴다. 나오지 않으면 벤더 SDK별 접근이 필요하고 비교 가능성 자체가 연구 결과가 된다.",
       "difficulty": "medium",
-      "novelty_risk": "측정 중심 시스템 논문이라 신규성 주장이 약할 수 있다. 벤더 격차가 실제로 크게 나와야 이야기가 성립한다. 격차가 작으면 결과가 심심해진다.",
+      "novelty_risk": "측정 중심 시스템 논문이라 신규성 주장이 약할 수 있었는데, Dzafic 2026 이 한 벤더의 품질 지표를 이미 쟀다. 남은 빈칸은 **같은 조작 입력에 대한 벤더 간 비교**이고, 그쪽이 오히려 이야기가 선명하다 — 지표가 정상 오차도 못 거른다면 그 위에 얹은 탐지 정책은 무엇을 보장하는가.",
       "added": "2026-07-28",
       "theme": "receiver-policy",
       "status": "open",
-      "maturity": "hypothesis"
+      "maturity": "commercial"
     },
     {
       "id": "sounding-sequence-backfires",
@@ -90,9 +91,10 @@
       "id": "distance-enlargement-blind-spot",
       "kind": "gap",
       "title": "거리 확대는 주로 가용성 공격이며, fail-open 폴백 증거가 나오기 전까지는 우선순위가 낮다",
-      "claim": "[강등됨 — Codex 검토 후] 문헌이 거리 축소에 쏠려 있는 것은 사실이지만, CS 유스케이스를 훑어보면 확대는 대체로 거부·오경보·가용성 공격으로 귀결된다. 지오펜스 이탈 감지, 자산 추적, 근접 기반 잠금 모두 그렇다. 반례 후보로 '멀면 약한 인증으로 폴백하는 정책'을 검토했으나, 공개된 CCC Digital Key 자료에서 그런 fail-open 폴백을 확인하지 못했다. Release 3.0 은 BLE+UWB 를 passive access 에 쓰고 NFC 는 하위호환과 배터리 부족 상황용 별도 인터페이스로 설명한다. '폴백 인터페이스가 존재한다'와 '확대만으로 그것을 fail-open 시킬 수 있다'는 별개의 주장이다.\n다만 식별가능성 축에서는 여전히 의미가 있다. 임의의 추가 지연은 어떤 challenge 로도 식별되지 않으므로 확대는 원리적으로 탐지 불가에 가깝다. 위협의 크기가 작을 뿐 방어가 쉬운 것이 아니다.",
+      "claim": "[강등됨 — Codex 검토 후] 문헌이 거리 축소에 쏠려 있는 것은 사실이지만, CS 유스케이스를 훑어보면 확대는 대체로 거부·오경보·가용성 공격으로 귀결된다. 지오펜스 이탈 감지, 자산 추적, 근접 기반 잠금 모두 그렇다. 반례 후보로 '멀면 약한 인증으로 폴백하는 정책'을 검토했으나, 공개된 CCC Digital Key 자료에서 그런 fail-open 폴백을 확인하지 못했다. Release 3.0 은 BLE+UWB 를 passive access 에 쓰고 NFC 는 하위호환과 배터리 부족 상황용 별도 인터페이스로 설명한다. '폴백 인터페이스가 존재한다'와 '확대만으로 그것을 fail-open 시킬 수 있다'는 별개의 주장이다.\n다만 식별가능성 축에서는 여전히 의미가 있다. 임의의 추가 지연은 어떤 challenge 로도 식별되지 않으므로 확대는 원리적으로 탐지 불가에 가깝다. 위협의 크기가 작을 뿐 방어가 쉬운 것이 아니다. 2025 년에 상용 UWB 를 겨냥한 실용 DoS 가 하나 더 나오면서 '확대 계열은 대체로 가용성 공격' 이라는 정리가 한 번 더 확인됐다.",
       "evidence": [
         "singh-2019-uwb-ed",
+        "zhang-2025-uwbad-plus",
         "ccc-digital-key",
         "bt-cs-feature-page"
       ],
@@ -110,27 +112,28 @@
       "id": "success-rate-has-no-common-yardstick",
       "kind": "method",
       "title": "공격 성공률과 실전 위험을 잇는 공통 기준이 없다",
-      "claim": "Ghost Peak는 성공률 4%를 보고하면서, 게이트 출입통제의 오수락률 기준 1/2^20과 모바일 결제 1/2^48에 비추어 위조 측정이 수락되기까지 며칠에서 수년이 걸린다고 스스로 한정했다. 반면 Anliker 2026의 NGD 공격은 결정론적이라 사실상 성공률 100%지만 FHSS 동기화 장비를 미구현으로 남겼다. UWB-SV는 탐지율 96.24%와 오탐 0.32%로 보고한다. 세 논문의 숫자를 나란히 놓고 위험을 비교할 방법이 없다.\n[선행연구 확인] 거리경계 문헌에는 이미 라운드 수에 따른 성공확률(2^-n, (3/4)^n 등)과 FAR/FRR 분석이 있다. 따라서 '확률을 반복 횟수와 결합한다' 자체는 신규가 아니다.",
+      "claim": "Ghost Peak 는 성공률 4 % 를 보고하면서 게이트 출입통제의 오수락률 1/2²⁰, 모바일 결제 1/2⁴⁸ 에 비추어 위조 측정이 수락되기까지 며칠~수년이 걸린다고 스스로 한정했다. Anliker 2026 의 NGD 공격은 결정론적이라 사실상 100 % 지만 FHSS 동기화를 미구현으로 남겼고, UWB-SV 는 탐지율 96.24 %·오탐 0.32 % 로 보고한다. 세 숫자를 나란히 놓고 위험을 비교할 방법이 없었다. **2026 년에 절차가 하나 생겼다** — FAST 가 importance sampling 으로 매우 낮은 성공률도 적은 시행으로 추정해 **보안수준을 비트로** 낸다(Qorvo DWM3000 의 STS_NTM 12 에서 2⁻¹²·¹, 24 에서 2⁻³⁷·², 문턱 하나로 25 비트 차). 질문이 '기준이 없다' 에서 **'UWB 에 생긴 이 절차를 CS 의 NADM 문턱에 옮길 수 있는가'** 로 바뀐다.",
       "evidence": [
         "leu-2022-ghost-peak",
         "anliker-2026-narrowband-toa",
-        "uwb-sv-2023-ccs"
+        "uwb-sv-2023-ccs",
+        "aad-2026-fast-uwb-testing"
       ],
       "why_it_matters": "리뷰어와 규격 위원회가 실제로 묻는 질문은 '이 공격이 얼마나 위험한가'인데, 각 논문이 서로 다른 축으로 답한다. 공통 척도를 세우면 내 논문의 위협 평가가 강해지고, 프레임워크 자체가 별도 기여가 된다.",
       "research_idea": "단순 곱이 아니라 P_compromise(T) = 1 - (1 - p_eff)^N(T) 로 쓴다. p_eff 는 단일 공격 기회의 시스템 오수락 확률, N(T) 는 시간 T 동안 가능한 유효 시도 수다. lockout, 재인증, 병렬 장비, 탐지 후 차단 때문에 둘이 독립이 아닐 수 있다는 점을 명시해야 한다.\n포지셔닝은 새 보안이론이 아니라 'CS 공격 결과를 운영 위험으로 변환하는 표준화된 평가 프레임'이다. 정규화 대상은 공격 기회당 성공확률, 단위시간당 유효 기회, 탐지·차단 및 재시도 정책, 시간창별 누적 침해확률, 시스템이 허용하는 목표 위험 다섯 가지다.",
-      "first_experiment": "Bluetooth Core 6.3의 CS procedure 스케줄링 파라미터(subevent 간격, step 수, 최대 반복)를 규격에서 뽑아 단위 시간당 최대 측정 횟수를 계산한다. 여기에 Ghost Peak식 오수락률 논증을 얹으면 프레임워크 초안이 나온다. 문헌 작업만으로 가능하다.",
+      "first_experiment": "FAST 의 importance sampling 절차를 읽고 입력이 무엇인지 확정한다(독점 STS 검증 알고리즘을 블랙박스로 두고 성공률을 추정하는 구조). 그다음 CS 의 NADM 문턱을 같은 자리에 놓을 수 있는지 — 즉 조작 입력을 주고 수락/거절만 관측해 비트 수준을 낼 수 있는지 — 를 따진다. 문헌 작업만으로 시작할 수 있다.",
       "difficulty": "low",
       "novelty_risk": "'확률 x 반복'은 이미 거리경계 문헌에 있으므로 그것을 기여로 주장하면 안 된다. 기여는 의미가 다른 수치(Ghost Peak 의 4%, 결정론적 NGD 의 100%, 탐지기의 96.24%/0.32%)를 하나의 운영 위험 단위로 환산하는 절차에 있다. 독립 논문보다 공격 논문의 평가 절로 넣는 편이 안전하다.",
       "added": "2026-07-28",
       "theme": "receiver-policy",
-      "status": "open",
-      "maturity": "hypothesis"
+      "status": "refined",
+      "maturity": "commercial"
     },
     {
       "id": "field-concentrated-in-one-group",
       "kind": "method",
       "title": "이 분야의 위협 모델이 사실상 한 연구 그룹의 프레임 안에서 정의되어 있다",
-      "claim": "인용 그래프의 계보가 한 갈래로 모인다. Clulow 2006이 긴 심볼 문제를 지적하고, Olafsdottir 2017이 PBR로, UWB-PR과 UWB-ED 2019가 방어로, MTAC 2020이 형식화로, Ghost Peak 2022와 Time for Change 2023이 실전 공격으로, Anliker 2026이 CS로 이어진다. 코퍼스 내 피인용 상위가 모두 이 계보다. Capkun 그룹(ETH Zurich, CISPA)이 중심이다. 예외적으로 CCS 2023의 방어 논문은 국내 연구진(Joo, Lee, Jeong, Choi)이다. 다만 이번 실행에서 두 번째 축이 뚜렷해졌다. Antonioli 그룹(EURECOM)이 Bluetooth 페어링 계층을 체계적으로 파고 있다 — BLERP(NDSS 2026), BLUFFS(CCS 2023), BlueBrothers와 The Zen of Bluetooth Security(WiSec 2026). 물리계층은 Capkun 계보, 페어링 계층은 Antonioli 계보로 나뉘어 있고 둘이 만나지 않는다.",
+      "claim": "위협 모델의 계보가 한 갈래로 모인다 — Clulow 2006 → Ólafsdóttir 2017 → UWB-PR·UWB-ED 2019 → MTAC 2020 → Ghost Peak 2022 → Time for Change 2023 → Anliker 2026 으로 이어지고 그 중심은 Čapkun 그룹(ETH Zurich·CISPA)이다. **다만 코퍼스가 184 편으로 늘며 그림이 조금 넓어졌다** — 거리한정 정전(Hancke 2005·2008, Čapkun 2005·2006, Drimer 2007, Tippenhauer 2009·2015, Boureanu 2015, Poturalski 2010·2012)이 들어오면서 '한 그룹' 이 아니라 '두 계보' 로 보는 편이 정확해졌다 — 수신기 물리계층 계보와 프로토콜 증명 계보. 그리고 2026 년에 **범위가 거의 겹치는 경쟁 서베이**(Boshoff, IEEE TII)가 나왔다.",
       "evidence": [
         "clulow-2006-long-symbols",
         "olafsdottir-2017-carrier-phase",
@@ -138,11 +141,13 @@
         "leu-2022-ghost-peak",
         "anliker-2023-time-for-change",
         "anliker-2026-narrowband-toa",
-        "uwb-sv-2023-ccs"
+        "hancke-2008-tof-db-attacks",
+        "boureanu-2015-practical-provable-db",
+        "boshoff-2026-secure-indoor-ranging"
       ],
       "why_it_matters": "실용적 함의가 둘이다. 첫째, 이 계보의 프레임(물리계층 위협 모델, 형식적 보안 정의, 실기기 실증)을 따르면 리뷰어가 읽는 방식에 맞는다. 둘째, 그 프레임 밖의 관점이 비어 있다. 실배치 데이터 기반 평가, 벤더 구현 다양성, 유스케이스별 위험 차등이 그렇다. 후자를 노리면 경쟁이 적다.",
       "research_idea": "정면 승부(같은 프레임에서 더 나은 공격)와 측면 우회(비어 있는 관점) 중 후자가 승률이 높다. 그리고 이번 실행에서 가장 유망한 빈 자리가 드러났다. 물리계층 계보(Capkun)와 페어링 계층 계보(Antonioli)가 서로 인용하지 않는다. CS는 두 계층에 동시에 걸쳐 있으므로(물리계층 측정 + 본딩 키 기반 난수화), 두 계보를 잇는 연구는 양쪽 모두에게 새롭다. cs-randomness-rests-on-pairing이 그 구체적 형태다.",
-      "first_experiment": "연구 아이디어라기보다 포지셔닝 판단이다. 다만 실행 가능한 확인이 하나 있다. Anliker 그룹의 최근 발표와 진행 중 과제를 확인해 그들이 다음에 무엇을 할지 파악한다. 겹치면 방향을 바꾸는 편이 낫다.",
+      "first_experiment": "Boshoff 2026 의 분류표와 참고문헌을 내 코퍼스와 대조한다. 내 정리가 이미 남이 한 것인지, 아니면 그 서베이가 놓친 축(예: 정확도 개선 논문의 보안 영향)이 내 자리인지가 여기서 갈린다.",
       "difficulty": "low",
       "novelty_risk": "해당 없음. 판단 자료다.",
       "added": "2026-07-28",
@@ -154,7 +159,7 @@
       "id": "entry-cost-is-low",
       "kind": "method",
       "title": "실험 진입 장벽이 생각보다 낮고, 시뮬레이션 우선 방법론이 확립되어 있다",
-      "claim": "Ghost Peak의 공격 장비는 Qorvo DWM3000EVB와 Nordic nRF52 DK로 총 USD 65였다. Staat의 아날로그 릴레이는 부품 총액 EUR 2,200이고 평가보드를 빼면 EUR 1,200 미만이다. Anliker 2026은 R&S SMW200A 신호발생기와 RTP 오실로스코프라는 고가 계측기를 썼지만, NGD 회로 자체는 COTS 연산증폭기와 수동소자이고, 결정적으로 주요 결과는 LTspice(무료)와 MATLAB Bluetooth Toolbox 시뮬레이션에서 나왔다. 물리 PoC는 실현 가능성 확인용이었다. [범위 축소 · 2026-08-06] 위 저비용 논증은 시뮬레이션·유선 PoC 단계에 한한다. 실시간 채널선택 공격(CS 의 FHSS 를 따라가며 채널마다 조작)까지 가면 진입 비용이 낮지 않을 수 있다. B210(≈$2k)은 Spartan-6 + USB3 라 RFNoC 를 지원하지 않아 in-FPGA 저지연 릴레이가 사실상 불가하고, DSP 를 호스트에서 돌리면 왕복 지연이 수백 µs~ms 라 CS step 처리 창(수십~수백 µs)을 넘겨 스푸핑이 DoS 로 강등될 공산이 크다. 실시간 릴레이는 X310 급(Kintex-7 + RFNoC + 10 GbE/PCIe, ≈$10k+)이 사실상 필요하다. 근거·설계는 experiments/fhss_poc_design.md §3.5. 단, sounding sequence 가 결정론적인 구간에서 미리 계산한 신호를 예측 주입하면 실시간 요구가 낮아져 B210 으로도 성립할 여지가 남는다 — 이 경쟁(실시간 τ_loop vs 예측 주입)의 실측이 미해결이다.",
+      "claim": "Ghost Peak의 공격 장비는 Qorvo DWM3000EVB와 Nordic nRF52 DK로 총 USD 65였다. Staat의 아날로그 릴레이는 부품 총액 EUR 2,200이고 평가보드를 빼면 EUR 1,200 미만이다. Anliker 2026은 R&S SMW200A 신호발생기와 RTP 오실로스코프라는 고가 계측기를 썼지만, NGD 회로 자체는 COTS 연산증폭기와 수동소자이고, 결정적으로 주요 결과는 LTspice(무료)와 MATLAB Bluetooth Toolbox 시뮬레이션에서 나왔다. 물리 PoC는 실현 가능성 확인용이었다. [범위 축소 · 2026-08-06] 위 저비용 논증은 시뮬레이션·유선 PoC 단계에 한한다. 실시간 채널선택 공격(CS 의 FHSS 를 따라가며 채널마다 조작)까지 가면 진입 비용이 낮지 않을 수 있다. B210(≈$2k)은 Spartan-6 + USB3 라 RFNoC 를 지원하지 않아 in-FPGA 저지연 릴레이가 사실상 불가하고, DSP 를 호스트에서 돌리면 왕복 지연이 수백 µs~ms 라 CS step 처리 창(수십~수백 µs)을 넘겨 스푸핑이 DoS 로 강등될 공산이 크다. 실시간 릴레이는 X310 급(Kintex-7 + RFNoC + 10 GbE/PCIe, ≈$10k+)이 사실상 필요하다. 근거·설계는 experiments/fhss_poc_design.md §3.5. 단, sounding sequence 가 결정론적인 구간에서 미리 계산한 신호를 예측 주입하면 실시간 요구가 낮아져 B210 으로도 성립할 여지가 남는다 — 이 경쟁(실시간 τ_loop vs 예측 주입)의 실측이 미해결이다. **범위가 좁아졌다.** 저비용 결론은 시뮬레이션·유선 단계에 한정된다. 실시간 채널선택 CS 공격에는 B210(≈$2k)으로 부족하고 X310 급(≈$10k+)이 필요할 수 있다 — B210 은 RFNoC 미지원이라 DSP 가 호스트 경로에서 돌기 때문이다.",
       "evidence": [
         "leu-2022-ghost-peak",
         "staat-2022-analog-relay",
@@ -168,17 +173,18 @@
       "novelty_risk": "실행 계획이므로 신규성 위험은 해당 없음. 다만 범위 주의: 저비용 결론은 시뮬/유선 단계 한정이며, 실시간 무선 채널선택 공격의 장비 비용은 fhss-tracking-is-the-real-barrier 의 Phase 1 실측(B210 호스트 τ_loop)으로 확정해야 한다.",
       "added": "2026-07-28",
       "theme": "research-notes",
-      "status": "answered",
+      "status": "refined",
       "maturity": "hypothesis"
     },
     {
       "id": "cs-randomness-rests-on-pairing",
       "kind": "opportunity",
       "title": "CS의 난수화는 페어링 키에 얹혀 있고, 그 페어링은 0-click으로 강등된다",
-      "claim": "CS Security Start는 본딩으로 확립된 PK에서 sounding sequence, 마커 배치, 비트 패턴, 안테나 경로 선택의 난수를 유도한다. CS의 모든 물리계층 방어가 '공격자는 이 시퀀스를 예측할 수 없다'는 한 문장에 얹혀 있다. 그런데 BLERP(NDSS 2026)는 표준 v6.1의 재페어링 설계 결함 6개(신규 4개)로 공격자가 재페어링을 강제하고 보안수준을 최저(LSC + JustWorks)까지 강등할 수 있음을 0-click 또는 1-click으로 실증했다. 설계 결함이므로 Bluetooth 버전이나 보안 설정과 무관하게 적용된다. BLUFFS(CCS 2023)는 같은 계층의 세션 키 전후방 비밀성을 깬다.",
+      "claim": "CS Security Start는 본딩으로 확립된 PK에서 sounding sequence, 마커 배치, 비트 패턴, 안테나 경로 선택의 난수를 유도한다. CS의 모든 물리계층 방어가 '공격자는 이 시퀀스를 예측할 수 없다'는 한 문장에 얹혀 있다. 그런데 BLERP(NDSS 2026)는 표준 v6.1의 재페어링 설계 결함 6개(신규 4개)로 공격자가 재페어링을 강제하고 보안수준을 최저(LSC + JustWorks)까지 강등할 수 있음을 0-click 또는 1-click으로 실증했다. 설계 결함이므로 Bluetooth 버전이나 보안 설정과 무관하게 적용된다. BLUFFS(CCS 2023)는 같은 계층의 세션 키 전후방 비밀성을 깬다. **인접 기술에서는 이 구조가 이미 실증으로 깨졌다.** 802.11az 의 secure FTM 은 WPA2-Personal 에서 널리 공유된 passphrase 의 비밀성에 기대고, WPA3-Personal 에서도 핸드셰이크가 특정 AP 에 결속되지 않아 password 를 아는 공격자가 evil-twin AP 로 유효 PTK 를 세우면 '보안' 레인징이 **공격자와의 근접성을 증명해 준다.** 물리계층 보안이 상위 계층의 키에 얹혀 있을 때 무슨 일이 생기는지의 실물 사례다.",
       "evidence": [
         "sacchetti-2026-blerp",
         "antonioli-2023-bluffs",
+        "antonijevic-2026-secure-wifi-ranging",
         "bt-core-6-0",
         "bt-core-6-1"
       ],
@@ -196,10 +202,11 @@
       "id": "mtac-predicted-nadm-failure",
       "kind": "opportunity",
       "title": "MTAC이 2020년에 상관 기반 검증은 안전하지 않다고 논증했고, CS의 NADM이 정확히 그것이다",
-      "claim": "MTAC(IEEE S&P 2020)은 상관 피크의 존재나 피크 전력 수준에 기반한 ToA 검증이 안전하지 않다고 명시적으로 논증했다. 공격자가 전력 증가 전략만으로 피크 값을 원하는 수준으로 조종할 수 있기 때문이다. 그런데 Bluetooth Core 6.0이 CS 보안 설정에서 요구하는 NADM 참조 지표 세 가지 (정규화 상호상관, 위상 최소자승오차, DFT)는 파형 일치도나 특정 왜곡 특징에 의존할 뿐 인증된 earliest-path 의 존재를 검증하지 못한다는 공통점을 갖는다. [버전 주의] 진폭 기반 DFT NADM 은 Core 6.2 에서 인증 대상으로 규정되었다. 6.0 의 위상 기반 NADM 과 뭉뚱그리면 어느 버전을 공격하는지가 흐려진다. 그리고 Anliker 2026이 실제로 그 셋을 모두 우회했다. 2020년에 예고된 실패가 2026년에 CS에서 실현되었다.",
+      "claim": "MTAC(IEEE S&P 2020)은 상관 피크의 존재나 피크 전력 수준에 기반한 ToA 검증이 안전하지 않다고 명시적으로 논증했다. 공격자가 전력 증가 전략만으로 피크 값을 원하는 수준으로 조종할 수 있기 때문이다. 그런데 Bluetooth Core 6.0이 CS 보안 설정에서 요구하는 NADM 참조 지표 세 가지 (정규화 상호상관, 위상 최소자승오차, DFT)는 파형 일치도나 특정 왜곡 특징에 의존할 뿐 인증된 earliest-path 의 존재를 검증하지 못한다는 공통점을 갖는다. [버전 주의] 진폭 기반 DFT NADM 은 Core 6.2 에서 인증 대상으로 규정되었다. 6.0 의 위상 기반 NADM 과 뭉뚱그리면 어느 버전을 공격하는지가 흐려진다. 그리고 Anliker 2026이 실제로 그 셋을 모두 우회했다. 2020년에 예고된 실패가 2026년에 CS에서 실현되었다. 2026 년 실측이 한 겹 더 얹혔다 — 상용 스택의 품질 지표는 **공격이 없는 정상 측정에서도** 실내 참양성률 5.2~33.4 % 에 그친다. MTAC 의 논증이 '원리적으로 안전하지 않다' 였다면, 지금은 '실제로 걸러낼 여유조차 없다' 가 더해진 셈이다.",
       "evidence": [
         "leu-2020-mtac",
         "anliker-2026-narrowband-toa",
+        "dzafic-2026-cs-orientation",
         "bt-core-6-0",
         "silabs-cs-fundamentals"
       ],
@@ -217,12 +224,13 @@
       "id": "spec-vs-implementation-debate",
       "kind": "method",
       "title": "표준이 취약한가 구현이 취약한가라는 논쟁이 UWB에서 이미 벌어졌고, CS에서 곧 반복된다",
-      "claim": "Ghost Peak(USENIX Sec 2022)가 상용 UWB 칩에서 거리 축소를 실증한 뒤, Luo 외(IEEE S&P 2024)는 802.15.4z HRP의 STS 파형이 적절한 수신기 설계와 결합되면 실제로 보안 거리측정을 제공한다고 논증했다. 즉 취약성이 표준의 결함이 아니라 수신기 구현의 문제라는 입장이다. 두 논문 모두 4대 학회 게재작이고 결론이 상반된다. CS에서도 같은 구도가 준비되어 있다. Anliker 2026은 MATLAB으로 구현한 수신기에서 NADM을 우회했고, 그 수신기가 상용 구현을 대표하는지는 저자 스스로 추정이라고 적었다.",
+      "claim": "Ghost Peak(USENIX Sec 2022)가 상용 UWB 칩에서 거리 축소를 실증한 뒤, Luo 외(IEEE S&P 2024)는 802.15.4z HRP의 STS 파형이 적절한 수신기 설계와 결합되면 실제로 보안 거리측정을 제공한다고 논증했다. 즉 취약성이 표준의 결함이 아니라 수신기 구현의 문제라는 입장이다. 두 논문 모두 4대 학회 게재작이고 결론이 상반된다. CS에서도 같은 구도가 준비되어 있다. Anliker 2026은 MATLAB으로 구현한 수신기에서 NADM을 우회했고, 그 수신기가 상용 구현을 대표하는지는 저자 스스로 추정이라고 적었다. **벤더 격차가 실측으로 확인됐다** — 같은 CS 규격에서 SiLabs 2×2 구성은 전 자세에서 MAE 0.48~0.64 m 인데 같은 칩의 1×1 구성은 최악 자세에서 4.32 m 다. 구현(안테나 구성·폐쇄형 RTL)이 결과를 가른다는 쪽의 증거이면서, 동시에 '규격이 수신기를 정의하지 않는다' 는 문제의 실물이기도 하다.",
       "evidence": [
         "leu-2022-ghost-peak",
         "secure-ranging-4z-hrp-2024",
         "anliker-2026-narrowband-toa",
-        "wieme-2025-cs-commercial-hw"
+        "wieme-2025-cs-commercial-hw",
+        "dzafic-2026-cs-orientation"
       ],
       "why_it_matters": "내가 CS 공격을 제안하면 가장 먼저 받을 반론이 적절한 수신기면 막힌다는 것이다. UWB에서 그 반론이 실제로 4대 학회에 실렸다는 사실을 알고 있으면 미리 대응을 설계할 수 있다. 반대로 방어를 제안한다면 Luo 외가 취한 논증 구조가 그대로 본보기가 된다. 그리고 Wieme 2025이 거리 구간에 따라 최적 알고리즘이 뒤바뀐다는 것을 실측으로 보였으므로, 수신기 선택이 결과를 좌우한다는 주장에는 실증적 근거가 있다.",
       "research_idea": "공격을 제안할 때 단일 수신기가 아니라 수신기 계열에 대해 평가한다. Wieme 2025이 비교한 알고리즘군(slope 최소자승, FFT, MUSIC, MUSIC+OWCR, MVDR) 각각에 같은 공격 입력을 넣어 어느 것이 견디고 어느 것이 뚫리는지 표로 만든다. 전부 뚫리면 표준 수준의 결함이라는 주장이 강해지고, 일부만 뚫리면 어떤 수신기 설계가 방어가 되는지가 곧 기여가 된다. 어느 쪽이든 결과가 나온다.",
@@ -238,7 +246,7 @@
       "id": "fhss-tracking-is-the-real-barrier",
       "kind": "opportunity",
       "title": "채널 선택적 NGD 공격에서는 FHSS 추적이 실질적 병목이다",
-      "claim": "[범위 주의] 아래는 시험한 로렌츠형 필터 모델과 정합필터 추정기에 한정된 결과다. 광대역 LTI 회로, 병렬 필터뱅크, 채널 예측 공격, 강건 추정기는 배제하지 못한다.\n\n실측 I/Q에 주파수 의존 군지연 tau(f)를 주입해 확인했다. 결과가 이분법으로 갈린다. 공격자가 FHSS를 추적해 매 채널을 같은 IF로 내리면, 회로 대역폭과 무관하게 PBR이 정확히 c*tau(-18.590 m)만큼 이동하고 톤 정합도는 0.949로 기준값 그대로 유지된다. 완벽하고 무흔적이다. 추적하지 못해 고정 LO를 쓰면, 시험한 모든 대역폭(0.5~80 MHz)에서 정합도가 0.23~0.39로 붕괴하고 PBR 추정값이 +2.77, -3.81, +39.91 m 식으로 통제 불능이 된다. 거짓 거리를 만드는 것이 아니라 측정을 망가뜨릴 뿐이다. 스푸핑이 아니라 서비스 거부다. 즉 채널 선택적 NGD 공격에 한해서는 FHSS 추적이 실질적 병목이다. 재현: experiments/dispersive_ngd.py 부분 커버리지까지 확인했다. 공격자가 대역 일부만 추적하는 경우를 0.1~1.0으로 훑으면 50% 지점에 뚜렷한 문턱이 있다. 그 아래에서는 이동량이 정확히 0이고(정합필터가 덮이지 않은 다수 채널의 참 거리를 잡는다), 50% 이상에서는 곧바로 전량 -18.6 m가 나온다. 승자독식이다. 다만 정합도는 커버리지에 따라 연속적으로 변한다. 0.50에서 0.514, 0.72에서 0.703, 0.85에서 0.815, 1.00에서 0.949(기준값)다. 즉 부분 커버리지는 거리는 완전히 조작하면서도 정합도에 흔적을 남긴다. [아키텍처 주의 · 2026-08-06] 위 '고정 LO=DoS'는 아날로그 채널선택 NGD 회로가 고정 IF에서 tau를 걸 때의 결과다. 디지털 공격자는 다르다. LO를 광대역 중심(2441 MHz)에 고정하고 순시대역 전체를 받아 DSP에서 각 채널을 그 실제 주파수로 처리하면, 덮인 모든 채널에 정확한 tau를 동시에 걸 수 있어 재조정 없이 '추적=무흔적' 결과를 얻는다. 즉 실질 병목은 LO 민첩성이 아니라 순시 대역폭(커버리지)과 루프 지연이다.",
+      "claim": "[범위 주의] 아래는 시험한 로렌츠형 필터 모델과 정합필터 추정기에 한정된 결과다. 광대역 LTI 회로, 병렬 필터뱅크, 채널 예측 공격, 강건 추정기는 배제하지 못한다.\n\n실측 I/Q에 주파수 의존 군지연 tau(f)를 주입해 확인했다. 결과가 이분법으로 갈린다. 공격자가 FHSS를 추적해 매 채널을 같은 IF로 내리면, 회로 대역폭과 무관하게 PBR이 정확히 c*tau(-18.590 m)만큼 이동하고 톤 정합도는 0.949로 기준값 그대로 유지된다. 완벽하고 무흔적이다. 추적하지 못해 고정 LO를 쓰면, 시험한 모든 대역폭(0.5~80 MHz)에서 정합도가 0.23~0.39로 붕괴하고 PBR 추정값이 +2.77, -3.81, +39.91 m 식으로 통제 불능이 된다. 거짓 거리를 만드는 것이 아니라 측정을 망가뜨릴 뿐이다. 스푸핑이 아니라 서비스 거부다. 즉 채널 선택적 NGD 공격에 한해서는 FHSS 추적이 실질적 병목이다. 재현: experiments/dispersive_ngd.py 부분 커버리지까지 확인했다. 공격자가 대역 일부만 추적하는 경우를 0.1~1.0으로 훑으면 50% 지점에 뚜렷한 문턱이 있다. 그 아래에서는 이동량이 정확히 0이고(정합필터가 덮이지 않은 다수 채널의 참 거리를 잡는다), 50% 이상에서는 곧바로 전량 -18.6 m가 나온다. 승자독식이다. 다만 정합도는 커버리지에 따라 연속적으로 변한다. 0.50에서 0.514, 0.72에서 0.703, 0.85에서 0.815, 1.00에서 0.949(기준값)다. 즉 부분 커버리지는 거리는 완전히 조작하면서도 정합도에 흔적을 남긴다. [아키텍처 주의 · 2026-08-06] 위 '고정 LO=DoS'는 아날로그 채널선택 NGD 회로가 고정 IF에서 tau를 걸 때의 결과다. 디지털 공격자는 다르다. LO를 광대역 중심(2441 MHz)에 고정하고 순시대역 전체를 받아 DSP에서 각 채널을 그 실제 주파수로 처리하면, 덮인 모든 채널에 정확한 tau를 동시에 걸 수 있어 재조정 없이 '추적=무흔적' 결과를 얻는다. 즉 실질 병목은 LO 민첩성이 아니라 순시 대역폭(커버리지)과 루프 지연이다. **장비 쪽 제약이 하나 확정됐다.** B210 은 Spartan-6 + USB3 고정 이미지라 RFNoC 를 지원하지 않아 릴레이 DSP 가 호스트에서 돌고, 그 경로의 왕복 지연은 수백 µs~ms 급이다. CS step 처리 창(수십~수백 µs)을 넘기면 스푸핑이 아니라 DoS 로 강등된다. 실시간 저지연은 X310 급(Kintex-7 + RFNoC)이 사실상 필요하다 — 단, sounding sequence 가 결정론적인 구간에서는 **예측 주입**으로 실시간 요구를 낮출 여지가 남아 있어 Phase 1~2 에서 둘 다 잰다.",
       "evidence": [
         "anliker-2026-narrowband-toa",
         "wieme-2025-cs-commercial-hw",
@@ -254,56 +262,151 @@
       "theme": "feasibility",
       "status": "active",
       "maturity": "simulated"
+    },
+    {
+      "id": "precision-widens-attack-surface",
+      "kind": "tension",
+      "title": "정확도를 높이는 개선이 공격 표면을 같이 넓히는데, 아무도 그 값을 재지 않는다",
+      "claim": "Poturalski 2012 가 IR-UWB 에서 정량화한 명제는 '정밀한 ToA 를 얻으려면 첫 도착 경로를 찾아야 하고, 그 back-search 창 자체가 채널 확산(10~20 m) 만큼의 거리 축소를 허용한다' 이다 — 비밀 프리앰블 코드로도 막지 못하며, 안전하면서 정밀하려면 패킷이 한 자릿수 배 길어진다. 그런데 2026 년 CS 정확도 논문들은 정확히 그 방향으로 간다 — Mirrored Tone Exchange 는 톤 교환 순서를 바꿔 잔류항을 cm → µm 로 줄이고(거리 정보가 위상 합에 두 번 실린다), 일방향 CFR 복원은 반송파마다 ±1 부호 모호성을 만들고 그 분기 선택이 잡음 낀 반송파 하나에 무너진다. **세 논문 모두 보안 절이 없다.** 조작해야 할 관측량의 정의가 바뀌는데 유리한지 불리한지 아무도 따지지 않았다.",
+      "evidence": [
+        "poturalski-2012-secure-precise-ir-uwb",
+        "wu-2026-cs-twr-phase-offset",
+        "morano-2026-one-way-channel-reconstruction",
+        "nagaraj-2025-fbr"
+      ],
+      "why_it_matters": "CS 규격은 거리 계산 알고리즘을 정의하지 않는다. 그래서 벤더와 후속 연구가 정확도를 올리려 추정 파이프라인을 바꾸는데, 그 변경이 조작 저항성에 미치는 영향은 규격도 논문도 다루지 않는다. 공격 논문은 규격 기본 구성만 때리고, 정확도 논문은 공격자를 상정하지 않는다. 그 사이가 비어 있다.",
+      "research_idea": "같은 조작 입력(평탄 군지연 τ, 부분 커버리지)을 **추정 파이프라인 변종별로** 주입해 거리 이동량과 탐지 흔적을 함께 잰다. 결과를 '정확도 이득 대 조작 저항성 손실' 평면에 올리면 설계 권고가 나온다.",
+      "first_experiment": "실측 I/Q 위에서 기존 TWR 과 Mirrored Tone Exchange 에 같은 τ 를 주입해 거리 이동량과 톤 정합도를 비교한다. two_stage_attacker.py 의 주입 경로를 재사용하면 되고 **하드웨어가 필요 없다.** 이동량이 같으면 '정확도 개선은 공격에 중립', 다르면 그 차이가 곧 기여다.",
+      "novelty_risk": "Poturalski 2012 가 IR-UWB 에서 같은 논증을 이미 했으므로 '정밀도와 보안이 충돌한다' 자체는 새롭지 않다. 기여는 **CS 의 구체적 개선안들에 그 틀을 대입한 첫 사례** 여야 한다. 위험은 이동량이 전부 같게 나와 '차이 없음' 으로 끝나는 것인데, 그 경우에도 '정확도 개선이 조작 저항성을 바꾸지 않는다' 는 음성 결과로 쓸 수 있다.",
+      "difficulty": "low",
+      "theme": "receiver-policy",
+      "status": "open",
+      "maturity": "hypothesis"
+    },
+    {
+      "id": "three-requirements-never-recomputed",
+      "kind": "gap",
+      "title": "근접 증명의 세 요건을 CS 파라미터로 다시 계산한 문헌이 없다",
+      "claim": "Ranganathan 2017 의 개관은 안전한 근접 증명의 요건을 셋으로 압축한다 — (1) 왕복 ToF 를 쓸 것, (2) 챌린지·응답으로 RTT 를 잴 것, (3) **심볼을 짧게 할 것.** 이 글은 802.15.4a 의 32 ns 심볼로도 ED/LC 가 10 m 를 번다고 계산했고, CSS 는 160~700 m 라고 적었다. CS 는 (1)(2)를 갖췄지만 LE 1M 의 GFSK 심볼은 1 µs 다 — 같은 계산을 대입하면 자릿수가 완전히 다른 구간이 나온다. Anliker 2026 이 실증한 것이 정확히 이 지점인데, **세 요건을 CS 의 심볼 길이·T_IFS·step 구조로 다시 계산해 표로 낸 문헌이 코퍼스에 없다.**",
+      "evidence": [
+        "ranganathan-2017-are-we-really-close",
+        "clulow-2006-long-symbols",
+        "hancke-2008-tof-db-attacks",
+        "anliker-2026-narrowband-toa",
+        "bt-core-6-0"
+      ],
+      "why_it_matters": "'CS 가 안전한가' 라는 질문에 답하려면 먼저 기준이 있어야 하는데, 그 기준은 이미 2017 년에 정리돼 있고 CS 는 그 중 하나를 구조적으로 위반한다. 이 계산 하나가 논문의 도입부 그림이 되고, 왜 CS 가 RTT 만으로는 부족한지를 한 장으로 설명한다.",
+      "research_idea": "세 요건을 축으로 표를 만들고 802.15.4a·CSS·Wi-Fi FTM·CS 를 같은 칸에 넣는다. 각 칸의 숫자는 심볼 길이에서 유도한 이론 축소 한계다. CS 칸이 비어 있는 것이 현재 상태다.",
+      "first_experiment": "Hancke 2008 과 Ranganathan 2017 이 쓴 계산식(심볼 길이 → 시간 이득 → 거리)을 그대로 옮겨 CS 의 LE 1M/LE 2M 심볼과 Sounding Sequence 마커 간격에 대입한다. **규격 원문 없이 공개 파라미터만으로 초안이 나오고**, MATLAB Bluetooth Toolbox 로 실제 파형 길이를 확인해 채운다.",
+      "novelty_risk": "계산 자체는 교과서 수준이라 이것만으로는 논문이 되지 않는다. 기여는 그 표가 드러내는 비대칭 — CS 가 (1)(2)를 갖춰 '안전해 보이는데' (3)에서 자릿수로 밀린다 — 을 실측과 잇는 데 있다. Boshoff 2026 서베이가 비슷한 표를 이미 담았을 수 있으니 먼저 확인해야 한다.",
+      "difficulty": "low",
+      "theme": "feasibility",
+      "status": "open",
+      "maturity": "hypothesis"
+    },
+    {
+      "id": "quality-gate-has-no-headroom",
+      "kind": "gap",
+      "title": "탐지를 논하기 전에, CS 의 품질 지표는 정상 오차조차 거르지 못한다",
+      "claim": "Dzafic 2026 이 상용 개발키트 두 종으로 19 만 샘플을 재면서 Nordic 의 톤 품질 지표(TQI)를 이상치 게이트로 썼다. 결과는 환경에 따라 무너진다 — 잔디밭 LoS 참양성률 99.4~99.7 %, 아스팔트 51.6~56.8 %, 실내 복도 **5.2~33.4 %**, 거짓양성률 최대 27 %. 같은 실측에서 **상대 보드 자세만으로 보정 오프셋이 70 cm(Nordic)~138 cm(SiLabs 1×1) 흔들리고** 이는 환경 간 차이(32~49 cm)보다 크다. 공격자가 없는 상태의 숫자다.",
+      "evidence": [
+        "dzafic-2026-cs-orientation",
+        "gunia-2026-cs-metrological",
+        "schroeder-2019-multipath-pbr"
+      ],
+      "why_it_matters": "탐지 연구는 보통 '조작을 걸러낼 수 있는가' 를 묻는다. 그런데 걸러내려면 정상과 이상 사이에 여유가 있어야 하고, 그 여유가 실내에서 이미 없다. 조작된 측정 하나를 자연 오차의 꼬리에 숨기는 일이 그만큼 쉬워진다 — Gunia 의 계측에서 정상 PBR 최대오차가 실외 69.97 m 였다는 것과 같은 이야기다.",
+      "research_idea": "'탐지기의 ROC' 가 아니라 **'탐지 여유(headroom)'** 를 먼저 정의한다 — 정상 측정 분포와 조작 측정 분포가 겹치는 정도를 환경별로 재고, 그 위에서만 탐지 임계를 논한다. 여유가 없는 환경에서는 '탐지' 가 아니라 '측정 거부' 가 맞는 정책일 수 있다는 결론도 가능하다.",
+      "first_experiment": "Dzafic 이 공개한 데이터셋으로 TQI 의 ROC 를 환경별로 그린다(저자 OA·GitHub 공개). 그다음 Wieme 데이터에 합성 조작을 주입한 분포를 같은 축에 올려 겹침을 본다. **하드웨어 없이 되고**, todo-coherence-roc 와 한 번에 처리할 수 있다.",
+      "novelty_risk": "Dzafic 2026 이 이미 TQI 수치를 냈으므로 '지표가 약하다' 는 관찰은 새롭지 않다. 기여는 그 숫자를 **공격 탐지의 상한**으로 환산하는 데 있다 — 정상 오차도 못 거르는 지표 위에 얹은 탐지가 무엇을 보장할 수 있는지. 같은 저자들이 후속으로 할 가능성이 있다.",
+      "difficulty": "low",
+      "theme": "receiver-policy",
+      "status": "open",
+      "maturity": "commercial"
+    },
+    {
+      "id": "learned-defense-is-attack-surface",
+      "kind": "tension",
+      "title": "학습·통계 기반 방어가 스스로 공격 표면이 된다",
+      "claim": "인접 기술에서 세 건이 같은 방향을 가리킨다. SaDiF 는 BLE 5.1 Direction Finding 에서 CTE 기준구간의 **위상만** 주입해 AoA 를 조작하는데, 패킷 내용·프리앰블·RSSI 를 건드리지 않으므로 물리계층 지문 방어(BlueID+BlueShield)를 **91.5 % 이상 우회**한다. Urey-ML 은 Apple ANIF 의 ranging-awareness('정상 변동인지' 판정)를 강화학습으로 흉내 내 뚫었다. Kolli 는 CIR 특징에 얹은 신경망 판정기가 적대적 섭동에 무너짐을 보였다. **CS 의 NADM·TQI 도 정상 분포를 기준으로 걸러내는 같은 범주**인데, 학습형 공격에 대한 평가가 없다.",
+      "evidence": [
+        "zhang-2025-sadif",
+        "liu-2026-urey-ml",
+        "kolli-2024-keyfob-cir-adversarial",
+        "gou-2024-uwb-channel-reciprocity"
+      ],
+      "why_it_matters": "코퍼스의 CS 방어 제안은 대부분 채널 특징에 판정기를 얹는 형태로 간다. 그 판정기를 제안하면서 '이 판정기는 어떤 섭동에 무너지는가' 를 함께 평가하지 않으면, 방어를 더한 것이 아니라 공격 표면을 하나 더 만든 것이 된다.",
+      "research_idea": "CS 탐지기를 제안할 때 **적대적 평가를 기본 절차로** 포함시킨다 — 거리는 옮기되 지표는 정상 범위에 남기는 섭동을 목적함수로 탐색하고, 그 섭동이 무선계층에서 실현 가능한지(대역·타이밍 제약)를 함께 따진다. 실현 불가능하면 그것이 방어의 근거가 된다.",
+      "first_experiment": "실측 I/Q 위에서 정합도(또는 TQI 대용 지표)를 제약으로 두고 거리 이동을 최대화하는 τ(f) 를 탐색한다. 제약 아래에서 얻을 수 있는 최대 이동량이 곧 그 지표의 방어력 상한이다. trace-replay 로 가능하다.",
+      "novelty_risk": "적대적 예제 자체는 오래된 주제이고, 세 반증 모두 CS 가 아닌 인접 기술이다. 기여는 **CS 의 지표가 같은 범주에 속한다는 것을 구조적 논증이 아니라 실측으로 보이는 데** 있다. 그 전까지는 '그럴 것이다' 에 머문다 — 이 간극을 claim 에 그대로 적어 둔다.",
+      "difficulty": "medium",
+      "theme": "receiver-policy",
+      "status": "open",
+      "maturity": "hypothesis"
     }
   ],
   "reading_order": {
-    "note": "인용 그래프의 계보를 따라 읽는 순서. 앞의 것을 모르면 뒤의 것이 왜 그렇게 설계되었는지 안 보인다.",
+    "note": "인용 그래프의 계보를 따라 읽는 순서. 앞의 것을 모르면 뒤의 것이 왜 그렇게 설계되었는지 안 보인다. 1~2 번이 기준을 세우고, 3~6 번이 두 갈래(위상·시간)의 공격을 따라가며, 7 번이 방어의 형식, 8~9 번이 CS 로 내려온다.",
     "steps": [
       {
         "papers": [
-          "clulow-2006-long-symbols"
+          "ranganathan-2017-are-we-really-close"
         ],
-        "why": "긴 심볼이 왜 근본 문제인지. 이후 모든 공격의 출발점."
+        "why": "먼저 지형과 기준. 안전한 근접 증명의 세 요건(왕복 ToF·챌린지 응답·짧은 심볼)이 여기서 나온다. CS 가 어디서 걸리는지 미리 알고 나머지를 읽는다."
+      },
+      {
+        "papers": [
+          "clulow-2006-long-symbols",
+          "hancke-2008-tof-db-attacks"
+        ],
+        "why": "긴 심볼이 왜 근본 문제인지, 그리고 그 late-commit 이 개념이 아니라 상용 칩에서 성립한다는 실증(20~22 µs = 6.6 km). 이후 모든 공격의 출발점."
       },
       {
         "papers": [
           "olafsdottir-2017-carrier-phase"
         ],
-        "why": "CS의 PBR이 계승한 위상 거리측정이 원리적으로 취약한 이유. 세 가지 공격 유형이 여기서 정의된다."
+        "why": "CS 의 PBR 이 계승한 위상 거리측정이 원리적으로 취약한 이유. 세 가지 공격 유형이 여기서 정의된다."
       },
       {
         "papers": [
           "staat-2022-analog-relay"
         ],
-        "why": "그 취약점이 실제 차량과 스마트락에서 어떻게 성립하는지. CS가 RTT를 병행하는 이유."
+        "why": "그 취약점이 실제 차량과 스마트락에서 어떻게 성립하는지. CS 가 RTT 를 병행하는 이유."
+      },
+      {
+        "papers": [
+          "flury-2010-distance-decreasing",
+          "poturalski-2012-secure-precise-ir-uwb"
+        ],
+        "why": "시간 쪽 계보. ED/LC 의 정량적 한계와, 정밀도를 위해 첫 경로를 찾는 탐색 창이 그대로 공격 표면이 된다는 논증."
       },
       {
         "papers": [
           "leu-2022-ghost-peak",
           "anliker-2023-time-for-change"
         ],
-        "why": "경쟁 기술 UWB가 어떻게 깨졌는지. CS 보안성을 비교할 기준선이자, 성공률 평가 방식의 참고."
+        "why": "상용 UWB 칩에서의 실증 둘. 표준이 아니라 구현이 문제인가라는 논쟁이 여기서 시작된다."
       },
       {
         "papers": [
           "leu-2020-mtac",
-          "singh-2019-uwb-pr",
+          "boureanu-2015-practical-provable-db",
           "uwb-sv-2023-ccs"
         ],
-        "why": "방어 쪽 언어. 내가 방어를 제안할 때 보안성을 논증할 틀."
+        "why": "방어의 형식. 무엇을 증명해야 안전하다고 할 수 있는지, 그리고 상관 기반 검증이 왜 안전하지 않은지."
       },
       {
         "papers": [
           "anliker-2026-narrowband-toa"
         ],
-        "why": "현재 최전선. CS RTT를 직접 깬 유일한 논문이고 NADM 무력화까지 보였다. 내 연구의 직접 선행."
+        "why": "협대역 CS 로 내려온 공격. temporal masking 과 NGD 로 NADM 참조 지표 3종을 우회한다."
       },
       {
         "papers": [
           "wieme-2025-cs-commercial-hw",
+          "dzafic-2026-cs-orientation",
           "schex-2026-pawr-connectionless-cs"
         ],
-        "why": "성능 쪽 최신. 실측 baseline과 공개 데이터셋, 그리고 아직 보안 분석이 없는 확장 아키텍처."
+        "why": "상용 CS 의 실제 모습. 공개 I/Q 데이터셋, 자세만으로 흔들리는 보정과 무너지는 품질 지표, 그리고 보안 분석 없이 확장되는 아키텍처."
       }
     ]
   },
@@ -318,13 +421,13 @@
       "id": "feasibility",
       "title": "공격 실현가능성",
       "question": "어떤 공격자 위치, 대역폭, 동기화, 하드웨어가 있어야 성립하는가",
-      "summary": "식별불가능성이 성립해도 공격자가 실제로 그 조건을 만들 수 있어야 위협이 된다. 채널 추적, 대역 커버리지, 회로의 비이상성이 여기서 갈린다."
+      "summary": "식별불가능성이 성립해도 공격자가 실제로 그 조건을 만들 수 있어야 위협이 된다. 채널 추적, 대역 커버리지, 회로의 비이상성이 여기서 갈린다. 장비 제약도 여기 들어온다 — B210 은 RFNoC 미지원이라 실시간 릴레이 DSP 를 FPGA 에 못 얹고, 그러면 스푸핑이 DoS 로 강등된다."
     },
     {
       "id": "receiver-policy",
       "title": "수신기와 판정 정책",
       "question": "조작된 신호가 추정되고, 탐지를 통과하고, 최종적으로 수락되는가",
-      "summary": "거리값을 만드는 것과 시스템이 그것을 받아들이는 것은 다르다. 규격은 거리 계산 알고리즘을 정의하지 않지만 탐지 지표와 인증 시험은 직접 규정한다. 그 사이의 빈틈과 벤더 재량이 이 축이다."
+      "summary": "거리값을 만드는 것과 시스템이 그것을 받아들이는 것은 다르다. 규격은 거리 계산 알고리즘을 정의하지 않지만 탐지 지표와 인증 시험은 직접 규정한다. 그 사이의 빈틈과 벤더 재량이 이 축이다. 2026 년 실측이 전제를 하나 바꿨다 — 상용 스택의 품질 지표는 **공격이 없는 정상 측정에서도** 실내 참양성률이 5.2~33.4 % 다. 탐지를 논하기 전에 여유가 있는지부터 물어야 한다."
     },
     {
       "id": "system-composition",
@@ -409,119 +512,6 @@
   ],
   "todos": [
     {
-      "id": "todo-rtt-dataset",
-      "theme": "identifiability",
-      "insight": "dual-defense-not-independent",
-      "priority": 2,
-      "status": "todo",
-      "title": "CS 보드로 RTT(mode 1 또는 3) 데이터 수집",
-      "why": "exp-flat-delay 의 RTT 쪽이 전부 해석적 계산이다. 공개 데이터셋에 RTT step 이 없다(Wieme 설정이 mode 2 159개 + mode 0 1개). 이것이 4차 결론의 유일한 미검증 부분이다.",
-      "needs": "CS 지원 보드 2장",
-      "effort": "중",
-      "bonus": "현재 공개된 CS 데이터셋에 RTT 가 없으므로 데이터 공개 자체로도 기여가 된다."
-    },
-    {
-      "id": "todo-step-timing",
-      "theme": "feasibility",
-      "insight": "fhss-tracking-is-the-real-barrier",
-      "priority": 3,
-      "status": "todo",
-      "title": "CS step 지속시간과 간격 확인",
-      "why": "FHSS 추적에 허용되는 시간 예산을 계산하려면 이 값이 필요하다. todo-fhss-poc 의 전제다.",
-      "needs": "보드 SDK 문서 또는 MATLAB Bluetooth Toolbox (규격 원문은 회원 전용)",
-      "effort": "소"
-    },
-    {
-      "id": "todo-fhss-poc",
-      "theme": "feasibility",
-      "insight": "fhss-tracking-is-the-real-barrier",
-      "priority": 4,
-      "status": "todo",
-      "title": "B210 으로 FHSS 추적 실현 가능성 실측",
-      "why": "CS 를 실제로 지키는 것이 이것인데 아무도 실증하지 않았다. Anliker 2026 이 범위 밖으로 명시했다. 필요한 능력은 step 채널 실시간 검출, step 간격 안의 LO 재조정, 지연 경로 통과 세 가지다.",
-      "needs": "USRP B210, todo-step-timing 선행",
-      "effort": "대",
-      "bonus": "지연 경로는 NGD 회로 없이 B210 에서 디지털로 임의 tau(f) 를 걸 수 있다."
-    },
-    {
-      "id": "todo-ngd-response",
-      "theme": "feasibility",
-      "insight": "fhss-tracking-is-the-real-barrier",
-      "priority": 5,
-      "status": "todo",
-      "title": "NGD 응답을 Anliker Figure 10 실측값으로 교체",
-      "why": "exp-dispersive 는 로렌츠형 1차 근사를 쓴다. 실제 응답이 다르면 붕괴 임계가 달라진다.",
-      "needs": "Anliker 2026 Figure 10 (전문 확보 완료)",
-      "effort": "소"
-    },
-    {
-      "id": "todo-estimator-family",
-      "theme": "receiver-policy",
-      "insight": "spec-vs-implementation-debate",
-      "priority": 7,
-      "status": "done",
-      "title": "추정기 계열별로 공격 내성 재측정",
-      "why": "완료(exp-estimator-threshold). 정합필터·IFFT·MUSIC 세 추정기 모두 커버리지 0.5 에서 전환되어 문턱이 바뀌지 않았다. 초해상도 추정기도 부분 커버리지 공격을 막지 못한다. '적절한 수신기면 막힌다' 는 반론이 이 세 계열에 한해 성립하지 않음을 보였다. earliest-path 등 다른 판정정책은 미검증으로 남김.",
-      "needs": "Wieme 데이터셋 (확보 완료), MUSIC/FFT/MVDR 구현",
-      "effort": "중"
-    },
-    {
-      "id": "todo-core-spec",
-      "theme": "system-composition",
-      "insight": "cs-randomness-rests-on-pairing",
-      "priority": 8,
-      "status": "blocked",
-      "title": "Bluetooth Core Spec 확보",
-      "why": "두 인사이트의 병목이다. CS Security Start 의 키 유도 경로(cross-layer)와 PBR/RTT 비교 여부 및 허용오차(physical-manipulation)가 모두 여기 있다.",
-      "needs": "SIG 회원 접근 또는 기관 라이선스. 웹 공개본은 없음.",
-      "effort": "소",
-      "bonus": "대체 경로: MATLAB Bluetooth Toolbox 문서가 CS 절차를 상당히 공개한다."
-    },
-    {
-      "id": "todo-pawr-sniff",
-      "theme": "system-composition",
-      "insight": "pawr-cs-security-void",
-      "priority": 9,
-      "status": "todo",
-      "title": "PAwR Assignment Matrix 가 평문인지 스니핑",
-      "why": "평문이면 공격자가 누가 언제 어느 채널에서 측정하는지 사전에 안다. Schex 2026 은 2026 년 5월 프리프린트라 아직 보안 분석이 없다.",
-      "needs": "nRF54L15 2장 + 스니퍼",
-      "effort": "중"
-    },
-    {
-      "id": "todo-enlargement-usecases",
-      "theme": "system-composition",
-      "insight": "distance-enlargement-blind-spot",
-      "priority": 10,
-      "status": "todo",
-      "title": "거리 확대가 무결성 문제가 되는 유스케이스 정리",
-      "why": "문헌 작업만으로 연구 성립 여부가 갈린다. 전부 가용성 문제로 귀결되면 왜 아무도 안 다뤘는지가 설명되고, 그것도 짧은 글이 된다.",
-      "needs": "CCC Digital Key, SIG CS 유스케이스 문서",
-      "effort": "소"
-    },
-    {
-      "id": "todo-marker-tradeoff",
-      "theme": "feasibility",
-      "insight": "sounding-sequence-backfires",
-      "priority": 11,
-      "status": "todo",
-      "title": "마커 밀도의 ED/LC 대 NGD 트레이드오프 곡선",
-      "why": "Anliker 2026 이 수치만 보고하고 상충 자체를 다루지 않았다. 규격 개선 제안에 직결된다.",
-      "needs": "MATLAB Bluetooth Toolbox",
-      "effort": "중"
-    },
-    {
-      "id": "todo-corpus-sweep",
-      "theme": "research-notes",
-      "insight": "field-concentrated-in-one-group",
-      "priority": 12,
-      "status": "todo",
-      "title": "USENIX Security 2026, CCS 2024~2025 프로시딩 훑기",
-      "why": "아직 안 훑은 구간이다. dblp 검색 API 경로가 뚫려 있다.",
-      "needs": "없음. 주간 자동 실행에 맡겨도 된다.",
-      "effort": "소"
-    },
-    {
       "id": "todo-joint-procedure",
       "theme": "identifiability",
       "insight": "dual-defense-not-independent",
@@ -534,15 +524,163 @@
       "bonus": "수락 여부까지 기록하면 '거리값 생성'과 '보안상 수락'을 분리할 수 있다."
     },
     {
+      "id": "todo-rtt-dataset",
+      "theme": "identifiability",
+      "insight": "dual-defense-not-independent",
+      "priority": 2,
+      "status": "todo",
+      "title": "CS 보드로 RTT(mode 1 또는 3) 데이터 수집",
+      "why": "exp-flat-delay 의 RTT 쪽이 전부 해석적 계산이다. 공개 데이터셋에 RTT step 이 없다(Wieme 설정이 mode 2 159개 + mode 0 1개). 이것이 4차 결론의 유일한 미검증 부분이다.",
+      "needs": "CS 지원 보드 2장",
+      "effort": "중",
+      "bonus": "현재 공개된 CS 데이터셋에 RTT 가 없으므로 데이터 공개 자체로도 기여가 된다."
+    },
+    {
       "id": "todo-coherence-roc",
       "theme": "receiver-policy",
       "insight": "spec-vs-implementation-debate",
-      "priority": 6,
+      "priority": 3,
       "status": "todo",
       "title": "정합도 탐지의 정상 LOS/NLOS ROC 곡선",
-      "why": "기준 0.949 대 공격 0.23~0.39 의 분리만으로는 방어가 아니다. 임계값에서 정상 측정이 얼마나 거부되는지를 함께 내야 한다. Wieme 데이터에 실내 NLOS 가 있으므로 하드웨어 없이 가능하다.",
+      "why": "기준 0.949 대 공격 0.23~0.39 의 분리만으로는 방어가 아니다. 임계값에서 정상 측정이 얼마나 거부되는지를 함께 내야 한다. Dzafic 2026 이 상용 스택의 품질 지표로 같은 것을 재서 실내 참양성률 5.2~33.4 % 를 보고했으므로, 우리 지표의 ROC 와 나란히 놓으면 바로 비교가 된다.",
       "needs": "Wieme 데이터셋 (확보 완료)",
       "effort": "소"
+    },
+    {
+      "id": "todo-tqi-headroom",
+      "theme": "receiver-policy",
+      "insight": "quality-gate-has-no-headroom",
+      "priority": 4,
+      "status": "todo",
+      "effort": "소",
+      "title": "Dzafic 공개 데이터셋으로 TQI 탐지 여유(headroom) 재기",
+      "why": "탐지기를 논하기 전에 정상과 이상 사이에 여유가 있는지부터 봐야 한다. 실내 참양성률 5.2~33.4 %·거짓양성 27 % 가 사실이면 그 위에 얹는 탐지는 무엇도 보장하지 못한다.",
+      "needs": "Dzafic 2026 공개 데이터셋 github.com/LENS-TUGraz/BLE-CS-Orientation-matters (19만 샘플, 두 벤더·세 환경·자세쌍 5종). 하드웨어 불필요. todo-coherence-roc 와 함께 처리",
+      "bonus": "정상 오차 분포를 얻으면 공격 주입 분포와 겹침을 같은 축에서 볼 수 있다"
+    },
+    {
+      "id": "todo-mte-injection",
+      "theme": "receiver-policy",
+      "insight": "precision-widens-attack-surface",
+      "priority": 5,
+      "status": "todo",
+      "effort": "소",
+      "title": "Mirrored Tone Exchange 와 기존 TWR 에 같은 군지연 주입해 비교",
+      "why": "C-07(정확도 개선은 보안 중립인가)이 untested 다. 정확도 논문은 보안 절을 안 두고 공격 논문은 규격 기본 구성만 때려서 이 칸이 비어 있다. 이동량이 같으면 음성 결과로도 쓸 수 있다.",
+      "needs": "Wieme 데이터셋(확보 완료), two_stage_attacker.py 의 주입 경로 재사용. 하드웨어 불필요"
+    },
+    {
+      "id": "todo-three-requirements",
+      "theme": "feasibility",
+      "insight": "three-requirements-never-recomputed",
+      "priority": 6,
+      "status": "todo",
+      "effort": "소",
+      "title": "근접 증명 세 요건을 CS 파라미터로 재계산해 표로",
+      "why": "'CS 가 안전한가' 의 기준이 2017 년에 이미 정리돼 있고 CS 는 그중 '짧은 심볼' 을 구조적으로 위반한다. 이 표 하나가 논문 도입부 그림이 된다. 문헌과 공개 파라미터만으로 초안이 나온다.",
+      "needs": "없음(문헌). 파형 길이 확인 단계에서만 MATLAB Bluetooth Toolbox",
+      "bonus": "Boshoff 2026 서베이가 같은 표를 담았는지 확인하면 신규성 판단이 같이 끝난다"
+    },
+    {
+      "id": "todo-step-timing",
+      "theme": "feasibility",
+      "insight": "fhss-tracking-is-the-real-barrier",
+      "priority": 7,
+      "status": "todo",
+      "title": "CS step 지속시간과 간격 확인",
+      "why": "FHSS 추적에 허용되는 시간 예산을 계산하려면 이 값이 필요하다. todo-fhss-poc 의 전제다.",
+      "needs": "보드 SDK 문서 또는 MATLAB Bluetooth Toolbox (규격 원문은 회원 전용)",
+      "effort": "소"
+    },
+    {
+      "id": "todo-ngd-response",
+      "theme": "feasibility",
+      "insight": "fhss-tracking-is-the-real-barrier",
+      "priority": 8,
+      "status": "todo",
+      "title": "NGD 응답을 Anliker Figure 10 실측값으로 교체",
+      "why": "exp-dispersive 는 로렌츠형 1차 근사를 쓴다. 실제 응답이 다르면 붕괴 임계가 달라진다.",
+      "needs": "Anliker 2026 Figure 10 (전문 확보 완료)",
+      "effort": "소"
+    },
+    {
+      "id": "todo-marker-tradeoff",
+      "theme": "feasibility",
+      "insight": "sounding-sequence-backfires",
+      "priority": 9,
+      "status": "todo",
+      "title": "마커 밀도의 ED/LC 대 NGD 트레이드오프 곡선",
+      "why": "Anliker 2026 이 수치만 보고하고 상충 자체를 다루지 않았다. 규격 개선 제안에 직결된다.",
+      "needs": "MATLAB Bluetooth Toolbox",
+      "effort": "중"
+    },
+    {
+      "id": "todo-fhss-poc",
+      "theme": "feasibility",
+      "insight": "fhss-tracking-is-the-real-barrier",
+      "priority": 10,
+      "status": "todo",
+      "title": "B210 으로 FHSS 추적 실현 가능성 실측",
+      "why": "CS 를 실제로 지키는 것이 이것인데 아무도 실증하지 않았다. Anliker 2026 이 범위 밖으로 명시했다. 다만 장비 제약이 하나 확정됐다 — B210 은 RFNoC 미지원이라 릴레이 DSP 가 호스트(수백 µs~ms)에서 돌아 step 처리 창을 넘길 공산이 크다. 넘으면 스푸핑이 아니라 DoS 로 강등되고, 그 경계값 자체가 결과다.",
+      "needs": "USRP B210, todo-step-timing 선행",
+      "effort": "대",
+      "bonus": "지연 경로는 NGD 회로 없이 B210 에서 디지털로 임의 tau(f) 를 걸 수 있다."
+    },
+    {
+      "id": "todo-pawr-sniff",
+      "theme": "system-composition",
+      "insight": "pawr-cs-security-void",
+      "priority": 11,
+      "status": "todo",
+      "title": "PAwR Assignment Matrix 가 평문인지 스니핑",
+      "why": "평문이면 공격자가 누가 언제 어느 채널에서 측정하는지 사전에 안다. Schex 2026 은 2026 년 5월 프리프린트라 아직 보안 분석이 없다.",
+      "needs": "nRF54L15 2장 + 스니퍼",
+      "effort": "중"
+    },
+    {
+      "id": "todo-enlargement-usecases",
+      "theme": "system-composition",
+      "insight": "distance-enlargement-blind-spot",
+      "priority": 12,
+      "status": "todo",
+      "title": "거리 확대가 무결성 문제가 되는 유스케이스 정리",
+      "why": "문헌 작업만으로 연구 성립 여부가 갈린다. 전부 가용성 문제로 귀결되면 왜 아무도 안 다뤘는지가 설명되고, 그것도 짧은 글이 된다.",
+      "needs": "CCC Digital Key, SIG CS 유스케이스 문서",
+      "effort": "소"
+    },
+    {
+      "id": "todo-corpus-sweep",
+      "theme": "research-notes",
+      "insight": "field-concentrated-in-one-group",
+      "priority": 13,
+      "status": "todo",
+      "title": "USENIX Security 2026, CCS 2024~2025 프로시딩 훑기",
+      "why": "아직 안 훑은 구간이다. dblp 검색 API 경로가 뚫려 있다.",
+      "needs": "없음. 주간 자동 실행에 맡겨도 된다.",
+      "effort": "소"
+    },
+    {
+      "id": "todo-core-spec",
+      "theme": "system-composition",
+      "insight": "cs-randomness-rests-on-pairing",
+      "priority": 14,
+      "status": "blocked",
+      "title": "Bluetooth Core Spec 확보",
+      "why": "두 인사이트의 병목이다. CS Security Start 의 키 유도 경로(cross-layer)와 PBR/RTT 비교 여부 및 허용오차(physical-manipulation)가 모두 여기 있다.",
+      "needs": "SIG 회원 접근 또는 기관 라이선스. 웹 공개본은 없음.",
+      "effort": "소",
+      "bonus": "대체 경로: MATLAB Bluetooth Toolbox 문서가 CS 절차를 상당히 공개한다."
+    },
+    {
+      "id": "todo-estimator-family",
+      "theme": "receiver-policy",
+      "insight": "spec-vs-implementation-debate",
+      "priority": 15,
+      "status": "done",
+      "title": "추정기 계열별로 공격 내성 재측정",
+      "why": "완료(exp-estimator-threshold). 정합필터·IFFT·MUSIC 세 추정기 모두 커버리지 0.5 에서 전환되어 문턱이 바뀌지 않았다. 초해상도 추정기도 부분 커버리지 공격을 막지 못한다. '적절한 수신기면 막힌다' 는 반론이 이 세 계열에 한해 성립하지 않음을 보였다. earliest-path 등 다른 판정정책은 미검증으로 남김.",
+      "needs": "Wieme 데이터셋 (확보 완료), MUSIC/FFT/MVDR 구현",
+      "effort": "중"
     }
   ]
 }
