@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-25",
-  "last_run": "2026-09-25",
+  "updated": "2026-09-26",
+  "last_run": "2026-09-26",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 971,
+  "citation_edges": 1002,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -453,7 +453,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-25",
+      "last_checked": "2026-09-26",
       "cites": [
         "flury-2010-distance-decreasing",
         "leu-2020-mtac",
@@ -463,7 +463,8 @@
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "poturalski-2012-secure-precise-ir-uwb",
         "vasisht-2016-chronos",
-        "guvenc-2005-threshold-toa"
+        "guvenc-2005-threshold-toa",
+        "compagno-2016-enlargement-attacks-uwb-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1668,7 +1669,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-25",
+      "last_checked": "2026-09-26",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -1681,7 +1682,8 @@
         "capkun-2005-secure-positioning",
         "vasisht-2016-chronos",
         "ranganathan-2017-are-we-really-close",
-        "kempke-2016-surepoint"
+        "kempke-2016-surepoint",
+        "taponecco-2014-overshadow-enlargement-4a"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -1747,7 +1749,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-25",
+      "last_checked": "2026-09-26",
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
@@ -1765,7 +1767,9 @@
         "neirynck-2016-alt-ds-twr",
         "hancke-2005-practical-relay-iso14443",
         "boureanu-2015-practical-provable-db",
-        "francis-2010-nfc-p2p-relay"
+        "francis-2010-nfc-p2p-relay",
+        "taponecco-2014-overshadow-enlargement-4a",
+        "compagno-2016-enlargement-attacks-uwb-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2000,13 +2004,15 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-25",
+      "last_checked": "2026-09-26",
       "cites": [
         "singh-2019-uwb-pr",
         "capkun-2005-secure-positioning",
         "vasisht-2016-chronos",
         "brands-1993-distance-bounding",
-        "kempke-2016-surepoint"
+        "kempke-2016-surepoint",
+        "taponecco-2014-overshadow-enlargement-4a",
+        "compagno-2016-enlargement-attacks-uwb-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4790,7 +4796,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-09-26",
       "cites": [
         "francillon-2011-pkes-relay",
         "leu-2020-mtac",
@@ -4804,7 +4810,8 @@
         "poturalski-2010-cicada-attack",
         "vasisht-2016-chronos",
         "ranganathan-2017-are-we-really-close",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "taponecco-2014-overshadow-enlargement-4a"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -13458,7 +13465,8 @@
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "singh-2019-uwb-pr",
         "singh-2019-uwb-ed",
-        "leu-2020-mtac"
+        "leu-2020-mtac",
+        "compagno-2016-enlargement-attacks-uwb-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -13479,7 +13487,7 @@
         }
       ],
       "added": "2026-09-23",
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-09-26"
     },
     {
       "id": "schwarzbach-2026-hymn-benchmark",
@@ -14456,6 +14464,346 @@
       ],
       "added": "2026-09-25",
       "last_checked": "2026-09-25"
+    },
+    {
+      "id": "zhang-2025-nearlink-omp-ranging",
+      "title": "A Low-Complexity Orthogonal Matching Pursuit Algorithm with Implicit Dictionary and Parabolic Interpolation for Ranging Estimation in NearLink Systems",
+      "authors": [
+        "Fengyun Zhang",
+        "Rui Wang",
+        "Lingzhi Xia",
+        "Jun Wu",
+        "Lifan Yin",
+        "Liguo Zhou",
+        "Changchun Ma"
+      ],
+      "venue": "IEEE ICICSP",
+      "venue_full": "2025 8th International Conference on Information Communication and Signal Processing (ICICSP), pp. 618–623, IEEE, 2025-09-19~21 (Xplore 색인 2026-01-21) — Tongji University / HiSilicon Technologies (Shanghai) / Hangzhou Yongxie Technology",
+      "tier": "other",
+      "category": "estimation",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11338470",
+      "preprint": null,
+      "doi": "10.1109/ICICSP66564.2025.11338470",
+      "topics": [
+        "nearlink",
+        "sparklink",
+        "phase-based-ranging",
+        "narrowband-ranging",
+        "mcpr",
+        "multipath-estimation",
+        "orthogonal-matching-pursuit",
+        "super-resolution",
+        "embedded-implementation",
+        "low-complexity"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "초록·참고문헌만 확인한 항목이다. NearLink(SparkLink, 화웨이 주도 근거리 무선)는 Bluetooth 가 아니지만 **CS 의 PBR 과 같은 협대역 다중반송파 위상 거리측정**을 쓰고, 이 논문의 참고문헌은 Pelka 2014·Zand 2019·Boer 2020·Shoudha 2022·Eriksson 2024 등 코퍼스의 BLE PBR 계보를 그대로 잇는다. 즉 BLE CS 와 같은 물리로, 같은 다중경로 문제를, 같은 초분해능(OMP) 접근으로 푸는 경쟁 규격의 실측이다. 내 연구에는 두 가지로 쓰인다. 첫째, CS 거리 추정기의 다중경로 편향을 다룰 때 NearLink 측 결과(다중경로 실내 RMSE 0.7 m)가 Bluetooth 외 협대역 PBR 의 비교 기준선이 된다. 둘째, OMP 한 반복 7 ms 를 MCU(BS21)에서 돌린 수치는 CS NADM·초분해능 추정기를 상용 칩에 넣을 때의 연산 예산을 가늠하는 참고값이다. 보안은 다루지 않으며, 무선 규격이 Bluetooth 가 아니므로 `other` 로 둔다.",
+      "summary": "NearLink 는 저전력 위상기반 거리측정 기술인데, 실내 다중경로가 위상 측정을 왜곡해 서브미터 정확도를 얻으려면 무거운 초분해능 알고리즘이 필요하다는 문제를 다룬다. 저자들은 사전(dictionary) 행렬을 저장하지 않고 지연 원자를 암묵적으로 생성하고, 희소도 제약을 실시간으로 조정해 지지집합 크기를 고르는 이중 최적화 OMP 를 제안한다. 거친 지연 추정은 3점 포물선 보간으로 정제하고, 원자–잔차 내적은 FFT 로 가속한다. NearLink BS21 마이크로컨트롤러에 구현해 OMP 한 반복이 약 7 ms 에 끝나고, 여러 다중경로 시나리오에서 RMSE 0.7 m 를 얻어 실시간 측위가 가능하다고 초록에 밝힌다(전문 미확보).",
+      "hardware": [
+        "NearLink BS21 마이크로컨트롤러 (초록 기준 — 보드·안테나·기준 측정계는 본문 미확인)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: OMP 1회 반복 ≈ 7 ms (BS21 MCU), 여러 다중경로 시나리오에서 RMSE 0.7 m — 시나리오 수·거리 범위·비교 기준선 미확인"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료(isOpenAccess false), arXiv·기관 판 없음 (2026-09-26); 실험 환경·대역폭·주파수 스텝·기준 측정계·기준선 알고리즘 미확인",
+        "보안·공격은 다루지 않음 — 관찰",
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(17건)을 코퍼스와 대조해 채움 — 본문은 미확보"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "pelka-2014-phase-multi-frequency",
+        "zand-2019-ble-pbr",
+        "boer-2020-pbr-multipath",
+        "shoudha-2022-reduced-complexity-ble-ranging",
+        "eriksson-2024-cs-multipath-poster"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "shoudha-2022-reduced-complexity-ble-ranging",
+          "type": "extends",
+          "note": "Shoudha 의 저복잡도 BLE 다중경로 거리측정을 인용하며, 같은 문제(MCU 에서 돌아가는 초분해능 다중경로 거리 추정)를 NearLink 규격에서 OMP 로 푼다 — 초록·참고문헌 기준"
+        }
+      ],
+      "added": "2026-09-26",
+      "last_checked": "2026-09-26"
+    },
+    {
+      "id": "sayyaf-2026-resilient-ips-threats",
+      "title": "Resilient Indoor Positioning Systems: Understanding Threats and Learning Lessons from GNSS",
+      "authors": [
+        "Mohamad Issam Sayyaf",
+        "Ni Zhu",
+        "Valerie Renaudin"
+      ],
+      "venue": "IEEE I2MTC",
+      "venue_full": "2026 IEEE International Instrumentation and Measurement Technology Conference (I2MTC), pp. 1–6, IEEE, 2026-05-25~28 (Xplore 색인 2026-09-25) — AME-GEOLOC, Université Gustave Eiffel (Bouguenais, France)",
+      "tier": "other",
+      "category": "survey",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11694981",
+      "preprint": null,
+      "doi": "10.1109/I2MTC66907.2026.11694981",
+      "topics": [
+        "indoor-positioning-security",
+        "threat-taxonomy",
+        "gnss-lessons",
+        "integrity-monitoring",
+        "raim",
+        "physical-layer-attacks",
+        "replay",
+        "jamming",
+        "spoofing",
+        "sensor-fusion"
+      ],
+      "tech": [
+        "uwb",
+        "wifi",
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "초록·참고문헌만 확인한 항목이다. 실내 측위 시스템(IPS) 의 위협을 데이터 계층(위장·재생·DoS)과 물리 계층(신호 위조·수동 센싱·시간 조작·재밍)으로 나눈 분류표를 만들고, GNSS 가 수십 년간 쌓은 방어(암호 보호·프라이버시 보존 위치 처리·**측정 영역 무결성 감시(RAIM)**·군중 소싱 간섭 인지·무결성 기반 센서 융합) 가운데 무엇이 실내로 옮겨졌고 무엇이 비어 있는지를 짚는다. 참고문헌은 Ghost Peak·Time for Change·UWB-PR·Stocker 등 코퍼스의 UWB 공격 계보를 인용한다. 내 연구에는 수신기 판정 정책 축의 어휘로 쓰인다 — CS 의 NADM 이 하려는 일은 GNSS 용어로 \"측정 영역 무결성 감시\" 이고, 저자들이 IPS 에서 \"거의 탐색되지 않았다\" 고 적은 항목이 바로 그것이다. CS 조작 탐지 연구가 GNSS 의 RAIM·보호수준(protection level) 프레임을 빌릴 수 있는지, 또 CS 를 다른 센서와 융합할 때 무결성 지표를 어떻게 정의할지의 출발점이 된다. 전문 미확보라 판단 레이어에는 쓰지 않는다.",
+      "summary": "쇼핑몰·병원·공항처럼 GNSS 가 안 되는 곳에서 IPS 가 중요해지지만 다양한 보안 공격에 취약하다는 문제의식에서 출발한다. 1부는 IPS 보안 위협을 데이터 계층(위장·재생·DoS)과 물리 계층(신호 위조·수동 센싱·시간 조작·재밍) 두 층으로 나눈 분류표를 제시한다. 2부는 GNSS 보호 기법이 IPS 로 어떻게 옮겨지는지를 살펴, 암호 보호와 프라이버시 보존 위치 처리는 이미 실내에 채택됐지만 측정 영역 무결성 감시·군중 소싱 간섭 인지·무결성 기반 센서 융합은 IPS 에서 거의 탐색되지 않았다고 지적하고, 이를 향후 연구 방향으로 제시한다(초록 기준, 전문 미확보). 참고문헌 30건에는 UWB 물리계층 공격(Ghost Peak·Time for Change·UWB-PR), UWB Sybil·ACK 공격, BLE 비콘·Wi-Fi 지문 적대적 공격, 5G 측위 PRS 스푸핑, LoRaWAN 타임스탬프 공격이 포함된다.",
+      "hardware": [
+        "해당 없음 — 서베이·분류 논문 (초록 기준)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "해당 없음 — 서베이·분류 논문 (초록 기준)"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: IPS 위협 2계층 분류표(데이터 계층 3종·물리 계층 4종), GNSS 방어 중 실내 채택된 것(암호 보호·프라이버시 보존 위치 처리) 과 미탐색 항목(측정 영역 무결성 감시·군중 소싱 간섭 인지·무결성 기반 센서 융합) 식별 — 정량 결과 없음"
+      ],
+      "limitations": [
+        "전문 미확보 — IEEE Xplore 유료(isOpenAccess false), HAL 에 미등재(저자의 2025 GNSS 위협 논문 hal-05374013 만 있고 파일 없음) (2026-09-26)",
+        "6쪽 학회 논문이라 분류표의 깊이·Bluetooth CS 언급 여부 미확인 — 관찰",
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(30건)을 코퍼스와 대조해 채움 — 본문은 미확보"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "stocker-2020-secure-scalable-uwb",
+        "anliker-2023-time-for-change",
+        "leu-2022-ghost-peak",
+        "singh-2019-uwb-pr",
+        "compagno-2016-enlargement-attacks-uwb-db"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-26",
+      "last_checked": "2026-09-26"
+    },
+    {
+      "id": "taponecco-2014-overshadow-enlargement-4a",
+      "title": "On the Feasibility of Overshadow Enlargement Attack on IEEE 802.15.4a Distance Bounding",
+      "authors": [
+        "Lorenzo Taponecco",
+        "Pericle Perazzo",
+        "Antonio A. D'Amico",
+        "Gianluca Dini"
+      ],
+      "venue": "IEEE Communications Letters",
+      "venue_full": "IEEE Communications Letters, vol. 18, no. 2, pp. 257–260, February 2014 — University of Pisa, Department of Information Engineering",
+      "tier": "journal",
+      "category": "analysis",
+      "year": 2014,
+      "url": "https://doi.org/10.1109/LCOMM.2013.112513.132156",
+      "preprint": "https://www.iet.unipi.it/p.perazzo/research/2014%20-%20On%20the%20Feasibility%20of%20Overshadow%20Enlargement%20Attack%20on%20IEEE%20802.15.4a%20Distance%20Bounding.pdf",
+      "doi": "10.1109/LCOMM.2013.112513.132156",
+      "topics": [
+        "distance-enlargement",
+        "overshadow-attack",
+        "distance-bounding",
+        "ieee-802-15-4a",
+        "toa-estimation",
+        "threshold-detection",
+        "leading-edge",
+        "non-coherent-receiver",
+        "simulation",
+        "secure-positioning"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "거리 **연장**(enlargement) 공격이 거리 축소만큼 쉽지 않다는 것을 물리계층에서 처음 정량화한 서한이다. 공격자가 정당 패킷을 지연 T 만큼 늦추고 더 센 전력으로 겹쳐 보내는 overshadow 전략이 \"문헌에서 당연히 가능하다고 여겨졌지만\"(Čapkun–Hubaux 2006), 실제 임계값 기반 첫 경로 탐색(highest-peak → jump-back → 임계값 교차)에서는 지연이 jump-back 창 안에 떨어지면 효과 없음, 채널 분산 구간에 떨어지면 통제 불가, 그 뒤에만 통제 가능이라 통제 가능 확률이 최대 18 % 에 그친다. 내 연구에는 두 가지로 쓰인다. 첫째, CS RTT 의 ToA 추정도 상관 피크 뒤 첫 경로 탐색(back-search)을 쓰므로 같은 \"지연 위치에 따른 세 경우\" 분석을 CS 의 SYNC 상관에 그대로 옮길 수 있다 — Anliker 2026 의 협대역 ToA 공격이 축소 쪽이라면, 이 논문은 연장 쪽의 짝이다. 둘째, 연장이 통제 불가로 튀는 경우(case 2, MAE 7.8 m)는 공격자에게는 실패지만 수신기에는 \"정당한 다중경로처럼 보이는 이상치\"라, NADM 이 연장 조작을 어떤 근거로 걸러야 하는지를 묻는 출발점이 된다. 후속 TIFS 2016(compagno-2016)이 이 세 경우를 확률 모델로 일반화했다.",
+      "summary": "거리 바운딩 프로토콜은 거리 축소에 저항하도록 설계됐지만, 안전한 삼변측량에는 연장 공격 저항도 필요하다. 이 서한은 IEEE 802.15.4a UWB 위에서 TWR 기반 거리 바운딩(REQ/ACK/SGN)에 대한 overshadow 연장 공격 — 정당 패킷을 지연 T 와 더 큰 전력으로 재전송해 수신기가 지연된 사본에 \"걸리게\" 하는 전략 — 의 실현 가능성을 분석한다. 프레임 검출은 오히려 앞당겨질 뿐이고 SFD 검출 오류는 Tsym = 3968 ns 배수(595 m)라 응용 계층 임계값으로 걸러지므로, 공격이 파고들 수 있는 단계는 정밀 타이밍 획득뿐이다. 비동기 에너지 검출 수신기의 첫 경로 탐색(최대 피크 → back 만큼 되돌아가 임계값 교차 탐색)을 기준으로, 지연 T 가 [0, S] 이면 효과 없음(case 1), (S, S+h] 이면 정당 신호의 비첫 펄스가 잡혀 통제 불가(case 2), (S+h, Tpr) 이면 악성 펄스가 첫 경로로 잡혀 통제 가능(case 3)임을 보인다. CM1 주거 채널·Es/N0 = 30 dB 시뮬레이션에서 case 2 의 연장 오차 MAE 는 7.79 m(일반 공격자)/8.52 m(근접 공격자), case 3 은 0.15/0.14 m 이고, 통제 가능(case 3) 확률은 목표 연장 D 의 많은 값에서 0 이며 D = Tpr·c/2 = 19.2 m 에서 최대 18 % 다. 강한 LoS 성분을 가진 근접 공격자도 이 확률을 높이지 못한다.",
+      "hardware": [
+        "없음 — 시뮬레이션 전용(IEEE 802.15.4a 신호 모델 + Molisch CM1 주거 채널 모델, D'Amico–Mengali–Taponecco 2010 의 비동기 에너지 검출 ToA 추정기)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자체 물리계층 시뮬레이션(도구·언어 미기재; 신호 파라미터는 D'Amico 2010 [9] 설정)"
+      ],
+      "software_verified": true,
+      "results": [
+        "공격 가능 단계는 정밀 타이밍 획득뿐 — 프레임 검출은 앞당겨지기만 하고, SFD 오검출은 Tsym = 3968 ns = 595 m 배수라 임계값으로 배제",
+        "지연 T 에 따른 세 경우: [0, S] 효과 없음 / (S, S+h] 통제 불가 연장 / (S+h, Tpr) 통제 가능 연장 (S = back − pf, h = 채널 시간 분산)",
+        "CM1·Es/N0 = 30 dB: case 2 MAE 7.79 m(일반)/8.52 m(근접 LoS 공격자), case 3 MAE 0.15/0.14 m",
+        "통제 가능 확률은 목표 연장 D 의 많은 값에서 0, 최대 18 % (D = Tpr·c/2 = 19.2 m); 근접 공격자도 증가 없음",
+        "재밍은 무의미 — 프레임 검출은 에너지 임계값이라 시작을 막지 못하고 ToA 를 무작위로만 흔든다"
+      ],
+      "limitations": [
+        "시뮬레이션만 — 실제 802.15.4a 칩·수신기 구현 없음",
+        "단일 ToA 추정기(에너지 검출 + 임계값 첫 경로 탐색)·단일 채널 모델(CM1)·단일 SNR(30 dB) — 저자는 다른 임계값 기반 알고리즘에도 결론이 유효하다고 주장하나 검증은 없음",
+        "공격자가 검증자와 동기화되고 P·V 위치를 정확히 안다는 비관적 가정",
+        "T < Tpr 만 상세 분석, T ≥ Tpr 은 \"유사하게 다룰 수 있다\" 로만 언급",
+        "신호 소거(annihilation) 연장 공격은 고려하지 않음 — 이후 Singh 2019 UWB-ED 가 이 빈틈을 짚음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "poturalski-2011-db-802-15-4a",
+        "capkun-2006-secure-positioning-jsac",
+        "clulow-2006-long-symbols",
+        "poturalski-2010-cicada-attack"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "capkun-2006-secure-positioning-jsac",
+          "type": "contradicts",
+          "note": "Čapkun–Hubaux 가 가능하다고 전제한 overshadow 연장이 802.15.4a 임계값 ToA 추정기에서는 대부분 효과 없거나 통제 불가(통제 가능 최대 18 %)임을 보임"
+        },
+        {
+          "to": "poturalski-2011-db-802-15-4a",
+          "type": "complementary",
+          "note": "Poturalski 가 802.15.4a 거리 바운딩의 축소 공격을 다뤘다면, 이 서한은 같은 규격의 연장 공격을 다룸"
+        },
+        {
+          "to": "ieee-802-15-4z",
+          "type": "applies-to",
+          "note": "분석 대상은 4z 이전의 802.15.4a 비동기 에너지 검출 수신기 — 4z HRP 의 STS·코히어런트 수신에는 그대로 옮길 수 없음(가설)"
+        }
+      ],
+      "added": "2026-09-26",
+      "last_checked": "2026-09-26"
+    },
+    {
+      "id": "compagno-2016-enlargement-attacks-uwb-db",
+      "title": "Modeling Enlargement Attacks Against UWB Distance Bounding Protocols",
+      "authors": [
+        "Alberto Compagno",
+        "Mauro Conti",
+        "Antonio A. D'Amico",
+        "Gianluca Dini",
+        "Pericle Perazzo",
+        "Lorenzo Taponecco"
+      ],
+      "venue": "IEEE TIFS",
+      "venue_full": "IEEE Transactions on Information Forensics and Security, vol. 11, no. 7, pp. 1565–1577, July 2016 — Sapienza University of Rome / University of Padova / University of Pisa",
+      "tier": "journal",
+      "category": "analysis",
+      "year": 2016,
+      "url": "https://ieeexplore.ieee.org/document/7432025",
+      "preprint": "https://www.iet.unipi.it/p.perazzo/research/2016%20-%20Modeling%20Enlargement%20Attacks%20Against%20UWB%20Distance%20Bounding%20Protocols.pdf",
+      "doi": "10.1109/TIFS.2016.2541613",
+      "topics": [
+        "distance-enlargement",
+        "overshadow-attack",
+        "distance-bounding",
+        "ieee-802-15-4a",
+        "toa-estimation",
+        "probabilistic-model",
+        "jump-back-search-forward",
+        "search-back",
+        "non-coherent-receiver",
+        "simulation",
+        "matlab-tool",
+        "secure-positioning"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "Taponecco 2014 서한의 \"세 경우\" 분석을 **공격 결과 지연의 확률밀도 모델**로 일반화하고, 이를 MATLAB 도구로 공개한 논문이다. 핵심 결과는 공격자가 원하는 연장(δobj)을 ±0.5 ns 안에서 얻을 확률 Pctrl 이 δobj 가 펄스 반복 주기 Tpr = 128 ns 의 배수 근처일 때만 0.9 에 이르고 그 사이에서는 0 근처까지 떨어진다는 것(JBSF), 그리고 search-back 수신기는 배수 직전 구간에서만 통제 가능하다는 것이다 — 즉 **연장 공격의 통제 가능성은 ToA 추정기 구조와 프리앰블 주기성이 결정한다.** 내 연구에는 세 가지로 쓰인다. 첫째, CS RTT 의 SYNC 상관 피크 탐색(back-search)에 같은 모델(case 1·2·3 혼합 pdf)을 세울 수 있어, CS 연장 공격의 통제 가능 지연 집합을 해석적으로 예측하는 틀이 된다. 둘째, \"확률 모델이 물리계층 시뮬레이션을 대체할 만큼 정확하다\"(로그우도·Pctrl 일치)는 방법론은 CS 공격 시뮬레이션의 비용을 줄이는 선례다. 셋째, 4a 기준의 결과라 4z STS·CS 의 무작위 SYNC 에서 프리앰블 주기성이 사라지면 Pctrl 봉우리 자체가 없어지는지가 열린 질문으로 남는다. 코퍼스에서 Singh UWB-ED·UWB-SV·Stocker·Sayyaf 가 인용하는 연장 공격의 기준 문헌이다.",
+      "summary": "외부 공격자의 overshadow 연장 공격 — 정당 패킷을 지연 Δovrs 와 더 큰 SNR(SNRm > SNRh)로 재생해 수신기가 악성 사본을 최단 경로로 착각하게 하는 공격 — 이 IEEE 802.15.4a 거리 바운딩(REQ/ACK/AUTH)에서 어떤 결과 지연 δout 을 내는지를 확률 모델로 기술한다. 대상은 비동기 에너지 검출 수신기의 두 고전 ToA 추정기, jump-back search-forward(JBSF)와 search-back(SB)이다. 공격 결과는 채널에 따라 세 경우로 갈린다: 정당 첫 펄스(또는 Tpr 주기 복제)가 잡히는 case 1(효과 없음), 정당 신호의 비첫 펄스가 잡히는 case 2(통제 불가), 악성 펄스가 잡히는 case 3(통제 가능). 저자들은 세 경우의 기본 pdf(case 1 은 Sharp–Yu ToA 오차 pdf 의 표본화판, case 2 는 계단형, case 3 은 이동된 Sharp–Yu)를 혼합해 δout 의 합성 pdf 를 만들고, CM1(주거)·CM3(사무실) 채널에서 각 파라미터를 지연 1–384 ns(= 3Tpr)·SNRh 20–50 dB 격자마다 10,000 회 신호 수준 시뮬레이션에 최대 로그우도로 맞췄다. 모델은 가우시안·균등 기준 모델보다 로그우도가 높고, 공격자 통제 확률 Pctrl(δobj 를 ±0.5 ns 안에 맞출 최대 확률)이 표본과 일치한다. 결과 지연은 Tpr = 128 ns 배수 근처에서만 통제 가능(JBSF Pctrl ≈ 0.9 at δobj ≈ 0·128·256 ns, 그 사이 0.65 → 0 으로 하강; SB 는 배수 직전 구간에서만 0 → 0.9 상승)이고, 저자들은 이 모델을 구현한 MATLAB 도구를 공개했다.",
+      "hardware": [
+        "없음 — 시뮬레이션 전용(IEEE 802.15.4a SHR 신호 모델: NSYNC = 1024, Tsym = 3968 ns, Kpbs = 31, Tpr = 128 ns; Molisch 표준 채널 모델 CM1·CM3; D'Amico–Mengali–Taponecco 2010 의 JBSF·SB 에너지 검출 ToA 추정기)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB — 저자 공개 OvershadowingSimulator(모델 기반 공격/비공격 ToA 결과 생성기, CM1·CM3 파라미터 포함)",
+        "신호 수준 물리계층 시뮬레이션(파라미터 적합·검증용, 격자점당 10,000 표본)"
+      ],
+      "software_verified": true,
+      "results": [
+        "모델 유효 범위: SNRh ∈ [20, 50] dB, SNRm ∈ (SNRh, 51] dB, Δovrs ∈ (0, 384 ns = 3Tpr]",
+        "case 1 의 δout 은 비공격 ToA 오차와 같아 SNRh 만의 함수(Sharp–Yu pdf, Tpr 이후 복제는 SNRh − 6.0 dB 등가); case 3 의 이동량 Tshft 는 SNRm 만의 함수(0.1–0.6 ns); case 확률 a1·a2·a3 는 SNRh·Δovrs 의 함수이고 SNRm 에는 무관(SNRm > SNRh 인 한)",
+        "로그우도: 제안 모델이 가우시안·균등 모델보다 CM1·CM3, JBSF·SB 전부에서 높음(SNRh = 30 dB)",
+        "Pctrl(δa = 0.5 ns, SNRm = 30 dB, CM1): JBSF 는 δobj ≈ 0·128·256 ns 에서 ≈ 0.9, 그 뒤 ≈ 0.65 평탄 후 128 ns 직전 ≈ 0 까지 하강; SB 는 각 주기 앞 ~96 ns 구간에서 ≈ 0 이다가 배수 직전 ≈ 0.9 로 상승 — CM3 도 같은 모양(SB 봉우리 ≈ 0.75)",
+        "모델이 표본 Pctrl 을 근접 추종 → 보안 평가에서 물리계층 시뮬레이션을 대체 가능"
+      ],
+      "limitations": [
+        "시뮬레이션·모델만 — 실제 UWB 하드웨어 실험 없음",
+        "고전 임계값 ToA 추정기(JBSF·SB)만 다루고 Poturalski 2012 의 보안 지향 ToA 추정기는 향후 과제로 남김",
+        "외부 공격자만 — 내부(부정직 프로버) 연장은 방어 불가로 전제",
+        "공격자가 P–V 거리·자기 위치를 정확히 알고 가우시안(단일 펄스) 채널로 피해 수신기에 닿는다고 가정",
+        "802.15.4a 비동기 수신기 기준 — 4z HRP STS·코히어런트 수신, CS 협대역 상관에는 재모델링 필요(관찰)",
+        "기본 pdf 의 형태는 시뮬레이션 히스토그램에 맞춘 경험적 설계"
+      ],
+      "artifacts": {
+        "code": "https://docenti.ing.unipi.it/g.dini/download/pubs/OvershadowingSimulator.zip",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "taponecco-2014-overshadow-enlargement-4a",
+        "poturalski-2011-db-802-15-4a",
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "boureanu-2015-practical-provable-db",
+        "clulow-2006-long-symbols",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "capkun-2006-secure-positioning-jsac"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "taponecco-2014-overshadow-enlargement-4a",
+          "type": "generalizes",
+          "note": "2014 서한의 세 경우 분석을 CM1·CM3, JBSF·SB, SNR·지연 전 범위의 확률 모델로 일반화하고 MATLAB 도구로 공개"
+        },
+        {
+          "to": "poturalski-2011-db-802-15-4a",
+          "type": "complementary",
+          "note": "Poturalski 의 축소 대응책은 페이로드 형식·복호에 관한 것이고 이 모델은 프리앰블 형식·ToA 추정기에 관한 것이라 직교 — 대응책 적용 후에도 모델 유효(본문 II절)"
+        },
+        {
+          "to": "poturalski-2012-secure-precise-ir-uwb",
+          "type": "extends",
+          "note": "Cicada 대응책으로 제안된 보안 지향 ToA 추정기가 축소 공격만 검증됐음을 지적하고, 고전 추정기에 대한 연장 공격을 모델화(보안 추정기는 향후 과제)"
+        },
+        {
+          "to": "ieee-802-15-4z",
+          "type": "applies-to",
+          "note": "4z 이전 802.15.4a 비동기 수신기 기준의 모델 — 4z STS 환경에서 프리앰블 주기성에 묶인 Pctrl 봉우리가 남는지는 미검증(가설)"
+        }
+      ],
+      "added": "2026-09-26",
+      "last_checked": "2026-09-26"
     }
   ]
 }
