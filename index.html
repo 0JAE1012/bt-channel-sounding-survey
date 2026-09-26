@@ -454,6 +454,45 @@
   #graph .g-node.tdim .g-label { opacity: 0; }
   #graph .g-edge.tdim { stroke-opacity: .05; }
 
+  /* 그래프 도구 줄: 검색 · 피인용 임계 · 경로 추적 */
+  .g-tools {
+    display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center;
+    margin-bottom: 10px; font-size: 12.5px; color: var(--fg-muted);
+  }
+  .g-tools label { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .g-tools input[type="search"] {
+    width: 230px; padding: 6px 10px; border: 1px solid var(--border-strong); border-radius: 8px;
+    background: var(--bg); color: var(--fg); font: inherit; font-size: 12.5px;
+  }
+  .g-tools input[type="search"]:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .g-tools input[type="range"] { width: 130px; accent-color: var(--accent); }
+  .g-tools .hit { font-family: var(--mono); font-size: 11.5px; color: var(--fg-faint); }
+  .g-tools .hit.none { color: var(--danger); }
+  .g-path-btn {
+    border: 1px solid var(--border-strong); background: var(--bg-raised); color: var(--fg-muted);
+    border-radius: 8px; padding: 5px 11px; font: inherit; font-size: 12.5px; cursor: pointer;
+  }
+  .g-path-btn[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .g-pathinfo {
+    margin-top: 10px; padding: 10px 13px; border-radius: 8px; background: var(--bg-sunken);
+    border: 1px solid var(--border); font-size: 12.5px; line-height: 1.75;
+  }
+  .g-pathinfo ol { margin: 6px 0 0; padding-left: 18px; }
+  .g-pathinfo a { color: var(--fg); }
+  /* 검색·임계로 걸러진 노드. 기술 필터(tdim)와 같은 밝기 규칙을 쓴다. */
+  #graph .g-node.fdim { opacity: .08; }
+  #graph .g-node.fdim .g-label { opacity: 0; }
+  #graph .g-edge.fdim { stroke-opacity: .04; }
+  /* 검색에 걸린 노드는 테두리를 굵게 해 확대 전에도 눈에 띄게 한다. */
+  #graph .g-node.hit circle { stroke-width: 4; }
+  #graph .g-node.hit .g-label { opacity: 1; font-weight: 640; }
+  /* 경로 추적 */
+  #graph .g-node.pathpick circle { stroke: var(--warn); stroke-width: 5; }
+  #graph .g-edge.onpath { stroke: var(--series-2); stroke-opacity: 1; stroke-width: 3; }
+  #graph .g-node.onpath circle { stroke-width: 4; }
+  #graph .g-node.onpath .g-label { opacity: 1; font-weight: 640; }
+  #graph.picking { cursor: crosshair; }
+
   .g-legend { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding: 10px 14px 2px; font-size: 12px; color: var(--fg-muted); }
   .g-legend span.k { display: inline-flex; align-items: center; gap: 6px; }
   .g-swatch { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
@@ -714,6 +753,17 @@
       접어 여러 줄로 놓습니다(가로축의 연도 순서는 그대로입니다).
     </p>
     <div class="filterrow" id="g-tech" style="margin-bottom:10px"></div>
+    <div class="g-tools">
+      <label>찾기
+        <input type="search" id="g-find" placeholder="제목 · 저자 · id" autocomplete="off">
+      </label>
+      <span class="hit" id="g-find-hit"></span>
+      <label>피인용 <span class="hit" id="g-deg-val">0</span> 이상
+        <input type="range" id="g-deg" min="0" max="10" step="1" value="0">
+      </label>
+      <button class="g-path-btn" id="g-path" type="button" aria-pressed="false">인용 경로 추적</button>
+      <span class="hit" id="g-path-hint"></span>
+    </div>
     <div class="graphwrap viz-root">
       <div class="graphscroll">
         <div class="g-zoom">
@@ -725,6 +775,7 @@
         <div class="g-hint">휠 확대 · 드래그 이동 · 더블클릭 맞춤</div>
       </div>
       <div class="g-legend" id="g-legend"></div>
+      <div class="g-pathinfo" id="g-pathinfo" hidden></div>
       <div class="g-note" id="g-note"></div>
     </div>
     <div class="resultline">
@@ -1682,6 +1733,10 @@
     if (graphBuilt) return;
     graphBuilt = true;
     const m = graphModel();
+    // 서베이가 끝나 데이터를 다시 읽으면 graphBuilt 가 풀려 여기가 다시 돈다.
+    // 그때 svg.addEventListener 를 또 걸면 휠·클릭·경로 선택이 두 번씩 처리된다.
+    // 빈 복제본으로 갈아끼워 이전 리스너를 통째로 버린다.
+    document.getElementById("graph").replaceWith(document.getElementById("graph").cloneNode(false));
     const svg = document.getElementById("graph");
     // 뷰포트는 고정 높이. 내용은 viewBox 로 확대·이동한다.
     svg.setAttribute("height", VIEW_H);
@@ -1776,24 +1831,43 @@
     // 노드 색은 학회 구분에 이미 배정돼 있어(팔레트 슬롯 1–3) 기술을 색으로 더 나눌 수 없다.
     // 그래서 선택한 기술만 남기고 나머지를 어둡게 죽인다. 인용선은 양끝이 모두 선택에
     // 들어야 살려둔다 — 그래야 '그 기술 안의 인용 구조'가 보인다.
+    // 세 조건(기술 칩 · 검색어 · 피인용 임계)을 함께 본다. 하나라도 걸리면 어둡게 죽인다.
+    // 인용선은 양끝이 모두 살아 있을 때만 남긴다 — 그래야 '그 안의 구조'가 보인다.
+    let findQ = "", degMin = 0;
+    const hay = (p) => `${p.title} ${(p.authors || []).join(" ")} ${p.id} ${p.venue}`.toLowerCase();
+
     function applyGraphTech() {
       const sel = state.gtech;
+      const q = findQ.trim().toLowerCase();
       const live = new Set();
+      let hits = 0;
       svg.querySelectorAll(".g-node").forEach((n) => {
+        const id = n.dataset.id;
+        const p = papers.find((x) => x.id === id);
         const ts = (n.dataset.tech || "").split(" ").filter(Boolean);
-        const on = !sel.size || ts.some((t) => sel.has(t));
-        n.classList.toggle("tdim", !on);
-        if (on) live.add(n.dataset.id);
+        const okTech = !sel.size || ts.some((t) => sel.has(t));
+        const okDeg = (m.inDeg.get(id) || 0) >= degMin;
+        const okFind = !q || (p && hay(p).includes(q));
+        if (q && okFind) hits++;
+        n.classList.toggle("tdim", !okTech);
+        n.classList.toggle("fdim", okTech && !(okDeg && okFind));
+        n.classList.toggle("hit", !!q && okFind && okTech && okDeg);
+        if (okTech && okDeg && okFind) live.add(id);
       });
       let shown = 0;
       svg.querySelectorAll(".g-edge").forEach((el) => {
-        const on = !sel.size || (live.has(el.dataset.from) && live.has(el.dataset.to));
-        el.classList.toggle("tdim", !on);
+        const on = live.has(el.dataset.from) && live.has(el.dataset.to);
+        el.classList.toggle("tdim", !on && !!sel.size);
+        el.classList.toggle("fdim", !on && !sel.size);
         if (on) shown++;
       });
-      document.getElementById("g-stat").textContent = sel.size
+      const filtered = sel.size || degMin > 0 || q;
+      document.getElementById("g-stat").textContent = filtered
         ? `노드 ${live.size}개 · 인용 관계 ${shown}건 (전체 ${papers.length}개 · ${m.edges.length}건 중)`
         : `노드 ${papers.length}개 · 인용 관계 ${m.edges.length}건`;
+      const hitEl = document.getElementById("g-find-hit");
+      hitEl.textContent = q ? (hits ? `${hits}개 일치` : "일치 없음") : "";
+      hitEl.classList.toggle("none", !!q && !hits);
     }
     chipRow(document.getElementById("g-tech"), "기술", TECHS, state.gtech);
     // 그래프는 render()로 다시 그리지 않으므로 칩 클릭을 여기서 직접 받는다.
@@ -1806,6 +1880,127 @@
       applyGraphTech();
     };
     applyGraphTech();
+
+    // ---- 찾기 ----
+    // 입력할 때마다 걸러내고, Enter 를 누르면 첫 일치 노드로 화면을 옮긴다.
+    const findEl = document.getElementById("g-find");
+    findEl.value = "";
+    findEl.oninput = () => { findQ = findEl.value; applyGraphTech(); };
+    findEl.onkeydown = (e) => {
+      if (e.key !== "Enter") return;
+      e.preventDefault();
+      const q = findQ.trim().toLowerCase();
+      if (!q) return;
+      const hit = papers.filter((p) => hay(p).includes(q))
+        .sort((a, b) => (m.inDeg.get(b.id) || 0) - (m.inDeg.get(a.id) || 0))[0];
+      if (hit) centerOn(hit.id);
+    };
+
+    // ---- 피인용 임계 ----
+    // 767 개 인용선에서 계보의 뼈대만 남기고 싶을 때 쓴다.
+    const degEl = document.getElementById("g-deg");
+    degEl.max = String(Math.max(1, m.maxIn));
+    degEl.value = "0";
+    document.getElementById("g-deg-val").textContent = "0";
+    degEl.oninput = () => {
+      degMin = +degEl.value;
+      document.getElementById("g-deg-val").textContent = degEl.value;
+      applyGraphTech();
+    };
+
+    // ---- 인용 경로 추적 ----
+    // 논문 두 편을 고르면 그 사이의 인용 사슬을 찾아 표시한다.
+    // 인용은 새 논문 → 옛 논문 한 방향이므로 두 방향을 모두 시도한다.
+    const pathBtn = document.getElementById("g-path");
+    const pathInfo = document.getElementById("g-pathinfo");
+    const pathHint = document.getElementById("g-path-hint");
+    let picking = false, pickA = null;
+
+    const out = new Map();
+    m.edges.forEach((e) => {
+      if (!out.has(e.from)) out.set(e.from, []);
+      out.get(e.from).push(e.to);
+    });
+    function bfs(a, b) {
+      const prev = new Map([[a, null]]);
+      const q = [a];
+      while (q.length) {
+        const cur = q.shift();
+        if (cur === b) break;
+        for (const nx of out.get(cur) || []) if (!prev.has(nx)) { prev.set(nx, cur); q.push(nx); }
+      }
+      if (!prev.has(b)) return null;
+      const path = [];
+      for (let c = b; c !== null; c = prev.get(c)) path.push(c);
+      return path.reverse();
+    }
+
+    function clearPath() {
+      svg.querySelectorAll(".onpath, .pathpick").forEach((el) => el.classList.remove("onpath", "pathpick"));
+      pathInfo.hidden = true;
+    }
+    function showPath(a, b) {
+      let path = bfs(a, b), dir = "cites";
+      if (!path) { path = bfs(b, a); dir = "cited"; }
+      clearPath();
+      if (!path) {
+        pathInfo.hidden = false;
+        pathInfo.innerHTML = `<strong>인용 경로가 없습니다.</strong>
+          ${esc(REF_LABEL(a))} 와 ${esc(REF_LABEL(b))} 사이에는 이 코퍼스 안에서 확인된 인용 사슬이
+          없습니다. 전문을 못 구한 논문은 나가는 인용이 비어 있으므로(속 빈 원) 경로가 끊길 수 있습니다.`;
+        return;
+      }
+      const set = new Set(path);
+      path.forEach((id) => svg.querySelector(`.g-node[data-id="${id}"]`)?.classList.add("onpath"));
+      svg.querySelectorAll(".g-edge").forEach((el) => {
+        const i = path.indexOf(el.dataset.from);
+        if (i > -1 && path[i + 1] === el.dataset.to) el.classList.add("onpath");
+      });
+      pathInfo.hidden = false;
+      pathInfo.innerHTML = `<strong>${path.length - 1}단계 인용 사슬</strong>
+        <span class="ls-why">— ${dir === "cites" ? "위에서 아래로 인용합니다" : "고른 순서와 반대 방향입니다"}</span>
+        <ol>${path.map((id) => {
+          const inf = REF_INFO(id);
+          return `<li><a href="#${esc(id)}">${esc(inf.title)}</a>
+            <span class="lin-meta">${esc(REF_LABEL(id))} · ${esc(inf.meta)}</span></li>`;
+        }).join("")}</ol>`;
+      // 경로가 다 보이도록 화면을 맞춘다.
+      const xs = path.map((id) => m.pos.get(id)).filter(Boolean);
+      if (xs.length) {
+        const pad = 90;
+        const x0 = Math.min(...xs.map((v) => v.x)) - pad, x1 = Math.max(...xs.map((v) => v.x)) + pad;
+        const y0 = Math.min(...xs.map((v) => v.y)) - pad, y1 = Math.max(...xs.map((v) => v.y)) + pad;
+        cancelZoomTween();
+        view.w = clampW(Math.max(x1 - x0, (y1 - y0) / aspect()));
+        view.h = view.w * aspect();
+        view.x = (x0 + x1) / 2 - view.w / 2;
+        view.y = (y0 + y1) / 2 - view.h / 2;
+        applyView();
+      }
+    }
+
+    pathBtn.onclick = () => {
+      picking = !picking;
+      pickA = null;
+      pathBtn.setAttribute("aria-pressed", String(picking));
+      svg.classList.toggle("picking", picking);
+      pathHint.textContent = picking ? "시작 논문을 누르세요" : "";
+      if (!picking) clearPath();
+    };
+
+    // ---- 특정 노드로 화면 옮기기 ----
+    function centerOn(id, w) {
+      const q = m.pos.get(id);
+      if (!q) return;
+      cancelZoomTween();
+      view.w = clampW(w || Math.min(view.w, fitW() * 0.28));
+      view.h = view.w * aspect();
+      view.x = q.x - view.w / 2;
+      view.y = q.y - view.h / 2;
+      applyView();
+      const n = svg.querySelector(`.g-node[data-id="${id}"]`);
+      if (n) { n.classList.add("hit"); setTimeout(() => { if (!findQ.trim()) n.classList.remove("hit"); }, 2500); }
+    }
 
     // ---- 확대·축소·이동 ----
     // viewBox 를 직접 옮긴다. 화면 비율에 맞춰 h 를 w 에서 유도하므로
@@ -2014,7 +2209,24 @@
     svg.addEventListener("click", (e) => {
       if (moved > 4) return;   // 끌어서 옮긴 것은 클릭이 아니다
       const n = e.target.closest(".g-node") || pressed;
-      if (n) open(n.dataset.id);
+      if (!n) return;
+      if (picking) {
+        // 경로 추적 모드: 첫 클릭이 시작, 두 번째가 끝.
+        if (!pickA) {
+          pickA = n.dataset.id;
+          clearPath();
+          n.classList.add("pathpick");
+          pathHint.textContent = `${REF_LABEL(pickA)} → 도착 논문을 누르세요`;
+        } else if (pickA === n.dataset.id) {
+          pickA = null; clearPath(); pathHint.textContent = "시작 논문을 누르세요";
+        } else {
+          showPath(pickA, n.dataset.id);
+          pathHint.textContent = "다시 누르면 새 경로";
+          pickA = null;
+        }
+        return;
+      }
+      open(n.dataset.id);
     });
     svg.addEventListener("keydown", (e) => {
       const n = e.target.closest(".g-node");
