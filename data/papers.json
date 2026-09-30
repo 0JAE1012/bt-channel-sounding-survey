@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-29",
-  "last_run": "2026-09-29",
+  "updated": "2026-09-30",
+  "last_run": "2026-09-30",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1050,
+  "citation_edges": 1073,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -4878,7 +4878,7 @@
       },
       "verification": "verified",
       "added": "2026-08-17",
-      "last_checked": "2026-09-29",
+      "last_checked": "2026-09-30",
       "cites": [
         "anliker-2023-time-for-change",
         "flury-2010-distance-decreasing",
@@ -4890,7 +4890,8 @@
         "poturalski-2012-secure-precise-ir-uwb",
         "chen-2024-spoofing-evident-uwb-localization",
         "coppens-2022-uwb-standards-overview",
-        "singh-2021-eth-dissertation"
+        "singh-2021-eth-dissertation",
+        "botler-2021-hybrid-tof-rss-enlargement"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5610,7 +5611,8 @@
         "uwb-sv-2023-ccs",
         "chen-2024-spoofing-evident-uwb-localization",
         "coppens-2022-uwb-standards-overview",
-        "singh-2021-eth-dissertation"
+        "singh-2021-eth-dissertation",
+        "botler-2021-hybrid-tof-rss-enlargement"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5621,7 +5623,7 @@
         }
       ],
       "added": "2026-08-24",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-09-30"
     },
     {
       "id": "jangid-2026-association-privacy",
@@ -11413,7 +11415,7 @@
       },
       "verification": "verified",
       "added": "2026-09-12",
-      "last_checked": "2026-09-28",
+      "last_checked": "2026-09-30",
       "cites": [
         "leu-2022-ghost-peak",
         "singh-2019-uwb-ed",
@@ -11423,7 +11425,8 @@
         "capkun-2006-secure-positioning-jsac",
         "neirynck-2016-alt-ds-twr",
         "stocker-2020-secure-scalable-uwb",
-        "perazzo-2016-enlargement-miscontrol-detection"
+        "perazzo-2016-enlargement-miscontrol-detection",
+        "pestourie-2020-uwb-secure-ranging-thesis"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11818,7 +11821,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-14",
-      "last_checked": "2026-09-29",
+      "last_checked": "2026-09-30",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": []
@@ -12049,7 +12052,7 @@
       },
       "verification": "verified",
       "added": "2026-09-16",
-      "last_checked": "2026-09-23",
+      "last_checked": "2026-09-30",
       "cites": [
         "brands-1993-distance-bounding",
         "clulow-2006-long-symbols",
@@ -12061,7 +12064,8 @@
         "singh-2019-uwb-pr",
         "leu-2020-mtac",
         "schepers-2021-ftm-security",
-        "stocker-2020-secure-scalable-uwb"
+        "stocker-2020-secure-scalable-uwb",
+        "pestourie-2019-secureloc-ack-attack"
       ],
       "cites_source": "fulltext",
       "relations": []
@@ -15537,7 +15541,245 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-09-30"
+    },
+    {
+      "id": "pestourie-2019-secureloc-ack-attack",
+      "title": "Security Evaluation with an Indoor UWB Localization Open Platform: Acknowledgment Attack Case Study",
+      "authors": [
+        "Baptiste Pestourie",
+        "Vincent Beroulle",
+        "Nicolas Fourty"
+      ],
+      "venue": "IEEE PIMRC",
+      "venue_full": "2019 IEEE 30th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC), Istanbul, Sept. 2019, pp. 1–7",
+      "tier": "other",
+      "category": "attack",
+      "year": 2019,
+      "url": "https://ieeexplore.ieee.org/document/8904224",
+      "preprint": null,
+      "doi": "10.1109/PIMRC.2019.8904224",
+      "topics": [
+        "uwb",
+        "ieee-802-15-4a",
+        "spoofed-acknowledgment",
+        "two-way-ranging",
+        "open-platform",
+        "distance-reduction",
+        "distance-enlargement",
+        "indoor-positioning-security"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "low",
+      "relevance_note": "802.15.4a UWB 의 MAC 계층 취약점(무보호 ACK 프레임)을 이용한 스푸핑 ACK 공격을 상용 DWM1000 기반 개방 플랫폼(SecureLoc)에서 실증한 논문. CS 에는 ACK 기반 TWR 이 없어 공격 자체는 이식되지 않지만, '물리계층 공격(ED/LC)은 고비용·시뮬레이션뿐이고 저비용 MAC 공격이 현실적 위협' 이라는 2019년 위협 평가는 협대역 ToA 공격이 저비용으로 성립한 지금(anliker-2026)과 대비되는 기준점이며, 거리측정 체인 전 계층을 열어 둔 평가 플랫폼 구성은 CS 보안 테스트베드 설계의 참고가 된다.",
+      "summary": "IoT 실내 측위 시스템은 ToF·RSS 같은 물리량에 의존하므로 암호만으로는 보호되지 않는데, 상용 플랫폼은 프로토콜·필터·알고리즘을 닫아 두어 보안 평가가 어렵다. 저자들은 모든 계층이 열린 UWB-IR 측위 프로토타이핑 플랫폼 SecureLoc 을 제안하고, 스푸핑 ACK 공격을 사례로 공격의 새 분석·평가와 측위 체인의 내성 평가를 수행한다. 공격 강화 방향과 저비용 대응책의 단서를 제시한다(초록 기준). 저자 박사학위논문(pestourie-2020-uwb-secure-ranging-thesis) V.2 절이 이 분석의 확장판이다.",
+      "hardware": [
+        "SecureLoc 플랫폼(초록) — 구성 노드 모델은 본문 미확인; 학위논문에는 Decawino(Teensyduino 3 + DWM1000) + Raspberry Pi 3 로 기재"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: 스푸핑 ACK 공격의 새 분석·평가와 SecureLoc 측위 체인의 내성 평가 — 수치는 본문 미확인(학위논문 V.2: 응답시간 비결정성 때문에 현실적 거리 |Δd|<100 m 를 맞출 확률 25.9 %)"
+      ],
+      "limitations": [
+        "본문 미확보(IEEE 유료, HAL hal-02426131 은 서지만) — 초록과 Xplore 참고문헌 20건만 확인",
+        "관찰: 802.15.4a 기준이며 4z 의 암호화 프리앰블(STS)은 스푸핑 ACK 를 물리계층에서 막는다(학위논문 결론)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "flury-2010-distance-decreasing",
+        "taponecco-2014-overshadow-enlargement-4a",
+        "tippenhauer-2015-uwb-rapid-bit-exchange"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-30",
+      "last_checked": "2026-09-30"
+    },
+    {
+      "id": "pestourie-2020-uwb-secure-ranging-thesis",
+      "title": "UWB Secure Ranging and Localization",
+      "authors": [
+        "Baptiste Pestourie"
+      ],
+      "venue": "PhD Thesis Université Grenoble Alpes",
+      "venue_full": "Thèse de doctorat, Université Grenoble Alpes, Laboratoire LCIS (École doctorale EEATS), 2020-12-04 심사 (지도 Vincent Beroulle, 공동지도 Nicolas Fourty; 심사위원 Adrien Van den Bossche·Assia Tria 외) — HAL tel-03136561, 183쪽",
+      "tier": "thesis",
+      "category": "defense",
+      "year": 2020,
+      "url": "https://theses.hal.science/tel-03136561",
+      "preprint": "https://hal.science/tel-03136561/document",
+      "doi": null,
+      "topics": [
+        "uwb",
+        "ieee-802-15-4a",
+        "spoofed-acknowledgment",
+        "two-way-ranging",
+        "reply-time-randomization",
+        "system-level-detection",
+        "differential-ranging",
+        "cooperative-verification",
+        "clock-skew-authentication",
+        "puf",
+        "channel-based-key-extraction",
+        "distance-reduction",
+        "distance-enlargement",
+        "ebios-risk-analysis",
+        "thesis"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 에는 ACK 기반 TWR 이 없어 스푸핑 ACK 공격(SAA) 자체는 이식되지 않지만 세 가지가 CS 연구에 쓰인다. (1) 거리측정 프로토콜이 뚫려도 다중 앵커의 일관성(거리 σ ≤ 40 cm)·잔차(RD ≤ 50 cm)·차동 거리측정·협력 검증으로 시스템 수준에서 잡는다는 설계와 그 실측 임계값은, NADM 이 물리계층에서 놓친 조작을 CS 상위계층(RAP·다중 앵커)에서 잡는 검출 설계의 직접 참고다. (2) 응답시간 비결정성 실측(32.9 cm/ms)과 '응답시간을 의도적으로 무작위화해 암호 없이 MAC 공격을 막는' 대응은 CS RTT 의 고정 T_SY 타이밍이 공격자에게 주는 예측 가능성과 대비된다. (3) 저자가 ED/LC 등 물리계층 공격을 '시뮬레이션만·고비용·비현실적' 으로 분류한 2020년 위협 평가는 anliker-2026 의 저비용 협대역 ToA 공격 이후 뒤집힌 전제라, CS 위협모델을 쓸 때 '물리계층 공격 비용' 가정을 갱신해야 함을 보여 준다.",
+      "summary": "Grenoble LCIS 의 박사학위논문. 802.15.4a IR-UWB 실내 측위 시스템(IPS)의 보안을 P2P 거리측정이 아니라 다중 앵커 시스템 관점에서 다룬다. 모든 계층이 열린 평가 플랫폼 SecureLoc(Decawino = Teensyduino 3 + DWM1000, Raspberry Pi 3 호스트, MQTT)을 만들고 EBIOS 방법으로 802.15.4a 취약점의 심각도·가능성을 평가해, 고비용 물리계층 공격(ED/LC)보다 무보호 ACK 프레임을 노린 스푸핑 ACK 공격(SAA)이 IoT 에서 현실적 위협이라고 본다. SAA 는 응답시간 비결정성 때문에 현실적 거리를 맞출 확률이 25.9 % 에 그치지만, 예약 송신(scheduled ACK) 을 쓰는 응답기에는 오차 50 cm 이내로 거리를 통제하고 다변측위까지 탈취할 수 있음을 보인다. 대응으로 응답시간 무작위화(암호·프레임 변경 없음), 차동 거리측정(75 cm 위반 검출), 협력 검증 프로토콜(10 Hz·30 % 침해에서 평균 경보 0.98 s), 온도 자극 클럭스큐 PUF 인증(TPR 99.1 %·FPR 0.16 %), 첫경로전력 기반 키 추출(128-bit AES 키 1.1 s)을 제안하고 전부 SecureLoc 에서 실측한다.",
+      "hardware": [
+        "Decawino 노드: Teensyduino 3(96 MHz 오버클럭, UWB MAC L2 구현) + Decawave DWM1000 UWB 트랜시버(SPI 20 MHz) — IRIT Toulouse OpenWino 프레임워크 기반, 회로도 공개(wino.cc)",
+        "Raspberry Pi 3B+ 호스트(앵커를 USB 시리얼로 연결, SSH 로 Teensyduino 부트로더 플래시), MQTT 로 거리 데이터 수집·중앙 다변측위",
+        "플랫폼 규모: 앵커 4 + 이동 태그 6(협력 검증 실험은 물리 태그 8 + 가상 태그 12, 앵커 K = 20 가정), 1.8 × 4.8 m",
+        "DWM1000 타임스탬프 해상도 15.65 ps(124.88 MHz 시스템 클럭·8 ns 스텝 512 단위 증가), PRF 16/64 MHz, 프리앰블 128·641 심볼 실험",
+        "10쌍 Decawino 증명자/검증자 쌍(예약 송신 공격 정확도 실험), 12 태그 스큐 특성화(1.41~8.89 ppm)",
+        "상용 계측기 없음 — 오실로스코프·스펙트럼 분석기는 물리계층 공격 비용 논의에서만 언급"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Decaduino(DWM1000 API 라이브러리)·SecureLoc 소스 — GPL v3 배포 명시(URL 은 본문에 OpenWino wino.cc 만)",
+        "Arduino 프레임워크(Teensyduino), OpenWino 오픈 하드웨어·소프트웨어 프레임워크",
+        "측위 알고리즘 구현: 중심(CL)·가중중심(WCL)·Gauss-Newton·입자필터(백트래킹·포화 옵션), 슬라이딩 윈도 이상치 제거, 클럭스큐 보정(CRI 기반)",
+        "물리계층 공격(ED/LC 등) 재현용 시뮬레이션 계층(III.3.6) — 실제 물리계층 공격 구현은 없음",
+        "위험 평가: ANSSI EBIOS 방법론"
+      ],
+      "software_verified": true,
+      "results": [
+        "기준 성능(III.3): 정지 태그 거리 σ 18 cm(>10 cm), 슬라이딩 윈도 20샘플·제거율 60 % 후 평균 13.2 cm; 위치오차 4앵커 WCL 21.2 cm(맑은 환경), 포화 적용 18 cm, 입자필터 전체 필터 시 < 20 cm; 개별 칩 선형 보정 없으면 10 m 에서 ≥ 0.52 m 오차; 클럭스큐 10 ppm × 응답 1 ms = 1.75 m 오차, CRI 스큐 추정 σ 0.21 ppm 대 심볼길이 기반 0.8 ppm",
+        "응답시간 비결정성: 예약 송신 없는 응답기의 스케줄링 산포는 응답시간에 선형, TWR 거리 σ 32.9 cm/ms(최소 응답 230 µs → 7.6 cm)",
+        "스푸핑 ACK 공격(V.2): 수신전력 우위 +4 dB 에서 공격자 오버랩 93 %(정상 거리 7 %), −4 dB 에서 0 %; 거리 조작이 되어도 현실적 거리(|Δd| < MRD 100 m) 를 맞출 확률 25.9 %(1000회); 심볼주기 모듈로 거리 평균 2.13 m·σ 8.1 m; 시험 중 50.7 % 는 오버랩 실패로 정상 거리",
+        "예약 송신 응답기 공격(V.2.5): 10쌍 × 1000 샘플, 응답 1 ms — 목표 거리 대비 오차 < 50 cm, 거리·이동량과 무관 → 단일 악성 노드가 다변측위 결과를 탈취(hijack) 가능",
+        "대응 — 응답시간 무작위화(VI.1): Nmax ≤ 4 에서 공격 성공 100 %, Nmax 10 → 80 %, 수렴 50 %; 99 % 신뢰구간 검출의 평균 경보 시간이 Nmax 12 → 20 에서 107.3 → 8.5 TWR; Smax ≈ 10 ns, Tmod = Tsym(≈150 m) 권고",
+        "시스템 수준 검출 인자(VI.2): 링크 완전 붕괴에도 거리 σ ≤ 40 cm·평균 잔차 RD ≤ 50 cm 이므로 초과 시 공격 의심; 차동 거리측정(GMDRE) 은 75 cm 이상 위치 위반 검출(맑은 환경 25 cm)",
+        "협력 검증(VI.2): Vmin = 6(전체 20 의 30 %) 으로 오탐 < 0.01 %; 공격자 커버리지 < 20 % 에서 양호, 50 % 에서 FNR 58.7 %; 경보까지 8 로컬라이제이션(악성 1)~15.8(50 %); 10 Hz·30 % 커버리지에서 평균 0.98 s; 검증자 위치를 50~80 cm 이내로 예측하면 우회 가능; 고스트 앵커 오차 기준 29/42/63 cm(맑음/LOS 험지/NLOS)",
+        "클럭스큐 PUF 인증(VI.3): 6 태그 36 쌍, 온도 자극 — 외부온도 추정 오차 2 °C 에서 TPR 99.1 %·FPR 0.16 %(4~6 °C 에서 저하)",
+        "채널 기반 키 추출(VI.4, FPP): NLoS 동적 환경 σ 2.5~6 dBm, 클러스터 간격 > 6.5 ms 에서 무작위성 확보, 양자화 후 BER 1.4 %·116.4 bit/s → 128-bit AES 키 1.1 s"
+      ],
+      "limitations": [
+        "저자 명시: 인프라 중심 폐쇄 모델(앵커가 태그보다 신뢰됨)만 다루고 분산·노드 중심 모델은 향후 과제; 시스템 수준 대응은 노드 밀도·환경 복잡도에 의존해 대규모 검증 필요",
+        "저자 명시: 스큐 인증은 더 큰 노드 집단·복잡한 온도 조건 미검증, CBKE 는 완전 구현·인증 프로토콜 통합 미완; 공격 검출 후 실제 위치 복원은 미해결",
+        "저자 명시: 802.15.4a 기준 — 4z 의 AES 암호화 프리앰블(STS)은 스푸핑 ACK·정적 프리앰블 공격을 물리계층에서 막고 ED/LC 도 차단하므로 SAA 는 4z 에서 무력화되나, 암호 비용 때문에 무작위 응답시간이 경량 대안으로 남는다고 주장; 내부 공격자 대응은 4z 에 없음",
+        "저자 명시: ED/LC 등 물리계층 공격은 '시뮬레이션에서만 실증·고비용' 으로 평가하고 시뮬레이션 계층으로만 재현 — 2022 년 이후 Ghost Peak·협대역 ToA 공격이 저비용 실증된 뒤에는 이 위협 평가가 낡음",
+        "관찰: Bluetooth 는 RSSI IPS(정적 서브미터, 이동 1~3 m) 로 배경에서만 언급되고 CS·PBR 은 다루지 않음(2020)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "pestourie-2019-secureloc-ack-attack",
+        "singh-2019-uwb-ed",
+        "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "kuhn-2010-uwb-ir-db",
+        "vasisht-2016-chronos",
+        "brands-1993-distance-bounding",
+        "capkun-2006-secure-positioning-jsac",
+        "neirynck-2016-alt-ds-twr",
+        "hancke-2005-practical-relay-iso14443",
+        "compagno-2016-enlargement-attacks-uwb-db"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "pestourie-2019-secureloc-ack-attack",
+          "type": "extends",
+          "note": "V.2 절이 PIMRC 2019 의 스푸핑 ACK 분석([102])을 10쌍·1000샘플 실측, 예약 송신 응답기 공격(오차 < 50 cm), 다변측위 탈취로 확장하고 VI 장에서 대응책을 붙임"
+        },
+        {
+          "to": "ieee-802-15-4z",
+          "type": "applies-to",
+          "note": "결론에서 4z 의 AES 암호화 프리앰블이 스푸핑 ACK 를 물리계층에서 차단함을 인정하되, 무작위 응답시간이 암호 비용 없는 경량 대안으로 남는다고 논증(4z 초안 기준, 실측 없음)"
+        },
+        {
+          "to": "flury-2010-distance-decreasing",
+          "type": "complementary",
+          "note": "ED/LC 를 '시뮬레이션에서만 140 m·99 % 실증, 구현 없음' 으로 평가해 저비용 MAC 공격(SAA) 쪽으로 위협모델을 재배치 — 물리계층 공격 비용 가정이 정반대인 문헌"
+        }
+      ],
+      "added": "2026-09-30",
+      "last_checked": "2026-09-30"
+    },
+    {
+      "id": "botler-2021-hybrid-tof-rss-enlargement",
+      "title": "A UWB-Based Solution to the Distance Enlargement Fraud Using Hybrid ToF and RSS Measurements",
+      "authors": [
+        "Leo Botler",
+        "Konrad Diwold",
+        "Kay Römer"
+      ],
+      "venue": "IEEE MASS",
+      "venue_full": "2021 IEEE 18th International Conference on Mobile Ad Hoc and Smart Systems (MASS), Denver, CO, Oct. 2021, pp. 324–334",
+      "tier": "other",
+      "category": "defense",
+      "year": 2021,
+      "url": "https://ieeexplore.ieee.org/document/9637767",
+      "preprint": null,
+      "doi": "10.1109/MASS52906.2021.00049",
+      "topics": [
+        "uwb",
+        "distance-enlargement",
+        "distance-reduction",
+        "distance-fraud",
+        "rss-ranging",
+        "hybrid-tof-rss",
+        "feasibility-region",
+        "multi-anchor",
+        "distance-bounding"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "거리 연장 사기(enlargement fraud)는 ToF 만으로는 원리적으로 한계를 둘 수 없다는 점을 정면으로 다루고, ToF 와 RSS 가 각각 주는 위치 가능 영역(feasibility region)이 참 위치에서만 겹친다는 기하학으로 앵커 2개만으로 축소·연장 둘 다를 탐지한다. CS 는 PBR·RTT 두 거리 추정에 더해 RSSI 도 같은 패킷에서 나오므로, 서로 다른 물리량의 정합성으로 조작을 잡는 이 발상은 NADM(단일 패킷 물리 지표)과 다른 축의 상위계층 검출 후보다. gou-2024·gou-2025(UWB 채널 상호성·시간 도약 응답) 가 연장 방어의 선행 연구로 인용한다.",
+      "summary": "드론 제어·키리스 출입 같은 응용에서 두 주체가 실제로 가까운지 검증하는 거리 한정에서, 거리 사기(distance fraud)는 왕복 ToF 기반 어떤 추정에도 적용될 수 있음이 알려져 있다. 저자들은 ToF 기반 거리와 RSS 기반 거리를 결합하면 앵커 2개 이상의 시스템이 거리 축소와 연장 사기를 모두 탐지할 수 있음을 보인다. 증명자의 겉보기 위치가 RSS 가능 영역과 ToF 가능 영역에 각각 제약되고 두 영역은 참 위치에서만 겹치며 공격 크기가 커질수록 불일치가 커진다는 점을 이용한다. 이 하이브리드 방법은 ToF 시스템에 오버헤드를 거의 더하지 않고, 축소 사기에는 순수 ToF 보다 더 좁은 한계를, 순수 ToF 로는 무한한 연장 사기에는 유한한(tight) 한계를 준다(초록 기준).",
+      "hardware": [
+        "확인 필요 (초록·Xplore 색인 키워드에 'Simulation'·'Atmospheric measurements' 포함 — 실측 여부 본문 미확인)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: ToF+RSS 하이브리드가 축소 사기에 순수 ToF 보다 좁은 한계, 연장 사기에 유한한 한계를 제공 — 수치는 본문 미확인"
+      ],
+      "limitations": [
+        "본문 미확보(IEEE 유료, OpenAlex closed, TU Graz Pure 403, 저자 페이지 404) — 초록과 Xplore 참고문헌 16건만 확인",
+        "관찰: 후속 arXiv 2212.05282(2022, RSS 기반 UWB 거리 추정 ML, MAE 24 cm) 가 이 방법의 RSS 축을 보강하는 기초 연구라고 밝힘"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "avoine-2018-db-survey",
+        "brands-1993-distance-bounding",
+        "capkun-2005-secure-positioning",
+        "rasmussen-2010-rf-distance-bounding"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-09-30",
+      "last_checked": "2026-09-30"
     }
   ]
 }
