@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25",
+  "updated": "2026-10-01",
   "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
   "landscape": {
     "title": "Bluetooth Channel Sounding Security Landscape",
@@ -232,6 +232,20 @@
         "aad-2026-fast-uwb-testing"
       ],
       "maturity": "commercial"
+    },
+    {
+      "text": "**상용 스마트폰 CS 스택도 조작 없이 두 자릿수 미터의 꼬리를 낸다.** Pixel 10 Pro(Android 16, Security Level 1) + nRF54L15 의 API 거리값은 실외 LOS 정지에서 MAE 0.28~0.51 m 지만, 실내 복도 10 m 지점은 MAE 4.26 m·95 백분위 11.35 m 의 양(+) 방향 오차를 내고, 손에 든 채 180° 회전하는 왕복 보행에서는 실외인데도 95 백분위 30 m 초과 스파이크가 난다. 앱이 받는 것은 처리된 거리와 3단계 confidence 뿐이라 PBR·RTT·모호성 상태를 밖에서 볼 수 없다.",
+      "evidence": [
+        "xu-2026-cs-beyond-proximity-ipin"
+      ],
+      "maturity": "commercial"
+    },
+    {
+      "text": "**벤더·안테나 구성마다 CS 거리의 고정 편향이 다르고, 그 편향의 세밀 지문은 다중경로에서 일반화되지 않는다.** 같은 NN 결측복원+MUSIC 파이프라인으로 잰 8개 COTS 구성(Nordic·SiLabs·Ezurio·NXP)의 무반향실 3 m 전역 평균편향은 −0.26~+2.26 m 이고, 반사기를 등진 자세는 안테나 위치 10 cm 변화만으로 MAE 를 최대 1 m 늘린다. 무반향실에서 뽑은 자세별 오프셋은 실내 실환경에서 과보정을 일으켜 전역 오프셋만 못했고, Silicon Labs 는 노출 PCT 가 이미 내부 보정돼 외부 오프셋을 더하면 나빠진다. 보정·2×2 다이버시티·MUSIC 을 다 써도 90 백분위 서브미터는 안 된다.",
+      "evidence": [
+        "wieme-2026-cs-calibration-ipin"
+      ],
+      "maturity": "commercial"
     }
   ],
   "broken": [
@@ -438,11 +452,12 @@
   "open": [
     {
       "id": "op-joint",
-      "text": "동일 CS procedure 에서 PBR·RTT·NADM·품질플래그·Host 최종거리를 함께 기록하면 공통모드 지연이 실제로 교차검증을 통과하는가",
+      "text": "동일 CS procedure 에서 PBR·RTT·NADM·품질플래그·Host 최종거리를 함께 기록하면 공통모드 지연이 실제로 교차검증을 통과하는가 — 상용 Android CS API 는 처리된 거리와 3단계 confidence 만 내주고 PBR·RTT·모호성 상태를 노출하지 않으므로(Xu IPIN 2026), 이 기록은 개발키트 컨트롤러 계층에서만 가능하다",
       "theme": "identifiability",
       "evidence": [
         "dual-defense-not-independent",
-        "exp-flat-delay"
+        "exp-flat-delay",
+        "xu-2026-cs-beyond-proximity-ipin"
       ]
     },
     {
@@ -712,6 +727,12 @@
           "evidence": [
             "dzafic-2026-cs-orientation"
           ]
+        },
+        {
+          "text": "상용 스마트폰(Pixel 10 Pro) 의 CS API 출력도 실내 10 m 에서 95 백분위 11.35 m, 동적 회전 구간에서 30 m 초과의 양의 오차를 조작 없이 낸다 — 다중경로·신체 차폐가 만드는 자연 오차 꼬리가 조작을 숨길 여지로 작용한다",
+          "evidence": [
+            "xu-2026-cs-beyond-proximity-ipin"
+          ]
         }
       ],
       "status": "challenged",
@@ -788,10 +809,16 @@
           "evidence": [
             "kolli-2024-keyfob-cir-adversarial"
           ]
+        },
+        {
+          "text": "CS 실측에서 **기기·자세별 세밀 오프셋 지문은 다중경로 실환경으로 일반화되지 않았다** — 무반향실 자세별 오프셋이 실내에서 과보정을 일으켜 전역 오프셋보다 나빴고, 벤더(SiLabs)가 PCT 를 이미 내부 보정하는 경우도 있어 외부에서 본 '정상 지문' 이 벤더 전처리에 종속된다. 지문 기반 판정이 CS 에서 안정적으로 설 자리가 좁다는 첫 CS 측 실측 근거",
+          "evidence": [
+            "wieme-2026-cs-calibration-ipin"
+          ]
         }
       ],
       "status": "challenged",
-      "status_note": "세 반증 모두 **CS 가 아닌 인접 기술**(BLE DF, UWB, 키포브)에서 나왔다. CS 의 NADM·TQI 가 같은 범주라는 것은 구조적 논증이지 실측이 아니다 — 그 간극이 이 주장의 남은 방어선이다.",
+      "status_note": "세 반증(SaDiF·Urey-ML·Kolli)은 **CS 가 아닌 인접 기술**(BLE DF, UWB, 키포브)에서 나왔다. CS 의 NADM·TQI 가 같은 범주라는 것은 구조적 논증이지 실측이 아니다 — 그 간극이 이 주장의 남은 방어선이다. 다만 Wieme IPIN 2026 이 CS 자체에서 기기·자세별 지문이 다중경로에서 일반화되지 않음을 보여, '정상 지문' 의 안정성 전제는 CS 에서도 이미 흔들린다.",
       "experiment": "CS 의 NADM·TQI 를 목적함수로 두고, 거리는 옮기되 두 지표는 정상 범위에 남기는 섭동을 실측 I/Q 위에서 탐색한다. trace-replay 로 가능하다.",
       "todo": null
     }
@@ -1435,7 +1462,7 @@
         "uwb-sv-2023-ccs"
       ],
       "maturity": "trace-replay",
-      "unknown": "벤더별 NADM 구현의 실제 방어력, 그리고 정합도 기반 탐지의 정상 LOS/NLOS 오탐률(ROC)이 없다. **상용 스택의 품질 지표는 공격이 없는 상태에서도 실내 참양성률이 5.2~33.4 % 에 그친다** — 조작을 걸러낼 여유가 애초에 얼마나 남는지부터 재야 한다.",
+      "unknown": "벤더별 NADM 구현의 실제 방어력, 그리고 정합도 기반 탐지의 정상 LOS/NLOS 오탐률(ROC)이 없다. **상용 스택의 품질 지표는 공격이 없는 상태에서도 실내 참양성률이 5.2~33.4 % 에 그친다** — 조작을 걸러낼 여유가 애초에 얼마나 남는지부터 재야 한다. 상용 스마트폰 스택은 한 단계 더 불투명하다 — Pixel 10 Pro 의 CS API 는 거리·confidence 만 내주고 PBR/RTT/NADM 을 숨기며, 실내 10 m 에서 95 백분위 11.35 m 의 오차를 조작 없이 낸다(Xu IPIN 2026). 정책을 밖에서 평가할 관측량 자체가 없다.",
       "next_experiment": "Wieme 실내 NLOS 계열로 정합도 탐지의 ROC 곡선을 먼저 그린다 — 하드웨어 없이 가능하다.",
       "todos": [
         "todo-coherence-roc",

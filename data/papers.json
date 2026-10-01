@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-30",
-  "last_run": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_run": "2026-10-01",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1073,
+  "citation_edges": 1091,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -11721,55 +11721,104 @@
         "Li-Ta Hsu"
       ],
       "venue": "IPIN",
-      "venue_full": "IPIN 2026 — 16th International Conference on Indoor Positioning and Indoor Navigation, Rome, 2026-10-05~08, Session 7 'Bluetooth, AoA & Direction Finding', paper #17 (프로그램 기준, 발표 전·미출판) — The Hong Kong Polytechnic University (Li-Ta Hsu 그룹)",
+      "venue_full": "IPIN 2026 — 16th International Conference on Indoor Positioning and Indoor Navigation, Rome, 2026-10-05~08, Session 7 'Bluetooth, AoA & Direction Finding', Regular Paper #17 (학회 사이트 공개 전문 zip 의 RP/17_RP.pdf, 2026-10-01 확보) — The Hong Kong Polytechnic University (Dept. of Aeronautical and Aviation Engineering, Li-Ta Hsu 그룹) + Google LLC (New Taipei). Google Research Awards 지원",
       "tier": "other",
       "category": "measurement",
       "year": 2026,
       "url": "https://ipin-conference.org/2026/prog_programme.html",
-      "preprint": null,
+      "preprint": "https://ipin-conference.org/2026/Papers/IPIN2026_RPandWCAL.zip",
       "doi": null,
       "topics": [
         "channel-sounding",
         "ranging-accuracy",
         "smartphone",
+        "android-cs-api",
         "evaluation",
-        "indoor-positioning"
+        "indoor-positioning",
+        "uwb-ground-truth",
+        "body-blockage",
+        "update-rate",
+        "digital-key"
       ],
       "tech": [
         "ble-cs"
       ],
       "relevance": "medium",
-      "relevance_note": "제목상 **모바일(스마트폰) 응용 관점에서 Bluetooth CS 의 고정밀 거리측정을 평가**한 논문이다. 코퍼스의 CS 실측(Wieme 2025·Dzafic 2026·Lund 2026)은 전부 개발키트 대 개발키트인데, CS 의 실제 위협 모델(디지털 키·근접 인증)은 스마트폰이 Initiator 인 경우가 대부분이라 스마트폰 측 CS 성능 기준선이 비어 있다. 이 논문이 그 빈칸을 채운다면 '정상 오차 분포' 대비 조작 탐지 임계값을 잡는 데 직접 쓰인다. PolyU Hsu 그룹은 코퍼스의 RadioRange(UWB·Wi-Fi·5G 거리측정 디지털 트윈 시뮬레이터) 저자들이라 같은 계보의 CS 판으로 볼 수 있다. 초록·본문 미확보라 어떤 기기·모드를 썼는지는 모른다.",
-      "summary": "IPIN 2026(2026-10-05~08, 로마) 프로그램 Session 7 에 배정된 Bluetooth Channel Sounding 평가 논문. 제목은 근접 판정을 넘어선 고정밀 CS 를 모바일 응용 관점에서 평가한다고 되어 있다. 2026-09-14 현재 학회 전이라 IEEE Xplore 미등재이며 arXiv·OpenAlex·DataCite·저자 연구실(PolyU TAS Lab) 페이지 어디에도 초록·본문이 없어 내용은 미확인. 저자 그룹의 직전 관련 논문은 RadioRange(arXiv 2026-06, UWB·Wi-Fi·5G 거리측정 시뮬레이터)와 Wi-Fi RTT 보조 LiDAR-관성 odometry(IoT-J 2026)다.",
+      "relevance_note": "코퍼스의 CS 실측(Wieme 2025·Dzafic 2026·Lund 2026·Wieme IPIN 2026)은 전부 개발키트 대 개발키트인데, CS 의 실제 위협 모델(디지털 키·근접 인증)은 **스마트폰이 Initiator** 인 경우가 대부분이다. 이 논문이 그 빈칸을 처음 채운다 — Google Pixel 10 Pro(Android 16) 의 상용 CS API 가 내주는 최종 거리를 Qorvo DW3000 UWB 와 동기화해 실외·실내·동적 시나리오에서 잰 첫 공개 데이터셋이다. 내 연구에는 세 가지로 쓰인다. (1) **정상 오차의 꼬리**: 실외 LOS 정지 상태 MAE 0.17~0.94 m 이지만 실내 10 m 지점은 MAE 4.26 m·95 백분위 11.35 m 의 **양(+) 방향 큰 오차**가 조작 없이 나오고, 동적 180° 회전 구간에서는 95 백분위 30 m 초과 스파이크가 난다 — 축소·연장 조작의 탐지 임계를 이 꼬리 안에서 잡아야 한다. (2) **상용 스택의 불투명성**: 앱이 받는 것은 처리된 거리·타임스탬프·3단계 confidence 뿐이고 PBR/RTT/NADM/모호성 해소 상태는 노출되지 않는다. 즉 상위 계층에서 PBR·RTT 교차검증을 할 수 없고, 저자들도 10 m 오차의 원인을 추적할 수 없었다 — 수신기 판정 정책을 밖에서 평가할 길이 막혀 있다는 구조적 한계의 실측 사례다. (3) 실험이 **Security Level 1** 로 돌아갔다는 사실은 상용 CS 응용의 기본 보안 수준이 무엇인지에 대한 드문 공개 기록이다. 코드·데이터가 GitHub 에 공개돼 있어 정상 분포를 trace-replay 기준선으로 바로 쓸 수 있다.",
+      "summary": "Bluetooth 6.0 Channel Sounding 을 상용 스마트폰 Initiator 로 평가한 첫 다중 시나리오 실측이다. Google Pixel 10 Pro(Android 16) 가 Nordic nRF54L15 DK Reflector 와 CS 를 수행하고, Android CS API 가 돌려주는 처리된 거리값을 Qorvo DW3000 UWB 로 만든 ground truth 와 타임스탬프(최대 500 ms 허용)로 정렬했다. 실외 잔디밭(60×30 m, LOS) 과 실내 복도(폭 2.5 m, 콘크리트·금속 프레임) 에서 1·10·25·50 m 정지 측정(0.2·5·10 Hz) 과, 20 m 직선 왕복(약 1.2 m/s)·직사각형 경로의 손잡이/팔 흔들기 동적 측정을 수행했다. 실외 LOS 정지 상태는 10 Hz 에서 MAE 0.28~0.51 m 로 서브미터이지만, 실내 10 m 지점은 MAE 4.26 m·95 백분위 11.35 m 의 큰 양의 오차를 보였고(1·25·50 m 는 0.7 m 미만), 50 m 에서는 링크 끊김으로 유효 표본이 188 개로 줄었다. 동적 시나리오는 10 Hz 가 5 Hz 보다 RMSE 를 36~62 % 줄였고, 왕복 경로의 180° 회전 지점에서 30 m 를 넘는 오차 스파이크가 신체 차폐와 시간적으로 일치했다. API 가 하위 계층 진단(위상·RTT·모호성 해소)을 노출하지 않아 오차 원인은 특정하지 못했음을 저자들이 명시한다. 코드와 데이터를 GitHub 에 공개했다.",
       "hardware": [
-        "확인 필요"
+        "Initiator: Google Pixel 10 Pro (Bluetooth 6.0 호환 칩셋, Android 16) — Android CS API(HAL) 가 처리한 거리만 기록, 원시 IQ·톤별 위상 접근 불가",
+        "Reflector: Nordic Semiconductor nRF54L15 Development Kit — 2.4 GHz ISM 전 대역에서 CS 서브이벤트에 CTE 로 응답",
+        "Ground truth: Qorvo DW3000 UWB 시스템 — 동적 시험에서는 UWB 모듈을 Initiator·Reflector 의 Bluetooth 안테나에 기계적으로 결합",
+        "정지 측정 시 스마트폰은 높이 1.3 m 삼각대에 거치(신체 차폐 배제)",
+        "환경: 실외 잔디밭 60×30 m (LOS 기준선), 실내 복도 폭 2.5 m (콘크리트 벽·금속 프레임, 다중경로)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요"
+        "Android Channel Sounding API (최신 Android HAL) — 앱은 거리측정 갱신율과 Security Level 1 만 설정, 채널맵·대역폭은 스택이 관리하고 홉 시퀀스는 미노출",
+        "API 출력: 타임스탬프·거리 추정값·이산 confidence(low/medium/high) — 수치 불확실도·표준편차 없음(정확도 지표로 미사용)",
+        "갱신율(Connection Interval) 0.2 / 5 / 10 Hz",
+        "데이터셋 구조: RangingFilter/ (API 기록) 과 GT/ (UWB) 폴더, 동일 시나리오 파일명을 최근접 타임스탬프(≤500 ms)로 정렬",
+        "공개 코드·데이터: https://github.com/RuijieXu0408/Bl-CS-Evaluation-Dataset",
+        "저자 언급: Google CS API 는 단일 안테나 주파수 호핑용 SpotFi 변형 기반 하이브리드 추정기를 쓴다(관련연구 절 서술, 본 실험에서 검증한 것은 아님)"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "확인 필요"
+        "실외 LOS 정지 MAE±SD (10 Hz / 5 Hz): 1 m 0.28±0.20 / 0.37±0.13, 10 m 0.51±0.22 / 0.87±1.10, 25 m 0.50±0.58 / 0.94±1.74, 50 m 0.31±0.37 / 0.17±0.13 — 50 m 는 SNR 이 연결 한계에 닿아 유효 표본 n=188(다른 거리는 n>700)",
+        "실내 복도 정지 MAE±SD (5 Hz): 1 m 0.37±0.08, 10 m 4.26±5.32 (95 백분위 11.35 m, 실외 대비 4.9 배, 양의 방향), 25 m 0.68±0.08, 50 m 0.42±0.10 — 모든 거리가 이론적 비모호 범위(Δf 1 MHz → ≈150 m) 안이라 모호성 초과로는 설명되지 않음, API 가 하위 진단을 노출하지 않아 원인 미특정",
+        "정지 시나리오 종합(5 Hz): 실외 MAE 0.74 m (95 % 1.76 m) vs 실내 MAE 0.91 m (95 % 2.31 m) — 중앙값은 양쪽 서브미터, 실내 꼬리는 10 m 지점의 큰 양의 오차가 키움",
+        "정지 vs 동적(5 Hz, 전 시나리오): 정지 MAE 0.85 m (95 % 1.88 m), 동적 MAE 3.35 m (95 % 10.04 m)",
+        "실외 동적 MAE±SD (10 Hz / 5 Hz): 손잡이 직사각형 2.47±3.17 / 4.69±9.34 (약 47 % 개선), 팔 흔들기 직사각형 2.23±2.27 / 1.99±1.22 (갱신율 둔감), 왕복 20 m 3.66±4.00 / 4.77±7.01; 실내 왕복 2.59±1.38 (10 Hz) / 2.50±2.46 (5 Hz)",
+        "왕복 경로의 95 백분위 오차는 실외인데도 30 m 초과 — 스파이크가 180° 회전(t≈12~20 s) 과 시간적으로 일치해 신체에 의한 일시적 LOS 차폐와 부합(단일 시행이라 인과·재현성은 미확립)",
+        "갱신율 10 Hz 가 RMSE 를 왕복 8.47→5.41 m (−36 %), 손잡이 직사각형 10.45→4.02 m (−62 %) 로 줄임; 큰 오차 후 10 Hz 는 1~2 s, 5 Hz 는 3~5 s 만에 참값으로 복귀; 5 Hz 출력은 계단형 plateau 와 지연을 보임",
+        "Pixel 10 Pro 와 nRF54L15 조합의 실외 10 Hz 결과(0.28~0.51 m)는 저자들이 '서브미터' 로 요약; 50 m 부근에서 거리측정 가용성 저하(연결 끊김)"
       ],
       "limitations": [
-        "초록·본문 미확보 (2026-09-14): 학회(2026-10-05~08) 전, Xplore 미등재, arXiv·OpenAlex·DataCite·PolyU TAS Lab 페이지 없음 — 10월 중순 이후 Xplore 등재를 확인할 것",
-        "category 'measurement' 는 제목('Evaluating')에서 추정한 임시값"
+        "저자 명시: API 가 톤별 위상·RTT·모호성 해소 상태를 노출하지 않아 실내 10 m 의 큰 오차 원인을 특정할 수 없음 — 상용 추정기(proprietary) 에 귀속하지 않고 '외부에서 관찰된 실패 모드' 로만 보고",
+        "저자 명시: 갱신율별 동적 궤적은 각 1회 기록 — 신체 차폐와 스파이크의 인과·재현성 미확립, 반복 시행·조밀한 거리 샘플링이 향후 과제",
+        "저자 명시: 50 m 통계는 n=188 로 신뢰도 낮음; 정지 거리 4 지점만으로는 거리 의존 메커니즘을 확정할 수 없음",
+        "저자 명시: 향후 과제 — 톤별 위상·타이밍·추정기 진단을 노출하는 플랫폼으로 내부 원인 조사, IMU 융합·안테나 다이버시티·적응 필터, 연결 한계 부근 가용성 분석",
+        "관찰: Security Level 1 고정 — 다른 보안 수준이나 NADM·공격 시나리오는 다루지 않음(보안 분석 없음)",
+        "관찰: Reflector 가 개발키트 1종(nRF54L15) 뿐이라 스마트폰 대 스마트폰·다른 벤더 Reflector 조합은 미평가",
+        "관찰: confidence 지표가 보정된 확률이 아니라고 저자들이 밝혀 정확도 지표로 쓰지 않았음 — 품질 플래그와 오차의 관계는 분석되지 않음"
       ],
       "artifacts": {
-        "code": null,
-        "dataset": null
+        "code": "https://github.com/RuijieXu0408/Bl-CS-Evaluation-Dataset",
+        "dataset": "https://github.com/RuijieXu0408/Bl-CS-Evaluation-Dataset"
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-09-14",
-      "last_checked": "2026-09-17",
-      "cites": [],
-      "cites_source": "no-fulltext",
-      "relations": []
+      "last_checked": "2026-10-01",
+      "cites": [
+        "santra-2024-cs-indoor",
+        "wieme-2025-cs-commercial-hw",
+        "pnn-2025-cs-distance-estimation",
+        "zand-2019-ble-pbr",
+        "nikodem-2025-mcpd-ble",
+        "jiokeng-2020-ftm-music"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "wieme-2025-cs-commercial-hw",
+          "type": "complementary",
+          "note": "저자 명시 — Wieme 의 개발키트 톤별 IQ 데이터셋과 달리 상용 Android 구현의 end-to-end 거리 출력을 스마트폰 Initiator·동적 신체 상호작용·갱신율 축에서 특성화"
+        },
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "Core 6.0 CS 를 Pixel 10 Pro(Android 16) 상용 스택으로 실측, Security Level 1"
+        },
+        {
+          "to": "dzafic-2026-cs-orientation",
+          "type": "complementary",
+          "note": "Dzafic 이 개발키트 자세 의존성을 쟀다면 이 논문은 스마트폰의 손잡이·신체 차폐·회전에 따른 동적 오차를 잰다(가설적 연결 — 서로 인용하지 않음)"
+        }
+      ]
     },
     {
       "id": "wieme-2026-cs-calibration-ipin",
-      "title": "Experimental Calibration of Bluetooth Channel Sounding: Impacts of Hardware and Multipath",
+      "title": "Hardware and Multipath Effects on Bluetooth Channel Sounding: An Experimental Evaluation",
       "authors": [
         "Jorg Wieme",
         "Dries Van Leemput",
@@ -11778,53 +11827,124 @@
         "Jeroen Hoebeke"
       ],
       "venue": "IPIN",
-      "venue_full": "IPIN 2026 — 16th International Conference on Indoor Positioning and Indoor Navigation, Rome, 2026-10-05~08, Session 7 'Bluetooth, AoA & Direction Finding', paper #49 (프로그램 기준, 발표 전·미출판) — IDLab, Ghent University – imec",
+      "venue_full": "IPIN 2026 — 16th International Conference on Indoor Positioning and Indoor Navigation, Rome, 2026-10-05~08, Session 7 'Bluetooth, AoA & Direction Finding', Regular Paper #49 (학회 사이트 공개 전문 zip 의 RP/49_RP.pdf, 2026-10-01 확보; 프로그램 페이지 표기 제목은 'Experimental Calibration of Bluetooth Channel Sounding: Impacts of Hardware and Multipath') — imec-IDLab, Ghent University + Televic Healthcare (Izegem). DistriMuSe (HORIZON-KDT-JU, 101139769)·imec.icon UBIWAU 지원",
       "tier": "other",
       "category": "measurement",
       "year": 2026,
       "url": "https://ipin-conference.org/2026/prog_programme.html",
-      "preprint": null,
+      "preprint": "https://ipin-conference.org/2026/Papers/IPIN2026_RPandWCAL.zip",
       "doi": null,
       "topics": [
         "channel-sounding",
         "calibration",
         "multipath",
         "hardware-offset",
+        "antenna-topology",
+        "orientation",
+        "music",
+        "gap-reconstruction",
         "ranging-accuracy",
-        "commercial-hardware"
+        "commercial-hardware",
+        "cross-vendor"
       ],
       "tech": [
         "ble-cs"
       ],
       "relevance": "medium",
-      "relevance_note": "Wieme 등이 IEEE Access 2025(코퍼스 wieme-2025-cs-commercial-hw)에서 상용 CS 개발키트의 원시 I/Q 데이터셋을 공개하며 남긴 '하드웨어 보정 오프셋과 다중경로 이상치'를 **제목상 정면으로 다루는 후속작**이다. CS 보안 관점에서 보정 오프셋은 이중적이다 — 하드웨어마다 다른 고정 오프셋은 공격자가 조작량을 숨길 여지(보정 범위 안의 거리 축소는 '정상'으로 보임)이자, 반대로 기기별 오프셋 지문이 조작 탐지 특징이 될 수도 있다. 이 논문이 오프셋의 크기·안정성과 다중경로 기여를 분리해 준다면 Dzafic 2026(자세 의존성 138 cm 오프셋)과 함께 '무공격 정상 오차의 상한'을 정하는 근거가 된다. 초록·본문 미확보라 실제 기여는 미확인.",
-      "summary": "IPIN 2026(2026-10-05~08, 로마) 프로그램 Session 7 에 배정된 UGent IDLab 의 Bluetooth Channel Sounding 보정 논문. 제목은 하드웨어와 다중경로가 CS 거리에 미치는 영향을 실험적으로 보정한다고 되어 있다. 2026-09-14 현재 학회 전이라 IEEE Xplore 미등재이며 UGent biblio(500 오류)·arXiv·OpenAlex·DataCite 어디에도 초록·본문이 없어 내용은 미확인. 같은 제1저자의 직전 논문(IEEE Access 2025)은 nRF54L15 등 상용 키트로 300 m² 창고에서 밀리미터 ground truth 대비 CS 성능을 측정하고 Zenodo 데이터셋을 공개했다.",
+      "relevance_note": "Wieme 2025(IEEE Access) 가 남긴 '하드웨어 보정 오프셋과 다중경로 이상치' 를 정면으로 다룬 후속작으로, **벤더 4사(Nordic·Silicon Labs·Ezurio·NXP) 8개 구성의 CS 를 같은 알고리즘(NN 결측 복원 + MUSIC) 으로 돌려 하드웨어 효과만 분리**했다. CS 보안 관점에서 쓰이는 지점은 셋이다. (1) **정상 편향의 크기**: 무반향실 3 m 에서 구성별 전역 평균편향(MBE)이 −0.26 m(SiLabs)~+2.26 m(외장 안테나 2×2) 로 벌어지고 자세만 바꿔도 MAE 가 최대 1 m 늘어난다 — 이 범위 안의 거리 축소는 '보정 오차' 로 보여 조작 탐지 임계가 그만큼 둔해진다. (2) **지문의 불안정성**: 무반향실에서 뽑은 자세별 오프셋이 실제 실내에서는 과보정을 일으켜 전역 오프셋만 못하다. 자세·기기별 세밀 지문이 다중경로에서 일반화되지 않는다는 실측이라, 물리계층 지문으로 조작을 거르겠다는 방어(C-08 계열)의 CS 판 반증 후보다. (3) **벤더 전처리의 불투명성**: Silicon Labs 는 노출된 PCT 가 이미 내부 보정된 것으로 보여 외부 오프셋을 더하면 오히려 나빠진다 — 벤더가 원시값을 손대는 지점이 있다는 뜻이고, NADM 처럼 벤더가 만드는 지표를 외부에서 평가할 때 같은 함정이 있다. 그리고 MUSIC 까지 써도 90 백분위 서브미터를 못 넘는다는 결론은 '정확도 개선이 보안을 따라오지 않는다' 는 축의 기준선이다. 실내 극단 사례에서 72 채널 중 60 개 이상이 결측됐다는 관찰은 부분 대역 커버리지 실험(exp-coverage) 의 현실 분포를 준다.",
+      "summary": "Bluetooth 6.0 CS 의 실제 성능이 하드웨어·안테나 구성·전파 환경에 얼마나 좌우되는지를 단일 처리 파이프라인으로 비교한 실측이다. Nordic nRF54L15-DK(1×1, 1×4, 2×2 외장 다이폴 + RF 스위치), Seeed XIAO nRF54, Silicon Labs xG24-DK2606A, Ezurio 453-00224-K2, NXP MCX W72-LOC 등 8개 구성(C1~C8) 에서 약 10만 회 CS 절차를 수집하고, 결측 채널을 실측 IQ 로 학습한 신경망으로 복원한 뒤 Hankel 행렬·전후방 공간 평활 MUSIC 으로 ToF 를 뽑았다(다중 안테나는 공분산 평균). 무반향실 3 m 에서 모든 축 45° 간격 자세별 100 회씩 기준 측정을 하고, HomeLab 의 케어룸·회의실(인접실 NLOS 포함)·복도에서 실환경 측정을 했다. 결과: 모든 플랫폼이 하드웨어별 보정 오프셋을 요구하고(전역 MBE −0.26~+2.26 m), 외장 안테나 케이블의 군지연이 13~90 cm 의 추가 거리를 만들며, 반사기를 등진 자세(X 또는 Y 180°)는 안테나 위치가 10 cm 만 바뀌어도 MAE 가 최대 1 m 늘어난다. 2×2 토폴로지가 4×1 보다 안정적이고(단일 안테나 노드가 병목), 무반향실에서 유도한 자세별 오프셋은 다중경로 실환경에서 과보정을 일으켜 전역 오프셋이 더 견고했다. Silicon Labs 는 어떤 오프셋을 더해도 나빠져 PCT 가 이미 내부 전처리된 것으로 보인다. 보정과 공간 다이버시티를 다 써도 MUSIC 은 90 백분위에서 서브미터를 일관되게 달성하지 못했다. Google Pixel 10 + nRF54L15-DK 소비자 기준선은 전역 MAE 0.71 m(SD 0.31) 이었으나 자세에 따라 3 m 참값에 4 m 를 내기도 했다.",
       "hardware": [
-        "확인 필요"
+        "C1: nRF54L15-DK ×2, 1×1, 온보드 트레이스 모노폴, RF 스위치 없음",
+        "C2: nRF54L15-DK → Seeed XIAO nRF54L15, 1×1, 모노폴 → KH5220-A36 세라믹 모노폴 (소형 태그 대표, 안테나 품질 불량으로 판정)",
+        "C3: nRF54L15-DK ×2, 1×4, 모노폴 → Siretta Delta 7A 다이폴, Analog Devices HMC241ALP3E 스위치",
+        "C4: nRF54L15-DK ×2, 2×2, Siretta Delta 7A 다이폴, EV1HMC7992LP3D → HMC241 스위치",
+        "C5: nRF54L15-DK ×2, 2×2(Alt), Siretta Delta 7A, EV1HMC → HMC241",
+        "C6: Silicon Labs xG24-DK2606A ×2, 2×2, 인쇄 역F 안테나, SoC 내장 스위치",
+        "C7: Ezurio 453-00224-K2 ×2, 2×2, 온보드 트레이스 모노폴, 모듈 내장 스위치 (같은 처리 유닛 기준 기기 비용 절반 미만)",
+        "C8: NXP MCX W72-LOC ×2, 2×2, 온보드 트레이스 모노폴, SoC 내장 스위치",
+        "외장 안테나 케이블: Murata MXHS83QE3000 30 cm + SMA(≈1 cm), Initiator 측 SMA 연장 32 cm (C4·C5) — 전파속도 ≈70 % 로 약 13 cm(C3)·약 90 cm(C4·C5) 의 겉보기 거리 증가",
+        "안테나 간격 1.5~1.8 λ (C3 동일면 0.8 λ) — AoA 목적 아님",
+        "무반향실: 간격 3 m 고정, Initiator 를 X·Y·Z 축 45° 간격 회전, 자세당 100 회",
+        "실환경: imec HomeLab — 케어룸(Reflector 천장 2.7 m, Initiator 1.2 m, 수직 1.5 m), 회의실+인접실(4 거리, 벽 투과 NLOS 포함), 복도(Reflector 벽면 1.2 m, 3 거리)",
+        "Ground truth: 정밀 줄자 수동 측량, 불확도 ±1 cm 미만",
+        "소비자 기준선: Google Pixel 10 + nRF54L15-DK (nRF Toolbox)"
       ],
-      "hardware_verified": false,
+      "hardware_verified": true,
       "software": [
-        "확인 필요"
+        "Nordic: Zephyr RTOS + SoftDevice Controller, CS 절차당 최대 247 step 의 PCT 추출, 호스트에서 32→24 bit 변환(상위 12 bit I·하위 12 bit Q)",
+        "NXP: MCUXpresso, 동일 호스트 변환으로 72 채널 IQ(step 수 제한)",
+        "Silicon Labs: Simplicity SDK, 절차당 최대 160 step 의 PCT",
+        "공통 설정: 1M PHY, 서브이벤트당 Mode-0 3 step, Mode-2 전용, 최대 송신전력, 채널당 첫 수신값 사용, 오프라인 후처리(호스트 PC)",
+        "결측 채널 복원: 갭 폭 W=1~10 별 신경망 뱅크 — 입력 4W(갭 전후 W 샘플의 I/Q), 은닉 20 뉴런 FC 1층, 출력 2W; Nordic 1×1 실측 IQ 로만 학습해 타 플랫폼에 재학습 없이 적용(교차 학습으로 편향 없음 확인); 샘플별 Z-score 정규화, Sheikh 2023 의 갭 스케줄링",
+        "MUSIC: 72 채널 단일 스냅샷을 Hankel 행렬(pencil L=36)로, 전후방 공간 평활(FBSS) 공분산, 고유값 비율 기준 신호부공간 선택, 투영 항등식 기반 유사스펙트럼의 첫 피크 → d = c·τ₀/2; 다중 안테나는 경로별 평활 공분산을 평균",
+        "보정 오프셋은 MAE 가 아니라 부호를 보존하는 평균편향(MBE) 로 산출; 연속 결측 10 채널 초과 측정은 제외"
       ],
-      "software_verified": false,
+      "software_verified": true,
       "results": [
-        "확인 필요"
+        "수집 규모: 4개 환경에서 약 100,000 회 CS 절차, 절차당 72~988 IQ 샘플",
+        "무반향실 3 m 전역 MAE(SD) [m]: C1 1.05(.63), C2 1.25(.92), C3 1.52(.50), C4 2.20(.41), C5 2.28(.43), C6 0.44(.47), C7 1.32(.38), C8 0.60(.27)",
+        "무반향실 전역 MBE(보정 오프셋) [m]: C1 1.01, C2 1.11, C3 1.51, C4 2.19, C5 2.26, C6 −0.26, C7 1.32, C8 0.27 — C6·C8 은 음의 편향 구간 존재",
+        "자세 효과(무반향실): 반사기를 등진 자세(X=180° 또는 Y=180°) 가 일관되게 최악 — 안테나 위치 약 10 cm 변화로 MAE 최대 +1 m 와 분산 급증; 예 C1 (0,0,0) 0.06 m → (0,135,0) 2.31 m, (0,180,0) 2.17 m",
+        "케이블 군지연: 30 cm 케이블(전파속도 ≈70 %) ≈ 13 cm, C4·C5 의 긴 조립체 ≈ 90 cm 의 상수 거리 증가 — 후처리로 제거 가능",
+        "C8(NXP) 이 무반향실에서 가장 일관·자세 무관했으나 실환경에서는 그 우위가 사라짐(LOS 최적화 안테나로 추정); C2 는 모든 자세에서 높은 MAE·SD 로 정밀 CS 에 부적합",
+        "토폴로지: 2×2(C4·C5) 가 4×1(C3) 보다 안정 — 4×1 은 단일 안테나 노드 열화가 4 경로 전부에 전파",
+        "케어룸 1.5 m LOS MAE(SD) [m] 원시 / 자세별 보정 / 전역 보정: C1 2.06(1.64)/1.35/1.22, C2 2.85/1.85/1.84, C3 1.97/0.80/0.70, C4 2.77/0.70/0.62, C5 2.75/0.70/0.67, C6 0.82(0.42)/1.12/1.08, C7 1.72/0.53/0.47, C8 1.16/0.97/0.88 — C7 이 보정 후 최고, C6 은 어떤 오프셋도 성능을 악화(PCT 내부 전처리 추정)",
+        "실환경 전체 CDF: 전역 오프셋이 자세별 오프셋보다 대체로 견고 — 무반향실 유도 자세별 오프셋은 반사 지배 환경에서 과보정; 단일 안테나 C1 은 중앙값은 양호하나 긴 오차 꼬리",
+        "실환경 간섭으로 심한 패킷 손실 — 극단 사례에서 72 채널 중 60 개 이상 결측; 연속 결측 >10 채널 측정은 분석 제외",
+        "보정·공간 다이버시티를 모두 적용해도 MUSIC 은 90 백분위에서 서브미터 정확도를 일관되게 달성하지 못함(협대역·코히어런트 다중경로)",
+        "Google Pixel 10 + nRF54L15-DK: 전역 MAE 0.71 m(SD 0.31) — 내부 안테나 설계 또는 펌웨어 보정 오프셋 추정; 자세에 따라 참값 3 m 에 최대 4 m 추정"
       ],
       "limitations": [
-        "초록·본문 미확보 (2026-09-14): 학회(2026-10-05~08) 전, Xplore 미등재, UGent biblio 검색이 500 오류, arXiv·OpenAlex·DataCite 없음 — UGent biblio 는 채택 논문의 acceptedVersion 을 공개하는 경우가 많으니 다음 실행에서 biblio.ugent.be 를 다시 볼 것",
-        "category 'measurement' 는 제목('Experimental Calibration')에서 추정한 임시값",
-        "2026-09-28 재시도: UGent biblio 는 JSON·HTML 모두 HTTP 500 (9-24·9-26 에 이어 3회째) — 학회(10-05~08) 후 Xplore 등재와 함께 다시 볼 것"
+        "저자 명시: 단발(single-shot) 거리 추정 기준 — 슬라이딩 윈도·칼만 등 시간 필터링을 적용하면 개선 여지",
+        "저자 명시: NN 복원·MUSIC 은 호스트 PC 에서 오프라인 실행, 임베디드 실시간 미평가",
+        "저자 명시: 연속 결측 10 채널 초과 측정 제외 — 실환경 최악 사례는 통계에서 빠짐",
+        "저자 명시: Pixel 10 측정은 제한된 세트(limited set)",
+        "저자 명시: 결측 복원 NN 은 Nordic 1×1 데이터로 학습 — 교차 검증으로 편향 없음을 확인했다고 하나 세부 수치는 미제시",
+        "관찰: 보안 분석 없음 — 결론에서 '프로토콜 고유 보안 기능과 함께 키리스 엔트리에 적합' 이라고만 서술",
+        "관찰: 플랫폼별 step 수·절차 수가 달라(Nordic 247 step·SiLabs 160 step) 완전 동일 조건 비교는 아님",
+        "관찰: 무반향실 거리 3 m 단일 — 거리 의존 오프셋은 미평가"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "verified",
       "added": "2026-09-14",
-      "last_checked": "2026-09-30",
-      "cites": [],
-      "cites_source": "no-fulltext",
-      "relations": []
+      "last_checked": "2026-10-01",
+      "cites": [
+        "zand-2019-ble-pbr",
+        "boer-2020-pbr-multipath",
+        "sheikh-2023-pbr-missing-tones",
+        "santra-2024-cs-indoor",
+        "pnn-2025-cs-distance-estimation",
+        "wieme-2025-cs-commercial-hw",
+        "dzafic-2026-cs-orientation",
+        "suresh-2025-cs-vehicle-access",
+        "paulikas-2026-cs-fall-detection"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "wieme-2025-cs-commercial-hw",
+          "type": "extends",
+          "note": "같은 그룹의 Access 2025(알고리즘 비교·Nordic 전용)를 벤더 4사·안테나 토폴로지 8구성·무반향실 자세 그리드로 넓힘"
+        },
+        {
+          "to": "dzafic-2026-cs-orientation",
+          "type": "extends",
+          "note": "Dzafic 의 자세 의존성(Nordic·SiLabs) 을 무반향실 45° 전축 그리드와 8구성으로 확장하고, 그 자세별 보정이 다중경로 실환경에서는 과보정됨을 추가로 보임"
+        },
+        {
+          "to": "sheikh-2023-pbr-missing-tones",
+          "type": "implements",
+          "note": "Sheikh 의 NN 기반 결측 톤 복원(합성 데이터)을 실측 IQ 로 학습해 COTS CS 파이프라인에 구현, 갭 스케줄링·투영 항등식 유사스펙트럼 채택"
+        },
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "Core 6.0 CS Mode-2 PBR 을 4개 벤더 COTS 에서 실측"
+        }
+      ]
     },
     {
       "id": "glass-2010-toa-ranging-insecurity-80211",
@@ -15780,6 +15900,90 @@
       "relations": [],
       "added": "2026-09-30",
       "last_checked": "2026-09-30"
+    },
+    {
+      "id": "ulsamer-2026-ble6-cs-rssi-ipin",
+      "title": "Beyond Phase: BLE6 Channel Sounding RSSI",
+      "authors": [
+        "Tim Ulsamer",
+        "Stefan Knauth"
+      ],
+      "venue": "IPIN-WCAL",
+      "venue_full": "IPIN-WCAL 2026: Workshop for Computing & Advanced Localization at the 16th International Conference on Indoor Positioning and Indoor Navigation, Rome, 2026-10-05~08 (Work-in-Progress #173; 학회 사이트 공개 전문 zip 의 WIP/173_WCAL.pdf, 2026-10-01 확보; CEUR-WS 권호 미발행, CC BY 4.0) — HFT Stuttgart, Faculty for Computer Sciences, Mathematics and Geomatics",
+      "tier": "other",
+      "category": "measurement",
+      "year": 2026,
+      "url": "https://ipin-conference.org/2026/prog_programme.html",
+      "preprint": "https://ipin-conference.org/2026/Papers/IPIN2026_RPandWCAL.zip",
+      "doi": null,
+      "topics": [
+        "channel-sounding",
+        "rssi",
+        "per-channel-rssi",
+        "csi",
+        "fingerprinting",
+        "field-measurement",
+        "raw-iq",
+        "nrf54l15"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 연구가 PBR 위상과 RTT 에만 매달리는 사이, **CS 절차가 72 개 활성 채널마다 RSSI 도 함께 내준다**는 사실을 실측으로 짚은 짧은 워크숍 논문이다. 내 연구에 닿는 지점은 둘이다. (1) 저자들이 nRF54L15 Initiator 펌웨어를 고쳐 72 채널의 IQ 와 RSSI 를 동시에 시리얼로 뽑았으므로, 코퍼스 실험(trace-replay)에 쓰는 원시 데이터 레시피에 채널별 진폭 축이 하나 더 생긴다 — 위상만 조작하는 공격(SaDiF 류·군지연 주입)이 채널별 RSSI 패턴은 그대로 두는지, 아날로그 릴레이는 어떻게 바꾸는지를 따질 수 있는 관측량이다(이 논문은 보안을 다루지 않으며 이 활용은 내 해석이다). (2) 실외에서는 RSSI 벡터에 공간 구조가 없고 실내에서는 위치 의존 구조가 뚜렷하되 같은 자리 재측정도 어긋나는 경우가 있다는 관찰은, 채널별 진폭을 정상성 지표나 지문으로 쓸 때의 오탐 여유가 작다는 뜻이다. 수치 결과가 거의 없는 초기 보고라 근거로 인용할 값은 RSSI 범위(−71~−41 dBm)와 측정 절차뿐이다.",
+      "summary": "BLE6 Channel Sounding 절차 중 얻어지는 채널별 RSSI 값을 거리·위치 추정에 쓸 수 있는지 살핀 초기 실측이다. Nordic nRF54L15 DK 두 대로 Initiator 펌웨어를 수정해 72 개 활성 채널의 IQ 와 RSSI 를 함께 출력하고, 약 0.5 초 주기 채널 스캔을 펌웨어에서 평균해 5 초마다(약 10 스캔) PC 로 보냈다. 공원 개활지(1~20 m, 1 m 간격, 줄자 ground truth <5 cm) 와 대학 건물 복도(1~20 m) 에서 지점당 50 초씩 측정했다. 실외에서는 위상 이미지가 거리에 따라 예상대로 회전하고 RSSI 벡터에는 유의한 공간 구조가 없었으나(절대값 −71 dBm@20 m ~ −41 dBm@1 m), 실내에서는 위상이 덜 구조적이고 RSSI 이미지에 국소적 위치 의존 패턴이 나타났다(백-흑 스팬 12 dB). 같은 위치(15 m·12 m) 재측정에서 한 곳은 일치했지만 다른 곳은 크게 어긋나, 단순 비교로는 측위가 어렵고 저역 필터·푸리에 분석·ML 매칭이 후속 과제라고 결론짓는다. 저자들은 문법 교정과 데이터 처리 스크립트 생성에 생성형 AI 를 썼다고 밝혔다.",
+      "hardware": [
+        "Nordic nRF54L15 Development Kit ×2 (BLE6 CS 지원 SoC) — Initiator 는 USB 시리얼로 노트북에, Reflector 는 배터리만 연결",
+        "삼각대 거치, 수직 편파 PCB λ/4 모노폴 안테나(칩에 5 mm 전송선 직결), 급전점 높이 1.20 m",
+        "Ground truth: 측량 줄자, 양방향 반복 측정으로 정확도 5 cm 미만",
+        "환경: 공원 잔디밭 개활지(1~20 m) 와 대학 건물 복도(1~20 m), 1 m 간격"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Nordic SDK CS 예제(IFFT·Slope 기본 알고리즘, RTT 포함) 기반 — 저자 수정 Initiator 펌웨어가 72 개 활성 채널의 원시 IQ 와 RSSI 를 함께 출력",
+        "펌웨어 내 스캔별 IQ 평균(약 0.5 s 주기), 5 s 마다 약 10 스캔 묶음(평균 IQ·RSSI·펌웨어 거리) 전송, 지점당 50 s 측정 → 약 10 개 결과",
+        "데이터 처리·이미지 생성 Python 스크립트는 생성형 AI(저자 표기 'X-GPT-5.5') 로 생성 후 검토",
+        "선행 연구(ble6-2026-utility-basement) 의 수정 IFFT 가 개활지에서 10 cm 미만 정확도를 냈다고 언급"
+      ],
+      "software_verified": true,
+      "results": [
+        "실외 RSSI 절대값: 20 m 에서 −71 dBm, 1 m 에서 −41 dBm; 채널 스캔 평균 대비 편차 ±6 dB 스케일의 RSSI 이미지에 유의한 공간 구조 없음",
+        "실외 위상 이미지는 거리 증가에 따라 위상 점프 밀도가 증가(고주파일수록 회전 큼) — 약 10 m 부근에 원인 불명 잡음",
+        "실내 복도: 위상 이미지가 덜 구조적, RSSI 이미지는 국소적 위치 의존 패턴을 보이며 진폭 변동 폭이 실외보다 훨씬 큼(백-흑 스팬 12 dB)",
+        "재현성: 15 m 지점 재측정 RSSI 벡터는 원 측정과 뚜렷이 일치, 12 m 지점은 유의한 불일치 — 단순 비교 알고리즘으로는 합리적 측위 결과를 못 낸다고 저자 판단",
+        "거리 오차 수치는 미제시(초기 보고)"
+      ],
+      "limitations": [
+        "저자 명시: 초기 측정·초기 결과의 워크숍 논문 — 추가 측정과 종합 분석이 필요, 후속으로 RSSI 이미지 푸리에 분석·필터링·ML 매칭·다채널 라디오맵 제안",
+        "관찰: 정량 정확도(거리 오차·측위 오차) 없음, 단일 칩셋·단일 복도",
+        "관찰: 보안 분석 없음 — RSSI 벡터를 조작 탐지에 쓰는 논의는 없음",
+        "관찰: 그림 축 라벨이 'Channel Index (0..74)' 로 표기돼 본문의 72 활성 채널과 혼용"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "ble6-2026-utility-basement",
+        "wieme-2025-cs-commercial-hw",
+        "nikodem-2025-mcpd-ble"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "ble6-2026-utility-basement",
+          "type": "extends",
+          "note": "같은 저자·같은 장비의 IPIN-WCAL 2025 후속 — 위상·RTT 평가에서 채널별 RSSI 벡터로 관측량을 넓힘"
+        },
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "Core 6.0 CS 절차의 채널별 RSSI 를 nRF54L15 에서 추출"
+        }
+      ],
+      "added": "2026-10-01",
+      "last_checked": "2026-10-01"
     }
   ]
 }
