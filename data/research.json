@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01",
+  "updated": "2026-10-03",
   "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
   "landscape": {
     "title": "Bluetooth Channel Sounding Security Landscape",
@@ -10,7 +10,7 @@
         "kind": "stage",
         "label": "Secure Ranging Foundations",
         "period": "2005 – 2020",
-        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 증명 가능한 실용 프로토콜로 형식을 세웠고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며, MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
+        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 증명 가능한 실용 프로토콜로 형식을 세웠고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며, Mauw 가 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
         "papers": [
           "clulow-2006-long-symbols",
           "hancke-2008-tof-db-attacks",
@@ -18,6 +18,7 @@
           "capkun-2005-secure-positioning",
           "boureanu-2015-practical-provable-db",
           "cremers-2012-distance-hijacking",
+          "mauw-2018-db-verification-without-time",
           "leu-2020-mtac",
           "ranganathan-2017-are-we-really-close"
         ]
@@ -418,11 +419,12 @@
     },
     {
       "text": "CS 는 안전한 근접 증명의 요건을 갖췄다",
-      "why_untested": "Ranganathan 의 개관이 정리한 세 요건은 (1) 왕복 ToF, (2) 챌린지·응답 RTT, (3) **짧은 심볼** 이다. CS 는 (1)(2)를 갖췄지만 1 Mb/s GFSK 의 1 µs 심볼은 (3)을 정면으로 위반한다 — 그 개관이 802.15.4a 의 32 ns 심볼로 '10 m 축소'를 계산한 식을 그대로 적용하면 CS 는 150 m 급 여지가 된다. Anliker 2026 이 실증한 것이 정확히 이 지점이고, **세 요건을 CS 파라미터로 다시 계산한 문헌이 없다.**",
+      "why_untested": "Ranganathan 의 개관이 정리한 세 요건은 (1) 왕복 ToF, (2) 챌린지·응답 RTT, (3) **짧은 심볼** 이다. CS 는 (1)(2)를 갖췄지만 1 Mb/s GFSK 의 1 µs 심볼은 (3)을 정면으로 위반한다 — 그 개관이 802.15.4a 의 32 ns 심볼로 '10 m 축소'를 계산한 식을 그대로 적용하면 CS 는 150 m 급 여지가 된다. Anliker 2026 이 실증한 것이 정확히 이 지점이고, **세 요건을 CS 파라미터로 다시 계산한 문헌이 없다.** 프로토콜 계층 쪽 도구는 있다 — Mauw 2018 은 시간·위치 기반 정의와 동치인 인과 기준('응답이 챌린지 송신보다 먼저 나가는 trace 가 있으면 불안전')을 증명하고 Tamarin 으로 13개 프로토콜·16개 변형을 평균 5.62 s 에 검증했다(Brands–Chaum 계열 거리 하이재킹 재현, PaySafe 거리 사기 신규). 그러나 **CS 의 RTT 교환(CS_SYNC 랜덤 시퀀스)을 이 틀에 넣어 거리 사기·거리 하이재킹을 따진 문헌도 없고**, 메시지를 원자 단위로 다루는 기호 모델은 위 (3)의 짧은 심볼 문제(물리계층 ED/LC)를 원리상 다루지 못한다 — 두 계층을 따로 검증해야 한다.",
       "evidence": [
         "ranganathan-2017-are-we-really-close",
         "anliker-2026-narrowband-toa",
-        "clulow-2006-long-symbols"
+        "clulow-2006-long-symbols",
+        "mauw-2018-db-verification-without-time"
       ],
       "blocks": [
         "todo-step-timing"
@@ -767,6 +769,12 @@
           "text": "양방향 CFR 을 일방향으로 되돌리면 반송파마다 ±1 부호 모호성이 생기고, 그 분기 선택이 잡음 낀 반송파 하나에 무너진다 — 새 조작 지점이다",
           "evidence": [
             "morano-2026-one-way-channel-reconstruction"
+          ]
+        },
+        {
+          "text": "희소성(Cauchy) 사전분포를 쓴 반복 베이지안 초분해능 IDFT 는 광대역에 퍼진 에너지를 좁은 대역으로 모아 **존재하지 않는 스펙트럼 선을 만들고**, 이웃 경로 피크가 붙어 LOS 보다 큰 피크가 되므로 저자가 '최대' 대신 '첫 유의 최대' 를 고르라고 권한다(시뮬레이션 SNR 80 dB 에서 오차 평균 0.015 m·표준편차 0.085 m 대 영점 채움 0.213 m·0.248 m) — 정확도를 올리는 두 장치(희소화·첫 피크 규칙)가 주입 에너지를 날카로운 이른 경로로 정리해 줄 여지가 있는데 보안 평가는 없다. 저자는 가짜 선이 첫 지연에서 먼 곳에 생겨 무해하다고 보지만 그것은 자연 잡음 가정이다",
+          "evidence": [
+            "mazur-2024-ifft-bayesian-pbr"
           ]
         }
       ],

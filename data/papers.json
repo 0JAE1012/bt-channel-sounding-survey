@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-01",
-  "last_run": "2026-10-01",
+  "updated": "2026-10-03",
+  "last_run": "2026-10-03",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1091,
+  "citation_edges": 1118,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -923,12 +923,13 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-31",
+      "last_checked": "2026-10-03",
       "cites": [
         "pnn-2025-cs-distance-estimation",
         "santra-2024-cs-indoor",
         "suresh-2025-cs-vehicle-access",
-        "vanmarter-2023-svr-ble-ranging"
+        "vanmarter-2023-svr-ble-ranging",
+        "mazur-2024-ifft-bayesian-pbr"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -5135,15 +5136,22 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-09-24",
+      "last_checked": "2026-10-03",
       "cites": [
         "avoine-2018-db-survey",
         "hancke-2005-rfid-db",
         "brands-1993-distance-bounding",
-        "boureanu-2015-practical-provable-db"
+        "boureanu-2015-practical-provable-db",
+        "mauw-2018-db-verification-without-time"
       ],
       "cites_source": "fulltext",
-      "relations": [],
+      "relations": [
+        {
+          "to": "mauw-2018-db-verification-without-time",
+          "type": "extends",
+          "note": "응답은 물리적으로 도달한 정보에만 의존할 수 있다는 Mauw 외의 인과 관점을 가져와, 명시적 시간·위치 대신 정보 흐름을 추적하는 one-round DF·MF 게임을 양자 거리한정의 SDP 로 정식화"
+        }
+      ],
       "category": "analysis"
     },
     {
@@ -5691,12 +5699,20 @@
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
         "brands-1993-distance-bounding",
-        "boureanu-2015-practical-provable-db"
+        "boureanu-2015-practical-provable-db",
+        "mauw-2018-db-verification-without-time",
+        "abu-mahfouz-2013-db-rtls"
       ],
       "cites_source": "fulltext",
-      "relations": [],
+      "relations": [
+        {
+          "to": "mauw-2018-db-verification-without-time",
+          "type": "extends",
+          "note": "Mauw 외의 시간·위치 없는 인과 기반 거리한정 정식화([55])를 가져와 한 라운드 챌린지-키 해시 응답으로 단순화하고, BLE 재연결·Wi-Fi P2P 프라이버시 Tamarin 모델에 근접성 검사로 결합"
+        }
+      ],
       "added": "2026-08-24",
-      "last_checked": "2026-09-24"
+      "last_checked": "2026-10-03"
     },
     {
       "id": "schroeder-2022-inphase",
@@ -6859,12 +6875,13 @@
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
         "bintariq-2024-signal-subspace-ble-ranging",
-        "gunia-2017-phase-positioning-off-the-shelf"
+        "gunia-2017-phase-positioning-off-the-shelf",
+        "mazur-2024-ifft-bayesian-pbr"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-18"
+      "last_checked": "2026-10-03"
     },
     {
       "id": "boshoff-2026-secure-indoor-ranging",
@@ -9470,7 +9487,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-23",
+      "last_checked": "2026-10-03",
       "cites": [
         "clulow-2006-long-symbols",
         "cremers-2012-distance-hijacking",
@@ -9486,7 +9503,8 @@
         "reid-2007-timing-relay-detection",
         "capkun-2006-secure-positioning-jsac",
         "singelee-2007-db-noisy-environments",
-        "drimer-2007-smartcard-relay-db"
+        "drimer-2007-smartcard-relay-db",
+        "abu-mahfouz-2013-db-rtls"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -12655,18 +12673,22 @@
       ],
       "limitations": [
         "전문 미확보 (2026-09-18): IEEE 유료(isOpenAccess=false, Unpaywall·S2 closed), ielx7 경로 0 바이트; 저자 박사학위논문(TU Dresden 2023, Vogt Verlag 단행본 ISBN 978-3-95947-068-1)은 DNB 사본 403·Qucosa 미등재 — 초록은 Xplore REST abstract 로 확인 (2026-09-27 재시도: DNB SRU 로 학위논문 idn 1317826469 재확인, d-nb.info/…/34 는 브라우저·Googlebot UA 모두 403, nbn-resolving 은 Anubis 챌린지, Qucosa OAI 2023 박사논문 목록에 없음 — 남은 경로는 도서관 경유)",
-        "워크숍 6쪽 시스템 구축 보고 — 정확도 평가·다중경로 분석은 후속(schroeder-2022-inphase 의 인용 문맥상 pelka-2014 와의 오차 비교 포함)으로 추정되나 본문 미확인 (관찰)"
+        "워크숍 6쪽 시스템 구축 보고 — 정확도 평가·다중경로 분석은 후속(schroeder-2022-inphase 의 인용 문맥상 pelka-2014 와의 오차 비교 포함)으로 추정되나 본문 미확인 (관찰)",
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(11건)을 코퍼스와 대조해 채움 — [9] Pelka IPIN 2014·[10] von Zengen INFOCOM 2016; 본문은 여전히 미확보 (2026-10-03)"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
       "verification": "partial",
-      "cites": [],
-      "cites_source": "no-fulltext",
+      "cites": [
+        "pelka-2014-phase-multi-frequency",
+        "vonzengen-2016-no-cost-distance"
+      ],
+      "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-18",
-      "last_checked": "2026-09-27"
+      "last_checked": "2026-10-03"
     },
     {
       "id": "oluwafunke-2026-ml-music-ble-phase-ranging",
@@ -14812,7 +14834,8 @@
         "poturalski-2011-db-802-15-4a",
         "capkun-2006-secure-positioning-jsac",
         "clulow-2006-long-symbols",
-        "poturalski-2010-cicada-attack"
+        "poturalski-2010-cicada-attack",
+        "abu-mahfouz-2013-db-rtls"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -14833,7 +14856,7 @@
         }
       ],
       "added": "2026-09-26",
-      "last_checked": "2026-09-26"
+      "last_checked": "2026-10-03"
     },
     {
       "id": "compagno-2016-enlargement-attacks-uwb-db",
@@ -14911,7 +14934,8 @@
         "boureanu-2015-practical-provable-db",
         "clulow-2006-long-symbols",
         "poturalski-2012-secure-precise-ir-uwb",
-        "capkun-2006-secure-positioning-jsac"
+        "capkun-2006-secure-positioning-jsac",
+        "abu-mahfouz-2013-db-rtls"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -14937,7 +14961,7 @@
         }
       ],
       "added": "2026-09-26",
-      "last_checked": "2026-09-26"
+      "last_checked": "2026-10-03"
     },
     {
       "id": "hussain-2024-pp-snd",
@@ -15611,7 +15635,7 @@
         "Sangyoun Lee"
       ],
       "venue": "ACM DTwin '26",
-      "venue_full": "Proceedings of the ACM Workshop on Digital Twins over NextG Wireless Networks (DTwin '26, SIGMOBILE, Austin TX, 2026-10-26), DOI 10.1145/3842434.3844965 (Crossref 등록 2026-09-28) — Samsung Research America Standards and Mobility Innovation Lab (Plano) + Samsung Electronics (Suwon·Gumi)",
+      "venue_full": "Proceedings of the ACM Workshop on Digital Twins over NextG Wireless Networks (DTwin '26, SIGMOBILE, Austin TX, 2026-10-26), DOI 10.1145/3842434.3844965 (Crossref 등록 2026-09-28, OpenAlex·Semantic Scholar 골드 OA·CC BY-NC-ND 4.0 표기) — Samsung Research America Standards and Mobility Innovation Lab (Plano) + Samsung Electronics (Suwon·Gumi)",
       "tier": "other",
       "category": "estimation",
       "year": 2026,
@@ -15625,34 +15649,43 @@
         "llm-agent",
         "digital-twin",
         "super-resolution",
-        "model-order-selection",
+        "music",
+        "ifft",
+        "nlos",
+        "tone-reliability",
         "samsung"
       ],
       "tech": [
         "ble-cs"
       ],
       "relevance": "medium",
-      "relevance_note": "초록을 아직 못 봤지만(ACM DL 봇 차단, arXiv·S2·OpenAlex 미색인) 제목과 Crossref 참고문헌 13건이 내용을 꽤 좁혀 준다 — Bluetooth Core 6.0 CS 규격, Silicon Labs CS 기초 문서(안테나 스위칭 절), Santra 2024·Shoudha 2022·Wieme 2025 의 CS/PBR 거리 추정 논문, MUSIC(Schmidt 1986)·ESPRIT(Roy–Kailath 1989)·AIC(Akaike)·BIC(Schwarz 1978) 의 초분해능·모델차수 선택, 그리고 Karpathy autoresearch·Trace2skill·SkillX 의 LLM 에이전트 자동 연구 문헌. 즉 **CS 거리 추정 알고리즘(초분해능 추정기·차수 선택 파라미터)을 LLM 에이전트가 디지털 트윈 시뮬레이터 위에서 자동 탐색·최적화** 하는 Samsung 의 작업으로 보인다. CS 연구 관점에서 둘이 중요하다: (1) Samsung(Galaxy 의 CS 구현 주체)이 어떤 채널 시뮬레이터·평가 지표를 '디지털 트윈' 으로 쓰는지가 드러나면, 공격 신호를 그 트윈에 넣어 상용 추정기의 반응을 미리 볼 수 있다. (2) 자동 설계된 추정기는 정확도 지표만 최적화하므로, NADM 류 보안 검사와의 상충(정확도를 올리는 파라미터가 조작 식별력을 낮추는가)이 새 질문이 된다. 초록·본문 확보 전까지는 제목·참고문헌 기반 추정임을 분명히 둔다.",
-      "summary": "제목과 Crossref 참고문헌으로만 파악한 항목(초록 미확보). Samsung Research America SMI Lab 과 Samsung Electronics 가 ACM MobiCom 계열 워크숍 DTwin '26 에 낸 논문으로, BLE 거리측정(참고문헌상 Bluetooth 6.0 Channel Sounding) 알고리즘 설계를 에이전트 기반 디지털 트윈 최적화로 자동화한다고 제목에 밝힌다. 참고문헌은 CS 규격·Silicon Labs CS 문서, CS/PBR 거리 추정 선행연구(Santra 2024, Shoudha 2022, Wieme 2025), MUSIC·ESPRIT·AIC·BIC, LLM 에이전트 자동 연구(autoresearch, Trace2skill, SkillX)로 구성된다. 실제 방법·실험·수치는 본문 확보 후 채운다.",
+      "relevance_note": "Samsung Research America·Samsung Electronics 가 상용 CS 거리 추정기를 어떻게 다듬는지 보여 주는 첫 공개 자료다. 초록 기준으로 두 곳에 쓰인다. (1) **'신뢰 불가 톤' 처리**: AutoBLE 은 이득 불일치를 보상하고 신뢰할 수 없는 톤을 식별한 뒤 진폭·위상 아티팩트를 '복구' 하고 나서야 IFFT 거친 지연 프로파일과 MUSIC 미세 증거를 학습 모델에 넣는다. 톤 단위 위상 주입·조작은 바로 이 전처리 단계로 들어가므로, 조작된 톤이 '손상' 으로 분류돼 버려지는지(방어 효과) 아니면 '복구' 돼 정상처럼 다듬어지는지(흔적 소거)가 보안 질문이 된다 — 가설이며 본문에서 확인해야 한다. (2) **칩 벤더 구현 대비 NLOS MAE −41.5 %**: 상용 기준선(벤더 추정기)이 NLOS 에서 크게 틀린다는 것을 구현 주체 쪽이 수치로 보인 셈이라, 정상 오차 꼬리 안에 조작을 숨길 여지(Xu 2026 의 Pixel 실측과 같은 축)를 가늠하는 근거가 된다. 정확도만 최적화하는 에이전트 루프가 NADM 류 탐지 지표와 상충하는지도 열린 질문이다. 칩셋·CS 모드(PBR/RTT)·데이터 공개 여부는 본문이 필요하다.",
+      "summary": "BLE CS 는 상용 휴대폰·태그·웨어러블·IoT 기기에서 거리측정을 가능하게 하지만, 실내 정확도는 좁은 대역폭·다중경로·NLOS 차폐·손상된 I/Q 측정으로 제한된다. AutoBLE 은 신뢰도 인지 전처리와 물리 기반 DSP 특징(IFFT 거친 지연 프로파일·MUSIC 미세 증거)을 학습 모델과 결합한 하이브리드 CS 거리측정 시스템이며, 그 모델을 에이전트형 디지털 트윈 루프 — 합성 데이터 생성, 학습, 실측 평가, 실패 분석으로 시뮬레이터와 모델을 반복 개선 — 로 최적화한다. 1–90 m 실내 LOS/NLOS 실측 약 16K 회에서 MAE 1.515 m·중앙값 1.071 m 를 얻어 DSP 단독 기준선 대비 MAE 를 15.2–48.4 %, 칩 벤더 구현 대비 NLOS MAE 를 41.5 % 줄였다고 초록에 밝힌다(OpenAlex·Semantic Scholar 초록 동일). 본문은 ACM DL 봇 차단으로 아직 못 봤다.",
       "hardware": [
-        "확인 필요 — 초록·본문 미확보"
+        "확인 필요 — 초록은 '상용 휴대폰·태그·웨어러블·IoT 기기' 와 비교 기준 '칩 벤더 구현' 만 언급, 칩셋·보드·측정 장비 미확인"
       ],
       "hardware_verified": false,
       "software": [
-        "확인 필요 — 초록·본문 미확보(참고문헌에 karpathy/autoresearch GitHub, Silicon Labs RTL 라이브러리 문서가 있으나 사용 여부 미확인)"
+        "확인 필요 — 본문 미확보(초록에 IFFT·MUSIC·학습 모델·디지털 트윈 시뮬레이터만 언급; Crossref 참고문헌에 karpathy/autoresearch GitHub, Silicon Labs RTL 라이브러리 문서가 있으나 사용 여부 미확인)"
       ],
       "software_verified": false,
       "results": [
-        "확인 필요 — 초록·본문 미확보"
+        "실측 BLE CS 약 16K 회, 1–90 m 실내 LOS/NLOS: MAE 1.515 m, 중앙값 오차 1.071 m (초록)",
+        "DSP 단독 기준선 대비 MAE 15.2 %–48.4 % 감소 (초록)",
+        "칩 벤더 구현 대비 NLOS MAE 41.5 % 감소 (초록 — 벤더·칩셋명은 미확인)",
+        "파이프라인: 이득 불일치 보상 → 신뢰 불가 톤 식별 → 진폭·위상 아티팩트 복구 → IFFT 거친 지연 프로파일 + MUSIC 미세 증거 → 학습 모델 (초록)",
+        "에이전트형 시뮬레이터-ML 루프: 합성 데이터 생성·학습·실측 평가·실패 분석으로 시뮬레이터와 모델을 반복 개선 (초록)"
       ],
       "limitations": [
-        "관찰: 워크숍 논문(2026-10-26 발표 예정)으로 Crossref 페이지 필드가 '28-24' 로 불명확; ACM DL 은 Cloudflare 403, 저자 홈페이지(kaizheng.me)에는 채택 소식만 있고 PDF 없음"
+        "본문 미확보 (2026-10-03): OpenAlex·S2 가 골드 OA(CC BY-NC-ND 4.0)로 표기하지만 dl.acm.org/doi/pdf 는 브라우저·Googlebot·curl·Zotero UA 모두 Cloudflare 403, Wayback 스냅숏 없음, arXiv 미등재 — 초록은 OpenAlex abstract_inverted_index 복원과 S2 API 로 대조 확인",
+        "관찰: 워크숍 논문(2026-10-26 발표 예정)으로 Crossref 페이지 필드가 '28-24' 로 불명확; 저자 홈페이지(kaizheng.me)에는 채택 소식만 있고 PDF 없음",
+        "관찰: 초록의 평가 지표는 정확도(MAE·중앙값)뿐 — 보안·조작 탐지 고려는 언급 없음"
       ],
       "artifacts": {
         "code": null,
         "dataset": null
       },
-      "verification": "unverified",
+      "verification": "partial",
       "cites": [
         "santra-2024-cs-indoor",
         "shoudha-2022-reduced-complexity-ble-ranging",
@@ -15661,7 +15694,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-09-30"
+      "last_checked": "2026-10-03"
     },
     {
       "id": "pestourie-2019-secureloc-ack-attack",
@@ -15814,7 +15847,8 @@
         "capkun-2006-secure-positioning-jsac",
         "neirynck-2016-alt-ds-twr",
         "hancke-2005-practical-relay-iso14443",
-        "compagno-2016-enlargement-attacks-uwb-db"
+        "compagno-2016-enlargement-attacks-uwb-db",
+        "mauw-2018-db-verification-without-time"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -15835,7 +15869,7 @@
         }
       ],
       "added": "2026-09-30",
-      "last_checked": "2026-09-30"
+      "last_checked": "2026-10-03"
     },
     {
       "id": "botler-2021-hybrid-tof-rss-enlargement",
@@ -15967,7 +16001,8 @@
       "cites": [
         "ble6-2026-utility-basement",
         "wieme-2025-cs-commercial-hw",
-        "nikodem-2025-mcpd-ble"
+        "nikodem-2025-mcpd-ble",
+        "mazur-2024-ifft-bayesian-pbr"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -15983,7 +16018,252 @@
         }
       ],
       "added": "2026-10-01",
-      "last_checked": "2026-10-01"
+      "last_checked": "2026-10-03"
+    },
+    {
+      "id": "mauw-2018-db-verification-without-time",
+      "title": "Distance-Bounding Protocols: Verification without Time and Location",
+      "authors": [
+        "Sjouke Mauw",
+        "Zach Smith",
+        "Jorge Toro-Pozo",
+        "Rolando Trujillo-Rasua"
+      ],
+      "venue": "IEEE S&P",
+      "venue_full": "2018 IEEE Symposium on Security and Privacy (SP), San Francisco, CA, USA, pp. 549–566, May 2018 — University of Luxembourg (CSC / SnT). Luxembourg FNR AFR-PhD-10188265·C15-IS-10428112 지원",
+      "tier": "top4",
+      "category": "analysis",
+      "year": 2018,
+      "url": "https://ieeexplore.ieee.org/document/8418584",
+      "preprint": "http://orbilu.uni.lu/handle/10993/37277",
+      "doi": "10.1109/SP.2018.00001",
+      "topics": [
+        "distance-bounding",
+        "formal-verification",
+        "tamarin",
+        "symbolic-model",
+        "causality",
+        "distance-hijacking",
+        "mafia-fraud",
+        "distance-fraud",
+        "emv-payment",
+        "protocol-analysis"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "Bluetooth CS 의 보안 논의는 거의 전부 물리계층(PBR 위상 조작, RTT 의 ED/LC·NGD)에 쏠려 있지만, CS 도 결국 Security Start 로 키를 맞춘 두 기기가 시간 측정을 주고받는 프로토콜이고, 그 **프로토콜 계층**이 거리한정 문헌의 공격 유형(마피아 사기·거리 사기·거리 하이재킹) 중 무엇을 막는지는 코퍼스 어디에서도 정식으로 따져지지 않았다. 이 논문이 그 작업의 도구를 준다. (1) **판정 기준이 하나로 줄어든다**: 시간·위치 기반 정의와 동치인 인과 조건 — '응답이 챌린지 송신보다 먼저 나가는 trace 가 있는가' — 만 보면 되므로, CS RTT 교환에서 Reflector 의 CS_SYNC 랜덤 시퀀스가 같은 step 의 Initiator 신호에 인과적으로 의존하는지를 규격에서 확인하는 것이 곧 거리 사기 내성 질문이 된다(이 대입은 내 해석이며 논문은 CS 를 다루지 않는다). (2) **모델과 코드가 공개돼 있다**(DBVerify): 프로토콜당 평균 194 줄·5.62 s 라 CS 절차를 Tamarin 으로 옮기는 비용이 낮고, Jangid 2026 이 이미 이 정식화를 BLE 재연결 모델에 가져와 같은 경로의 선례가 있다. (3) **경계가 분명하다**: 메시지를 원자 단위로 다루는 Dolev-Yao 모델이라 짧은 심볼·ED/LC·위상 조작 같은 물리계층 거리축소는 원리상 잡지 못하고, Hancke–Kuhn 의 (3/4)^n 확률 공격조차 해시 추상화로 놓친다고 저자가 밝힌다. Tamarin 이 'CS 프로토콜은 안전' 이라고 답하더라도 물리계층 위협과는 무관하다는 것을 문헌으로 못박아 두는 근거가 된다. Cremers 2012 의 거리 하이재킹 결과를 자동으로 재현했으므로 그 논문(코퍼스의 다중 프로버 축)의 기계 검증판으로 읽으면 된다.",
+      "summary": "거리한정 프로토콜의 기호적 검증은 그동안 타임스탬프와 에이전트 위치를 모델에 넣어야 해서 Isabelle/HOL 같은 고차 정리증명기와 사람의 개입이 필요했다. 이 논문은 Basin 외의 시간·위치 기반 secure distance-bounding 정의와 동치인 인과(causality) 기반 정의를 제시하고 증명한다 — 프로버가 챌린지를 받기 전에 응답을 만들 수 있다면 챌린지가 송신되기도 전에 응답이 나가는 trace 도 존재하므로, 시간 없이 사건 순서만으로 결함을 찾을 수 있다는 것이다. 이를 Tamarin 에 구현해 13개 프로토콜·16개 변형을 자동 검증했고, 기존에 보고된 Brands–Chaum 계열·CRCS·Meadows 외의 거리 하이재킹을 재현했으며, TREAD(마피아 사기·거리 하이재킹)와 EMV 비접촉 결제 PaySafe(거리 사기)의 미보고 취약점을 찾았다. 테러리스트 사기와 확률적 공격은 범위 밖으로 남겼다.",
+      "hardware": [
+        "없음 — 기호적 형식검증 논문으로 무선 실험 장비를 쓰지 않음 (전문 확인)",
+        "검증 실행 PC: 64-bit Ubuntu 16.04 LTS, RAM 15.5 GB, Intel Core i7-6700HQ @ 2.60 GHz × 8 (검증 시간 측정용)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Tamarin prover — multiset rewriting 기반 기호 검증기, Dolev-Yao 공격자에 에이전트 손상(장기 비밀 획득) 능력 추가",
+        "저자 구현 DBVerify — 인과 기반 secure distance-bounding 을 Tamarin lemma 'dbsec' 와 axiom(at_most_once·equality)으로 표현, 공개 (http://satoss.uni.lu/software/DBVerify/)",
+        "비교 기준: Basin 외 Isabelle/HOL 모델(ETH protoveriphy) — Brands–Chaum 구현이 Tamarin 185 줄 대 Isabelle 653 줄(공격 trace 포함)"
+      ],
+      "software_verified": true,
+      "results": [
+        "주정리: 잘 형성된(타임스탬프를 근접 검증 외 분기에 쓰지 않는) 프로토콜 클래스에서 인과 기반 secure distance-bounding 이 Basin 외의 시간·위치 기반 정의와 동치임을 증명 — 시간·위치 없이 표준 기호 검증 도구로 검증 가능",
+        "Table I (13개 프로토콜·16개 변형): BC-Signature DH; BC-FiatShamir·BC-Schnorr DH+DF; CRCS DH; Meadows 외 DH; Tree-based·Poulidor·Hancke–Kuhn·Uniform·Kim–Avoine·Munilla 외·Reid 외·Swiss-Knife 공격 없음; TREAD-PK MF; TREAD-SH DH; PaySafe DF",
+        "프로토콜당 Tamarin 코드 평균 194 줄(182~226), 검증 시간 평균 5.62 s(1.76~18.59 s, 10회 평균), 모든 프로토콜이 20 s 미만에 증명 또는 공격 trace 산출",
+        "취약 5개 프로토콜 중 3개(BC 계열·CRCS·Meadows 외)는 기존 보고와 일치, 2개는 신규: TREAD — 비대칭 키 변형에서 MITM 마피아 사기, 대칭 키 변형에서 거리 하이재킹(원 저자의 DFKO 모델이 악성 검증자를 허용하지 않아 놓침)",
+        "신규: PaySafe(EMV 비접촉 결제 변형)는 fast phase 응답 (ATC, nC) 이 챌린지 (UN, amount) 와 인과 관계가 없어 부정직한 카드가 챌린지 수신 전에 응답을 보낼 수 있음 — 거리 사기; 응답에 UN 을 넣으면 해결",
+        "BC-FiatShamir/Schnorr 의 거리 사기는 fast phase 에 XOR 같은 챌린지-응답 인과 관계를 쓰면 사라짐(서명 기반 판본이 그 예)",
+        "Cremers 외 2012 와 일치: Brands–Chaum 설계 계열은 거리 하이재킹에 취약, Hancke–Kuhn 계열은 거리 하이재킹·마피아 사기·거리 사기 모두에 견딤"
+      ],
+      "limitations": [
+        "저자 명시: 테러리스트 사기는 모델 밖 — 기호 모델에서 정식화 자체가 미해결(Basin 외 모델도 마찬가지), 향후 과제",
+        "저자 명시: 확률적 공격을 잡지 못함 — fast phase 함수를 안전한 해시로 추상화해 Hancke–Kuhn 의 (3/4)^n 마피아 사기가 탐지되지 않음; 확률 추론을 인과 모델에 넣는 것이 향후 과제",
+        "저자 명시: Tamarin 은 subterm-convergent 등식 이론만 허용해 원 프로토콜을 과대근사해야 할 때가 있음 — n 라운드 fast phase 를 단일 챌린지-응답으로, 비트 연산을 해시로 승격해 모델링",
+        "저자 명시: 에이전트(부정직한 에이전트 포함)가 정지해 있다고 보는 위치 해석, 타임스탬프가 근접 검증에만 쓰이는 프로토콜 클래스로 한정",
+        "관찰: 메시지를 원자 단위로 다루는 기호 모델이라 ED/LC·오버섀도·위상 조작 등 물리계층 거리축소는 범위 밖 — Bluetooth CS 의 주된 위협면(PBR·RTT 신호 조작)은 이 틀로 다룰 수 없음"
+      ],
+      "artifacts": {
+        "code": "http://satoss.uni.lu/software/DBVerify/",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "francillon-2011-pkes-relay",
+        "brands-1993-distance-bounding",
+        "cremers-2012-distance-hijacking",
+        "hancke-2005-rfid-db",
+        "rasmussen-2010-rf-distance-bounding",
+        "reid-2007-timing-relay-detection",
+        "kim-2008-swiss-knife-db"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "cremers-2012-distance-hijacking",
+          "type": "reproduces",
+          "note": "거리 하이재킹 분석 결과가 Cremers 외와 일치 — Brands–Chaum 설계 계열은 취약, Hancke–Kuhn 계열은 견딤(본문 VI-B). 수기 분석을 Tamarin 자동 검증으로 재현"
+        },
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "applies-to",
+          "note": "BC-Signature(DH)·BC-FiatShamir/Schnorr(DH·DF) 세 변형을 검증(Table I) — DF 는 fast phase 에 챌린지-응답 인과 관계(XOR 등)를 쓰면 사라진다고 지적"
+        },
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "applies-to",
+          "note": "기호 모델에서 MF·DF·DH 없음 — 단 fast phase 함수를 해시로 추상화해 원 논문의 (3/4)^n 확률 마피아 사기는 탐지하지 못함(부록 A)"
+        },
+        {
+          "to": "rasmussen-2010-rf-distance-bounding",
+          "type": "applies-to",
+          "note": "CRCS 프로토콜에서 거리 하이재킹 확인(Table I, 기존 보고와 일치)"
+        },
+        {
+          "to": "reid-2007-timing-relay-detection",
+          "type": "applies-to",
+          "note": "Reid 외 프로토콜은 공격 없음(Table I, 192 줄·2.74 s)"
+        },
+        {
+          "to": "kim-2008-swiss-knife-db",
+          "type": "applies-to",
+          "note": "Swiss-Knife 는 공격 없음(Table I, 207 줄·2.92 s)"
+        }
+      ],
+      "added": "2026-10-03",
+      "last_checked": "2026-10-03"
+    },
+    {
+      "id": "abu-mahfouz-2013-db-rtls",
+      "title": "Distance Bounding: A Practical Security Solution for Real-Time Location Systems",
+      "authors": [
+        "Adnan Abu-Mahfouz",
+        "Gerhard P. Hancke"
+      ],
+      "venue": "IEEE TII",
+      "venue_full": "IEEE Transactions on Industrial Informatics, vol. 9, no. 1, pp. 16–27, Feb. 2013 — University of Pretoria / Information Security Group, Royal Holloway University of London",
+      "tier": "journal",
+      "category": "analysis",
+      "year": 2013,
+      "url": "https://ieeexplore.ieee.org/document/6298958",
+      "preprint": null,
+      "doi": "10.1109/TII.2012.2218252",
+      "topics": [
+        "distance-bounding",
+        "rtls",
+        "rfid",
+        "industrial",
+        "resource-requirements",
+        "protocol-comparison",
+        "secure-neighbor-detection"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "CS 자체와는 거리가 있지만 두 곳에 쓰인다. (1) **실용 요건의 기준점**: 거리한정을 산업용 RFID·실시간 위치추적(RTLS)에 넣을 때 신뢰성·실시간 통신·자원 요구의 상충이 걸림돌이라는 2013 년의 정리로, CS 를 산업 측위·디지털 키에 쓸 때 '보안 거리측정이 시스템에 무엇을 요구하는가' 를 논할 출발점이 된다. (2) **계보 연결점**: Taponecco 2014·Tippenhauer 2015·Compagno 2016·Jangid 2026 이 인용하는 Hancke 그룹의 TII 문헌이고, 같은 그룹·같은 저널의 13 년 뒤 서베이 Boshoff 2026 과 나란히 놓으면 무엇이 바뀌었는지 볼 수 있다(Boshoff 는 이 논문을 인용하지 않음 — Xplore 참고문헌 30건 확인). 본문을 못 봐 어떤 프로토콜을 어떤 지표로 비교했는지는 모른다.",
+      "summary": "산업 응용에서 장치의 물리적 근접·위치 검증이 중요한 보안 서비스가 되었다는 문제의식에서, 챌린지-응답 왕복시간으로 두 통신 당사자 사이 거리의 상한을 암호학적으로 정하는 거리한정 프로토콜을 개관한다. 산업용 RFID 와 RTLS 에 이를 구현할 가능성을 신뢰성과 실시간 통신 요구를 중심으로 논의하고, 표본 거리한정 프로토콜들로 실제 자원 요구와 성능 상충을 보인 뒤 실용 구현의 남은 연구 과제를 정리한다(초록 기준).",
+      "hardware": [
+        "확인 필요 — 초록만 확보(개관·비교 논문이라 실험 장비가 없을 수 있음)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 초록만 확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "확인 필요 — 초록에 수치 없음. 초록 기준: 표본 거리한정 프로토콜들로 실제 자원 요구와 성능 상충을 예시하고 실용 구현의 남은 과제를 논의"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-10-03): IEEE 유료(isOpenAccess false), OpenAlex·arXiv 사본 없음 — 초록은 Xplore REST abstract 로 확인",
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(30건)을 코퍼스와 대조해 채움 — 본문은 미확보",
+        "관찰: 제1저자의 University of Pretoria 박사학위논문(2011-10, UPSpace 공개 'Accurate and efficient localisation in wireless sensor networks using a best-reference selection') 5장이 거리한정 프로토콜 14종을 보안·메모리·전송량·연산으로 비교하는 같은 주제를 담지만, TII 판과의 대응이 학위논문에 명시돼 있지 않아 근거로 쓰지 않음 — 다음 보강 때 대조 후보"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "capkun-2006-secure-positioning-jsac",
+        "clulow-2006-long-symbols",
+        "reid-2007-timing-relay-detection"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-10-03",
+      "last_checked": "2026-10-03"
+    },
+    {
+      "id": "mazur-2024-ifft-bayesian-pbr",
+      "title": "High-Resolution Phase-Based Ranging Using Inverse Fourier Transform in an Iterative Bayesian Approach",
+      "authors": [
+        "Jan Mazur"
+      ],
+      "venue": "Sensors",
+      "venue_full": "Sensors (MDPI), vol. 24, no. 20, art. 6758, Oct. 2024 (CC BY 4.0; 접수 2024-07-18, 게재 확정 2024-10-17) — Wroclaw University of Science and Technology, Faculty of Electronics, Photonics and Microsystems",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2024,
+      "url": "https://doi.org/10.3390/s24206758",
+      "preprint": "https://europepmc.org/articles/PMC11511294",
+      "doi": "10.3390/s24206758",
+      "topics": [
+        "phase-based-ranging",
+        "channel-sounding",
+        "super-resolution",
+        "sparse-bayesian",
+        "ifft",
+        "multipath",
+        "first-path",
+        "simulation"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 규격은 거리 계산 알고리즘을 응용 계층에 맡기므로(ble6-2026-utility-basement 가 이 논문을 인용하며 지적) 상용 추정기가 어떤 초분해능 기법을 쓰느냐가 곧 공격 표면을 정한다. 이 논문은 그 후보 하나 — 희소성(Cauchy) 사전분포의 반복 베이지안 고해상도 IDFT — 를 BLE PBR 위상 샘플에 적용한 것으로, 코퍼스의 HFT Stuttgart 실측(ble6-2026-utility-basement·Ulsamer 2026)과 Morano 2026 이 CS 거리 추정 배경으로 인용한다. 내 연구에는 세 가지로 쓰인다. (1) **가짜 피크를 만드는 추정기**: 저자 스스로 이 알고리즘이 '존재하지 않는 곳에서 스펙트럼 선을 찾는다' — 광대역에 퍼진 에너지를 좁은 선으로 모은다 — 고 밝힌다. 공격자가 넓게 퍼뜨린 주입 에너지가 날카로운 이른 경로로 정리될 수 있다는 뜻이라, Ghost Peak 류 이른 피크 주입을 CS 추정기에 대입하는 시뮬레이션의 대상이 된다(가설). (2) **첫 유의 최대 규칙**: 이웃 피크가 붙어 LOS 보다 큰 피크를 만들기 때문에 '최대' 가 아니라 '첫 유의 최대' 를 고르라고 권하는데, UWB 에서 첫 경로 back-search 창이 축소 공격 면이 된 구조(Poturalski 2012)와 같은 판정 규칙이다. (3) **재현이 쉽다**: 식 (33)의 3단계 반복과 파라미터(λ=σn²/σX², 출력 길이 M)가 본문에 다 있어 장비 없이 구현해 공격 신호를 넣어 볼 수 있다. 실측이 없고, 비동기 위상 보정·CS 모드·톤 순서를 무시한 동기화 가정의 시뮬레이션이라는 한계는 분명하다.",
+      "summary": "BLE 를 염두에 두고, 주어진 주파수 범위에서 모은 위상 샘플로 두 송수신기 사이 거리를 정하는 알고리즘을 제안한다. 위상 샘플은 주어진 것으로 보고, 시간 영역이 희소하다(지배적 반사가 몇 개뿐)는 가정 아래 Cauchy 사전분포의 반복 베이지안 고해상도 DFT — Sacchi 외(1998)의 스펙트럼 추정 기법을 시간·주파수 변수를 바꿔 적용 — 로 다중경로 지연을 찾고 첫 지연을 거리로 삼는다. 영점 채움 IDFT 는 새 정보를 더하지 못해 해상도가 비영 샘플 수에 묶이지만, 이 방법은 40 채널(2 MHz) 위상만으로 출력 길이를 늘려 이웃 경로를 분리한다. 가상 음향용 20 m 1D 무대 시뮬레이션(SNR 80 dB)에서 고해상도 IDFT 오차는 평균 0.015 m·표준편차 0.085 m 로 영점 채움 IDFT(0.213 m·0.248 m)보다 작았다. 실측은 없고, 가짜 스펙트럼 선과 파라미터 의존 같은 단점을 함께 논의한다.",
+      "hardware": [
+        "없음 — 시뮬레이션 논문(위상 샘플을 다중경로 채널 모델 식 (9)로 생성, 송수신기 동기화 가정; 전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이션 도구·언어는 본문에 기재 없음, 코드 미공개(데이터는 '본문에 포함' 표기) — 전문 확인",
+        "알고리즘: Sacchi·Ulrych·Walker(IEEE TSP 1998) 고해상도 DFT — Cauchy 사전분포, 3단계 반복(식 33), λ=σn²/σX² 로 희소성 조절, 초기값은 영점 채움 DFT; Levinson 재귀·Cholesky 로 빠른 해가 가능하다고 언급"
+      ],
+      "software_verified": true,
+      "results": [
+        "가상 음향 20 m × 10 m 1D 무대에서 이동 송수신기(Reflector)–벽 고정 송수신기 거리 스윕, SNR 80 dB: 고해상도(HR) IDFT 오차 평균 0.015 m·표준편차 0.085 m, 대부분 0.2 m 이내 / 영점 채움(LR) IDFT 평균 0.213 m·표준편차 0.248 m, 최대 약 0.5 m (Fig. 9)",
+        "LR IDFT 오차는 대부분 양(+) — 지연 에너지가 LR 주엽 안에 몰리면 주엽 중심이 첫 지연보다 먼 쪽으로 밀림; HR 오차는 양·음이 고르게 분포 (저자 서술)",
+        "4경로 예시(40 채널 2 MHz, 실제 거리 15.81·16.55·19.85·25.49 m, SNR 80 dB)는 HR·LR 모두 양호; 경로가 촘촘하고 잡음 낀 예시(15.81·17.15·18.05·19.10 m, SNR 20 dB)는 LR 주엽이 긴 반사 쪽으로 이동해 거리 과대 추정, 잡음 에너지가 가짜 작은 피크로 모임 (Fig. 7·8)",
+        "HR 이웃 피크가 '붙어' LOS 피크보다 큰 피크를 만들 수 있어 최대가 아니라 '첫 유의 최대' 를 찾아야 함 — SNR 약 10 dB 미만에서는 올바른 지연 선택이 문제될 수 있음 (저자 서술)",
+        "최대 측정 거리 Dmax = c/ΔF: 2 MHz 채널 150 m, 1 MHz 채널 300 m",
+        "예시(복소 지수 2개, N=11 샘플, 출력 M=201)에서 고해상도 DFT 수렴에 10 회 반복"
+      ],
+      "limitations": [
+        "저자 명시: 정확한 선 외에 존재하지 않는 곳에서도 스펙트럼 선을 '찾는다' — 희소성을 선호하는 정규화가 광대역 '가짜' 에너지를 좁은 대역에 모음(저자는 이런 선이 첫 지연에서 먼 곳에 생겨 문제가 작다고 봄)",
+        "저자 명시: 파라미터(σX·σn·출력 길이 M)에 따라 성능이 달라 일반적 우열 판정이 어려움; 올바른 지연(첫 경로) 선택 절차는 범위 밖",
+        "저자 명시: 송수신기 동기화를 가정한 단순화 — BLE 의 Initiator–Reflector 왕복 위상 절차는 개념만 서술하고 규격 절차를 엄밀히 따르지 않음",
+        "관찰: 실측 없음(시뮬레이션), 1D 무대·4경로 모델 — CS 의 모드·톤 순서·안테나 경로·CFO 는 다루지 않음",
+        "관찰: 규격 서술 부정확 — 1 MHz 79 채널을 '출간 예정 Core v5.4' 로 기술(CS 는 Core 6.0)",
+        "관찰: 보안 분석 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "coppens-2022-uwb-standards-overview",
+        "zand-2019-ble-pbr",
+        "schroeder-2018-cde"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-10-03",
+      "last_checked": "2026-10-03"
     }
   ]
 }
