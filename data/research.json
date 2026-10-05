@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
   "landscape": {
     "title": "Bluetooth Channel Sounding Security Landscape",
@@ -9,9 +9,11 @@
         "id": "foundations",
         "kind": "stage",
         "label": "Secure Ranging Foundations",
-        "period": "2005 – 2020",
-        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 'PRF 가정만으로는 사기를 못 막는다'(PRF 프로그래밍으로 TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴)는 함정을 보인 뒤 circular-keying 가정 위의 증명 가능한 실용 프로토콜(SKI)로 형식을 세웠고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며, Mauw 가 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
+        "period": "2003 – 2020",
+        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. 출발점은 2003 년의 두 논문이다 — Hu·Perrig·Johnson 의 temporal leash 가 릴레이(웜홀)를 '패킷이 광속으로 갈 수 있는 거리보다 멀리 갔는가' 로 정의하고 시각 동기 오차 Δ 가 곧 2cΔ 의 터널링 여유가 됨을 보였고(183 ns → 110 m), Sastry 의 Echo 가 RF 로 보내고 초음파로 받는 왕복으로 '증명자가 선언한 처리 지연만큼 수락 영역을 깎아야 한다'(p·s)는 거리 사기 방어 원리와 '타이머는 첫 비트 송신 전에 켜고 마지막 비트 수신 후에 끈다' 는 비트 단위 경계를 세웠다. Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 'PRF 가정만으로는 사기를 못 막는다'(PRF 프로그래밍으로 TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴)는 함정을 보인 뒤 circular-keying 가정 위의 증명 가능한 실용 프로토콜(SKI)로 형식을 세웠고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며, Mauw 가 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
         "papers": [
+          "sastry-2003-echo-location-claims",
+          "hu-2003-packet-leashes",
           "clulow-2006-long-symbols",
           "hancke-2008-tof-db-attacks",
           "rasmussen-2010-rf-distance-bounding",
@@ -28,8 +30,8 @@
         "id": "relay-reduction",
         "kind": "stage",
         "label": "Relay / Distance Reduction",
-        "period": "2005 – 2012",
-        "summary": "공격이 실제 제품에서 성립한다는 것이 확인된 시기다. Hancke 가 100 파운드 미만 부품으로 ISO 14443 카드를 50 m 떨어진 리더에 통과시켰고, Francis 는 같은 일을 개조 없는 휴대폰 두 대로 했다 — 2010 년 P2P 거래에서 2012 년 카드 에뮬레이션으로 넘어가 POS 결제·e-여권을 릴레이했고, 리더들은 35 s(POS)·5.2 s(여권)까지 지연된 응답을 받아 줬다. Francillon 이 8개 제조사 10개 차종 전부에서 PKES 릴레이로 문을 열고 시동까지 걸었고, Flury·Poturalski 가 IR-UWB 에서 ED/LC 의 정량적 한계를 잡았으며, Cicada 는 **동기화도 코드 지식도 없이** 간섭만으로 ToA 를 앞당길 수 있음을 보였다.",
+        "period": "2005 – 2015",
+        "summary": "공격이 실제 제품에서 성립한다는 것이 확인된 시기다. Hancke 가 100 파운드 미만 부품으로 ISO 14443 카드를 50 m 떨어진 리더에 통과시켰고, Francis 는 같은 일을 개조 없는 휴대폰 두 대로 했다 — 2010 년 P2P 거래에서 2012 년 카드 에뮬레이션으로 넘어가 POS 결제·e-여권을 릴레이했고, 리더들은 35 s(POS)·5.2 s(여권)까지 지연된 응답을 받아 줬다. Francillon 이 8개 제조사 10개 차종 전부에서 PKES 릴레이로 문을 열고 시동까지 걸었고, Flury·Poturalski 가 IR-UWB 에서 ED/LC 의 정량적 한계를 잡았으며, Cicada 는 **동기화도 코드 지식도 없이** 간섭만으로 ToA 를 앞당길 수 있음을 보였다. 2015 년 PaySafe 는 정적 메시지를 캐시한 휴대폰 릴레이가 느린 카드의 직접 거래(637 ms)보다 빨리(627 ms) 끝날 수 있어 전체 시간제한이 무의미함을 보이고, '연산 없고 캐시할 수 없는 교환만 잰다' 는 설계로 대응했다 — Mastercard RRP 와 같은 구조다.",
         "papers": [
           "hancke-2005-practical-relay-iso14443",
           "francis-2010-nfc-p2p-relay",
@@ -38,7 +40,8 @@
           "flury-2010-distance-decreasing",
           "poturalski-2011-db-802-15-4a",
           "poturalski-2010-cicada-attack",
-          "ranganathan-2012-chirp-attacks"
+          "ranganathan-2012-chirp-attacks",
+          "chothia-2015-paysafe-relay-cost-bounding"
         ]
       },
       {
@@ -251,10 +254,12 @@
       "maturity": "commercial"
     },
     {
-      "text": "**릴레이 방어의 해상도는 '어느 계층에서 시간을 재는가' 가 정한다.** 같은 카드·리더 600회 측정에서 ISO 14443 Level 1 SELECT UID 응답은 평균 1123.91 µs·σ 0.89 µs 로 카드 거리·각도와 무관했지만, EMV Level 3 의 RRP 논스 교환은 평균 48.4 ms·σ 6.4 ms 에 카드 거리와 r ≈ 0.80–0.88 로 상관해(받는 전력에 따라 카드 처리시간이 변함) 그 편차 안에 릴레이가 숨었다(시험 카드 10회 중 3회 통과). 논스 교환을 Level 1 로 내린 L1RP 의 Proxmark 왕복시간은 σ 2.3 µs 다. 다만 µs 도 광속 환산 km 급이라 PURE 는 이를 '앱 계층 릴레이는 막지만 물리계층 릴레이는 허용' 으로 분류하고 UWB ns 측정으로 넘어갔다(두 논문의 수치는 장비가 달라 교차 논증) — CS 의 PBR·RTT 가 어느 단에 서는지는 반사기 처리 지연의 편차가 정한다.",
+      "text": "**릴레이 방어의 해상도는 '어느 계층에서 시간을 재는가' 가 정한다.** 같은 카드·리더 600회 측정에서 ISO 14443 Level 1 SELECT UID 응답은 평균 1123.91 µs·σ 0.89 µs 로 카드 거리·각도와 무관했지만, EMV Level 3 의 RRP 논스 교환은 평균 48.4 ms·σ 6.4 ms 에 카드 거리와 r ≈ 0.80–0.88 로 상관해(받는 전력에 따라 카드 처리시간이 변함) 그 편차 안에 릴레이가 숨었다(시험 카드 10회 중 3회 통과). 논스 교환을 Level 1 로 내린 L1RP 의 Proxmark 왕복시간은 σ 2.3 µs 다. 다만 µs 도 광속 환산 km 급이라 PURE 는 이를 '앱 계층 릴레이는 막지만 물리계층 릴레이는 허용' 으로 분류하고 UWB ns 측정으로 넘어갔다(두 논문의 수치는 장비가 달라 교차 논증) — CS 의 PBR·RTT 가 어느 단에 서는지는 반사기 처리 지연의 편차가 정한다. 이 원리의 출발점은 PaySafe(2015)의 실측이다 — 암호 연산이 든 응답은 카드 간·자세 간 편차(GPO 105–364 ms, GENERATE AC 카드별 평균 154–332 ms)가 휴대폰 릴레이의 부가지연(평균 161 ms)보다 커서 시간제한을 걸 수 없고, 연산 없는 응답은 정적이라 캐시되므로 '연산 없고 캐시할 수 없는' 논스 교환만 따로 잴 수 있다(36 ms 응답, 80 ms 한도 제안). 그 설계를 이은 PayPass-RRP 를 시험 카드로 잰 Boureanu(2020)는 카드 처리 13.4 ms·σ 1.85 ms 에서 10 ms 이상 릴레이는 막지만 3 ms 이하는 오탐·미탐이 각각 2 % 를 넘는다고 보고 '이런 카드로는 어떤 리더 설계도 µs 릴레이를 시간제한할 수 없다' 고 결론냈다(카드 위치는 고정 — Radu 의 거리 상관은 그 뒤의 결과; 세 논문의 카드·리더가 달라 교차 논증).",
       "evidence": [
         "radu-2022-emv-relay-protection",
-        "coppola-2024-pure"
+        "coppola-2024-pure",
+        "chothia-2015-paysafe-relay-cost-bounding",
+        "boureanu-2020-relay-resistant-emv"
       ],
       "maturity": "ota"
     }
@@ -367,6 +372,13 @@
         "radu-2022-emv-relay-protection"
       ],
       "year": 2022
+    },
+    {
+      "text": "**측정자가 정직하다는 가정** — Mastercard PayPass-RRP 는 RTT 판정을 리더 혼자 하고 은행에 증거를 남기지 않아, 시간 검사를 건너뛰는 'timing-rogue' 리더를 거친 릴레이 거래를 은행이 수락했다(저자 구현·시험 카드). TPM 2.0 서명 시간 기록으로 은행이 RTT 를 재검증하는 PayBCR 은 같은 거래를 거부했다 — 거리값을 쓰는 쪽과 재는 쪽이 다르면 측정 기기의 정직성 자체가 공격 표면이다.",
+      "evidence": [
+        "boureanu-2020-relay-resistant-emv"
+      ],
+      "year": 2020
     }
   ],
   "assumed": [
