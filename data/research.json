@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
   "landscape": {
     "title": "Bluetooth Channel Sounding Security Landscape",
@@ -10,7 +10,7 @@
         "kind": "stage",
         "label": "Secure Ranging Foundations",
         "period": "2003 – 2020",
-        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. 출발점은 2003 년의 두 논문이다 — Hu·Perrig·Johnson 의 temporal leash 가 릴레이(웜홀)를 '패킷이 광속으로 갈 수 있는 거리보다 멀리 갔는가' 로 정의하고 시각 동기 오차 Δ 가 곧 2cΔ 의 터널링 여유가 됨을 보였고(183 ns → 110 m), Sastry 의 Echo 가 RF 로 보내고 초음파로 받는 왕복으로 '증명자가 선언한 처리 지연만큼 수락 영역을 깎아야 한다'(p·s)는 거리 사기 방어 원리와 '타이머는 첫 비트 송신 전에 켜고 마지막 비트 수신 후에 끈다' 는 비트 단위 경계를 세웠다. Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 'PRF 가정만으로는 사기를 못 막는다'(PRF 프로그래밍으로 TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴)는 함정을 보인 뒤 circular-keying 가정 위의 증명 가능한 실용 프로토콜(SKI)로 형식을 세웠고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며, Mauw 가 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
+        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. 출발점은 2003 년의 두 논문이다 — Hu·Perrig·Johnson 의 temporal leash 가 릴레이(웜홀)를 '패킷이 광속으로 갈 수 있는 거리보다 멀리 갔는가' 로 정의하고 시각 동기 오차 Δ 가 곧 2cΔ 의 터널링 여유가 됨을 보였고(183 ns → 110 m), Sastry 의 Echo 가 RF 로 보내고 초음파로 받는 왕복으로 '증명자가 선언한 처리 지연만큼 수락 영역을 깎아야 한다'(p·s)는 거리 사기 방어 원리와 '타이머는 첫 비트 송신 전에 켜고 마지막 비트 수신 후에 끈다' 는 비트 단위 경계를 세웠다. 같은 해 Čapkun·Buttyán·Hubaux 의 SECTOR 는 Brands–Chaum 을 대칭키 상호 거리 제한(MAD)으로 바꿔 웜홀을 클럭 동기 없이 한 노드의 왕복으로 잡았다(이후 Cremers 의 표에서 Distance Hijacking 에 취약 판정). Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였으며, Hancke 2011 은 전용 근거리장 채널에서 '증명자 처리 지연을 믿으면 약 1 m, 못 믿으면 약 11 m' 로 상한이 갈림을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 'PRF 가정만으로는 사기를 못 막는다'(PRF 프로그래밍으로 TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴)는 함정을 보인 뒤 circular-keying 가정 위의 증명 가능한 실용 프로토콜(SKI)로 형식을 세웠고, Schaller 2009 가 위치·광속 제약을 넣은 Isabelle/HOL 모델로 거리 제한을 처음 정리 증명했고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며(기존 19개 중 10개 취약), Mauw 가 Schaller 모델을 바탕으로 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
         "papers": [
           "sastry-2003-echo-location-claims",
           "hu-2003-packet-leashes",
@@ -23,7 +23,10 @@
           "cremers-2012-distance-hijacking",
           "mauw-2018-db-verification-without-time",
           "leu-2020-mtac",
-          "ranganathan-2017-are-we-really-close"
+          "ranganathan-2017-are-we-really-close",
+          "capkun-2003-sector",
+          "schaller-2009-physical-properties-verification",
+          "hancke-2011-secure-db-channel-rfid"
         ]
       },
       {
@@ -262,6 +265,15 @@
         "boureanu-2020-relay-resistant-emv"
       ],
       "maturity": "ota"
+    },
+    {
+      "text": "**응답자의 처리 지연을 믿을 수 있는가가 거리 상한을 한 자릿수 바꾼다.** 근거리장 RFID 용 전용 단일 비트 채널(74HC 이산 논리, 왕복 약 75 ns)에서 제3자 릴레이만 고려하면 상한은 약 1 m 지만, 증명자가 자기 처리 지연(약 60 ns)을 줄일 수 있다고 보면 검증자는 그 추정값을 쓸 수 없어 상한이 약 11 m 로 커지고, 처리 시간 12 ns 단축마다 약 2 m 를 더 번다(Hancke 2011). 형식 모델에서도 같은 경계가 나온다 — 응답자가 서명해 보고한 처리 시간을 빼는 인증 거리측정은 '응답자 정직' 아래에서만 안전성이 증명되고, 응답자를 믿지 않는 초음파 거리 제한은 '검증자 사적 공간 안에 침입자 없음' 이라는 별도 가정을 더해야 증명된다(Schaller 2009, Isabelle/HOL). 2003 년 Echo 의 '선언 처리 지연 p 만큼 수락 영역을 p·s 줄인다' 와 같은 원리다 — CS RTT 가 반사기 측 처리 지연을 빼는 방식이 이 중 어느 가정에 서는지가 반사기 거리 사기 위협 모델의 출발점이다(세 논문의 매체·장비가 달라 교차 논증).",
+      "evidence": [
+        "hancke-2011-secure-db-channel-rfid",
+        "schaller-2009-physical-properties-verification",
+        "sastry-2003-echo-location-claims"
+      ],
+      "maturity": "conducted"
     }
   ],
   "broken": [
@@ -379,6 +391,15 @@
         "boureanu-2020-relay-resistant-emv"
       ],
       "year": 2020
+    },
+    {
+      "text": "**상호 거리 제한의 '증명자는 한 명' 가정** — Brands–Chaum 구조를 이은 MAD(2003)·잡음 내성 MAD 를 포함해 기존 거리 제한 프로토콜 19개 중 10개가, 근처의 정직한 증명자가 낸 빠른 응답을 부정직한 증명자가 자기 것으로 끼워 넣는 Distance Hijacking 에 취약했다(같은 프로토콜만 쓰는 환경 기준, Hancke–Kuhn 계열은 비취약). 고치는 법은 빠른 단계 응답을 증명자 신원·커밋한 논스에 명시적·암묵적으로 묶는 것이고 추가 메시지·암호 연산은 필요 없다 — 여러 키·폰이 한 공간에 있는 디지털 키 환경에서 CS 왕복이 '누구의 응답인가' 에 묶여 있는지가 같은 질문이며, CS 랜덤 시퀀스가 세션 시드에서 나온다는 사실이 이 결속으로 충분한지 따진 문헌은 없다.",
+      "evidence": [
+        "cremers-2012-distance-hijacking",
+        "capkun-2003-sector",
+        "singelee-2007-db-noisy-environments"
+      ],
+      "year": 2012
     }
   ],
   "assumed": [
@@ -455,14 +476,15 @@
     },
     {
       "text": "CS 는 안전한 근접 증명의 요건을 갖췄다",
-      "why_untested": "Ranganathan 의 개관이 정리한 세 요건은 (1) 왕복 ToF, (2) 챌린지·응답 RTT, (3) **짧은 심볼** 이다. CS 는 (1)(2)를 갖췄지만 1 Mb/s GFSK 의 1 µs 심볼은 (3)을 정면으로 위반한다 — 그 개관이 802.15.4a 의 32 ns 심볼로 '10 m 축소'를 계산한 식을 그대로 적용하면 CS 는 150 m 급 여지가 된다. Anliker 2026 이 실증한 것이 정확히 이 지점이고, **세 요건을 CS 파라미터로 다시 계산한 문헌이 없다.** 프로토콜 계층 쪽 도구는 있다 — Mauw 2018 은 시간·위치 기반 정의와 동치인 인과 기준('응답이 챌린지 송신보다 먼저 나가는 trace 가 있으면 불안전')을 증명하고 Tamarin 으로 13개 프로토콜·16개 변형을 평균 5.62 s 에 검증했다(Brands–Chaum 계열 거리 하이재킹 재현, PaySafe 거리 사기 신규). 그러나 **CS 의 RTT 교환(CS_SYNC 랜덤 시퀀스)을 이 틀에 넣어 거리 사기·거리 하이재킹을 따진 문헌도 없고**, 메시지를 원자 단위로 다루는 기호 모델은 위 (3)의 짧은 심볼 문제(물리계층 ED/LC)를 원리상 다루지 못한다 — 두 계층을 따로 검증해야 한다. 증명을 시도하더라도 출발 가정이 정해져 있지 않다 — Boureanu 2013 은 'PRF 처럼 보인다' 는 성질만으로는 거리 사기·MIM 을 못 막음을 PRF 프로그래밍으로 보이고(TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴, 표 2) 증명 가능한 SKI 에 circular-keying 이라는 더 강한 가정을 요구했다. CS 의 액세스 주소·RTT 랜덤 시퀀스·안테나 경로는 양측(Central·Peripheral)이 절반씩 낸 CS_IV·CS_IN·CS_PV 로 인스턴스화한 DRBG(NIST SP 800-90Ar1 계열)에서 나오는데, 이를 거리 바운딩 증명 틀에 넣을 때 어떤 가정이 필요한지 따진 문헌이 없다(표준 블록암호를 실제로 '프로그래밍' 할 수 있다는 뜻이 아니라 증명의 공백이다).",
+      "why_untested": "Ranganathan 의 개관이 정리한 세 요건은 (1) 왕복 ToF, (2) 챌린지·응답 RTT, (3) **짧은 심볼** 이다. CS 는 (1)(2)를 갖췄지만 1 Mb/s GFSK 의 1 µs 심볼은 (3)을 정면으로 위반한다 — 그 개관이 802.15.4a 의 32 ns 심볼로 '10 m 축소'를 계산한 식을 그대로 적용하면 CS 는 150 m 급 여지가 된다. Anliker 2026 이 실증한 것이 정확히 이 지점이고, **세 요건을 CS 파라미터로 다시 계산한 문헌이 없다.** 프로토콜 계층 쪽 도구는 있다 — Mauw 2018 은 시간·위치 기반 정의와 동치인 인과 기준('응답이 챌린지 송신보다 먼저 나가는 trace 가 있으면 불안전')을 증명하고 Tamarin 으로 13개 프로토콜·16개 변형을 평균 5.62 s 에 검증했다(Brands–Chaum 계열 거리 하이재킹 재현, PaySafe 거리 사기 신규). 그러나 **CS 의 RTT 교환(CS_SYNC 랜덤 시퀀스)을 이 틀에 넣어 거리 사기·거리 하이재킹을 따진 문헌도 없고**, 메시지를 원자 단위로 다루는 기호 모델은 위 (3)의 짧은 심볼 문제(물리계층 ED/LC)를 원리상 다루지 못한다 — 두 계층을 따로 검증해야 한다. Mauw 가 기반으로 삼은 Schaller 2009 의 Isabelle/HOL 모델도 같은 경계를 안고 있다 — 인증 거리측정의 안전성은 응답자가 정직할 때만 증명되고, 메시지 크기·전송률·고속 비트 교환은 저자 스스로 모델 밖으로 뒀다. CS RTT 를 이 계열로 검증하면 반사기 거리 사기와 심볼 길이 문제가 둘 다 정의상 빠진다. 증명을 시도하더라도 출발 가정이 정해져 있지 않다 — Boureanu 2013 은 'PRF 처럼 보인다' 는 성질만으로는 거리 사기·MIM 을 못 막음을 PRF 프로그래밍으로 보이고(TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴, 표 2) 증명 가능한 SKI 에 circular-keying 이라는 더 강한 가정을 요구했다. CS 의 액세스 주소·RTT 랜덤 시퀀스·안테나 경로는 양측(Central·Peripheral)이 절반씩 낸 CS_IV·CS_IN·CS_PV 로 인스턴스화한 DRBG(NIST SP 800-90Ar1 계열)에서 나오는데, 이를 거리 바운딩 증명 틀에 넣을 때 어떤 가정이 필요한지 따진 문헌이 없다(표준 블록암호를 실제로 '프로그래밍' 할 수 있다는 뜻이 아니라 증명의 공백이다).",
       "evidence": [
         "ranganathan-2017-are-we-really-close",
         "anliker-2026-narrowband-toa",
         "clulow-2006-long-symbols",
         "mauw-2018-db-verification-without-time",
         "boureanu-2013-towards-secure-db",
-        "bt-cs-tech-overview"
+        "bt-cs-tech-overview",
+        "schaller-2009-physical-properties-verification"
       ],
       "blocks": [
         "todo-step-timing"
