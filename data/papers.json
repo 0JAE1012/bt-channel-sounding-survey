@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-06",
-  "last_run": "2026-10-06",
+  "updated": "2026-10-07",
+  "last_run": "2026-10-07",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1280,
+  "citation_edges": 1330,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -2895,7 +2895,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-10-04",
+      "last_checked": "2026-10-07",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2915,7 +2915,8 @@
         "drimer-2007-smartcard-relay-db",
         "boureanu-2015-practical-provable-db",
         "francis-2010-nfc-p2p-relay",
-        "boureanu-2013-towards-secure-db"
+        "boureanu-2013-towards-secure-db",
+        "avoine-2011-db-framework"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4490,7 +4491,8 @@
         "singelee-2007-db-noisy-environments",
         "kfir-2005-virtual-pockets-relay",
         "kim-2009-mixed-challenges-db",
-        "capkun-2003-sector"
+        "capkun-2003-sector",
+        "meadows-2007-db-authentication-logic"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4501,7 +4503,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "poturalski-2011-db-802-15-4a",
@@ -4587,7 +4589,8 @@
         "kfir-2005-virtual-pockets-relay",
         "kim-2009-mixed-challenges-db",
         "schaller-2009-physical-properties-verification",
-        "hancke-2011-secure-db-channel-rfid"
+        "hancke-2011-secure-db-channel-rfid",
+        "meadows-2007-db-authentication-logic"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4598,7 +4601,7 @@
         }
       ],
       "added": "2026-08-15",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "schwarzbach-2026-cross-tech-ranging",
@@ -5010,7 +5013,7 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-10-06",
+      "last_checked": "2026-10-07",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -5026,7 +5029,8 @@
         "capkun-2003-sector",
         "schaller-2009-physical-properties-verification",
         "alrabady-2003-passive-entry-attacks",
-        "alrabady-2005-keyless-entry-attacks"
+        "alrabady-2005-keyless-entry-attacks",
+        "hancke-2009-relay-attacks-revisited"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5101,7 +5105,7 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-10-06",
+      "last_checked": "2026-10-07",
       "cites": [
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
@@ -5111,7 +5115,9 @@
         "reid-2007-timing-relay-detection",
         "singelee-2007-db-noisy-environments",
         "kim-2009-mixed-challenges-db",
-        "capkun-2003-sector"
+        "capkun-2003-sector",
+        "meadows-2007-db-authentication-logic",
+        "avoine-2011-db-framework"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5124,6 +5130,11 @@
           "to": "capkun-2003-sector",
           "type": "attacks",
           "note": "표 2 의 분석 대상 중 MAD(10번)를 Distance Hijacking 에 취약(Yes)으로 판정 — 잡음 내성 MAD(13번)도 취약; 표의 프로토콜 중 재밍 감지·중단을 명시적으로 요구하는 것은 MAD 뿐이라고 별도 언급"
+        },
+        {
+          "to": "meadows-2007-db-authentication-logic",
+          "type": "attacks",
+          "note": "표에서 Meadows 외 F = (N_V, N_P ⊕ P) 인스턴스를 Distance Hijacking 취약(Yes)으로 판정(공격 자체는 Basin 외가 먼저 기술) — Meadows 의 방법론은 부정직 증명자를 다루지 못해 이 공격을 놓쳤다고 지적"
         }
       ],
       "category": "analysis"
@@ -5758,7 +5769,8 @@
         "boureanu-2015-practical-provable-db",
         "mauw-2018-db-verification-without-time",
         "abu-mahfouz-2013-db-rtls",
-        "chothia-2015-paysafe-relay-cost-bounding"
+        "chothia-2015-paysafe-relay-cost-bounding",
+        "hancke-2009-relay-attacks-revisited"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5769,7 +5781,7 @@
         }
       ],
       "added": "2026-08-24",
-      "last_checked": "2026-10-05"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "schroeder-2022-inphase",
@@ -7431,7 +7443,8 @@
         "보안 고려 없음 (초록 기준)",
         "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
         "2026-10-04 재시도: Bletsas 연구실 출판 목록(telecom.tuc.gr/~aggelos/publications.html)은 2025 년 항목 자체가 없음(갱신 중단), WebSearch 에도 OA 사본 없음",
-        "2026-10-05 재시도: IPIN 2026 처럼 학회 사이트 전체 논문 zip 경로가 있는지 확인 — ipin-conference.org/2025/ 경로 404, 2025 프로그램 페이지는 IEEE Xplore 프로시딩 링크만 제공"
+        "2026-10-05 재시도: IPIN 2026 처럼 학회 사이트 전체 논문 zip 경로가 있는지 확인 — ipin-conference.org/2025/ 경로 404, 2025 프로그램 페이지는 IEEE Xplore 프로시딩 링크만 제공",
+        "2026-10-07 재시도: Bletsas 출판 목록(telecom.tuc.gr/~aggelos/publications.html, Googlebot UA 로 200)에 이 논문 미게재, HAL 2025 Bletsas 0건"
       ],
       "artifacts": {
         "code": null,
@@ -7445,7 +7458,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-10-05"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "rashidi-2025-ble-uwb-positioning-survey",
@@ -8658,12 +8671,14 @@
         "kim-2009-mixed-challenges-db",
         "boureanu-2013-towards-secure-db",
         "capkun-2003-sector",
-        "hancke-2011-secure-db-channel-rfid"
+        "hancke-2011-secure-db-channel-rfid",
+        "hancke-2009-relay-attacks-revisited",
+        "avoine-2011-db-framework"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-01",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -9562,7 +9577,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-10-06",
+      "last_checked": "2026-10-07",
       "cites": [
         "clulow-2006-long-symbols",
         "cremers-2012-distance-hijacking",
@@ -9582,7 +9597,8 @@
         "abu-mahfouz-2013-db-rtls",
         "kim-2009-mixed-challenges-db",
         "capkun-2003-sector",
-        "hancke-2011-secure-db-channel-rfid"
+        "hancke-2011-secure-db-channel-rfid",
+        "avoine-2011-db-framework"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9667,13 +9683,14 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-09-19",
+      "last_checked": "2026-10-07",
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
         "clulow-2006-long-symbols",
         "hancke-2008-tof-db-attacks",
-        "gezici-2005-uwb-localization-survey"
+        "gezici-2005-uwb-localization-survey",
+        "meadows-2007-db-authentication-logic"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -10684,7 +10701,7 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-10-06",
+      "last_checked": "2026-10-07",
       "cites": [
         "clulow-2006-long-symbols",
         "rasmussen-2010-rf-distance-bounding",
@@ -10704,7 +10721,8 @@
         "drimer-2007-smartcard-relay-db",
         "kim-2009-mixed-challenges-db",
         "schaller-2009-physical-properties-verification",
-        "hancke-2011-secure-db-channel-rfid"
+        "hancke-2011-secure-db-channel-rfid",
+        "meadows-2007-db-authentication-logic"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11804,7 +11822,8 @@
         "PVLR 약어의 뜻 미확인",
         "IEEE Xplore 피인용 기록상 이 논문은 shoudha-2022-reduced-complexity-ble-ranging·vanmarter-2023-svr-ble-ranging 를 인용함 — 참고문헌 전체를 대조하지 못해 cites 에는 넣지 않음 (2026-09-13)",
         "2026-10-05: Crossref 에 참고문헌 45건이 새로 공개돼(Elsevier 예치) 코퍼스와 대조 — Zand 2019·Boer 2020·Stanciu 2021·Shoudha 2022·Van Marter 2023 SVR·bin Tariq 2024 DL 6편 인용 확인, cites_source 를 fulltext 로 전환. 나머지는 BLE AoA·DOA(MUSIC·공간 평활)·LASSO·DBSCAN 문헌 — 본문·초록은 여전히 미확보라 verification 은 unverified 유지",
-        "2026-10-06 재시도: OpenAlex closed·초록 없음(abstract_inverted_index 비어 있음) — unverified 유지"
+        "2026-10-06 재시도: OpenAlex closed·초록 없음(abstract_inverted_index 비어 있음) — unverified 유지",
+        "2026-10-07 재시도: Crossref 예치 메타에 초록 없음(참고문헌 45건만), ScienceDirect 는 Googlebot UA 도 403, Elsevier API 는 키 없이 401 — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11812,7 +11831,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-06",
+      "last_checked": "2026-10-07",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -14270,7 +14289,8 @@
         "francillon-2011-pkes-relay",
         "cremers-2012-distance-hijacking",
         "kim-2009-mixed-challenges-db",
-        "boureanu-2013-towards-secure-db"
+        "boureanu-2013-towards-secure-db",
+        "avoine-2011-db-framework"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -14301,7 +14321,7 @@
         }
       ],
       "added": "2026-09-24",
-      "last_checked": "2026-10-04"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "francis-2010-nfc-p2p-relay",
@@ -14377,7 +14397,8 @@
         "clulow-2006-long-symbols",
         "hancke-2008-tof-db-attacks",
         "kfir-2005-virtual-pockets-relay",
-        "hu-2003-packet-leashes"
+        "hu-2003-packet-leashes",
+        "hancke-2009-relay-attacks-revisited"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -14398,7 +14419,7 @@
         }
       ],
       "added": "2026-09-25",
-      "last_checked": "2026-10-05"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "elikplim-2023-wifi-ftm-industrial",
@@ -15291,7 +15312,8 @@
         "CS 칩셋·CS 모드(PBR/RTT)·거리 오차 자체·보안 고려 여부 미확인 (전문 필요)",
         "인용 관계는 참고문헌 미확보로 미추출 — cites_source: no-fulltext",
         "2026-10-05 재시도: Xplore REST 상 여전히 Early Access(isEarlyAccess true) — /references 0건이라 cites 미추출 유지",
-        "2026-10-06 재시도: Xplore REST /references 여전히 0건(Early Access), OpenAlex closed·초록 없음"
+        "2026-10-06 재시도: Xplore REST /references 여전히 0건(Early Access), OpenAlex closed·초록 없음",
+        "2026-10-07 재시도: Xplore REST /references 여전히 0건(Early Access)"
       ],
       "artifacts": {
         "code": null,
@@ -15302,7 +15324,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-27",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "perazzo-2016-enlargement-miscontrol-detection",
@@ -16245,7 +16267,9 @@
         "boureanu-2013-towards-secure-db",
         "chothia-2015-paysafe-relay-cost-bounding",
         "capkun-2003-sector",
-        "schaller-2009-physical-properties-verification"
+        "schaller-2009-physical-properties-verification",
+        "meadows-2007-db-authentication-logic",
+        "avoine-2011-db-framework"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -16283,10 +16307,15 @@
           "to": "schaller-2009-physical-properties-verification",
           "type": "extends",
           "note": "Basin 외 [13] 의 시간·위치 기반 형식 모델을 '우리 작업의 기반' 으로 삼아 보안 정의를 세우고, 그와 동치인 인과 기준을 증명해 Tamarin 자동 검증으로 옮김 — Brands–Chaum 변형·Meadows 외는 이 모델로 Isabelle/HOL 에서 먼저 검증됐다고 명시"
+        },
+        {
+          "to": "meadows-2007-db-authentication-logic",
+          "type": "attacks",
+          "note": "Tamarin 자동 검증 표 I 에서 Meadows 외를 거리 하이재킹(DH) 취약으로 판정(226 줄·18.59 s) — 이미 보고된 결함의 재현이며, Meadows 의 기호 분석은 다중 증명자를 다루지 않아 DH·테러리스트 사기를 못 잡는다고 지적"
         }
       ],
       "added": "2026-10-03",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "abu-mahfouz-2013-db-rtls",
@@ -16344,12 +16373,14 @@
         "hancke-2005-rfid-db",
         "capkun-2006-secure-positioning-jsac",
         "clulow-2006-long-symbols",
-        "reid-2007-timing-relay-detection"
+        "reid-2007-timing-relay-detection",
+        "hancke-2009-relay-attacks-revisited",
+        "avoine-2011-db-framework"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-10-03",
-      "last_checked": "2026-10-03"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "mazur-2024-ifft-bayesian-pbr",
@@ -16570,7 +16601,8 @@
         "kim-2009-mixed-challenges-db",
         "reid-2007-timing-relay-detection",
         "singelee-2007-db-noisy-environments",
-        "capkun-2003-sector"
+        "capkun-2003-sector",
+        "hancke-2009-relay-attacks-revisited"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -16596,7 +16628,7 @@
         }
       ],
       "added": "2026-10-04",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "francis-2012-nfc-phone-relay",
@@ -16683,7 +16715,8 @@
         "hancke-2005-rfid-db",
         "hancke-2008-tof-db-attacks",
         "kfir-2005-virtual-pockets-relay",
-        "hancke-2011-secure-db-channel-rfid"
+        "hancke-2011-secure-db-channel-rfid",
+        "hancke-2009-relay-attacks-revisited"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -16699,7 +16732,7 @@
         }
       ],
       "added": "2026-10-04",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "radu-2022-emv-relay-protection",
@@ -17345,7 +17378,8 @@
         "clulow-2006-long-symbols",
         "capkun-2006-secure-positioning-jsac",
         "reid-2007-timing-relay-detection",
-        "drimer-2007-smartcard-relay-db"
+        "drimer-2007-smartcard-relay-db",
+        "meadows-2007-db-authentication-logic"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17353,10 +17387,15 @@
           "to": "sastry-2003-echo-location-claims",
           "type": "extends",
           "note": "Sastry 외는 초음파 위치 검증에 비형식 증명만 제시했다고 짚고, 초음파 응답 거리 제한을 Isabelle/HOL 로 형식화 — 영역 안 공모자를 배제하는 '사적 공간' 가정이 필요함을 정리로 명시"
+        },
+        {
+          "to": "meadows-2007-db-authentication-logic",
+          "type": "applies-to",
+          "note": "같은 Isabelle/HOL 물리 성질 틀로 Meadows 외 거리 제한 프로토콜을 형식화·증명(13 쪽·606 줄) — Meadows 는 거리를 최소 비행시간으로 공리화한 상대 거리만 다뤘다고 대비"
         }
       ],
       "added": "2026-10-06",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "hancke-2011-secure-db-channel-rfid",
@@ -17438,7 +17477,8 @@
         "hancke-2008-tof-db-attacks",
         "kim-2008-swiss-knife-db",
         "kim-2009-mixed-challenges-db",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "hancke-2009-relay-attacks-revisited"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17454,7 +17494,7 @@
         }
       ],
       "added": "2026-10-06",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-07"
     },
     {
       "id": "alrabady-2003-passive-entry-attacks",
@@ -17580,6 +17620,280 @@
       ],
       "added": "2026-10-06",
       "last_checked": "2026-10-06"
+    },
+    {
+      "id": "hancke-2009-relay-attacks-revisited",
+      "title": "Confidence in Smart Token Proximity: Relay Attacks Revisited",
+      "authors": [
+        "Gerhard P. Hancke",
+        "Keith E. Mayes",
+        "Konstantinos Markantonakis"
+      ],
+      "venue": "Computers & Security",
+      "venue_full": "Computers & Security, vol. 28, no. 7, pp. 615–627, October 2009 (Elsevier) — ISG Smart Card Centre, Royal Holloway, University of London. 저자 사전판(2008-08-19 제출본) rfidblog.org.uk/Hancke-RelayOverview-2009.pdf",
+      "tier": "journal",
+      "category": "analysis",
+      "year": 2009,
+      "url": "https://doi.org/10.1016/j.cose.2009.06.001",
+      "preprint": "https://www.rfidblog.org.uk/Hancke-RelayOverview-2009.pdf",
+      "doi": "10.1016/j.cose.2009.06.001",
+      "topics": [
+        "relay-attack",
+        "contactless-smartcard",
+        "iso-14443",
+        "mifare-classic",
+        "active-relay",
+        "timing-constraints",
+        "frame-waiting-time",
+        "distance-bounding",
+        "overclocking",
+        "two-factor-authentication",
+        "countermeasure-evaluation"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "코퍼스 7편(francis-2010·francis-2012·francillon-2011·hancke-2011·boureanu-2013·avoine-2018·jangid-2026)과 같은 날 편입한 Avoine 2011, 그리고 Abu-Mahfouz–Hancke 2013(Xplore 참고문헌)이 '릴레이 공격과 대책의 개관' 으로 인용하는 허브다. CS 연구에 쓰이는 지점은 세 가지다. 첫째, **규격의 타임아웃은 릴레이 방어가 아니라는 정량 근거** — 릴레이 하드웨어의 왕복 부가지연은 20–35 µs 인데 ISO 14443-4 FWT 기본값은 4.8 ms(FWI 0–14 → 300 µs–5 s)이고, 시험 리더는 응답이 9.44 µs 비트 그리드에만 맞으면 n 값과 무관하게 받아들였으며, 토큰 처리시간 편차가 릴레이 지연보다 커서 시간제한을 조이면 정상 응답이 떨어진다. CS 에서 링크 계층 타이밍·연결 이벤트 감시가 아니라 PHY 단의 RTT·PBR 만이 릴레이를 가를 해상도를 갖는다는 주장(`research.json` know '어느 계층에서 시간을 재는가')의 2009년 출발점이다. 둘째, **능동 릴레이는 '협상된 시간 파라미터' 자체를 바꾼다** — 토큰이 보내는 FWI 를 최댓값으로 고쳐 리더가 5 s 를 기다리게 만든다는 지적은, 측정 타이밍을 정하는 값이 어디서 오고 누가 바꿀 수 있는가를 위협 모델에 넣어야 한다는 뜻이다(CS 의 단계 타이밍 협상에 같은 질문을 던진 문헌은 코퍼스에 없다 — 연구 질문). 셋째, 고정 대기시간 t_wait 으로 응답 시점을 맞추는 Reid 류 설계는 외부 클럭을 받는 토큰이 오버클로킹되면 일찍 응답해 무너진다 — CS 기기는 자체 발진기를 쓰므로 직접 해당하지 않지만, '응답자가 자기 처리 지연을 줄일 수 있는가' 라는 반사기 거리 사기 질문(know '응답자의 처리 지연')과 같은 범주다.",
+      "summary": "비접촉·접촉 스마트 토큰이 통신 채널의 물리적 한계로 근접을 암묵적으로 증명한다는 가정을 릴레이 공격이 깨뜨린다는 점을 정리한 개관 논문이다. 저자들은 ISO 14443A 수동 릴레이를 230 달러 미만 부품(70 달러 리더를 RF 프런트엔드로 쓴 proxy-reader, 이산 소자 proxy-token, eBay 무선 AV 채널 두 개)으로 재구현해 왕복 부가지연 20–35 µs 를 얻었고, Drimer–Murdoch 의 EMV 접촉식 릴레이를 함께 소개한다. 데이터를 바꾸는 능동 릴레이로 Mifare Classic 1K 시험 시스템에서 Crypto1 키 없이 선택한 평문 비트를 바꾸는 데 성공했다(세부 비공개). 대책으로 타이밍 제약(ISO 14443 FDT·FWT·리더 타임아웃), 거리 바운딩(Munilla void 챌린지·Reid 고정 대기·Hancke–Kuhn UWB 펄스 채널·Drimer 접촉식 구현), 추가 검증(2FA·사진·전자 대리인)을 평가해, 타이밍 제약은 무력하고 거리 바운딩과 신뢰 인터페이스가 낫지만 비용·복잡도가 남는다고 결론짓는다.",
+      "hardware": [
+        "Proxy-reader: 약 70 달러 상용 RFID 리더(비접촉 리더 IC + 8비트 마이크로컨트롤러)를 재프로그래밍해 13.56 MHz 100 % ASK 변조·Manchester 복조만 하는 RF 프런트엔드 모드로 사용 — 리더 IC·MCU 모델명은 본문 미기재",
+        "Proxy-token: 이산 소자·기본 논리 IC 로 만든 HF 인터페이스(이진 카운터로 부반송파 생성, 포락선 검파 + 문턱 비교기), 응답을 리더 비트 시작에 맞추는 가변 지연 포함; PCB 약 70 달러 또는 스트립보드, 자체 전원",
+        "릴레이 채널: eBay 무선 AV(오디오·비디오) 송수신기 2개(각 약 35 달러, 광고 도달거리 약 30–100 m) — 양방향 각 1채널, Modified Miller·Manchester 부호화 신호를 복호 없이 그대로 전송",
+        "능동 릴레이: 릴레이 채널을 약 200 달러 FPGA 개발보드로 교체(모델 미기재); 시험 대상 Mifare Classic 1K 토큰 + 사용자 인터페이스가 있는 상용 리더",
+        "전체 수동 릴레이 시스템 비용 230 달러 미만"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "리더 마이크로컨트롤러 펌웨어 재구성으로 RF 프런트엔드 모드 사용 — 언어·툴체인 미기재",
+        "리더 설정 소프트웨어의 응답 타임아웃 설정 기능 언급(제품명 미기재); 신호처리는 전부 이산 소자로 구현"
+      ],
+      "software_verified": true,
+      "results": [
+        "수동 릴레이(ISO 14443A) 재구현 성공 — 릴레이 왕복 부가지연 20–35 µs(자체 장치와 Hancke 2005·Kasper 2006 셋업), 표준 리더 동작 범위에서 시연",
+        "ISO 14443-3: REQA 간격 7000/fc ≈ 500 µs·ATQA 5 ms 이내 규정은 특정 REQA 와 ATQA 를 묶지 않아 지연 상한이 아님; FDT(n = 9)는 91/86 µs 이지만 시험 리더는 n 과 무관하게 9.44 µs 비트 그리드에 맞으면 수락(Kasper: 9.44 µs 마다 2.5 µs 창)",
+        "ISO 14443-4: FWT = (256·16/fc)·2^FWI, FWI 0–14 → 300 µs–5 s, 기본 4.8 ms — 릴레이 지연의 100 배 이상 여유; 능동 공격자는 토큰이 보내는 FWI 를 최댓값으로 바꿔 리더가 5 s 를 기다리게 할 수 있음",
+        "접촉식 EMV(Drimer–Murdoch 인용): 릴레이 기본 지연에 3 s 를 더해도 공격 성공 — 접촉식 타이밍 제약도 고지연에 관대",
+        "능동 릴레이: Mifare Classic 1K 시험 시스템에서 스트림 암호의 XOR 선형성과 패리티·CRC 재계산으로 Crypto1 키 없이 선택한 평문 비트를 탐지 없이 변경(예: 암호화된 값 4 → 132) — 세부 구현 비공개",
+        "대책 평가: 토큰 응답 시간 편차가 릴레이 지연보다 커서 짧은 타임아웃은 정상 응답을 거부하고, 외부 클럭을 받는 토큰은 오버클로킹으로 일찍 응답시킬 수 있음; Reid 의 고정 대기(13.56 MHz 주기 동기 75 ns)·Munilla 의 void 챌린지는 오버클로킹·약한 반송파 탐침에 취약 가능, Hancke–Kuhn UWB 펄스 채널은 미실증, Drimer 접촉식 구현은 FPGA 로 2.0·1.0·0.3 m 전송 길이 검출",
+        "결론: 타이밍 제약은 무력, 2FA 는 속도·편의를 희생하며 공격을 막지는 못하고 복잡하게만 함, 거리 바운딩과 소유자의 신뢰 인터페이스(전자 대리인)가 더 나으나 비용·복잡도 추가"
+      ],
+      "limitations": [
+        "개관 논문 — 자체 실험은 성공 여부만 보고하고 성공률·반복 횟수·거리 등 통계 없음 (관찰)",
+        "능동 Mifare Classic 공격의 구현 세부를 의도적으로 비공개 (저자 명시)",
+        "확장 거리 스키밍(Kirschenbaum–Wool)은 구현하지 않고 표준 리더 동작 범위로만 시연 (저자 명시)",
+        "타이밍 집행 관찰은 시험 리더 하나 기준 — 리더별 차이 일반화 불가 (관찰)",
+        "대책은 문헌 평가이고 새 방어 제안·측정 없음 — 미해결 연구 과제로 남김 (저자 명시)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "hancke-2005-practical-relay-iso14443",
+        "kfir-2005-virtual-pockets-relay",
+        "clulow-2006-long-symbols",
+        "reid-2007-timing-relay-detection",
+        "drimer-2007-smartcard-relay-db",
+        "hancke-2008-tof-db-attacks"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-practical-relay-iso14443",
+          "type": "extends",
+          "note": "같은 ISO 14443A 릴레이를 무선 AV 채널로 재구현해 부가지연 20–35 µs 를 보이고(2005 보고서 15–20 µs 의 RF 부품보다 안정적이라 명시), 데이터를 바꾸는 능동 릴레이(Mifare Classic 비트 변경)로 넓힘"
+        }
+      ],
+      "added": "2026-10-07",
+      "last_checked": "2026-10-07"
+    },
+    {
+      "id": "meadows-2007-db-authentication-logic",
+      "title": "Distance Bounding Protocols: Authentication Logic Analysis and Collusion Attacks",
+      "authors": [
+        "Catherine Meadows",
+        "Radha Poovendran",
+        "Dusko Pavlovic",
+        "LiWu Chang",
+        "Paul Syverson"
+      ],
+      "venue": "Springer (book chapter)",
+      "venue_full": "Secure Localization and Time Synchronization for Wireless Sensor and Ad Hoc Networks, Advances in Information Security vol. 30, Springer, 2007, pp. 279–298 — Naval Research Laboratory · University of Washington · Kestrel Institute. 공개판 DTIC ADA459088(2006, 공개 승인) — apps.dtic.mil 점검 중이라 Wayback 2024-05-03 보존본",
+      "tier": "other",
+      "category": "analysis",
+      "year": 2007,
+      "url": "https://doi.org/10.1007/978-0-387-46276-9_12",
+      "preprint": "https://web.archive.org/web/20240503133428/https://apps.dtic.mil/sti/pdfs/ADA459088.pdf",
+      "doi": "10.1007/978-0-387-46276-9_12",
+      "topics": [
+        "distance-bounding",
+        "formal-verification",
+        "authentication-logic",
+        "rapid-response",
+        "delayed-authentication",
+        "collusion-attack",
+        "terrorist-fraud",
+        "wormhole",
+        "secure-localization",
+        "sensor-networks",
+        "xor-equational-theory"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "코퍼스 7편(schaller-2009·flury-2010·kuhn-2010·poturalski-2011·poturalski-2012·cremers-2012·mauw-2018)과 같은 날 편입한 Avoine 2011 이 인용하는, 거리 제한 프로토콜의 **첫 본격 형식 분석**이다. CS 연구에 남는 것은 두 가지다. 첫째, '빠른 무인증 응답 + 나중의 인증 응답' 구조가 안전하려면 빠른 응답 F(N_V, P, N_P) 가 검증자 논스·증명자 신원·증명자 논스를 어떤 치환으로도 지워지지 않는 '안정 부분항' 으로 품어야 한다는 조건을 처음 형식화했다 — (N_P ⊕ N_V, P) 는 N_P = X ⊕ N_V 로 N_V 가 소거돼 불충족이다. 그런데 이 논문이 충족한다고 본 F = (N_V, N_P ⊕ P) 인스턴스가 이후 Cremers 2012·Mauw 2018(Tamarin, 226 줄·18.59 s)에서 Distance Hijacking 에 취약으로 판정됐다 — 정직한 증명자만 다룬 증명은 '누구의 빠른 응답인가' 를 보장하지 못한다는 계보상의 반례다. CS 의 톤·RTT 교환은 무인증이고 세션 DRBG 시퀀스로만 링크에 묶이므로, 그 결속이 이 조건을 만족하는지가 broken '증명자는 한 명 가정' 과 같은 질문이다. 둘째, 공모(테러리스트형)는 막을 수도 탐지할 수도 없다는 논증 — 공모 노드가 웜홀로 거리를 맞추면 SPINE 처럼 검증자 3개 이상의 삼각측량도 전력 수준만 일관되면 불일치를 보이지 않는다. 차량 다중 앵커 CS 의 일관성 검사가 키를 공유한 공모자 앞에서 무엇을 보장하는지의 이론적 하한이다(논증, 실험 없음).",
+      "summary": "센서망의 거리 측정을 공격자로부터 지키는 문제를 다루며, Echo·Brands–Chaum·Čapkun–Hubaux·Hancke–Kuhn 으로 이어진 거리 제한 프로토콜의 역사와 요건을 정리한다. 이어 검증자 요청 → 검증자 논스 → 증명자의 빠른 응답 F(N_V, P, N_P) → 증명자의 MAC 인증 응답으로 된 Brands–Chaum 류 프로토콜 군을 제안하고, Pavlovic–Meadows 인증 논리에 XOR 등식 이론과 타임스탬프·거리 공리를 더해 정직한 증명자에 대해 v·(t2 − t1 − I0)/2 ≥ d(V, P) 를 형식 증명했다. 이 분석으로 커밋을 단순화하고 암호 연산 하나를 덜어냈다. 마지막으로 공모 문제를 다뤄 Brands–Chaum·Čapkun–Hubaux·Hancke–Kuhn 을 포함한 대부분의 프로토콜이 공모에 취약하고, 웜홀을 쓴 공모는 다중 검증자 삼각측량(SPINE·ROPE)으로도 일반적으로 탐지되지 않음을 보인다.",
+      "hardware": [
+        "해당 없음 — 인증 논리 기반 손 증명·논증, 실기 실험 없음"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 자동 증명 도구 없이 논리 규칙으로 손 증명 (정량 분석 결합은 향후 과제로 명시)"
+      ],
+      "software_verified": true,
+      "results": [
+        "요건 정리: Sastry 외의 세 요건(낮은 자원 요구·사전 설정 불필요·정량 보장)과 보안 요건 셋(정직 검증자에 대한 정확한 거리, 비공모 부정직 검증자에 대한 상한, 공모 시 상한)을 제시하고 이 논문은 '규칙은 지키되 일찍·늦게 응답할 수 있는 증명자' 에 대한 상한만 증명한다고 범위를 밝힘",
+        "프로토콜: P 논스 N_P 사전 생성 → V 요청 → V 논스 N_V → P 빠른 응답 F(N_V, P, N_P) → P 인증 응답 (P, Pos_P, N_P, N_V, MAC_KPV(…)); 빠른 응답 단계에는 키가 없어 최근접 이웃 탐색 뒤 키 분배가 가능",
+        "F 조건(안정 부분항 st): (N_V, P, N_P)·(N_V, N_P ⊕ P)·N_V ⊕ h(P, N_P) 는 충족, (N_P ⊕ N_V, P) 는 N_P = X ⊕ N_V 치환으로 N_V 가 소거돼 불충족(보조정리 1, 따름정리 2·3)",
+        "정리: 정직한 증명자 H_P 와 검증자 관찰 vfr 에서 V 는 v·(t2 − t1 − I0)/2 ≥ d(V, P) 를 결론(명제 3) — 이른 응답 시도도 new 공리로 배제; semi-honest(예측 가능한 논스를 쓰는) 증명자에 대해서는 증명 불가",
+        "공모: Brands–Chaum·Čapkun–Hubaux·Hancke–Kuhn 등 대부분이 공모(Desmedt 의 테러리스트 공격)에 취약; 기존 대책(변조 방지 하드웨어, 장기 비밀 공유 강제 — Bussard)은 같은 공격자가 장악한 센서망에 부적합",
+        "웜홀 공모: 원거리 A 와 근거리 P 가 논스·MAC 을 나눠 A 의 거리를 P 의 것으로 보고 — 검증자 3개 이상 삼각측량(SPINE·ROPE)도 전송 전력이 일관되면 불일치가 없어 일반적으로 탐지 불가(그림 2·3)",
+        "부산물: Pavlovic–Meadows 인증 논리를 XOR 등식 이론(상쇄 규칙)으로 확장 — '안정 부분항' 정의"
+      ],
+      "limitations": [
+        "정성적 논리 — 오차 한계 등 정량 보장은 Sastry 식 해석과 결합하는 향후 과제 (저자 명시)",
+        "semi-honest·부정직 증명자에 대해서는 아무것도 증명하지 못함 (저자 명시)",
+        "공모는 막지도 탐지하지도 못하며, 부정직 검증자가 소수라는 가정 아래 불일치 탐지(SERLOC·HIRLOC 식)를 제안만 함 (저자 명시)",
+        "이 논문이 충족한다고 본 F = (N_V, N_P ⊕ P) 인스턴스는 이후 Distance Hijacking 에 취약으로 판정됨 — Cremers 2012 표·Mauw 2018 표 I(DH, 226 줄·18.59 s) (관찰, 코퍼스 근거)",
+        "물리계층(심볼 길이·조기 감지)과 처리시간 I0 의 편차를 모델링하지 않음, 구현·실험 없음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "sastry-2003-echo-location-claims",
+        "hancke-2005-rfid-db",
+        "capkun-2006-secure-positioning-jsac"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "extends",
+          "note": "Brands–Chaum 의 '빠른 응답 후 인증' 구조를 잇는 프로토콜 군을 제안하고 인증 논리로 정직 증명자 거리 상한을 형식 증명 — 커밋을 단순화하고 암호 연산 하나를 생략"
+        },
+        {
+          "to": "capkun-2006-secure-positioning-jsac",
+          "type": "attacks",
+          "note": "공모 노드가 웜홀로 거리를 맞추면 SPINE 의 3개 이상 검증자 삼각측량도 불일치 없이 통과함을 논증(그림 3) — 실험 없음"
+        }
+      ],
+      "added": "2026-10-07",
+      "last_checked": "2026-10-07"
+    },
+    {
+      "id": "avoine-2011-db-framework",
+      "title": "A Framework for Analyzing RFID Distance Bounding Protocols",
+      "authors": [
+        "Gildas Avoine",
+        "Muhammed Ali Bingöl",
+        "Süleyman Kardaş",
+        "Cédric Lauradoux",
+        "Benjamin Martin"
+      ],
+      "venue": "Journal of Computer Security",
+      "venue_full": "Journal of Computer Security, vol. 19, no. 2, pp. 289–317, 2011 (IOS Press) — Université catholique de Louvain · TÜBİTAK UEKAE · İstanbul Technical University · Sabancı University · INRIA/INSA-Lyon. 저자판 Sabancı Research Database(AvoineBKLM-2010-jcs.pdf), 원고 IACR ePrint 2009/543",
+      "tier": "journal",
+      "category": "analysis",
+      "year": 2011,
+      "url": "https://doi.org/10.3233/JCS-2010-0408",
+      "preprint": "https://research.sabanciuniv.edu/id/eprint/15317/1/AvoineBKLM-2010-jcs.pdf",
+      "doi": "10.3233/JCS-2010-0408",
+      "topics": [
+        "distance-bounding",
+        "fraud-taxonomy",
+        "mafia-fraud",
+        "terrorist-fraud",
+        "distance-fraud",
+        "impersonation",
+        "adversary-model",
+        "white-box-model",
+        "black-box-model",
+        "pre-ask-post-ask",
+        "hancke-kuhn",
+        "munilla-peinado",
+        "rfid"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "코퍼스 6편(cremers-2012·tippenhauer-2015·boureanu-2015·avoine-2018·mauw-2018·abidin-2021)과 Abu-Mahfouz–Hancke 2013(Xplore 참고문헌)이 거리 바운딩 사기 분류의 기준으로 인용한다. CS 연구에서 쓰이는 것은 두 가지다. 첫째, **위협 모델 어휘** — 사칭·거리 사기·마피아 사기·테러리스트 사기를 '혼자인가, 정직한 원거리 태그를 끼우는가, 부정직한 원거리 태그가 돕는가' 로 가르고, 거리 바운딩은 MITM 이 있는지가 아니라 증명자가 근방에 있는지만 판정한다고 목표를 못박았다. CS 보안 주장을 이 네 칸에 대입하면 반사기 소유자가 공격자인 경우(거리·테러리스트 사기)가 위협 모델에서 빠져 있는지가 바로 보인다. 둘째, **white-box 모델**(증명자가 기기를 완전히 통제)에서는 Hancke–Kuhn 의 거리 사기 확률이 문헌의 (3/4)^n 이 아니라 1 로 수렴함을 보였다 — 증명자가 느린 단계와 빠른 단계 사이에 PRF 를 2^23 번(PC 1 초 해시 수)까지 돌려 두 응답 레지스터가 많이 겹치는 논스를 고르면 된다. 디지털 키에서 폰·키 소유자는 white-box 증명자다. 그리고 CS RTT 는 양측 시퀀스가 공유 DRBG 에서 나와 반사기가 미리 알기 때문에 비트마다 반사기가 모르는 신선한 챌린지가 없다 — 부정직한 반사기의 거리 사기에는 이런 확률 상한 논증이 성립할 자리 자체가 없다는 점이 이 논문과 대조할 때 드러난다(관찰).",
+      "summary": "RFID 거리 바운딩 프로토콜이 형식적 접근 없이 설계되어 분석이 부정확하고 비교가 불공정하다는 문제의식에서, 사기 유형·공격자·증명자를 아우르는 통일 분석 틀을 제안한다. 사칭·거리·마피아·테러리스트 네 사기를 정의하고(퇴화 사례 셋은 제외), 공격자의 질의 전략을 pre-ask·post-ask·early-reply 셋으로 통합하며, Dolev-Yao 공격자에 프로토콜 실행 횟수 상한을 더한다. 증명자가 기기를 관찰·조작할 수 없는 black-box 모델과 완전히 통제하는 white-box 모델을 도입해, white-box 에서 Hancke–Kuhn 의 거리 사기 성공확률이 PRF 반복 시도로 1 에 수렴함을 보이고 모델·사기 간 함의 관계를 정리한다. 사례로 Munilla–Peinado 프로토콜의 마피아 사기 상한을 원 논문보다 정밀하게 구하고, 그 개선판의 보안 수준이 주장보다 낮음을 보인다.",
+      "hardware": [
+        "해당 없음 — 해석적 확률 분석, 구현·실험 없음"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 성공확률 곡선(그림 9·12·13)은 해석식으로 계산, 계산 도구 미기재"
+      ],
+      "software_verified": true,
+      "results": [
+        "사기 4종 정의: 사칭(혼자인 증명자가 남을 사칭), 거리 사기(부정직하고 혼자인 증명자가 근방이라 주장), 마피아 사기(리더와 근방 밖 정직한 태그 사이 MITM), 테러리스트 사기(근방 밖 부정직한 태그가 이후 공격에 이득을 주지 않는 한도에서 적극 협조하는 MITM) — 퇴화 사례 3종(공격자도 근방 밖)은 더 약해 제외; 마피아·테러리스트 사기는 MITM 이지 반드시 릴레이는 아님",
+        "공격자 전략: pre-ask(빠른 단계 전에 증명자에게 미리 질의 — HK 의 두 레지스터 중 하나 획득), post-ask(빠른 단계를 혼자 답한 뒤 최종 서명만 증명자에게서 획득 — 최종 느린 단계가 있을 때만), early-reply(챌린지를 앞질러 응답해 RTT 를 줄임 — Brands–Chaum 이 처음 기술)",
+        "실행 횟수: 단일 논스판 Hancke–Kuhn 의 마피아 사기 성공확률은 1회 실행 시 (3/4)^n 이지만 같은 챌린지로 두 번 실행할 수 있으면 1",
+        "white-box 거리 사기(HK): 증명자가 PRF 를 p 번 돌려 R0·R1 해밍 거리가 가장 작은 논스를 고르면 성공확률이 p 와 함께 빠르게 1 로 수렴 — n = 20·40·60·80·128, p ≤ 2^23(그림 9); 문헌의 주장값은 (3/4)^n, 느린·빠른 단계 사이 1 초 지연이면 거의 확실히 성공",
+        "함의 관계(그림 10): black-box 에서 마피아 ≡ 테러리스트 사기, 테러리스트 사기 성공확률은 white-box ≥ black-box, 거리 사기가 가능한 증명자는 같거나 높은 확률로 테러리스트 사기 가능",
+        "Munilla–Peinado(void 챌린지): pre-ask 최적 p_c 는 p_f < 4/7 이면 0·> 4/7 이면 1, pre-ask 와 post-ask 는 p_f = 0.8 에서 같고 그 이상이면 pre-ask 가 최적(n = 20, 그림 12) — 원 논문의 상한보다 정밀; 거리 사기는 pre-ask 가 최선(완전 챌린지 라운드 성공 3/4)",
+        "MP 개선판(레지스터 T 를 2n 비트로 생성, p_f = 3/4)의 마피아 사기 성공확률이 저자 주장보다 큼 — 보안 수준이 원판보다 낮아짐(그림 13)"
+      ],
+      "limitations": [
+        "준형식 틀 — 원시함수(PRF 등)에 필요한 가정을 명시하지 않아 Boureanu 2015 가 'ABKLM 모델은 보안 주장에 필요한 정확한 가정을 밝히지 않는다' 고 지적 (관찰, 코퍼스 근거)",
+        "Distance Hijacking(다중 정직 증명자 악용)은 사기 분류에 없음 — 2012 Cremers 가 추가 (관찰)",
+        "RTT 측정 자체는 정확하다고 보고 물리계층 지연·ED/LC 는 다루지 않음; 근방 동심원(이전 챌린지 수신 가능 영역)은 [36] 으로 미룸 (관찰·저자 언급)",
+        "구현·실험 없이 해석식과 그림뿐 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hu-2003-packet-leashes",
+        "capkun-2003-sector",
+        "capkun-2005-secure-positioning",
+        "hancke-2005-rfid-db",
+        "hancke-2005-practical-relay-iso14443",
+        "kfir-2005-virtual-pockets-relay",
+        "reid-2007-timing-relay-detection",
+        "drimer-2007-smartcard-relay-db",
+        "singelee-2007-db-noisy-environments",
+        "meadows-2007-db-authentication-logic",
+        "kim-2008-swiss-knife-db",
+        "hancke-2009-relay-attacks-revisited",
+        "kim-2009-mixed-challenges-db",
+        "francis-2010-nfc-p2p-relay",
+        "francillon-2011-pkes-relay"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "attacks",
+          "note": "white-box 거리 사기: 증명자가 PRF 를 최대 2^23 번 돌려 R0·R1 해밍 거리가 작은 논스를 고르면 성공확률이 (3/4)^n 이 아니라 1 로 수렴(n = 20–128, 그림 9); 단일 논스판은 같은 챌린지 2회 실행으로 마피아 사기 1"
+        }
+      ],
+      "added": "2026-10-07",
+      "last_checked": "2026-10-07"
     }
   ]
 }

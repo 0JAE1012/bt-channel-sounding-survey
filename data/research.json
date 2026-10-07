@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
   "landscape": {
     "title": "Bluetooth Channel Sounding Security Landscape",
@@ -10,7 +10,7 @@
         "kind": "stage",
         "label": "Secure Ranging Foundations",
         "period": "2003 – 2020",
-        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. 출발점은 2003 년의 두 논문이다 — Hu·Perrig·Johnson 의 temporal leash 가 릴레이(웜홀)를 '패킷이 광속으로 갈 수 있는 거리보다 멀리 갔는가' 로 정의하고 시각 동기 오차 Δ 가 곧 2cΔ 의 터널링 여유가 됨을 보였고(183 ns → 110 m), Sastry 의 Echo 가 RF 로 보내고 초음파로 받는 왕복으로 '증명자가 선언한 처리 지연만큼 수락 영역을 깎아야 한다'(p·s)는 거리 사기 방어 원리와 '타이머는 첫 비트 송신 전에 켜고 마지막 비트 수신 후에 끈다' 는 비트 단위 경계를 세웠다. 같은 해 Čapkun·Buttyán·Hubaux 의 SECTOR 는 Brands–Chaum 을 대칭키 상호 거리 제한(MAD)으로 바꿔 웜홀을 클럭 동기 없이 한 노드의 왕복으로 잡았다(이후 Cremers 의 표에서 Distance Hijacking 에 취약 판정). Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였으며, Hancke 2011 은 전용 근거리장 채널에서 '증명자 처리 지연을 믿으면 약 1 m, 못 믿으면 약 11 m' 로 상한이 갈림을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 'PRF 가정만으로는 사기를 못 막는다'(PRF 프로그래밍으로 TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴)는 함정을 보인 뒤 circular-keying 가정 위의 증명 가능한 실용 프로토콜(SKI)로 형식을 세웠고, Schaller 2009 가 위치·광속 제약을 넣은 Isabelle/HOL 모델로 거리 제한을 처음 정리 증명했고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며(기존 19개 중 10개 취약), Mauw 가 Schaller 모델을 바탕으로 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
+        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. 출발점은 2003 년의 두 논문이다 — Hu·Perrig·Johnson 의 temporal leash 가 릴레이(웜홀)를 '패킷이 광속으로 갈 수 있는 거리보다 멀리 갔는가' 로 정의하고 시각 동기 오차 Δ 가 곧 2cΔ 의 터널링 여유가 됨을 보였고(183 ns → 110 m), Sastry 의 Echo 가 RF 로 보내고 초음파로 받는 왕복으로 '증명자가 선언한 처리 지연만큼 수락 영역을 깎아야 한다'(p·s)는 거리 사기 방어 원리와 '타이머는 첫 비트 송신 전에 켜고 마지막 비트 수신 후에 끈다' 는 비트 단위 경계를 세웠다. 같은 해 Čapkun·Buttyán·Hubaux 의 SECTOR 는 Brands–Chaum 을 대칭키 상호 거리 제한(MAD)으로 바꿔 웜홀을 클럭 동기 없이 한 노드의 왕복으로 잡았다(이후 Cremers 의 표에서 Distance Hijacking 에 취약 판정). Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였으며, Hancke 2011 은 전용 근거리장 채널에서 '증명자 처리 지연을 믿으면 약 1 m, 못 믿으면 약 11 m' 로 상한이 갈림을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 'PRF 가정만으로는 사기를 못 막는다'(PRF 프로그래밍으로 TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴)는 함정을 보인 뒤 circular-keying 가정 위의 증명 가능한 실용 프로토콜(SKI)로 형식을 세웠고, Meadows 2007 이 인증 논리로 거리 제한을 처음 형식 분석하면서 '정직한 증명자에 대해서만 증명되고 공모는 탐지조차 못 한다' 는 경계를 밝혔고, Avoine 2011 이 사칭·거리·마피아·테러리스트 네 사기와 white-box 증명자 모델로 분석 어휘를 통일했으며(white-box 에서 Hancke–Kuhn 거리 사기 상한 붕괴), Schaller 2009 가 위치·광속 제약을 넣은 Isabelle/HOL 모델로 거리 제한을 처음 정리 증명했고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며(기존 19개 중 10개 취약), Mauw 가 Schaller 모델을 바탕으로 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
         "papers": [
           "sastry-2003-echo-location-claims",
           "hu-2003-packet-leashes",
@@ -26,7 +26,9 @@
           "ranganathan-2017-are-we-really-close",
           "capkun-2003-sector",
           "schaller-2009-physical-properties-verification",
-          "hancke-2011-secure-db-channel-rfid"
+          "hancke-2011-secure-db-channel-rfid",
+          "meadows-2007-db-authentication-logic",
+          "avoine-2011-db-framework"
         ]
       },
       {
@@ -34,7 +36,7 @@
         "kind": "stage",
         "label": "Relay / Distance Reduction",
         "period": "2005 – 2015",
-        "summary": "공격이 실제 제품에서 성립한다는 것이 확인된 시기다. Hancke 가 100 파운드 미만 부품으로 ISO 14443 카드를 50 m 떨어진 리더에 통과시켰고, Francis 는 같은 일을 개조 없는 휴대폰 두 대로 했다 — 2010 년 P2P 거래에서 2012 년 카드 에뮬레이션으로 넘어가 POS 결제·e-여권을 릴레이했고, 리더들은 35 s(POS)·5.2 s(여권)까지 지연된 응답을 받아 줬다. Francillon 이 8개 제조사 10개 차종 전부에서 PKES 릴레이로 문을 열고 시동까지 걸었고, Flury·Poturalski 가 IR-UWB 에서 ED/LC 의 정량적 한계를 잡았으며, Cicada 는 **동기화도 코드 지식도 없이** 간섭만으로 ToA 를 앞당길 수 있음을 보였다. 2015 년 PaySafe 는 정적 메시지를 캐시한 휴대폰 릴레이가 느린 카드의 직접 거래(637 ms)보다 빨리(627 ms) 끝날 수 있어 전체 시간제한이 무의미함을 보이고, '연산 없고 캐시할 수 없는 교환만 잰다' 는 설계로 대응했다 — Mastercard RRP 와 같은 구조다.",
+        "summary": "공격이 실제 제품에서 성립한다는 것이 확인된 시기다. Hancke 가 100 파운드 미만 부품으로 ISO 14443 카드를 50 m 떨어진 리더에 통과시켰고, 2009 년 Hancke·Mayes·Markantonakis 는 같은 릴레이를 230 달러 미만으로 재구현해 부가지연 20–35 µs 가 규격 타임아웃(FWT 기본 4.8 ms, FWI 위조 시 5 s)에 전혀 걸리지 않음을 보이고 데이터를 바꾸는 능동 릴레이(Mifare Classic)까지 넓혔다. Francis 는 같은 일을 개조 없는 휴대폰 두 대로 했다 — 2010 년 P2P 거래에서 2012 년 카드 에뮬레이션으로 넘어가 POS 결제·e-여권을 릴레이했고, 리더들은 35 s(POS)·5.2 s(여권)까지 지연된 응답을 받아 줬다. Francillon 이 8개 제조사 10개 차종 전부에서 PKES 릴레이로 문을 열고 시동까지 걸었고, Flury·Poturalski 가 IR-UWB 에서 ED/LC 의 정량적 한계를 잡았으며, Cicada 는 **동기화도 코드 지식도 없이** 간섭만으로 ToA 를 앞당길 수 있음을 보였다. 2015 년 PaySafe 는 정적 메시지를 캐시한 휴대폰 릴레이가 느린 카드의 직접 거래(637 ms)보다 빨리(627 ms) 끝날 수 있어 전체 시간제한이 무의미함을 보이고, '연산 없고 캐시할 수 없는 교환만 잰다' 는 설계로 대응했다 — Mastercard RRP 와 같은 구조다.",
         "papers": [
           "hancke-2005-practical-relay-iso14443",
           "francis-2010-nfc-p2p-relay",
@@ -44,7 +46,8 @@
           "poturalski-2011-db-802-15-4a",
           "poturalski-2010-cicada-attack",
           "ranganathan-2012-chirp-attacks",
-          "chothia-2015-paysafe-relay-cost-bounding"
+          "chothia-2015-paysafe-relay-cost-bounding",
+          "hancke-2009-relay-attacks-revisited"
         ]
       },
       {
@@ -257,12 +260,13 @@
       "maturity": "commercial"
     },
     {
-      "text": "**릴레이 방어의 해상도는 '어느 계층에서 시간을 재는가' 가 정한다.** 같은 카드·리더 600회 측정에서 ISO 14443 Level 1 SELECT UID 응답은 평균 1123.91 µs·σ 0.89 µs 로 카드 거리·각도와 무관했지만, EMV Level 3 의 RRP 논스 교환은 평균 48.4 ms·σ 6.4 ms 에 카드 거리와 r ≈ 0.80–0.88 로 상관해(받는 전력에 따라 카드 처리시간이 변함) 그 편차 안에 릴레이가 숨었다(시험 카드 10회 중 3회 통과). 논스 교환을 Level 1 로 내린 L1RP 의 Proxmark 왕복시간은 σ 2.3 µs 다. 다만 µs 도 광속 환산 km 급이라 PURE 는 이를 '앱 계층 릴레이는 막지만 물리계층 릴레이는 허용' 으로 분류하고 UWB ns 측정으로 넘어갔다(두 논문의 수치는 장비가 달라 교차 논증) — CS 의 PBR·RTT 가 어느 단에 서는지는 반사기 처리 지연의 편차가 정한다. 이 원리의 출발점은 PaySafe(2015)의 실측이다 — 암호 연산이 든 응답은 카드 간·자세 간 편차(GPO 105–364 ms, GENERATE AC 카드별 평균 154–332 ms)가 휴대폰 릴레이의 부가지연(평균 161 ms)보다 커서 시간제한을 걸 수 없고, 연산 없는 응답은 정적이라 캐시되므로 '연산 없고 캐시할 수 없는' 논스 교환만 따로 잴 수 있다(36 ms 응답, 80 ms 한도 제안). 그 설계를 이은 PayPass-RRP 를 시험 카드로 잰 Boureanu(2020)는 카드 처리 13.4 ms·σ 1.85 ms 에서 10 ms 이상 릴레이는 막지만 3 ms 이하는 오탐·미탐이 각각 2 % 를 넘는다고 보고 '이런 카드로는 어떤 리더 설계도 µs 릴레이를 시간제한할 수 없다' 고 결론냈다(카드 위치는 고정 — Radu 의 거리 상관은 그 뒤의 결과; 세 논문의 카드·리더가 달라 교차 논증).",
+      "text": "**릴레이 방어의 해상도는 '어느 계층에서 시간을 재는가' 가 정한다.** 같은 카드·리더 600회 측정에서 ISO 14443 Level 1 SELECT UID 응답은 평균 1123.91 µs·σ 0.89 µs 로 카드 거리·각도와 무관했지만, EMV Level 3 의 RRP 논스 교환은 평균 48.4 ms·σ 6.4 ms 에 카드 거리와 r ≈ 0.80–0.88 로 상관해(받는 전력에 따라 카드 처리시간이 변함) 그 편차 안에 릴레이가 숨었다(시험 카드 10회 중 3회 통과). 논스 교환을 Level 1 로 내린 L1RP 의 Proxmark 왕복시간은 σ 2.3 µs 다. 다만 µs 도 광속 환산 km 급이라 PURE 는 이를 '앱 계층 릴레이는 막지만 물리계층 릴레이는 허용' 으로 분류하고 UWB ns 측정으로 넘어갔다(두 논문의 수치는 장비가 달라 교차 논증) — CS 의 PBR·RTT 가 어느 단에 서는지는 반사기 처리 지연의 편차가 정한다. 이 원리의 문제 제기는 2009 년 Hancke 의 개관이다 — ISO 14443A 릴레이 하드웨어의 왕복 부가지연은 20–35 µs 인데 규격 FWT 기본값이 4.8 ms(FWI 위조 시 최대 5 s)이고 시험 리더는 9.44 µs 비트 그리드에만 맞으면 받아들였으며, 토큰 처리시간 편차가 릴레이 지연보다 커서 타임아웃을 조이면 정상 응답이 떨어진다고 정리했다. 그 정량적 출발점은 PaySafe(2015)의 실측이다 — 암호 연산이 든 응답은 카드 간·자세 간 편차(GPO 105–364 ms, GENERATE AC 카드별 평균 154–332 ms)가 휴대폰 릴레이의 부가지연(평균 161 ms)보다 커서 시간제한을 걸 수 없고, 연산 없는 응답은 정적이라 캐시되므로 '연산 없고 캐시할 수 없는' 논스 교환만 따로 잴 수 있다(36 ms 응답, 80 ms 한도 제안). 그 설계를 이은 PayPass-RRP 를 시험 카드로 잰 Boureanu(2020)는 카드 처리 13.4 ms·σ 1.85 ms 에서 10 ms 이상 릴레이는 막지만 3 ms 이하는 오탐·미탐이 각각 2 % 를 넘는다고 보고 '이런 카드로는 어떤 리더 설계도 µs 릴레이를 시간제한할 수 없다' 고 결론냈다(카드 위치는 고정 — Radu 의 거리 상관은 그 뒤의 결과; 세 논문의 카드·리더가 달라 교차 논증).",
       "evidence": [
         "radu-2022-emv-relay-protection",
         "coppola-2024-pure",
         "chothia-2015-paysafe-relay-cost-bounding",
-        "boureanu-2020-relay-resistant-emv"
+        "boureanu-2020-relay-resistant-emv",
+        "hancke-2009-relay-attacks-revisited"
       ],
       "maturity": "ota"
     },
@@ -393,13 +397,23 @@
       "year": 2020
     },
     {
-      "text": "**상호 거리 제한의 '증명자는 한 명' 가정** — Brands–Chaum 구조를 이은 MAD(2003)·잡음 내성 MAD 를 포함해 기존 거리 제한 프로토콜 19개 중 10개가, 근처의 정직한 증명자가 낸 빠른 응답을 부정직한 증명자가 자기 것으로 끼워 넣는 Distance Hijacking 에 취약했다(같은 프로토콜만 쓰는 환경 기준, Hancke–Kuhn 계열은 비취약). 고치는 법은 빠른 단계 응답을 증명자 신원·커밋한 논스에 명시적·암묵적으로 묶는 것이고 추가 메시지·암호 연산은 필요 없다 — 여러 키·폰이 한 공간에 있는 디지털 키 환경에서 CS 왕복이 '누구의 응답인가' 에 묶여 있는지가 같은 질문이며, CS 랜덤 시퀀스가 세션 시드에서 나온다는 사실이 이 결속으로 충분한지 따진 문헌은 없다.",
+      "text": "**상호 거리 제한의 '증명자는 한 명' 가정** — Brands–Chaum 구조를 이은 MAD(2003)·잡음 내성 MAD 를 포함해 기존 거리 제한 프로토콜 19개 중 10개가, 근처의 정직한 증명자가 낸 빠른 응답을 부정직한 증명자가 자기 것으로 끼워 넣는 Distance Hijacking 에 취약했다(같은 프로토콜만 쓰는 환경 기준, Hancke–Kuhn 계열은 비취약). **형식 증명이 있던 프로토콜도 예외가 아니다** — Meadows 2007 은 인증 논리로 빠른 응답 F 가 논스·신원을 '안정 부분항' 으로 품으면 정직한 증명자의 거리 상한이 성립함을 증명했지만, 그 F = (N_V, N_P ⊕ P) 인스턴스가 바로 이 공격에 취약했다(Cremers 표, Mauw 2018 Tamarin 표 I 에서 DH 재현 — 226 줄·18.59 s). 증명이 정직한 증명자만 다뤘기 때문이다. 고치는 법은 빠른 단계 응답을 증명자 신원·커밋한 논스에 명시적·암묵적으로 묶는 것이고 추가 메시지·암호 연산은 필요 없다 — 여러 키·폰이 한 공간에 있는 디지털 키 환경에서 CS 왕복이 '누구의 응답인가' 에 묶여 있는지가 같은 질문이며, CS 랜덤 시퀀스가 세션 시드에서 나온다는 사실이 이 결속으로 충분한지 따진 문헌은 없다.",
       "evidence": [
         "cremers-2012-distance-hijacking",
         "capkun-2003-sector",
-        "singelee-2007-db-noisy-environments"
+        "singelee-2007-db-noisy-environments",
+        "meadows-2007-db-authentication-logic",
+        "mauw-2018-db-verification-without-time"
       ],
       "year": 2012
+    },
+    {
+      "text": "**'증명자는 기기를 통제하지 못한다' 는 가정** — Hancke–Kuhn 의 거리 사기 성공확률은 문헌에서 (3/4)^n 으로 주장됐지만, 증명자가 기기를 완전히 통제하는 white-box 모델에서는 느린 단계와 빠른 단계 사이에 PRF 를 최대 2^23 번(PC 1 초 해시 수) 돌려 두 응답 레지스터의 해밍 거리가 작은 논스를 고르면 n = 20–128 에서도 1 로 수렴한다(단일 논스판은 같은 챌린지로 두 번 실행하면 마피아 사기도 1). 디지털 키의 폰·키 소유자는 white-box 증명자이며, CS RTT 는 양측 시퀀스를 공유 DRBG 로 미리 알기 때문에 부정직한 반사기의 거리 사기에 대해서는 이런 확률 상한조차 세울 자리가 없다(관찰).",
+      "evidence": [
+        "avoine-2011-db-framework",
+        "hancke-2005-rfid-db"
+      ],
+      "year": 2011
     }
   ],
   "assumed": [
@@ -476,7 +490,7 @@
     },
     {
       "text": "CS 는 안전한 근접 증명의 요건을 갖췄다",
-      "why_untested": "Ranganathan 의 개관이 정리한 세 요건은 (1) 왕복 ToF, (2) 챌린지·응답 RTT, (3) **짧은 심볼** 이다. CS 는 (1)(2)를 갖췄지만 1 Mb/s GFSK 의 1 µs 심볼은 (3)을 정면으로 위반한다 — 그 개관이 802.15.4a 의 32 ns 심볼로 '10 m 축소'를 계산한 식을 그대로 적용하면 CS 는 150 m 급 여지가 된다. Anliker 2026 이 실증한 것이 정확히 이 지점이고, **세 요건을 CS 파라미터로 다시 계산한 문헌이 없다.** 프로토콜 계층 쪽 도구는 있다 — Mauw 2018 은 시간·위치 기반 정의와 동치인 인과 기준('응답이 챌린지 송신보다 먼저 나가는 trace 가 있으면 불안전')을 증명하고 Tamarin 으로 13개 프로토콜·16개 변형을 평균 5.62 s 에 검증했다(Brands–Chaum 계열 거리 하이재킹 재현, PaySafe 거리 사기 신규). 그러나 **CS 의 RTT 교환(CS_SYNC 랜덤 시퀀스)을 이 틀에 넣어 거리 사기·거리 하이재킹을 따진 문헌도 없고**, 메시지를 원자 단위로 다루는 기호 모델은 위 (3)의 짧은 심볼 문제(물리계층 ED/LC)를 원리상 다루지 못한다 — 두 계층을 따로 검증해야 한다. Mauw 가 기반으로 삼은 Schaller 2009 의 Isabelle/HOL 모델도 같은 경계를 안고 있다 — 인증 거리측정의 안전성은 응답자가 정직할 때만 증명되고, 메시지 크기·전송률·고속 비트 교환은 저자 스스로 모델 밖으로 뒀다. CS RTT 를 이 계열로 검증하면 반사기 거리 사기와 심볼 길이 문제가 둘 다 정의상 빠진다. 증명을 시도하더라도 출발 가정이 정해져 있지 않다 — Boureanu 2013 은 'PRF 처럼 보인다' 는 성질만으로는 거리 사기·MIM 을 못 막음을 PRF 프로그래밍으로 보이고(TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴, 표 2) 증명 가능한 SKI 에 circular-keying 이라는 더 강한 가정을 요구했다. CS 의 액세스 주소·RTT 랜덤 시퀀스·안테나 경로는 양측(Central·Peripheral)이 절반씩 낸 CS_IV·CS_IN·CS_PV 로 인스턴스화한 DRBG(NIST SP 800-90Ar1 계열)에서 나오는데, 이를 거리 바운딩 증명 틀에 넣을 때 어떤 가정이 필요한지 따진 문헌이 없다(표준 블록암호를 실제로 '프로그래밍' 할 수 있다는 뜻이 아니라 증명의 공백이다).",
+      "why_untested": "Ranganathan 의 개관이 정리한 세 요건은 (1) 왕복 ToF, (2) 챌린지·응답 RTT, (3) **짧은 심볼** 이다. CS 는 (1)(2)를 갖췄지만 1 Mb/s GFSK 의 1 µs 심볼은 (3)을 정면으로 위반한다 — 그 개관이 802.15.4a 의 32 ns 심볼로 '10 m 축소'를 계산한 식을 그대로 적용하면 CS 는 150 m 급 여지가 된다. Anliker 2026 이 실증한 것이 정확히 이 지점이고, **세 요건을 CS 파라미터로 다시 계산한 문헌이 없다.** 프로토콜 계층 쪽 도구는 있다 — Mauw 2018 은 시간·위치 기반 정의와 동치인 인과 기준('응답이 챌린지 송신보다 먼저 나가는 trace 가 있으면 불안전')을 증명하고 Tamarin 으로 13개 프로토콜·16개 변형을 평균 5.62 s 에 검증했다(Brands–Chaum 계열 거리 하이재킹 재현, PaySafe 거리 사기 신규). 그러나 **CS 의 RTT 교환(CS_SYNC 랜덤 시퀀스)을 이 틀에 넣어 거리 사기·거리 하이재킹을 따진 문헌도 없고**, 메시지를 원자 단위로 다루는 기호 모델은 위 (3)의 짧은 심볼 문제(물리계층 ED/LC)를 원리상 다루지 못한다 — 두 계층을 따로 검증해야 한다. Mauw 가 기반으로 삼은 Schaller 2009 의 Isabelle/HOL 모델도 같은 경계를 안고 있다 — 인증 거리측정의 안전성은 응답자가 정직할 때만 증명되고, 메시지 크기·전송률·고속 비트 교환은 저자 스스로 모델 밖으로 뒀다. CS RTT 를 이 계열로 검증하면 반사기 거리 사기와 심볼 길이 문제가 둘 다 정의상 빠진다. 증명을 시도하더라도 출발 가정이 정해져 있지 않다 — Boureanu 2013 은 'PRF 처럼 보인다' 는 성질만으로는 거리 사기·MIM 을 못 막음을 PRF 프로그래밍으로 보이고(TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴, 표 2) 증명 가능한 SKI 에 circular-keying 이라는 더 강한 가정을 요구했다. CS 의 액세스 주소·RTT 랜덤 시퀀스·안테나 경로는 양측(Central·Peripheral)이 절반씩 낸 CS_IV·CS_IN·CS_PV 로 인스턴스화한 DRBG(NIST SP 800-90Ar1 계열)에서 나오는데, 이를 거리 바운딩 증명 틀에 넣을 때 어떤 가정이 필요한지 따진 문헌이 없다(표준 블록암호를 실제로 '프로그래밍' 할 수 있다는 뜻이 아니라 증명의 공백이다). 증명이 성립하는 **증명자 범위**도 미정이다 — 거리 제한의 첫 형식 분석(Meadows 2007)은 '규칙은 지키되 일찍·늦게 응답할 수 있는' 정직한 증명자에 대해서만 상한을 증명했고, 예측 가능한 논스를 쓰는 semi-honest 증명자와 공모(테러리스트형)는 증명도 탐지도 못 한다고 밝혔다 — 공모 노드가 웜홀로 거리를 맞추면 검증자 3개 이상 삼각측량(SPINE)도 불일치를 보이지 않는다(논증). Avoine 2011 은 같은 경계를 '증명자가 기기를 통제하는가'(white-box)로 정식화해 그 모델에서 Hancke–Kuhn 의 거리 사기 상한이 무너짐을 보였다. CS 의 위협 모델이 반사기 소유자를 공격자로 넣는지, 다중 앵커 일관성 검사가 키를 공유한 공모자 앞에서 무엇을 보장하는지 다룬 문헌은 없다.",
       "evidence": [
         "ranganathan-2017-are-we-really-close",
         "anliker-2026-narrowband-toa",
@@ -484,7 +498,9 @@
         "mauw-2018-db-verification-without-time",
         "boureanu-2013-towards-secure-db",
         "bt-cs-tech-overview",
-        "schaller-2009-physical-properties-verification"
+        "schaller-2009-physical-properties-verification",
+        "meadows-2007-db-authentication-logic",
+        "avoine-2011-db-framework"
       ],
       "blocks": [
         "todo-step-timing"
