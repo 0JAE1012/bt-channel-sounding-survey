@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-07",
-  "last_run": "2026-10-07",
+  "updated": "2026-10-10",
+  "last_run": "2026-10-10",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1330,
+  "citation_edges": 1420,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -1379,7 +1379,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-23",
+      "last_checked": "2026-10-10",
       "cites": [
         "aad-2026-fast-uwb-testing",
         "anliker-2023-time-for-change",
@@ -1395,7 +1395,8 @@
         "hancke-2008-tof-db-attacks",
         "poturalski-2010-cicada-attack",
         "gezici-2005-uwb-localization-survey",
-        "stocker-2020-secure-scalable-uwb"
+        "stocker-2020-secure-scalable-uwb",
+        "joo-2024-hrp-uwb-cir-distribution-detection"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2895,7 +2896,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-10-07",
+      "last_checked": "2026-10-10",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2916,7 +2917,8 @@
         "boureanu-2015-practical-provable-db",
         "francis-2010-nfc-p2p-relay",
         "boureanu-2013-towards-secure-db",
-        "avoine-2011-db-framework"
+        "avoine-2011-db-framework",
+        "beth-1991-chess-grandmaster"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4398,7 +4400,8 @@
         "sastry-2003-echo-location-claims",
         "hu-2003-packet-leashes",
         "capkun-2003-sector",
-        "schaller-2009-physical-properties-verification"
+        "schaller-2009-physical-properties-verification",
+        "beth-1991-chess-grandmaster"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4409,7 +4412,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "flury-2010-distance-decreasing",
@@ -5943,7 +5946,8 @@
         "최악 오차(150 m 대)는 무효 측정에서 나와 개선되지 않음 — 51 % 는 분포 중심의 개선",
         "공격자 없는 위협모델 — 자연 다중경로만 다룸 (관찰)",
         "논문 본문 PDF 는 여전히 미확보(IEEE 유료, IBR OA 에는 슬라이드만). 위 내용은 저자 박사학위논문 \"InPhase — Localization in the Internet of Things\"(TU Braunschweig 2022, LEOPARD 리포지터리 OA, 2026-09-04 Wayback 보존본으로 확보) 4.3 절 — 저자가 \"이 논문에 기반\"이라고 명시한 확장판 — 에서 확인했다. 논문 자체의 참고문헌 목록은 못 봐 cites 는 비워 둔다",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -5951,11 +5955,12 @@
       },
       "verification": "partial",
       "added": "2026-08-26",
-      "last_checked": "2026-09-29",
+      "last_checked": "2026-10-10",
       "cites": [
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
-        "vonzengen-2016-no-cost-distance"
+        "vonzengen-2016-no-cost-distance",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -7010,7 +7015,8 @@
         "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
         "2026-09-28 재시도: OpenAlex closed(위치 1곳), WebSearch 3질의에 OA 사본 없음",
         "2026-10-05 재시도: Pretoria UPSpace(DSpace REST) 에 Boshoff 학위논문·수락본 없음(같은 그룹 Nkrow 2023 FTM 수락본·Silva 2020 UWB NLOS 박사논문만), Hancke 출판 목록 페이지는 Cloudflare 챌린지, OpenAlex closed",
-        "2026-10-06 재시도: 공저자 Hancke 개인 사이트(rfidblog.org.uk)는 열렸으나 출판 목록·PDF 링크가 없고 CityU Scholars 로만 연결, Xplore REST 참고문헌 30건에 오늘 편입한 Hancke JNCA 2011·SECTOR 없음, arXiv 저자·제목 검색 0건"
+        "2026-10-06 재시도: 공저자 Hancke 개인 사이트(rfidblog.org.uk)는 열렸으나 출판 목록·PDF 링크가 없고 CityU Scholars 로만 연결, Xplore REST 참고문헌 30건에 오늘 편입한 Hancke JNCA 2011·SECTOR 없음, arXiv 저자·제목 검색 0건",
+        "2026-10-10: Crossref 에 참고문헌 46건 예치 — Xplore REST 대조분(9건)에 더해 DOI 일치 8건 + Gou VTC 2025·Joo IoT-J 2024 로 cites 9 → 19; 본문은 OpenAlex·arXiv 재조회에도 여전히 closed"
       ],
       "artifacts": {
         "code": null,
@@ -7026,12 +7032,22 @@
         "ranganathan-2017-are-we-really-close",
         "secure-ranging-4z-hrp-2024",
         "singh-2019-uwb-pr",
-        "singh-2021-4z-security-analysis"
+        "singh-2021-4z-security-analysis",
+        "gou-2024-uwb-channel-reciprocity",
+        "leu-2021-multicarrier-tof",
+        "neirynck-2016-alt-ds-twr",
+        "olafsdottir-2017-carrier-phase",
+        "riaz-2022-pbr-multipath-security",
+        "schepers-2021-ftm-security",
+        "singh-2023-wifi-ftm-iot-benchmark",
+        "uwb-sv-2023-ccs",
+        "gou-2025-time-hopping-reply",
+        "joo-2024-hrp-uwb-cir-distribution-detection"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "xie-2026-multipath-toa-binary-ambiguity",
@@ -7085,7 +7101,8 @@
         "전문 미확보 — IEEE Xplore 유료, arXiv 판 없음 (2026-08-30 확인)",
         "보안 고려 없음으로 보임 (초록 기준)",
         "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
-        "2026-09-28 재시도: OpenAlex closed(위치 1곳), WebSearch 는 ResearchGate 요청본만"
+        "2026-09-28 재시도: OpenAlex closed(위치 1곳), WebSearch 는 ResearchGate 요청본만",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 2건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -7100,12 +7117,14 @@
         "sheikh-2023-pbr-missing-tones",
         "shoudha-2022-reduced-complexity-ble-ranging",
         "vanmarter-2023-svr-ble-ranging",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "bintariq-2024-signal-subspace-ble-ranging",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-28"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "nie-2025-ransac-root-music-cs",
@@ -7507,7 +7526,8 @@
       "limitations": [
         "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인)",
         "보안 관점 없음 (초록 기준)",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 2건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -7515,12 +7535,14 @@
       },
       "verification": "partial",
       "cites": [
-        "olafsdottir-2017-carrier-phase"
+        "olafsdottir-2017-carrier-phase",
+        "coppens-2022-uwb-standards-overview",
+        "zand-2019-ble-pbr"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-28"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "qi-2026-cs-hadm-iot",
@@ -8416,7 +8438,8 @@
       "limitations": [
         "전문 미확보 (2026-08-31): IEEE 유료 학회, TU/e·imec 리포지터리 미발견",
         "helwa-2023의 지적: 특수 PLL 가정 (인용 논문 경유 확인)",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -8427,12 +8450,13 @@
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
         "vonzengen-2016-no-cost-distance",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "stanciu-2021-narrowband-distance",
@@ -8479,7 +8503,8 @@
       ],
       "limitations": [
         "전문 미확보 (2026-08-31): IEEE 유료, OA 경로 없음",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -8490,12 +8515,13 @@
         "giovanelli-2018-rssi-or-tof-ble",
         "pelka-2014-phase-multi-frequency",
         "vasisht-2016-chronos",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "lee-2002-uwb-dense-multipath-ranging"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "bintariq-2024-dl-ble-ranging",
@@ -8673,12 +8699,13 @@
         "capkun-2003-sector",
         "hancke-2011-secure-db-channel-rfid",
         "hancke-2009-relay-attacks-revisited",
-        "avoine-2011-db-framework"
+        "avoine-2011-db-framework",
+        "beth-1991-chess-grandmaster"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-01",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -9140,7 +9167,8 @@
         "아파트 장면의 음의 오프셋을 현재 AR 수학 모델로 설명 못 함 — 저자 명시",
         "보안·공격자 모델 없음 (관찰)",
         "논문 본문 PDF 미확보(IEEE 유료). 초록·IPIN 2018 슬라이드에 더해 저자 박사학위논문(TU Braunschweig 2022, OA) 3.5·4.1 절로 확인 — 다만 박사논문은 이 절이 TOSN 2022 논문에 기반한다고 적고 있어(4 장면 데이터셋은 IPIN 2018 슬라이드 표와 수치가 일치), IPIN 2018 본문 고유의 서술·참고문헌은 여전히 미확인",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -9149,7 +9177,8 @@
       "verification": "partial",
       "cites": [
         "pelka-2014-phase-multi-frequency",
-        "vonzengen-2016-no-cost-distance"
+        "vonzengen-2016-no-cost-distance",
+        "gunia-2017-phase-positioning-off-the-shelf"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9160,7 +9189,7 @@
         }
       ],
       "added": "2026-09-03",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "bapat-2026-imu-cs-orientation",
@@ -9993,7 +10022,8 @@
       "limitations": [
         "전문 미확보 — 실험 장비·데이터셋·상세 수치 미확인",
         "초록 기준: 성공률·거리·기기 범위의 조건 불명",
-        "인용 관계는 2026-09-18 IEEE Xplore REST /references(참고문헌 30건) 대조로 채움 — 본문은 여전히 미확보; Compagno 2016(TIFS)·Taponecco 2014·KNOB·BLE 다운그레이드는 코퍼스 밖"
+        "인용 관계는 2026-09-18 IEEE Xplore REST /references(참고문헌 30건) 대조로 채움 — 본문은 여전히 미확보; Compagno 2016(TIFS)·Taponecco 2014·KNOB·BLE 다운그레이드는 코퍼스 밖",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 4건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -10013,12 +10043,16 @@
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "poturalski-2012-secure-precise-ir-uwb",
         "singh-2019-uwb-pr",
-        "tschirschnitz-2021-method-confusion"
+        "tschirschnitz-2021-method-confusion",
+        "compagno-2016-enlargement-attacks-uwb-db",
+        "ma-2025-safelead-random-sts",
+        "neirynck-2016-alt-ds-twr",
+        "taponecco-2014-overshadow-enlargement-4a"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-06",
-      "last_checked": "2026-09-28"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "zhang-2025-uwbad-plus",
@@ -10077,7 +10111,8 @@
       "limitations": [
         "전문 미확보 — 성공률·전력이득·거리 등 수치 미확인",
         "가용성 공격 — 거리 값 조작이 아니라 갱신 차단",
-        "인용 관계는 2026-09-18 IEEE Xplore REST /references(참고문헌 30건) 대조로 채움 — 본문은 여전히 미확보; SnapLoc·Neirynck 2016 alt-DS-TWR 는 코퍼스 밖"
+        "인용 관계는 2026-09-18 IEEE Xplore REST /references(참고문헌 30건) 대조로 채움 — 본문은 여전히 미확보; SnapLoc·Neirynck 2016 alt-DS-TWR 는 코퍼스 밖",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 4건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -10088,7 +10123,11 @@
         "francillon-2011-pkes-relay",
         "leu-2022-ghost-peak",
         "singh-2019-uwb-pr",
-        "uwb-sv-2023-ccs"
+        "uwb-sv-2023-ccs",
+        "anliker-2023-time-for-change",
+        "neirynck-2016-alt-ds-twr",
+        "poturalski-2010-cicada-attack",
+        "singh-2021-4z-security-analysis"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -10099,7 +10138,7 @@
         }
       ],
       "added": "2026-09-06",
-      "last_checked": "2026-09-28"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "kansanen-2025-bayesian-phase",
@@ -11059,10 +11098,18 @@
       },
       "verification": "verified",
       "added": "2026-09-08",
-      "last_checked": "2026-09-12",
-      "cites": [],
+      "last_checked": "2026-10-10",
+      "cites": [
+        "beth-1991-chess-grandmaster"
+      ],
       "cites_source": "fulltext",
-      "relations": []
+      "relations": [
+        {
+          "to": "beth-1991-chess-grandmaster",
+          "type": "extends",
+          "note": "Beth–Desmedt 의 '모든 전송 시간을 정밀 측정' 제안을 '연산 속도 편차 때문에 쓸모없어 보인다'고 비판하고, 시간을 재는 구간에서 연산을 뺀 단일 비트 고속 교환으로 바꿈"
+        }
+      ]
     },
     {
       "id": "fu-2026-range-only-localization-attack",
@@ -11112,7 +11159,8 @@
         "초록만 확인(IEEE 유료) — 대상 랜징 기술(UWB 등)·실험 장비·수치 미확인",
         "거리 측정 자체의 조작 가능성은 가정으로 두고 상위 최적화만 다룸(초록 기준 관찰)",
         "인용 관계는 2026-09-18 IEEE Xplore REST /references(참고문헌 30건) 대조로 채움 — 본문은 여전히 미확보; Compagno 2016 은 코퍼스 밖",
-        "2026-09-28 재시도: OpenAlex closed(위치 1곳), WebSearch 에 OA 사본 없음"
+        "2026-09-28 재시도: OpenAlex closed(위치 1곳), WebSearch 에 OA 사본 없음",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 4건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11120,11 +11168,15 @@
       },
       "verification": "partial",
       "added": "2026-09-08",
-      "last_checked": "2026-09-28",
+      "last_checked": "2026-10-10",
       "cites": [
         "sartayeva-2023-indoor-positioning-security-survey",
         "singh-2019-uwb-ed",
-        "leu-2022-ghost-peak"
+        "leu-2022-ghost-peak",
+        "compagno-2016-enlargement-attacks-uwb-db",
+        "gezici-2005-uwb-localization-survey",
+        "pestourie-2019-secureloc-ack-attack",
+        "singh-2021-4z-security-analysis"
       ],
       "cites_source": "fulltext",
       "relations": []
@@ -11823,7 +11875,8 @@
         "IEEE Xplore 피인용 기록상 이 논문은 shoudha-2022-reduced-complexity-ble-ranging·vanmarter-2023-svr-ble-ranging 를 인용함 — 참고문헌 전체를 대조하지 못해 cites 에는 넣지 않음 (2026-09-13)",
         "2026-10-05: Crossref 에 참고문헌 45건이 새로 공개돼(Elsevier 예치) 코퍼스와 대조 — Zand 2019·Boer 2020·Stanciu 2021·Shoudha 2022·Van Marter 2023 SVR·bin Tariq 2024 DL 6편 인용 확인, cites_source 를 fulltext 로 전환. 나머지는 BLE AoA·DOA(MUSIC·공간 평활)·LASSO·DBSCAN 문헌 — 본문·초록은 여전히 미확보라 verification 은 unverified 유지",
         "2026-10-06 재시도: OpenAlex closed·초록 없음(abstract_inverted_index 비어 있음) — unverified 유지",
-        "2026-10-07 재시도: Crossref 예치 메타에 초록 없음(참고문헌 45건만), ScienceDirect 는 Googlebot UA 도 403, Elsevier API 는 키 없이 401 — unverified 유지"
+        "2026-10-07 재시도: Crossref 예치 메타에 초록 없음(참고문헌 45건만), ScienceDirect 는 Googlebot UA 도 403, Elsevier API 는 키 없이 401 — unverified 유지",
+        "2026-10-10 재시도: Crossref 메타에 여전히 초록 없음(vol. 287, art. 122399), OpenAlex 초록 없음 — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11831,7 +11884,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-07",
+      "last_checked": "2026-10-10",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -13577,7 +13630,8 @@
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
         "clulow-2006-long-symbols",
-        "hancke-2005-practical-relay-iso14443"
+        "hancke-2005-practical-relay-iso14443",
+        "beth-1991-chess-grandmaster"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -13598,7 +13652,7 @@
         }
       ],
       "added": "2026-09-23",
-      "last_checked": "2026-09-24"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "kfir-2005-virtual-pockets-relay",
@@ -14890,7 +14944,8 @@
         "전문 미확보 — IEEE Xplore 유료(isOpenAccess false), HAL 에 미등재(저자의 2025 GNSS 위협 논문 hal-05374013 만 있고 파일 없음) (2026-09-26)",
         "6쪽 학회 논문이라 분류표의 깊이·Bluetooth CS 언급 여부 미확인 — 관찰",
         "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(30건)을 코퍼스와 대조해 채움 — 본문은 미확보",
-        "2026-10-04 재시도: HAL API 저자 검색 8건 중 이 논문 없음(같은 저자의 GNSS 위협 리뷰 hal-05374013 은 파일 미첨부)"
+        "2026-10-04 재시도: HAL API 저자 검색 8건 중 이 논문 없음(같은 저자의 GNSS 위협 리뷰 hal-05374013 은 파일 미첨부)",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 2건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -14902,12 +14957,14 @@
         "anliker-2023-time-for-change",
         "leu-2022-ghost-peak",
         "singh-2019-uwb-pr",
-        "compagno-2016-enlargement-attacks-uwb-db"
+        "compagno-2016-enlargement-attacks-uwb-db",
+        "pestourie-2019-secureloc-ack-attack",
+        "sartayeva-2023-indoor-positioning-security-survey"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-26",
-      "last_checked": "2026-10-04"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "taponecco-2014-overshadow-enlargement-4a",
@@ -15313,7 +15370,8 @@
         "인용 관계는 참고문헌 미확보로 미추출 — cites_source: no-fulltext",
         "2026-10-05 재시도: Xplore REST 상 여전히 Early Access(isEarlyAccess true) — /references 0건이라 cites 미추출 유지",
         "2026-10-06 재시도: Xplore REST /references 여전히 0건(Early Access), OpenAlex closed·초록 없음",
-        "2026-10-07 재시도: Xplore REST /references 여전히 0건(Early Access)"
+        "2026-10-07 재시도: Xplore REST /references 여전히 0건(Early Access)",
+        "2026-10-10 재시도: Xplore REST 여전히 Early Access(isEarlyAccess true)·/references 0건, Crossref 참고문헌 예치 없음"
       ],
       "artifacts": {
         "code": null,
@@ -15324,7 +15382,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-27",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "perazzo-2016-enlargement-miscontrol-detection",
@@ -15844,7 +15902,9 @@
         "관찰: 워크숍 논문(2026-10-26 발표 예정)으로 Crossref 페이지 필드가 '28-24' 로 불명확; 저자 홈페이지(kaizheng.me)에는 채택 소식만 있고 PDF 없음",
         "관찰: 초록의 평가 지표는 정확도(MAE·중앙값)뿐 — 보안·조작 탐지 고려는 언급 없음",
         "2026-10-05 재시도: OpenAlex 가 gold OA(Crossref 라이선스 CC BY-NC-ND 4.0, 출판일 2026-10-26)로 표기 — 그러나 dl.acm.org PDF 는 Chrome·Googlebot·curl UA 모두 Cloudflare 403, Internet Archive 는 일시 중단; 출판일 이후 재시도",
-        "2026-10-06 재시도: OpenAlex gold OA(cc-by-nc-nd, 출판 2026-09-28) 유지, 그러나 dl.acm.org 랜딩·/doi/pdf 모두 쿠키 예열 후에도 Cloudflare 403, Wayback 스냅샷 없음, arXiv 판 없음"
+        "2026-10-06 재시도: OpenAlex gold OA(cc-by-nc-nd, 출판 2026-09-28) 유지, 그러나 dl.acm.org 랜딩·/doi/pdf 모두 쿠키 예열 후에도 Cloudflare 403, Wayback 스냅샷 없음, arXiv 판 없음",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
+        "2026-10-10 재시도: dl.acm.org/doi/pdf 여전히 Cloudflare 403(5.7 KB HTML), OpenAlex 재조회도 gold 표기·다른 OA 위치 없음 — 워크숍 발표일(10-26) 이후 재시도"
       ],
       "artifacts": {
         "code": null,
@@ -15854,12 +15914,13 @@
       "cites": [
         "santra-2024-cs-indoor",
         "shoudha-2022-reduced-complexity-ble-ranging",
-        "wieme-2025-cs-commercial-hw"
+        "wieme-2025-cs-commercial-hw",
+        "sheikh-2023-pbr-missing-tones"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "pestourie-2019-secureloc-ack-attack",
@@ -16269,7 +16330,8 @@
         "capkun-2003-sector",
         "schaller-2009-physical-properties-verification",
         "meadows-2007-db-authentication-logic",
-        "avoine-2011-db-framework"
+        "avoine-2011-db-framework",
+        "beth-1991-chess-grandmaster"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -16315,7 +16377,7 @@
         }
       ],
       "added": "2026-10-03",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "abu-mahfouz-2013-db-rtls",
@@ -16361,7 +16423,8 @@
       "limitations": [
         "전문 미확보 (2026-10-03): IEEE 유료(isOpenAccess false), OpenAlex·arXiv 사본 없음 — 초록은 Xplore REST abstract 로 확인",
         "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(30건)을 코퍼스와 대조해 채움 — 본문은 미확보",
-        "관찰: 제1저자의 University of Pretoria 박사학위논문(2011-10, UPSpace 공개 'Accurate and efficient localisation in wireless sensor networks using a best-reference selection') 5장이 거리한정 프로토콜 14종을 보안·메모리·전송량·연산으로 비교하는 같은 주제를 담지만, TII 판과의 대응이 학위논문에 명시돼 있지 않아 근거로 쓰지 않음 — 다음 보강 때 대조 후보"
+        "관찰: 제1저자의 University of Pretoria 박사학위논문(2011-10, UPSpace 공개 'Accurate and efficient localisation in wireless sensor networks using a best-reference selection') 5장이 거리한정 프로토콜 14종을 보안·메모리·전송량·연산으로 비교하는 같은 주제를 담지만, TII 판과의 대응이 학위논문에 명시돼 있지 않아 근거로 쓰지 않음 — 다음 보강 때 대조 후보",
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 13건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -16375,12 +16438,25 @@
         "clulow-2006-long-symbols",
         "reid-2007-timing-relay-detection",
         "hancke-2009-relay-attacks-revisited",
-        "avoine-2011-db-framework"
+        "avoine-2011-db-framework",
+        "capkun-2003-sector",
+        "drimer-2007-smartcard-relay-db",
+        "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
+        "hancke-2008-tof-db-attacks",
+        "hancke-2011-secure-db-channel-rfid",
+        "kim-2008-swiss-knife-db",
+        "kim-2009-mixed-challenges-db",
+        "kuhn-2010-uwb-ir-db",
+        "poturalski-2011-db-802-15-4a",
+        "rasmussen-2010-rf-distance-bounding",
+        "singelee-2007-db-noisy-environments",
+        "tippenhauer-2009-id-based-db"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-10-03",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-10"
     },
     {
       "id": "mazur-2024-ifft-bayesian-pbr",
@@ -17882,7 +17958,8 @@
         "hancke-2009-relay-attacks-revisited",
         "kim-2009-mixed-challenges-db",
         "francis-2010-nfc-p2p-relay",
-        "francillon-2011-pkes-relay"
+        "francillon-2011-pkes-relay",
+        "beth-1991-chess-grandmaster"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17893,7 +17970,478 @@
         }
       ],
       "added": "2026-10-07",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-10"
+    },
+    {
+      "id": "vandewater-2025-cs-multi-antenna-relay",
+      "title": "BLE Relay Attack Mitigation Using Multi-Antenna Bluetooth 6.0 Channel Sounding",
+      "authors": [
+        "Stijn van de Water"
+      ],
+      "venue": "MSc Thesis",
+      "venue_full": "Delft University of Technology, Faculty of EEMCS, Embedded Systems Group — MSc thesis in Computer and Embedded Systems Engineering (2025-06-30, 발표 2025-07-07; 심사위원 Qing Wang · Kaitai Liang). TU Delft Repository",
+      "tier": "thesis",
+      "category": "defense",
+      "year": 2025,
+      "url": "https://repository.tudelft.nl/file/File_361f9f05-6d03-47bc-abf4-e05d1c8bbfcc",
+      "preprint": "https://repository.tudelft.nl/file/File_361f9f05-6d03-47bc-abf4-e05d1c8bbfcc",
+      "doi": null,
+      "topics": [
+        "channel-sounding",
+        "relay-attack",
+        "distance-bounding",
+        "phone-as-a-key",
+        "multi-antenna",
+        "antenna-diversity",
+        "rtt",
+        "pbr",
+        "measurement-consistency",
+        "nrf54l15"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "high",
+      "relevance_note": "같은 COTS 칩·같은 CS 절차에서 RTT 가 PBR 보다 몇 배 흩어진다는 것을 환경별로 정량화한 드문 자료다 — 단일 안테나 사무실에서 RTT 공간 RMSE 3.17 m·최대 16.01 m, 연속 두 측정 간 최대 22.23 m 로 PBR(1.77 m·7.00 m)의 두 배 이상이다. 이는 규격이 내세우는 PBR–RTT 교차검증(C-01)의 허용폭이 실제 기기에서는 수 m 일 수밖에 없다는 뜻이고, 그 폭 안에서 PBR 만 옮기는 공격이 교차검증을 통과할 여지를 정량으로 준다. 또 저자의 위협 모델 — CS 의 시간 기반 거리 제한은 링크 상대(반사기)까지만 재므로, 앱 계층 토큰을 중계하는 공격자가 양쪽과 각자 연결해 CS 에 직접 참여하면 '조기 반사'로 통과한다 — 은 CS 거리를 인증 주체에 결속하는 문제를 CS 맥락에서 처음 명시한 것이다. 4안테나 다이버시티가 정상 분산(허용오차 ε)을 절반 가까이 줄인다는 결과는 탐지 정책의 문턱 설계 입력이고, 지표 계산 전 상·하위 8 % 를 지운 처리 선택은 공격을 숨길 꼬리가 바로 그 8 % 에 있다는 점에서 내 실험의 경계 조건으로 쓴다.",
+      "summary": "BLE 근접 인증(Phone-as-a-Key)의 릴레이 공격을 막기 위해 Bluetooth 6.0 Channel Sounding 의 RTT 로 시간 기반 거리 제한 프로토콜을 설계하고, 단방향 → 양방향 측정 → 주변 비콘 추가로 공격자가 피해 휴대폰을 둘 수 있는 면적을 줄이는 단계를 기하적으로 평가한다. 예비 측정에서 단일 안테나 CS 가 다중경로 사무실에서 공간·순차 일관성이 나빠 허용오차를 넓혀야 했기 때문에, nRF54L15 DK 두 대와 SP4T RF 스위치로 4안테나 CS(규격 안테나 구성 #3)를 만들고 안테나 배치 3종·결합법 5종(IAP)을 실외·가정·사무실에서 0–5 m, 실험당 약 1만 측정으로 비교했다. 최적 구성(4안테나 'flip' 배치)은 사무실 공간 RMSE 를 PBR 1.77 → 0.75 m, RTT 3.17 → 1.57 m 로 낮춰 실외 단일 안테나 기준선에 근접했고, 이를 허용오차로 다시 넣으면 공격 가능 면적이 80.29 → 24.01 m² 로 줄었다. 실제 릴레이 공격 실험은 없다.",
+      "hardware": [
+        "Nordic nRF54L15 DK (preview) ×2 — Rutronik 무상 제공 샘플, 하나는 initiator·하나는 reflector (검토 후 탈락: Silicon Labs xG24-RB4198A, xG24-DK2606A 듀얼 안테나 키트)",
+        "Skyworks SKY13575-639LF SP4T RF 스위치 평가보드(SKY13575-639-EVB) — initiator 측, GPIO P2.07·P1.14 로 RF1–RF4 선택, initiator VDDIO(기본 1.8 V → 3.3 V 재설정)로 급전",
+        "Delock SMA 2.4 GHz 스틱 다이폴 안테나 ×5(initiator 4 + reflector 1), Murata MXHS83QE3000 안테나 어댑터 ×2, TE Connectivity ADP-SMAM-SMAM-G — 3 m 케이블 퍽 안테나는 케이블 지연 때문에 제외",
+        "Core 규격 안테나 구성 #3(initiator 4 : reflector 1, 안테나 경로 4개); 배치 'stick'(안테나 간 5.0–11.5 cm)·'flip'(두 개 뒤집음, 11.0–20.0 cm)·'star'(펼침, 12.0–27.0 cm·편파 다양성)",
+        "환경: 실외(최소 다중경로)·가정(저다중경로)·사무실(금속 캐비닛·벽, BLE 광고 기기 100대 이상) — 전부 LoS; 0 → 5 m 를 10 cm 간격으로 안테나 경로당 50회, 실험당 약 10,000 측정; 기준 거리는 이동 간격(측정 장비 명시 없음)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "nRF Connect SDK(Zephyr RTOS) channel_sounding_ras_initiator / channel_sounding_ras_reflector 샘플 — reflector 무수정, initiator 를 다중 안테나용으로 수정(devicetree overlay, async UART, GPIO, RSSI 획득)",
+        "PBR 은 IQ 샘플 phase-slope 법, RTT 는 타임스탬프 — 데이터 수집 당시 SDK 에 IFFT 법 없음",
+        "CS 설정(표 3.5·3.6): 주 모드 PBR·부 모드 RTT, 주 모드 step 10–20, mode-0 step 3, RTT type = Access Address(CS_SYNC PHY 1M), 채널 맵 반복 5, 채널 선택 3B·Hat shape·jump 2; 최대 절차 길이 100×0.625 ms, 절차 간격 9, 서브이벤트 10 ms, PHY 2M, SNR control 없음",
+        "PC 호스트 Python 수집·처리 스크립트(개별 안테나 측정을 보드로 되돌려 보내 결합을 재계산하는 replay 포함); IAP 결합법 Minimal·Max RSSI·Mean·최저 표준편차·Proportional RSSI",
+        "지표: 이상치 상·하위 8 % 제거 후 선형 맞춤(ax+b) 대비 RMSE·최대 오차(공간 일관성), 연속 두 측정 차의 RMSE·최대(순차 일관성); 공격 면적은 NIST PAP02-Task 6 모델로 BLE 최대 거리 17 m 가정"
+      ],
+      "software_verified": true,
+      "results": [
+        "단일 안테나 기준선 공간 일관성 RMSE — PBR 0.44 / 1.20 / 1.77 m, RTT 1.52 / 1.74 / 3.17 m (실외 / 가정 / 사무실); 최대 오차 PBR 2.39 / 5.11 / 7.00 m, RTT 6.20 / 10.15 / 16.01 m (표 4.2)",
+        "순차 일관성(연속 두 측정 차) RMSE — PBR 0.24 / 0.43 / 1.40 m, RTT 2.50 / 2.45 / 4.82 m; 최대 PBR 1.50 / 3.08 / 6.85 m, RTT 10.86 / 13.85 / 22.23 m — RTT 는 실외에서도 사무실 PBR 보다 덜 일관 (표 4.3)",
+        "최적 4안테나 구성으로 사무실 공간 RMSE PBR 1.77 → 0.75 m·RTT 3.17 → 1.57 m, 최대 7.00 → 2.61 m·16.01 → 6.86 m; 순차 RMSE PBR 1.40 → 0.56 m·RTT 4.82 → 2.45 m — 사무실 최적치가 실외 단일 안테나 기준선에 근접",
+        "공간 일관성 이득은 주로 안테나 다이버시티(같은 측정 4회의 'baseline fair' → 최적), 순차 일관성 이득은 주로 측정 수 증가('baseline' → 'baseline fair'); 안테나를 늘릴수록 이득은 체감",
+        "두 안테나 minimal 결합 예: 사무실 RMSE PBR 1.95 / 1.28 → 1.22 m, RTT 3.23 / 2.92 → 2.68 m — 단 최대 오차는 좋은 안테나 단독보다 약간 커짐 (표 4.1)",
+        "배치: 'flip' 이 거의 모든 경우 최선, 간격·편파 다양성이 가장 큰 'star' 가 일관되게 최악(반사기 안테나와 편파 불일치로 추정); 결합법: RTT 는 거의 항상 Mean, Minimal 은 RTT 에서 최악, PBR 은 환경별(실외 Proportional RSSI, 실내 Minimal·Mean)",
+        "다중 안테나 순환으로 거리 갱신 주기 0.4 s → 1.6 s",
+        "공격 가능 면적(기하 근사, d1 3 m·d2 10 m·dmax 5 m, ε = 최대 RMSE): RSSI 907.92 m² → RTT 282.34 → 양방향 RTT 175.77 → 비콘 1개 160.56 → 비콘 2개 이상 80.29 m²(ε 4.48 m); 최적 구성 ε 2.45 m 에서 174.37 / 92.36 / 48.02 / 24.01 m² (표 3.1·4.4)"
+      ],
+      "limitations": [
+        "실제 릴레이 공격 실험 없음 — 프로토콜은 공격 가능 면적의 기하 계산으로만 평가했고 탐지율·오탐률이 없다 (저자: future work)",
+        "Bluetooth 6.0 지원 스마트폰이 없어(2025-06 시점) Phone-as-a-Key 실사용 평가 불가",
+        "preview DK·실험 단계 SDK — RTT 를 주 모드로 설정 불가, initiator/reflector 역할 동적 전환 불가(그래서 '상호 일관성' 대신 같은 initiator 의 연속 측정 일관성으로 대체), PBR IFFT 법 미지원; 모든 데이터가 단일 CS 설정",
+        "LoS 정지 측정 0–5 m 만 — NLOS·이동·장거리 없음",
+        "관찰: 지표 계산 전에 측정의 상·하위 8 % 를 이상치로 지움 — 공격이 숨을 수 있는 꼬리가 지표에서 빠진다",
+        "관찰: '조기 반사' 위협 모델에서 공격자가 CS 에 어떻게 참여하는지(CS 보안 시작의 키·DRBG 시드 확보)는 2.2.4 절의 페어링 MITM(Method Confusion) 언급 외에 따지지 않는다",
+        "석사 논문 — 피어 리뷰 미거침"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-10",
+      "last_checked": "2026-10-10",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "nikodem-2025-mcpd-ble",
+        "olafsdottir-2017-carrier-phase",
+        "santra-2024-cs-indoor",
+        "shoudha-2022-reduced-complexity-ble-ranging",
+        "staat-2022-analog-relay",
+        "staat-2020-paak-relay",
+        "suresh-2025-cs-vehicle-access",
+        "bintariq-2024-signal-subspace-ble-ranging",
+        "vanmarter-2023-svr-ble-ranging",
+        "tschirschnitz-2021-method-confusion"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "Core 6.0 CS(nRF54L15 preview DK, nRF Connect SDK RAS 샘플, 안테나 구성 #3)로 시간 기반 거리 제한 프로토콜을 설계하고 다중 안테나 일관성을 실측"
+        },
+        {
+          "to": "santra-2024-cs-indoor",
+          "type": "implements",
+          "note": "Santra 2024 가 실내 성능 개선 방향으로 기대만 적은 다중 안테나 CS 를 SP4T 스위치 4안테나로 실제 구성해 측정"
+        },
+        {
+          "to": "shoudha-2022-reduced-complexity-ble-ranging",
+          "type": "extends",
+          "note": "Shoudha 2022 의 IAP(minimal 결합) 우위 결과를 받아 결합법을 5종으로 넓혀 CS 실기기에서 비교 — RTT 에서는 minimal 이 최악·mean 이 최선"
+        }
+      ]
+    },
+    {
+      "id": "scolari-2025-csem-cs-transceiver",
+      "title": "Bluetooth® low energy channel sounding in a compact and energy-efficient radio transceiver",
+      "authors": [
+        "N. Scolari"
+      ],
+      "venue": "CSEM Report",
+      "venue_full": "CSEM Scientific and Technical Report 2025, pp. 11–12 (CSEM, Neuchâtel — BU-M, IoT & Vision). CC BY-NC-ND 4.0, yoda.csem.ch 2026-05-07 등록",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2025,
+      "url": "https://hdl.handle.net/20.500.12839/2010",
+      "preprint": "https://yoda.csem.ch/server/api/core/bitstreams/a0886d12-673b-4eff-91af-2bbe92248404/content",
+      "doi": "10.83152/csem-4",
+      "topics": [
+        "channel-sounding",
+        "transceiver-design",
+        "asic",
+        "drbg",
+        "rtt",
+        "pbr",
+        "phase-coherence",
+        "implementation"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "low",
+      "relevance_note": "CS 를 실리콘으로 구현하는 쪽의 설계 제약을 짧게나마 1차 자료로 보여준다. 내 연구에 쓰이는 지점은 셋이다 — (1) DRBG 를 전용 블록이 아니라 MCU 가 기존 AES 코어를 재사용해 돌린다는 구현 선택(난수화 타이밍이 MCU 스케줄링에 걸린다), (2) 시스템 클럭이 수십 ns 라 원시 타임스탬프로는 RTT 분해능이 안 나와 sounding sequence 처리에 기대야 한다는 것(분수 타이밍 추정이 곧 RTT 보안의 표면이라는 점과 연결), (3) 저IF 수신기에서 하향변환 마지막 단 위상을 추적해 송신에 '인공적 위상 연속성'을 준다는 것 — 반사기 측 위상 기준이 구현마다 다르게 만들어진다는 사례다. 정량 결과가 없어 근거 수치로는 쓰지 않는다.",
+      "summary": "CSEM 이 자체 Bluetooth LE 무선 IP(icyTRX-LE, GlobalFoundries 22 nm FDSOI)에 Channel Sounding 기능 전체 — 파형 생성, 샘플링 파이프라인, 이벤트·서브이벤트·스텝 스케줄링 — 를 통합하고 테스트 칩 테이프아웃을 마쳤다는 2쪽 기술 보고. DRBG 는 기존 AES 엔진을 재사용하는 MCU 하드웨어 가속 함수로 돌리고, RTT 는 수십 ns 시스템 클럭 대신 sounding sequence 처리로 타이밍을 얻으며, PBR 은 반사기 주파수를 sub-ppm 으로 추정해 ADPLL 에 복제하고 저IF 수신 위상을 추적해 송신 위상 연속성을 만든다. 데이터율·안테나 스위칭 패턴·처리 지연 등 규격의 설정 자유도를 모두 노출해 알고리즘 실험 플랫폼으로 쓰려는 목적이다. 거리 측정 결과는 없다.",
+      "hardware": [
+        "icyTRX-LE — CSEM 자체 Bluetooth LE 무선 IP, GlobalFoundries 22 nm FDSOI 테스트 칩(테이프아웃 완료, 측정 결과 미보고)",
+        "구조(그림 1): DRBG·AES 엔진, CS 엔진, 프로토콜 타이머, 시퀀서, 디지털 TRx(FFO·동기 타이밍·IQ 샘플), 아날로그 TRx(ADPLL·저IF 수신기)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "DRBG 를 MCU 에서 실행하되 기존 AES 코어로 하드웨어 가속 — 스택·SDK·펌웨어 명칭은 본문에 없음",
+        "PBR 위상 처리는 데이터량·타이밍 제약 때문에 하드웨어로 구현"
+      ],
+      "software_verified": true,
+      "results": [
+        "CS 기능셋(파형 생성·샘플링 파이프라인·프로토콜 스케줄링)을 22 nm BLE 무선의 기존 베이스밴드에 통합하고 테스트 칩 테이프아웃 완료 — 거리 오차·전력 등 정량 결과는 보고 없음",
+        "RTT: 시스템 클럭 주기가 수십 ns 라 원시 타임스탬프로는 ns 급 분해능이 불가능 → sounding sequence 처리에 의존; 가장 어려운 부분은 송수신 활성화·정렬·타임스탬프 포착 전 단계의 지터·드리프트 없는 일관된 타이밍",
+        "PBR: initiator 일 때 반사기 주파수를 sub-ppm 으로 추정해 ADPLL 설정에 복제해야 하고, 저IF 구조에서는 하향변환 마지막 단 위상을 추적해 이후 송신에 '인공적 위상 연속성'을 부여",
+        "DRBG 가 채널 선택·스텝 모드·액세스 주소·안테나 스위칭 패턴 등 무작위화 요소를 구동 — 이벤트·서브이벤트·스텝 파이프라인에 통합"
+      ],
+      "limitations": [
+        "2쪽 기관 기술보고서 — 피어 리뷰 아님, 측정 결과 없음",
+        "보안(NADM·공격 내성·DRBG 타이밍 마진) 평가 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-10",
+      "last_checked": "2026-10-10",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "implements",
+          "note": "Core 6.0 CS 의 DRBG·RTT·PBR·스텝 스케줄링 전체를 22 nm BLE 무선 IP 에 구현(테이프아웃) — 측정 결과 없음"
+        }
+      ]
+    },
+    {
+      "id": "jurenka-2025-cs-secure-hadm-thesis",
+      "title": "Bluetooth Channel Sounding: A Secure Approach to High Accuracy Distance Measurement",
+      "authors": [
+        "Joel Jurenka"
+      ],
+      "venue": "BSc Thesis",
+      "venue_full": "Technical University of Munich, Chair of IT Security (I20) — Bachelor's thesis, 제출 2025-02-17 (지도: Maximilian Tschirschnitz). 학과 학생 연구 페이지에 초록만 공개",
+      "tier": "thesis",
+      "category": "analysis",
+      "year": 2025,
+      "url": "https://www.sec.in.tum.de/i20/student-work/bluetooth-channel-sounding-a-secure-approach-to-high-accuracy-distance-measurement",
+      "preprint": null,
+      "doi": null,
+      "topics": [
+        "channel-sounding",
+        "security-analysis",
+        "nadm",
+        "drbg",
+        "pbr-rtt-cross-check",
+        "implementation-compliance",
+        "relay-attack"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "high",
+      "relevance_note": "규격이 내세우는 CS 방어(PBR–RTT 교차검증·NADM·DRBG 난수화·강화 PHY)가 **상용 개발 키트에서 실제로 켜져 있는가**를 본 것으로 확인된 유일한 문헌이다. 초록이 말하는 결론 — 방어는 전부 구현되면 견고하지만 선택 사항이 많고 강화 PHY 가 강제되지 않아 악용 가능한 설정이 남으며, Silicon Labs·Nordic 개발 키트에서 PBR/RTT 교차검증 생략과 NADM 보고 생략 같은 준수 공백을 찾았다 — 은 C-01(교차검증)과 C-02(NADM)가 '규격에 있다'와 '기기가 한다'를 구분해야 한다는 근거가 될 수 있다. 다만 전문을 못 구해 어느 SDK 버전·어느 설정에서 무엇을 봤는지 모르므로 판단 레이어에는 아직 쓰지 않는다. 같은 질문을 다룬 Hardwear.io USA 2026 발표(khan-2026-cs-security-hardwear)와 함께 전문 확보가 다음 실행의 우선 과제다.",
+      "summary": "TUM IT 보안 학과의 학사 논문으로, Bluetooth Channel Sounding 의 보안 메커니즘 — PBR 과 RTT 로 릴레이·중간자 공격을 완화하는 구조, DRBG 무작위화, NADM, 물리계층 인터페이스 강화 — 을 구조적으로 분석한다(초록). 결론은 이 기능들이 완전히 구현되면 견고한 방어가 되지만, 규격의 유연성 탓에 선택적 보안 기능과 강화 PHY 비강제가 악용 가능한 설정을 남긴다는 것이다. Silicon Labs·Nordic Semiconductor 상용 개발 키트 시험에서 PBR/RTT 교차검증 생략과 NADM 보고 생략 같은 준수 공백을 확인했다고 한다. 전문은 공개되지 않았다.",
+      "hardware": [
+        "Silicon Labs 상용 CS 개발 키트 (모델 확인 필요)",
+        "Nordic Semiconductor 상용 CS 개발 키트 (모델 확인 필요)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 초록에 SDK·버전 언급 없음"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: Silicon Labs·Nordic 개발 키트에서 PBR/RTT 교차검증 생략, NADM 보고 생략 등 규격 준수 공백 확인 — 설정·수치는 전문 미확보로 미확인",
+        "초록: 선택적 보안 기능과 강화 PHY 비강제가 악용 가능한 구성을 남김"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-10-10): 학과 학생 연구 페이지에 초록만 있고 PDF 링크 없음, mediaTUM 은 Anubis 봇 챌린지 — 시험 설정·SDK 버전·재현 절차 미확인",
+        "학사 논문 — 피어 리뷰 미거침"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "added": "2026-10-10",
+      "last_checked": "2026-10-10",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "초록 근거 — CS 보안 메커니즘(DRBG·NADM·PHY 강화·PBR/RTT)을 분석하고 Silicon Labs·Nordic 개발 키트의 규격 준수를 시험"
+        }
+      ]
+    },
+    {
+      "id": "khan-2026-cs-security-hardwear",
+      "title": "Security Analysis of Bluetooth Channel Sounding: Protocol and Implementations",
+      "authors": [
+        "Sultan Qasim Khan"
+      ],
+      "venue": "Hardwear.io USA 2026",
+      "venue_full": "Hardwear.io Security Trainings and Conference USA 2026, Santa Clara Marriott, 2026-05-26~30 — 발표(talk), 발표자 Tetrel Security. 논문·슬라이드 미공개(2025 판 슬라이드는 약 10개월 뒤인 2026-03~04 에 게시됨)",
+      "tier": "other",
+      "category": "analysis",
+      "year": 2026,
+      "url": "https://hardwear.io/talks/usa-2026-talks/security-analysis-of-bluetooth-channel-sounding-protocol-and-implementations/",
+      "preprint": null,
+      "doi": null,
+      "topics": [
+        "channel-sounding",
+        "security-analysis",
+        "ed-lc",
+        "multipath-confusion",
+        "nadm",
+        "vendor-implementations",
+        "phone-as-a-key"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "high",
+      "relevance_note": "상용 CS 구현들의 거리 조작 내성을 벤더별로 비교했다고 예고한 산업계 보안 분석으로, 내 연구 질문과 범위가 가장 많이 겹치는 외부 작업이다 — ED/LC 와 다중경로 신호 혼동 공격의 실현 가능성, NADM 의 실효성, 규격의 모호성·선택 기능·과도한 유연성·여러 ranging step 결합의 어려움을 다룬다고 초록에 적혀 있다. 이 발표가 이미 ED/LC·NADM 우회를 실기기로 보였다면 내 신규성 주장(C-02·C-03)의 대조군이 되고, 결합(step 결합) 문제는 내 공통모드 지연 결과(C-01)와 직접 맞닿는다. 지금은 초록뿐이라 결과를 인용할 수 없다 — 슬라이드·영상이 공개되면 가장 먼저 열어야 할 항목이다.",
+      "summary": "Bluetooth Core 6.0 의 Channel Sounding 을 보안 관점에서 분석한 Hardwear.io USA 2026 발표(초록). RTT 와 다중반송파 PBR 의 동작과 고전적 거리 조작 공격, CS 에 내장된 방어를 설명한 뒤, Early-Detect Late-Commit 과 다중경로 신호 혼동 공격의 실현 가능성을 검토하고 NADM 이 이를 얼마나 막는지 평가한다고 한다. 이어 인기 벤더 구현들의 거리 조작 내성을 조사해 보안 태세를 비교하고, 규격의 모호성·선택 기능·과도한 유연성·여러 ranging step 측정을 결합하는 문제를 잠재적 약점으로 분석한다고 밝힌다. 슬라이드·영상·논문은 공개되지 않았다.",
+      "hardware": [
+        "확인 필요 — 초록에 '인기 벤더 구현' 이라고만 적힘 (모델 확인 필요)"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요"
+      ],
+      "software_verified": false,
+      "results": [
+        "확인 필요 — 초록뿐, 공격 성공률·NADM 탐지 결과·벤더별 비교 수치 미공개"
+      ],
+      "limitations": [
+        "원문 미확보 (2026-10-10): 발표 페이지에 초록·발표자만 있고 슬라이드·영상 링크 없음, Hardwear.io 과거 행사 페이지(USA 2026)는 404, YouTube 채널 검색에 해당 영상 없음, Wayback 일시 중단",
+        "학술 논문이 아닌 산업 컨퍼런스 발표 — 피어 리뷰 없음, 공저자 여부 미확인(초록은 'we')"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "added": "2026-10-10",
+      "last_checked": "2026-10-10",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [
+        {
+          "to": "bt-core-6-0",
+          "type": "applies-to",
+          "note": "초록 근거 — CS 규격의 방어(NADM 등)와 벤더 구현의 거리 조작 내성을 분석"
+        }
+      ]
+    },
+    {
+      "id": "beth-1991-chess-grandmaster",
+      "title": "Identification Tokens — or: Solving The Chess Grandmaster Problem",
+      "authors": [
+        "Thomas Beth",
+        "Yvo Desmedt"
+      ],
+      "venue": "CRYPTO",
+      "venue_full": "Advances in Cryptology — CRYPTO '90, LNCS 537, Springer, 1991, pp. 169–176 — Universität Karlsruhe · University of Wisconsin–Milwaukee",
+      "tier": "other",
+      "category": "defense",
+      "year": 1991,
+      "url": "https://doi.org/10.1007/3-540-38424-3_12",
+      "preprint": "https://link.springer.com/content/pdf/10.1007/3-540-38424-3_12.pdf",
+      "doi": "10.1007/3-540-38424-3_12",
+      "topics": [
+        "mafia-fraud",
+        "terrorist-fraud",
+        "relay-attack",
+        "timing-defense",
+        "speed-of-light",
+        "identification-protocol",
+        "chess-grandmaster",
+        "clock-assumption"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "릴레이를 '시간과 광속'으로 막자는 생각의 출발점이고, 그 방어가 성립하려면 무엇을 믿어야 하는지를 처음 목록으로 적었다는 점에서 CS 연구에 직접 쓰인다. 저자들은 광속 불변 외에 공학 가정 두 개 — '상대의 클럭과 장치 내부에서 쓰는 시간의 모든 측면에 영향을 줄 수 없다', '보이지 않게 될 수 없다' — 를 명시했는데, Anliker 2023 의 Mix-Down 은 개시자의 클럭 드리프트 보정(장치 내부 시간 처리)을 공격자가 고른 반송파 주파수로 조종해 거리를 줄이므로 정확히 첫 번째 가정을 깬 것이다. CS 도 반사기 처리 시간·CFO 보정·분수 타이밍처럼 '장치 내부 시간'을 많이 쓰므로, 이 가정 목록은 CS 의 RTT 보안을 점검할 체크리스트로 쓴다. 또 '두 쪽이 서로 다른 응답 시각을 쓰게 하면, 중간자가 자기 응답 시각을 중계 지연의 두 배(2l) 이상 길게 잡아 항상 속인다'는 비고 2 는 응답자가 자기 처리 지연을 정하는 구조(CS 반사기의 처리 시간처럼)가 릴레이 지연을 숨길 자리가 된다는 점을 처음 짚은 것이다.",
+      "summary": "마피아 사기(Desmedt 1987)를 두 체스 그랜드마스터와 동시에 두며 수를 옮겨 적는 소녀의 사기로 모형화하고, 게임 이론으로 모형화할 수 있는 기법으로는 안전한 식별을 풀 수 없다(관찰 1)고 논증한다. 해법으로 두 참가자가 응답 시각 t 를 미리 합의하고 각자의 시계로 정확히 t 에 응답하며 상대 응답 시각을 검사하는 프로토콜을 제안하고, 중계에 l > 0 의 시간이 들고 수가 3 이상이면 F 나 S 중 한쪽이 반드시 사기를 탐지함을 증명한다(정리 1). 이를 광속 유한성으로 식별에 옮겨, 증명자와 검증자가 상대 거리를 각자 재고 영지식 증명의 응답 시각을 검사하게 한다 — 광속 불변·시간 조작 불가라는 물리 가정과 상대 클럭·장치 내부 시간에 영향을 줄 수 없고 보이지 않게 될 수 없다는 공학 가정 위에서다. 테러리스트 사기는 신뢰 센터가 만든 변조 불가 장치가 프로토콜을 직접 수행하게 해 막는다(관찰 2).",
+      "hardware": [
+        "해당 없음 — 이론 논문; 정밀도 근거로 '저가 쿼츠 기술이면 충분'(Ramsey 1988 인용)이라고만 언급, 상세는 최종본으로 미룸(전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 구현·시뮬레이션 없음(전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "정리 1: 소녀가 두 게임 사이에 수를 옮기는 데 l > 0 이 걸리고 F·S 가 프로토콜을 지키며 수 m ≥ 3 이면, F 또는 S 가 사기를 탐지한다 (l1 + 2·l2 + l3 = 0 이 되어야 하므로 모순)",
+        "비고 2: F 는 응답 시각 t, S 는 t′ 를 쓰도록 합의하는 변형은, 중간의 소녀가 게임 1·2 에서 쓰는 자기 응답 시각 t′1·t2 를 t′1 ≥ t′2 + 2l, t2 ≥ t1 + 2l 로 잡으면 항상 속일 수 있다(t1 = F, t′2 = S 의 응답 시각) — '정리를 쉽게 일반화할 수 있다'며 제안된 변형들이 모두 불안전했다고 저자 서술",
+        "비고 1(Rivest): 결정론적 로봇 여럿과 동시에 두면 한 로봇은 탐지 없이 질 수 있으나, 무작위 영지식 게임에서는 옛 게임의 수가 쓸모없어 문제가 사라짐",
+        "관찰 1: 마피아 사기와 테러리스트 사기는 게임 이론상 구별되지 않으며, 게임 이론으로 모형화되는 기법으로는 안전한 식별을 풀 수 없다; 관찰 2: 마피아 사기 해법은 증명자 측을 변조 불가 장치에 넣으면 테러리스트 사기로 확장된다",
+        "필요 가정 명시(4.1절): 물리 — 광속은 일정하고 상대가 영향을 줄 수 없다, 개인의 시간을 늦추거나 당길 수 없다; 공학 — 상대의 클럭과 보안 장치 내부에서 쓰는 시간의 모든 측면에 영향을 줄 수 없다, 보이지 않게 될 수 없다",
+        "선행 대책 비교: 증명자가 자기 지구상 절대 위치에 서명하는 Desmedt 1988(SecuriCom) 방식은 테러리스트 사기를 못 막는다"
+      ],
+      "limitations": [
+        "확장 초록 — 정밀도·이동 효과·다중 게임 문제의 정식 논의는 '최종본'으로 미룸",
+        "증명자·검증자가 서로의 거리를 이미 안다고 가정(혼잡하지 않은 환경); 응답 시각 계산에 연산 편차가 들어가면 쓸 수 없다는 비판은 Brands–Chaum 1993 이 제기",
+        "대여(rental) 사기는 다루지 않음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-10",
+      "last_checked": "2026-10-10",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": []
+    },
+    {
+      "id": "joo-2024-hrp-uwb-cir-distribution-detection",
+      "title": "Enhancing Security of HRP UWB Ranging System Based on Channel Characteristic Analysis",
+      "authors": [
+        "Kyungho Joo",
+        "Wonsuk Choi"
+      ],
+      "venue": "IEEE IoT-J",
+      "venue_full": "IEEE Internet of Things Journal, vol. 11, no. 24, pp. 39794–39808, 15 Dec. 2024 (온라인 2024-09-03) — Soongsil University · Korea University. CC BY-NC-ND 4.0",
+      "tier": "journal",
+      "category": "defense",
+      "year": 2024,
+      "url": "https://ieeexplore.ieee.org/document/10663712",
+      "preprint": "https://ieeexplore.ieee.org/ielx8/6488907/10786863/10663712.pdf?arnumber=10663712",
+      "doi": "10.1109/JIOT.2024.3453910",
+      "topics": [
+        "uwb",
+        "hrp",
+        "ghost-peak",
+        "distance-reduction-detection",
+        "cir-features",
+        "anomaly-detection",
+        "one-class-svm",
+        "sts",
+        "cots",
+        "dwm3000",
+        "digital-key"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 의 NADM 과 같은 범주 — '측정 신호의 통계로 조작을 걸러낸다' — 의 방어가 UWB 에서 COTS 소프트웨어만으로 어디까지 가는지 보여주는 비교 기준이다. 정상 신호만으로 학습해 오경보율 1 % 에 문턱을 고정하는 방식은 NADM 문턱을 어떻게 정할지에 대한 구체적 대안이고, Ghost Peak 재현 800회에서 99.74 % 탐지라는 수치는 '통계 검사가 듣는다'(C-08 지지)의 가장 강한 실측 근거다. 동시에 그 경계도 분명하다 — 저자 스스로 원거리·심한 다중경로에서는 링크버짓 부족으로 오경보가 잦다고 밝혔고, 평가한 공격이 CIR 분포를 보존하려 하지 않는 Ghost Peak 하나뿐이라 Urey-ML 같은 적응형 공격 앞의 성능은 비어 있다. 또 시뮬레이션에서 back-search PAPR 이 낮은(정밀한) 수신기일수록 축소 성공률이 높다는 결과(PAPR 4 에서 최대 약 90 %)는 '정밀도와 보안의 충돌'을 UWB 에서 다시 확인한 것으로, CS 의 첫 경로·분수 타이밍 개선(C-07)을 볼 때 그대로 적용된다.",
+      "summary": "IEEE 802.15.4z HRP UWB 의 STS 는 상호상관으로 ToA 를 정하므로 틀린 비트로 STS 를 덮어써도(overshadow) 앞선 가짜 첫 경로가 생겨 거리가 줄어드는데(Ghost Peak), 다중 STS 세그먼트로 일관성을 검사하는 방안은 COTS 칩셋 수정이 필요하다. 저자들은 수신기가 이미 계산하는 CIR 의 분포 특징(back-search 의 MPEP·PAPR, 진폭 분포의 왜도·첨도)을 정상 신호만으로 학습한 단일 클래스 이상탐지기(OC-SVM·LOF)로 판정하는 UWB-CA 를 제안한다. MATLAB 시뮬레이션(IEEE 802.15.4a 채널 16조건)에서 Digital Key 실외 LoS 평균 탐지율 98.34 %, nRF52840-DK + DWM3000 실측에서는 Ghost Peak 재현 800회(축소 성공 4.47 %)를 OC-SVM 99.74 %·LOF 99.48 % 로 탐지했다(오경보율 1 % 고정). nRF52840 에서 STS 검증에 약 3 ms, 평균 전력 +1.72 % 가 든다.",
+      "hardware": [
+        "Nordic nRF52840-DK + Qorvo DWM3000 모듈 ×2 — initiator·responder(SS-TWR); dwt_readaccdata 로 CIR 512 샘플, dwt_readdiagnostics 로 rms·최대 피크 크기",
+        "공격기: NUCLEO-Z429(본문 표기) 보드 + Qorvo DWM3000 — Leu 2022 절차로 responder 의 STS 를 과포화(overshadow), initiator 와 1 m",
+        "환경: 실내 사무실·지하 주차장·실외 주차장 — initiator 삼각대 고정, responder 는 삼각대(정지) 또는 사람이 들고 이동, 조건별 CIR 1000개",
+        "전력 모니터(본문 [74], 500 Hz 샘플)로 initiator 평균 전력 측정"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB 시뮬레이션 — 802.15.4z HRP 기본 파라미터, 8차 Butterworth(차단 500 MHz) 펄스, STS 4096 BPSK 펄스·PRF 62.4 MHz, 공격기–피해기 클럭 오프셋 ±20 ppm, ADC 1 GHz; IEEE 802.15.4a 채널 모델(주거·사무실·실외·산업 × LoS/NLoS)",
+        "back-search 파라미터 탐색 MPEP 10–25·PAPR 4–10 → (10,4)(10,6)(10,8)(15,8)(20,8)(25,8) 선정; ToA 7 ns 초과 감소(SS-TWR 1.05 m)를 축소 성공, 666 ns(100 m) 초과는 서비스 거부로 분류",
+        "단일 클래스 이상탐지: MATLAB OC-SVM(RBF 커널)·LOF(Mahalanobis, 이웃 20); 학습 시 이상치 1 % 혼합으로 오경보율 1 % 문턱",
+        "특징: 순차 전진 선택으로 MPEP·PAPR·왜도·첨도 — 실측에서는 DWM3000 back-search 파라미터가 비공개라 PAPR 대신 rms",
+        "임베디드: scikit-learn OC-SVM 을 micromlgen 으로 C 변환해 nRF52840(Cortex-M4 64 MHz)에 이식, 서포트 벡터 40–50개; LOF 는 C 구현 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "실측(COTS): Ghost Peak 재현 800회 중 거리 축소 성공 4.47 % — UWB-CA 탐지율 OC-SVM 99.74 %(우회 확률 0.01 %)·LOF 99.48 %(0.02 %), 오경보율 1 % 고정",
+        "시뮬레이션 Digital Key 실외 LoS: 평균 탐지율 98.34 %; 적용 후 최선 공격 성공률 LOF 0.4 %·OC-SVM 1.9 %; k < 5 dB 의 약한 공격은 탐지를 피하지만 축소 성공률 자체가 작고, k > 15 dB 부터 두 모델 모두 효과적",
+        "정밀할수록 취약: back-search PAPR 4·6 수신기는 공격 펄스 세기에 따라 축소 성공률이 최대 약 90 %·60 %, PAPR 8 은 k ≈ 30 dB 에서 약 8 % — Singh 2021 의 '정밀한 수신기일수록 취약' 과 일치",
+        "정상 거리 오차율(7 ns 초과): 선정 6조합에서 1.09–1.74 %",
+        "NLoS 로 공격 펄스를 넣으면 은닉은 쉽지만 축소 성공률이 LoS 보다 낮음 (표 V·VI)",
+        "오버헤드: STS 검증 추가 약 3 ms(대부분 CIR 레지스터 읽기 전처리), 평균 전력 689.34 → 701.19 mW(+1.72 %)"
+      ],
+      "limitations": [
+        "저자 명시: 거리가 멀고 다중경로가 심하면 링크버짓 부족으로 오경보가 잦음 — 근접 판정 상한 이내(실측상 10 m)에서만 적용 권고",
+        "실측에서 PAPR 특징을 쓸 수 없음(DWM3000 back-search 파라미터 비공개) → rms 로 대체; LOF 는 임베디드 지연 미측정",
+        "관찰: 평가한 공격은 Ghost Peak(STS 과포화) 하나 — CIR 분포를 정상처럼 보존하도록 설계한 적응형 공격, Mix-Down 류 클럭 공격은 미평가",
+        "관찰: 실측은 SS-TWR·정지/이동 각 1000 CIR, 공격 거리 1 m 한 조건"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-10",
+      "last_checked": "2026-10-10",
+      "cites": [
+        "leu-2022-ghost-peak",
+        "anliker-2023-time-for-change",
+        "singh-2019-uwb-pr",
+        "singh-2021-4z-security-analysis",
+        "leu-2020-mtac",
+        "uwb-sv-2023-ccs",
+        "rasmussen-2010-rf-distance-bounding",
+        "flury-2010-distance-decreasing",
+        "francillon-2011-pkes-relay",
+        "cremers-2012-distance-hijacking",
+        "joo-2020-hodor",
+        "heinrich-2023-smartphones-uwb",
+        "avoine-2018-db-survey",
+        "hancke-2005-rfid-db",
+        "poturalski-2010-cicada-attack",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "capkun-2006-secure-positioning-jsac",
+        "hancke-2005-practical-relay-iso14443",
+        "boureanu-2015-practical-provable-db",
+        "francis-2010-nfc-p2p-relay",
+        "taponecco-2014-overshadow-enlargement-4a",
+        "compagno-2016-enlargement-attacks-uwb-db",
+        "capkun-2003-sector",
+        "brands-1993-distance-bounding",
+        "radu-2022-emv-relay-protection"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "leu-2022-ghost-peak",
+          "type": "defends",
+          "note": "Ghost Peak(STS 과포화)을 COTS DWM3000 으로 재현하고 CIR 분포 이상탐지로 OC-SVM 99.74 %·LOF 99.48 % 탐지(오경보율 1 % 고정, 800회 중 축소 성공 4.47 %)"
+        },
+        {
+          "to": "uwb-sv-2023-ccs",
+          "type": "extends",
+          "note": "같은 저자들의 UWB-SV(STS 하위필드 교차상관 일관성 — 칩셋 수정 필요)를 CIR 분포 특징 + 단일 클래스 이상탐지로 바꿔 COTS 소프트웨어만으로 구현"
+        }
+      ]
     }
   ]
 }
