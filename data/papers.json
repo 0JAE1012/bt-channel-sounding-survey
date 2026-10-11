@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-10",
-  "last_run": "2026-10-10",
+  "updated": "2026-10-11",
+  "last_run": "2026-10-11",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1420,
+  "citation_edges": 1435,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -3132,7 +3132,8 @@
         "보안 분석 없음 — 위상 롤오버·위상 조작 공격은 이 논문의 범위 밖",
         "원문 미확보 — IEEE Xplore 유료, TU/e 연구 포털에 전문 파일 없음, Semantic Scholar openAccessPdf 비어 있음, ResearchGate는 로그인 요구 (2026-08-21 재시도 실패). 장비·실험 조건·수치 미확인",
         "전문 접근 4회 연속 실패 (IEEE Xplore 유료, Unpaywall·OpenAlex 에 OA 사본 없음, TU/e 연구포털은 메타데이터만 보유, IEEE stampPDF 경로는 OA 논문에만 통함)",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-11 재시도: imec DSpace REST 에 레코드(handle 20.500.12860/34517)·ORIGINAL 비트스트림 43314.pdf(1.17 MB)가 있으나 dc.date.embargo = 9999-12-31(영구 비공개) — REST content 401, 프런트 /download 는 HTML; 재시도 무의미"
       ],
       "artifacts": {
         "code": null,
@@ -3140,7 +3141,7 @@
       },
       "verification": "partial",
       "added": "2026-07-30",
-      "last_checked": "2026-09-28",
+      "last_checked": "2026-10-11",
       "cites": [
         "pelka-2014-phase-multi-frequency"
       ],
@@ -3612,7 +3613,8 @@
       "limitations": [
         "2 쪽 포스터라 평가 깊이가 제한적",
         "원문 미확보: IEEE Xplore 유료, Semantic Scholar 에 openAccessPdf 없음, TUM 리포지터리에도 전문 없음(2026-08-21 확인) — 장비·데이터셋·성능 수치 미확인",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-11 재시도: mediaTUM(오늘은 curl UA 로 열림) 레코드 1759649 는 서지·DOI 만 있고 파일 없음"
       ],
       "artifacts": {
         "code": null,
@@ -3625,7 +3627,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-03",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "antonijevic-2026-secure-wifi-ranging",
@@ -5108,7 +5110,7 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-10-07",
+      "last_checked": "2026-10-11",
       "cites": [
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2005-rfid-db",
@@ -5120,7 +5122,8 @@
         "kim-2009-mixed-challenges-db",
         "capkun-2003-sector",
         "meadows-2007-db-authentication-logic",
-        "avoine-2011-db-framework"
+        "avoine-2011-db-framework",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5138,6 +5141,11 @@
           "to": "meadows-2007-db-authentication-logic",
           "type": "attacks",
           "note": "표에서 Meadows 외 F = (N_V, N_P ⊕ P) 인스턴스를 Distance Hijacking 취약(Yes)으로 판정(공격 자체는 Basin 외가 먼저 기술) — Meadows 의 방법론은 부정직 증명자를 다루지 못해 이 공격을 놓쳤다고 지적"
+        },
+        {
+          "to": "bussard-2005-dbpk-terrorist-fraud",
+          "type": "applies-to",
+          "note": "표 2 의 4번: Bussard–Bagga 를 Distance Hijacking 비취약으로 판정 — 같은 표에서 Brands–Chaum 서명·Fiat-Shamir·Schnorr 형 3종은 취약(원문·레이아웃 텍스트 확인)"
         }
       ],
       "category": "analysis"
@@ -6692,7 +6700,8 @@
       "limitations": [
         "전문 미확보 — 실험 규모·장비·정확도 수치 모두 미확인 (IEEE Xplore 유료, OpenAlex·Semantic Scholar 모두 closed)",
         "보안 고려 없음 — 그룹 랑잉의 도청·조작 표면은 다루지 않은 것으로 보임 (초록 기준)",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-11 재시도: imec DSpace 레코드에 ORIGINAL 43315.pdf(1.38 MB)가 있으나 REST content 401(같은 저자 WCNC 판과 같이 영구 엠바고로 보임) — 재시도 무의미"
       ],
       "artifacts": {
         "code": null,
@@ -6707,7 +6716,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "wu-2026-cs-twr-phase-offset",
@@ -8700,12 +8709,19 @@
         "hancke-2011-secure-db-channel-rfid",
         "hancke-2009-relay-attacks-revisited",
         "avoine-2011-db-framework",
-        "beth-1991-chess-grandmaster"
+        "beth-1991-chess-grandmaster",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
-      "relations": [],
+      "relations": [
+        {
+          "to": "bussard-2005-dbpk-terrorist-fraud",
+          "type": "attacks",
+          "note": "DBPK-Log 를 white-box 증명자 모델로 재분석(6절) — 악의 증명자가 두 응답 레지스터(k·e)의 해밍 거리 a 를 최소화하는 조기 응답 전략으로 거리 사기 성공확률 (1/2)^a(p = 59·x = 27 예에서 1/2) — 저자 분석이 white-box 를 고려하지 않아 과소평가, 느린 단계 중계를 허용하면 테러리스트 사기 확률도 저자 계산보다 높음"
+        }
+      ],
       "added": "2026-09-01",
-      "last_checked": "2026-10-10"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -9606,7 +9622,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-10-07",
+      "last_checked": "2026-10-11",
       "cites": [
         "clulow-2006-long-symbols",
         "cremers-2012-distance-hijacking",
@@ -9627,7 +9643,8 @@
         "kim-2009-mixed-challenges-db",
         "capkun-2003-sector",
         "hancke-2011-secure-db-channel-rfid",
-        "avoine-2011-db-framework"
+        "avoine-2011-db-framework",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9712,14 +9729,15 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-10-07",
+      "last_checked": "2026-10-11",
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
         "clulow-2006-long-symbols",
         "hancke-2008-tof-db-attacks",
         "gezici-2005-uwb-localization-survey",
-        "meadows-2007-db-authentication-logic"
+        "meadows-2007-db-authentication-logic",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -10275,7 +10293,8 @@
       "limitations": [
         "전문 미확보 — 공격 모델·시뮬레이션 조건·COTS 검증 여부 미확인",
         "초록상 시뮬레이션 결과만 — 실제 802.15.4z 칩 구현 여부 불명",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-11 재시도: arXiv 전체 검색 'SafeLead' 0건, OpenAlex closed"
       ],
       "artifacts": {
         "code": null,
@@ -10304,7 +10323,7 @@
         }
       ],
       "added": "2026-09-07",
-      "last_checked": "2026-09-27"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "komma-2025-puf-ofdm-secure-ranging",
@@ -11679,7 +11698,7 @@
       },
       "verification": "verified",
       "added": "2026-09-12",
-      "last_checked": "2026-10-06",
+      "last_checked": "2026-10-11",
       "cites": [
         "brands-1993-distance-bounding",
         "hancke-2005-rfid-db",
@@ -11691,7 +11710,8 @@
         "drimer-2007-smartcard-relay-db",
         "sastry-2003-echo-location-claims",
         "hu-2003-packet-leashes",
-        "capkun-2003-sector"
+        "capkun-2003-sector",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -11876,7 +11896,8 @@
         "2026-10-05: Crossref 에 참고문헌 45건이 새로 공개돼(Elsevier 예치) 코퍼스와 대조 — Zand 2019·Boer 2020·Stanciu 2021·Shoudha 2022·Van Marter 2023 SVR·bin Tariq 2024 DL 6편 인용 확인, cites_source 를 fulltext 로 전환. 나머지는 BLE AoA·DOA(MUSIC·공간 평활)·LASSO·DBSCAN 문헌 — 본문·초록은 여전히 미확보라 verification 은 unverified 유지",
         "2026-10-06 재시도: OpenAlex closed·초록 없음(abstract_inverted_index 비어 있음) — unverified 유지",
         "2026-10-07 재시도: Crossref 예치 메타에 초록 없음(참고문헌 45건만), ScienceDirect 는 Googlebot UA 도 403, Elsevier API 는 키 없이 401 — unverified 유지",
-        "2026-10-10 재시도: Crossref 메타에 여전히 초록 없음(vol. 287, art. 122399), OpenAlex 초록 없음 — unverified 유지"
+        "2026-10-10 재시도: Crossref 메타에 여전히 초록 없음(vol. 287, art. 122399), OpenAlex 초록 없음 — unverified 유지",
+        "2026-10-11 재시도: OpenAlex 여전히 closed·초록 없음 — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11884,7 +11905,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-11",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -12685,7 +12706,8 @@
         "hancke-2005-rfid-db",
         "reid-2007-timing-relay-detection",
         "singelee-2007-db-noisy-environments",
-        "capkun-2003-sector"
+        "capkun-2003-sector",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -12701,7 +12723,7 @@
         }
       ],
       "added": "2026-09-17",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "bintariq-2024-signal-subspace-ble-ranging",
@@ -14344,7 +14366,8 @@
         "cremers-2012-distance-hijacking",
         "kim-2009-mixed-challenges-db",
         "boureanu-2013-towards-secure-db",
-        "avoine-2011-db-framework"
+        "avoine-2011-db-framework",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -14375,7 +14398,7 @@
         }
       ],
       "added": "2026-09-24",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "francis-2010-nfc-p2p-relay",
@@ -15541,7 +15564,8 @@
       ],
       "limitations": [
         "전문 미확보 — IEEE Xplore 유료(isOpenAccess false), arXiv 제목 검색 0건 (2026-09-28); ToA 편향 크기(ns/m)·성공률·정찰 소요 시간·실험 구성 미확인",
-        "관찰: 5G NR 전용 — Bluetooth CS 에는 PRS 처럼 고정 스케줄로 반복되는 참조신호가 없고 CS 절차의 채널 순서·CS_SYNC 는 DRBG 로 정해지므로 정찰 기법이 직접 이식되지는 않음; 다만 CS 톤 자체는 무변조라 '관찰 가능한 물리계층 신호' 라는 조건은 공유"
+        "관찰: 5G NR 전용 — Bluetooth CS 에는 PRS 처럼 고정 스케줄로 반복되는 참조신호가 없고 CS 절차의 채널 순서·CS_SYNC 는 DRBG 로 정해지므로 정찰 기법이 직접 이식되지는 않음; 다만 CS 톤 자체는 무변조라 '관찰 가능한 물리계층 신호' 라는 조건은 공유",
+        "2026-10-11 재시도: Tor Vergata IRIS(art.torvergata.it) 검색이 Cloudflare 403, OpenAlex closed"
       ],
       "artifacts": {
         "code": null,
@@ -15560,7 +15584,7 @@
         }
       ],
       "added": "2026-09-28",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "zanini-2025-full-frame-5g-meaconing-demo",
@@ -15611,7 +15635,8 @@
       ],
       "limitations": [
         "전문 미확보 — IEEE Xplore 유료(isOpenAccess false), arXiv 제목 검색 0건 (2026-09-28); 3쪽 데모 논문이라 전문에도 수치가 적을 가능성",
-        "관찰: 프레임 전체를 지연 재생하는 연장(enlargement) 공격 — CS 축소 공격과 방향이 반대이고, Bluetooth 는 FHSS 와 짧은 CS 스텝 때문에 '프레임 전체 재생' 모델이 그대로 성립하지 않음"
+        "관찰: 프레임 전체를 지연 재생하는 연장(enlargement) 공격 — CS 축소 공격과 방향이 반대이고, Bluetooth 는 FHSS 와 짧은 CS 스텝 때문에 '프레임 전체 재생' 모델이 그대로 성립하지 않음",
+        "2026-10-11 재시도: Tor Vergata IRIS 검색이 Cloudflare 403"
       ],
       "artifacts": {
         "code": null,
@@ -15622,7 +15647,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-28",
-      "last_checked": "2026-09-29"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "singh-2021-eth-dissertation",
@@ -15731,7 +15756,8 @@
         "taponecco-2014-overshadow-enlargement-4a",
         "compagno-2016-enlargement-attacks-uwb-db",
         "boureanu-2013-towards-secure-db",
-        "francis-2012-nfc-phone-relay"
+        "francis-2012-nfc-phone-relay",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -15772,7 +15798,7 @@
         }
       ],
       "added": "2026-09-29",
-      "last_checked": "2026-10-04"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "rithivik-2026-ble-ranging-comparison-conecct",
@@ -15904,7 +15930,8 @@
         "2026-10-05 재시도: OpenAlex 가 gold OA(Crossref 라이선스 CC BY-NC-ND 4.0, 출판일 2026-10-26)로 표기 — 그러나 dl.acm.org PDF 는 Chrome·Googlebot·curl UA 모두 Cloudflare 403, Internet Archive 는 일시 중단; 출판일 이후 재시도",
         "2026-10-06 재시도: OpenAlex gold OA(cc-by-nc-nd, 출판 2026-09-28) 유지, 그러나 dl.acm.org 랜딩·/doi/pdf 모두 쿠키 예열 후에도 Cloudflare 403, Wayback 스냅샷 없음, arXiv 판 없음",
         "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
-        "2026-10-10 재시도: dl.acm.org/doi/pdf 여전히 Cloudflare 403(5.7 KB HTML), OpenAlex 재조회도 gold 표기·다른 OA 위치 없음 — 워크숍 발표일(10-26) 이후 재시도"
+        "2026-10-10 재시도: dl.acm.org/doi/pdf 여전히 Cloudflare 403(5.7 KB HTML), OpenAlex 재조회도 gold 표기·다른 OA 위치 없음 — 워크숍 발표일(10-26) 이후 재시도",
+        "2026-10-11 재시도: dl.acm.org/doi/pdf 는 curl·Googlebot UA 모두 Cloudflare 403(발표일 10-26 이후 재시도)"
       ],
       "artifacts": {
         "code": null,
@@ -15920,7 +15947,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-10-10"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "pestourie-2019-secureloc-ack-attack",
@@ -16424,7 +16451,8 @@
         "전문 미확보 (2026-10-03): IEEE 유료(isOpenAccess false), OpenAlex·arXiv 사본 없음 — 초록은 Xplore REST abstract 로 확인",
         "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(30건)을 코퍼스와 대조해 채움 — 본문은 미확보",
         "관찰: 제1저자의 University of Pretoria 박사학위논문(2011-10, UPSpace 공개 'Accurate and efficient localisation in wireless sensor networks using a best-reference selection') 5장이 거리한정 프로토콜 14종을 보안·메모리·전송량·연산으로 비교하는 같은 주제를 담지만, TII 판과의 대응이 학위논문에 명시돼 있지 않아 근거로 쓰지 않음 — 다음 보강 때 대조 후보",
-        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 13건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
+        "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 13건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
+        "2026-10-11: 같은 Crossref 예치 참고문헌(ref25, DOI 10.1007/0-387-25660-1_15)으로 오늘 편입한 Bussard–Bagga SEC 2005 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -16451,12 +16479,13 @@
         "poturalski-2011-db-802-15-4a",
         "rasmussen-2010-rf-distance-bounding",
         "singelee-2007-db-noisy-environments",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-10-03",
-      "last_checked": "2026-10-10"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "mazur-2024-ifft-bayesian-pbr",
@@ -16678,7 +16707,8 @@
         "reid-2007-timing-relay-detection",
         "singelee-2007-db-noisy-environments",
         "capkun-2003-sector",
-        "hancke-2009-relay-attacks-revisited"
+        "hancke-2009-relay-attacks-revisited",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -16704,7 +16734,7 @@
         }
       ],
       "added": "2026-10-04",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "francis-2012-nfc-phone-relay",
@@ -17554,7 +17584,8 @@
         "kim-2008-swiss-knife-db",
         "kim-2009-mixed-challenges-db",
         "tippenhauer-2009-id-based-db",
-        "hancke-2009-relay-attacks-revisited"
+        "hancke-2009-relay-attacks-revisited",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17570,7 +17601,7 @@
         }
       ],
       "added": "2026-10-06",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "alrabady-2003-passive-entry-attacks",
@@ -17959,7 +17990,8 @@
         "kim-2009-mixed-challenges-db",
         "francis-2010-nfc-p2p-relay",
         "francillon-2011-pkes-relay",
-        "beth-1991-chess-grandmaster"
+        "beth-1991-chess-grandmaster",
+        "bussard-2005-dbpk-terrorist-fraud"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17970,7 +18002,7 @@
         }
       ],
       "added": "2026-10-07",
-      "last_checked": "2026-10-10"
+      "last_checked": "2026-10-11"
     },
     {
       "id": "vandewater-2025-cs-multi-antenna-relay",
@@ -18189,7 +18221,8 @@
       ],
       "limitations": [
         "전문 미확보 (2026-10-10): 학과 학생 연구 페이지에 초록만 있고 PDF 링크 없음, mediaTUM 은 Anubis 봇 챌린지 — 시험 설정·SDK 버전·재현 절차 미확인",
-        "학사 논문 — 피어 리뷰 미거침"
+        "학사 논문 — 피어 리뷰 미거침",
+        "2026-10-11 재시도: mediaTUM 이 오늘은 curl UA 로 열렸으나 'Jurenka'·'channel sounding' 검색에 이 학사논문 레코드 없음(학사논문 미기탁으로 보임), WebSearch 0건"
       ],
       "artifacts": {
         "code": null,
@@ -18197,7 +18230,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-11",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -18250,7 +18283,8 @@
       ],
       "limitations": [
         "원문 미확보 (2026-10-10): 발표 페이지에 초록·발표자만 있고 슬라이드·영상 링크 없음, Hardwear.io 과거 행사 페이지(USA 2026)는 404, YouTube 채널 검색에 해당 영상 없음, Wayback 일시 중단",
-        "학술 논문이 아닌 산업 컨퍼런스 발표 — 피어 리뷰 없음, 공저자 여부 미확인(초록은 'we')"
+        "학술 논문이 아닌 산업 컨퍼런스 발표 — 피어 리뷰 없음, 공저자 여부 미확인(초록은 'we')",
+        "2026-10-11 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음, 과거 행사 페이지(USA 2026) 404; DEF CON 34·Black Hat USA 2026·hardwear.io NL 2026 재발표 검색 0건"
       ],
       "artifacts": {
         "code": null,
@@ -18258,7 +18292,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-11",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -18440,6 +18474,82 @@
           "to": "uwb-sv-2023-ccs",
           "type": "extends",
           "note": "같은 저자들의 UWB-SV(STS 하위필드 교차상관 일관성 — 칩셋 수정 필요)를 CIR 분포 특징 + 단일 클래스 이상탐지로 바꿔 COTS 소프트웨어만으로 구현"
+        }
+      ]
+    },
+    {
+      "id": "bussard-2005-dbpk-terrorist-fraud",
+      "title": "Distance-Bounding Proof of Knowledge to Avoid Real-Time Attacks",
+      "authors": [
+        "Laurent Bussard",
+        "Walid Bagga"
+      ],
+      "venue": "IFIP SEC",
+      "venue_full": "Security and Privacy in the Age of Ubiquitous Computing — IFIP TC11 20th International Conference on Information Security (SEC 2005), 2005-05-30 – 06-01, Chiba, Japan; IFIP AICT vol. 181 (eds. R. Sasaki, S. Qing, E. Okamoto, H. Yoshiura), Springer, 2005, pp. 223–238 — Institut Eurécom, Sophia Antipolis",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2005,
+      "url": "https://doi.org/10.1007/0-387-25660-1_15",
+      "preprint": "https://link.springer.com/content/pdf/10.1007/0-387-25660-1_15.pdf",
+      "doi": "10.1007/0-387-25660-1_15",
+      "topics": [
+        "distance-bounding",
+        "terrorist-fraud",
+        "mafia-fraud",
+        "distance-fraud",
+        "proof-of-knowledge",
+        "bit-commitment",
+        "zero-knowledge",
+        "public-key-distance-bounding",
+        "key-binding"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "공모(테러리스트) 사기 — 키 소유자가 자기 장기 키는 넘기지 않으면서 가까이 있는 공범이 빠른 단계를 대신 수행하게 돕는 것 — 를 처음 막은 설계라, CS 위협 모델에서 비어 있는 칸을 재는 기준으로 쓴다. 처방의 핵심은 '빠른 단계 응답 비트를 공유할 수 없는 장기 비밀에 묶는 것' 이다(응답은 일회용 키 k 또는 e = x − k mod p−1 의 비트이므로, 공범이 대행하려면 x 를 알아야 한다). CS 의 RTT 랜덤 시퀀스·톤 순서는 세션마다 인스턴스화한 DRBG 에서 나오므로, 키 소유자가 세션 값만 넘기면 장기 키(LTK)를 주지 않고도 공범이 CS 단계를 대행할 수 있는 구조로 보인다(관찰·가설) — 디지털 키에서 '내 폰을 멀리서 친구에게 빌려 준다' 는 시나리오가 정확히 이 사기다. 또 Cremers 2012 의 표에서 이 프로토콜은 Distance Hijacking 에 비취약 판정을 받아(응답이 증명자 비밀에 묶여 있으므로), 'CS 응답이 누구의 것인가' 라는 질문의 기준점이 된다. 다만 첫 구현 DBPK-Log 는 뒤에 거리 사기·공모 사기 성공확률 1 공격(Bay 외 2012, Boureanu 2013 표 2 정리)과 white-box 분석 과소평가(Avoine 2018)로 무너졌으므로, '결속하면 끝' 이 아니라 결속 방식 자체가 검증 대상이라는 사례로 쓴다. 공개키 지수 연산·영지식 증명이 무거워 BLE 칩 수준 구현과는 거리가 멀다.",
+      "summary": "Brands–Chaum 1993 의 거리 제한 프로토콜이 마피아 사기(정직한 증명자·검증자 사이의 중계)는 막지만 부정직한 증명자가 공범과 협력하는 테러리스트 사기는 열린 문제로 남겼다고 보고, 거리·마피아·테러리스트 세 실시간 사기를 정의한 뒤 셋을 모두 막는 일반 구조 DBPK 를 제안한다. 증명자는 일회용 키 k 로 장기 비밀키 x 를 암호화(e = E_k(x))하고 k·e 의 각 비트에 커밋한 뒤, N 번의 단일 비트 고속 교환에서 챌린지 비트에 따라 k[i] 또는 e[i] 를 내고, 공개된 비트의 커밋을 연 다음 커밋들이 공개키 y 에 대응하는 x 를 품고 있음을 영지식으로 증명한다. 이산로그 기반 구현 DBPK-Log(y = g^x, 비트 커밋 g^b·h^v mod p, 일회용 패드 e = x − k mod p−1)에서 공범이 x 를 모르면 테러리스트 사기는 무시할 확률로만 성공하고(명제 4.3·4.4), 마피아 사기 방지는 여기서 따라온다. 비트 공개로 x 가 새는 위험은 보안 매개변수 m′ 로 2^(−4m′) 미만이 된다(m = 1024·m′ = 50 비트면 2^(−200), 고속 교환 약 5 % 추가).",
+      "hardware": [
+        "해당 없음 — 이론·프로토콜 설계 논문; 빠른 단계는 '전용 채널(유선·적외선)에서 1비트 메시지·교환 중 연산 없음' 이면 수 ns 왕복이 가능하다고 서술할 뿐 구현·측정 없음(전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 구현·시뮬레이션·성능 측정 없음(전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "세 사기 정의(1.1절): 거리 사기(부정직한 증명자 단독, Brands–Chaum 이 다룸) · 마피아 사기(Desmedt 1988, 정직한 P·V 사이의 중간자) · 테러리스트 사기(부정직한 P 가 공범 I 와 협력하되 장기 키는 넘기지 않음, Desmedt 1988) — 테러리스트 사기 방지는 마피아 사기 방지를 함의",
+        "선행 대책 비교(1.2절): 제약 채널·맥락 공유·격리(Faraday cage)·위조 불가 채널(채널 호핑·RF 워터마킹)·음파/광속 ToF 중 세 사기를 모두 막는 것은 격리뿐이고, 광속 RTT(Brands–Chaum)는 거리·마피아 사기까지만 막는다 — 1 m 정확도는 수 ns 내 응답을 요구해 일반 통신 채널·암호 연산으로는 불가(Waters–Felten 인용)",
+        "DBPK 일반 구조(표 1·그림 3): 비트 커밋 → N 회 단일 비트 고속 교환(응답 = k[i] 또는 e[i], 왕복 수 ns 측정) → 공개된 비트의 커밋 열기(검사 실패 시 오류 통지) → 커밋이 y = Γ(x) 의 x 를 품는다는 영지식 증명 PK[(α,β): z = Ω(α,β) ∧ y = Γ(α)] — z 는 커밋만으로 계산 가능해 커밋 직후 미리 구할 수 있음",
+        "명제 4.1·4.2: 프로토콜을 정확히 수행하면 거리 사기 성공확률은 무시 가능(챌린지 전에 보낸 응답이 맞을 확률이 교환마다 1/2); 명제 4.3·4.4: 성질 4.1–4.3(이산로그·표현 문제의 난해성, 일회용 패드)을 만족하면 테러리스트 사기 성공확률 무시 가능 — 공범이 (k, e) 와 다른 (k′, e′) 로 고속 단계를 통과할 확률이 무시 가능",
+        "키 유출 한도(4.2절): N = m + m′ 비트 일회용 키에서 k[i] 또는 e[i] 공개로 x 정보를 얻을 확률 < 2^(−4m′) — m = 1024·m′ = 50 이면 2^(−200), 고속 교환 약 5 % 추가; e 단독 공개는 완전 비밀성 유지",
+        "확장(결론): ElGamal·Schnorr 식별에 그대로 적용, Fiat–Shamir 는 위수 n 생성자가 필요해 비자명; 그룹 서명·Idemix 익명 자격과의 결합 제안; 대안으로 '검증자가 신뢰하는 변조 방지 하드웨어 + 마피아 사기 방지 프로토콜' 을 들되 기기 인증이 필요해 배치가 어렵다고 비교"
+      ],
+      "limitations": [
+        "구현·실험 없음 — 빠른 단계가 '전용 채널·1비트·연산 없음' 을 만족한다고 가정하고, 응답 처리 지연·채널 잡음(비트 오류)·다중 검증자는 다루지 않음",
+        "증명자에 1024 비트급 소수 p 위의 모듈러 지수 연산·비트당 커밋·영지식 증명이 필요 — 저가 RFID 에는 적용 불가라는 지적(Kim 2008 Swiss-Knife)",
+        "저자 명시: 완전 비밀성에는 이르지 못했고 통계적 영지식 모델에서만 안전",
+        "후속 분석(코퍼스 내): Boureanu 2013 표 2 는 Bay 외 2012(Inscrypt, 코퍼스 밖)를 인용해 이 프로토콜의 거리 사기·공모(테러리스트) 사기 성공확률을 1, MIM 을 (1/2)^n 으로 정리; Avoine 2018 6절은 white-box 증명자(조기 응답 전략)에서 k·e 의 해밍 거리 a 를 최소화하면 거리 사기 성공확률이 (1/2)^a 로 저자 분석이 과소평가됐고(예: p = 59 에서 1/2), 느린 단계도 중계될 수 있어 테러리스트 사기 확률이 저자 계산보다 높다고 지적",
+        "전문은 Springer 스캔본(OCR) — 일부 수식·기호가 깨져 성질 4.3.b 의 중간 부등식은 결론 문장과 예시 수치(m′ = 50 → 2^(−200))로만 확인; 같은 저자의 Eurécom 기술보고서 RR-04-109(2004, Rasmussen 2010·Boureanu 2015 가 인용)는 별개 문서라 미확인"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-11",
+      "last_checked": "2026-10-11",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "sastry-2003-echo-location-claims",
+        "hu-2003-packet-leashes"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "brands-1993-distance-bounding",
+          "type": "extends",
+          "note": "\"Our solution consists in distance-bounding proof of knowledge protocols that extend Brands and Chaum's distance-bounding protocols\" — 마피아 사기 방지 구조에 비트 커밋·영지식 증명을 더해 테러리스트 사기까지 확장(원문 확인)"
         }
       ]
     }
