@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
   "landscape": {
     "title": "Bluetooth Channel Sounding Security Landscape",
@@ -10,7 +10,7 @@
         "kind": "stage",
         "label": "Secure Ranging Foundations",
         "period": "1991 – 2020",
-        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. 뿌리는 암호 식별 프로토콜이다 — Beth–Desmedt 1991 이 마피아 사기(식별 질문·응답의 실시간 중계)를 두 체스 그랜드마스터 문제로 모형화하고, 응답 시각을 미리 합의해 양쪽이 검사하면 중계에 l > 0 이 드는 한 수 3 이상에서 반드시 탐지된다는 정리와 함께 **광속을 방어에 썼다** — Drimer 2007 은 'RTT 로 릴레이를 막는 접근은 Beth–Desmedt 가 처음 제안했고 첫 구체 프로토콜은 Brands–Chaum' 이라고 정리한다. 이때 명시한 공학 가정 '상대의 클럭과 장치 내부 시간에 영향을 줄 수 없다' 는 2023 년 Mix-Down 이 정확히 깬 지점이다. Brands–Chaum 1993 은 그 '모든 전송 시간 측정' 이 연산 편차 때문에 쓸모없다고 보고 시간 측정 구간을 단일 비트 고속 교환으로 좁혔다. Bussard–Bagga 2005 는 그 구조가 남긴 테러리스트 사기(키 소유자가 장기 키는 주지 않고 가까운 공범을 돕는 것)를 응답 비트를 장기 비밀에 묶는 비트 커밋·영지식 증명으로 처음 막았지만, 그 결속 방식도 뒤에 거리·공모 사기 성공확률 1 로 정리됐다(Boureanu 2013 표 2). 무선 쪽 출발점은 2003 년의 두 논문이다 — Hu·Perrig·Johnson 의 temporal leash 가 릴레이(웜홀)를 '패킷이 광속으로 갈 수 있는 거리보다 멀리 갔는가' 로 정의하고 시각 동기 오차 Δ 가 곧 2cΔ 의 터널링 여유가 됨을 보였고(183 ns → 110 m), Sastry 의 Echo 가 RF 로 보내고 초음파로 받는 왕복으로 '증명자가 선언한 처리 지연만큼 수락 영역을 깎아야 한다'(p·s)는 거리 사기 방어 원리와 '타이머는 첫 비트 송신 전에 켜고 마지막 비트 수신 후에 끈다' 는 비트 단위 경계를 세웠다. 같은 해 Čapkun·Buttyán·Hubaux 의 SECTOR 는 Brands–Chaum 을 대칭키 상호 거리 제한(MAD)으로 바꿔 웜홀을 클럭 동기 없이 한 노드의 왕복으로 잡았다(이후 Cremers 의 표에서 Distance Hijacking 에 취약 판정). Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였으며, Hancke 2011 은 전용 근거리장 채널에서 '증명자 처리 지연을 믿으면 약 1 m, 못 믿으면 약 11 m' 로 상한이 갈림을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 'PRF 가정만으로는 사기를 못 막는다'(PRF 프로그래밍으로 TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴)는 함정을 보인 뒤 circular-keying 가정 위의 증명 가능한 실용 프로토콜(SKI)로 형식을 세웠고, Meadows 2007 이 인증 논리로 거리 제한을 처음 형식 분석하면서 '정직한 증명자에 대해서만 증명되고 공모는 탐지조차 못 한다' 는 경계를 밝혔고, Avoine 2011 이 사칭·거리·마피아·테러리스트 네 사기와 white-box 증명자 모델로 분석 어휘를 통일했으며(white-box 에서 Hancke–Kuhn 거리 사기 상한 붕괴), Schaller 2009 가 위치·광속 제약을 넣은 Isabelle/HOL 모델로 거리 제한을 처음 정리 증명했고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며(기존 19개 중 10개 취약), Mauw 가 Schaller 모델을 바탕으로 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
+        "summary": "거리를 재는 것과 거리를 '안전하게' 재는 것이 다르다는 것을 정리한 시기다. 뿌리는 암호 식별 프로토콜이다 — Beth–Desmedt 1991 이 마피아 사기(식별 질문·응답의 실시간 중계)를 두 체스 그랜드마스터 문제로 모형화하고, 응답 시각을 미리 합의해 양쪽이 검사하면 중계에 l > 0 이 드는 한 수 3 이상에서 반드시 탐지된다는 정리와 함께 **광속을 방어에 썼다** — Drimer 2007 은 'RTT 로 릴레이를 막는 접근은 Beth–Desmedt 가 처음 제안했고 첫 구체 프로토콜은 Brands–Chaum' 이라고 정리한다. 이때 명시한 공학 가정 '상대의 클럭과 장치 내부 시간에 영향을 줄 수 없다' 는 2023 년 Mix-Down 이 정확히 깬 지점이다. Brands–Chaum 1993 은 그 '모든 전송 시간 측정' 이 연산 편차 때문에 쓸모없다고 보고 시간 측정 구간을 단일 비트 고속 교환으로 좁혔다. Bussard–Bagga 2005 는 그 구조가 남긴 테러리스트 사기(키 소유자가 장기 키는 주지 않고 가까운 공범을 돕는 것)를 응답 비트를 장기 비밀에 묶는 비트 커밋·영지식 증명으로 처음 막았지만, 그 결속 방식도 뒤에 거리·공모 사기 성공확률 1 로 정리됐다(Boureanu 2013 표 2). 무선 쪽 출발점은 2003 년의 두 논문이다 — Hu·Perrig·Johnson 의 temporal leash 가 릴레이(웜홀)를 '패킷이 광속으로 갈 수 있는 거리보다 멀리 갔는가' 로 정의하고 시각 동기 오차 Δ 가 곧 2cΔ 의 터널링 여유가 됨을 보였고(183 ns → 110 m), Sastry 의 Echo 가 RF 로 보내고 초음파로 받는 왕복으로 '증명자가 선언한 처리 지연만큼 수락 영역을 깎아야 한다'(p·s)는 거리 사기 방어 원리와 '타이머는 첫 비트 송신 전에 켜고 마지막 비트 수신 후에 끈다' 는 비트 단위 경계를 세웠다. 같은 해 Čapkun·Buttyán·Hubaux 의 SECTOR 는 Brands–Chaum 을 대칭키 상호 거리 제한(MAD)으로 바꿔 웜홀을 클럭 동기 없이 한 노드의 왕복으로 잡았다(이후 Cremers 의 표에서 Distance Hijacking 에 취약 판정). Clulow 가 긴 심볼이 근본 문제임을 지적했고, Hancke 가 그 late-commit 을 상용 수신기 두 종에서 실제로 구현해 **수신기의 복조·판정 지연이 곧 공격자의 시간 이득**임을 못박았으며, Rasmussen 이 1 ns 미만 처리지연 플랫폼으로 거리한정이 구현 가능함을 보였으며, Hancke 2011 은 전용 근거리장 채널에서 '증명자 처리 지연을 믿으면 약 1 m, 못 믿으면 약 11 m' 로 상한이 갈림을 보였다. Čapkun 은 다중 검증자 측위로, Boureanu 는 'PRF 가정만으로는 사기를 못 막는다'(PRF 프로그래밍으로 TDB·Hancke–Kuhn·Reid·Swiss-Knife 붕괴)는 함정을 보인 뒤 circular-keying 가정 위의 증명 가능한 실용 프로토콜(SKI)로 형식을 세웠고, Meadows 2007 이 인증 논리로 거리 제한을 처음 형식 분석하면서 '정직한 증명자에 대해서만 증명되고 공모는 탐지조차 못 한다' 는 경계를 밝혔고, Avoine 2011 이 사칭·거리·마피아·테러리스트 네 사기와 white-box 증명자 모델로 분석 어휘를 통일했으며(white-box 에서 Hancke–Kuhn 거리 사기 상한 붕괴), Schaller 2009 가 위치·광속 제약을 넣은 Isabelle/HOL 모델로 거리 제한을 처음 정리 증명했고, Cremers 가 Distance Hijacking 을 네 번째 유형으로 정의했으며(기존 19개 중 10개 취약), Mauw 가 Schaller 모델을 바탕으로 그 분석을 '응답이 챌린지보다 먼저 나갈 수 있는가' 라는 인과 조건 하나로 바꿔 Tamarin 자동 검증으로 재현했고(16개 변형 평균 5.6 s), MTAC 이 '상관 피크에 기반한 ToA 검증은 안전하지 않다'를 형식적으로 논증했다. 시간을 재지 않는 반대편 갈래도 이때 열렸다 — Rasmussen–Čapkun 2007 은 송신 과도응답 지문으로 웜홀 재송신자를 가려내자고 했지만(센서 노드 식별률 약 70 %), 재송신자가 자기 무선기로 다시 보낸다는 전제 위에 서 있다. Ranganathan 의 개관은 이 시기의 결론을 세 요건으로 압축한다 — 왕복 ToF, 챌린지·응답 RTT, 그리고 **짧은 심볼**.",
         "papers": [
           "beth-1991-chess-grandmaster",
           "brands-1993-distance-bounding",
@@ -32,7 +32,8 @@
           "schaller-2009-physical-properties-verification",
           "hancke-2011-secure-db-channel-rfid",
           "meadows-2007-db-authentication-logic",
-          "avoine-2011-db-framework"
+          "avoine-2011-db-framework",
+          "rasmussen-2007-radio-fingerprinting-security"
         ]
       },
       {
@@ -128,16 +129,18 @@
         "kind": "defense",
         "label": "PBR + RTT + NADM + Randomization",
         "period": "규격이 내세우는 방어",
-        "summary": "CS 의 방어는 네 겹으로 설명된다 — 서로 다른 원리의 두 측정을 교차검증하고(PBR+RTT), 조작 흔적 지표를 보고(NADM), 시퀀스·마커·비트패턴을 본딩 키에서 난수화하고, 채널을 호핑한다. 아래 'What Is Still Assumed' 가 이 네 겹이 각각 어디까지 검증됐는지를 정리한다. 이 방어들을 실제 접근 제어 프로토콜로 엮으려는 첫 시도(van de Water 2025)는 두 가지를 드러냈다 — 같은 칩에서 RTT 가 PBR 보다 몇 배 흩어져 허용오차를 넓혀야 한다는 것, 그리고 CS 거리는 링크 상대에게만 걸려 링크 계층 중계자가 CS 에 직접 참여하면 공격 면적을 줄일 수는 있어도 없앨 수 없다는 것.",
+        "summary": "CS 의 방어는 네 겹으로 설명된다 — 서로 다른 원리의 두 측정을 교차검증하고(PBR+RTT), 조작 흔적 지표를 보고(NADM), 시퀀스·마커·비트패턴을 본딩 키에서 난수화하고, 채널을 호핑한다. 난수화에는 안테나 경로 선택도 들어 있는데, 그 처방은 2019 년 BLE DF 의 톤 위상 조작 실증(Cominelli)이 제안한 '숨긴 비결정적 스위칭' 과 같고 그 탐지력은 아직 아무도 재지 않았다. 아래 'What Is Still Assumed' 가 이 네 겹이 각각 어디까지 검증됐는지를 정리한다. 이 방어들을 실제 접근 제어 프로토콜로 엮으려는 첫 시도(van de Water 2025)는 두 가지를 드러냈다 — 같은 칩에서 RTT 가 PBR 보다 몇 배 흩어져 허용오차를 넓혀야 한다는 것, 그리고 CS 거리는 링크 상대에게만 걸려 링크 계층 중계자가 CS 에 직접 참여하면 공격 면적을 줄일 수는 있어도 없앨 수 없다는 것.",
         "papers": [
           "abidin-2021-narrowband-ranging",
           "suresh-2025-cs-vehicle-access",
-          "vandewater-2025-cs-multi-antenna-relay"
+          "vandewater-2025-cs-multi-antenna-relay",
+          "cominelli-2019-dead-on-arrival"
         ],
         "standards": [
           "bt-core-6-0",
           "bt-cs-feature-page",
-          "silabs-cs-fundamentals"
+          "silabs-cs-fundamentals",
+          "bt-cs-tech-overview"
         ]
       },
       {
@@ -378,6 +381,14 @@
       "year": 2012
     },
     {
+      "text": "BLE Direction Finding 의 측정용 톤(CTE)에는 **무결성이 없다** — CTE 는 CRC 뒤에 붙어 오류 검사 밖이고, 송신기가 스위치 슬롯 이후 위상에 상수 Δ 를 더하면 수신기가 계산하는 위상차가 φ + Δ 가 되어 정지한 채로 임의 AoA 를 만든다(Cominelli 2019, USRP 2안테나 SDR 재현 — 송신기 자신의 조작). 6 년 뒤 SaDiF 가 제3자 주입으로 상용 칩에서 다시 깼다",
+      "evidence": [
+        "cominelli-2019-dead-on-arrival",
+        "zhang-2025-sadif"
+      ],
+      "year": 2019
+    },
+    {
       "text": "BLE Direction Finding 의 위상 주입(SaDiF) — CTE 기준구간 위상만 건드려 AoA 를 조작하며, 패킷·프리앰블·RSSI 를 그대로 두므로 물리계층 지문 방어(BlueID+BlueShield)를 **91.5 % 이상 우회**한다",
       "evidence": [
         "zhang-2025-sadif"
@@ -538,11 +549,25 @@
     },
     {
       "text": "통계적 정상성 검사나 물리계층 지문이 조작을 걸러낸다",
-      "why_untested": "두 방향에서 반증이 들어왔다. SaDiF 는 패킷·RSSI 를 건드리지 않고 위상만 주입해 지문 방어를 91.5 % 이상 우회했고, Urey-ML 은 '정상 변동인지' 판정하는 방어를 강화학습으로 흉내 내 뚫었다. **CS 의 NADM 과 TQI 도 정상 분포를 기준으로 걸러내는 같은 범주**인데, 학습형 공격에 대한 평가가 없다.",
+      "why_untested": "두 방향에서 반증이 들어왔다. SaDiF 는 패킷·RSSI 를 건드리지 않고 위상만 주입해 지문 방어를 91.5 % 이상 우회했고, Urey-ML 은 '정상 변동인지' 판정하는 방어를 강화학습으로 흉내 내 뚫었다. **CS 의 NADM 과 TQI 도 정상 분포를 기준으로 걸러내는 같은 범주**인데, 학습형 공격에 대한 평가가 없다. 지문 쪽에는 더 앞선 전제도 남아 있다 — 지문으로 릴레이를 가려낸다는 논리의 원전(Rasmussen–Čapkun 2007: 센서 노드 10대 과도응답 지문 식별률 약 70 %, 웜홀 끝 재송신자 M2 의 지문이 원 송신자와 달라 탐지)은 **재송신자가 자기 무선기로 다시 보낸다**는 가정 위에 있다. CS 를 노리는 아날로그 증폭-전달 릴레이는 원 신호를 복조 없이 키워 보내므로 원 송신 과도응답이 상당 부분 보존될 수 있는데(관찰), BLE PaaK 에 지문 + 채널 상호성을 제안한 Staat 2020 도 그 조합이 아날로그 릴레이의 '난이도를 높인다' 고만 했을 뿐 코퍼스 안에서 아날로그 릴레이를 지문으로 잡아낸 측정은 없다.",
       "evidence": [
         "zhang-2025-sadif",
         "liu-2026-urey-ml",
-        "dzafic-2026-cs-orientation"
+        "dzafic-2026-cs-orientation",
+        "rasmussen-2007-radio-fingerprinting-security",
+        "staat-2020-paak-relay",
+        "staat-2022-analog-relay"
+      ],
+      "blocks": []
+    },
+    {
+      "text": "CS 의 DRBG 안테나 경로 무작위 선택이 위상 조작을 드러낸다",
+      "why_untested": "BLE DF 의 CTE 위상 조작을 처음 실증한 Cominelli 2019 는 대책으로 '수신 안테나 스위칭 패턴을 송신기에 숨기고 비결정적으로' 를 제안했고, CS 규격은 바로 그 처방을 DRBG 로 넣었다 — 안테나 경로를 무작위 선택하고 톤 확장 슬롯 송신 여부를 무작위화한다(기술 개요 3.13.4.4·3.13.4.5). 그러나 **Cominelli 는 그 대책을 정량 평가하지 않았고, CS 에서 이 무작위화가 부정직한 반사기의 자기 위상 조작이나 제3자 주입(SaDiF 류)을 얼마나 드러내는지 잰 연구가 없다.** 게다가 안테나 경로 무작위화는 경로가 둘 이상일 때만 존재해 단일 안테나 구성에는 이 장치가 아예 없고, 다중 안테나(SP4T 4안테나) CS 를 쓴 van de Water 2025 도 공간 일관성·공격 가능 면적만 보고 조작 탐지는 평가하지 않았다. SaDiF 는 공격자가 피해 측 안테나 배열·스위칭 패턴을 안다고 가정했으므로, 패턴이 DRBG 로 가려지면 그 공격이 어디까지 남는지가 직접 실험 질문이다.",
+      "evidence": [
+        "cominelli-2019-dead-on-arrival",
+        "bt-cs-tech-overview",
+        "zhang-2025-sadif",
+        "vandewater-2025-cs-multi-antenna-relay"
       ],
       "blocks": []
     }
@@ -901,6 +926,12 @@
         "gou-2024-uwb-channel-reciprocity"
       ],
       "supporting": [
+        {
+          "text": "원전: 무선 센서 노드(CC1000 433 MHz) 10대의 송신 과도응답 지문으로 메시지 약 70 % 를 송신자에 연결했고, 이를 이웃 탐지에 넣어 웜홀 재송신자(다른 지문)를 탐지하는 프로토콜을 제안했다 — 단 재송신자가 자기 무선기로 다시 보낸다는 전제이고, 오실로스코프 직결 수집·식별률 70 % 포화·약한 재밍으로 무력화 가능(저자 명시)",
+          "evidence": [
+            "rasmussen-2007-radio-fingerprinting-security"
+          ]
+        },
         {
           "text": "RF 지문은 거리 검증 없이도 키리스 엔트리 릴레이를 막는 대안 경로로 제시됐다",
           "evidence": [
@@ -1484,12 +1515,17 @@
         "id": "phase-injection-df",
         "label": "위상 주입 (참고: BLE DF)",
         "papers": [
-          "zhang-2025-sadif"
+          "zhang-2025-sadif",
+          "cominelli-2019-dead-on-arrival"
         ],
         "cells": {
           "pbr": {
             "state": "not-evaluated",
-            "note": "CTE 기준구간 위상 주입이 CS 의 톤 위상에 그대로 옮겨지는지 미확인 — 구조는 같다"
+            "note": "송신기 자신이 스위치 슬롯 이후 위상에 Δ 를 더하면 수신 위상차가 φ + Δ 로 그대로 실린다(Cominelli 2019, SDR 재현) — 위상 측정 자체에는 조작을 가르는 장치가 없다. CTE 기준구간 위상 주입이 CS 의 톤 위상에 그대로 옮겨지는지는 미확인 — 구조는 같다",
+            "evidence": [
+              "cominelli-2019-dead-on-arrival",
+              "zhang-2025-sadif"
+            ]
           },
           "rtt": {
             "state": "not-applicable",

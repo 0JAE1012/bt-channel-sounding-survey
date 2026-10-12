@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-11",
-  "last_run": "2026-10-11",
+  "updated": "2026-10-12",
+  "last_run": "2026-10-12",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1435,
+  "citation_edges": 1451,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -549,7 +549,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-31",
+      "last_checked": "2026-10-12",
       "cites": [
         "olafsdottir-2017-carrier-phase",
         "pnn-2025-cs-distance-estimation",
@@ -560,7 +560,8 @@
         "sheikh-2023-pbr-missing-tones",
         "nikodem-2025-mcpd-ble",
         "shoudha-2022-reduced-complexity-ble-ranging",
-        "vanmarter-2023-svr-ble-ranging"
+        "vanmarter-2023-svr-ble-ranging",
+        "cominelli-2019-dead-on-arrival"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2806,7 +2807,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-08-30",
+      "last_checked": "2026-10-12",
       "cites": [
         "abidin-2021-narrowband-ranging",
         "ble6-2026-utility-basement",
@@ -2818,7 +2819,8 @@
         "wieme-2025-cs-commercial-hw",
         "zand-2019-ble-pbr",
         "heinrich-2023-smartphones-uwb",
-        "wang-2025-cs-device-free-sensing"
+        "wang-2025-cs-device-free-sensing",
+        "cominelli-2019-dead-on-arrival"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -6422,12 +6424,19 @@
         "ranganathan-2017-are-we-really-close",
         "reid-2007-timing-relay-detection",
         "hancke-2005-practical-relay-iso14443",
-        "francis-2012-nfc-phone-relay"
+        "francis-2012-nfc-phone-relay",
+        "rasmussen-2007-radio-fingerprinting-security"
       ],
       "cites_source": "fulltext",
-      "relations": [],
+      "relations": [
+        {
+          "to": "rasmussen-2007-radio-fingerprinting-security",
+          "type": "extends",
+          "note": "센서망 기기 식별용 RF 지문([22])을 채널 상호성과 결합해 BLE PaaK 릴레이 대책으로 확장 — 아날로그 신호처리 릴레이에 대한 공격 난이도를 높이는 하이브리드 방식 제안(원문 결론)"
+        }
+      ],
       "added": "2026-08-30",
-      "last_checked": "2026-10-04"
+      "last_checked": "2026-10-12"
     },
     {
       "id": "bonczyk-2026-learning-phase-estimation",
@@ -7025,7 +7034,8 @@
         "2026-09-28 재시도: OpenAlex closed(위치 1곳), WebSearch 3질의에 OA 사본 없음",
         "2026-10-05 재시도: Pretoria UPSpace(DSpace REST) 에 Boshoff 학위논문·수락본 없음(같은 그룹 Nkrow 2023 FTM 수락본·Silva 2020 UWB NLOS 박사논문만), Hancke 출판 목록 페이지는 Cloudflare 챌린지, OpenAlex closed",
         "2026-10-06 재시도: 공저자 Hancke 개인 사이트(rfidblog.org.uk)는 열렸으나 출판 목록·PDF 링크가 없고 CityU Scholars 로만 연결, Xplore REST 참고문헌 30건에 오늘 편입한 Hancke JNCA 2011·SECTOR 없음, arXiv 저자·제목 검색 0건",
-        "2026-10-10: Crossref 에 참고문헌 46건 예치 — Xplore REST 대조분(9건)에 더해 DOI 일치 8건 + Gou VTC 2025·Joo IoT-J 2024 로 cites 9 → 19; 본문은 OpenAlex·arXiv 재조회에도 여전히 closed"
+        "2026-10-10: Crossref 에 참고문헌 46건 예치 — Xplore REST 대조분(9건)에 더해 DOI 일치 8건 + Gou VTC 2025·Joo IoT-J 2024 로 cites 9 → 19; 본문은 OpenAlex·arXiv 재조회에도 여전히 closed",
+        "2026-10-12: Crossref 예치 참고문헌 ref25(DOI 10.1145/3349623.3355475)로 오늘 편입한 Cominelli 외 WiNTECH 2019 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -7051,12 +7061,13 @@
         "singh-2023-wifi-ftm-iot-benchmark",
         "uwb-sv-2023-ccs",
         "gou-2025-time-hopping-reply",
-        "joo-2024-hrp-uwb-cir-distribution-detection"
+        "joo-2024-hrp-uwb-cir-distribution-detection",
+        "cominelli-2019-dead-on-arrival"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-10-10"
+      "last_checked": "2026-10-12"
     },
     {
       "id": "xie-2026-multipath-toa-binary-ambiguity",
@@ -9524,7 +9535,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-12",
       "cites": [
         "clulow-2006-long-symbols",
         "hancke-2005-rfid-db",
@@ -9532,7 +9543,8 @@
         "singelee-2007-db-noisy-environments",
         "drimer-2007-smartcard-relay-db",
         "sastry-2003-echo-location-claims",
-        "hu-2003-packet-leashes"
+        "hu-2003-packet-leashes",
+        "rasmussen-2007-radio-fingerprinting-security"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -9982,12 +9994,19 @@
       },
       "verification": "verified",
       "cites": [
-        "leu-2022-ghost-peak"
+        "leu-2022-ghost-peak",
+        "cominelli-2019-dead-on-arrival"
       ],
       "cites_source": "fulltext",
-      "relations": [],
+      "relations": [
+        {
+          "to": "cominelli-2019-dead-on-arrival",
+          "type": "extends",
+          "note": "Cominelli 가 보인 '송신기 자신이 스위치 슬롯 이후 CTE 위상을 조작해 AoA 를 속인다' 를 제3자 신호 주입(CTE 기준 구간 위상 이동 → CFO 제거 과정 왜곡)으로 넓혀 상용 DF 측위(SiLabs BG22 locator)를 스푸핑 — \"their implementation is limited to manually controlled transceivers (USRPs at TX and RX)\"(원문 2절)"
+        }
+      ],
       "added": "2026-09-06",
-      "last_checked": "2026-09-06"
+      "last_checked": "2026-10-12"
     },
     {
       "id": "liu-2026-urey-ml",
@@ -11897,7 +11916,8 @@
         "2026-10-06 재시도: OpenAlex closed·초록 없음(abstract_inverted_index 비어 있음) — unverified 유지",
         "2026-10-07 재시도: Crossref 예치 메타에 초록 없음(참고문헌 45건만), ScienceDirect 는 Googlebot UA 도 403, Elsevier API 는 키 없이 401 — unverified 유지",
         "2026-10-10 재시도: Crossref 메타에 여전히 초록 없음(vol. 287, art. 122399), OpenAlex 초록 없음 — unverified 유지",
-        "2026-10-11 재시도: OpenAlex 여전히 closed·초록 없음 — unverified 유지"
+        "2026-10-11 재시도: OpenAlex 여전히 closed·초록 없음 — unverified 유지",
+        "2026-10-12 재시도: Crossref 여전히 초록 없음(link 는 PII S0263224126021081 의 api.elsevier.com — 키 없이 401), ScienceDirect 정확한 PII 페이지는 facebookexternalhit UA 400·Twitterbot 403, OpenAlex closed — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11905,7 +11925,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-11",
+      "last_checked": "2026-10-12",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -14475,7 +14495,8 @@
         "hancke-2008-tof-db-attacks",
         "kfir-2005-virtual-pockets-relay",
         "hu-2003-packet-leashes",
-        "hancke-2009-relay-attacks-revisited"
+        "hancke-2009-relay-attacks-revisited",
+        "rasmussen-2007-radio-fingerprinting-security"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -14496,7 +14517,7 @@
         }
       ],
       "added": "2026-09-25",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-12"
     },
     {
       "id": "elikplim-2023-wifi-ftm-industrial",
@@ -15931,7 +15952,8 @@
         "2026-10-06 재시도: OpenAlex gold OA(cc-by-nc-nd, 출판 2026-09-28) 유지, 그러나 dl.acm.org 랜딩·/doi/pdf 모두 쿠키 예열 후에도 Cloudflare 403, Wayback 스냅샷 없음, arXiv 판 없음",
         "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
         "2026-10-10 재시도: dl.acm.org/doi/pdf 여전히 Cloudflare 403(5.7 KB HTML), OpenAlex 재조회도 gold 표기·다른 OA 위치 없음 — 워크숍 발표일(10-26) 이후 재시도",
-        "2026-10-11 재시도: dl.acm.org/doi/pdf 는 curl·Googlebot UA 모두 Cloudflare 403(발표일 10-26 이후 재시도)"
+        "2026-10-11 재시도: dl.acm.org/doi/pdf 는 curl·Googlebot UA 모두 Cloudflare 403(발표일 10-26 이후 재시도)",
+        "2026-10-12 재시도: dl.acm.org/doi/pdf 는 Chrome·Googlebot·curl UA 모두 Cloudflare 403, Wayback 은 /doi·/doi/pdf·/doi/epdf 스냅샷 0, OpenAlex best_oa_location 은 pdf_url 없음 — 발표일(10-26) 이후 재시도"
       ],
       "artifacts": {
         "code": null,
@@ -15947,7 +15969,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-10-11"
+      "last_checked": "2026-10-12"
     },
     {
       "id": "pestourie-2019-secureloc-ack-attack",
@@ -16452,7 +16474,8 @@
         "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(30건)을 코퍼스와 대조해 채움 — 본문은 미확보",
         "관찰: 제1저자의 University of Pretoria 박사학위논문(2011-10, UPSpace 공개 'Accurate and efficient localisation in wireless sensor networks using a best-reference selection') 5장이 거리한정 프로토콜 14종을 보안·메모리·전송량·연산으로 비교하는 같은 주제를 담지만, TII 판과의 대응이 학위논문에 명시돼 있지 않아 근거로 쓰지 않음 — 다음 보강 때 대조 후보",
         "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 13건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
-        "2026-10-11: 같은 Crossref 예치 참고문헌(ref25, DOI 10.1007/0-387-25660-1_15)으로 오늘 편입한 Bussard–Bagga SEC 2005 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
+        "2026-10-11: 같은 Crossref 예치 참고문헌(ref25, DOI 10.1007/0-387-25660-1_15)으로 오늘 편입한 Bussard–Bagga SEC 2005 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
+        "2026-10-12: Crossref 예치 참고문헌 ref17(Rasmussen·SecureComm 2007·p. 331)로 오늘 편입한 Rasmussen–Čapkun 무선 지문 논문 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
       ],
       "artifacts": {
         "code": null,
@@ -16480,12 +16503,13 @@
         "rasmussen-2010-rf-distance-bounding",
         "singelee-2007-db-noisy-environments",
         "tippenhauer-2009-id-based-db",
-        "bussard-2005-dbpk-terrorist-fraud"
+        "bussard-2005-dbpk-terrorist-fraud",
+        "rasmussen-2007-radio-fingerprinting-security"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-10-03",
-      "last_checked": "2026-10-11"
+      "last_checked": "2026-10-12"
     },
     {
       "id": "mazur-2024-ifft-bayesian-pbr",
@@ -17585,7 +17609,8 @@
         "kim-2009-mixed-challenges-db",
         "tippenhauer-2009-id-based-db",
         "hancke-2009-relay-attacks-revisited",
-        "bussard-2005-dbpk-terrorist-fraud"
+        "bussard-2005-dbpk-terrorist-fraud",
+        "rasmussen-2007-radio-fingerprinting-security"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17601,7 +17626,7 @@
         }
       ],
       "added": "2026-10-06",
-      "last_checked": "2026-10-11"
+      "last_checked": "2026-10-12"
     },
     {
       "id": "alrabady-2003-passive-entry-attacks",
@@ -18077,7 +18102,7 @@
       },
       "verification": "verified",
       "added": "2026-10-10",
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-12",
       "cites": [
         "brands-1993-distance-bounding",
         "nikodem-2025-mcpd-ble",
@@ -18089,7 +18114,9 @@
         "suresh-2025-cs-vehicle-access",
         "bintariq-2024-signal-subspace-ble-ranging",
         "vanmarter-2023-svr-ble-ranging",
-        "tschirschnitz-2021-method-confusion"
+        "tschirschnitz-2021-method-confusion",
+        "cominelli-2019-dead-on-arrival",
+        "rasmussen-2007-radio-fingerprinting-security"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -18550,6 +18577,155 @@
           "to": "brands-1993-distance-bounding",
           "type": "extends",
           "note": "\"Our solution consists in distance-bounding proof of knowledge protocols that extend Brands and Chaum's distance-bounding protocols\" — 마피아 사기 방지 구조에 비트 커밋·영지식 증명을 더해 테러리스트 사기까지 확장(원문 확인)"
+        }
+      ]
+    },
+    {
+      "id": "cominelli-2019-dead-on-arrival",
+      "title": "Dead on Arrival: An Empirical Study of The Bluetooth 5.1 Positioning System",
+      "authors": [
+        "Marco Cominelli",
+        "Paul Patras",
+        "Francesco Gringoli"
+      ],
+      "venue": "ACM WiNTECH",
+      "venue_full": "Proceedings of the 13th International Workshop on Wireless Network Testbeds, Experimental Evaluation & Characterization (WiNTECH '19, ACM MobiCom 2019 워크숍), pp. 13–20, 2019-10-04 — University of Brescia·CNIT·The University of Edinburgh",
+      "tier": "other",
+      "category": "measurement",
+      "year": 2019,
+      "url": "https://doi.org/10.1145/3349623.3355475",
+      "preprint": "https://arxiv.org/abs/1909.08063",
+      "doi": "10.1145/3349623.3355475",
+      "topics": [
+        "ble-direction-finding",
+        "aoa",
+        "cte",
+        "phase-manipulation",
+        "antenna-switching",
+        "sdr-testbed",
+        "indoor-positioning",
+        "bluetooth-5-1"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 이전 세대인 BLE 5.1 Direction Finding 의 첫 실측 평가이자 **'측정용 톤에 무결성이 없다'** 는 문제를 처음 실증한 논문이라, CS 의 위상 채널을 보는 출발점으로 쓴다. CTE 는 CRC 뒤에 붙어 오류 검사 밖에 있고, 송신기가 스위치 슬롯 이후 위상에 상수 Δ 를 더하기만 하면 수신기가 계산하는 위상차가 φ + Δ 가 되어 정지한 채로 임의 각도를 만들어 낸다 — CS 의 PBR 톤(모드 2·3 스텝)도 데이터가 없는 연속 톤이라 같은 질문(톤 위상이 누구의 것이며 조작됐는지 어떻게 아는가)이 그대로 걸린다. 저자 대책인 '수신 안테나 스위칭 패턴을 송신기에 숨기고 비결정적으로' 는 CS 규격이 DRBG 로 안테나 경로를 무작위 선택하고 톤 확장 슬롯 송신 여부를 무작위화하는 장치(bt-cs-tech-overview 3.13.4.4·3.13.4.5)와 같은 처방이므로, 그 장치가 막는 공격자 범위(자기 위상을 조작하는 부정직한 기기 — 거리 사기 쪽)와 못 막는 범위(제3자 신호 주입 — zhang-2025-sadif)를 가르는 기준이 된다. 다만 실험은 USRP 2채널로 RF 스위치를 흉내 낸 2안테나 구성·유선 동기 호핑이고, 공격도 송신기 자신이 조작하는 경우만 보였다.",
+      "summary": "Bluetooth 5.1 이 도입한 AoA 기반 측위를 상용 칩이 나오기 전에 SDR 로 재현해 처음 실측 평가한다. USRP B210(수신, 반파장 다이폴 2개를 6 cm 간격)과 N200(송신)으로 LE 1M PHY 패킷 뒤에 CTE 를 붙이고, 기준 구간 8 개 IQ 표본으로 위상의 선형 모델을 세운 뒤 스위치 후 다른 안테나 표본과의 위상차로 각도를 구한다. 실외에서 각도 측정은 좁은 원뿔 안에서만 믿을 수 있어(작은 각에서 위상 래핑) θ ≥ 45° 로 제한하면 데이터 채널 평균 후 오차 80 % 가 1° 미만이고, 실내 2앵커 측위는 95 % 위치에서 오차 85 cm 미만이지만 10 cm 미만은 15 % 뿐이라 센티미터 측위와는 거리가 멀다. 또 CTE 가 CRC 보호 밖이라 송신기가 스위치 슬롯 이후 위상을 조작해 수신기가 임의 각도를 계산하게 만들 수 있음을 보이고, 수신 안테나 스위칭 패턴을 숨기고 비결정적으로 바꾸는 대책을 제안한다.",
+      "hardware": [
+        "수신(앵커): USRP Ettus B210 ×2 — 각 B210 의 TX/RX 포트 2개에 반파장 다이폴 2개(6 cm 간격, 자체 제작 플라스틱 지지대·강성 동축케이블), Intel i5 2.7 GHz·8 GB 노트북에 연결",
+        "송신: USRP Ettus N200 — Intel Core M 2 GHz·2 GB Chromebook 구동",
+        "보정: 스플리터로 B210 두 수신 체인에 같은 신호를 넣어 체인 간 고정 위상 오프셋 측정",
+        "시험장: 실외 평지 코트(송수신 0.5 m 높이) · 실내 20.9 m × 25.3 m 공간의 4 m × 2.7 m 놀이터 구역, 4 × 5 격자 지점; ground truth 는 격자 실측 좌표"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자체 실시간 BLE 소프트웨어 송수신기(Ubuntu 18.04) — 2 MS/s IQ, 위상 판별 복조, 프리앰블 탐지·CRC 검사, CTE 는 1 비트 연속으로 흉내",
+        "주파수 호핑은 실제 BLE 연결 대신 유선 네트워크 대역 외 신호로 모든 노드에 결정적 호핑 순서를 배포해 에뮬레이션, 100 패킷/s·고정 Access Address",
+        "공개 코드: https://github.com/bsnet/bleaoa"
+      ],
+      "software_verified": true,
+      "results": [
+        "실외 각도 정확도(그림 5): 채널·각도 조합 30회 측정 표준편차 — 65 % 이상이 0.2° 미만, 2° 초과 4 %(거의 θ = 15° 에서만), 5° 초과 1.5 %; 저주파 채널일수록 퍼짐이 크고 작은 각에서는 위상 래핑으로 추정이 180° 근처로 튐",
+        "원뿔 제한: θ ≥ 35° 로 1차 제한 후 최대 오차 4° 이내를 위해 θ ≥ 45° 로 좁힘 — 그 안에서 데이터 채널 평균 추정의 80 % 가 오차 1° 미만(그림 6); 60°–90° 에서는 채널 의존성이 무작위(잔류 다중경로), 상위 절반 채널만 쓰면 θ ≤ 55° 에서 유리",
+        "실내 각도(그림 7·8): 수신기에서 4 m 떨어진 직선을 40 cm 간격으로 이동 — 채널 단독은 실외보다 훨씬 나쁘지만 평균하면 비슷해지고, 데이터 채널 15개 이상을 평균하면 평균 오차가 2° 를 크게 밑돎",
+        "실내 2앵커 측위(그림 9): 채널당 30 패킷·전 데이터 채널 호핑 — 오차 < 85 cm 가 95 % 이상, < 10 cm 는 15 % 뿐",
+        "AoA 조작(6절·그림 10·11): CTE 는 CRC 뒤라 무결성 검사 밖 — 송신기가 스위치 슬롯 이후 위상에 상수 Δ 를 앞당겨 넣으면 수신기 위상차가 φ + Δ 가 되어 정지 상태에서도 시간에 따라 임의 각도를 만들 수 있음(송신기 코드 수정으로 실증)",
+        "대책: 수신기가 다음 패킷에서 다른 안테나를 기준으로 쓰도록 스위칭을 바꾸면 조작하는 송신기가 즉시 드러남 — 단 패턴을 알면 위상을 맞춰 만들 수 있으므로 스위칭 패턴을 송신기에 숨기고 비결정적으로 할 것을 권고"
+      ],
+      "limitations": [
+        "상용 Bluetooth 5.1 칩 미출시 시점이라 SDR 로 재현 — RF 스위치 대신 B210 의 두 수신 체인을 써서 단일 무선 체인 스위칭을 흉내 냄; 가장 짧은 16 µs 패턴·안테나 2개만 평가, 패턴 길이 영향은 향후 과제(저자 명시)",
+        "실제 BLE 연결·AFH 없이 유선 대역 외 동기로 호핑을 흉내 냄 — 연결 타이밍·채널 맵 제외의 영향은 미평가",
+        "공격은 송신기 자신이 CTE 위상을 조작하는 경우(부정직한 기기)만 — 제3자가 남의 CTE 에 신호를 주입하는 경우는 다루지 않음(후속 zhang-2025-sadif 가 상용 칩에서 실증); 대책은 제안 수준이고 정량 평가 없음",
+        "측위는 앵커 2개·작은 구역(4 m × 2.7 m)·각도 원뿔 제한 안에서만 — 거리 추정은 쓰지 않음"
+      ],
+      "artifacts": {
+        "code": "https://github.com/bsnet/bleaoa",
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-12",
+      "last_checked": "2026-10-12",
+      "cites": [
+        "vasisht-2016-chronos",
+        "kempke-2016-surepoint"
+      ],
+      "cites_source": "fulltext",
+      "relations": []
+    },
+    {
+      "id": "rasmussen-2007-radio-fingerprinting-security",
+      "title": "Implications of Radio Fingerprinting on the Security of Sensor Networks",
+      "authors": [
+        "Kasper Bonne Rasmussen",
+        "Srdjan Čapkun"
+      ],
+      "venue": "SecureComm",
+      "venue_full": "2007 Third International Conference on Security and Privacy in Communications Networks and the Workshops (SecureComm 2007), Nice, France, 2007-09-17–21, pp. 331–340 — ETH Zurich (전문은 ETH Research Collection 판 ethz-a-006782574, Wayback 2017-08-30 보존본)",
+      "tier": "other",
+      "category": "analysis",
+      "year": 2007,
+      "url": "https://doi.org/10.1109/SECCOM.2007.4550352",
+      "preprint": "https://doi.org/10.3929/ethz-a-006782574",
+      "doi": "10.1109/SECCOM.2007.4550352",
+      "topics": [
+        "rf-fingerprinting",
+        "physical-layer-identification",
+        "wormhole",
+        "relay-detection",
+        "secure-neighbor-discovery",
+        "sensor-networks",
+        "sybil"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "'중계하는 기기는 원래 송신기의 무선 지문을 가질 수 없다' 는 릴레이 탐지 논리의 원전이라, CS 연구에서는 물리계층 기기 식별을 릴레이 대책으로 쓰자는 제안들의 전제를 점검하는 기준으로 쓴다. 코퍼스의 staat-2020-paak-relay(BLE PaaK 에 RF 지문 + 채널 상호성 결합)·vandewater-2025-cs-multi-antenna-relay(스마트락 릴레이 대책으로 RF 지문)·francis-2010·hancke-2008·hancke-2011 이 모두 이 논문을 그 근거로 든다. 이 논문의 탐지 논리는 웜홀 끝의 공격자 M2 가 **자기 무선기로 다시 송신**해 M2 의 지문이 남는다는 가정에 서 있는데, CS 를 노리는 아날로그 증폭-전달 릴레이(staat-2022-analog-relay)는 원 신호를 복조 없이 그대로 키워 보내므로 송신 과도응답이 상당 부분 보존될 수 있다 — 즉 지문 대책이 디지털 재송신형 릴레이에만 유효하고 아날로그 릴레이에는 약할 수 있다는 점(관찰·가설, 미실험)을 따질 때 출발점이 된다. 433 MHz 센서 노드·오실로스코프 수집이라 BLE 칩 수준의 지문 안정성은 말해 주지 않는다.",
+      "summary": "무선 센서 노드(Chipcon CC1000, 433 MHz)의 무선 지문 채취가 가능함을 처음 보이고, 그것이 센서망 보안에 주는 이득과 해를 분석한다. MIT Cricket 노드 10대가 보낸 신호를 433 MHz 안테나를 직결한 고주파 오실로스코프로 1 GHz 표본화해 송신 과도응답(transient)을 슬라이딩 창 분산으로 잘라내고, 진폭 기반 특징 5개(과도 길이·정규화 진폭 분산·반송파 주기 수·DWT 첫 성분·정규화 평균과 최대의 차)로 지문을 만들면 메시지의 약 70 % 를 송신 노드에 맞게 연결한다. 이 지문을 메시지 인증과 재전송(릴레이) 방지에 쓰면, 웜홀의 끝에서 재송신하는 외부 공격자는 원 송신자의 지문을 가질 수 없어 탐지되므로, 지문 대조를 넣은 안전한 이웃 탐지 프로토콜을 제안하고 Sybil·복제 공격 탐지에도 쓸 수 있다고 본다. 반대로 공격자는 지문으로 익명화된 노드를 추적하거나 기기 익명성에 기대는 키 합의(Shake them up!)를 깰 수 있다.",
+      "hardware": [
+        "피측정 노드: MIT Cricket MCS410CA(Cricket 232) ×10 — Chipcon CC1000 433 MHz, 초당 1 패킷(TinyOS) 송신, 노드당 신호 200개(총 2000개)",
+        "수집: 433 MHz 동조 안테나를 고주파 오실로스코프에 직결(LC 필터 등 수신 회로 배제), 1 GHz 표본화 — 오실로스코프 모델명은 본문에 없음",
+        "처리: 일반 데스크톱 PC"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자체 구현 — 과도응답 추출(창 크기 w = 50·스케일 상수 k = 30 의 분산 신호)·특징 추출·지문 대조를 plain C 로 작성(모트 이식 염두); 공개 코드 언급 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "식별 성능(그림 4·표 1): 데이터셋 6개(각 50 표본으로 지문, 50 표본으로 대조) 평균 정확 식별률은 특징 수를 늘려도 약 70 % 에서 포화 — 나머지 30 % 는 간섭·환경 변화로 실패",
+        "특징 영향(표 1): 4특징 조합 중 특징 5(정규화 평균–최대 차)가 빠진 조합이 일관되게 가장 나쁨(합계 27 대 35–38/60); 노드 #3·#4 는 특징 5 가 있으면 6회 모두 식별",
+        "사칭 확률: 식별 실패 시 다른 노드가 무작위로 지목된다고 가정하면(10 노드) 한 번 사칭 성공 확률 30 % × 1/9 ≈ 3.3 %, 세 번 연속 주장하면 0.004 %",
+        "웜홀 탐지(3.2.1절·그림 6): 패킷 내용은 A 가 보냈다고 주장하지만 지문은 재송신한 M2 의 것이라 B 가 탐지 — Hu–Perrig–Johnson 의 패킷 리쉬·TIK 은 정밀 시간 동기(GPS)가 필요해 저가 센서에 부적합하다고 비교",
+        "안전한 이웃 탐지 프로토콜(그림 7): 논스 NA 브로드캐스트 → 지문이 A 와 맞을 때만 NB·MAC 으로 응답(배터리 소모 공격도 완화) → 양쪽 지문이 맞으면 서로의 신원과 직접 통신 범위 안임을 확인; 노드 1만 개·지문 30 바이트면 노드당 약 300 kB 저장",
+        "해로운 쪽: 클러스터 헤드 등 활동 노드 추적·비활성화, 기기 익명성에 기대는 키 합의(Castelluccia–Mutaf Shake them up!)는 지문으로 깨질 수 있음(초기 조사상 지문이 제한된 움직임에 강건)"
+      ],
+      "limitations": [
+        "진폭 기반 특징만 사용 — 위상 기반 특징 추출은 향후 과제(저자 명시); 노드의 제조 이력을 모르는 10대 표본뿐이라 지문 차이가 생산 라인에 좌우될 수 있음",
+        "식별률 약 70 % 에서 포화 — 특징 선택·노드 선별로 개선 여지는 향후 과제(저자 명시)",
+        "웜홀 끝 노드가 내부 공격자(합법 노드)면 탐지 불가, 수신기가 각 송신자의 기준 지문을 미리 가져야 함(저자 명시)",
+        "약한 재밍 신호로 지문 특성을 흐려 식별을 방해할 수 있음(저자 명시) — 같은 원리를 지문 채취 방지에 쓰는 것은 향후 과제",
+        "오실로스코프 직결·고정 배치 실험 — 노드 이동·다중경로·실제 저가 수신기에서의 지문 안정성은 미평가(관찰); 아날로그 증폭-전달 릴레이가 원 송신 과도응답을 보존하는 경우는 다루지 않음(관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-12",
+      "last_checked": "2026-10-12",
+      "cites": [
+        "capkun-2003-sector",
+        "hu-2003-packet-leashes",
+        "capkun-2005-secure-positioning"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hu-2003-packet-leashes",
+          "type": "complementary",
+          "note": "같은 웜홀 문제를 시간 상한(패킷 리쉬·TIK) 대신 무선 지문으로 탐지 — \"Packet leashes, however, are unsuitable for sensor networks because TIK requires very tight time synchronization\"(원문 3.2.1절)"
         }
       ]
     }
