@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "note": "이 파일은 논문 레코드가 아니라 그 위에서 내린 판단입니다. 모든 항목의 evidence 는 papers.json / standards.json 의 id, 또는 insights.json 의 실험·인사이트 id 를 가리키며 검증기가 대조합니다.",
   "landscape": {
     "title": "Bluetooth Channel Sounding Security Landscape",
@@ -472,11 +472,12 @@
     },
     {
       "text": "Sounding Sequence 의 마커 무작위화가 ED/LC 를 막는다",
-      "why_untested": "Anliker 의 실측에서는 Sounding Sequence 쪽 축소량이 더 크고 분산이 30배 작았다. 즉 한 공격을 막으려 넣은 구조가 다른 공격에는 유리하게 작동할 수 있다. **마커 밀도에 대한 ED/LC 대 NGD 트레이드오프 곡선이 없다.**",
+      "why_untested": "Anliker 의 실측에서는 Sounding Sequence 쪽 축소량이 더 크고 분산이 30배 작았다. 즉 한 공격을 막으려 넣은 구조가 다른 공격에는 유리하게 작동할 수 있다. **마커 밀도에 대한 ED/LC 대 NGD 트레이드오프 곡선이 없다.** 구현 지원 범위도 갈린다 — NXP KW47/MCX W72 의 능력 표는 RTT 페이로드로 32–128 비트 Random Sequence 만 나열하고 Sounding Sequence 는 적지 않는다(AN14865 표 6, 벤더 문서 기준이지 실측 아님). 이 가정과 그 반례는 Sounding Sequence 를 실제로 지원하는 칩에서만 성립하므로, 실험 칩을 고를 때 RTT_TYPE 지원부터 확인해야 한다.",
       "evidence": [
         "sounding-sequence-backfires",
         "anliker-2026-narrowband-toa",
-        "clulow-2006-long-symbols"
+        "clulow-2006-long-symbols",
+        "nxp-an14865-cs-kw47"
       ],
       "blocks": [
         "todo-marker-tradeoff"
@@ -598,7 +599,8 @@
       "theme": "receiver-policy",
       "evidence": [
         "nadm-is-vendor-shaped",
-        "bt-ras-1-0"
+        "bt-ras-1-0",
+        "nxp-an14865-cs-kw47"
       ]
     },
     {
@@ -690,7 +692,8 @@
       "source_refs": [
         "bt-core-6-0",
         "silabs-cs-fundamentals",
-        "nordic-nrf54-cs"
+        "nordic-nrf54-cs",
+        "nxp-an14865-cs-kw47"
       ],
       "supporting": [],
       "counter": [
@@ -721,7 +724,7 @@
         }
       ],
       "status": "challenged",
-      "status_note": "구현이 vendor-specific 이라 '어느 벤더의 NADM 이 무엇을 막는가'는 아직 아무도 측정하지 않았다. 한편 **공격이 없는 정상 측정조차 제대로 못 거른다**는 실측이 나왔으므로, 이제 질문은 '조작을 잡는가'가 아니라 '조작을 잡을 만한 여유가 애초에 있는가'다.",
+      "status_note": "구현이 vendor-specific 이라 '어느 벤더의 NADM 이 무엇을 막는가'는 아직 아무도 측정하지 않았다. 한편 **공격이 없는 정상 측정조차 제대로 못 거른다**는 실측이 나왔으므로, 이제 질문은 '조작을 잡는가'가 아니라 '조작을 잡을 만한 여유가 애초에 있는가'다. 벤더 문서 쪽도 마찬가지다 — NXP KW47/MCX W72 응용 노트는 능력 표에 NADM 을 'Supported' 한 줄로만 적고 알고리즘·임계값·보고 형식은 밝히지 않는다(AN14865 표 6). 지원 선언과 방어력 사이의 공백은 벤더가 늘어도 줄지 않았다.",
       "experiment": "nRF54L15 두 장으로 RAS 를 통해 raw step data 와 NADM 값을 뽑을 수 있는지 확인하고, 가능하면 벤더 2종 이상에서 같은 조작 입력에 대한 NADM 응답을 비교한다.",
       "todo": null
     },
@@ -731,7 +734,8 @@
       "source": "규격 설계 의도 (CS SYNC 의 마커 구조)",
       "source_refs": [
         "bt-core-6-0",
-        "clulow-2006-long-symbols"
+        "clulow-2006-long-symbols",
+        "nxp-an14865-cs-kw47"
       ],
       "supporting": [
         {
@@ -752,7 +756,7 @@
         }
       ],
       "status": "tension",
-      "status_note": "한 공격을 막으려 넣은 구조가 다른 공격에는 유리하게 작동한다. 다만 두 시퀀스 실험의 파형·필터·수신기·SNR 정규화 조건이 동일했는지는 아직 확인하지 못했다.",
+      "status_note": "한 공격을 막으려 넣은 구조가 다른 공격에는 유리하게 작동한다. 다만 두 시퀀스 실험의 파형·필터·수신기·SNR 정규화 조건이 동일했는지는 아직 확인하지 못했다. 또한 Sounding Sequence 는 선택 기능이라 지원하지 않는 상용 칩이 있다(NXP KW47 은 Random Sequence 만 나열) — 이 주장의 적용 범위는 칩마다 다르다.",
       "experiment": "MATLAB Bluetooth Toolbox 로 마커 개수·위치 분포를 바꿔가며 (a) 조기 판별 확률과 (b) NGD 통과 후 ToA 선행량 분산을 함께 측정해 트레이드오프 곡선을 그린다.",
       "todo": "todo-marker-tradeoff"
     },
