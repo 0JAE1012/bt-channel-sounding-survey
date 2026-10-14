@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-13",
-  "last_run": "2026-10-13",
+  "updated": "2026-10-14",
+  "last_run": "2026-10-14",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1460,
+  "citation_edges": 1467,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -844,7 +844,8 @@
         "학습 데이터 환경 의존성 — 어떤 환경에서 학습·평가했는지 전문 미확보로 미확인",
         "적대적 입력에 대한 강건성 미평가",
         "원문 미확보: IEEE Xplore 유료, Semantic Scholar 에 openAccessPdf 없음(2026-08-21 확인). 장비·데이터셋·비교 대상 세부 미확인",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-14: Crossref 예치 참고문헌에서 Cortesi 2023(10.3390/computers12030059) 인용을 확인해 cites 에 추가 — OpenAlex·OpenAIRE 재조회 모두 closed, 본문은 여전히 미확보라 verification 은 partial 유지"
       ],
       "artifacts": {
         "code": null,
@@ -852,13 +853,14 @@
       },
       "verification": "partial",
       "added": "2026-07-28",
-      "last_checked": "2026-09-29",
+      "last_checked": "2026-10-14",
       "cites": [
         "boer-2020-pbr-multipath",
         "santra-2024-cs-indoor",
         "schroeder-2019-multipath-pbr",
         "vanmarter-2023-svr-ble-ranging",
-        "zand-2019-ble-pbr"
+        "zand-2019-ble-pbr",
+        "cortesi-2023-rssi-vs-mcpd-ble"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -7776,12 +7778,13 @@
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
         "lu-2021-ble-phase-positioning",
-        "gunia-2017-phase-positioning-off-the-shelf"
+        "gunia-2017-phase-positioning-off-the-shelf",
+        "cortesi-2023-rssi-vs-mcpd-ble"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-09-18"
+      "last_checked": "2026-10-14"
     },
     {
       "id": "wang-2025-cs-device-free-sensing",
@@ -8156,12 +8159,13 @@
         "zand-2019-concurrent-pbr",
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
-        "gunia-2017-phase-positioning-off-the-shelf"
+        "gunia-2017-phase-positioning-off-the-shelf",
+        "cortesi-2023-rssi-vs-mcpd-ble"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-18"
+      "last_checked": "2026-10-14"
     },
     {
       "id": "simoncic-2026-cfo-mcpd",
@@ -8236,12 +8240,13 @@
         "simoncic-2025-freq-switching-mcpd",
         "pelka-2014-phase-multi-frequency",
         "gunia-2017-phase-positioning-off-the-shelf",
-        "neirynck-2016-alt-ds-twr"
+        "neirynck-2016-alt-ds-twr",
+        "cortesi-2023-rssi-vs-mcpd-ble"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-09-19"
+      "last_checked": "2026-10-14"
     },
     {
       "id": "nkrow-2024-tof-resiliency",
@@ -11920,7 +11925,8 @@
         "2026-10-07 재시도: Crossref 예치 메타에 초록 없음(참고문헌 45건만), ScienceDirect 는 Googlebot UA 도 403, Elsevier API 는 키 없이 401 — unverified 유지",
         "2026-10-10 재시도: Crossref 메타에 여전히 초록 없음(vol. 287, art. 122399), OpenAlex 초록 없음 — unverified 유지",
         "2026-10-11 재시도: OpenAlex 여전히 closed·초록 없음 — unverified 유지",
-        "2026-10-12 재시도: Crossref 여전히 초록 없음(link 는 PII S0263224126021081 의 api.elsevier.com — 키 없이 401), ScienceDirect 정확한 PII 페이지는 facebookexternalhit UA 400·Twitterbot 403, OpenAlex closed — unverified 유지"
+        "2026-10-12 재시도: Crossref 여전히 초록 없음(link 는 PII S0263224126021081 의 api.elsevier.com — 키 없이 401), ScienceDirect 정확한 PII 페이지는 facebookexternalhit UA 400·Twitterbot 403, OpenAlex closed — unverified 유지",
+        "2026-10-14 재시도: OpenAlex·OpenAIRE 모두 closed·초록 없음, ScienceDirect PII 페이지는 Slackbot·LinkedInBot·WhatsApp·Discordbot·bingbot·TelegramBot·Zotero UA 전부 403(본문 없는 챌린지 페이지) — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11928,7 +11934,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-12",
+      "last_checked": "2026-10-14",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -15418,7 +15424,8 @@
         "2026-10-05 재시도: Xplore REST 상 여전히 Early Access(isEarlyAccess true) — /references 0건이라 cites 미추출 유지",
         "2026-10-06 재시도: Xplore REST /references 여전히 0건(Early Access), OpenAlex closed·초록 없음",
         "2026-10-07 재시도: Xplore REST /references 여전히 0건(Early Access)",
-        "2026-10-10 재시도: Xplore REST 여전히 Early Access(isEarlyAccess true)·/references 0건, Crossref 참고문헌 예치 없음"
+        "2026-10-10 재시도: Xplore REST 여전히 Early Access(isEarlyAccess true)·/references 0건, Crossref 참고문헌 예치 없음",
+        "2026-10-14 재시도: Xplore REST references 여전히 0건·metadata 404, Crossref 도 권호 미배정(pp. 1–12)·참고문헌 0, OpenAlex·OpenAIRE closed — partial 유지"
       ],
       "artifacts": {
         "code": null,
@@ -15429,7 +15436,7 @@
       "cites_source": "no-fulltext",
       "relations": [],
       "added": "2026-09-27",
-      "last_checked": "2026-10-10"
+      "last_checked": "2026-10-14"
     },
     {
       "id": "perazzo-2016-enlargement-miscontrol-detection",
@@ -18873,6 +18880,82 @@
       ],
       "cites_source": "fulltext",
       "relations": []
+    },
+    {
+      "id": "cortesi-2023-rssi-vs-mcpd-ble",
+      "title": "Comparison between an RSSI- and an MCPD-Based BLE Indoor Localization System",
+      "authors": [
+        "Silvano Cortesi",
+        "Christian Vogt",
+        "Michele Magno"
+      ],
+      "venue": "Computers (MDPI)",
+      "venue_full": "Computers (MDPI), vol. 12, no. 3, art. 59, 2023 (접수 2023-01-25·게재 2023-03-10, CC BY 4.0) — WiMob 2021(eHPWAS) RSSI 측위 논문의 확장판; ETH Zürich D-ITET, Project-Based Learning Center",
+      "tier": "journal",
+      "category": "measurement",
+      "year": 2023,
+      "url": "https://doi.org/10.3390/computers12030059",
+      "preprint": "https://www.mdpi.com/2073-431X/12/3/59",
+      "doi": "10.3390/computers12030059",
+      "topics": [
+        "ble",
+        "mcpd",
+        "phase-based-ranging",
+        "rssi",
+        "indoor-positioning",
+        "fingerprinting",
+        "wknn",
+        "nordic",
+        "pre-cs"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "low",
+      "relevance_note": "CS 채택(2024) 이전 Nordic 의 독자 BLE 다중반송파 위상차(MCPD) 거리측정 구현(Nordic Distance Toolbox)을, 같은 nRF5340 노드·같은 방·같은 wkNN 에서 RSSI 와 나란히 잰 기록이다. 저자는 BLE 에서 두 방법을 처음 비교했다고 주장한다. Zand 2019(imec)·Lu 2021(Dialog DA14695) 에 이어 CS 이전 BLE PBR 계보의 Nordic 갈래를 채우며, Nikodem 2025·Simončič 2025/2026·PNN 2025 가 'BLE 에서 MCPD 측위가 이미 시도됐다' 는 근거로 인용한다. CS 연구에 쓰이는 값은 두 가지다. (1) 위상 거리값은 RSSI 보다 훨씬 안정적이다 — 단일 측정 위치오차 표준편차 0.16 m 대 1.16 m, 평균화 이득도 3.6 % 대 32.9 % 다. (2) 그 대가로 측정 전력이 10배다 — 100 ms 주기 1.850 mW 대 0.185 mW. 다만 지문(학습 9점) 회귀 결과라 MCPD 의 절대 거리 정확도·편향은 이 논문으로 말할 수 없고, 보안 관점(조작 내성)도 없다. CS 보안 판단의 근거로는 쓰지 않는다.",
+      "summary": "병원 실내 측위를 겨냥해, Nordic nRF5340(u-blox NORA-B106 모듈) 기반 자체 비컨·수신기 노드로 RSSI 와 다중반송파 위상차(MCPD) 두 BLE 거리측정 값을 모아 경량 가중 k-최근접 이웃(wkNN) 지문으로 위치를 추정하고 두 방법을 비교한다. MCPD 는 Nordic Distance Toolbox 의 IFFT 구현을 쓰고, wkNN 은 수신기 MCU(Cortex-M33)에서 실시간으로 돈다. 7.3 m × 8.9 m 교실에 비컨 6대(높이 1.8 m), 학습점 9·검증점 5(학습점과 다른 무작위 위치)로 실험해, 단일 측정 평균 위치오차가 MCPD 0.52 m(표준편차 0.16 m) 대 RSSI 2.04 m(1.16 m), 15회 평균 후 최선 구성에서 0.50 m 대 1.37 m 였다. 비컨 3대만으로도 MCPD 는 1 m 미만(조합 평균 0.70 m)이었고, MCPD 측정 전력은 RSSI 의 10배지만 분산이 작아 측정 주기를 1.5 s 로 늘려도 RSSI 대비 정확도 우위(62.0 %)를 유지한다.",
+      "hardware": [
+        "Nordic Semiconductor nRF5340(BLE 5.3, 듀얼 Arm Cortex-M33) — u-blox NORA-B106 모듈(ProAnt PCB 안테나 내장), 비컨·수신기 공통 자체 제작 노드(그림 4)",
+        "전원: 3.7 V 110 mAh LiPo + MAX38640 1.8 V 벅 컨버터, USB-C 충전",
+        "실험 공간: 7.3 m × 8.9 m 교실(책상·의자·모니터 약 1 m 높이), 비컨 6대 높이 1.8 m(모서리 비컨은 실내 쪽 45° 기울임), 학습점 9·검증점 5, 수신기는 탁자 위 고정·안테나 방향 고정",
+        "ground truth: 평면도상 학습·검증점 좌표(측정 방법 미기재)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Nordic Distance Toolbox — MCPD 거리 추정(IFFT 구현) 사용, 버전 미기재",
+        "자체 펌웨어 ble_ranging_beacon_app·ble_ranging_scanner_app + wkNN(k = 3/5, 유클리드·체비셰프 노름)을 MCU 에서 실행 — 코드·원시 데이터 공개(GitHub ETH-PBL/wknn_rssi_mcpd_ble)",
+        "SDK(nRF Connect SDK 등) 버전 미기재"
+      ],
+      "software_verified": true,
+      "results": [
+        "단일 측정·비컨 6대·k = 3: MCPD(체비셰프) 평균 위치오차 0.52 m(표준편차 0.16 m, 최소 0.35·최대 0.79 m) 대 RSSI(유클리드) 2.04 m(표준편차 1.16 m, 최소 0.35·최대 4.99 m) — 저자 표기 74.9 % 감소",
+        "15회 평균 후 추정(표 2): MCPD 0.501 m(k = 3 체비셰프)·0.577 m(k = 3 유클리드)·0.753/0.788 m(k = 5) 대 RSSI 1.369/1.410 m(k = 3)·1.766/1.999 m(k = 5) — 최선 구성끼리 63.4 % 감소; 평균화 이득은 MCPD 3.6 %·RSSI 32.9 %",
+        "비컨 수(표 1, k = 3 유클리드, '6 중 x' 조합 평균): 3대 RSSI 2.239 / MCPD 0.696 m, 4대 2.111 / 0.610 m, 5대 2.069 / 0.539 m, 6대 2.037 / 0.579 m — 비컨 1대 추가당 RSSI 3.08 %·MCPD 6.075 % 개선, 5 → 6대에서 MCPD 소폭 악화",
+        "비컨 3대 조합 선택에 따른 최선 대 최악 차: RSSI 32.6 %·MCPD 52.9 %; k = 3 이 k = 5 보다 23.4–36.4 % 우수, 노름 영향은 RSSI 2.9 %·MCPD 13.2 %",
+        "전력(100 ms 주기): RSSI 0.185 mW·MCPD 1.850 mW; MCPD 를 1.5 s 주기로 늘리면 0.122 mW — 110 mAh 로 RSSI 92일·MCPD 139일, 이때 MCPD 약 33.3 µA 로 RSSI 대비 정확도 62.0 % 우위 유지"
+      ],
+      "limitations": [
+        "wkNN 지문(학습 9점) 회귀라 학습점이 둘러싼 영역 밖은 추정 불가(저자 명시) — MCPD 의 절대 거리 오차·편향은 보고하지 않음",
+        "검증 5점·방 하나·정지 수신기·고정 안테나 방향뿐, 이동·사람 차폐 시나리오 없음",
+        "MCPD 측정 절차(톤 수·주파수 간격·연결 여부)와 Nordic Distance Toolbox 버전을 본문이 밝히지 않음 — 초록의 'connection-less BLE Beacons' 표현만 있음",
+        "보안·조작 내성 언급 없음(Ólafsdóttir 2017 은 위상–거리 식 출처로만 인용)",
+        "초록·결론의 MCPD 0.50 m 는 15회 평균 후 값(단일 측정은 0.52 m)이고, RSSI 1.39 m 는 표 2 최선 값 1.369 m 와 어긋남(단일 측정은 2.04 m) — 인용 시 표 값과 측정 방식을 구분할 것(관찰)",
+        "전문은 MDPI 본 사이트가 curl·Googlebot UA 모두 403 이라 mdpi-res.com CDN(article_deploy PDF)으로 확보; 3.1 절 본문은 PDF 텍스트 층이 겹쳐 페이지 이미지로 확인 (2026-10-14)"
+      ],
+      "artifacts": {
+        "code": "https://github.com/ETH-PBL/wknn_rssi_mcpd_ble",
+        "dataset": "https://github.com/ETH-PBL/wknn_rssi_mcpd_ble"
+      },
+      "verification": "verified",
+      "cites": [
+        "olafsdottir-2017-carrier-phase",
+        "zand-2019-ble-pbr",
+        "lu-2021-ble-phase-positioning"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-10-14",
+      "last_checked": "2026-10-14"
     }
   ]
 }
