@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-14",
-  "last_run": "2026-10-14",
+  "updated": "2026-10-15",
+  "last_run": "2026-10-15",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1467,
+  "citation_edges": 1488,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -6880,12 +6880,19 @@
         "pelka-2014-phase-multi-frequency",
         "ranganathan-2017-are-we-really-close",
         "alrabady-2003-passive-entry-attacks",
-        "alrabady-2005-keyless-entry-attacks"
+        "alrabady-2005-keyless-entry-attacks",
+        "seto-2022-subghz-twr-rke"
       ],
       "cites_source": "fulltext",
-      "relations": [],
+      "relations": [
+        {
+          "to": "seto-2022-subghz-twr-rke",
+          "type": "extends",
+          "note": "Seto 2022 의 두 주파수 위상 TWR 은 IQ 직접변환·LO 초기 위상 보존을 가정 — 이 논문은 그 가정이 깨지는 VCO 직접변조·슈퍼헤테로다인 양산 SoC 에서 같은 거리측정을 디지털 보상만으로 가능하게 함(표 1)"
+        }
+      ],
       "added": "2026-08-30",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-15"
     },
     {
       "id": "morano-2026-one-way-channel-reconstruction",
@@ -6974,12 +6981,13 @@
         "schroeder-2018-cde",
         "bintariq-2024-signal-subspace-ble-ranging",
         "gunia-2017-phase-positioning-off-the-shelf",
-        "mazur-2024-ifft-bayesian-pbr"
+        "mazur-2024-ifft-bayesian-pbr",
+        "morano-2024-phase-distance-tsch"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-10-03"
+      "last_checked": "2026-10-15"
     },
     {
       "id": "boshoff-2026-secure-indoor-ranging",
@@ -7677,7 +7685,8 @@
       "limitations": [
         "전문 미확보 — IEEE Xplore 유료 (2026-08-30 확인)",
         "Bluetooth 아님 — 920 MHz 대 사설 RKE 라디오",
-        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)"
+        "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
+        "2026-10-15: Xplore REST 참고문헌·Crossref 예치 참고문헌에서 Seto 2022(10.1109/TVT.2022.3181623) 인용을 확인해 cites 에 추가 — 본문은 여전히 미확보라 verification 은 partial 유지"
       ],
       "artifacts": {
         "code": null,
@@ -7689,12 +7698,13 @@
         "pelka-2014-phase-multi-frequency",
         "ranganathan-2017-are-we-really-close",
         "alrabady-2003-passive-entry-attacks",
-        "alrabady-2005-keyless-entry-attacks"
+        "alrabady-2005-keyless-entry-attacks",
+        "seto-2022-subghz-twr-rke"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-15"
     },
     {
       "id": "nikodem-2025-mcpd-ble",
@@ -15596,7 +15606,8 @@
       "limitations": [
         "전문 미확보 — IEEE Xplore 유료(isOpenAccess false), arXiv 제목 검색 0건 (2026-09-28); ToA 편향 크기(ns/m)·성공률·정찰 소요 시간·실험 구성 미확인",
         "관찰: 5G NR 전용 — Bluetooth CS 에는 PRS 처럼 고정 스케줄로 반복되는 참조신호가 없고 CS 절차의 채널 순서·CS_SYNC 는 DRBG 로 정해지므로 정찰 기법이 직접 이식되지는 않음; 다만 CS 톤 자체는 무변조라 '관찰 가능한 물리계층 신호' 라는 조건은 공유",
-        "2026-10-11 재시도: Tor Vergata IRIS(art.torvergata.it) 검색이 Cloudflare 403, OpenAlex closed"
+        "2026-10-11 재시도: Tor Vergata IRIS(art.torvergata.it) 검색이 Cloudflare 403, OpenAlex closed",
+        "2026-10-15: Xplore REST 참고문헌 [3]·Crossref 예치 참고문헌에서 Focarelli 외 TWC 2026(10.1109/TWC.2025.3588718) 인용을 확인해 cites 에 추가"
       ],
       "artifacts": {
         "code": null,
@@ -15604,7 +15615,8 @@
       },
       "verification": "partial",
       "cites": [
-        "singh-2022-v-range"
+        "singh-2022-v-range",
+        "focarelli-2026-5g-positioning-security"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -15615,7 +15627,7 @@
         }
       ],
       "added": "2026-09-28",
-      "last_checked": "2026-10-11"
+      "last_checked": "2026-10-15"
     },
     {
       "id": "zanini-2025-full-frame-5g-meaconing-demo",
@@ -16584,12 +16596,13 @@
       "cites": [
         "coppens-2022-uwb-standards-overview",
         "zand-2019-ble-pbr",
-        "schroeder-2018-cde"
+        "schroeder-2018-cde",
+        "morano-2024-phase-distance-tsch"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-10-03",
-      "last_checked": "2026-10-03"
+      "last_checked": "2026-10-15"
     },
     {
       "id": "kim-2009-mixed-challenges-db",
@@ -18259,7 +18272,8 @@
       "limitations": [
         "전문 미확보 (2026-10-10): 학과 학생 연구 페이지에 초록만 있고 PDF 링크 없음, mediaTUM 은 Anubis 봇 챌린지 — 시험 설정·SDK 버전·재현 절차 미확인",
         "학사 논문 — 피어 리뷰 미거침",
-        "2026-10-11 재시도: mediaTUM 이 오늘은 curl UA 로 열렸으나 'Jurenka'·'channel sounding' 검색에 이 학사논문 레코드 없음(학사논문 미기탁으로 보임), WebSearch 0건"
+        "2026-10-11 재시도: mediaTUM 이 오늘은 curl UA 로 열렸으나 'Jurenka'·'channel sounding' 검색에 이 학사논문 레코드 없음(학사논문 미기탁으로 보임), WebSearch 0건",
+        "2026-10-15 재시도: TUM I20 학생 연구 페이지 상태 'finished'·제출 2025-02-17 이나 PDF 링크는 여전히 없음, arXiv 제목 검색 0"
       ],
       "artifacts": {
         "code": null,
@@ -18267,7 +18281,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-11",
+      "last_checked": "2026-10-15",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -18321,7 +18335,8 @@
       "limitations": [
         "원문 미확보 (2026-10-10): 발표 페이지에 초록·발표자만 있고 슬라이드·영상 링크 없음, Hardwear.io 과거 행사 페이지(USA 2026)는 404, YouTube 채널 검색에 해당 영상 없음, Wayback 일시 중단",
         "학술 논문이 아닌 산업 컨퍼런스 발표 — 피어 리뷰 없음, 공저자 여부 미확인(초록은 'we')",
-        "2026-10-11 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음, 과거 행사 페이지(USA 2026) 404; DEF CON 34·Black Hat USA 2026·hardwear.io NL 2026 재발표 검색 0건"
+        "2026-10-11 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음, 과거 행사 페이지(USA 2026) 404; DEF CON 34·Black Hat USA 2026·hardwear.io NL 2026 재발표 검색 0건",
+        "2026-10-15 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음. 같은 제목의 자율 학습 강의(약 40 분·1 강, 강사 Sultan Qasim Khan)가 ISMG 의 CyberEd.io(cyberedio.matrixlms.com/visitor_catalog_class/show/2456423)에 게시된 것을 찾았으나 로그인 필요 — 공개 설명은 'EDLC·다중경로 혼동 공격이 규격 모호성을 이용하는 방식, 인기 벤더 구현의 거리 조작 내성 비교'뿐이고 칩·도구·수치·NADM 언급 없음"
       ],
       "artifacts": {
         "code": null,
@@ -18329,7 +18344,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-11",
+      "last_checked": "2026-10-15",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -18956,6 +18971,269 @@
       "relations": [],
       "added": "2026-10-14",
       "last_checked": "2026-10-14"
+    },
+    {
+      "id": "morano-2024-phase-distance-tsch",
+      "title": "Phase-Based Distance Estimation Integrated With IEEE 802.15.4 TSCH Communication",
+      "authors": [
+        "Grega Morano",
+        "Ke Guan",
+        "Andrej Hrovat",
+        "Tomaž Javornik"
+      ],
+      "venue": "IEEE IoT-J",
+      "venue_full": "IEEE Internet of Things Journal, vol. 11, no. 7, pp. 11460–11470, 2024-04-01 (온라인 2023-11-08, CC BY-NC-ND 4.0; TechRxiv 판 10.36227/techrxiv.21776354) — Jožef Stefan Institute(Ljubljana) · Beijing Jiaotong University",
+      "tier": "journal",
+      "category": "protocol",
+      "year": 2024,
+      "url": "https://doi.org/10.1109/JIOT.2023.3330933",
+      "preprint": "https://doi.org/10.36227/techrxiv.21776354",
+      "doi": "10.1109/JIOT.2023.3330933",
+      "topics": [
+        "phase-based-ranging",
+        "mcpr",
+        "narrowband-ranging",
+        "802-15-4",
+        "tsch",
+        "isac",
+        "golomb-ruler",
+        "icde",
+        "energy"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "**통신 패킷마다 위상 측정을 끼워 넣는 '통신 내장형 PBR'** 을 802.15.4 TSCH 에서 설계·실측한 논문이다. CS 가 연결 이벤트 사이에 CS 서브이벤트를 끼우는 것과 같은 설계 문제(측정 시간만큼 통신 시간이 줄어든다)를 정량화한다 — 타임슬롯 10 → 20 ms, 처리량 100 → 50/25 pps. 내 연구에 걸리는 지점은 셋이다. (1) **반사기 위상 15개를 ACK 의 평문 Header IE(ID 0x1F)로 돌려보낸다.** 저자는 암호화된 Payload IE 를 쓰면 '공격 가능성이 줄어든다'고만 적었다. CS 에서 반사기 톤 데이터를 RAS 로 넘기는 경로와 같은 자리이고, 보고가 평문이면 MITM 이 물리계층을 건드리지 않고 반사기 위상만 고쳐 거리를 옮길 수 있다(가설, 실험 없음). (2) 톤을 200 → 15 개로 줄이고 Golomb 자로 위상차 105 개로 늘린 뒤 보간해 iCDE 에 넣는다. 측정 톤이 적을수록 톤 하나의 조작이 확장 집합 전체로 퍼지는 구조라, 톤 축소 최적화가 조작 내성에 중립인지는 C-07 과 같은 질문이다(가설). (3) 품질 지표(DQI)가 이상치를 다 거르지 못하고, 측정 절차가 어긋나면 0–300 m 사이 무작위 거리를 낸다는 실측 관찰은 품질 지표 기반 거부의 한계 사례다. 하드웨어가 Bluetooth 가 아니라(AT86RF233 PMU) tech 는 other 이고, mazur-2024 와 morano-2026 이 인용한다.",
+      "summary": "IoT 망에 측위를 넣으면 통신 성능이 떨어지는 문제를 통합 감지·통신(ISAC) 관점에서 다루며, IEEE 802.15.4 TSCH 프로토콜에 위상 기반 거리측정을 넣어 데이터 패킷 하나마다 두 기기 사이 거리를 추정하는 두 방식을 제안한다. 'PM after ACK' 는 ACK 교환 뒤에 위상 측정을 붙이고 반사기 측정값을 별도 데이터 패킷으로 돌려보내며, 'PM after data' 는 데이터 패킷 뒤 위상을 측정해 반사기 값을 ACK 의 새 Header IE 에 실어 보낸다. Golomb 자로 고른 15 개 주파수만 측정하고 위상차 105 개로 확장·보간해 iCDE 에 넣어, 200 주파수를 쓰던 기존 방식과 비슷한 정확도를 더 적은 시간과 에너지로 얻는다. VESNA 노드(AT86RF233)·Contiki-NG 실측에서 연속 5 회 중앙값 필터를 쓰면 실내 중앙값 오차 약 0.26 m, 실외 약 0.05 m 를 보였고, 위상 측정 과정의 에너지는 최대 길이 패킷 송신과 비슷한 179.2 µWs 였다.",
+      "hardware": [
+        "VESNA 무선 센서 노드(LOG-a-TEC, SensorLab) + Microchip(Atmel) AT86RF233 2.4 GHz 802.15.4 트랜시버 — 내장 위상 측정 장치(PMU), 위상 표본 간격 8 µs, SPI 8 MHz",
+        "지상 진실: 레이저 거리계(정확도 ±1.5 mm)",
+        "전류 측정: 노드 내장 션트 저항 + 션트 증폭기",
+        "배치: 두 노드를 바닥 1.6 m 높이 스탠드에 LOS 로 설치, 개시기 노드를 PC 에 연결해 거리 계산"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Contiki-NG 와 그 TSCH 스택에 구현 — 타임슬롯 10 → 20 ms, PmpDelay 2000 µs·PmpDuration 8000 µs 신설, Header IE 0x1F 'PM'(길이 15)",
+        "주파수 집합(Golomb 자, 15 개): 2400.5·2406·2407.5·2408·2412.5·2423·2431·2447.5·2452·2460.5·2463·2466.5·2476.5·2479.5·2480.5 MHz",
+        "거리 추정: ESSR(Oshiga 외, 사전계산 기울기 4096 개·최대 300 m·최소 분해 0.0732 m)과 iCDE(Schröder 2018) — iCDE 는 위상 15 개를 위상차 105 개로 확장한 뒤 0.5 MHz 간격 160 개로 선형보간해 입력",
+        "DQI 임계값은 Youden 지수로 결정(ESSR 36, iCDE 0.41)",
+        "코드·데이터 공개 언급 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "통신 영향(표 I): 기본 TSCH 100 pps 대비 PM after data 50 pps(타임슬롯 2 배), PM after ACK 25 pps(피드백 패킷 1 개 추가); 15 주파수 측정 + 무선 준비·재구성 7.9 ms, 주파수당 Tf = 420 µs",
+        "CW 송신이 직접 간섭하는 TSCH 채널은 22·26 뿐이고, 같은 망 안에서는 측정 구간이 통신 구간과 겹치지 않음",
+        "실측 규모(표 II): 사무실 0.5–5 m 3120 회·복도 2–20 m 3103 회·공원 5–100 m 2580 회; DQI 로 버린 측정 ESSR 15.7 %·iCDE 26.7 %; 보드·안테나 경로 오프셋 1.1 m 보정",
+        "단일 측정(표 III, 거리별 값의 중앙값) 수정 iCDE: 중앙값 0.254 / 0.235 / 0.065 m, MAE 0.527 / 0.545 / 0.088 m, σ 0.950 / 0.381 / 0.083 m(사무실 / 복도 / 공원)",
+        "단일 측정 ESSR 은 이상치를 못 거름: 최대 오차 137.548 m(사무실)·110.337 m(복도), σ 14.459 / 9.676 / 9.106 m",
+        "연속 5 회 중앙값 필터(표 IV, iCDE*): 중앙값 0.255 / 0.217 / 0.048 m, MAE 0.316 / 0.393 / 0.053 m, σ 0.041 / 0.061 / 0.033 m — 저자 결론 '실내 중앙값 0.26 m·정확도 0.31 m, 실외 0.05 m'",
+        "에너지: 위상 측정 과정 평균 179.2 µWs, 최대 길이 패킷 송신 179.9 µWs 와 비슷 — 200 주파수 방식(InPhase·von Zengen)보다 적음; 무선 전류 수신 10.0 mA·송신 12.8 mA·대기 5.2 mA"
+      ],
+      "limitations": [
+        "DQI 만으로는 이상치를 다 거르지 못함 — 위상 확장 오류·동기 실패·타임슬롯 누락 같은 측정 불일치에도 0–300 m 사이 무작위 거리값을 출력(저자 명시)",
+        "사무실에서 σ·MAE 가 가장 큼 — 다중경로·바닥·벽 반사와 Wi-Fi AP 17 대의 간섭; 측정은 모두 LOS(저자 명시)",
+        "AT86RF233 의 느린 SPI(8 MHz)·PLL 정착 때문에 위상 측정 과정이 길어 처리량이 1/2–1/4 로 떨어짐 — Bluetooth 처럼 하드웨어가 위상 측정을 기본 지원하면 줄일 수 있음(저자 명시)",
+        "동기화되지 않은 이웃 TSCH 망은 CW 송신에 간섭받을 수 있음(저자 명시)",
+        "보안 평가 없음 — 반사기 위상을 평문 Header IE 로 돌려보내고, 암호화된 Payload IE 를 쓰면 '공격 가능성이 줄어든다'는 언급뿐(관찰)",
+        "Bluetooth 하드웨어가 아님 — 802.15.4 PMU 다중반송파 위상 거리측정이라 tech 는 other(관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-15",
+      "last_checked": "2026-10-15",
+      "cites": [
+        "zand-2019-ble-pbr",
+        "pelka-2014-phase-multi-frequency",
+        "vonzengen-2016-no-cost-distance",
+        "schroeder-2018-cde",
+        "zand-2019-concurrent-pbr",
+        "schroeder-2022-inphase"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schroeder-2018-cde",
+          "type": "extends",
+          "note": "iCDE 를 200 톤 대신 Golomb 자 15 톤 측정 + 위상차 확장·선형보간 입력으로 돌려, 원 iCDE 결과와 비슷한 정확도를 시간·에너지를 줄여 얻음"
+        }
+      ]
+    },
+    {
+      "id": "focarelli-2026-5g-positioning-security",
+      "title": "Positioning Security in 5G and Beyond: Model and Detection of Physical Layer Threats",
+      "authors": [
+        "Giulia Focarelli",
+        "Samuele Zanini",
+        "Ivan Palamà",
+        "Giuseppe Bianchi",
+        "Stefania Bartoletti"
+      ],
+      "venue": "IEEE TWC",
+      "venue_full": "IEEE Transactions on Wireless Communications, vol. 25, pp. 1048–1061, 2026 (온라인 2025-07-21, CC BY 4.0) — University of Rome Tor Vergata · CNIT · IMT School for Advanced Studies Lucca",
+      "tier": "journal",
+      "category": "defense",
+      "year": 2026,
+      "url": "https://doi.org/10.1109/TWC.2025.3588718",
+      "preprint": null,
+      "doi": "10.1109/TWC.2025.3588718",
+      "topics": [
+        "5g-positioning",
+        "prs",
+        "overshadowing",
+        "replay-attack",
+        "spoofing-detection",
+        "anomaly-detection",
+        "gmm",
+        "cross-correlation",
+        "integrity-risk",
+        "toa"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 의 RTT 도 결국 알려진 시퀀스와의 상관 피크로 도착 시각을 정하고, NADM 류 지표도 그 상관 출력의 모양을 본다. 이 논문은 **수신기가 이미 가진 상관 출력 지표만으로 하는 탐지** — 가장 센 피크가 첫 피크인가, 최대 진폭이 평소보다 큰가, (ToA, 피크 진폭) 쌍이 평소 분포에서 벗어났는가(GMM) — 의 성능 경계를 수치로 준다. 펌웨어만으로 CS 탐지기를 얹을 때 기대할 수 있는 상한의 인접 기술 사례다. 핵심 수치는 **탐지율이 공격 세기에 단조**라는 점이다. 강한 공격(이득 70 dB)은 GMM 이 LOS·NLOS 모두 100 % 잡지만, 약한 공격(50 dB·지연 1 % Tsym)은 LOS 15.4 %·NLOS 29.6 % 만 잡고, 오경보는 NLOS 에서 11.8 % 다. 저자 스스로 '탐지를 피하려는 공격자는 지연을 줄여야 한다'고 결론짓는데, 이는 CS 거리축소가 정상 오차 꼬리 안에서 조금만 줄이는 쪽을 노릴 때 생기는 탐지 공백과 같은 구조다(C-08). 또 첫 피크 순서 검정은 공격 이득이 아주 크면 공격 신호의 다중경로 피크가 두 번째 피크가 돼 오히려 놓친다. 경계도 분명하다. 5G PRS(100 MHz OFDM) MATLAB 시뮬레이션이고, 신호를 늦추는 재생·위조 PRS 공격만 다루므로 피크를 앞당기는 거리축소(ED/LC 류)는 모델 밖이며, 실측이 없다.",
+      "summary": "5G 이후 셀룰러 측위의 물리계층 위협을 모델링하고 탐지하는 틀을 제시한다. 하향링크 PRS 를 대상으로 전체 신호를 지연·증폭해 다시 보내는 overshadowing 재생 공격과 PRS 만 위조하는 선택적 위조 공격을 수식화하고, 공격 성공 조건(공격 이득 × 경로 이득 > 정상 첫 경로 진폭)과 ToA 오차를 유도한다. 탐지 방법으로는 상관 출력의 피크 순서·최대 진폭 임계 검정과, 무공격 데이터로 학습한 (ToA, 피크 진폭) GMM 이상탐지를 제안하며, 모두 5G 측위 절차가 이미 계산하는 상관 출력 지표만 쓴다. 3GPP 실내 시나리오(gNB 12 대, 3.4 GHz·100 MHz) 시뮬레이션에서 GMM 이 가장 좋아 강한 공격은 거의 100 % 탐지하지만, 약한 공격의 탐지율은 15–30 % 에 그친다.",
+      "hardware": [
+        "없음 — MATLAB 시뮬레이션만 수행(실측·SDR 공격 실험 없음, 전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB 시뮬레이션: 5G NR 하향링크 PRS, DL-TDOA 측위(격자 기반 비선형 최소자승, 해상도 0.5 m)",
+        "시나리오: 3GPP TR 38.901 실내, gNB 12 대·기지국 간격 20 m·120 × 50 m, 반송파 3.4 GHz·대역폭 100 MHz·SCS 60 kHz(Tsym 16.67 µs), 상관 창 4 Tsym",
+        "채널: LOS 는 TDL-E, NLOS 시나리오는 gNB 마다 50 % 확률로 TDL-A/B/C, 공격자는 TDL-D; 지연확산 30 ns + U(0, 1 ns)",
+        "공격: 재생형 overshadowing — 지연 δ = 1·2 % Tsym, 공격 이득 GA = 50·60·70 dB, 공격자를 공격받는 gNB 와 UE 사이 LOS 에 무작위 배치(최악 조건)",
+        "탐지: 피크 순서 검정, 최대 진폭 임계(무공격 분포 80·95 백분위), (ToA, 피크 진폭) GMM(EM 학습, LOS·NLOS 별도) 음의 로그우도 95 백분위 임계",
+        "코드 공개 언급 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "무공격에서도 3GPP 측위 서비스 수준 PSL 1·2 는 LOS 에서만 충족되고, 공격을 받으면 PSL 준수 불가 — 공격 이득·지연이 클수록 측위 오차 분포 악화(그림 5)",
+        "피크 순서 검정(δ = 1 % Tsym, LOS): 2 m 초과 오차 확률 GA 50 dB 23 → 12 %, GA 60 dB 64 → 30 %; GA 70 dB 에서는 공격 신호의 다중경로 피크가 두 번째 피크가 돼 공격이 성공하고도 탐지되지 않음; NLOS 오경보 10 % 이상",
+        "최대 진폭 임계(ξ80, GA 70 dB·δ 1 %): 15 m 초과 무결성 위험 LOS 0.33 → 0.04, NLOS 0.32 → 0.16; GA 50 dB 에서 ξ95 는 LOS 0.08 → 0.01",
+        "표 I(임계 95 백분위) GMM 탐지율: GA 50 dB — LOS 15.4 / 16 %, NLOS 29.6 / 57 %(δ 1 / 2 %); GA 60 dB — LOS 66 / 66.2 %, NLOS 61.2 / 81.6 %; GA 70 dB — LOS 100 / 99.6 %, NLOS 100 / 99.8 %; 오경보 LOS 3.6 %·NLOS 11.8 %",
+        "표 I 피크 순서: 오경보 LOS 5.4 %·NLOS 10.6 %, 탐지율 14.4–57 %; 최대 진폭: 오경보 LOS 6.2 %·NLOS 4.2 %, 탐지율 10.2–53.6 %",
+        "저자 결론: 지연이 클수록 GMM 탐지가 쉬워지므로, 탐지를 피하려는 공격자는 지연을 줄여야 하고 그만큼 영향도 작아짐"
+      ],
+      "limitations": [
+        "시뮬레이션만 — 실측·SDR 공격 실험 없음(관찰)",
+        "gNB 1 대만 공격받고 공격자는 1 명이며 gNB–UE 사이 LOS 최악 조건, 실내 밀집 배치(기지국 간격 20 m) 한 가지 — 공용망·다른 numerology 로 확장은 향후 과제(저자 명시)",
+        "공격 모델은 신호를 늦추는 재생·위조 PRS(위치 이동)뿐 — 상관 피크를 앞당기는 거리축소(ED/LC 류) 공격은 다루지 않음(관찰)",
+        "GMM 은 무공격 학습 데이터가 필요 — 측위 절차 중 실시간 수집으로 부담이 없다고 주장하나 학습 데이터 오염에 대한 평가는 없음(관찰)",
+        "피크 순서 검정은 LOS 를 전제 — NLOS 에서 오경보 10 % 이상(저자 명시)",
+        "위치 단 대책(RAIM·칼만 필터)은 범위 밖이라 단일 링크 탐지만 평가(저자 명시)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "added": "2026-10-15",
+      "last_checked": "2026-10-15",
+      "cites": [
+        "lee-2002-uwb-dense-multipath-ranging",
+        "singh-2022-v-range",
+        "zanini-2025-full-frame-5g-meaconing-demo"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "singh-2022-v-range",
+          "type": "complementary",
+          "note": "V-Range 는 짧은 OFDM 심볼과 물리·데이터 무결성 검사로 신호 설계를 바꿔 막고, 이 논문은 신호를 바꾸지 않고 기존 상관 출력 지표만으로 탐지 — 저자는 V-Range 가 측위 신호 구성의 유연성을 제한한다고 대비"
+        }
+      ]
+    },
+    {
+      "id": "seto-2022-subghz-twr-rke",
+      "title": "Sub-GHz Two-Way Ranging Based on Phase Detection for Remote Keyless Entry Systems",
+      "authors": [
+        "Ichiro Seto",
+        "Shoji Otaka",
+        "Hiroshi Yoshida",
+        "Katsuya Nonin",
+        "Masaki Nishikawa",
+        "Takayuki Kato",
+        "Yoshiharu Nito",
+        "Hideyuki Ishiwata",
+        "Tomoaki Otsuki"
+      ],
+      "venue": "IEEE TVT",
+      "venue_full": "IEEE Transactions on Vehicular Technology, vol. 71, no. 9, pp. 9705–9720, 2022-09 (온라인 2022-06-13) — Toshiba Corporation 연구개발센터 · Toshiba Electronic Devices & Storage · Toshiba Infrastructure Systems & Solutions · Keio University",
+      "tier": "journal",
+      "category": "protocol",
+      "year": 2022,
+      "url": "https://doi.org/10.1109/TVT.2022.3181623",
+      "preprint": null,
+      "doi": "10.1109/TVT.2022.3181623",
+      "topics": [
+        "phase-based-ranging",
+        "two-way-ranging",
+        "sub-ghz",
+        "remote-keyless-entry",
+        "relay-attack",
+        "clock-offset",
+        "multipath",
+        "toshiba"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "차량 RKE 의 릴레이 대책으로 내놓은 **위상 기반 양방향 거리측정**의 원 논문이다. 두 기기가 CW 를 번갈아 보내 위상을 합쳐 기준 클럭 오프셋을 상쇄한다는 점에서 CS 의 PBR 과 원리가 같고, 이를 920 MHz 대 단일 사설 무선으로 만든 산업계(Toshiba) 계열이다. 코퍼스의 nishikawa-2026 두 편(OJVT·ICC)이 '기존 방식'으로 삼는다. CS 연구에는 두 가지로 쓰인다. (1) 위상 TWR 을 릴레이 대책으로 내세우지만, 초록과 참고문헌 30 건 기준으로 평가는 클럭 오프셋 내성·다중경로 보상·정확도뿐이다. 위상 기반 거리측정이 거리축소 공격에 취약함을 보인 Ólafsdóttir 2017 도 인용하지 않는다. '정확도 검증을 보안 검증으로 갈음하는' 산업계 설계의 사례 후보이며, 본문에서 확인해야 한다. (2) nishikawa-2026 의 서술대로 두 주파수 CW(920.0/920.2 MHz)라면 비모호 거리가 짧고(21 m ↔ 360°) 톤이 둘뿐이라, 72 톤을 쓰는 CS PBR 보다 위상 조작의 자유도가 클 수 있다(가설). 전문을 못 구해 장비·수치는 비어 있다.",
+      "summary": "편의성 때문에 차량 시장에 퍼진 원격 키리스 엔트리(RKE)가 무선 채널을 이용한 릴레이 공격에 취약하고, 키포브와 차량 사이 무선 거리측정이 유력한 대책이라는 문제의식에서 출발한다. 전파 규제·사용성·전력 소비를 고려해 sub-GHz 대에서 위상 검출 기반 양방향 거리측정을 제안하며, 이 방식은 송수신기 쌍 사이 기준 클럭 오프셋에 강하고 다중경로 효과를 보상하는 새 방식을 갖췄다. 2경로 전파 모델과 AWGN 아래 동작 원리와 이론 성능을 제시하고, 시제품 장치로 한 현장 실험에서 거리 정확도를 검증해 키포브가 차량 몇 m 안에 있는지 판정하기에 충분하다고 결론짓는다. (Xplore 초록 기준, 전문 미확보)",
+      "hardware": [
+        "확인 필요 — 초록은 '시제품 장치(prototype devices)로 현장 실험'이라고만 함",
+        "2차 출처(nishikawa-2026-digital-phase-compensation 본문·표 1): IQ 변조·직접변환 트랜시버, LO 초기 위상 보존(coherent) 가정, 920.0·920.2 MHz 두 주파수 CW 를 8 회 교대 송수신 — Seto 본문으로 확인 필요"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "2경로 전파 모델 + AWGN 아래 이론 성능을 제시하고, 시제품 현장 실험으로 거리 정확도를 검증 — '키포브가 차량 몇 m 안에 있는지 판정하기에 충분' (초록; 수치 미확인)",
+        "송수신기 쌍 사이 기준 클럭 오프셋에 높은 내성 + 다중경로 효과 보상 방식 (초록)",
+        "2차 출처(nishikawa-2026-digital-phase-compensation): 이 시스템에서 거리 21 m 가 위상 360° 에 대응하고 시스템 분해능은 0.30 m — Seto 본문 수치로 확인 필요"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-10-15): IEEE Xplore 유료(Crossref ielx7 경로 202·0 바이트), OpenAlex closed·저장소 사본 없음, arXiv 판 없음 — 초록·저자·소속·참고문헌은 Xplore REST(/abstract·/references)로 확인",
+        "인용 관계는 Xplore REST 참고문헌 30 건을 코퍼스와 대조해 채움(7 건) — 본문 미확보라 verification 은 partial",
+        "관찰(초록·참고문헌 기준): 릴레이 대책으로 제안하지만 위상 조작·거리축소 공격에 대한 내성 평가가 있는지 알 수 없음 — 위상 거리측정 공격 문헌(Ólafsdóttir 2017 등)은 참고문헌에 없음"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "added": "2026-10-15",
+      "last_checked": "2026-10-15",
+      "cites": [
+        "alrabady-2003-passive-entry-attacks",
+        "alrabady-2005-keyless-entry-attacks",
+        "ranganathan-2017-are-we-really-close",
+        "francillon-2011-pkes-relay",
+        "gezici-2005-uwb-localization-survey",
+        "pelka-2014-phase-multi-frequency",
+        "vonzengen-2016-no-cost-distance"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "francillon-2011-pkes-relay",
+          "type": "defends",
+          "note": "PKES·RKE 릴레이 공격(참고문헌 [5])의 대책으로 키포브–차량 무선 거리측정을 제안 (초록 기준)"
+        },
+        {
+          "to": "olafsdottir-2017-carrier-phase",
+          "type": "fails-against",
+          "note": "가설 — 다중반송파 위상 거리측정이 거리축소 공격에 취약함을 보인 Ólafsdóttir 2017 을 인용·평가하지 않음(참고문헌 30 건에 없음). 두 주파수 위상 TWR 도 같은 공격면을 가질 것으로 보이나 본문 미확인"
+        }
+      ]
     }
   ]
 }
