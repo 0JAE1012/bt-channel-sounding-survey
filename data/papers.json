@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-15",
-  "last_run": "2026-10-15",
+  "updated": "2026-10-17",
+  "last_run": "2026-10-17",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1488,
+  "citation_edges": 1502,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -1867,7 +1867,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-24",
+      "last_checked": "2026-10-17",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -1882,7 +1882,9 @@
         "ranganathan-2017-are-we-really-close",
         "brands-1993-distance-bounding",
         "jiokeng-2020-ftm-music",
-        "xiong-2015-tonetrack"
+        "xiong-2015-tonetrack",
+        "henry-2021-ftm-ranging-location-attacks",
+        "henry-2021-ftm-crowd-wisdom"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3709,7 +3711,9 @@
         "leu-2021-multicarrier-tof",
         "kosek-szott-2026-wifi-ftm-survey",
         "singh-2023-wifi-ftm-iot-benchmark",
-        "jiokeng-2020-ftm-music"
+        "jiokeng-2020-ftm-music",
+        "henry-2021-ftm-ranging-location-attacks",
+        "henry-2021-ftm-crowd-wisdom"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3720,7 +3724,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-09-20"
+      "last_checked": "2026-10-17"
     },
     {
       "id": "leu-2021-multicarrier-tof",
@@ -11936,7 +11940,8 @@
         "2026-10-10 재시도: Crossref 메타에 여전히 초록 없음(vol. 287, art. 122399), OpenAlex 초록 없음 — unverified 유지",
         "2026-10-11 재시도: OpenAlex 여전히 closed·초록 없음 — unverified 유지",
         "2026-10-12 재시도: Crossref 여전히 초록 없음(link 는 PII S0263224126021081 의 api.elsevier.com — 키 없이 401), ScienceDirect 정확한 PII 페이지는 facebookexternalhit UA 400·Twitterbot 403, OpenAlex closed — unverified 유지",
-        "2026-10-14 재시도: OpenAlex·OpenAIRE 모두 closed·초록 없음, ScienceDirect PII 페이지는 Slackbot·LinkedInBot·WhatsApp·Discordbot·bingbot·TelegramBot·Zotero UA 전부 403(본문 없는 챌린지 페이지) — unverified 유지"
+        "2026-10-14 재시도: OpenAlex·OpenAIRE 모두 closed·초록 없음, ScienceDirect PII 페이지는 Slackbot·LinkedInBot·WhatsApp·Discordbot·bingbot·TelegramBot·Zotero UA 전부 403(본문 없는 챌린지 페이지) — unverified 유지",
+        "2026-10-17 재시도: S2 단건 API 초록 null, X-MOL DOI 리다이렉트 404, ResearchGate 레코드는 Chrome·Googlebot·facebookexternalhit UA 모두 403, OpenAlex 여전히 closed — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11944,7 +11949,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-17",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -18336,7 +18341,8 @@
         "원문 미확보 (2026-10-10): 발표 페이지에 초록·발표자만 있고 슬라이드·영상 링크 없음, Hardwear.io 과거 행사 페이지(USA 2026)는 404, YouTube 채널 검색에 해당 영상 없음, Wayback 일시 중단",
         "학술 논문이 아닌 산업 컨퍼런스 발표 — 피어 리뷰 없음, 공저자 여부 미확인(초록은 'we')",
         "2026-10-11 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음, 과거 행사 페이지(USA 2026) 404; DEF CON 34·Black Hat USA 2026·hardwear.io NL 2026 재발표 검색 0건",
-        "2026-10-15 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음. 같은 제목의 자율 학습 강의(약 40 분·1 강, 강사 Sultan Qasim Khan)가 ISMG 의 CyberEd.io(cyberedio.matrixlms.com/visitor_catalog_class/show/2456423)에 게시된 것을 찾았으나 로그인 필요 — 공개 설명은 'EDLC·다중경로 혼동 공격이 규격 모호성을 이용하는 방식, 인기 벤더 구현의 거리 조작 내성 비교'뿐이고 칩·도구·수치·NADM 언급 없음"
+        "2026-10-15 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음. 같은 제목의 자율 학습 강의(약 40 분·1 강, 강사 Sultan Qasim Khan)가 ISMG 의 CyberEd.io(cyberedio.matrixlms.com/visitor_catalog_class/show/2456423)에 게시된 것을 찾았으나 로그인 필요 — 공개 설명은 'EDLC·다중경로 혼동 공격이 규격 모호성을 이용하는 방식, 인기 벤더 구현의 거리 조작 내성 비교'뿐이고 칩·도구·수치·NADM 언급 없음",
+        "2026-10-17 재시도: 발표자 소속 Tetrel Security 사이트 posts 목록(4건)에 Channel Sounding 글·슬라이드 없음 — partial 유지"
       ],
       "artifacts": {
         "code": null,
@@ -18344,7 +18350,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-15",
+      "last_checked": "2026-10-17",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -19234,6 +19240,389 @@
           "note": "가설 — 다중반송파 위상 거리측정이 거리축소 공격에 취약함을 보인 Ólafsdóttir 2017 을 인용·평가하지 않음(참고문헌 30 건에 없음). 두 주파수 위상 TWR 도 같은 공격면을 가질 것으로 보이나 본문 미확인"
         }
       ]
+    },
+    {
+      "id": "henry-2021-ftm-ranging-location-attacks",
+      "title": "Ranging and Location attacks on 802.11 FTM",
+      "authors": [
+        "Jerome Henry",
+        "Yann Busnel",
+        "Romaric Ludinard",
+        "Nicolas Montavont"
+      ],
+      "venue": "IEEE PIMRC",
+      "venue_full": "2021 IEEE 32nd Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC), pp. 1481–1486, 2021-09 (저자 사본 HAL hal-03265600v2) — Cisco Systems · IMT Atlantique/IRISA",
+      "tier": "other",
+      "category": "attack",
+      "year": 2021,
+      "url": "https://doi.org/10.1109/PIMRC50174.2021.9569340",
+      "preprint": "https://hal.science/hal-03265600/document",
+      "doi": "10.1109/PIMRC50174.2021.9569340",
+      "topics": [
+        "wifi-ftm",
+        "802-11az",
+        "rogue-responder",
+        "location-spoofing",
+        "lci",
+        "receiver-policy",
+        "pasn"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "medium",
+      "relevance_note": "**상용 레인징 수신기의 '수락 정책' 이 얼마나 느슨한지를 실측으로 보여 준 인접 기술 논문**이라 CS 의 수신기 판정 정책(RQ3)에 교차 논증으로 쓰인다. 핵심은 세 가지다. (1) 관찰한 모든 FTM 개시자(Pixel 3·Compulab·Intel AX200)가 버스트 기간 안이면 합의한 개수보다 많은 FTM 프레임도 받아들이고, 다중경로에 강건하려고 **버스트 안에서 가장 짧은 ToF 를 채택**한다. 그래서 정상 응답기 버스트 안에 사칭 응답기 프레임을 끼우면 공격자 값이 대부분의 버스트에서 정상 AP 를 대체했다 — '최솟값·첫 경로 채택' 같은 강건화 규칙이 주입 공격의 승리 조건이 되는 구조다. CS 의 거리 추정기나 앱이 여러 절차 중 최솟값·하위 백분위를 고르면 같은 질문이 생긴다(가설). (2) 일부 개시자는 15 km 같은 비현실적 거리도 그대로 썼고, 비현실적 앵커 위치(LCI)를 버리는 구현은 찾지 못했다 — 타당성 검사가 사실상 없다. (3) 다중 앵커 이상치 거부(RAIM 류)는 공격자가 응답기 3대를 사칭하면 무너진다. CS 는 연결 암호화와 DRBG 로 이 논문의 프로토콜 계층 위조(타임스탬프·LCI·대화 토큰)는 막혀 있지만, 여러 거리를 묶는 위치 계산 계층은 CS 규격 밖이라 PAwR·PDoA 같은 인프라형 CS 배치에서 같은 문제가 되살아난다. 물리계층 거리 조작은 schepers-2021-ftm-security 가, 이 논문의 대책은 henry-2021-ftm-crowd-wisdom 이 맡는다.",
+      "summary": "802.11 FTM 은 개시자(ISTA)가 연결 없이 여러 응답기(RSTA)와 거리를 재고 각 응답기의 위치(LCI)를 받아 측위하는데, 교환이 인증·보호되지 않아 GPS 류 공격에 그대로 노출됨을 보인다. 저자들은 위조 타임스탬프(t1·t4), 위조 LCI, 응답기 MAC 사칭을 통한 세션 탈취 세 공격 경로를 정리하고, 대화 토큰이 선형이거나 항상 0 이며 버스트 기간 안의 초과 프레임과 최단 ToF 채택 규칙 때문에 사칭 응답기가 정상 AP 를 대체할 수 있음을 상용 기기로 확인했다. 개활지 75 m 경로에 AP 5대를 둔 실험에서 3-구 교차·최소제곱·확장 칼만 필터 세 위치 계산법 모두가 편향된 LCI 를 받아들였고, 응답기 3대를 사칭해 이상치 거부를 무력화한 뒤 피해자를 공격자가 고른 지점으로 유도하는 LCI 계산식을 제시했다. 802.11az 의 무인증 PASN 은 엿보기만 막을 뿐 이 공격을 막지 못한다고 논증하고, 802.11r 식 AP 간 신뢰 확인을 대책 방향으로 남긴다.",
+      "hardware": [
+        "개시자(ISTA): Google Pixel 3, Compulab ISTA, Windows 10 노트북 + Intel AX200",
+        "응답기(RSTA): Google Wi-Fi AP, Compulab Responder, Cisco Catalyst 9120 AP — 조합별 결과가 비슷해 Pixel 3 대 Cisco 9120 결과만 제시",
+        "공격자: LCI 를 조작한 AP6, 유도 공격에는 AP1·AP3·AP5 의 채널·MAC 을 사칭한 Compulab RSTA 3대",
+        "환경: 장애물 없는 개활지 75 m 보행 경로, AP 5대를 24.8 m 간격·경로에서 10.74 m·높이 2.9 m 로 지그재그 배치(AP 당 750 m²), 50 cm 마다 응답기별 100 샘플"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB — 3-구 교차(방법 1)·4–6 응답기 거리행렬 최소제곱(방법 2)·확장 칼만 필터(방법 3) 위치 계산",
+        "Wireshark 캡처 → WireEdit 로 대상 MAC·t1·t4 수정 → TCPreplay 재생 (타임스탬프 위조)",
+        "hostapd.conf 의 LCI 설정 변경 (위치 위조)"
+      ],
+      "software_verified": true,
+      "results": [
+        "LCI 위조(공격자 AP 1대): 5 m 편향이면 계산 위치가 최대 편향값만큼 표류하고 공격자 AP 근처에서 최대가 된다; 35 m 편향이면 3-구 방식은 구가 만나지 않아 여러 지점에서 위치를 못 내고, 칼만 필터는 직선 보행인데 급선회하는 비일관 궤적을 낸다 — 큰 편향은 이상치로 들킬 수 있음",
+        "t1·t4 위조는 LCI 위조와 결과가 같지만 타임스탬프가 칩셋 DSP 마이크로코드에서 나와 캡처·편집·재생이 필요한 만큼 구현 부담이 훨씬 큼 — 그래서 결과는 LCI 공격으로 제시",
+        "세션 탈취: 대화 토큰이 선형(1, 2, 3…) 이거나 항상 0, 응답기 3종 중 2종은 MAC 주소를 사용자가 설정 가능; 정상 버스트 안에 공격자 FTM 프레임을 끼우면(예: 8개 기대 버스트에 16개) 관찰한 모든 ISTA 가 버스트 기간 안 교환을 전부 받아들이고 최단 거리를 남겨, 공격자 값이 대부분의 버스트에서 채택됨(정상 AP 억제·대체)",
+        "목표 지점 유도: 응답기 3대를 사칭하면 단일 이상치 거부가 실패하고, 3-구·최소제곱(외부 경사하강 루프로 LCI 간 차이 최소화)·칼만(경로 중간 지점마다 LCI 세트 교체) 각각에 맞춘 LCI 로 피해자를 AP2–AP4 사이 목표점으로 유도(그림 2)",
+        "일부 ISTA 는 15 km 같은 비현실적 거리도 그대로 사용, 다른 구현의 필터(직전 버스트 대비 ±50 % 밖 거리 무시)도 효과 제한적; 비현실적 LCI 를 버리는 구현은 찾지 못함"
+      ],
+      "limitations": [
+        "성공률·오차 통계 없이 경로 그림(그림 1·2)으로만 결과를 제시 (관찰)",
+        "물리계층 조작 없음 — 프로토콜 필드(타임스탬프·LCI·토큰) 위조이며, 802.11az 보안 모드는 무인증 PASN 이 현실적 선택이라 막지 못한다는 논증뿐이고 보안 LTF 등 물리계층 보호는 평가 밖 (관찰)",
+        "실험 장소는 장애물 없는 개활지 한 곳, 제시 결과는 Pixel 3 대 Cisco 9120 조합뿐 (저자)",
+        "대책은 PASN 에 802.11r Fast Transition 식 키 획득을 붙여 AP 간 신뢰 관계를 확인하는 방향만 제시하고 향후 과제로 남김 (저자 — 후속 henry-2021-ftm-crowd-wisdom 에서 제안·시험)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schepers-2021-ftm-security",
+          "type": "complementary",
+          "note": "같은 해 독립적으로 FTM 보안을 분석 — Schepers 는 물리계층·프로토콜 거리 조작, Henry 는 응답기 사칭·LCI 위조와 위치 계산 단계의 수락 정책"
+        }
+      ],
+      "added": "2026-10-17",
+      "last_checked": "2026-10-17"
+    },
+    {
+      "id": "henry-2021-ftm-crowd-wisdom",
+      "title": "Reducing FTM ranging and location attack exposure with crowd-wisdom",
+      "authors": [
+        "Jerome Henry",
+        "Yann Busnel",
+        "Romaric Ludinard",
+        "Nicolas Montavont"
+      ],
+      "venue": "IPIN WiP",
+      "venue_full": "IPIN 2021 Work-in-Progress Proceedings (International Conference on Indoor Positioning and Indoor Navigation, Lloret de Mar, 2021-11-29~12-02), CEUR Workshop Proceedings Vol-3097, paper 23, 16 pp. (CC BY 4.0; HAL hal-03515297) — Cisco Systems · IMT Atlantique/IRISA",
+      "tier": "other",
+      "category": "defense",
+      "year": 2021,
+      "url": "https://ceur-ws.org/Vol-3097/paper23.pdf",
+      "preprint": "https://hal.science/hal-03515297/document",
+      "doi": null,
+      "topics": [
+        "wifi-ftm",
+        "802-11az",
+        "pasn",
+        "802-11r",
+        "rogue-responder",
+        "location-spoofing",
+        "anchor-trust"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "low",
+      "relevance_note": "거리 조작을 막는 방어가 아니라 **'어느 앵커를 믿을 것인가' 를 인프라의 백엔드 신뢰 관계로 푸는 방어**다. CS 에 옮기면 PAwR·PDoA 같은 인프라형 다중 앵커 배치(schex-2026-pawr-connectionless-cs, wieme-2026-pulse-pdoa-auracast)에서 사칭 앵커를 걸러내는 설계 참조가 된다. 쓸 수 있는 수치 경계는 '다수결형 방어는 공격자 시스템의 크기에서 무너진다' 는 것이다 — 공격자가 AP 1대거나 한 장치에서 3대를 흉내 내면 100 % 실패했지만, 떨어진 3대를 처음 시도되는 앵커 안에 넣으면 3-구 방식에서 부분 성공했다. 저자 스스로 효과를 '공격을 trivial 에서 challenging 으로' 라고 적었고 인증이 없으니 부분 보호라고 명시한다. CS 1:1 키리스 엔트리에는 직접 해당하지 않는다.",
+      "summary": "같은 저자들의 FTM 공격(henry-2021-ftm-ranging-location-attacks)을 요약하고, GPS 방어(RAIM·지문·센서 융합·PDR)와 802.11 보안(RSNA·PASN)이 FTM 에서는 제한적인 이유를 분석한다. 대책으로 (1) 응답기를 RSSI(예: 6 dB 이내)로 묶고 SSID 별로 묶어 가장 큰 시스템부터 거리를 재는 AP 정렬, (2) 비-RSNA PASN 에 802.11r Fast Transition 의 MDE·FTE 를 더해 현재 AP 를 거쳐 다음 AP 와 키를 미리 세우는 PASN-FT 를 제안한다. 백엔드 신뢰 관계가 없는 AP 쌍은 PASN-FT 가 실패하므로, 반복하면 서로 신뢰하는 큰 AP 군집과 고립된 이상치가 드러나고 개시자는 가장 큰 군집으로만 위치를 계산한다. 개활지(정상 AP 5대)와 2층 쇼핑몰에서 공격 시도를 시험해, 공격자가 정상 WLAN 에 맞먹는 분산 시스템을 처음 시도되는 AP 안에 세우는 경우를 빼면 실패함을 보였다.",
+      "hardware": [
+        "실험 1: henry-2021-ftm-ranging-location-attacks 와 같은 개활지 구성(정상 AP 5대 + 공격자 AP 1–3대 에뮬레이션) — 이 논문은 기기 모델을 다시 적지 않음",
+        "실험 2: 2층 쇼핑몰(앵커 매장 4곳 + 소형 매장 다수, 매장별 SSID, 다수가 몰 관리 AP), 1층 주 복도 보행 경로 — 어느 지점에서나 AP 9–11대 수신"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "제안 프로토콜 PASN-FT — 비-RSNA PASN 3-프레임 교환에 MDE 추가, Over-the-DS 로 다음 AP 와 PMK 사전 수립(FTE 에 대상 BSSID·S0KH-ID·유효시간)",
+        "구현 플랫폼·코드는 본문에 기재 없음(전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "개활지: 공격자 AP 1대면 공격 100 % 실패(쓸 만한 군집을 못 만들고 PASN-FT 도 실패)",
+        "공격자가 AP 3대를 한 물리 장치(가상 AP·같은 위치)에서 흉내 내면 RSSI 가 같은 범위라 하나로 병합돼 실패",
+        "떨어진 3대를 배치하면 응답기 4대 이상을 쓰는 위치 계산(최소제곱·칼만)에서는 실패, 3대만 쓰는 3-구 방식에서는 부분 성공 — 정상 AP 가 들어오는 순간 올바른 궤적으로 복귀(칼만은 점진 복귀)",
+        "공격 성공 조건: 공격자 시스템이 개시자가 처음 시도하는 3대 안에 들고, 위치 계산을 혼자 감당할 만큼 커야 함(3-구 3대, 다른 방법은 최대 6대) — 그때 개시자는 정상·공격자 두 군집 중 하나를 무작위로 고름",
+        "쇼핑몰: 그대로면 모든 시도 실패, 주 몰 Wi-Fi 를 DoS 로 배제해도 앵커 매장 AP(대개 4대 이상)로 실패; 몰이 관리하는 AP 와 앵커 매장 Wi-Fi 를 모두 빼고 단일 AP 매장만 남긴 극단 경우에만 성공"
+      ],
+      "limitations": [
+        "인증이 없으므로 부분 보호 — 공격자가 처음 고른 AP 안에 들고 정상 WLAN 만큼 큰 시스템을 세우면 여전히 성공 (저자)",
+        "AP 가 백엔드로 키를 공유하는 관리형 WLAN 을 전제 — 서로 다른 인프라에 속한 정상 AP 쌍의 PASN-FT 실패와 공격자를 구분하지 못함 (저자)",
+        "PASN-FT 는 802.11 개정 제안이며 지연·에어타임 측정이 없고, 결과는 성공/실패 서술과 그림뿐 (관찰)",
+        "물리계층 거리 조작(조기 응답·릴레이)은 범위 밖 — 사칭 응답기 선별만 다룸 (관찰)",
+        "향후: LCI 를 지도와 함께 받는 신뢰 데이터베이스로 옮기는 방안 (저자)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "henry-2021-ftm-ranging-location-attacks"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "henry-2021-ftm-ranging-location-attacks",
+          "type": "defends",
+          "note": "자기 PIMRC 2021 공격(사칭 응답기·LCI 위조)에 대한 AP 정렬 + PASN-FT 군집 방어 — 공격을 막기보다 비용을 올린다(저자)"
+        }
+      ],
+      "added": "2026-10-17",
+      "last_checked": "2026-10-17"
+    },
+    {
+      "id": "antonijevic-2025-zerotouch-geofencing",
+      "title": "ZeroTouch: Reinforcing RSS for Secure Geofencing",
+      "authors": [
+        "Nikola Antonijević",
+        "Sayon Duttagupta",
+        "Dave Singelée",
+        "Enrique Argones Rúa",
+        "Bart Preneel"
+      ],
+      "venue": "ACM SACMAT",
+      "venue_full": "Proceedings of the 30th ACM Symposium on Access Control Models and Technologies (SACMAT '25), Stony Brook, NY, USA, 2025-07-08~10, pp. 189–200 (CC BY-NC 4.0; Lirias 20.500.12942/770337) — COSIC, KU Leuven",
+      "tier": "other",
+      "category": "defense",
+      "year": 2025,
+      "url": "https://doi.org/10.1145/3734436.3734448",
+      "preprint": "https://lirias.kuleuven.be/retrieve/0f5ff836-8167-4503-9bc4-668ece52ead9",
+      "doi": "10.1145/3734436.3734448",
+      "topics": [
+        "geofencing",
+        "proximity-verification",
+        "rss",
+        "anomaly-detection",
+        "autoencoder",
+        "ray-tracing",
+        "simulation"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "거리를 재지 않고 **'정상 신호만 학습한 이상탐지기' 로 근접을 판정하는 방어**의 RSS 판이다. CS 의 NADM·TQI 처럼 정상 분포를 기준으로 걸러내는 판정이 공격자의 최적화 앞에서 얼마나 내려가는지(C-08)를 가르는 실험 설계의 원형으로 쓰인다. 수치가 둘로 갈린다. 공격자가 고정 +7 dB 로 전력을 올리면 앵커 20개에서 89.6–93.8 % 를 맞혔지만, 위치마다 재구성 오차가 가장 작은 전력을 찾는 최적 스윕에서는 정확도가 약 10 % 떨어졌다. 그리고 저자 스스로 '방향성 안테나·앵커 위치·환경 기하를 다 아는 이상적 공격자는 RSS 만으로 막을 수 없다' 고 위협모델에서 뺐다 — 정상성 기반 판정의 상한을 설계자가 먼저 인정한 사례다. 다만 RSS 경계 판정이고 레이 트레이싱 시뮬레이션뿐이라 CS 의 위상·시간 지표와는 교차 논증일 뿐이다. 같은 그룹의 antonijevic-2026-secure-wifi-ranging 과 짝을 이룬다.",
+      "summary": "실내 IoT 기기가 정해진 방(지오펜스) 안에 있는지를 추가 하드웨어 없이 검증하는 ZeroTouch 를 제안한다. 방 안에 이미 있는 기기들(앵커)이 서로의 메시지 RSS 로 방의 RSS 모델을 만들고, 새 기기가 방송한 메시지의 앵커별 RSS 벡터를 정상 데이터만으로 학습한 자기부호화기로 재구성해 오차가 IQR 임계값을 넘으면 '바깥' 으로 판정한다. Remcom Wireless InSite 로 실제 아파트 CAD 모델의 2.4 GHz 전파를 레이 트레이싱해 내부 223개·외부 공격자 102개 위치의 RSS 를 만들고 MATLAB 에서 평가했다. 바깥 공격자가 전력을 올리는 위협모델에서 무작위 앵커 배치는 앵커 수에 따라 약 78–94 %, 내벽 근처 '스마트 배치' 는 82–97 % 정확도를 보였고, 최적 전력 스윕 공격에서는 약 10 % 떨어졌다. 단독 보안 장치가 아니라 기존 인증 위에 얹는 무간섭 보안 층으로 위치를 잡는다.",
+      "hardware": [
+        "실측 하드웨어 없음 — RSS 는 Remcom Wireless InSite 3.4.4 레이 트레이싱(X3D 모델, 2.4 GHz 무지향 안테나, 광선 간격 0.25°, 반사 6·투과 3·회절 1)으로 생성",
+        "가상 환경: 건축가가 설계한 가구 포함 아파트 한 층 CAD(ZDL Studio) — 지오펜스 3개 방에 0.5 m 격자 송수신점 223개, 경계 약 20 cm 밖 공격자 위치 102개",
+        "시뮬레이션·학습 PC: Intel i7-14700KF, NVIDIA GeForce RTX 4080 16 GB, RAM 32 GB (RSS 생성에 약 8일)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Remcom Wireless InSite 3.4.4",
+        "MATLAB R2023b + Deep Learning Toolbox — 자기부호화기(은닉층 15, logsig), 지도학습 MLP 기준선(은닉층 15)",
+        "AWGN 증강(SNR 20 dB, 측정당 5개) + 정규화, 임계값은 평균·중앙값·최댓값·z-점수·95 백분위·IQR·GMM 중 IQR 채택, 5개 표본 다수결",
+        "코드·아티팩트 공개: https://github.com/KULeuvenCOSIC/ZeroTouch"
+      ],
+      "software_verified": true,
+      "results": [
+        "무작위 앵커 배치·고정 +7 dB 공격(표 1a): 평균 정확도 앵커 10개 82.14 %(근접 공격자)·85.66 %(전체) → 20개 89.37·89.64 % → 40개 93.99·93.46 %; 가장 크고 복잡한 방 1 은 10개 78.81 % → 40개 92.81 %",
+        "스마트 배치(내벽 근처 앵커, 표 1b): 앵커 10개 86.85·89.04 % → 20개 93.35·93.83 % → 40개 95.28·95.35 % — 같은 앵커 수면 무작위보다 높음",
+        "방 1·앵커 20개 예: 무작위 두 구성 82.4 %(진음성 96.5 %·진양성 70.6 %)와 94.7 %(97.6 %·92.2 %), 스마트 두 구성 95.2 %(100 %·91.2 %)와 95.7 %(98.8 %·93.1 %) — 진음성(내부 기기 통과)은 높고 진양성(공격 탐지)이 흔들림",
+        "평균적으로 공격자에게 가장 유리한 고정 전력 증가는 +7 dB(이 배치 특유); 위치별 최적 전력 스윕(0–100 dB, 0.25 dB 간격, 재구성 오차를 아는 이론적 최적 공격)에서는 +7 dB 대비 정확도 약 10 % 하락 — 그래도 어떤 전력으로도 통과 못 하는 바깥 위치가 다수",
+        "나무 문이 있는 모서리 바깥 송신기는 문 감쇠가 작고 벽 반사가 방 안으로 들어와 앵커를 늘려도 계속 내부로 오분류 — 재구성 오차가 내부 송신기와 비슷"
+      ],
+      "limitations": [
+        "시뮬레이션뿐 — 실측 RSS·실제 IoT 기기 구현 없음, Wireless InSite 출력이 정적이라 잡음은 AWGN 으로 흉내 (저자)",
+        "위협모델이 바깥 공격자·무지향 안테나·전력 조절로 한정 — 방향성 안테나와 앵커 위치·환경 기하를 다 아는 이상적 공격자는 RSS 만으로 막을 수 없다고 저자 명시; 학습 단계는 안전하다고 가정",
+        "단독 보안 장치가 아니라 기존 인증 위의 추가 층 (저자)",
+        "임계값이 보안(진양성)과 사용성(진음성)의 상충을 정하며, +7 dB 최적값도 이 배치 특유 (저자)",
+        "신호를 안으로 재방사하는 릴레이는 위협모델 밖이고 거리·시간 측정이 없음 — 거리측정 기반 근접 증명과는 다른 보증 (관찰)"
+      ],
+      "artifacts": {
+        "code": "https://github.com/KULeuvenCOSIC/ZeroTouch",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "schepers-2021-ftm-security",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "tippenhauer-2009-id-based-db"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "antonijevic-2026-secure-wifi-ranging",
+          "type": "complementary",
+          "note": "같은 COSIC 그룹 — 2026 은 표준 보안 FTM 의 근접 증명 한계를, ZeroTouch 는 거리측정 없이 RSS 이상탐지로 경계를 판정하는 길을 다룬다"
+        }
+      ],
+      "added": "2026-10-17",
+      "last_checked": "2026-10-17"
+    },
+    {
+      "id": "wieme-2026-pulse-pdoa-auracast",
+      "title": "Challenge: PULSE - Smart Hospital Infrastructure via Bluetooth PDoA and Auracast",
+      "authors": [
+        "Jorg Wieme",
+        "Adelina Giurea",
+        "Eli De Poorter",
+        "Jeroen Hoebeke"
+      ],
+      "venue": "ACM MobiDx",
+      "venue_full": "Proceedings of the 1st Workshop on Hot Topics in Mobile and Wireless Systems for Health (MobiDx '26, ACM SIGMOBILE, MobiCom 2026 주간), Austin, TX, USA, 2026-10-26~30, pp. 30–33 (CC BY 4.0; UGent biblio 01M3Y50NSRS8MJ73NYYCAQCT4E) — IDLab, Ghent University – imec",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2026,
+      "url": "https://doi.org/10.1145/3842657.3842787",
+      "preprint": "https://biblio.ugent.be/publication/01M3Y50NSRS8MJ73NYYCAQCT4E/file/01M3Y6XEYZX24GG37ESAS2N415.pdf",
+      "doi": "10.1145/3842657.3842787",
+      "topics": [
+        "channel-sounding",
+        "pdoa",
+        "connectionless",
+        "phase-based-ranging",
+        "auracast",
+        "healthcare",
+        "scalability"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "low",
+      "relevance_note": "Wieme 그룹(wieme-2025-cs-commercial-hw)이 **CS 의 연결 기반 양방향 구조를 확장성 비용으로 보고 단방향 PDoA 로 바꾸자** 는 병원 인프라 비전이다. 내 연구에서 쓰이는 지점은 이 대체가 무엇을 버리는지다. CS 의 보안 장치 — 왕복(RTT)·DRBG 무작위화·연결 암호화 — 는 전부 양방향 연결 위에 서 있는데, PULSE 에서는 태그가 망 전체에 공개된 vBIG 이벤트 스케줄에 맞춰 톤을 단방향 방송하고 앵커는 위상차만 잰다. 원문의 '신뢰' 절은 OOB 프로비저닝·그룹 키(오디오)·기기별 키(PDoA 데이터)·RPA(추적 방지)만 다루고 **위치 위조·톤 재생·위상 주입은 언급하지 않는다**(관찰). schex-2026-pawr-connectionless-cs 가 결정론적 채널 시퀀싱을 되살린 데 이어, 대규모 배치 압력이 CS 를 보안 장치가 빠진 방향으로 미는 두 번째 사례다(RQ4). 덤으로 '양방향 CS 는 왕복으로 앵커 LO 위상 항을 지운다' 는 설명과 1 ns 동기 오차 = 30 cm, 80 MHz 의 다중경로 분해능 ≈ 3.7 m, 몸 차폐 15–30 dB 같은 개략 수치, 'Core 6.3 Inline PCT Transfer 도 1:1 이고 상용 컨트롤러는 동시 연결 수십 개' 라는 진술이 CS 배치 논의의 참고값이 된다.",
+      "summary": "병원에서 환자 추적과 정보 전달(방송·긴급 호출)을 한 BLE 인프라로 묶는 PULSE(Phase-based Unified Localization, Streaming and Emergency) 비전을 제시한다. 연결 기반 Channel Sounding 대신 태그가 주파수를 바꿔 가며 톤을 단방향 방송하고, 백본으로 동기화된 앵커 쌍이 위상차를 재 태그 위상 항을 지운 뒤 1 MHz 계단으로 모호성을 풀어 거리차(쌍곡선)로 위치를 구한다. 같은 인프라가 Auracast 오디오를 방송하고, 이를 vBIG(가상 BIG)으로 확장해 하향 오디오·예약 상향(PDoA 톤·데이터)·긴급·핸드오버 채널을 한 스케줄에 담는다. 실험 없이 타당성을 분석해, 앵커 LO 위상 결맞음(상용 BLE 송수신기엔 없음), 서브 ns 백본 동기(White Rabbit 급), 80 MHz 대역의 다중경로·몸 차폐, 스케줄 용량, 저전력 태그, 공유 매체의 공존·신뢰를 열린 과제로 정리하고 SDR 기반 단계적 검증 계획을 제시한다.",
+      "hardware": [
+        "실험 하드웨어 없음 — 실측·시뮬레이션 없는 4쪽 비전 논문(전문 확인)",
+        "필요 하드웨어로 제시: 맞춤형 위상 결맞음 앵커 수신기(재동조 시 위상 결정적 합성 또는 80 MHz 동시 포착 — Boer 2020 의 전용 PLL 맞춤 하드웨어를 선례로 인용), White Rabbit 급 또는 광섬유 RF 기준 분배 백본",
+        "검증 계획: 공유 클럭 2-앵커 SDR(모델 미정) → 다수 앵커 배치 → vBIG 스케줄 에뮬레이션"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "구현·시뮬레이션 코드 없음(전문 확인)",
+        "설계 기반: Bluetooth Core 6.0 CS(PBR)·Core 6.3 Inline PCT Transfer·Auracast(BIG)·PAwR, vBIG(Hoebeke 외 특허 WO2025/237739A1), 백본 동기 PTP/IEEE 1588 HA·White Rabbit"
+      ],
+      "software_verified": true,
+      "results": [
+        "실측 없음 — 개략 분석 수치만: 앵커 간 잔류 타이밍 오차가 거리차에 c·δ 로 들어가 1 ns = 30 cm, 데시미터 정확도엔 잔류 지터 약 300 ps 필요(하드웨어 타임스탬프 PTP 는 수십 ns 라 부족)",
+        "80 MHz 대역의 다중경로 분해능 c/B ≈ 3.7 m — 직접경로 분리는 잡음·기하에 민감한 초해상 기법에 의존; 몸에 착용한 태그는 몸이 가리면 15–30 dB 감쇠; 쌍곡선 측위가 편향된 거리차를 증폭하므로 강건한 서브미터는 LOS 에서만 현실적(저자)",
+        "앵커 LO 위상 항은 단방향 방식에서 상쇄되지 않음 — 양방향 CS 는 왕복으로 제거하지만 PULSE 는 하드웨어로 풀어야 하며, 상용 BLE 송수신기엔 그 기능이 없음",
+        "용량: ISO 간격 20 ms 에서 오디오 서브이벤트 뒤 이벤트당 약 5 ms → 4 ms 톤 스윕 1회 → 망 전체 초당 약 50 위치, 태그 200개 구역이면 태그당 약 4 s 마다 갱신",
+        "CS 확장성 진술: 표준 CS 는 측정 일정·데이터 교환에 지속 연결이 필요하고, Core 6.3 Inline PCT Transfer 는 오버헤드를 줄이지만 1:1 이며, 상용 컨트롤러는 동시 연결 수십 개만 지원"
+      ],
+      "limitations": [
+        "비전 논문 — 실측·시뮬레이션 없이 개략 분석만, 실현은 맞춤형 결맞음 앵커·서브 ns 동기·다중경로 강건 추정·현행 Bluetooth 규격 밖 프로토콜 동작에 달림 (저자)",
+        "보안: 신뢰 절이 OOB 프로비저닝(QR)·그룹 키·기기별 키·RPA 만 다루고, 공개 스케줄에 맞춘 단방향 톤 방송에 대한 위치 위조·재생·위상 주입은 다루지 않음 (관찰)",
+        "긴급 채널은 경쟁 기반이라 동시 경보가 충돌할 수 있음 — 여러 슬롯·이벤트 반복 송신으로 완화한다고 주장 (저자)",
+        "태그 듀티사이클·에너지 미정량, 태그 신뢰성이 백본 가용성에 종속, 병원 Wi-Fi·BLE 간섭 내성 미확립 (저자)",
+        "환자 연속 측위의 동의·개인정보 문제 — 온프레미스 계산은 부분 해결 (저자)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "boer-2020-pbr-multipath",
+        "schex-2026-pawr-connectionless-cs",
+        "wieme-2025-cs-commercial-hw"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schex-2026-pawr-connectionless-cs",
+          "type": "extends",
+          "note": "PAwR 비연결 CS 도 응답 슬롯의 양방향 통신에 기댄다고 지적하고, 태그를 단방향 방송기로 만드는 PDoA 로 한 단계 더 나아간다"
+        },
+        {
+          "to": "staat-2022-analog-relay",
+          "type": "fails-against",
+          "note": "가설 — 공개 스케줄에 맞춘 단방향 톤 방송에는 왕복 검증·무작위화가 없어, 톤을 재생·중계해 앵커 위상차를 옮기는 조작을 막을 구조가 없다; 원문은 보안을 기밀성·추적으로만 다룬다"
+        }
+      ],
+      "added": "2026-10-17",
+      "last_checked": "2026-10-17"
+    },
+    {
+      "id": "chou-2025-ftm-security-dsc",
+      "title": "Securing Fine Timing Measurement Protocol in Wi-Fi Networks",
+      "authors": [
+        "Yu-Hung Chou",
+        "Yu-An Chen",
+        "Yu-Xun Tang",
+        "Chi-Yu Li",
+        "Guan-Hua Tu"
+      ],
+      "venue": "IEEE DSC",
+      "venue_full": "2025 IEEE Conference on Dependable and Secure Computing (DSC), Taipei, Taiwan, pp. 1–8, 2025-10 — National Yang Ming Chiao Tung University · Michigan State University",
+      "tier": "other",
+      "category": "attack",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/document/11260891",
+      "preprint": null,
+      "doi": "10.1109/DSC65356.2025.11260891",
+      "topics": [
+        "wifi-ftm",
+        "rtt",
+        "spoofing",
+        "message-authentication",
+        "802-11az"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "low",
+      "relevance_note": "전문 미확보라 공격 메커니즘은 초록 수준이다. 쓰이는 지점은 '메시지 인증 = 보안 레인징' 이라는 혼동의 비교 사례다. 저자들은 FTM 의 프로토콜 취약점 두 개로 엔드포인트를 건드리지 않고 RTT 를 교란·왜곡하는 스푸핑 공격을 만들고, RSA 세션 키 교환 + HMAC-SHA1 로 '모든 스푸핑 공격을 완화' 한다고 주장한다. 그러나 메시지 인증은 프로토콜 필드 위조만 막고 물리계층 조기 응답·릴레이는 막지 못한다는 것이 schepers-2021-ftm-security·antonijevic-2026-secure-wifi-ranging 의 결론이고, CS 는 링크 암호화를 이미 갖췄으므로 이 대책이 CS 에 더하는 것은 없다. FTM 보안 확장의 연산 비용(RSA 최대 2.78 ms, HMAC-SHA1 6.78 µs 미만)은 레인징 프로토콜에 암호를 붙일 때의 기준값으로 쓸 수 있다. 원문을 확보하면 '취약점 두 개' 가 henry-2021-ftm-ranging-location-attacks 의 토큰·버스트 문제와 같은지부터 확인할 것.",
+      "summary": "IEEE 802.11 Wi-Fi 의 RTT 기반 실내 측위 프로토콜 FTM 의 보안을 분석해 근본적 프로토콜 취약점 두 개를 보고한다(초록). 이를 바탕으로 어느 엔드포인트도 수정·침해하지 않고 RTT 측정을 교란하거나 왜곡하는 스푸핑 공격 여러 개를 설계·구현했다. 대책으로 RSA 로 세션 키를 교환하고 HMAC-SHA1 로 메시지 무결성·인증을 제공하는 첫 표준 호환 FTM 개선을 제안하며, 시제품에서 모든 스푸핑 공격을 완화하면서 RSA 연산은 최대 2.78 ms, HMAC-SHA1 은 6.78 µs 미만의 오버헤드만 더한다고 보고한다. 본문은 미확보다.",
+      "hardware": [
+        "확인 필요 — 초록은 '시제품 구현(prototype implementation)' 이라고만 함"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 초록: RSA 세션 키 교환 + HMAC-SHA1; Xplore 참고문헌에 tcpdump/libpcap·OpenSSL 이 있어 이를 쓴 것으로 보이나 본문 미확인"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: FTM 의 근본적 프로토콜 취약점 2개를 찾고, 엔드포인트를 수정·침해하지 않고 RTT 측정을 교란·왜곡하는 스푸핑 공격 여러 개를 설계·구현",
+        "초록: 제안한 표준 호환 개선이 모든 스푸핑 공격을 완화, 오버헤드는 RSA 연산 최대 2.78 ms·HMAC-SHA1 6.78 µs 미만"
+      ],
+      "limitations": [
+        "원문 미확보(2026-10-17): IEEE Xplore 유료(stampPDF 202), OpenAlex closed, 저자 홈페이지(NYCU Chi-Yu Li·MSU Guan-Hua Tu)에 PDF 없음 — 취약점 두 개의 정체·실험 장비·공격 성공률 미확인",
+        "인용 관계(cites)는 Xplore REST 참고문헌 21건(rest/document/11260891/references)을 코퍼스와 대조해 채움 — ibrahim-2018·schepers-2021·henry-2021 PIMRC; 본문은 미확보",
+        "대책이 메시지 인증(RSA·HMAC-SHA1)이라 물리계층 조기 응답·릴레이에는 해당하지 않을 것으로 보임 — 초록 기준 관찰; 802.11az 보안 FTM(PASN·보안 LTF)과의 관계도 초록에 없어 '첫 표준 호환 개선' 주장의 범위 미확인"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "ibrahim-2018-ftm-verification",
+        "schepers-2021-ftm-security",
+        "henry-2021-ftm-ranging-location-attacks"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "henry-2021-ftm-ranging-location-attacks",
+          "type": "extends",
+          "note": "Henry 가 남긴 FTM 메시지 무보호 문제를 프로토콜 취약점·스푸핑 공격으로 다시 다루고 암호 인증 확장을 구현했다(초록 기준)"
+        }
+      ],
+      "added": "2026-10-17",
+      "last_checked": "2026-10-17"
     }
   ]
 }
