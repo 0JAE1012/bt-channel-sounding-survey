@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-17",
-  "last_run": "2026-10-17",
+  "updated": "2026-10-18",
+  "last_run": "2026-10-18",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1502,
+  "citation_edges": 1572,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -2713,7 +2713,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-08",
+      "last_checked": "2026-10-18",
       "cites": [
         "clulow-2006-long-symbols",
         "coppola-2024-pure",
@@ -2731,7 +2731,8 @@
         "hancke-2008-tof-db-attacks",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
         "capkun-2005-secure-positioning",
-        "brands-1993-distance-bounding"
+        "brands-1993-distance-bounding",
+        "zhang-2022-osnma-distance-decreasing"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -4219,7 +4220,8 @@
         "heinrich-2023-smartphones-uwb",
         "avoine-2018-db-survey",
         "tippenhauer-2015-uwb-rapid-bit-exchange",
-        "radu-2022-emv-relay-protection"
+        "radu-2022-emv-relay-protection",
+        "zhang-2022-osnma-distance-decreasing"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4230,7 +4232,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-10-04"
+      "last_checked": "2026-10-18"
     },
     {
       "id": "coppola-2024-pure",
@@ -5483,12 +5485,13 @@
       "verification": "verified",
       "cites": [
         "francillon-2011-pkes-relay",
-        "tschirschnitz-2021-method-confusion"
+        "tschirschnitz-2021-method-confusion",
+        "xie-2023-tesla-model3-keyless"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-21",
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-10-18"
     },
     {
       "id": "gunia-2026-cs-metrological",
@@ -5789,7 +5792,8 @@
         "mauw-2018-db-verification-without-time",
         "abu-mahfouz-2013-db-rtls",
         "chothia-2015-paysafe-relay-cost-bounding",
-        "hancke-2009-relay-attacks-revisited"
+        "hancke-2009-relay-attacks-revisited",
+        "avoine-2021-relay-to-db-chapter"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5800,7 +5804,7 @@
         }
       ],
       "added": "2026-08-24",
-      "last_checked": "2026-10-07"
+      "last_checked": "2026-10-18"
     },
     {
       "id": "schroeder-2022-inphase",
@@ -6986,12 +6990,13 @@
         "bintariq-2024-signal-subspace-ble-ranging",
         "gunia-2017-phase-positioning-off-the-shelf",
         "mazur-2024-ifft-bayesian-pbr",
-        "morano-2024-phase-distance-tsch"
+        "morano-2024-phase-distance-tsch",
+        "morano-2024-hybrid-localization-tsch"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-10-15"
+      "last_checked": "2026-10-18"
     },
     {
       "id": "boshoff-2026-secure-indoor-ranging",
@@ -7934,12 +7939,13 @@
         "joo-2020-hodor",
         "leu-2022-ghost-peak",
         "singh-2019-uwb-pr",
-        "alrabady-2005-keyless-entry-attacks"
+        "alrabady-2005-keyless-entry-attacks",
+        "xie-2023-tesla-model3-keyless"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-10-06"
+      "last_checked": "2026-10-18"
     },
     {
       "id": "shoudha-2022-reduced-complexity-ble-ranging",
@@ -8174,12 +8180,13 @@
         "pelka-2014-phase-multi-frequency",
         "schroeder-2018-cde",
         "gunia-2017-phase-positioning-off-the-shelf",
-        "cortesi-2023-rssi-vs-mcpd-ble"
+        "cortesi-2023-rssi-vs-mcpd-ble",
+        "morano-2024-hybrid-localization-tsch"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-10-14"
+      "last_checked": "2026-10-18"
     },
     {
       "id": "simoncic-2026-cfo-mcpd",
@@ -8255,12 +8262,13 @@
         "pelka-2014-phase-multi-frequency",
         "gunia-2017-phase-positioning-off-the-shelf",
         "neirynck-2016-alt-ds-twr",
-        "cortesi-2023-rssi-vs-mcpd-ble"
+        "cortesi-2023-rssi-vs-mcpd-ble",
+        "morano-2024-hybrid-localization-tsch"
       ],
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-31",
-      "last_checked": "2026-10-14"
+      "last_checked": "2026-10-18"
     },
     {
       "id": "nkrow-2024-tof-resiliency",
@@ -12350,7 +12358,7 @@
       },
       "verification": "verified",
       "added": "2026-09-16",
-      "last_checked": "2026-09-25",
+      "last_checked": "2026-10-18",
       "cites": [
         "glass-2010-toa-ranging-insecurity-80211",
         "poturalski-2010-cicada-attack",
@@ -12359,7 +12367,8 @@
         "singh-2023-wifi-ftm-iot-benchmark",
         "jiokeng-2020-ftm-music",
         "gunther-2005-wlan-rtt",
-        "elikplim-2023-wifi-ftm-industrial"
+        "elikplim-2023-wifi-ftm-industrial",
+        "vanmarter-2024-multichannel-wifi-ranging"
       ],
       "cites_source": "fulltext",
       "relations": []
@@ -15805,7 +15814,8 @@
         "compagno-2016-enlargement-attacks-uwb-db",
         "boureanu-2013-towards-secure-db",
         "francis-2012-nfc-phone-relay",
-        "bussard-2005-dbpk-terrorist-fraud"
+        "bussard-2005-dbpk-terrorist-fraud",
+        "avoine-2021-relay-to-db-chapter"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -15846,7 +15856,7 @@
         }
       ],
       "added": "2026-09-29",
-      "last_checked": "2026-10-11"
+      "last_checked": "2026-10-18"
     },
     {
       "id": "rithivik-2026-ble-ranging-comparison-conecct",
@@ -19623,6 +19633,452 @@
       ],
       "added": "2026-10-17",
       "last_checked": "2026-10-17"
+    },
+    {
+      "id": "xie-2023-tesla-model3-keyless",
+      "title": "Access Your Tesla without Your Awareness: Compromising Keyless Entry System of Model 3",
+      "authors": [
+        "Xinyi Xie",
+        "Kun Jiang",
+        "Rui Dai",
+        "Jun Lu",
+        "Lihui Wang",
+        "Qing Li",
+        "Jun Yu"
+      ],
+      "venue": "NDSS",
+      "venue_full": "Network and Distributed System Security (NDSS) Symposium 2023, San Diego, CA, 2023-02-27 – 03-03 (NDSS 공개 PDF ndss2023_f82_paper) — Shanghai Fudan Microelectronics · State Key Laboratory of ASIC & System, Fudan University",
+      "tier": "top4",
+      "category": "attack",
+      "year": 2023,
+      "url": "https://doi.org/10.14722/ndss.2023.24082",
+      "preprint": "https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f82_paper.pdf",
+      "doi": "10.14722/ndss.2023.24082",
+      "topics": [
+        "pkes",
+        "phone-as-a-key",
+        "digital-key",
+        "relay-attack",
+        "ble-gatt-relay",
+        "non-real-time-relay",
+        "system-composition"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "**BLE Phone-as-a-Key 에서 '근접' 이 실제로 무엇으로 판정되는지를 상용 차량 역공학으로 드러낸 4대 학회 논문**이라 CS 디지털 키의 시스템 구성(RQ4) 쪽 근거로 쓰인다. Tesla Model 3 는 거리를 재지 않고 'BLE 연결 성립 + 응용 계층 증명 통과' 로 문을 연다. 증명(ECDH 공유 비밀의 AES-GCM)은 카운터로 재생은 막지만 측정한 연결·시점에 묶이지 않고 차량이 주는 토큰이 수 시간 고정이어서, 저자들이 실시간이 아닌 릴레이(증명을 미리 모아 두었다가 나중에 제시)로 응답 지연 상한을 무력화할 수 있었다. CS 연구에 주는 시사점은 두 가지다. (1) CS 를 붙여도 잠금 해제 결정에 쓰는 증명이 **CS 를 잰 그 연결·그 시점에 결속**되지 않으면 같은 구멍이 남는다 — 거리값은 '누구와 언제' 잰 것인지가 함께 보장될 때만 근접 증명이 된다(교차 논증). 또한 이 차량은 링크 계층 암호화를 끈 설계라, 코퍼스 판단대로 CS 의 물리계층 난수화가 암호화 연결·본딩에서 유도된다면 그런 시스템에는 CS 의 보안 장치가 얹힐 자리부터 없다(관찰). (2) 저자들이 제시한 근본 대책이 'ToF 기반 보안 거리측정(UWB)' 이어서 CS 가 메우려는 자리를 정확히 가리킨다. 다만 거리측정이 있는 시스템은 평가하지 않았고, 링크 계층 암호화를 켜면 이 응용 계층 릴레이는 성립하지 않는다(저자) — 암호화된 링크도 통과하는 링크 계층 릴레이(NCC Sniffle, 본문 인용)가 CS 의 RTT 가 실제로 막아야 할 대상이다.",
+      "summary": "Tesla Model 3 의 Key Card(ISO 14443)와 Phone Key(BLE) 의 페어링·인증 프로토콜을 Tesla 앱 정적·동적 분석(JADX·IDA·Frida)과 HCI snoop·ISO 14443 스니핑으로 복원하고 설계·구현상 약점을 분석한다. Phone Key 인증은 ECDH(NIST P-256) 공유 비밀로 만든 AES-GCM 증명 두 개로 이뤄지는데, 차량이 BLE 링크 계층 암호화를 쓰지 않고 정적 MAC 을 쓰며 두 번째 증명에 들어가는 토큰이 연결 상태와 무관하게 수 시간 고정된다. 저자들은 이를 엮어 실시간 중계가 아닌 개선 릴레이(MitM) 로 응답 지연 검사를 무력화하고 공격 기기 한 대로도 성립함을 보였다. 소유자가 약 500 m 떨어진 상태에서 약 15 s 안에 문이 열리고 주행됐으며(단일 기기 46 s), Android·iOS 모두 영향을 받았다. Key Card 페어링이 인증서를 검증하지 않아 서드파티 카드가 정식 키로 동작함도 보였다. 대책으로 토큰 갱신·링크 암호화와 함께 ToF 기반 보안 거리측정(UWB)을 제시한다(CVE-2022-37709).",
+      "hardware": [
+        "피해 차량: Tesla Model 3 (차량 소프트웨어 v11.0, 2022.4.5.1)",
+        "Phone Key: Motorola Edge S (Android 11, Tesla 앱 4.23), iPhone 12 Pro (iOS 15.4.1, Tesla 앱 4.14.1)",
+        "공격 기기: Google Pixel 5A, Samsung Galaxy S9 (Android 11)",
+        "Key Card 스니핑: NomadLAB ISO 14443 스파이 장치 + RFID 코일; 재현에 프로그래머블 Java Card"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "역공학: JADX(Android apk), IDA Freeware(iOS ipa), Frida 동적 계측",
+        "BLE 분석: Android HCI snoop 로그",
+        "자작 공격 앱 TESmLA 2.0 (BluetoothGatt/BluetoothGattServer)"
+      ],
+      "software_verified": true,
+      "results": [
+        "개선 릴레이로 소유자 약 500 m·화면 잠금 상태, 공격 기기–피해 폰 약 5 m 에서 약 15 s 안에 잠금 해제·주행(두 기기 시나리오); 단일 기기 시나리오는 왕복 지연으로 약 46 s",
+        "토큰이 연결 상태 변화와 무관하게 수 시간 고정 — 증명 쌍을 미리 여러 개 수집해 반복 사용 가능",
+        "공격 기기–피해 폰 데이터 전송은 지하주차장에서 약 100 m 까지 안정(BLE 버전·환경 의존), 두 공격 기기 사이는 거리 제한 없음",
+        "Key Card 페어링이 인증서를 검증하지 않아 NIST P-256·ECDH·AES 를 지원하는 서드파티/자작 카드가 정식 Key Card 로 동작",
+        "iOS 15.4.1·Android 11 모두 동일하게 성립"
+      ],
+      "limitations": [
+        "Model 3 만 실측(Model Y 는 동일 추정, Model S 는 구형 PKES 라 영향 밖일 수 있음) (저자)",
+        "응용/GATT 계층 릴레이라 링크 계층 암호화를 켜면 성립하지 않음 — 다만 링크 계층 릴레이(NCC Sniffle)는 암호화도 통과한다고 본문이 지적 (저자)",
+        "거리측정(UWB 등)이 있는 PKES 는 평가하지 않음 — 향후 과제 (저자)",
+        "성공률 통계가 아니라 성공 시연과 소요 시간 중심 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "alrabady-2003-passive-entry-attacks",
+        "alrabady-2005-keyless-entry-attacks",
+        "hancke-2005-rfid-db",
+        "reid-2007-timing-relay-detection",
+        "poturalski-2010-cicada-attack",
+        "francillon-2011-pkes-relay",
+        "poturalski-2011-db-802-15-4a",
+        "kim-2009-mixed-challenges-db",
+        "singh-2019-uwb-pr",
+        "singh-2021-4z-security-analysis",
+        "staat-2022-analog-relay",
+        "leu-2022-ghost-peak"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "francillon-2011-pkes-relay",
+          "type": "extends",
+          "note": "Francillon 의 PKES 릴레이를 BLE Phone-as-a-Key 의 비실시간(기록·재전송) 릴레이로 확장 — 응답 지연 상한을 무력화"
+        },
+        {
+          "to": "staat-2022-analog-relay",
+          "type": "complementary",
+          "note": "Staat 는 아날로그 물리계층 릴레이, Xie 는 같은 BLE PaaK 를 응용/GATT 계층에서 공격 — 거리·시점 결속 부재라는 같은 구멍의 다른 면"
+        }
+      ],
+      "added": "2026-10-18",
+      "last_checked": "2026-10-18"
+    },
+    {
+      "id": "vanmarter-2024-multichannel-wifi-ranging",
+      "title": "A Multichannel Approach and Testbed for Centimeter-Level WiFi Ranging",
+      "authors": [
+        "Jayson P. Van Marter",
+        "Matan Ben-Shachar",
+        "Yaron Alpert",
+        "Anand G. Dabak",
+        "Naofal Al-Dhahir",
+        "Murat Torlak"
+      ],
+      "venue": "IEEE JISPIN",
+      "venue_full": "IEEE Journal of Indoor and Seamless Positioning and Navigation, vol. 2, pp. 76–91, 2024 (온라인 2024-02-16, CC BY 4.0) — University of Texas at Dallas · Texas Instruments",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2024,
+      "url": "https://doi.org/10.1109/JISPIN.2024.3366850",
+      "preprint": "https://doi.org/10.1109/JISPIN.2024.3366850",
+      "doi": "10.1109/JISPIN.2024.3366850",
+      "topics": [
+        "wifi-ftm",
+        "802-11az",
+        "ngp",
+        "multichannel-cfr",
+        "phase-coherent-stitching",
+        "music",
+        "two-way-ranging"
+      ],
+      "tech": [
+        "wifi"
+      ],
+      "relevance": "low",
+      "relevance_note": "**20 MHz 협대역 장치를 여러 채널에 걸쳐 묶어 cm 급 거리를 얻는 방법을, 채널 간 LO 위상·시간 오프셋이라는 CS 와 똑같은 걸림돌과 함께 실측으로 다룬 Wi-Fi 논문**이라 CS 의 다채널 위상 결맞음(PBR 이 여러 채널의 위상 기울기를 묶는 바로 그 문제) 쪽 참조로 쓰인다. 핵심은 (1) 채널마다 다른 LO 위상·시간 오프셋 때문에 CFR 을 그냥 이어 붙일 수 없고, 양방향 타임스탬프를 위상에 심어 위상결맞음(PCMC) 스티칭을 해야 한다는 것, (2) 큰 부반송파 수를 감당하도록 공분산 행렬을 결합해 MUSIC 복잡도를 낮춘 점이다. CS 도 2.4 GHz 다중반송파 위상을 묶어 거리를 추정하므로, 이 논문의 하드웨어 임피어먼트 보정(LPF 크기/위상·주파수 선택성·채널별 이득)과 다채널 스티칭 수치는 CS 추정기 재현의 참조점이 된다. 다만 **보안 관점은 없다**(공격·탐지 없음) — RQ3 의 '추정 단계는 추정기를 바꿔도 막히지 않는다' 라인에 간접 배경일 뿐이라 판단 레이어에는 직접 걸지 않는다.",
+      "summary": "IEEE 802.11az NGP 가 도입한 양방향 타임스탬프와 CFR 측정을 써서, 단일 채널 20 MHz 만 쓰는 저가 Wi-Fi 장치의 거리 분해능 한계를 넘는 다채널 위상결맞음(PCMC) 스티칭 기법을 제안하고 SDR 테스트베드로 검증한다. 채널마다 다른 LO 위상·시간 오프셋이 CFR 직접 결합을 막으므로 타임스탬프 정보를 위상에 심어 결맞음을 복원하고, 큰 부반송파 수에 대응해 공분산 행렬을 결합한 저복잡도 MUSIC 으로 ToF 를 추정한다. Ettus X310 USRP 두 대로 2.4·5 GHz 전 채널(20/40/80/160 MHz)을 재는 테스트베드와 23만여 건의 양방향 CFR 데이터셋을 구축했고, 16채널 PCMC 로 실내 LOS 중앙값 2.7 cm·90 백분위 9.5 cm 를 얻었다. 하드웨어 임피어먼트(LPF 크기/위상, 주파수 선택성, 채널별 이득) 보정이 정확도에 미치는 영향을 개별 평가했다.",
+      "hardware": [
+        "Ettus X310 USRP 2대(개시자/반사기, 외부 시간·주파수 동기 없음), 맞춤 RF 프런트엔드, SP4T/SPDT 스위치, 가변 감쇠기, 4×2 안테나(8 m 케이블), 이동 카트",
+        "측정 대역 2.4·5 GHz 전 채널 20/40/80/160 MHz(6 GHz 밴드는 테스트베드 한계로 제외), 부반송파 간격 78.125 kHz, 반사기 지연 Tr=250 µs",
+        "실내 4개 환경(두 방 사이·대형 개방공간·강의실·실험실)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "LabVIEW GUI(USRP 제어), MATLAB(파형 생성·수신 처리·저복잡도 MUSIC)",
+        "데이터셋: 양방향 타임스탬프+CFR 23만 736건(저자들은 이런 NGP 데이터셋이 최초라고 명시)"
+      ],
+      "software_verified": true,
+      "results": [
+        "16채널 PCMC, 실내 LOS 전체: 중앙값 2.7 cm, 90 백분위 9.5 cm, 최대 24.5 cm (4×2 안테나 8쌍)",
+        "같은 20 MHz 장치 제약에서 단일채널 NGP 중앙값 82.8 cm, 4채널 PCMC 15.0 cm 대비 16채널 2.7 cm",
+        "실내 NLOS 전체(16채널): 중앙값 82.7 cm, 90 백분위 177.8 cm — 데시미터 급 유지",
+        "안테나 쌍 수에 따른 LOS RMSE: 1쌍 40.1 cm → 8쌍 5.2 cm(중앙값 4.8 → 2.7 cm)",
+        "임피어먼트 보정 중 채널별 이득 보정이 오차에 가장 큰 영향, LPF 크기 보정이 가장 작음; Chronos INDFT 는 실내 다중경로에서 고오차 다수"
+      ],
+      "limitations": [
+        "6 GHz 밴드 미측정(테스트베드 한계) (저자)",
+        "비인접 채널 스티칭·NLOS 정확도 개선은 향후 과제 (저자)",
+        "SDR LO 가 서로 달라 저가 상용기기엔 드문 보정이 필요(테스트베드 특성) (저자)",
+        "보안·공격 관점 없음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "gezici-2005-uwb-localization-survey",
+        "gunther-2005-wlan-rtt",
+        "xiong-2015-tonetrack",
+        "vasisht-2016-chronos",
+        "ibrahim-2018-ftm-verification",
+        "zand-2019-ble-pbr",
+        "jiokeng-2020-ftm-music",
+        "schepers-2021-ftm-security",
+        "stanciu-2021-narrowband-distance",
+        "shoudha-2022-reduced-complexity-ble-ranging",
+        "kazaz-2022-multiband-delay-estimation",
+        "helwa-2023-csi-wifi-ranging-gap",
+        "vanmarter-2023-svr-ble-ranging",
+        "pelka-2014-phase-multi-frequency"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "vanmarter-2023-svr-ble-ranging",
+          "type": "extends",
+          "note": "같은 그룹의 BLE 다중경로 거리측정을 Wi-Fi 다채널 위상결맞음 스티칭+MUSIC 으로 확장"
+        },
+        {
+          "to": "jiokeng-2020-ftm-music",
+          "type": "extends",
+          "note": "FTM+MUSIC 단일채널 거리측정을 다채널 CFR 스티칭으로 확장해 cm 급 달성"
+        }
+      ],
+      "added": "2026-10-18",
+      "last_checked": "2026-10-18"
+    },
+    {
+      "id": "zhang-2022-osnma-distance-decreasing",
+      "title": "Protecting GNSS Open Service Navigation Message Authentication Against Distance-Decreasing Attacks",
+      "authors": [
+        "Kewei Zhang",
+        "Erik G. Larsson",
+        "Panos Papadimitratos"
+      ],
+      "venue": "IEEE TAES",
+      "venue_full": "IEEE Transactions on Aerospace and Electronic Systems, vol. 58, no. 2, pp. 1224–1240, Apr. 2022 (온라인 2021-10-26, CC BY 4.0) — KTH Royal Institute of Technology · Linköping University",
+      "tier": "journal",
+      "category": "defense",
+      "year": 2022,
+      "url": "https://doi.org/10.1109/TAES.2021.3122512",
+      "preprint": "https://ieeexplore.ieee.org/ielx7/7/9755199/09585397.pdf?arnumber=9585397",
+      "doi": "10.1109/TAES.2021.3122512",
+      "topics": [
+        "gnss",
+        "osnma",
+        "distance-decreasing",
+        "early-detect-late-commit",
+        "correlator-normality-test",
+        "glrt",
+        "goodness-of-fit",
+        "identifiability"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "**ED/LC 계열 거리축소 공격을 '수신기가 이미 계산하는 상관 출력의 정상성 검정' 으로 잡으려 한 논문**이라, 코퍼스가 다투는 주장 C-08·가정 A8('통계적 정상성 검사가 조작을 걸러낸다')에 GNSS 쪽 수치 경계를 준다. CS 의 NADM/TQI 도 정상 분포를 기준으로 걸러내는 같은 범주인데, 이 논문은 그 범주가 **큰 조작은 거의 완벽히 잡지만 작은 조작은 노이즈에 묻혀 놓친다**는 것을 모델+시뮬레이션으로 정량화한다. DD 공격의 LC 구간이 심볼 안에 전이를 남기므로 상관 출력이 정규분포에서 벗어나는데, 수신기 지식에 따라 Shapiro–Wilk 적합도 검정(지식 없음) 또는 GLRT(전이 지식 있음)로 탐지한다. 높은 SNR 에서는 가장 공격적인 축소(짧은 T_LC)도 거의 100 % 탐지되지만, SNR 15 dB·T_LC/T_int < 0.372 같은 약한·은밀한 축소는 두 검정 모두 놓친다 — '탐지를 피하려면 축소량을 줄여라' 가 저자 결론이다. CS 거리축소가 노리는 '정상 오차 꼬리 안의 작은 축소' 가 바로 이 사각지대에 해당하는지는 CS 상관 출력에서 재야 하며 그 측정은 코퍼스에 없다(교차 논증). 신호를 늦추는 재생 쪽을 다뤄 CS 축소와 방향이 반대인 점도 Focarelli 2026 과 같은 경계다.",
+      "summary": "암호학적 항법 메시지 인증(NMA, Galileo OSNMA)이 있어도 막지 못하는 거리축소(DD) 공격 — 조기 판별(ED)로 심볼을 일찍 추정하고 늦은 커밋(LC)으로 재전송해 의사거리를 실시간으로 줄이는 물리계층 공격 — 을 분석하고 탐지법을 제안한다. 녹화한 Galileo E1 OS 신호에 DD 공격을 합성해 ED 단계의 심볼 오류율을 정량화하고(C/N0=40 dB·Hz 에서 0.5 ms T_ED 로 거의 0 오류 → 약 150 km 축소 여지), LC 구간이 심볼 안에 남기는 전이 때문에 피해 수신기의 prompt 상관 출력 분포가 정규에서 벗어남을 수학적으로 모델링한다. 이를 근거로 수신기 지식에 따라 Shapiro–Wilk 적합도(GoF) 검정과 GLRT 두 가지를 설계하고, 몬테카를로 시뮬레이션과 합성 DD 신호로 탐지율·ROC 를 평가한다. 두 검정 모두 높은 SNR 에서는 가장 짧은 T_LC 도 탐지하지만 낮은 SNR·작은 T_LC 는 놓치며, 탐지율이 거의 100 % 에 가까운 영역에서 GLRT 가 GoF 보다 약 20 % 높다.",
+      "hardware": [
+        "신호원: NT1065_USB3 프런트엔드로 녹화한 실제 Galileo E1 OS 신호(위성 PRN 3·5·9·22) — 공격 신호는 이 녹화본에 합성, 실제 송수신 하드웨어 공격은 없음"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "자작 Galileo E1 OS 소프트웨어 수신기(Borre 외 SDR GPS 교재 기반), 탐지 모듈은 1000 IP 샘플(=4 s)마다 판정",
+        "몬테카를로 시뮬레이션(2×10^7 샘플, 유의수준 0.01)"
+      ],
+      "software_verified": true,
+      "results": [
+        "Shapiro–Wilk GoF: SNR≈14 dB 에서 T_LC/T_int=0.494 면 탐지율 100 % 접근; SNR>22 dB 면 T_LC/T_int=0.25 로도 100 %; 공격적일수록(긴 T_LC) 낮은 SNR 에서도 탐지(SNR=10 dB·T_LC/T_int=0.714 에서 100 %)",
+        "GLRT 는 탐지율 100 % 근방 설정에서 GoF 대비 약 20 % 높음(T_LC/T_int=0.372·SNR=16 dB: GLRT 88 % 대 GoF 71 %)",
+        "약한·은밀한 축소는 두 검정 모두 실패: 합성 신호에서 SNR=15 dB·T_LC/T_int<0.372 면 미탐지 (SNR=22 dB 면 최소 T_LC 도 탐지)",
+        "저자 결론: 탐지를 피하려면 축소량(T_LC)을 줄여야 하고, 공격자는 추가 잡음(DD-AN)으로 C/N0 를 낮춰 탐지를 더 떨어뜨릴 수 있으나 수신기가 저 C/N0 신호를 의심 표시해 대응 가능",
+        "ED 성능: C/N0=47 dB·Hz 녹화본에 가우시안 잡음을 더해 C/N0=31~45 dB·Hz 모사, 이론 심볼오류율과 일치"
+      ],
+      "limitations": [
+        "실제 무선 송수신 공격은 없음 — 녹화 신호에 합성한 DD 신호로 평가(저자, 향후 SDR 로 실제 수신기 대상 실험 계획)",
+        "DD 공격은 심볼 길이=1차 코드 길이인 신호(Galileo E1-B·GPS L2C CM)에만 적용, GPS L1 C/A 등은 비트경계 검출 실패로 공격이 드러남 (저자)",
+        "약한 축소(작은 T_LC·낮은 SNR)는 탐지 사각지대 (저자)",
+        "ARX·ATX 클럭 동기가 필요 (저자)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "clulow-2006-long-symbols",
+        "poturalski-2010-cicada-attack",
+        "flury-2010-distance-decreasing",
+        "poturalski-2011-db-802-15-4a",
+        "poturalski-2012-secure-precise-ir-uwb",
+        "ranganathan-2012-chirp-attacks"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "flury-2010-distance-decreasing",
+          "type": "extends",
+          "note": "UWB 임펄스에 대한 ED/LC 거리축소를 GNSS 암호보호 신호로 옮기고, 상관 출력 정상성 검정이라는 탐지 방어를 덧붙임"
+        },
+        {
+          "to": "ranganathan-2012-chirp-attacks",
+          "type": "complementary",
+          "note": "chirp 거리축소와 같은 물리계층 축소 계열을 GNSS 맥락에서 다루고 탐지 가능성을 평가"
+        }
+      ],
+      "added": "2026-10-18",
+      "last_checked": "2026-10-18"
+    },
+    {
+      "id": "morano-2024-hybrid-localization-tsch",
+      "title": "Distance- and Angle-Based Hybrid Localization Integrated in the IEEE 802.15.4 TSCH Communication Protocol",
+      "authors": [
+        "Grega Morano",
+        "Aleš Simončič",
+        "Teodora Kocevska",
+        "Tomaž Javornik",
+        "Andrej Hrovat"
+      ],
+      "venue": "Sensors",
+      "venue_full": "Sensors, vol. 24, no. 12, Article 3925, 2024 (온라인 2024-06-17, CC BY 4.0) — Jožef Stefan Institute · Jožef Stefan International Postgraduate School, Ljubljana",
+      "tier": "journal",
+      "category": "protocol",
+      "year": 2024,
+      "url": "https://doi.org/10.3390/s24123925",
+      "preprint": "https://www.mdpi.com/1424-8220/24/12/3925",
+      "doi": "10.3390/s24123925",
+      "topics": [
+        "802-15-4",
+        "tsch",
+        "ilac",
+        "mcpd",
+        "doa",
+        "golomb-ruler",
+        "hybrid-localization",
+        "at86rf215"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "**거리(MCPD)와 각도(DoA)를 TSCH 통신 타임슬롯 안에 얹어 단일 노드가 이웃 위치를 패킷마다 얻게 한 802.15.4 논문**이라, CS 와 같은 다중반송파 위상차 거리측정을 '통신과 함께' 돌릴 때의 시간·동기·효율 설계를 보여 주는 참조다. CS 연구 관점의 쓸모는 두 가지다. (1) MCPD 를 15개 Golomb 주파수만으로 전 스펙트럼 위상응답을 복원해 거리를 재므로(기존 PBR 의 160 샘플 대비), CS 가 채널을 건너뛰며 위상을 모으는 방식의 효율 상한을 가늠하는 비교점이 된다. (2) 하드웨어가 Bluetooth 가 아니라 AT86RF215(802.15.4) PMU 라 기술 축은 `other` 지만, 측정 원리(CW 톤 교환·PLL 재설정·PMU 위상 측정)와 다중경로 오차(벽 근처 노드에서 MAE 증가) 특성은 CS PBR 과 직접 비교된다. **보안 관점은 없다**(공격·탐지·위조 미논의) — 정확도·효율·프로토콜 통합만 다루므로 판단 레이어에는 걸지 않는다.",
+      "summary": "IEEE 802.15.4 TSCH 통신 프로토콜의 타임슬롯을 확장해 위상 측정 과정(PMP)을 끼워 넣고, 거리(MCPD)와 각도(DoA)를 패킷마다 함께 추정하는 통합 위치·통신(ILAC) 방식을 제안한다. TSCH 의 전역 동기를 활용해 두 기기가 동시에 채널을 측정하고, DoA 는 8소자 원형 배열을 RF 스위치로 전환하며 CFO 보정 기준구간과 90슬롯 샘플로 iCDE/MUSIC 추정하며, 거리는 15개 Golomb 주파수 집합으로 전 스펙트럼 위상응답을 복원해 MCPD 로 잰다(기존 PBR 160 샘플 대비 대폭 축소, 모호성 없는 거리 300 m). AT86RF215 라디오 6대(루트+5노드)로 5.1×6.5 m 사무실에서 실측했고, 5회 연속 측정 중앙값 기준 최대 위치 오차 2 m 미만·평균 0.37 m, 16회 중앙값이면 최대 오차 0.65 m 미만을 얻었다. Contiki-NG 용 AT86RF215 드라이버를 공개했다.",
+      "hardware": [
+        "AT86RF215(IEEE 802.15.4, PMU 위상 측정) 기반 저가 마이크로컨트롤러 6대(루트 1 + 노드 5), RF 스위치 + 8소자 원형 안테나 배열(UCA), 중간주파수 1 MHz",
+        "측정 환경: 5.1×6.5 m 빈 사무실, 1.4 m 높이 스탠드, Wi-Fi AP 17대 동작(간섭 무처리); 거리 오프셋 2.05 m 보정"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Contiki-NG OS 용 AT86RF215 드라이버(공개), DoA: iCDE·MUSIC, 거리: Golomb 15톤 MCPD, 이상치 제거: Quality Indicator(QI) 임계",
+        "타임슬롯 10 ms → 15 ms 확장, 슬롯프레임 8슬롯 가정 시 노드당 120 ms 간격(16회 중앙값=1920 ms, 5회=600 ms)"
+      ],
+      "software_verified": true,
+      "results": [
+        "위치 오차(5회 연속 중앙값): 노드별 RMSE 0.194–0.628 m, MAE 0.112–0.361 m; 평균 오차 0.37 m, 최대 2 m 미만, 모든 노드 CDF 중앙값 0.41 m 미만",
+        "16회 중앙값: 노드별 RMSE 0.185–0.583 m, 최대 오차 0.65 m 미만(단일 측정은 최대 6 m 초과)",
+        "거리 추정(5회 중앙값, 15톤): MED 오차 약 ±0.18–0.59 m, STD 0.035–0.060 m — 160샘플 PBR 급 정확도를 15샘플로 달성; 각도 MAE 1.90–7.47°",
+        "벽에 가까운 노드일수록 다중경로로 MAE 증가; RSSI(FSPL) 기준 대비 MCPD 가 거리 변동에 훨씬 강건(1 dBm 변화 → 거리 약 11.5 % 변동)"
+      ],
+      "limitations": [
+        "각도 오차가 위치 오차의 주원인 — 소자 수 증가·공간 평활·개별 다이폴 튜닝·상호결합 고려 필요 (저자)",
+        "다중경로가 거리·각도 정확도를 떨어뜨림(벽 근처 노드) (저자)",
+        "단일 사무실 환경 실측 (관찰)",
+        "보안·위조·공격 관점 없음 (관찰)"
+      ],
+      "artifacts": {
+        "code": "https://github.com/9morano/contiki-ng/tree/vesna",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "pelka-2014-phase-multi-frequency",
+        "gunia-2017-phase-positioning-off-the-shelf",
+        "schroeder-2018-cde",
+        "zand-2019-ble-pbr",
+        "schroeder-2019-multipath-pbr",
+        "boer-2020-pbr-multipath",
+        "coppens-2022-uwb-standards-overview",
+        "schroeder-2022-inphase",
+        "morano-2024-phase-distance-tsch"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "morano-2024-phase-distance-tsch",
+          "type": "extends",
+          "note": "같은 그룹의 거리 전용 TSCH 통합(PBD)을 거리+각도 하이브리드 위치측정으로 확장"
+        },
+        {
+          "to": "schroeder-2022-inphase",
+          "type": "extends",
+          "note": "InPhase 의 다중주파수 PBR(160 샘플)을 TSCH 안에서 Golomb 15톤으로 축약해 통신과 통합"
+        }
+      ],
+      "added": "2026-10-18",
+      "last_checked": "2026-10-18"
+    },
+    {
+      "id": "avoine-2021-relay-to-db-chapter",
+      "title": "From Relay Attacks to Distance-Bounding Protocols",
+      "authors": [
+        "Gildas Avoine",
+        "Ioana Boureanu",
+        "David Gérault",
+        "Gerhard P. Hancke",
+        "Pascal Lafourcade",
+        "Cristina Onete"
+      ],
+      "venue": "Springer (book ch.)",
+      "venue_full": "Security of Ubiquitous Computing Systems (G. Avoine, J. Hernandez-Castro, eds.), ch. 7, pp. 113–130, Springer, 2021 (Open Access CC BY 4.0) — IRISA · Surrey · Clermont Auvergne · City University of Hong Kong · Limoges",
+      "tier": "other",
+      "category": "survey",
+      "year": 2021,
+      "url": "https://doi.org/10.1007/978-3-030-10591-4_7",
+      "preprint": "https://link.springer.com/content/pdf/10.1007/978-3-030-10591-4_7.pdf",
+      "doi": "10.1007/978-3-030-10591-4_7",
+      "topics": [
+        "distance-bounding",
+        "relay-attack",
+        "early-detect-late-commit",
+        "pulse-reordering",
+        "emv-relay",
+        "pkes",
+        "threat-model"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "**릴레이 공격→거리 바운딩의 전 계보를 공격·정준 프로토콜·위협모델·실제 구현까지 한 장에 묶은 튜토리얼 서베이**라, CS 보안을 거리 바운딩 문헌에 자리매김할 때의 빠른 지도이자 reading-order 의 뼈대가 된다. CS 연구에 바로 쓰이는 대목은 세 가지다. (1) ED/LC(조기 전송·늦은 커밋)와 '증명자 응답 속이기(overclocking·데이터 클럭 복원)' 를 물리·비트 코딩 수준에서 정리 — CS 의 짧은 심볼이 왜 ED/LC 에 노출되는지의 교과서적 배경. (2) 상용 거리 바운딩 구현 세 사례(NXP Mifare 바이트지향 DB·기본 비활성, 3DB UWB 펄스 재배열·블라인딩, EMV RRP) 를 정리해, '거리 바운딩이 상용에서 실제로 어떻게 생겼나' 를 CS 와 비교할 수 있게 한다 — 특히 3DB 의 펄스 재배열은 ED/LC 물리계층 대책의 실물이다. (3) 이론 대 실제의 간극(형식 모델이 '증명자 연산은 상수시간' 같은 가정으로 실제 공격을 못 잡음)을 짚어, CS RTT 를 형식 틀에 넣을 때의 한계(assumed A6)와 직접 연결된다. 서베이라 수치는 없고 계보·구조 정리이므로, 판단 레이어에는 이미 구성 논문들(ED/LC·거리 하이재킹·EMV)로 반영돼 있어 새 주장을 만들지는 않는다.",
+      "summary": "릴레이 공격의 개념과 그 주 대책인 거리 바운딩을 개괄하는 Open Access 책 장이다. 비접촉 스마트카드·결제·키리스 엔트리에서의 릴레이 실제 사례와 기본·고급 릴레이 전략(목적제작/기성품 릴레이, ED/LC, 증명자 응답 가속)을 정리하고, Hancke–Kuhn·Brands–Chaum 정준 거리 바운딩 구조와 그 위협모델(마피아·거리·테러리스트 사기)과 증명가능 보안·형식검증을 요약한다. 이어 상용 구현 세 가지 — NXP Mifare 의 바이트지향 DB(기본 비활성), 3DB 의 UWB 펄스 재배열·블라인딩으로 ED/LC 를 막는 IC, EMV 비접촉 결제의 릴레이 저항(PaySafe 기반 RRP) — 를 짚는다. 끝으로 이론과 실제의 간극(형식 모델의 상수시간 연산 가정 등), 응용 인지형 DB, 전문 구현의 더딘 채택을 현재 과제로 제시한다.",
+      "hardware": [
+        "없음 — 거리 바운딩 서베이/튜토리얼 장 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "없음 — 문헌·구현 사례 정리 (전문 확인)"
+      ],
+      "software_verified": true,
+      "results": [
+        "ED/LC: NRZ 코딩이면 공격자가 비트주기의 최대 T_B/2 늦게 응답해도 올바로 샘플됨; 적분형 수신기는 늦게·짧고 강한 신호로 늦은 커밋 — 조기 추측과 결합하면 증명자를 더 가깝게 보이게 함(개념 정리)",
+        "상용 DB 구현 정리: NXP Mifare Plus/DESFire 는 바이트지향 DB 지만 기본 비활성이고 상한 설정법 비공개, 목적제작 릴레이엔 분해능 부족으로 취약 가능",
+        "3DB UWB IC: Brands–Chaum 기반, 펄스 재배열(조정 가능 보안 파라미터)+블라인딩으로 ED/LC 완화, LOS 120 m·정확도 10 cm(데이터시트), 재배열·블라인딩엔 아직 공개 공격 없음",
+        "EMV: Chothia 외 PaySafe 가 기성품 폰으로 릴레이를 실증·완화했고, 2016년 이후 EMV 규격이 PaySafe 식 릴레이 저항 기능을 포함(채택 현황 공개 수치 없음)"
+      ],
+      "limitations": [
+        "서베이라 새 실험·수치 없음 (관찰)",
+        "형식 DB 모델이 실제 물리계층 공격(상수시간 연산 가정 등)을 못 잡는 이론-실제 간극을 저자들이 명시 (저자)",
+        "상용 DB 구현(NXP·EMV)의 실제 보급 수치가 공개되지 않음 (저자)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "beth-1991-chess-grandmaster",
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "hancke-2008-tof-db-attacks",
+        "drimer-2007-smartcard-relay-db",
+        "clulow-2006-long-symbols",
+        "hancke-2009-relay-attacks-revisited",
+        "francis-2010-nfc-p2p-relay",
+        "francillon-2011-pkes-relay",
+        "avoine-2011-db-framework",
+        "cremers-2012-distance-hijacking",
+        "francis-2012-nfc-phone-relay",
+        "boureanu-2013-towards-secure-db",
+        "chothia-2015-paysafe-relay-cost-bounding",
+        "boureanu-2015-practical-provable-db",
+        "kim-2008-swiss-knife-db",
+        "mauw-2018-db-verification-without-time",
+        "avoine-2018-db-survey",
+        "singh-2019-uwb-pr"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-10-18",
+      "last_checked": "2026-10-18"
     }
   ]
 }
