@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-18",
-  "last_run": "2026-10-18",
+  "updated": "2026-10-19",
+  "last_run": "2026-10-19",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1572,
+  "citation_edges": 1633,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -1491,7 +1491,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-25",
+      "last_checked": "2026-10-19",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1505,7 +1505,8 @@
         "vasisht-2016-chronos",
         "brands-1993-distance-bounding",
         "xiong-2015-tonetrack",
-        "francis-2010-nfc-p2p-relay"
+        "francis-2010-nfc-p2p-relay",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1767,7 +1768,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-10-06",
+      "last_checked": "2026-10-19",
       "cites": [
         "cremers-2012-distance-hijacking",
         "francillon-2011-pkes-relay",
@@ -1789,7 +1790,8 @@
         "taponecco-2014-overshadow-enlargement-4a",
         "compagno-2016-enlargement-attacks-uwb-db",
         "radu-2022-emv-relay-protection",
-        "capkun-2003-sector"
+        "capkun-2003-sector",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2109,7 +2111,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-09-12",
+      "last_checked": "2026-10-19",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -2118,7 +2120,8 @@
         "rasmussen-2010-rf-distance-bounding",
         "hancke-2008-tof-db-attacks",
         "poturalski-2010-cicada-attack",
-        "tippenhauer-2009-id-based-db"
+        "tippenhauer-2009-id-based-db",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2903,7 +2906,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-19",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2925,7 +2928,8 @@
         "francis-2010-nfc-p2p-relay",
         "boureanu-2013-towards-secure-db",
         "avoine-2011-db-framework",
-        "beth-1991-chess-grandmaster"
+        "beth-1991-chess-grandmaster",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4413,7 +4417,8 @@
         "hu-2003-packet-leashes",
         "capkun-2003-sector",
         "schaller-2009-physical-properties-verification",
-        "beth-1991-chess-grandmaster"
+        "beth-1991-chess-grandmaster",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4424,7 +4429,7 @@
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-10-10"
+      "last_checked": "2026-10-19"
     },
     {
       "id": "flury-2010-distance-decreasing",
@@ -8749,7 +8754,8 @@
         "hancke-2009-relay-attacks-revisited",
         "avoine-2011-db-framework",
         "beth-1991-chess-grandmaster",
-        "bussard-2005-dbpk-terrorist-fraud"
+        "bussard-2005-dbpk-terrorist-fraud",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8760,7 +8766,7 @@
         }
       ],
       "added": "2026-09-01",
-      "last_checked": "2026-10-11"
+      "last_checked": "2026-10-19"
     },
     {
       "id": "nkrow-2024-persistent-db",
@@ -11949,7 +11955,8 @@
         "2026-10-11 재시도: OpenAlex 여전히 closed·초록 없음 — unverified 유지",
         "2026-10-12 재시도: Crossref 여전히 초록 없음(link 는 PII S0263224126021081 의 api.elsevier.com — 키 없이 401), ScienceDirect 정확한 PII 페이지는 facebookexternalhit UA 400·Twitterbot 403, OpenAlex closed — unverified 유지",
         "2026-10-14 재시도: OpenAlex·OpenAIRE 모두 closed·초록 없음, ScienceDirect PII 페이지는 Slackbot·LinkedInBot·WhatsApp·Discordbot·bingbot·TelegramBot·Zotero UA 전부 403(본문 없는 챌린지 페이지) — unverified 유지",
-        "2026-10-17 재시도: S2 단건 API 초록 null, X-MOL DOI 리다이렉트 404, ResearchGate 레코드는 Chrome·Googlebot·facebookexternalhit UA 모두 403, OpenAlex 여전히 closed — unverified 유지"
+        "2026-10-17 재시도: S2 단건 API 초록 null, X-MOL DOI 리다이렉트 404, ResearchGate 레코드는 Chrome·Googlebot·facebookexternalhit UA 모두 403, OpenAlex 여전히 closed — unverified 유지",
+        "2026-10-19 재시도: OpenAlex 여전히 closed·abstract_inverted_index null — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11957,7 +11964,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-17",
+      "last_checked": "2026-10-19",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -15815,7 +15822,8 @@
         "boureanu-2013-towards-secure-db",
         "francis-2012-nfc-phone-relay",
         "bussard-2005-dbpk-terrorist-fraud",
-        "avoine-2021-relay-to-db-chapter"
+        "avoine-2021-relay-to-db-chapter",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -15856,7 +15864,7 @@
         }
       ],
       "added": "2026-09-29",
-      "last_checked": "2026-10-18"
+      "last_checked": "2026-10-19"
     },
     {
       "id": "rithivik-2026-ble-ranging-comparison-conecct",
@@ -15990,7 +15998,8 @@
         "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
         "2026-10-10 재시도: dl.acm.org/doi/pdf 여전히 Cloudflare 403(5.7 KB HTML), OpenAlex 재조회도 gold 표기·다른 OA 위치 없음 — 워크숍 발표일(10-26) 이후 재시도",
         "2026-10-11 재시도: dl.acm.org/doi/pdf 는 curl·Googlebot UA 모두 Cloudflare 403(발표일 10-26 이후 재시도)",
-        "2026-10-12 재시도: dl.acm.org/doi/pdf 는 Chrome·Googlebot·curl UA 모두 Cloudflare 403, Wayback 은 /doi·/doi/pdf·/doi/epdf 스냅샷 0, OpenAlex best_oa_location 은 pdf_url 없음 — 발표일(10-26) 이후 재시도"
+        "2026-10-12 재시도: dl.acm.org/doi/pdf 는 Chrome·Googlebot·curl UA 모두 Cloudflare 403, Wayback 은 /doi·/doi/pdf·/doi/epdf 스냅샷 0, OpenAlex best_oa_location 은 pdf_url 없음 — 발표일(10-26) 이후 재시도",
+        "2026-10-19 재시도: ACM DL 의 HTML 전문 경로(/doi/fullHtml/·/doi/ 랜딩)도 WebFetch 로 403, S2 openAccessPdf 는 DOI 링크뿐, arXiv 'AutoBLE' 검색 0 — 발표일(10-26) 이후 재시도"
       ],
       "artifacts": {
         "code": null,
@@ -16006,7 +16015,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-10-12"
+      "last_checked": "2026-10-19"
     },
     {
       "id": "pestourie-2019-secureloc-ack-attack",
@@ -16045,7 +16054,8 @@
       ],
       "hardware_verified": false,
       "software": [
-        "확인 필요"
+        "확인 필요 — PIMRC 본문 미확보. 저자 학위논문(pestourie-2020-uwb-secure-ranging-thesis) III.2 기준 SecureLoc 구성: Decawino 노드(Teensyduino 3.2 가 SPI 로 DWM1000 구동, UWB MAC 계층 구현) 펌웨어는 Arduino 프레임워크 + 단일 C++ 소스(TDMA·거리측정 FSM)에서 앵커별 ID·AES-CCM*-128 키 세트를 넣어 바이너리를 자동 생성하는 자체 배포 도구",
+        "학위논문 III.2 기준: 앵커 → USB 시리얼 → Raspberry Pi 3B+ → MQTT(Ethernet) 서버, Python 3D 측위 엔진(Panda3D)이 거리 필터(슬라이딩 윈도·포화 필터)·다변측량(Gauss-Newton·가중 중심)·JSON 로깅 수행"
       ],
       "software_verified": false,
       "results": [
@@ -16054,7 +16064,8 @@
       "limitations": [
         "본문 미확보(IEEE 유료, HAL hal-02426131 은 서지만) — 초록과 Xplore 참고문헌 20건만 확인",
         "관찰: 802.15.4a 기준이며 4z 의 암호화 프리앰블(STS)은 스푸핑 ACK 를 물리계층에서 막는다(학위논문 결론)",
-        "2026-10-05 재시도: HAL API 의 hal-02426131 은 여전히 파일 없는 서지 레코드(fileMain 없음)"
+        "2026-10-05 재시도: HAL API 의 hal-02426131 은 여전히 파일 없는 서지 레코드(fileMain 없음)",
+        "2026-10-19 보강: software 를 저자 학위논문 III.2 절로 채움 — 학위논문은 V.2 SAA 분석을 PIMRC 논문 재수록이라고 밝히지 않아(V.2 의 '[102]' 는 Jung 외 2015) software_verified·verification 은 올리지 않음"
       ],
       "artifacts": {
         "code": null,
@@ -16069,7 +16080,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-30",
-      "last_checked": "2026-10-05"
+      "last_checked": "2026-10-19"
     },
     {
       "id": "pestourie-2020-uwb-secure-ranging-thesis",
@@ -16504,7 +16515,9 @@
       ],
       "software_verified": false,
       "results": [
-        "확인 필요 — 초록에 수치 없음. 초록 기준: 표본 거리한정 프로토콜들로 실제 자원 요구와 성능 상충을 예시하고 실용 구현의 남은 과제를 논의"
+        "확인 필요 — TII 본문 미확보. 초록 기준: 표본 거리한정 프로토콜들로 실제 자원 요구와 성능 상충을 예시하고 실용 구현의 남은 과제를 논의",
+        "제1저자 학위논문(Pretoria 2011) 5장 기준 — TII 판과 같은 비교 틀로 보이나 대응은 저자 미명시: 비교 지표 = 막는 공격(DF·MF·TF)·공격 성공확률·필요 암호 원시함수·메모리·오류 내성·연산(RN·PRF·비대칭)·전송량; 파라미터 KSYM = 128(AES-128)·KPUB = 3072(RSA)·F = 256(SHA-256)·MAC = 128·NRAND = 64 비트, 반복 n = 64",
+        "학위논문 표 5.1(14종): 성공확률 DF/MF/TF — BC (1/2)^n/(1/2)^n, BB (1/2)^n 셋 다, HK·MP DF (3/4)^n·MF (3/4)^n·(5/8)^n, RNTS (3/4)^n 셋 다, TP (1/2)^n·(9/16)^n·(9/16)^n, KA (7/8)^n·~(1/2)^n, KAKSP·Hitomi (1/2)^n·(1/2)^n·(3/4)^n, MUSE (1/4)^n·(7/16)^n, AT (1/2)^n·(1/2)^n(n/2+1); 증명자 메모리 258(HK)~6912 비트(BB), 전송량 256(HK·RNTS·KA·TMA)~3392 비트(BB); 테러리스트 사기까지 막는 것은 BB·RNTS·TP·KAKSP·Hitomi 5종, 비대칭 암호를 쓰는 것은 BB 뿐"
       ],
       "limitations": [
         "전문 미확보 (2026-10-03): IEEE 유료(isOpenAccess false), OpenAlex·arXiv 사본 없음 — 초록은 Xplore REST abstract 로 확인",
@@ -16512,7 +16525,8 @@
         "관찰: 제1저자의 University of Pretoria 박사학위논문(2011-10, UPSpace 공개 'Accurate and efficient localisation in wireless sensor networks using a best-reference selection') 5장이 거리한정 프로토콜 14종을 보안·메모리·전송량·연산으로 비교하는 같은 주제를 담지만, TII 판과의 대응이 학위논문에 명시돼 있지 않아 근거로 쓰지 않음 — 다음 보강 때 대조 후보",
         "2026-10-10: Crossref 예치 참고문헌을 DOI·제목으로 코퍼스와 다시 대조해 cites 13건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
         "2026-10-11: 같은 Crossref 예치 참고문헌(ref25, DOI 10.1007/0-387-25660-1_15)으로 오늘 편입한 Bussard–Bagga SEC 2005 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
-        "2026-10-12: Crossref 예치 참고문헌 ref17(Rasmussen·SecureComm 2007·p. 331)로 오늘 편입한 Rasmussen–Čapkun 무선 지문 논문 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
+        "2026-10-12: Crossref 예치 참고문헌 ref17(Rasmussen·SecureComm 2007·p. 331)로 오늘 편입한 Rasmussen–Čapkun 무선 지문 논문 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
+        "2026-10-19 보강: 위 '다음 보강 때 대조 후보' 를 이행 — UPSpace DSpace REST(items/ca083886-…/bundles → ORIGINAL 04chapter5.pdf)로 학위논문 5장을 받아 비교 틀·표 5.1 을 이미지로 확인하고 results 에 '학위논문 5장 기준' 으로 표시해 넣음. TII 참고문헌(Crossref 예치 40건)에 같은 프로토콜군(Swiss-Knife·Kim–Avoine·MUSE·Bussard–Bagga·Reid)과 저자의 ALWadHA 위치추정 논문이 들어 있어 같은 비교로 보이지만, TII 는 산업 RFID·RTLS 의 물리 채널 문제(Hancke 2011·Poturalski 2011·Flury 2010 인용)도 다루므로 대응이 명시되지 않은 한 verification 은 partial 유지"
       ],
       "artifacts": {
         "code": null,
@@ -16546,7 +16560,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-10-03",
-      "last_checked": "2026-10-12"
+      "last_checked": "2026-10-19"
     },
     {
       "id": "mazur-2024-ifft-bayesian-pbr",
@@ -16987,7 +17001,8 @@
         "mauw-2018-db-verification-without-time",
         "singh-2019-uwb-pr",
         "chothia-2015-paysafe-relay-cost-bounding",
-        "boureanu-2020-relay-resistant-emv"
+        "boureanu-2020-relay-resistant-emv",
+        "mauw-2019-post-collusion-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17013,7 +17028,7 @@
         }
       ],
       "added": "2026-10-04",
-      "last_checked": "2026-10-05"
+      "last_checked": "2026-10-19"
     },
     {
       "id": "sastry-2003-echo-location-claims",
@@ -18054,7 +18069,8 @@
         "francis-2010-nfc-p2p-relay",
         "francillon-2011-pkes-relay",
         "beth-1991-chess-grandmaster",
-        "bussard-2005-dbpk-terrorist-fraud"
+        "bussard-2005-dbpk-terrorist-fraud",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -18065,7 +18081,7 @@
         }
       ],
       "added": "2026-10-07",
-      "last_checked": "2026-10-11"
+      "last_checked": "2026-10-19"
     },
     {
       "id": "vandewater-2025-cs-multi-antenna-relay",
@@ -18503,7 +18519,7 @@
       },
       "verification": "verified",
       "added": "2026-10-10",
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-19",
       "cites": [
         "leu-2022-ghost-peak",
         "anliker-2023-time-for-change",
@@ -18529,7 +18545,8 @@
         "compagno-2016-enlargement-attacks-uwb-db",
         "capkun-2003-sector",
         "brands-1993-distance-bounding",
-        "radu-2022-emv-relay-protection"
+        "radu-2022-emv-relay-protection",
+        "rasmussen-2009-imd-proximity-access"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -20079,6 +20096,364 @@
       "relations": [],
       "added": "2026-10-18",
       "last_checked": "2026-10-18"
+    },
+    {
+      "id": "rasmussen-2009-imd-proximity-access",
+      "title": "Proximity-based Access Control for Implantable Medical Devices",
+      "authors": [
+        "Kasper B. Rasmussen",
+        "Claude Castelluccia",
+        "Thomas S. Heydt-Benjamin",
+        "Srdjan Čapkun"
+      ],
+      "venue": "ACM CCS",
+      "venue_full": "Proceedings of the 16th ACM Conference on Computer and Communications Security (CCS '09), Chicago, pp. 410–419, 2009 — ETH Zurich · INRIA",
+      "tier": "top4",
+      "category": "defense",
+      "year": 2009,
+      "url": "https://doi.org/10.1145/1653662.1653712",
+      "preprint": "https://www.cs.ox.ac.uk/files/6492/ccs172-rasmussen.pdf",
+      "doi": "10.1145/1653662.1653712",
+      "topics": [
+        "distance-bounding",
+        "ultrasonic-distance-bounding",
+        "proximity-based-access-control",
+        "device-pairing",
+        "key-agreement",
+        "implantable-medical-devices",
+        "side-channel",
+        "rf-induced-signal"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 연구에서 이 논문이 쓰이는 대목은 측정 수치가 아니라 두 가지 설계·구현 교훈이다. (1) **'느린 매체' 가정이 저자 자신의 시제품 회로에서 깨진 첫 사례** — 초음파 거리 제한의 보안은 '공격자는 음향 채널로 음속보다 빨리 보낼 수 없다' 에 서 있는데, RF 수신용으로 설계하지 않은 시제품에서도 압전 소자로 가는 전선 두 가닥이 음향 수신과 같은 크기의 무선 신호를 받아, 차폐가 없으면 '음향' 응답을 빛의 속도로 보낼 수 있었다. 프로토콜 증명은 그대로인데 회로가 가정을 무너뜨린 것이다. CS 도 NADM·PBR/RTT 교차검증·RTT 랜덤 시퀀스 판정이 규격 밖 구현에 맡겨져 있어, '모델이 맞아도 구현 경로가 가정을 깬다' 는 계보의 원전으로 인용할 수 있다(코퍼스 9편이 이 논문을 인용). (2) **측정과 키를 묶는 방향** — 여기서는 DH 기여분 g^p·g^v 자체를 비트 단위로 고속 교환해 측정 채널로 보내므로 수립된 키가 곧 거리 상한에 결속된다. CS 는 반대로 Security Start 로 이미 맺은 LL 키에서 DRBG 시퀀스를 만들어 측정하므로 측정 결과가 키 수립에 아무 영향을 주지 않는다. CS 를 근접 기반 페어링(Just Works 대체)이나 근접 인가에 쓰려는 설계라면 이 결속을 따로 만들어야 한다는 비교 기준이 된다(관찰 — 논문은 Bluetooth CS 를 다루지 않는다). 초음파라 cm 급 정확도 수치는 CS 와 직접 비교 대상이 아니다.",
+      "summary": "이식형 의료기기(IMD)가 가까이 있는 기기에만 자원 접근을 허용하도록 초음파 거리 제한(distance bounding)에 기반한 근접 접근 제어를 제안한다. 핵심은 근접 인식 기기 페어링 프로토콜로, 검증자가 논스 비트를 무선으로 보내면 증명자가 자기 DH 기여분과 XOR 한 비트를 초음파로 즉시 돌려보내는 고속 비트 교환을 양방향으로 수행해, 양측 DH 기여분이 측정된 거리 안에서 왔음을 보장하고 그 결과 키가 거리에 결속되게 한다. 자격증명 토큰과의 결합, 원격 모니터링은 허용하되 재설정은 근접 명령만 허용하는 메시지 근접 검증, 음향 전송 오류 허용 확장을 함께 제시한다. ATMega644p 기반 시제품으로 공기·다진 소고기·소 복벽 이식 환경에서 거리 정확도와 처리 지연·전력을 측정했고, 차폐가 없으면 RF 를 초음파 수신 회로에 유도해 음속 가정을 우회할 수 있다는 구현 측면 채널을 보고한다.",
+      "hardware": [
+        "proof-of-concept 증명자·검증자 시제품: RF·음향 아날로그 회로 + ATMega644p 마이크로컨트롤러 20 MHz",
+        "근거리(정밀) 모드 수신부: 4극 VCVS 능동 고역통과 필터 + 2단 증폭(최종단 클리핑으로 TTL 구형파를 MCU 에 입력), 반송파 13.6 kHz BFSK(변조 지수 500 Hz), 최대 1 kbaud",
+        "장거리 모드 수신부: 상태변수 대역통과 필터 fc = 7.35 kHz·Q = 100 + PLL 주파수 검출(아날로그 영역)",
+        "압전 소자(마이크로폰으로 사용)·음향 트랜스듀서, 오실로스코프(처리 지연 측정), 전류 측정형 실험실 벤치 전원",
+        "모의 환자 환경: 다진 소고기 8 kg(송신기 사방 2 cm 이상 매설, 근거리 시험 수신기는 패러데이 케이지 안), 소 복벽 조각(약 15 × 9 × 6 cm)에 마이크를 3 cm 깊이로 이식(장거리 시험)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "ATMega644p 펌웨어 — 근거리 모드의 주파수 검출을 MCU 에서 디지털로 구현(언어·툴체인 미기재)",
+        "공개 코드 없음(본문에 링크 없음)"
+      ],
+      "software_verified": true,
+      "results": [
+        "처리 지연(무선 비트 수신 → 음향 응답 송신): 20회 평균 412 ns·표준편차 45.4 ns — 소리로 약 0.01 cm 라 거리 추정에 무시할 수준; 무선 전파 시간 오차도 30 m 에서 0.1 µs 로 측정 분해능 아래",
+        "근거리 모드, 공기 중 1–100 cm(2 cm 간격·거리당 5회): 정확도 1.78 cm·표준편차 1.59 cm; 고기 2 cm + 공기 1 cm 경로: 0.01 cm 이내·표준편차 0.5 cm(14회 평균)",
+        "장거리 모드(소 복벽 3 cm 이식, 총 10–150 cm·10 cm 간격 + 5 cm, 거리당 10회): 정밀도 9 cm·표준편차 3 cm — PLL 잠금 시간의 비결정성이 원인",
+        "전력: 수신 MCU 0.15 W·송신 MCU 0.17 W(5 V), 수신 아날로그부 0.13 W(10 V); 인증 1 s 가정 시 0.28 J — 10 J 제세동 1회 에너지로 약 36회 인증",
+        "구현 측면 채널(신규 관찰): RF 수신용이 아닌 시제품에서도 수신 회로에서 압전 소자로 가는 짧은 전선 두 가닥이 음향 전송과 같은 크기의 무선 신호를 유도 — 차폐가 없으면 공격자가 '음향' 응답을 빛의 속도로 보내 초음파 거리 제한의 핵심 가정을 우회, 유일한 대책은 효과적인 RF 차폐",
+        "프로토콜: 검증자 논스 Nv 를 비트 단위로 무선 송신, 증명자는 Nv ⊕ g^p 비트를 음향으로 즉시 반환하고 반대 방향도 반복 — 거리 단축 공격을 막기 위해 비트 단위 교환이 필요하다고 명시; 인체 음속 1500 m/s 를 가정해 공기 경로는 약 3배 불리하게 계산되므로 허용 반경 밖 공격자의 추가 거리가 증폭됨"
+      ],
+      "limitations": [
+        "보안 분석이 '공격자는 음향 채널로 음속보다 빠르게 보낼 수 없다' 에 의존하며, 저자 스스로 차폐 없는 구현에서 이 가정이 깨짐을 보이고 차폐를 공학 문제로 남김 (저자)",
+        "DoS·배터리 고갈·환자 프라이버시(IMD 착용 여부 탐지) 공격은 범위 밖 (저자)",
+        "시제품은 실제 IMD 가 아닌 범용 MCU·아날로그 회로이고, 이식 환경은 다진 소고기·소 복벽으로 모의 (저자)",
+        "음향 채널 전송 오류를 허용하면 공격자의 추측 공간이 줄어드는 트레이드오프를 확률로만 분석(그림 5) (저자)",
+        "관찰: 신원 없이 근접만 판정하므로 보안 범위(통상 10 cm 미만) 안의 악성 리더는 응급 모드에서 설계상 접근 가능"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "capkun-2005-secure-positioning",
+        "clulow-2006-long-symbols",
+        "hancke-2005-rfid-db",
+        "sastry-2003-echo-location-claims",
+        "singelee-2007-db-noisy-environments",
+        "capkun-2003-sector"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "sastry-2003-echo-location-claims",
+          "type": "extends",
+          "note": "Echo 의 RF 송신·초음파 응답 거리 제한을 IMD 접근 제어와 DH 키를 거리에 묶는 상호 기기 페어링으로 넓히고, 구현 측면 채널(RF 유도)로 '음속 이하' 가정의 경계를 보임"
+        }
+      ],
+      "added": "2026-10-19",
+      "last_checked": "2026-10-19"
+    },
+    {
+      "id": "mauw-2019-post-collusion-db",
+      "title": "Post-Collusion Security and Distance Bounding",
+      "authors": [
+        "Sjouke Mauw",
+        "Zach Smith",
+        "Jorge Toro-Pozo",
+        "Rolando Trujillo-Rasua"
+      ],
+      "venue": "ACM CCS",
+      "venue_full": "Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (CCS '19), London, pp. 941–958 — University of Luxembourg · ETH Zurich · Deakin University",
+      "tier": "top4",
+      "category": "analysis",
+      "year": 2019,
+      "url": "https://doi.org/10.1145/3319535.3345651",
+      "preprint": null,
+      "doi": "10.1145/3319535.3345651",
+      "topics": [
+        "distance-bounding",
+        "terrorist-fraud",
+        "collusion",
+        "formal-verification",
+        "tamarin",
+        "distance-hijacking",
+        "emv-relay",
+        "mifare-plus"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "거리 제한 문헌의 네 공격 유형 중 마지막으로 남아 있던 **공모(테러리스트) 사기를 기호 모델에서 처음 정의**하고 Mastercard PayPass·NXP MIFARE Plus 같은 상용 근접 검사까지 Tamarin 으로 검증한 논문이라, CS 를 프로토콜 계층에서 형식 검증하려 할 때 출발점이 된다. CS 에서 공모가 문제 되는 경우는 반사기 소유자가 협조하는 릴레이(키 소유자가 멀리 있는 공범에게 세션 데이터를 넘김)와 키를 공유한 다중 앵커다. 이 논문의 정의는 '공모 이후 세션에서도 근접 증명이 성립하지 않아야 한다' 이므로, CS 의 세션 데이터(CS_IV·CS_IN 에서 나온 DRBG 시퀀스)를 한 번 넘기면 이후 절차에서 무엇이 가능해지는지를 같은 틀로 물을 수 있다(관찰 — 논문은 Bluetooth 를 다루지 않는다). 상용 프로토콜 결과(학위논문판 기준: 마피아 사기는 막지만 거리 사기·거리 하이재킹에 취약, 고치려면 빠른 단계 응답을 검증자 논스와 카드 신원에 묶어야 함)는 CS RTT 의 반사기 시퀀스가 이니시에이터의 그 step 송신에 인과적으로 의존하지 않는다는 판단 레이어의 관찰과 같은 계열이다. 게재판 원문을 못 구해 partial 이며, 수치·표는 전문을 확인한 같은 저자의 학위논문 레코드(toro-pozo-2019-db-analysis-thesis)를 근거로 쓴다.",
+      "summary": "암호 프로토콜 검증은 보통 참가자가 장기 키를 누설하지 않았다고 가정하지만, 참가자가 장기 비밀을 드러내지 않고도 공모해 보안 목표를 무너뜨릴 수 있다. 이 논문은 다중집합 재작성 기반으로 공모를 모델링하고, 공모가 일어난 뒤 시작된 세션에서 주장된 보안 성질을 검증하는 post-collusion security 를 정의한다. 이를 거리 제한 프로토콜의 테러리스트 사기 — 원거리 증명자가 가까운 공범과 공모해 거짓 근접 증명을 하되 추가 공모 없이는 다시 할 수 없는 공격 — 분석에 쓴다. 정의와 Tamarin 으로 문헌의 모든 공격 유형을 다루는 모듈식 검증 틀을 만들고, Mastercard PayPass·NXP MIFARE Plus(근접 검사) 같은 산업 프로토콜을 포함한 25개 넘는 프로토콜을 조사해 산업 프로토콜의 공격을 확인하고 수정안과 재사용 가능한 모델을 내놓는다(초록 기준).",
+      "hardware": [
+        "없음 (초록 기준: Tamarin 기호 검증 논문) — 게재판 원문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "Tamarin prover (초록)",
+        "DBVerify — https://github.com/jorgetp/dbverify (저장소 README 가 S&P'18·CCS'19 의 보조 자료라고 명시; 논문 본문 링크는 미확인)"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: 공모를 다중집합 재작성으로 모델링하고, 공모 이후 시작된 세션의 보안 성질을 검증하는 post-collusion security 를 정의해 테러리스트 사기 정의에 사용",
+        "초록: Tamarin 모듈식 프레임워크로 문헌의 모든 공격 유형을 다루며 25개 넘는 프로토콜을 조사 — Mastercard PayPass·NXP MIFARE Plus(근접 검사) 포함, 산업 프로토콜의 공격 확인·수정안·재사용 가능한 모델 제공",
+        "학위논문판(Toro-Pozo 2019 6–7장, 투고 전 'Post-collusion security and terrorist fraud') 기준 — 게재판과 다를 수 있음: 거리 안전 + 테러리스트 사기 내성을 함께 만족한 것은 Reid 외·DBPK·Swiss-Knife 3개, 19개가 테러리스트 사기에 취약; PayPass·PaySafe·MIFARE Plus 는 마피아 사기는 막지만 거리 사기·거리 하이재킹에 취약"
+      ],
+      "limitations": [
+        "게재판 전문 미확보 (2026-10-19): ACM DL 은 Chrome·Googlebot·curl UA 모두 403, ORBilu 10993/41607 bitstream 은 request-item 302(요청본), Deakin DRO figshare 20723047 은 is_embargoed, Wayback 에는 302 캡처뿐, arXiv·IACR ePrint 판 없음",
+        "내용은 같은 저자들의 박사학위논문 두 편으로 확인 — Toro-Pozo 2019(6–7장, 투고 전 판)·Smith 2020(ORBilu 10993/45058, 4장 — '이론 절을 확장' 했다고 명시) — 둘 다 재구성판이라 verification 은 partial",
+        "인용 관계는 OpenAlex referenced_works(58건)와 Crossref 예치 참고문헌(60건)을 코퍼스와 대조해 채움(16건)"
+      ],
+      "artifacts": {
+        "code": "https://github.com/jorgetp/dbverify",
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "boureanu-2013-towards-secure-db",
+        "meadows-2007-db-authentication-logic",
+        "kim-2009-mixed-challenges-db",
+        "kim-2008-swiss-knife-db",
+        "avoine-2011-db-framework",
+        "bussard-2005-dbpk-terrorist-fraud",
+        "kuhn-2010-uwb-ir-db",
+        "reid-2007-timing-relay-detection",
+        "hancke-2005-rfid-db",
+        "schaller-2009-physical-properties-verification",
+        "cremers-2012-distance-hijacking",
+        "capkun-2003-sector",
+        "chothia-2015-paysafe-relay-cost-bounding",
+        "avoine-2018-db-survey",
+        "mauw-2018-db-verification-without-time",
+        "rasmussen-2010-rf-distance-bounding"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "mauw-2018-db-verification-without-time",
+          "type": "extends",
+          "note": "S&P'18 의 인과 기반 거리 제한 모델에 공모 규칙을 더해 테러리스트 사기까지 네 공격 유형을 한 Tamarin 틀로 확장(초록 기준)"
+        }
+      ],
+      "added": "2026-10-19",
+      "last_checked": "2026-10-19"
+    },
+    {
+      "id": "toro-pozo-2019-db-analysis-thesis",
+      "title": "Computational and Symbolic Analysis of Distance-Bounding Protocols",
+      "authors": [
+        "Jorge Luis Toro Pozo"
+      ],
+      "venue": "PhD Thesis Univ. Luxembourg",
+      "venue_full": "Doctoral thesis, University of Luxembourg, PhD-FSTC-2019-31, 2019 (심사 2019-05-14, 지도 Sjouke Mauw, 부위원장 Rolando Trujillo Rasúa, 위원장 Yves Le Traon) — ORBilu 10993/39506, 145쪽",
+      "tier": "thesis",
+      "category": "analysis",
+      "year": 2019,
+      "url": "https://orbilu.uni.lu/handle/10993/39506",
+      "preprint": "https://orbilu.uni.lu/bitstream/10993/39506/1/thesis-jorge.pdf",
+      "doi": null,
+      "topics": [
+        "distance-bounding",
+        "terrorist-fraud",
+        "mafia-fraud",
+        "distance-fraud",
+        "distance-hijacking",
+        "formal-verification",
+        "tamarin",
+        "lookup-based-protocols",
+        "emv-relay",
+        "mifare-plus",
+        "thesis"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "S&P'18(mauw-2018)·CCS'19(mauw-2019)·EuroS&P'16·RFIDSec'16 을 한 권으로 묶은 학위논문으로, 코퍼스에서 **거리 제한 프로토콜 25개 넘게를 네 공격 유형(마피아·거리·거리 하이재킹·테러리스트 사기) 전부에 대해 같은 틀로 기계 검증한 결과표(표 7.1)를 전문으로 확인할 수 있는 유일한 출처**다(CCS'19 게재판은 미확보). CS 연구에 쓰이는 대목은 셋이다. (1) **상용 릴레이 저항 프로토콜이 무엇을 놓치는가** — Mastercard PayPass RRP·Visa payWave 기반 PaySafe·NXP MIFARE Plus 근접 검사는 모두 릴레이(마피아 사기)는 막지만, 빠른 단계 응답이 리더 챌린지와 인과 관계가 없고 카드 신원에 묶이지 않아 거리 사기·거리 하이재킹이 성립한다. 고치는 법은 응답에 리더 논스 UN 과 사전 계산 가능한 카드 서명(또는 MAC)을 넣는 것뿐이고 응답 지연은 늘지 않는다. CS RTT 의 반사기 CS_SYNC 랜덤 시퀀스도 DRBG 로 양측이 미리 아는 값이라, 부정직한 반사기의 거리 사기에 대해 같은 질문이 그대로 선다(관찰 — CS 는 다루지 않음). (2) **UWB 거리 제한도 기호 모델에서 마피아 사기가 나왔다** — Kuhn 외 UWB IR 프로토콜은 PKI·keyed-MAC 어느 해석에서도 마피아 사기 trace 가 나왔고 원 논문은 verbatim 릴레이만 고려했다. 물리계층이 튼튼해도 프로토콜 계층이 따로 깨질 수 있다는 사례다. (3) **기호 검증의 경계** — 비트 연산을 해시로 강화하고 빠른 단계를 단일 챌린지-응답으로 추상화하므로 확률적 공격·물리계층 ED/LC 는 모델 밖이고, 테러리스트 사기 정의는 공모 행동 전체를 덮지 못해 완전하지 않다고 저자가 밝힌다. CS 를 Tamarin 으로 옮기더라도 PBR 위상 조작·RTT ED/LC 는 별도로 다뤄야 한다는 근거다.",
+      "summary": "룩셈부르크대 Mauw 그룹의 박사학위논문으로, 거리 제한 프로토콜의 보안을 계산 모델과 기호 모델 양쪽에서 체계적으로 분석하는 틀을 제시한다. 1부(계산 모델)는 빠른 단계 응답이 초기 단계에 만든 표에서 조회되는 lookup 기반 프로토콜을 결정적 유한 오토마타 집합으로 모델링해 마피아 사기 저항의 빈틈없는 하한과 최적 pre-ask 전략을 증명하고, 크기 상한 아래 최적인 Modular 프로토콜을 구성한다. 2부(기호 모델)는 Basin 외의 시간·위치 기반 정의와 동치인 인과 기반 secure distance-bounding 성질을 증명하고(S&P'18), 공모 규칙과 post-collusion security 로 테러리스트 사기를 정의한 뒤(CCS'19 투고 전 판), Tamarin 으로 네 공격 유형을 모두 다루는 검증 틀을 만들어 25개 넘는 프로토콜을 조사한다. TREAD 의 마피아 사기·거리 하이재킹, Kuhn 외 UWB IR 프로토콜의 마피아 사기, ISO/IEC 14443 기반 PayPass·PaySafe·MIFARE Plus 의 거리 사기·거리 하이재킹을 찾고 수정안과 기계 증명을 제시한다.",
+      "hardware": [
+        "없음 — 계산·기호 모델 분석 학위논문 (전문 확인)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Tamarin prover — 25개 넘는 프로토콜 모델·(불)안전성 증명, 증명 오라클 없이 구성(버전 미기재)",
+        "DBVerify — https://github.com/jorgetp/dbverify (Tamarin 모델·증명·결과 수집 스크립트)",
+        "다기준 비교 프레임워크 [AMT15] — Modular 프로토콜 비교 실험(4.4절, 라운드 수 n = 128)"
+      ],
+      "software_verified": true,
+      "results": [
+        "3장: lookup 기반 프로토콜의 마피아 사기 저항 하한 (1/2^n)(1 + n/2) 이 빈틈없음을 증명, layered·random-labeled 클래스에서 'pre-ask 세션에서 얻은 응답을 그대로 재사용' 전략이 최적; Tree 프로토콜이 하한을 달성하지만 공간이 지수적",
+        "4장: 크기 상한이 주어지면 오토마타 girth 가 가장 큰 프로토콜이 마피아 사기에 최적 — 모듈러 합동 기반 Modular 프로토콜 구성, 13개 최신 프로토콜과의 다기준 비교에서 능가되지 않음",
+        "5장(S&P'18): 잘 형성된 프로토콜에서 '빠른 단계 동안 증명자(또는 손상된 에이전트)가 살아 있다' 는 인과 성질이 'RTT 가 거리 상한' 과 동치",
+        "6장: 공모 규칙과 post-collusion security 정의 — 테러리스트 사기 저항을 '추가 공모 없이는 이후 세션에서 근접 증명을 못 한다' 로 기호화; 세션 신선 데이터 누설이 이후 모든 세션의 사칭으로 이어질 수 있음을 예시",
+        "7장 표 7.1(Tamarin, 25개 넘는 프로토콜): dbsec + 테러리스트 사기 내성을 함께 만족한 것은 Reid 외·DBPK(Bussard–Bagga)·Swiss-Knife 3개뿐, 19개가 테러리스트 사기에 취약; Kuhn 외 UWB IR 프로토콜은 PKI·keyed-MAC 두 해석 모두 마피아 사기(신규 — 원 논문은 verbatim 릴레이만 고려); TREAD 는 비대칭 키 변형에서 마피아 사기·대칭 키 변형에서 거리 하이재킹(원 저자 모델이 악성 검증자를 허용하지 않아 놓침)",
+        "7.3절: ISO/IEC 14443 기반 PayPass(Mastercard RRP)·PaySafe(Visa payWave 기반)·MIFARE Plus(근접 검사, X·EV1) 모두 마피아 사기(릴레이)는 막지만 거리 사기·거리 하이재킹·테러리스트 사기에 취약 — 빠른 단계 응답이 챌린지와 인과 관계가 없고 카드 신원에 묶이지 않음; '로빈 후드' 시나리오(손상된 카드를 숨긴 장치로 계산대 근처에 두면 다른 손님 결제가 모두 그 카드로 청구)",
+        "수정안(기계 증명 공개): 카드 빠른 단계 응답을 ⟨nC, ti, sign(nC, skC), UN⟩ 으로(서명은 사전 계산 가능해 응답 지연 없음, MIFARE Plus 는 MAC(KM, nC, ·)) → dbsec 만족; 테러리스트 사기까지 막으려면 ⟨nC, ti, f(UN, nC ⊕ KM)⟩ + SDAD = sign(UN, AC, skC)",
+        "Chothia 외(USENIX Security 2018) ProVerif 결과와 3건 불일치 — Hancke–Kuhn 을 테러리스트 사기 내성으로 판정한 오류, Meadows 외(N_V, P ⊕ N_P)·MAD 단방향의 거리 하이재킹 누락; 모델 평균 약 255 줄, 프로토콜당 전체 보조정리 검증 평균 1분 남짓(대부분 수 초)"
+      ],
+      "limitations": [
+        "Tamarin 과 테러리스트 사기 내성 정의를 합쳐도 완전한 검증 방법이 아님 — 가능한 공모 행동 전체를 덮을 수 없어 내성 있는 프로토콜을 증명하지 못할 수 있음 (저자)",
+        "계산 모델 분석은 마피아 사기만 다룸 (저자)",
+        "기호 모델은 빠른 단계를 단일 챌린지-응답으로 추상화하고 비트 연산을 해시 등 강한 원시함수로 바꿈 — 확률적 공격과 물리계층 거리 축소(ED/LC 등)는 모델 밖 (저자 서술·관찰)",
+        "6–7장은 투고 전 'Post-collusion security and terrorist fraud'(2019) 판 — 게재판(CCS'19, mauw-2019-post-collusion-db)과 세부가 다를 수 있음 (관찰)",
+        "관찰: Bluetooth·CS 는 다루지 않음"
+      ],
+      "artifacts": {
+        "code": "https://github.com/jorgetp/dbverify",
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "beth-1991-chess-grandmaster",
+        "brands-1993-distance-bounding",
+        "capkun-2003-sector",
+        "hancke-2005-rfid-db",
+        "bussard-2005-dbpk-terrorist-fraud",
+        "clulow-2006-long-symbols",
+        "reid-2007-timing-relay-detection",
+        "meadows-2007-db-authentication-logic",
+        "hancke-2008-tof-db-attacks",
+        "kim-2008-swiss-knife-db",
+        "kim-2009-mixed-challenges-db",
+        "schaller-2009-physical-properties-verification",
+        "rasmussen-2010-rf-distance-bounding",
+        "kuhn-2010-uwb-ir-db",
+        "avoine-2011-db-framework",
+        "cremers-2012-distance-hijacking",
+        "boureanu-2013-towards-secure-db",
+        "chothia-2015-paysafe-relay-cost-bounding",
+        "avoine-2018-db-survey",
+        "mauw-2018-db-verification-without-time"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "chothia-2015-paysafe-relay-cost-bounding",
+          "type": "attacks",
+          "note": "PaySafe 가 마피아 사기는 막지만 거리 사기·거리 하이재킹·테러리스트 사기에 취약함을 Tamarin 으로 보이고, 빠른 단계 응답에 UN·카드 서명을 넣는 수정안과 기계 증명 제시(표 7.1·7.3절)"
+        },
+        {
+          "to": "kuhn-2010-uwb-ir-db",
+          "type": "attacks",
+          "note": "보안 채널을 PKI·keyed-MAC 어느 쪽으로 해석해도 마피아 사기 trace 발견 — 원 논문은 verbatim 릴레이만 고려(표 7.1)"
+        },
+        {
+          "to": "mauw-2018-db-verification-without-time",
+          "type": "extends",
+          "note": "5장이 S&P'18 을 재수록하고 6–7장에서 공모 규칙·테러리스트 사기로 넓혀 25개 넘는 프로토콜을 재검증"
+        }
+      ],
+      "added": "2026-10-19",
+      "last_checked": "2026-10-19"
+    },
+    {
+      "id": "gil-pons-2022-is-eve-nearby",
+      "title": "Is Eve nearby? Analysing protocols under the distant-attacker assumption",
+      "authors": [
+        "Reynaldo Gil-Pons",
+        "Ross Horne",
+        "Sjouke Mauw",
+        "Alwen Tiu",
+        "Rolando Trujillo-Rasua"
+      ],
+      "venue": "IEEE CSF",
+      "venue_full": "2022 IEEE 35th Computer Security Foundations Symposium (CSF), Haifa, pp. 17–32 — University of Luxembourg · Australian National University · Deakin University",
+      "tier": "other",
+      "category": "analysis",
+      "year": 2022,
+      "url": "https://doi.org/10.1109/CSF54842.2022.9919655",
+      "preprint": null,
+      "doi": "10.1109/CSF54842.2022.9919655",
+      "topics": [
+        "distant-attacker-assumption",
+        "proximity-based-pairing",
+        "key-exchange",
+        "formal-verification",
+        "tamarin",
+        "memory-erasure",
+        "distance-hijacking"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "'주변에 공격자가 없다(원거리 공격자 가정)' 에 기대는 근접 기반 키 교환·인증 프로토콜을 형식 검증하는 틀이다. CS 와의 접점은 CS 를 근접 페어링이나 근접 인가에 쓰는 시나리오다. 이런 프로토콜은 대부분 신뢰 앵커 없이 근접만으로 키를 맺는데, 이 논문은 RSS·육안 확인 같은 근접 판정을 RTT 거리 제한으로 치환해 Tamarin 으로 검증하는 방법론을 준다(학위논문 4장 기준). 같은 장의 표 4.1 은 Bluetooth Secure Simple Pairing Just Works 에 RTT 근접 검사를 붙인 변형(Sun 외 대책)을 안전으로 판정한다. CS 측정을 페어링 결정에 끼워 넣는 설계를 검증할 때 바로 빌릴 수 있는 선례다(관찰 — 논문은 CS 를 다루지 않는다). 게재판 원문을 못 구해 partial 이고 판단 레이어에는 쓰지 않는다.",
+      "summary": "신체 영역망 같은 신흥 무선망의 여러 프로토콜은 망 안 기기의 근접성과 정직성에 기대어 보안 목표를 달성하지만, 이런 프로토콜을 형식 분석할 틀이 없어 예상치 못한 결함이 남는다. 이 논문은 그런 보안 틀을 제시하고 Tamarin 에 구현하는 방법을 보이며, 최근 키 교환 프로토콜 두 개에서 미보고 취약점을 찾는다(초록 기준). 제1저자 학위논문 4장(이 논문에서 파생)에 따르면, 왕복 시간 측정과 에이전트 위치로 '이웃에 공격자가 없음' 을 판정하는 시간 기반 모델과 시간·위치를 없앤 인과 기반 모델을 정의하고, 비밀성·인증·메모리 소거·거리 하이재킹을 포함하는 성질 클래스에서 두 모델의 공격 존재가 동치임을 증명한 뒤, 키 교환 5개와 메모리 소거 2개를 Tamarin 으로 검증한다.",
+      "hardware": [
+        "없음 (초록·학위논문 4장 기준: Tamarin 기호 검증) — 게재판 원문 미확보"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "Tamarin prover (초록)",
+        "모델·보조정리: https://gitlab.uni.lu/regil/distant-attacker-tamarin (학위논문 4장 각주 기준, 게재판 링크는 미확인)"
+      ],
+      "software_verified": false,
+      "results": [
+        "초록: 근접·정직성에 기대는 프로토콜의 형식 보안 틀을 Tamarin 에 구현하고 최근 키 교환 프로토콜 두 개에서 미보고 취약점 발견",
+        "학위논문 4장(Gil-Pons 2024, 이 논문에서 파생) 기준 — 게재판과 다를 수 있음: 키 교환 5개 중 DB 기반 Diffie-Hellman·MedicalDB·BluetoothJW-RTT 3개는 안전; Move2Auth-RTT 는 첫 메시지의 신원이 보호되지 않아 스마트폰 측 인증이 깨지고 기기 측 비밀성도 실패(가짜 Wi-Fi 망 시나리오), Amigo-RTT 는 DH 공개키 검증 누락으로 키가 1 이 되는 비밀성 공격과 역할 혼동 인증 공격; SPEED 는 검증자가 근접을 확인하지 않아 메모리 소거 주장이 깨짐"
+      ],
+      "limitations": [
+        "게재판 전문 미확보 (2026-10-19): IEEE Xplore 유료, ORBilu 10993/50132 bitstream 은 request-item 302, Deakin DRO figshare 26316766 은 is_embargoed, arXiv 판 없음",
+        "내용은 제1저자 박사학위논문(Gil-Pons 2024 'Analysis of Security Protocols with Security Properties Based on Distance', ORBilu 10993/60069) 4장으로 확인 — 저자가 '[67] 에서 파생' 이라고 밝힌 재구성판이라 verification 은 partial",
+        "RSS·육안 확인 같은 근접 판정을 RTT 거리 제한으로 치환해 모델링 — 저자 스스로 '신호세기 기반 프로토콜 분석의 해법이 아닌 우회책' 이라고 함; 사양 언어에 조건문·비결정성이 없고 XOR 은 교환법칙 없는 사용자 정의 연산자로 단순화 (학위논문 기준)",
+        "인용 관계는 OpenAlex referenced_works(32건)와 Crossref 예치 참고문헌(30건)을 코퍼스와 대조해 채움(8건)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "capkun-2003-sector",
+        "meadows-2007-db-authentication-logic",
+        "rasmussen-2009-imd-proximity-access",
+        "cremers-2012-distance-hijacking",
+        "avoine-2018-db-survey",
+        "mauw-2018-db-verification-without-time",
+        "boureanu-2020-relay-resistant-emv"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "mauw-2018-db-verification-without-time",
+          "type": "extends",
+          "note": "인과 기반 근접 해석을 거리 제한 밖(근접 키 교환·메모리 소거)의 '원거리 공격자 가정' 으로 확장 (학위논문 4장 기준)"
+        }
+      ],
+      "added": "2026-10-19",
+      "last_checked": "2026-10-19"
     }
   ]
 }
