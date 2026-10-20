@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-19",
-  "last_run": "2026-10-19",
+  "updated": "2026-10-20",
+  "last_run": "2026-10-20",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1633,
+  "citation_edges": 1671,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -1491,7 +1491,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-20",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1506,7 +1506,8 @@
         "brands-1993-distance-bounding",
         "xiong-2015-tonetrack",
         "francis-2010-nfc-p2p-relay",
-        "rasmussen-2009-imd-proximity-access"
+        "rasmussen-2009-imd-proximity-access",
+        "ranganathan-2012-tf-resilient-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2438,9 +2439,10 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-08-10",
+      "last_checked": "2026-10-20",
       "cites": [
-        "tschirschnitz-2021-method-confusion"
+        "tschirschnitz-2021-method-confusion",
+        "basin-2021-emv-break-fix-verify"
       ],
       "cites_source": "fulltext",
       "relations": [],
@@ -2906,7 +2908,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-20",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2929,7 +2931,8 @@
         "boureanu-2013-towards-secure-db",
         "avoine-2011-db-framework",
         "beth-1991-chess-grandmaster",
-        "rasmussen-2009-imd-proximity-access"
+        "rasmussen-2009-imd-proximity-access",
+        "ranganathan-2012-tf-resilient-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3897,7 +3900,8 @@
         "brands-1993-distance-bounding",
         "hancke-2005-practical-relay-iso14443",
         "ibrahim-2018-ftm-verification",
-        "francis-2012-nfc-phone-relay"
+        "francis-2012-nfc-phone-relay",
+        "ranganathan-2012-tf-resilient-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3908,7 +3912,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-10-04"
+      "last_checked": "2026-10-20"
     },
     {
       "id": "varughese-2026-ble6-pedestrian",
@@ -4322,7 +4326,8 @@
         "drimer-2007-smartcard-relay-db",
         "kfir-2005-virtual-pockets-relay",
         "francis-2010-nfc-p2p-relay",
-        "radu-2022-emv-relay-protection"
+        "radu-2022-emv-relay-protection",
+        "basin-2021-emv-break-fix-verify"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -4335,10 +4340,15 @@
           "to": "radu-2022-emv-relay-protection",
           "type": "extends",
           "note": "L1RP 가 RRP 의 ms 불확도를 Level 1 로 내려 μs 로 줄였지만 km 급 물리계층 릴레이는 여전히 허용한다고 정리(PURE 표 1)하고, UWB ns 거리측정으로 50 cm 까지 줄임; L1RP 의 공개 타이밍 데이터를 사용"
+        },
+        {
+          "to": "basin-2021-emv-break-fix-verify",
+          "type": "extends",
+          "note": "Basin 외의 C-2 커널(Mastercard) Tamarin 모델을 기반으로 삼아 UWB 거리측정을 결합한 PURE 의 단계를 추가하고 그 보안을 증명('Our model is based on the formal model of the C-2 kernel provided from [7]')"
         }
       ],
       "added": "2026-08-12",
-      "last_checked": "2026-10-04"
+      "last_checked": "2026-10-20"
     },
     {
       "id": "rasmussen-2010-rf-distance-bounding",
@@ -5227,13 +5237,14 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-10-03",
+      "last_checked": "2026-10-20",
       "cites": [
         "avoine-2018-db-survey",
         "hancke-2005-rfid-db",
         "brands-1993-distance-bounding",
         "boureanu-2015-practical-provable-db",
-        "mauw-2018-db-verification-without-time"
+        "mauw-2018-db-verification-without-time",
+        "bogner-2026-quantum-db-framework"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5241,6 +5252,11 @@
           "to": "mauw-2018-db-verification-without-time",
           "type": "extends",
           "note": "응답은 물리적으로 도달한 정보에만 의존할 수 있다는 Mauw 외의 인과 관점을 가져와, 명시적 시간·위치 대신 정보 흐름을 추적하는 one-round DF·MF 게임을 양자 거리한정의 SDP 로 정식화"
+        },
+        {
+          "to": "bogner-2026-quantum-db-framework",
+          "type": "extends",
+          "note": "같은 저자들의 QDB 보안 프레임워크([BASP26])가 정식화한 공격자 능력·DF/MF 게임에서 one-round 빠른 단계 게임을 뽑아 SDP 로 최적 공격 확률을 구함 — 프레임워크의 프로토콜별 수작업 분석을 자동 최적화로 대체"
         }
       ],
       "category": "analysis"
@@ -9668,7 +9684,7 @@
       },
       "verification": "verified",
       "added": "2026-09-05",
-      "last_checked": "2026-10-11",
+      "last_checked": "2026-10-20",
       "cites": [
         "clulow-2006-long-symbols",
         "cremers-2012-distance-hijacking",
@@ -9690,7 +9706,8 @@
         "capkun-2003-sector",
         "hancke-2011-secure-db-channel-rfid",
         "avoine-2011-db-framework",
-        "bussard-2005-dbpk-terrorist-fraud"
+        "bussard-2005-dbpk-terrorist-fraud",
+        "ranganathan-2012-tf-resilient-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17002,7 +17019,8 @@
         "singh-2019-uwb-pr",
         "chothia-2015-paysafe-relay-cost-bounding",
         "boureanu-2020-relay-resistant-emv",
-        "mauw-2019-post-collusion-db"
+        "mauw-2019-post-collusion-db",
+        "basin-2021-emv-break-fix-verify"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -17028,7 +17046,7 @@
         }
       ],
       "added": "2026-10-04",
-      "last_checked": "2026-10-19"
+      "last_checked": "2026-10-20"
     },
     {
       "id": "sastry-2003-echo-location-claims",
@@ -20454,6 +20472,262 @@
       ],
       "added": "2026-10-19",
       "last_checked": "2026-10-19"
+    },
+    {
+      "id": "ranganathan-2012-tf-resilient-db",
+      "title": "Design and Implementation of a Terrorist Fraud Resilient Distance Bounding System",
+      "authors": [
+        "Aanjhan Ranganathan",
+        "Nils Ole Tippenhauer",
+        "Boris Škorić",
+        "Dave Singelée",
+        "Srdjan Čapkun"
+      ],
+      "venue": "ESORICS",
+      "venue_full": "Computer Security – ESORICS 2012, 17th European Symposium on Research in Computer Security, Lecture Notes in Computer Science, pp. 415–432, Springer, 2012 — ETH Zurich · TU Eindhoven · K.U.Leuven COSIC",
+      "tier": "other",
+      "category": "defense",
+      "year": 2012,
+      "url": "https://doi.org/10.1007/978-3-642-33167-1_24",
+      "preprint": "https://lirias.kuleuven.be/retrieve/815cd374-28f4-4277-aa1d-d77a3ff41bca",
+      "doi": "10.1007/978-3-642-33167-1_24",
+      "topics": [
+        "distance-bounding",
+        "terrorist-fraud",
+        "prover-processing-delay",
+        "analog-challenge-reflection",
+        "hybrid-digital-analog",
+        "double-read-out-attack",
+        "swiss-knife",
+        "hancke-kuhn"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 연구에서 이 논문은 **'응답 측 처리 지연이 곧 보안 여유'라는 계산을 하드웨어 수치로 보여 주는 기준점**이다. 디지털 프로버는 비트를 받아 XOR 하고 다시 보내는 데 170 ns(약 27 m 속임 여유)가 걸리고, 아날로그 반사(CRCS)는 1 ns 이내(15 cm)지만 레지스터 선택을 못 해 테러리스트 사기 내성을 포기해야 했다. 이 논문의 혼합 설계는 반사 경로 2.75 ns(0.41 m)·채널 활성화 30 ns(테러리스트 사기 시 4.5 m)로 둘을 함께 얻는다. CS RTT 의 반사기(Reflector)는 처리 지연을 '무시할 만큼 작게' 만드는 대신 자기 도착–출발 시간차를 결과로 보고해 빼게 하는 디지털 경로이고, 응답 시퀀스는 CS Security Start 이후 DRBG 에서 나온 세션 값이므로, '반사기가 보고값을 줄여 말하면 얼마나 가까워 보일 수 있는가'(거리 사기)와 '반사기 쪽 키를 공모자에게 넘기지 않고 세션 시퀀스만 넘길 수 있는가'(테러리스트 사기)를 따질 때 이 논문의 지연 예산 분해(반사·활성화·라운드 시작)가 비교 틀이 된다(관찰 — 논문은 Bluetooth 를 다루지 않는다). 또 아날로그 구현에서 두 레지스터를 동시에 읽어 내는 **'double read-out' 공격**은, 규격이 아니라 회로가 프로토콜 가정을 깨는 사례로 rasmussen-2009 의 RF 유도 측면 채널과 같은 계보에 놓인다. 코퍼스 4편(abidin-2021·olafsdottir-2017·schepers-2021·tippenhauer-2015)이 '거리 제한 구현' 사례로 인용한다.",
+      "summary": "거리 제한 프로토콜은 프로버가 챌린지를 받아 처리하고 응답하는 시간이 왕복 시간에 비해 무시할 만해야 안전한데, 디지털 구현은 처리에 170 ns 가 들고 1 ns 이내의 아날로그 구현(CRCS)은 레지스터 선택을 하지 못해 테러리스트 사기를 막지 못한다는 간극에서 출발한다. 저자들은 검증자가 챌린지 비트를 두 반송파(ω0·ω1) 중 하나로 보내고, 프로버가 혼합기·필터로 네 개의 응답 채널(ωi ± Δ)을 만든 뒤 레지스터 R0·R1 값에 따라 하나만 켜서 반사하는 혼합 디지털-아날로그 설계(SCRCS)를 제안한다. 아날로그 프로버에서 두 레지스터를 한 라운드에 동시에 읽어 장기 비밀을 유출하는 새 'double read-out' 공격을 정의하고, 한 채널이 켜지면 다른 채널을 잠그는 채널 활성화 회로로 이를 막음을 불 논리로 보인다. Mini-Circuits RF 모듈로 만든 프로버 시제품에서 반사 지연 약 2.75 ns(거리 사기·마피아 사기 이득 최대 0.41 m), 채널 활성화 지연 약 30 ns(테러리스트 사기 이득 최대 4.5 m)를 측정했고, Swiss-Knife·Hancke–Kuhn 계열 프로토콜을 수정 없이 구현할 수 있다고 주장한다.",
+      "hardware": [
+        "프로버 시제품: 상용 Mini-Circuits RF 모듈로 구성 — 전압 제어 발진기(Δ = 500 MHz), 혼합기, 저역통과 3개·고역통과 3개 필터(채널 시프터), 레지스터 값에 따른 스위치 2개(5a·5b)와 채널 활성화 스위치 2개(6a·6b) (그림 7)",
+        "채널 활성화 회로: 신호를 제곱하는 혼합기 + 저역통과 필터 + 스위치(한 입력 5 V·다른 입력 접지)로 만든 에너지 임계 검출기",
+        "챌린지 반송파 ω0 = 3.5 GHz·ω1 = 5 GHz 는 함수 발생기로 생성해 프로버에 입력(검증자는 구현하지 않음)",
+        "지연 측정: 40 GSa/s 오실로스코프로 프로버 입·출력 단자를 탭, 챌린지는 2 µs 펄스 변조"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 아날로그·RF 회로 시제품이며 펌웨어·시뮬레이터·공개 코드 언급 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "반사 지연 τr ≈ 2.75 ns(혼합·필터·채널 활성화 스위치 합) — 프로버가 이를 0 으로 줄여도 거리 사기·마피아 사기·테러리스트 사기 이득은 최대 0.41 m (표 1); 반송파 주파수와 무관",
+        "채널 활성화 지연 τa ≈ 30 ns(그림 8) — 거리·마피아 사기에는 영향이 없고 테러리스트 사기에서만 이득 최대 4.5 m (표 1·요약). 본문 4.3절은 같은 30 ns 에 대해 'a/2 로 약 2.5 m' 라고 써 저자 수치가 서로 다르다",
+        "비교 기준: 디지털 프로버(Tippenhauer, XOR 후 응답) 170 ns → 최대 27 m, 아날로그 CRCS(Rasmussen–Čapkun) 1 ns 이내 → 15 cm 이지만 테러리스트 사기 내성 없음; Hancke 근거리 채널은 마피아 사기 1 m·거리 사기 11 m",
+        "double read-out 공격(신규 정의): 레지스터 선택형 아날로그 프로버에 한 라운드 안에서 두 반송파를 번갈아 보내 R0·R1 을 모두 읽어 장기 비밀 유출 — 채널 활성화 회로가 Oi = (DETi ∨ Oi) ∧ RST ∧ ENi, ENi = ¬Oj 로 한 라운드에 한 채널만 켜지게 해 차단",
+        "라운드 시작 시각 τp(프리앰블 동기)를 앞당기거나 늦추면 거리가 틀리는 대신 프로토콜이 실패(앞당기면 라운드의 50 % 오반사) — 공격 이득 없음"
+      ],
+      "limitations": [
+        "프로버만 구현했고 검증자를 포함한 전체 시스템과 실환경 평가는 향후 과제 (저자)",
+        "지연은 상용 모듈 조합 기준이며 집적회로로 구현하면 더 줄 것이라고만 언급 (저자)",
+        "테러리스트 사기 이득을 표 1·요약은 4.5 m, 4.3절 본문은 약 2.5 m 로 적어 수치가 일관되지 않음 (관찰)",
+        "챌린지 기저대역 데이터가 예측 가능하면 거리 사기 저항이 상위 프로토콜 분석 수준으로 떨어진다 — 기저대역 신호의 정확한 사양은 남겨 둠 (저자)",
+        "다중경로·잡음 환경에서의 에너지 검출 임계 TE 오작동, 거리 하이재킹은 다루지 않음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "rasmussen-2010-rf-distance-bounding",
+        "poturalski-2011-db-802-15-4a",
+        "francillon-2011-pkes-relay",
+        "cremers-2012-distance-hijacking",
+        "hancke-2005-rfid-db",
+        "kuhn-2010-uwb-ir-db",
+        "tippenhauer-2009-id-based-db",
+        "reid-2007-timing-relay-detection",
+        "kim-2008-swiss-knife-db",
+        "singelee-2007-db-noisy-environments",
+        "hu-2003-packet-leashes",
+        "capkun-2003-sector",
+        "hancke-2011-secure-db-channel-rfid",
+        "avoine-2011-db-framework",
+        "bussard-2005-dbpk-terrorist-fraud",
+        "rasmussen-2009-imd-proximity-access"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "rasmussen-2010-rf-distance-bounding",
+          "type": "extends",
+          "note": "CRCS 의 1 ns 급 아날로그 반사를 유지하면서 레지스터 선택(비트 비교)을 넣어 테러리스트 사기 내성까지 얻는 혼합 설계 — 대가로 채널 활성화 30 ns 가 테러리스트 사기 여유로 남음"
+        },
+        {
+          "to": "kim-2008-swiss-knife-db",
+          "type": "implements",
+          "note": "Swiss-Knife 의 빠른 단계(R0/R1 레지스터 응답)를 프로토콜 수정 없이 물리계층 프로버로 구현할 수 있음을 설계·시제품으로 보임(검증자는 미구현)"
+        }
+      ],
+      "added": "2026-10-20",
+      "last_checked": "2026-10-20"
+    },
+    {
+      "id": "basin-2021-emv-break-fix-verify",
+      "title": "The EMV Standard: Break, Fix, Verify",
+      "authors": [
+        "David Basin",
+        "Ralf Sasse",
+        "Jorge Toro-Pozo"
+      ],
+      "venue": "IEEE S&P",
+      "venue_full": "2021 IEEE Symposium on Security and Privacy (SP), pp. 1766–1781, May 2021 — ETH Zurich",
+      "tier": "top4",
+      "category": "attack",
+      "year": 2021,
+      "url": "https://doi.org/10.1109/SP40001.2021.00037",
+      "preprint": "https://arxiv.org/abs/2006.08249",
+      "doi": "10.1109/SP40001.2021.00037",
+      "topics": [
+        "emv",
+        "contactless-payment",
+        "relay-attack",
+        "man-in-the-middle",
+        "formal-verification",
+        "tamarin",
+        "pin-bypass",
+        "nfc"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "거리측정 논문이 아니라 **릴레이 경로를 '거리 속이기' 가 아니라 '인증되지 않은 필드 고치기' 에 쓰는** 사례로 CS 연구에 쓰인다. 공격자는 NFC 휴대폰 두 대(POS 에뮬레이터·카드 에뮬레이터, Wi-Fi TCP 소켓)로 릴레이를 걸고 그 위에서 카드가 보낸 CTQ 한 비트를 바꿔 '소비자 기기에서 본인 확인을 마쳤다' 고 단말을 속인다. CS 쪽에 옮기면, 근접 판정이 통과해도 그 판정에 묶이지 않은 제어 정보(능력·설정 교환)가 변조 가능하면 릴레이가 다른 목적으로 재사용된다는 위협 모델 항목이 된다(관찰 — CS 의 LL 제어 PDU 는 링크 암호화 뒤에 오가므로 같은 구조가 성립하는지는 규격 대조가 필요). 더 직접적인 용도는 계보다. 이 논문의 C-2 커널 Tamarin 모델을 coppola-2024-pure 가 그대로 확장해 UWB 결합 결제 PURE 를 증명했고, radu-2022 의 EMV 릴레이 대책과 toro-pozo-2019 의 PayPass 거리 사기 분석이 같은 그룹·같은 도구 줄기에 있다. 코퍼스 3편(coppola-2024·radu-2022·shi-2026)이 인용한다.",
+      "summary": "EMV 접촉·비접촉 결제 규격 전체를 은행·단말·카드 세 역할로 나눈 Tamarin 기호 모델로 만들어, 오프라인 데이터 인증(SDA·DDA·CDA) 3종, 본인 확인 방법(CVM) 5종, 온·오프라인 승인, Visa·Mastercard 비접촉 커널의 조합 설정마다 '단말이 받은 거래는 은행도 받는다'·'단말·은행에 대한 인증' 성질을 자동 검증한다. Visa 비접촉 프로토콜에서 카드가 보내는 CTQ(사용할 CVM 지시)가 인증되지 않아, 중간자가 이를 바꿔 '소비자 기기 CVM 수행' 으로 속이면 PIN 없이 고액 결제가 된다는 위반을 찾아냈다. 두 대의 NFC 안드로이드 기기로 릴레이 위에 중간자를 올린 앱을 만들어 실제 매장 단말에서 PIN 없는 고액 결제(예: 182.35 CHF·약 200 CHF)를 시연했다. 오프라인 비접촉 거래에서 카드가 AC 를 단말에 인증하지 않아 비진본 오프라인 거래가 받아들여지는 문제도 보고하고, 단말 쪽 소프트웨어 수정만으로 적용 가능한 세 가지 수정안을 Tamarin 으로 검증했다.",
+      "hardware": [
+        "공격 장치: NFC 지원 안드로이드 기기 2대 — POS 에뮬레이터(피해 카드 근처)·카드 에뮬레이터(HCE 지원, 결제 단말 근처), Android 4.4 KitKat(API 19) 이상, 두 기기는 Wi-Fi TCP/IP 소켓으로 통신(기기 모델 미기재)",
+        "피해 카드: 저자 소유 Visa Credit·Visa Electron·V Pay 카드, Mastercard 카드 3장(접촉 결제 관찰 시험)",
+        "실제 매장 단말 10대 이상(서로 다른 가맹점)에서 시험, 30건 이상 거래",
+        "분석 서버: Intel Xeon E5-2650 v4 2.20 GHz 2소켓(각 12코어)·256 GB RAM, Ubuntu 16.04.3 — 모델당 10스레드·최대 20 GB"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "Tamarin prover v1.5.1 — 접촉·비접촉 두 개의 일반 모델에서 목표 설정(target configuration)별 구체 모델을 자동 생성(접촉 모델 규칙 55개)",
+        "자체 안드로이드 PoC 앱(POS 에뮬레이터·카드 에뮬레이터 모드, 릴레이 위 중간자 변조) — 보고된 문제가 해결될 때까지 비공개라고 명시",
+        "공격 시연 영상은 본문 참고문헌 [36] 으로 공개"
+      ],
+      "software_verified": true,
+      "results": [
+        "Visa 비접촉: 설정 대부분이 인증 성질을 위반하고 Visa DDA High(온라인 거래에 DDA) 하나만 세 성질을 모두 만족 — 그러나 시험한 실제 단말 10대 이상 중 이 설정을 쓰는 곳은 없었음",
+        "PIN 우회: CTQ 첫 바이트 8번째 비트를 지워 CDCVM 수행으로 위장, Visa 신용·직불 카드로 국내 CVM 한도 초과 결제 성공(182.35 CHF 로그, 약 200 CHF 시연 영상) — 카드·단말이 가까울 필요 없이 릴레이 채널을 원거리로 늘릴 수 있다고 저자 명시",
+        "Mastercard 비접촉: CDA + 온라인 PIN(현재 가장 흔한 설정)은 안전함을 증명; SDA·DDA 에서는 카드가 AC 를 단말에 인증하지 않음",
+        "오프라인 비접촉(Visa 전체·구 Mastercard 저액 거래): 카드가 AC 를 단말에 인증하지 않아 비진본 오프라인 거래 수락 가능 — 윤리상 실단말 미시험",
+        "수정안: (1) 모든 거래에서 TTQ 첫 바이트 첫 비트 설정 (2) SDAD 검증 (3a) 모든 거래 온라인 처리 또는 (3b) SDAD 입력에 NC·CID·AC·PDOL·ATC·CTQ·UN·IAD·AIP 포함 — 세 수정 모두 Tamarin 으로 검증, (3b) 외에는 단말 소프트웨어만 바꾸면 됨",
+        "공격 전제: 공격자 기기가 피해 카드의 NFC 근접 범위 안에 있어야 함(카드 절도·분실 습득 또는 소지자 근처에서 POS 에뮬레이터 접근)"
+      ],
+      "limitations": [
+        "설계(규격) 수준 분석이며 구현 취약점은 범위 밖 (저자)",
+        "Discover(커널 6)·UnionPay(커널 7) 에도 통할 것으로 보지만 미시험 (저자)",
+        "오프라인 비진본 거래 공격은 가맹점 피해를 피하려 실단말에서 시험하지 않음 (저자)",
+        "릴레이 자체를 막는 거리 제한·릴레이 저항 프로토콜(Mastercard RRP 등)은 분석 대상이 아님 — 거리측정 관점의 수치 없음 (관찰)",
+        "arXiv v3(2021-02) 기준으로 확인 — IEEE S&P 게재판과의 차이는 대조하지 않음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "drimer-2007-smartcard-relay-db",
+        "mauw-2018-db-verification-without-time",
+        "francis-2012-nfc-phone-relay",
+        "chothia-2015-paysafe-relay-cost-bounding",
+        "beth-1991-chess-grandmaster",
+        "mauw-2019-post-collusion-db"
+      ],
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-10-20",
+      "last_checked": "2026-10-20"
+    },
+    {
+      "id": "bogner-2026-quantum-db-framework",
+      "title": "Security framework for quantum distance-bounding",
+      "authors": [
+        "Kevin Bogner",
+        "Aysajan Abidin",
+        "Dave Singelée",
+        "Bart Preneel"
+      ],
+      "venue": "Quantum Inf. Process.",
+      "venue_full": "Quantum Information Processing, vol. 25, no. 5, Paper No. 162, Springer, 2026 (published 2026-05-04; arXiv:2604.16071) — COSIC · DistriNet, KU Leuven",
+      "tier": "journal",
+      "category": "analysis",
+      "year": 2026,
+      "url": "https://doi.org/10.1007/s11128-026-05182-5",
+      "preprint": "https://arxiv.org/abs/2604.16071",
+      "doi": "10.1007/s11128-026-05182-5",
+      "topics": [
+        "quantum-distance-bounding",
+        "distance-bounding",
+        "provable-security",
+        "game-based-security",
+        "distance-fraud",
+        "mafia-fraud",
+        "terrorist-fraud",
+        "bb84"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "양자 채널이라 CS 에 직접 옮길 수치는 없고, 이미 코퍼스에 있는 bogner-2026-quantum-db-sdp 가 '[BASP26] 의 프레임워크' 로 그대로 가져다 쓰는 **선행 정의 논문**이라 계보를 잇기 위해 넣는다. CS 연구에 남는 쓸모는 두 가지다. (1) Boureanu 외 고전 거리 제한의 게임 기반 정의(거리·마피아·테러리스트 사기)를 다른 물리 채널로 옮길 때 무엇을 고정해야 하는지(타이밍 모델, 채널을 다 쥔 공격자, 정직 실행에만 적용하는 잡음 모델)를 명시적으로 나열한 점 — CS 의 위상·RTT 측정을 같은 형식으로 정의하려 할 때 체크리스트가 된다. (2) **빠른 단계 응답이 느린 단계에서 계산한 세션 값만으로 완전히 정해지면 테러리스트 사기에 본질적으로 취약하다**는 결론 — 분석한 QDB 프로토콜이 그래서 깨진다. CS 반사기의 RTT 시퀀스도 Security Start 이후 DRBG 로 정해지는 세션 값이라 같은 구조를 가진다는 관찰을 toro-pozo-2019 의 결론과 함께 뒷받침한다(관찰 — 논문은 Bluetooth 를 다루지 않는다).",
+      "summary": "양자 거리 제한(QDB)은 복제 불가능한 양자 상태로 빠른 단계 응답을 미리 계산하지 못하게 하지만, 기존 제안들은 각자 다른 모델에서 특정 공격만 분석해 왔다. 저자들은 고전 거리 제한의 Boureanu 외 게임 기반 틀을 양자로 옮겨, 시스템·타이밍 가정, 양자 능력을 가진 공격자, 거리·마피아·테러리스트 사기 실험, 정직 실행용 i.i.d. 탈분극 잡음 모델을 갖춘 재사용 가능한 보안 프레임워크를 정의한다. 이를 Abidin 2019 의 BB84 상태 기반 QDB 프로토콜에 적용해, 잡음 아래 완전성(정직 라운드 수락 확률을 다중 라운드로 확장)을 보이고, 라운드당 거리 사기 성공 확률 1/2 상한과 Verschoor 의 사전 질의 공격에 따른 마피아 사기 7/8 을 Chernoff 계열 부등식으로 다중 라운드 건전성으로 끌어올린다. 이 프로토콜은 빠른 단계 동작이 느린 단계에서 정해지는 기저 문자열로 완전히 결정되므로 테러리스트 사기에 본질적으로 안전하지 않음을 보인다.",
+      "hardware": [
+        "해당 없음 — 이론·증명 논문(실험·시뮬레이션 장비 없음)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 수치 계산 도구·공개 코드 언급 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "표 1(잡음 없음·임계 τ = n): Hancke–Kuhn 은 라운드당 거리 사기·마피아 사기 3/4, 오수락 확률 2^-80 에 각각 193 라운드; Abidin 2019 QDB 는 라운드당 1 큐비트 왕복, 거리 사기 1/2(80 라운드)·마피아 사기 7/8(416 라운드)",
+        "거리 사기: 라운드당 성공 확률 1/2 상한(정리 6, 상대성에 따른 무신호 보조정리 + 측정 대칭) — 임계 τ > n/2 이면 지수적으로 감소",
+        "마피아 사기: Abidin 원 분석의 3/4 는 과소평가이고 Verschoor 의 라운드 내 사전 질의 공격(기저 일치 패리티 ki = ai ⊕ bi 만 알면 정직 프로버를 흉내)이 7/8 을 달성 — 정리 8 로 다중 라운드 상한화",
+        "테러리스트 사기: 정직 프로버의 빠른 단계 동작이 느린 단계에서 PRF 로 계산한 기저 문자열 (a, b) 로 완전히 정해지므로, 부정직 프로버가 세션 기저만 근처 조력자에게 넘기면 장기 키 x 를 넘기지 않고도 모든 라운드를 통과 — 본질적으로 안전하지 않음",
+        "완전성: 왕복 각 홉의 i.i.d. 탈분극 잡음 아래 정직 라운드 수락 확률 p(η) 를 구하고 τ < n·p(η) 에서 완전성 보장(정리 3)"
+      ],
+      "limitations": [
+        "보안 상한은 잡음 없는 이상적 공격자를 가정한 보수적 분석이며, 잡음 모델은 정직 실행과 파라미터 산정에만 쓰임 (저자)",
+        "다광자·검출기 눈멀게 하기·장치 결함 같은 구현 측면 채널과 물리계층 공격은 범위 밖 (저자)",
+        "분석한 QDB 프로토콜은 고전 DB 를 대체하지 못한다 — 마피아 사기 라운드 수가 더 많고 빠른 단계에 양자 하드웨어 필요 (저자)",
+        "arXiv v1(2026-04-17) 기준으로 확인 — QIP 게재판과의 차이는 대조하지 않음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "singelee-2007-db-noisy-environments",
+        "boureanu-2015-practical-provable-db",
+        "hancke-2011-secure-db-channel-rfid",
+        "bussard-2005-dbpk-terrorist-fraud"
+      ],
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "boureanu-2015-practical-provable-db",
+          "type": "extends",
+          "note": "Boureanu 외 고전 거리 제한의 게임 기반 정의(DF·MF·TF 실험, 다중 라운드 건전성)를 양자 채널·양자 능력 공격자로 옮김"
+        }
+      ],
+      "added": "2026-10-20",
+      "last_checked": "2026-10-20"
     }
   ]
 }
