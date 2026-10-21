@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-20",
-  "last_run": "2026-10-20",
+  "updated": "2026-10-21",
+  "last_run": "2026-10-21",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1671,
+  "citation_edges": 1724,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -1491,7 +1491,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1507,7 +1507,8 @@
         "xiong-2015-tonetrack",
         "francis-2010-nfc-p2p-relay",
         "rasmussen-2009-imd-proximity-access",
-        "ranganathan-2012-tf-resilient-db"
+        "ranganathan-2012-tf-resilient-db",
+        "ranganathan-2015-fmcw-proximity-verification"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -1584,7 +1585,7 @@
       },
       "verification": "verified",
       "added": "2026-07-28",
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-21",
       "cites": [
         "clulow-2006-long-symbols",
         "flury-2010-distance-decreasing",
@@ -1605,7 +1606,8 @@
         "capkun-2006-secure-positioning-jsac",
         "francis-2012-nfc-phone-relay",
         "sastry-2003-echo-location-claims",
-        "hu-2003-packet-leashes"
+        "hu-2003-packet-leashes",
+        "ranganathan-2015-fmcw-proximity-verification"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -2908,7 +2910,7 @@
       },
       "verification": "verified",
       "added": "2026-07-30",
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "cites": [
         "clulow-2006-long-symbols",
         "francillon-2011-pkes-relay",
@@ -2932,7 +2934,8 @@
         "avoine-2011-db-framework",
         "beth-1991-chess-grandmaster",
         "rasmussen-2009-imd-proximity-access",
-        "ranganathan-2012-tf-resilient-db"
+        "ranganathan-2012-tf-resilient-db",
+        "ranganathan-2015-fmcw-proximity-verification"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3901,7 +3904,8 @@
         "hancke-2005-practical-relay-iso14443",
         "ibrahim-2018-ftm-verification",
         "francis-2012-nfc-phone-relay",
-        "ranganathan-2012-tf-resilient-db"
+        "ranganathan-2012-tf-resilient-db",
+        "ranganathan-2015-fmcw-proximity-verification"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -3912,7 +3916,7 @@
         }
       ],
       "added": "2026-08-10",
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-21"
     },
     {
       "id": "varughese-2026-ble6-pedestrian",
@@ -8855,7 +8859,8 @@
         "tippenhauer-2009-id-based-db",
         "kim-2008-swiss-knife-db",
         "boureanu-2015-practical-provable-db",
-        "elikplim-2023-wifi-ftm-industrial"
+        "elikplim-2023-wifi-ftm-industrial",
+        "ranganathan-2015-fmcw-proximity-verification"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -8866,7 +8871,7 @@
         }
       ],
       "added": "2026-09-01",
-      "last_checked": "2026-09-25"
+      "last_checked": "2026-10-21"
     },
     {
       "id": "gunia-2026-cs-uwb-rss-positioning",
@@ -11973,7 +11978,8 @@
         "2026-10-12 재시도: Crossref 여전히 초록 없음(link 는 PII S0263224126021081 의 api.elsevier.com — 키 없이 401), ScienceDirect 정확한 PII 페이지는 facebookexternalhit UA 400·Twitterbot 403, OpenAlex closed — unverified 유지",
         "2026-10-14 재시도: OpenAlex·OpenAIRE 모두 closed·초록 없음, ScienceDirect PII 페이지는 Slackbot·LinkedInBot·WhatsApp·Discordbot·bingbot·TelegramBot·Zotero UA 전부 403(본문 없는 챌린지 페이지) — unverified 유지",
         "2026-10-17 재시도: S2 단건 API 초록 null, X-MOL DOI 리다이렉트 404, ResearchGate 레코드는 Chrome·Googlebot·facebookexternalhit UA 모두 403, OpenAlex 여전히 closed — unverified 유지",
-        "2026-10-19 재시도: OpenAlex 여전히 closed·abstract_inverted_index null — unverified 유지"
+        "2026-10-19 재시도: OpenAlex 여전히 closed·abstract_inverted_index null — unverified 유지",
+        "2026-10-21 재시도: OpenAlex abstract_inverted_index 여전히 null·closed, Crossref 는 참고문헌 45건만 있고 초록 없음 — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11981,7 +11987,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-21",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -15840,7 +15846,8 @@
         "francis-2012-nfc-phone-relay",
         "bussard-2005-dbpk-terrorist-fraud",
         "avoine-2021-relay-to-db-chapter",
-        "rasmussen-2009-imd-proximity-access"
+        "rasmussen-2009-imd-proximity-access",
+        "ranganathan-2015-fmcw-proximity-verification"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -15881,7 +15888,7 @@
         }
       ],
       "added": "2026-09-29",
-      "last_checked": "2026-10-19"
+      "last_checked": "2026-10-21"
     },
     {
       "id": "rithivik-2026-ble-ranging-comparison-conecct",
@@ -16016,7 +16023,8 @@
         "2026-10-10 재시도: dl.acm.org/doi/pdf 여전히 Cloudflare 403(5.7 KB HTML), OpenAlex 재조회도 gold 표기·다른 OA 위치 없음 — 워크숍 발표일(10-26) 이후 재시도",
         "2026-10-11 재시도: dl.acm.org/doi/pdf 는 curl·Googlebot UA 모두 Cloudflare 403(발표일 10-26 이후 재시도)",
         "2026-10-12 재시도: dl.acm.org/doi/pdf 는 Chrome·Googlebot·curl UA 모두 Cloudflare 403, Wayback 은 /doi·/doi/pdf·/doi/epdf 스냅샷 0, OpenAlex best_oa_location 은 pdf_url 없음 — 발표일(10-26) 이후 재시도",
-        "2026-10-19 재시도: ACM DL 의 HTML 전문 경로(/doi/fullHtml/·/doi/ 랜딩)도 WebFetch 로 403, S2 openAccessPdf 는 DOI 링크뿐, arXiv 'AutoBLE' 검색 0 — 발표일(10-26) 이후 재시도"
+        "2026-10-19 재시도: ACM DL 의 HTML 전문 경로(/doi/fullHtml/·/doi/ 랜딩)도 WebFetch 로 403, S2 openAccessPdf 는 DOI 링크뿐, arXiv 'AutoBLE' 검색 0 — 발표일(10-26) 이후 재시도",
+        "2026-10-21 재시도: dl.acm.org/doi/pdf 를 Chrome·Googlebot UA 로 curl 해도 403(Cloudflare), OpenAlex 는 gold 표기지만 pdf_url 없음 — 발표일(10-26) 이후 재시도"
       ],
       "artifacts": {
         "code": null,
@@ -16032,7 +16040,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-10-19"
+      "last_checked": "2026-10-21"
     },
     {
       "id": "pestourie-2019-secureloc-ack-attack",
@@ -18322,7 +18330,8 @@
         "전문 미확보 (2026-10-10): 학과 학생 연구 페이지에 초록만 있고 PDF 링크 없음, mediaTUM 은 Anubis 봇 챌린지 — 시험 설정·SDK 버전·재현 절차 미확인",
         "학사 논문 — 피어 리뷰 미거침",
         "2026-10-11 재시도: mediaTUM 이 오늘은 curl UA 로 열렸으나 'Jurenka'·'channel sounding' 검색에 이 학사논문 레코드 없음(학사논문 미기탁으로 보임), WebSearch 0건",
-        "2026-10-15 재시도: TUM I20 학생 연구 페이지 상태 'finished'·제출 2025-02-17 이나 PDF 링크는 여전히 없음, arXiv 제목 검색 0"
+        "2026-10-15 재시도: TUM I20 학생 연구 페이지 상태 'finished'·제출 2025-02-17 이나 PDF 링크는 여전히 없음, arXiv 제목 검색 0",
+        "2026-10-21 재시도: TUM I20 학생 연구 페이지 10-20 스냅샷 대비 변동 0, PDF 링크 없음"
       ],
       "artifacts": {
         "code": null,
@@ -18330,7 +18339,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-15",
+      "last_checked": "2026-10-21",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -18386,7 +18395,8 @@
         "학술 논문이 아닌 산업 컨퍼런스 발표 — 피어 리뷰 없음, 공저자 여부 미확인(초록은 'we')",
         "2026-10-11 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음, 과거 행사 페이지(USA 2026) 404; DEF CON 34·Black Hat USA 2026·hardwear.io NL 2026 재발표 검색 0건",
         "2026-10-15 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음. 같은 제목의 자율 학습 강의(약 40 분·1 강, 강사 Sultan Qasim Khan)가 ISMG 의 CyberEd.io(cyberedio.matrixlms.com/visitor_catalog_class/show/2456423)에 게시된 것을 찾았으나 로그인 필요 — 공개 설명은 'EDLC·다중경로 혼동 공격이 규격 모호성을 이용하는 방식, 인기 벤더 구현의 거리 조작 내성 비교'뿐이고 칩·도구·수치·NADM 언급 없음",
-        "2026-10-17 재시도: 발표자 소속 Tetrel Security 사이트 posts 목록(4건)에 Channel Sounding 글·슬라이드 없음 — partial 유지"
+        "2026-10-17 재시도: 발표자 소속 Tetrel Security 사이트 posts 목록(4건)에 Channel Sounding 글·슬라이드 없음 — partial 유지",
+        "2026-10-21 재시도: Hardwear.io 발표 페이지 10-20 스냅샷 대비 논스 외 변동 0, 슬라이드·영상 링크 없음"
       ],
       "artifacts": {
         "code": null,
@@ -18394,7 +18404,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-17",
+      "last_checked": "2026-10-21",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -20728,6 +20738,279 @@
       ],
       "added": "2026-10-20",
       "last_checked": "2026-10-20"
+    },
+    {
+      "id": "ranganathan-2015-fmcw-proximity-verification",
+      "title": "Proximity Verification for Contactless Access Control and Authentication Systems",
+      "authors": [
+        "Aanjhan Ranganathan",
+        "Boris Danev",
+        "Srdjan Čapkun"
+      ],
+      "venue": "ACSAC",
+      "venue_full": "Proceedings of the 31st Annual Computer Security Applications Conference (ACSAC 2015), pp. 271–280, ACM, 2015-12-07 — ETH Zurich. 선행판: arXiv 1404.4435 'Low-Power Distance Bounding' (2014, 같은 저자)",
+      "tier": "wireless",
+      "category": "defense",
+      "year": 2015,
+      "url": "https://doi.org/10.1145/2818000.2818004",
+      "preprint": "https://aanjhan.com/assets/fmcw_acsac2015.pdf",
+      "doi": "10.1145/2818000.2818004",
+      "topics": [
+        "distance-bounding",
+        "fmcw",
+        "backscatter",
+        "contactless-smart-card",
+        "relay-attack",
+        "early-detect-late-commit",
+        "low-power-prover",
+        "ook"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS 연구에서 이 논문은 **'거리 추정을 응답 처리와 떼어 내면 거리 사기의 빠른 처리 경로가 사라진다'** 는 설계 원리를 처프(FMCW) 위에서 보인 사례다. 거리는 프로버가 후방산란으로 되비춘 신호와 송신 처프를 섞은 비트 주파수로만 정해지고 응답 비트는 챌린지 슬롯 다음의 응답 슬롯에만 실리므로, 프로버가 빨리 계산해도 거리 이득이 없고 남는 여유는 ED/LC 로 얻는 dgain = c/2·(0.5 tb − 2 ted − thw) 뿐이다(tb 50 ns·ted 10 ns·thw 0 에서 1 m). CS 의 PBR 도 톤별 위상의 주파수 기울기로 거리를 내 반사기의 처리 시간과 무관하다는 점에서 같은 계열이지만, CS 는 PBR 톤 교환과 RTT 패킷 교환이 서로 다른 스텝이라 이 논문의 '거리 신호 위에 응답을 결속' 하는 구조에 해당하는 것이 없다 — 이 차이가 CS 반사기 거리 사기를 따질 때의 비교 지점이다(관찰 — 논문은 Bluetooth 를 다루지 않는다). 저자가 대안으로 든 두 가지 — 처프의 시간-주파수 대응을 이용해 슬롯별 주파수 빈 에너지를 검사해 late-commit 을 잡는 방법, 응답을 위상 변조로 보내 조기 검출을 어렵게 하는 방법 — 은 CS 의 톤별 일관성 검사(NADM)와 GFSK 기반 RTT 를 평가할 때 대조군이 된다. 2.4 GHz ISM 80 MHz 에서 이론 해상도 1.87 m 라는 저자 계산도 CS 와 같은 대역 제약이다. 코퍼스 6편(abidin-2021·leu-2020·olafsdottir-2017·schepers-2021·singh-2021, nkrow-2024 는 arXiv 선행판)이 인용한다.",
+      "summary": "비접촉 스마트카드의 릴레이 공격을 막으려면 거리 제한이 필요하지만 NFC 는 거리 해상도가 모자라고 UWB 거리 제한 무선은 카드에 넣기에 복잡하고 전력(1–4 W)이 크다는 문제에서 출발한다. 저자들은 검증자(리더)가 FMCW 처프에 OOK 로 챌린지 비트를 싣고, 프로버(카드)가 받은 신호를 계속 후방산란으로 되비추면서 챌린지를 복조·계산해 다음 응답 슬롯에만 응답을 부하 변조로 싣는 거리 제한 물리계층을 제안한다. 거리는 되비친 신호와 송신 처프를 섞은 비트 주파수로 재므로 프로버의 처리 지연과 분리되고, 상위 거리 제한 프로토콜은 무엇이든 얹을 수 있다. 보안 분석은 마피아 사기(증폭 중계·ED/LC)의 거리 이득 상한을 슬롯 길이의 식으로 구하고, 거리 사기는 빠른 처리로 이득이 없으며 테러리스트 사기는 상위 프로토콜에 맡긴다. 임의 파형 발생기·20 dB 증폭기·평면 안테나·오실로스코프와 Schottky 검출기+비교기 복조 회로 시제품으로 프로버 처리 지연 중앙값 약 19.5 ns, 2–4 m 에서 거리 오차 1 m 미만을 보였다.",
+      "hardware": [
+        "송신: 임의 파형 발생기(AWG, 모델 미기재) + 20 dB RF 증폭기 + 지향성 평면 안테나 — MATLAB 으로 만든 OOK-FMCW 파형을 로드, 시작 주파수 f0 = 2.4 GHz, 스윕 대역 100·200 MHz, 슬롯 tb 100·250 ns, 변조 지수 75·100 %",
+        "수신: 같은 평면 안테나 + 디지털 저장 오실로스코프(모델 미기재) — 리더(검증자)를 에뮬레이트",
+        "프로버 챌린지 복조·반전 회로: 프로그래머블 이득 Schottky RF 피크 검출기 + 반전 출력 고속 비교기 — 참고문헌 [31] 은 Linear Technology LTC5564(7 ns 응답, 15 GHz), 7절 본문은 'LTC5536' 이라 적어 부품 번호가 서로 다름; 3 V 에서 2–3 mA(6–9 mW)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "MATLAB — OOK-FMCW 파형 생성(AWG 로드)과 BER·거리 정밀도 시뮬레이션(AWGN 채널, 처프 길이 T = 10 µs, f0 = 2.4 GHz, 에너지 검출 임계는 무잡음 '1' 비트 최대 에너지보다 6 dB 낮게)",
+        "지연 측정 전처리: 힐베르트 변환 + 중앙값 필터 (구현 도구 미기재)"
+      ],
+      "software_verified": true,
+      "results": [
+        "프로버 처리 지연(복조 + 반전) 중앙값 약 19.5 ns, 송수신 간격 1 m·4 m 에서 거의 같음(그림 8a) — 슬롯 tb 를 약 50 ns 까지 줄일 수 있다고 결론",
+        "거리 정밀도: 2·3·4 m 에서 추정 오차 1 m 미만(스윕 100·200 MHz, 그림 8b); 변조 지수·슬롯 길이·처프 길이는 정밀도에 영향 없음",
+        "시뮬레이션: tb = 100 ns 에서 SNR 8 dB 초과 시 BER 10^-7; SNR 15 dB 에서 대역 50 MHz 를 넘으면 슬롯 길이(100·200·500 ns)가 거리 오차에 거의 영향 없음(그림 6, 100 개 거리 평균)",
+        "ED/LC 마피아 사기 이득 상한 dgain = c/2·(0.5 tb − 2 ted − thw) — 카드 처리 25 ns 로 tb 50 ns, ted 10 ns, thw 0 이면 최대 1 m(그림 5); 처프 주기 T 이상 지연시켜 모호 거리를 만드는 공격은 OOK 데이터 불일치로 탐지",
+        "거리 사기: 거리가 비트 주파수로만 정해지고 응답은 응답 슬롯에만 실리므로 빠른 처리·조기 응답으로 이득 없음 — 조기 변조는 반사되는 챌린지를 망가뜨려 응답 검증에서 드러남",
+        "이론 해상도(저자 각주): 2.4 GHz ISM 80 MHz → 1.87 m, 5.8 GHz 150 MHz → 99 cm; 근거리(5 m 미만)라 6–8.5 GHz 대역도 가능하다고 언급"
+      ],
+      "limitations": [
+        "검증자(리더)는 오실로스코프로 에뮬레이트했고 리더·카드 통합이나 상위 거리 제한 프로토콜 전체 실행은 없음 (관찰)",
+        "거리 평가는 2·3·4 m 세 점뿐이며 다중경로 강건성은 선행연구(80 MHz ISM, 심한 다중경로에서 약 1 m) 인용으로 대신함 (저자·관찰)",
+        "ED/LC 이득 식은 검증자가 심볼 에너지의 50 % 문턱으로 판정하는 에너지 검출 수신기를 가정 — 수신기 구조가 바뀌면 달라짐 (저자 각주)",
+        "테러리스트 사기 내성은 물리계층이 아니라 상위 프로토콜에 맡김 (저자)",
+        "공격은 해석과 대입값(그림 5)으로만 다루고 실제 ED/LC 공격 장비로 시험하지 않음; 응답 위상 변조·주파수 빈 분석 대안은 제안만 (관찰)",
+        "검출기 부품 번호가 참고문헌 [31](LTC5564)과 7절(LTC5536)에서 다름 (관찰)",
+        "전문은 저자 홈페이지 PDF(ACM 저작권 자리표시자 'Copyright 20XX' 가 남은 저자판) 기준이며 ACM 게재판과의 쪽 대응은 확인하지 않음 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "clulow-2006-long-symbols",
+          "type": "defends",
+          "note": "Clulow 외가 제기한 ED/LC 를 슬롯 구조로 제한 — 마피아 사기 이득을 c/2·(0.5 tb − 2 ted − thw) 로 묶고(tb 50 ns 에서 1 m), 응답 위상 변조로 조기 검출 자체를 어렵게 하는 대안을 제안"
+        },
+        {
+          "to": "ranganathan-2012-tf-resilient-db",
+          "type": "extends",
+          "note": "같은 저자군의 '프로버 처리 지연 최소화' 계열(CRCS·혼합 아날로그 프로버)과 달리, 처리 지연을 줄이는 대신 FMCW 비트 주파수로 거리 추정을 처리 지연에서 떼어 내는 다른 축을 택함 — 표 1 에서 두 계열을 비교"
+        }
+      ],
+      "added": "2026-10-21",
+      "last_checked": "2026-10-21",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "clulow-2006-long-symbols",
+        "tippenhauer-2009-id-based-db",
+        "hancke-2005-rfid-db",
+        "rasmussen-2010-rf-distance-bounding",
+        "reid-2007-timing-relay-detection",
+        "bussard-2005-dbpk-terrorist-fraud",
+        "capkun-2003-sector",
+        "singelee-2007-db-noisy-environments",
+        "ranganathan-2012-tf-resilient-db",
+        "hancke-2011-secure-db-channel-rfid",
+        "kim-2008-swiss-knife-db",
+        "cremers-2012-distance-hijacking",
+        "sastry-2003-echo-location-claims",
+        "hancke-2008-tof-db-attacks",
+        "francillon-2011-pkes-relay"
+      ]
+    },
+    {
+      "id": "benfarah-2013-uwb-ir-secure-link-thesis",
+      "title": "Sécurisation d'un lien radio UWB-IR",
+      "authors": [
+        "Ahmed Benfarah"
+      ],
+      "venue": "PhD Thesis INSA de Lyon",
+      "venue_full": "Thèse de doctorat, INSA de Lyon, Laboratoire CITI (INSA de Lyon / Inria), École doctorale EEA de Lyon, NNT 2013ISAL0063, 2013-07-10 심사 (지도 Jean-Marie Gorce, 공동지도 Cédric Lauradoux, 산업 지도 Benoit Miscopein — Orange Labs 재정 지원) — HAL tel-00961228 (프랑스어)",
+      "tier": "thesis",
+      "category": "defense",
+      "year": 2013,
+      "url": "https://theses.hal.science/tel-00961228",
+      "preprint": "https://theses.hal.science/tel-00961228v1/file/these.pdf",
+      "doi": null,
+      "topics": [
+        "distance-bounding",
+        "ir-uwb",
+        "time-hopping",
+        "mafia-fraud",
+        "hancke-kuhn",
+        "jamming",
+        "physical-layer-security",
+        "802-15-4a"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "low",
+      "relevance_note": "CS 연구에서 이 학위논문은 **'공유 비밀로 정한 시간 슬롯 밖의 에너지를 공격 증거로 쓰는' 거리 제한 물리계층**의 해석적 기준점이다. 3장의 STHCP 는 Hancke–Kuhn 빠른 단계의 챌린지·응답을 세션 비밀로 정한 TH-UWB 시간 도약 위치에만 보내고 양쪽이 다른 슬롯 N 개를 함께 들어 엉뚱한 슬롯의 펄스를 탐지하게 해, 무잡음에서 라운드 수 전 구간에 걸쳐 MUSE-8HK 보다 낮은 마피아 사기 성공확률을 낸다. 같은 보안에 OOK 는 PPM 보다 약 2.76 배의 라운드가 든다 — 펄스가 없는 '0' 칩에서는 공격을 탐지할 수 없기 때문이다. 802.15.4z STS 나 CS 의 무작위 시퀀스처럼 비밀 시퀀스를 '맞혀야 하는 값' 으로만 쓰지 않고 '틀린 곳의 에너지를 잡는 감시 창' 으로도 쓸 수 있는지, 그리고 '없음' 기호가 있는 변조에서는 그 감시가 약해진다는 점을 CS 에 옮겨 따질 때의 출발점이다(관찰 — 해석·시뮬레이션뿐, 하드웨어 없음, Bluetooth 미언급). 결론에서 802.15.4a 측위가 물리계층 거리 축소 공격(Flury·Poturalski 계열)에 열려 있다며 UWB-IR 측위 보안을 우선 과제로 남긴 것은 이후 코퍼스 UWB 보안 계보의 문제 제기와 겹친다. 코퍼스 21편을 인용하는 허브지만 코퍼스 안에서 이 학위논문을 인용한 논문은 없다(poturalski-2012 는 저자의 GLOBECOM 2010 논문을 인용).",
+      "summary": "INSA de Lyon CITI 연구실과 Orange Labs 의 박사학위논문으로, TH-UWB 임펄스 무선의 물리계층 매개변수(시간 도약 코드·매핑 코드·펄스 파형)를 보안에 쓰는 방법을 세 갈래로 다룬다. 3장은 릴레이(마피아 사기) 대응으로 Hancke–Kuhn 계열 거리 제한의 빠른 단계를 비밀 시간 도약 코드(STHCP) 또는 비밀 매핑 코드(SMCP) 위에 얹고, 예상 밖 슬롯의 펄스나 허용 해밍 거리를 넘는 코드워드를 공격 탐지로 쓰는 두 프로토콜을 제안해 무잡음·잡음(802.15.4a CM1 채널, 비동기 수신기) 조건에서 해석적으로 분석하고 HK·Munilla–Peinado·MUSE-pHK 와 라운드 수·허용 오류·메모리·에너지로 비교한다. 4장은 PPM 비동기 수신기에 대한 최악 가우스 재머의 중심 주파수·대역폭을 도출하고, 공격자 지식에 따라 시나리오를 나눈 재밍 모델과 물리계층 스트림 암호 대응책을 제시한다. 5장은 원 펄스에 파형 또는 위치로 직교하는 펄스를 겹쳐 송신자 인증 태그를 심는 두 가지 임베딩 기법을 해석·시뮬레이션으로 분석한다. 참고문헌 [22] 에 저자의 GLOBECOM 2010 'Distance Bounding Protocols on TH-UWB Radios' 가 있으나 3장과의 대응을 학위논문이 밝히지는 않는다.",
+      "hardware": [
+        "해당 없음 — 해석·시뮬레이션 학위논문으로 실험 장비·시제품 없음 (IEEE 802.15.4a CM1 채널 모델, 짧은 적분 시간의 비동기 에너지 검출 수신기 모델)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "시뮬레이션 도구 미기재 — 3장 보안은 해석식(성공확률 닫힌 형태), 5장 임베딩 성능은 해석과 시뮬레이션(Rake 수신기, 채널 추정 완전 가정)"
+      ],
+      "software_verified": true,
+      "results": [
+        "STHCP(PPM, Nc = 8, Nf = 1, N ∈ {1, 4})의 무잡음 마피아 사기 성공확률이 라운드 수 전 구간에서 HK·Munilla–Peinado·MUSE-8HK 보다 낮고, SMCP(Nf = 3, τ = 0)는 MUSE-8HK 보다 약간 높음(그림 3.15)",
+        "같은 보안 수준에 OOK 는 PPM 보다 약 2.76 배의 라운드가 필요(Nc = 8, Nf = 2, N = 3) — 펄스가 없는 '0' 칩에서는 공격자가 펄스를 보낼 필요가 없어 탐지가 안 됨(그림 3.8)",
+        "추가로 듣는 슬롯 수 N 은 Nc/2 까지만 보안을 높이고 그 이상은 효과 없음; 공격자의 최적 펄스 수 xopt = ⌈(Nc − N)/(N + 1)⌉ (식 3.11)",
+        "잡음 하 n = 25: 허용 오류 τ 전 구간에서 STHCP(N = 1)가 가장 낮은 오수락 확률, τ ≥ 3 의 강한 잡음에서는 SMCP 가 MUSE-8HK 보다 나음(그림 3.16)",
+        "같은 보안 수준에서 메모리는 MUSE-pHK 의 약 3/4, 빠른 단계 에너지는 HK 의 약 1/5 (STHCP 6n1(3T + 1) U, SMCP 18n1(T + 1) U, HK 84n1(T + 1) U, 표 3.4)",
+        "빠른 단계 동기 유지 가정의 근거: 20 ppm 클럭·n = 20·Ts = 240 ns 에서 빠른 단계 전체 클럭 드리프트 384 ps",
+        "임베딩(5장): AWGN 에서 임베딩 수준 0.21 이면 기준 시스템 대비 손실 1 dB 미만이지만 태그 오류율 2–5 × 10^-2 로 목표에 못 미침"
+      ],
+      "limitations": [
+        "하드웨어 구현·실측 없음 — 전부 해석·시뮬레이션 (관찰)",
+        "정직한 V·P 를 가정해 마피아 사기만 분석 — 거리 사기 내성, 그룹 인증으로의 일반화는 향후 과제 (저자)",
+        "빠른 단계 동안 동기가 유지된다고 가정 — 라운드가 많으면 동기 추적 기구가 필요 (저자)",
+        "재밍 모델은 완전 채널·완전 동기의 강한 가정 아래 모델을 예시하려는 분석 (저자)",
+        "ED/LC·조기 검출 같은 물리계층 거리 축소 공격은 분석 대상이 아니며 UWB-IR 측위 보안은 결론에서 향후 우선 과제로만 남김 (저자)",
+        "프랑스어 학위논문 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "extends",
+          "note": "HK 빠른 단계(두 레지스터 응답)를 TH-UWB 의 비밀 시간 도약 코드(STHCP)·비밀 매핑 코드(SMCP) 위에 올려, 엉뚱한 슬롯의 펄스·허용 해밍 거리를 넘는 코드워드를 공격 탐지로 씀"
+        }
+      ],
+      "added": "2026-10-21",
+      "last_checked": "2026-10-21",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "hancke-2005-practical-relay-iso14443",
+        "kfir-2005-virtual-pockets-relay",
+        "francis-2010-nfc-p2p-relay",
+        "francillon-2011-pkes-relay",
+        "kuhn-2010-uwb-ir-db",
+        "flury-2010-distance-decreasing",
+        "poturalski-2010-cicada-attack",
+        "capkun-2006-secure-positioning-jsac",
+        "sastry-2003-echo-location-claims",
+        "capkun-2003-sector",
+        "kim-2009-mixed-challenges-db",
+        "kim-2008-swiss-knife-db",
+        "tippenhauer-2009-id-based-db",
+        "reid-2007-timing-relay-detection",
+        "singelee-2007-db-noisy-environments",
+        "cremers-2012-distance-hijacking",
+        "abu-mahfouz-2013-db-rtls",
+        "rasmussen-2010-rf-distance-bounding",
+        "ranganathan-2012-tf-resilient-db"
+      ]
+    },
+    {
+      "id": "armknecht-2024-wireless-communication-model",
+      "title": "Towards a Cryptographic Model for Wireless Communication",
+      "authors": [
+        "Frederik Armknecht",
+        "Christian Müller"
+      ],
+      "venue": "SECRYPT",
+      "venue_full": "Proceedings of the 21st International Conference on Security and Cryptography (SECRYPT 2024), pp. 249–261, SCITEPRESS, 2024 (CC BY-NC-ND 4.0) — University of Mannheim. 확장판: 'Towards a Cryptographic Model for Wireless Communication: Extended Version', Communications in Computer and Information Science (Security and Cryptography), pp. 215–242, Springer, 2025-11 (유료·미확보)",
+      "tier": "other",
+      "category": "analysis",
+      "year": 2024,
+      "url": "https://doi.org/10.5220/0012809300003767",
+      "preprint": "https://madoc.bib.uni-mannheim.de/68862/1/128093.pdf",
+      "doi": "10.5220/0012809300003767",
+      "topics": [
+        "formal-model",
+        "attacker-model",
+        "dolev-yao",
+        "distance-bounding",
+        "friendly-jamming",
+        "signal-collision",
+        "wireless-channel-model"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "CS 연구에서 이 논문은 **CS 공격을 형식적으로 적을 공격자 모델의 후보**로만 관련된다. Dolev–Yao 식 중간자 모델은 공격자가 메시지를 멈추고 바꿀 수 있다고 보지만, 이 논문의 무선 통신 모델(WCM)은 테이프 칸에 (진폭, 주파수, 위상) 신호를 담고, 두 당사자 사이에 거리에 따른 지연 δ 와 채널별 링크 절차(경로 손실, 반송파 파장에 대한 나머지 거리 r 만큼의 위상 회전)를 두며, 공격자는 자기 신호를 겹쳐(충돌) 바꾸는 것밖에 못 하고 원 신호의 도착 시각은 바꾸지 못한다고 정한다. CS 의 위상 기반 거리측정이 재는 것이 바로 이 '채널별 위상 회전' 이므로, 위상 주입·오버섀도잉 공격을 이 틀의 링크·충돌 연산으로 적을 수 있는지가 쓸모다(관찰). 다만 원판(SECRYPT 2024)은 거리 제한을 한 문단(대칭 지연에서 왕복 시간 ≥ 2δ)으로만 다루고 처리 지연도 모델 밖이며, 초록상 거리 제한 보안 증명은 유료 확장판(CCIS 2025)에만 있다. 확장판은 코퍼스 11편을 인용하지만 코퍼스 안에서 이 논문을 인용한 논문은 없다.",
+      "summary": "중간자 모델(MitMM)이 무선 통신에는 지나치게 강해 친화적 재밍·거리 제한처럼 무선 물리 성질에 기대는 기법을 한 틀에서 분석할 수 없다는 문제의식에서, 통신 채널·신호·지역성 세 요소를 더한 무선 통신 모델(WCM)과 무선 공격자 모델(WAM)을 제안한다. 각 당사자는 채널 수만큼의 송·수신 테이프를 갖고 한 시간 슬롯에 한 칸만 읽거나 쓰며, 칸에는 (A, f, φ) 신호가 들어가 같은 채널에서 겹치면 더해지고(역위상이면 소거), 두 당사자 사이 링크는 지연 δ 와 채널별 확률적 변환(경로 손실·위상 회전)으로 정의된다. 공격자는 비침습적으로 자기 신호를 써서 충돌시키는 것만 가능하며, 원 신호가 목표에 닿기 전에 자기 신호가 도착하도록 보내야 재밍이 성립한다는 시간 조건을 도출한다. 응용으로 친화적 재밍을 IND-CSA-n(선택 신호 공격 하 구별 불가능성) 게임으로 정식화하고 Tippenhauer 외 2013 의 두 안테나 도청을 IND-CSA-2 공격으로 다시 적으며, 거리 제한과 FHSS 는 표현 방법만 짧게 보인다. 확장판(CCIS 2025)은 초록상 QPSK 표현 예와 거리 제한 프로토콜의 형식 보안 증명을 더했다.",
+      "hardware": [
+        "해당 없음 — 이론(형식 모델) 논문"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "해당 없음 — 증명 도구·코드 언급 없음"
+      ],
+      "software_verified": true,
+      "results": [
+        "중간자 모델이 무선에서 빠뜨리는 세 요소 정리: 여러 공개 물리 채널(FHSS 표현 불가), 신호 충돌과 재밍 탐지(RSSI), 지역성(거리에 따른 지연·경로 손실)",
+        "WCM 정의: 신호 공간 Σ = R≥0 × R>0 × [0, 2π), 같은 주파수 신호 집합 (Σf, +) 은 가환군, 링크 Link(P, P') = (δ; λ1 … λchs), 지연의 대칭성·삼각 부등식 가정",
+        "재밍 시간 조건: 공격자 A 는 t + δ(P,P') − δ(A,P') 이전에 신호를 써야 함 — δ(P,P') < δ(A,P') 이면 원 신호를 보고 반응해서는 재밍할 수 없음(예측 가능한 긴 메시지 일부만 예외)",
+        "친화적 재밍의 IND-CSA-n 정의와, Tippenhauer 외 2013 의 등변사다리꼴 배치 두 안테나 공격을 IND-CSA-2 공격(π/2 위상 차 결합으로 원 신호 증폭 복원)으로 재서술",
+        "거리 제한: 대칭 지연 δ 에서 왕복 시간 ≥ 2δ 이므로 RTT 측정이 거리 상한을 줌 — 원판은 이 수준에서 그침"
+      ],
+      "limitations": [
+        "원판은 거리 제한·FHSS 를 '지면 관계상 세부 생략' 으로 짧게만 다룸 (저자)",
+        "처리 지연은 모델에 없음 (저자)",
+        "한 당사자가 한 시점에 한 테이프만 접근한다는 가정 — 동시 송수신·다중 안테나 공격자는 여러 당사자로 표현해야 함 (저자)",
+        "확장판(CCIS 2025)의 거리 제한 보안 증명·QPSK 예는 유료라 확인하지 못함 — 이 레코드는 원판 전문 기준 (관찰)",
+        "모델 위에서 보안을 정식화한 사례가 원판에는 친화적 재밍 하나뿐 (관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "schaller-2009-physical-properties-verification",
+          "type": "complementary",
+          "note": "Schaller 외의 기호적 트레이스 모델(전송 지연·위치·시간)이 다루지 않는 변조·신호·다중 채널을 계산적 ITM 모델로 채운다고 저자가 대비 — 메시지 길이와 무관한 전송 시간 대신 신호 칸 단위의 시간"
+        }
+      ],
+      "added": "2026-10-21",
+      "last_checked": "2026-10-21",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "tippenhauer-2009-id-based-db",
+        "rasmussen-2010-rf-distance-bounding",
+        "ranganathan-2012-tf-resilient-db",
+        "boureanu-2015-practical-provable-db",
+        "drimer-2007-smartcard-relay-db",
+        "kim-2009-mixed-challenges-db",
+        "schaller-2009-physical-properties-verification",
+        "avoine-2021-relay-to-db-chapter"
+      ]
     }
   ]
 }
