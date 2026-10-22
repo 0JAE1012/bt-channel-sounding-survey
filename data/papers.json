@@ -1,9 +1,9 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-21",
-  "last_run": "2026-10-21",
+  "updated": "2026-10-22",
+  "last_run": "2026-10-22",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
-  "citation_edges": 1724,
+  "citation_edges": 1776,
   "papers": [
     {
       "id": "staat-2022-analog-relay",
@@ -5241,14 +5241,15 @@
       },
       "verification": "verified",
       "added": "2026-08-18",
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-22",
       "cites": [
         "avoine-2018-db-survey",
         "hancke-2005-rfid-db",
         "brands-1993-distance-bounding",
         "boureanu-2015-practical-provable-db",
         "mauw-2018-db-verification-without-time",
-        "bogner-2026-quantum-db-framework"
+        "bogner-2026-quantum-db-framework",
+        "abidin-2017-towards-quantum-db"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -5261,6 +5262,11 @@
           "to": "bogner-2026-quantum-db-framework",
           "type": "extends",
           "note": "같은 저자들의 QDB 보안 프레임워크([BASP26])가 정식화한 공격자 능력·DF/MF 게임에서 one-round 빠른 단계 게임을 뽑아 SDP 로 최적 공격 확률을 구함 — 프레임워크의 프로토콜별 수작업 분석을 자동 최적화로 대체"
+        },
+        {
+          "to": "abidin-2017-towards-quantum-db",
+          "type": "applies-to",
+          "note": "부록 B 에서 QDB 2017 의 빠른 단계만 떼어 한 라운드 값 p_DF 0.5·p_MF 1 을 계산 — 마지막 MAC 이 마피아 사기 내성의 전부이고 '거리만 재는 빠른 단계는 그 자체로 마피아 사기 내성이 없다' 고 정리(반사 공격은 원 논문이 이미 지적)"
         }
       ],
       "category": "analysis"
@@ -11979,7 +11985,8 @@
         "2026-10-14 재시도: OpenAlex·OpenAIRE 모두 closed·초록 없음, ScienceDirect PII 페이지는 Slackbot·LinkedInBot·WhatsApp·Discordbot·bingbot·TelegramBot·Zotero UA 전부 403(본문 없는 챌린지 페이지) — unverified 유지",
         "2026-10-17 재시도: S2 단건 API 초록 null, X-MOL DOI 리다이렉트 404, ResearchGate 레코드는 Chrome·Googlebot·facebookexternalhit UA 모두 403, OpenAlex 여전히 closed — unverified 유지",
         "2026-10-19 재시도: OpenAlex 여전히 closed·abstract_inverted_index null — unverified 유지",
-        "2026-10-21 재시도: OpenAlex abstract_inverted_index 여전히 null·closed, Crossref 는 참고문헌 45건만 있고 초록 없음 — unverified 유지"
+        "2026-10-21 재시도: OpenAlex abstract_inverted_index 여전히 null·closed, Crossref 는 참고문헌 45건만 있고 초록 없음 — unverified 유지",
+        "2026-10-22 재시도: Semantic Scholar graph API abstract null·openAccessPdf CLOSED, OpenAlex closed — unverified 유지"
       ],
       "artifacts": {
         "code": null,
@@ -11987,7 +11994,7 @@
       },
       "verification": "unverified",
       "added": "2026-09-13",
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "cites": [
         "zand-2019-ble-pbr",
         "boer-2020-pbr-multipath",
@@ -16024,7 +16031,8 @@
         "2026-10-11 재시도: dl.acm.org/doi/pdf 는 curl·Googlebot UA 모두 Cloudflare 403(발표일 10-26 이후 재시도)",
         "2026-10-12 재시도: dl.acm.org/doi/pdf 는 Chrome·Googlebot·curl UA 모두 Cloudflare 403, Wayback 은 /doi·/doi/pdf·/doi/epdf 스냅샷 0, OpenAlex best_oa_location 은 pdf_url 없음 — 발표일(10-26) 이후 재시도",
         "2026-10-19 재시도: ACM DL 의 HTML 전문 경로(/doi/fullHtml/·/doi/ 랜딩)도 WebFetch 로 403, S2 openAccessPdf 는 DOI 링크뿐, arXiv 'AutoBLE' 검색 0 — 발표일(10-26) 이후 재시도",
-        "2026-10-21 재시도: dl.acm.org/doi/pdf 를 Chrome·Googlebot UA 로 curl 해도 403(Cloudflare), OpenAlex 는 gold 표기지만 pdf_url 없음 — 발표일(10-26) 이후 재시도"
+        "2026-10-21 재시도: dl.acm.org/doi/pdf 를 Chrome·Googlebot UA 로 curl 해도 403(Cloudflare), OpenAlex 는 gold 표기지만 pdf_url 없음 — 발표일(10-26) 이후 재시도",
+        "2026-10-22 재시도: OpenAlex gold 표기이나 pdf_url 없음, dl.acm.org/doi/pdf 는 Chrome UA 403(발표 10-26 전)"
       ],
       "artifacts": {
         "code": null,
@@ -16040,7 +16048,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-22"
     },
     {
       "id": "pestourie-2019-secureloc-ack-attack",
@@ -18331,7 +18339,8 @@
         "학사 논문 — 피어 리뷰 미거침",
         "2026-10-11 재시도: mediaTUM 이 오늘은 curl UA 로 열렸으나 'Jurenka'·'channel sounding' 검색에 이 학사논문 레코드 없음(학사논문 미기탁으로 보임), WebSearch 0건",
         "2026-10-15 재시도: TUM I20 학생 연구 페이지 상태 'finished'·제출 2025-02-17 이나 PDF 링크는 여전히 없음, arXiv 제목 검색 0",
-        "2026-10-21 재시도: TUM I20 학생 연구 페이지 10-20 스냅샷 대비 변동 0, PDF 링크 없음"
+        "2026-10-21 재시도: TUM I20 학생 연구 페이지 10-20 스냅샷 대비 변동 0, PDF 링크 없음",
+        "2026-10-22 재시도: TUM I20 학생 연구 페이지 10-21 스냅샷 대비 변동 0, PDF 링크 없음"
       ],
       "artifacts": {
         "code": null,
@@ -18339,7 +18348,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -18396,7 +18405,8 @@
         "2026-10-11 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음, 과거 행사 페이지(USA 2026) 404; DEF CON 34·Black Hat USA 2026·hardwear.io NL 2026 재발표 검색 0건",
         "2026-10-15 재시도: 발표 페이지에 여전히 슬라이드·영상 링크 없음. 같은 제목의 자율 학습 강의(약 40 분·1 강, 강사 Sultan Qasim Khan)가 ISMG 의 CyberEd.io(cyberedio.matrixlms.com/visitor_catalog_class/show/2456423)에 게시된 것을 찾았으나 로그인 필요 — 공개 설명은 'EDLC·다중경로 혼동 공격이 규격 모호성을 이용하는 방식, 인기 벤더 구현의 거리 조작 내성 비교'뿐이고 칩·도구·수치·NADM 언급 없음",
         "2026-10-17 재시도: 발표자 소속 Tetrel Security 사이트 posts 목록(4건)에 Channel Sounding 글·슬라이드 없음 — partial 유지",
-        "2026-10-21 재시도: Hardwear.io 발표 페이지 10-20 스냅샷 대비 논스 외 변동 0, 슬라이드·영상 링크 없음"
+        "2026-10-21 재시도: Hardwear.io 발표 페이지 10-20 스냅샷 대비 논스 외 변동 0, 슬라이드·영상 링크 없음",
+        "2026-10-22 재시도: Hardwear.io 발표 페이지 10-21 스냅샷 대비 변동 0, 슬라이드·영상 링크 없음"
       ],
       "artifacts": {
         "code": null,
@@ -18404,7 +18414,7 @@
       },
       "verification": "partial",
       "added": "2026-10-10",
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "cites": [],
       "cites_source": "no-fulltext",
       "relations": [
@@ -20261,7 +20271,8 @@
       "limitations": [
         "게재판 전문 미확보 (2026-10-19): ACM DL 은 Chrome·Googlebot·curl UA 모두 403, ORBilu 10993/41607 bitstream 은 request-item 302(요청본), Deakin DRO figshare 20723047 은 is_embargoed, Wayback 에는 302 캡처뿐, arXiv·IACR ePrint 판 없음",
         "내용은 같은 저자들의 박사학위논문 두 편으로 확인 — Toro-Pozo 2019(6–7장, 투고 전 판)·Smith 2020(ORBilu 10993/45058, 4장 — '이론 절을 확장' 했다고 명시) — 둘 다 재구성판이라 verification 은 partial",
-        "인용 관계는 OpenAlex referenced_works(58건)와 Crossref 예치 참고문헌(60건)을 코퍼스와 대조해 채움(16건)"
+        "인용 관계는 OpenAlex referenced_works(58건)와 Crossref 예치 참고문헌(60건)을 코퍼스와 대조해 채움(16건)",
+        "2026-10-22 재시도: OpenAlex green(figshare 20723047·ORBilu)이나 figshare API 기준 is_embargoed = true·파일 0개 — partial 유지"
       ],
       "artifacts": {
         "code": "https://github.com/jorgetp/dbverify",
@@ -20295,7 +20306,7 @@
         }
       ],
       "added": "2026-10-19",
-      "last_checked": "2026-10-19"
+      "last_checked": "2026-10-22"
     },
     {
       "id": "toro-pozo-2019-db-analysis-thesis",
@@ -20455,7 +20466,8 @@
         "게재판 전문 미확보 (2026-10-19): IEEE Xplore 유료, ORBilu 10993/50132 bitstream 은 request-item 302, Deakin DRO figshare 26316766 은 is_embargoed, arXiv 판 없음",
         "내용은 제1저자 박사학위논문(Gil-Pons 2024 'Analysis of Security Protocols with Security Properties Based on Distance', ORBilu 10993/60069) 4장으로 확인 — 저자가 '[67] 에서 파생' 이라고 밝힌 재구성판이라 verification 은 partial",
         "RSS·육안 확인 같은 근접 판정을 RTT 거리 제한으로 치환해 모델링 — 저자 스스로 '신호세기 기반 프로토콜 분석의 해법이 아닌 우회책' 이라고 함; 사양 언어에 조건문·비결정성이 없고 XOR 은 교환법칙 없는 사용자 정의 연산자로 단순화 (학위논문 기준)",
-        "인용 관계는 OpenAlex referenced_works(32건)와 Crossref 예치 참고문헌(30건)을 코퍼스와 대조해 채움(8건)"
+        "인용 관계는 OpenAlex referenced_works(32건)와 Crossref 예치 참고문헌(30건)을 코퍼스와 대조해 채움(8건)",
+        "2026-10-22 재시도: OpenAlex 가 Deakin figshare 26316766 을 green OA 로 표시해 다시 열었으나 figshare API 기준 is_embargoed = true·파일 0개 — partial 유지"
       ],
       "artifacts": {
         "code": null,
@@ -20481,7 +20493,7 @@
         }
       ],
       "added": "2026-10-19",
-      "last_checked": "2026-10-19"
+      "last_checked": "2026-10-22"
     },
     {
       "id": "ranganathan-2012-tf-resilient-db",
@@ -20726,7 +20738,9 @@
         "singelee-2007-db-noisy-environments",
         "boureanu-2015-practical-provable-db",
         "hancke-2011-secure-db-channel-rfid",
-        "bussard-2005-dbpk-terrorist-fraud"
+        "bussard-2005-dbpk-terrorist-fraud",
+        "abidin-2017-towards-quantum-db",
+        "abidin-2020-relay-qubits"
       ],
       "cites_source": "fulltext",
       "relations": [
@@ -20737,7 +20751,7 @@
         }
       ],
       "added": "2026-10-20",
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-22"
     },
     {
       "id": "ranganathan-2015-fmcw-proximity-verification",
@@ -21010,6 +21024,416 @@
         "kim-2009-mixed-challenges-db",
         "schaller-2009-physical-properties-verification",
         "avoine-2021-relay-to-db-chapter"
+      ]
+    },
+    {
+      "id": "xu-2026-dual-domain-cs-positioning",
+      "title": "Dual-domain signal error compensation algorithm for indoor positioning based on channel sounding",
+      "authors": [
+        "Jiachao Xu",
+        "Ningning Qin",
+        "Yan Wang"
+      ],
+      "venue": "Sensor Review",
+      "venue_full": "Sensor Review (Emerald), 2026, pp. 1–18 (온라인 2026-10-22, 권·호 미정) — Jiangnan University 교육부 IoT 기술응용 공학연구센터(Wuxi)",
+      "tier": "journal",
+      "category": "estimation",
+      "year": 2026,
+      "url": "https://doi.org/10.1108/SR-05-2026-0575",
+      "preprint": null,
+      "doi": "10.1108/SR-05-2026-0575",
+      "topics": [
+        "channel-sounding",
+        "phase-based-ranging",
+        "multipath",
+        "nlos",
+        "first-path-detection",
+        "sparse-recovery",
+        "omp",
+        "phase-calibration",
+        "indoor-positioning"
+      ],
+      "tech": [
+        "ble-cs"
+      ],
+      "relevance": "medium",
+      "relevance_note": "초록까지만 확인한 상태다. Bluetooth CS 위상 관측의 다중경로 왜곡을 주파수 영역(선형 위상 바이어스 보정 + 비선형 잔차 모델)과 시간 영역(지연 탐색 범위를 제한한 OMP 로 첫 도착 경로 추출) 두 단계로 바로잡는 정확도 개선 연구라, research.json 의 C-07('첫 경로 탐색 같은 정확도 개선은 보안에 중립적이다', untested)이 묻는 바로 그 부류의 수신기 개선이다. 걸리는 지점은 두 가지다(둘 다 관찰·가설). 첫째, '코히어런트 다중경로 의사 피크를 억제' 하는 DDSE 지연 탐색 규칙은 어떤 피크를 첫 경로로 인정하는지를 정하는 판정이라, 이른 위조 피크를 주입하는 공격(ghost peak·back-search 계열)이 통과해야 할 관문이 되거나 반대로 공격 피크를 '의사 피크' 로 지울 수도 있다 — 어느 쪽인지는 본문 없이는 모른다. 둘째, 선형 위상 바이어스를 '반복 관측' 에서 보정하므로, 보정 구간에 공격자가 위상을 꾸준히 밀어 넣으면 보정값 자체가 오염될 수 있다. 같은 Jiangnan 그룹(Qin·Wang)의 zhao-2026 에 이은 두 번째 CS 측위 논문이고, 참고문헌에 PBR 다중경로 보안 평가(riaz-2022)가 들어 있어 본문이 보안을 언급하는지 확인할 가치가 있다.",
+      "summary": "복잡한 실내 다중경로에서 Bluetooth Channel Sounding 의 위상 관측이 왜곡되는 문제를 겨냥해, 주파수·시간 이중 영역 오차 보상법을 제안한다. 먼저 반복 관측에서 선형 위상 바이어스를 보정하고 비선형 잔차 위상 오차를 모델링해 정제된 채널 위상 벡터를 복원한 뒤, 동적 지연 탐색 엔진(DDSE)으로 지연 영역의 직교 정합 추적(OMP)을 제한해 코히어런트 다중경로 의사 피크를 억제하고 첫 도착 경로를 뽑는다. 여러 기지국의 거리 결과는 비선형 최소제곱 측위로 융합한다. 전형적 실내 시나리오 실험에서 거리 RMSE 0.38 m, 측위 RMSE 0.60 m 를 보고하고 위상 기반 거리측정·IFFT·MUSIC·반복 베이지안 기준선보다 우수하다고 한다. (Crossref 예치 초록 기준, 전문 미확보)",
+      "hardware": [
+        "확인 필요 — 초록은 'typical indoor scenario' 실험과 다중 기지국(multi-base-station) 융합만 언급. 칩셋·보드·기지국 수·Bluetooth 6.0 CS 모드 미확인"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "거리 RMSE 0.38 m (초록, 전형적 실내 시나리오; 거리 범위·LOS/NLOS 비율 미확인)",
+        "측위 RMSE 0.60 m (초록; 기지국 수·공간 크기 미확인)",
+        "위상 기반 거리측정(PBR)·IFFT·MUSIC·반복 베이지안 기준선보다 다중경로·위상 왜곡에 강건 (초록; 기준선별 수치 미확인)"
+      ],
+      "limitations": [
+        "전문 미확보 (2026-10-22): Emerald PDF(Crossref link)는 Chrome·Googlebot·curl UA 모두 Cloudflare 403, Crossref 에 라이선스 정보 없음(OA 아님으로 봄), OpenAlex 미색인(404), 프리프린트 없음 — 하드웨어·CS 모드·기지국 수·실험 공간 미확인",
+        "보안 관점 없음 (초록 기준) — 참고문헌에 riaz-2022 PBR 다중경로 보안 평가가 있어 본문 언급 여부는 확인 필요",
+        "인용 관계는 Crossref 예치 참고문헌 14건을 DOI·제목으로 코퍼스와 대조해 채움(7건) — 본문 미확보라 verification 은 partial"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-10-22",
+      "last_checked": "2026-10-22",
+      "cites": [
+        "kravets-2025-ble-pbr-wifi",
+        "mazur-2024-ifft-bayesian-pbr",
+        "riaz-2022-pbr-multipath-security",
+        "santra-2024-cs-indoor",
+        "schroeder-2022-inphase",
+        "schroeder-2019-multipath-pbr",
+        "suresh-2025-cs-vehicle-access"
+      ]
+    },
+    {
+      "id": "zhuang-2020-residual-charge-db",
+      "title": "Energy-Efficient Distance-Bounding with Residual Charge Computation",
+      "authors": [
+        "Yunhui Zhuang",
+        "Anjia Yang",
+        "Gerhard P. Hancke",
+        "Duncan S. Wong",
+        "Guomin Yang"
+      ],
+      "venue": "IEEE TETC",
+      "venue_full": "IEEE Transactions on Emerging Topics in Computing, vol. 8, no. 2, pp. 365–376, Apr.–Jun. 2020 (온라인 2017-10-13) — City University of Hong Kong·Jinan University·University of Wollongong·CryptoBLK",
+      "tier": "journal",
+      "category": "protocol",
+      "year": 2020,
+      "url": "https://doi.org/10.1109/TETC.2017.2761702",
+      "preprint": "https://ink.library.smu.edu.sg/sis_research/7296",
+      "doi": "10.1109/TETC.2017.2761702",
+      "topics": [
+        "distance-bounding",
+        "rfid",
+        "rtls",
+        "energy-efficiency",
+        "offline-precomputation",
+        "residual-energy",
+        "computational-rfid",
+        "mafia-fraud",
+        "distance-fraud",
+        "terrorist-fraud",
+        "protocol-design"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "UHF RFID 거리 제한이라 CS 에 수치가 넘어오지는 않는다. 넘어오는 것은 설계 원리 하나와 그 원리가 CS 에서 갈라지는 지점이다. 이 프로토콜은 시간을 재는 빠른 단계에서 암호 연산을 완전히 빼고(온라인 0f), 응답 레지스터 W = f(X, ID, N_T) 를 리더 입력과 무관한 카운터로 앞 세션 끝의 잔여 전력에 미리 계산해 둔다. CS 반사기의 RTT 랜덤 시퀀스도 절차 시작 시 DRBG 로 정해져 스텝 안에서는 연산이 없다는 점에서 같은 구조다(관찰). 다른 점은, Zhuang 의 응답은 매 라운드 챌린지 비트와 XOR 되고 챌린지에 따라 커서가 움직여 '응답이 챌린지에 인과적으로 묶이는' 성질을 남기지만, CS RTT 의 반사기 시퀀스는 개시자가 보낸 비트에 의존하지 않는다는 것이다(관찰) — Toro-Pozo 2019 가 상용 근접 검사(PayPass·PaySafe·MIFARE Plus)를 거리 사기·거리 하이재킹으로 무너뜨린 원인으로 지목한 바로 그 차이다. 실측은 MCU 의 AES 계산 시간과 잔여 전력 동작 시간뿐이고 빠른 단계 RTT·프로버 처리 지연은 재지 않아 판단 레이어에 올릴 수치는 없다. Hancke 가 공저한 Abu-Mahfouz 2013 의 비교 틀(저장·전송 비트 정규화)을 그대로 이었다.",
+      "summary": "산업용 실시간 위치 시스템(RTLS)의 에너지 제약 수동 태그를 위한 거리 제한 프로토콜을 제안한다. 응답 레지스터 W 를 태그 키 X·ID·카운터 N_T 의 함수 f 로 세션 전에 오프라인 계산하고, 빠른 단계에서는 챌린지 비트에 따라 키 X 의 msb/lsb 커서와 W 의 두 커서를 움직여 W 의 한 비트와 챌린지를 XOR 해 응답하므로 온라인 암호 연산이 없다. 카운터와 Flag 비트로 재생과 전원 차단 시 사전 계산 재사용을 막는다. Avoine 2011 틀의 white-box 무잡음 분석에서 거리 사기 (5/8)^n, 마피아·테러리스트 사기 (n/2+1)(1/2)^n 을 얻었고, Matlab 시뮬레이션으로 이론값을 확인했다. MSP430 기반 계산형 UHF RFID 태그(UMich MOO)에서 AES-128 f 계산이 12.8 ms, 리더 반송파가 꺼진 뒤 MCU 가 2 V 로 계속 도는 시간이 81.2 ms 라, 다음 세션의 응답 레지스터를 잔여 전력으로 계산할 수 있음을 보였다.",
+      "hardware": [
+        "UMich MOO 계산형 RFID 태그(Intel WISP 기반 수동 UHF) — TI MSP430 MCU, 2 V 공급·내부 클럭 1.075 MHz, 저장 커패시터 10 µF(그림 9 쪽 이미지로 확인; 텍스트 추출본은 '10 mF' 로 깨짐)",
+        "Impinj Speedway Revolution UHF RFID 리더 + Impinj Brickyard 안테나",
+        "오실로스코프(모델 미기재) — MCU 디지털 출력 핀과 저장 커패시터 전압을 측정(그림 9)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "TI MSP430 용 AES-128 C 구현(TI 앱 노트 SLAA397A) — f 실현(128 비트 블록 1개: 32 비트 N_T + 96 비트 EPC ID)",
+        "TI SHA-256 라이브러리 — 대안 f 구현(잔여 전력 안에 끝나지 않음)",
+        "Matlab — 거리·마피아·테러리스트 사기 성공확률 이론값 검증 시뮬레이션(그림 6)"
+      ],
+      "software_verified": true,
+      "results": [
+        "보안 상한(무잡음, white-box, Avoine 2011 틀): 사칭 (1/2)^n, 거리 사기 (5/8)^n(커서 의존 전략이 최적), 마피아 사기 (n/2+1)(1/2)^n(pre-ask), 테러리스트 사기 (n/2+1)(1/2)^n (표 4·쪽 이미지로 확인)",
+        "비교(표 4, f = AES-128 정규화): 메모리 541 비트·전송 416 비트·온라인 암호 연산 0회 — 같은 0f 인 Zhuang 2013 보다 세 상한 모두 낮고, 테러리스트 사기를 고려한 프로토콜 중 거리 사기 상한이 가장 낮다고 저자 주장",
+        "잔여 전력 사전 계산 실측: AES-128 f 계산 12.8 ms, 리더 반송파 차단 후 MCU 가 2 V 로 계속 동작한 시간 81.2 ms → 다음 세션 응답 레지스터를 잔여 전력으로 계산 가능",
+        "SHA-256 f 는 100 ms 가 걸려 잔여 전력 소진 전에 끝나지 않음; 태그 기동 시간 약 13 ms(10 µF)",
+        "32 비트 카운터는 12.8 ms 마다 연속 실행해도 약 650 일 뒤에야 순환",
+        "반환 채널 키 복구(Bay 외 2012): 이중 레지스터가 아니고 커서 상태를 되돌릴 수 없어 챌린지를 뒤집어도 키 비트가 드러나지 않는다고 논증(그림 5)"
+      ],
+      "limitations": [
+        "빠른 단계 RTT·프로버 처리 지연을 재지 않았다 — 실측은 MCU 의 AES 계산 시간과 잔여 전력 동작 시간뿐(관찰)",
+        "보안 분석은 무잡음(T1 = T2 = 0) 중심이고, 잡음 채널은 임계값 t 의 이항분포 식만 제시",
+        "테러리스트 사기 상한은 증명자가 키 비트를 하나도 주지 않는 모델 기준 — 연속 T2 비트를 공유하면 상한이 오른다고 저자 명시; 산업 RTLS 에서는 '사물은 공모하지 않는다' 며 실용성을 낮게 봄",
+        "카운터·Flag 비트의 재생·비동기화 방어는 논증뿐이고 형식 증명이 없음",
+        "전문 경로: SMU InK 저장소 PDF 는 Incapsula 봇 차단이라 Wayback 2023-11-13 스냅샷(id_)의 게재판 PDF 로 확인"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "hancke-2005-rfid-db",
+          "type": "extends",
+          "note": "Hancke–Kuhn 의 응답 레지스터에 Brands–Chaum 의 XOR 응답과 Avoine–Tchamkerten 의 '기억 있는 응답' 을 합쳐, 리더 입력 없이 미리 계산할 수 있는 키 의존 응답 함수로 넓혔다고 저자 명시"
+        }
+      ],
+      "added": "2026-10-22",
+      "last_checked": "2026-10-22",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "reid-2007-timing-relay-detection",
+        "kim-2008-swiss-knife-db",
+        "kim-2009-mixed-challenges-db",
+        "francis-2010-nfc-p2p-relay",
+        "avoine-2011-db-framework",
+        "abu-mahfouz-2013-db-rtls",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "ranganathan-2015-fmcw-proximity-verification",
+        "avoine-2018-db-survey"
+      ]
+    },
+    {
+      "id": "boureanu-2017-hb-db-break-fix",
+      "title": "Breaking and Fixing the HB+DB Protocol",
+      "authors": [
+        "Ioana Boureanu",
+        "David Gérault",
+        "Pascal Lafourcade",
+        "Cristina Onete"
+      ],
+      "venue": "ACM WiSec",
+      "venue_full": "10th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec '17), Boston, pp. 241–246, 2017 — University of Surrey·Université Clermont Auvergne LIMOS·Université de Rennes 1/IRISA",
+      "tier": "wireless",
+      "category": "analysis",
+      "year": 2017,
+      "url": "https://doi.org/10.1145/3098243.3098263",
+      "preprint": "https://hal.science/hal-01588562",
+      "doi": "10.1145/3098243.3098263",
+      "topics": [
+        "distance-bounding",
+        "hb-plus",
+        "lpn",
+        "man-in-the-middle",
+        "key-recovery-attack",
+        "signal-injection",
+        "overshadowing",
+        "false-acceptance-rate",
+        "noise-tolerance",
+        "provable-security",
+        "rfid"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "LPN 기반 경량 인증(HB+)에 거리 제한을 덧붙인 HB+DB 를 깬 논문이라 CS 와 프로토콜 구조는 다르다. 넘어오는 교훈은 세 가지다(모두 관찰). (1) **시간 검사는 '지연을 더하는' 중간자만 잡는다** — HB+DB 저자들은 챌린지를 복조해 비트를 뒤집는 GRS 공격이 시간 초과로 걸림을 실험으로 보였지만, 이 논문의 공격자는 복조하지 않고 해당 비트 주기에 검증자보다 강한 신호를 쏴 '1' 을 덮어써 지연 없이 프로버가 받는 챌린지를 바꾼다. CS 에서도 RTT 검사는 중계 지연을 잡을 뿐, 반사기 근처에서 신호를 덮어쓰는 주입은 시간 검사의 대상이 아니다. (2) **오차 허용 방식이 보안 상한을 정한다** — 응답 오차를 하나씩이 아니라 '합' 으로 허용 범위와 비교하는 검증에 LPN 잡음까지 더하자 128 라운드에서도 거짓 수락이 2^-5 였다. CS 에서 NADM·품질 임계값을 느슨하게 잡을 때 같은 질문이 선다. (3) **특정 공격에 대한 실험 평가는 안전 주장이 아니다** — 저자들은 실험 접근을 비판하지 않되 증명이 뒤따라야 한다고 결론짓는다. CS 의 NADM 평가가 정해진 공격 몇 가지에 한정된 것과 같은 구도다. 공격은 해석뿐이고 측정 매체가 RFID 라 판단 레이어에는 올리지 않았다.",
+      "summary": "HB+ 에 시간 측정 단계를 더해 GRS 중간자 키 복구를 막겠다던 HB+DB(Pagnin 외, WiSec 2015)의 인증·거리 제한 두 층의 결함을 보인다. 첫째, 필수로 요구된 LPN 잡음과 채널 잡음이 합쳐지고 응답 오차를 합으로 검사하는 탓에, 거짓 거부 1 % 로 맞추면 무작위 응답만으로 거리·마피아 사기가 쉽게 성립한다. 둘째, 공격자가 챌린지를 복조하지 않고 특정 비트 주기에 더 강한 신호로 '1' 을 주입한 뒤 인증 성패를 관찰해 키 x 를 한 비트씩 복구하는 중간자 공격을 제시한다 — 지연이 생기지 않아 시간 검사를 통과하고, x 하나만 알면 세 키 중 나머지 없이 원격 프로버를 사칭할 수 있다. 셋째, HB+DB 의 수동 공격 안전성은 LPN 이 아니라 PRF 의 의사난수성에 기댄다는 것을 일회용 패드 논증으로 보인다. 수정안 BLOG 는 LPN 잡음과 키 y 를 빼고 TREAD 처럼 세션마다 새 x_temp 를 쓰며, DFKO 모델에서 근사 최적 거리·마피아 사기 내성과 SimTF 테러리스트 사기 내성을 증명한다.",
+      "hardware": [
+        "없음 — 해석·증명 논문(신호 주입 공격은 ASK·NRZ 챌린지 가정의 해석이며 구현·실측 없음)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "명시된 도구 없음 — 거짓 수락률·보안 비트 곡선(그림 3–5)은 이항분포 해석값"
+      ],
+      "software_verified": true,
+      "results": [
+        "HB+DB 를 LPN 잡음 25 %·거짓 거부 1 % 로 두면 시간 측정 라운드 128 회에서도 거짓 수락 확률(무작위 응답 거리·마피아 사기의 하한)이 2^-5",
+        "LPN 잡음 1/4·채널 잡음 0.05·n = 64 에서 무작위 응답 공격 성공 1/8, n = 128 에서도 약 2^-8",
+        "보안 수준이 LPN 잡음에 거의 선형으로 떨어짐 — 0.125 에서 약 30 비트, 0.2 에서 15 비트, 0.3 에서 5 비트; 잡음 0.3·약 90 라운드에서 DB1(q = 3) 20 비트 대 HB+DB 6 비트",
+        "신호 주입 키 복구: 비트 j 위치에 더 강한 신호로 1 을 덮어쓰고 인증 성패로 x_j 를 판정 — 비트당 성공 ≥ (2 − P_FR)/3 ≈ 0.66(P_FR 1 %), 거짓 거부 1 % 를 지키면 키 2048 비트로도 최대 26 비트 보안",
+        "x 만 알면 느린 단계를 중계하고 원격 프로버에 all-0 챌린지를 미리 보내 받은 값으로 검증자 챌린지에 답해 사칭 성공(프로토콜 정확도와 같은 확률)",
+        "HB+DB 의 수동 공격 안전성은 LPN 경도로 환원되지 않음 — b_i·y 가 일회용 패드 역할을 해 성공확률이 LPN 잡음 τ 와 무관",
+        "수정안 BLOG: 거리 사기 q_V·2^-n, 마피아 사기 근사 최적(정리 1, PRF 가정), SimTF 테러리스트 사기 내성 — DFKO 모델 증명(부록 A)"
+      ],
+      "limitations": [
+        "신호 주입 키 복구는 ASK·NRZ 챌린지, '검증자보다 크게 말할 수 있는' 공격자, 비트 주기·챌린지 간격 지식을 가정한 해석이며 실측이 없음 — 저자도 (i) 는 다른 변조에서는 확률적으로만 성립한다고 명시",
+        "BLOG 의 잡음 채널 증명은 확장판으로 미룸; k 비트 챌린지·1 비트 응답이라 라운드당 k 번의 AND·XOR 가 필요해 경량 기기용이 아님 — 저자 명시",
+        "HB+ 와 거리 제한을 LPN 기반 수동 안전성을 잃지 않고 합성하는 문제는 열린 문제로 남김 — 저자 명시",
+        "확인한 전문은 HAL hal-01588562 판(부록 증명 포함 23쪽)으로 게재판(6쪽)보다 긴 확장판이다 — 게재판 참고문헌은 Crossref 예치 17건으로 따로 대조해 cites 에 합침(hu-2003 은 게재판에만 있음)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "kim-2008-swiss-knife-db",
+          "type": "complementary",
+          "note": "HB+DB 의 키 가변성 문제에 대한 '빠른 수정' 으로 Swiss-Knife 식 세션 전사 인증을 제시하되, 그 방식은 테러리스트 사기 증명을 어렵게 한다며 BLOG 에서는 TREAD 식 일회용 비밀을 택함"
+        }
+      ],
+      "added": "2026-10-22",
+      "last_checked": "2026-10-22",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hu-2003-packet-leashes",
+        "clulow-2006-long-symbols",
+        "kim-2008-swiss-knife-db",
+        "boureanu-2015-practical-provable-db"
+      ]
+    },
+    {
+      "id": "abidin-2017-towards-quantum-db",
+      "title": "Towards Quantum Distance Bounding Protocols",
+      "authors": [
+        "Aysajan Abidin",
+        "Eduard Marin",
+        "Dave Singelée",
+        "Bart Preneel"
+      ],
+      "venue": "RFIDSec",
+      "venue_full": "Radio Frequency Identification and IoT Security — RFIDSec 2016(Hong Kong, 2016-11-30~12-02) 수정 선정 논문집, LNCS 10155, pp. 151–162, Springer 2017 — KU Leuven ESAT-COSIC·iMinds",
+      "tier": "other",
+      "category": "protocol",
+      "year": 2017,
+      "url": "https://doi.org/10.1007/978-3-319-62024-4_11",
+      "preprint": "https://lirias.kuleuven.be/handle/123456789/554046",
+      "doi": "10.1007/978-3-319-62024-4_11",
+      "topics": [
+        "quantum-distance-bounding",
+        "distance-bounding",
+        "bb84",
+        "qubits",
+        "processing-delay",
+        "reflection-attack",
+        "double-read-out",
+        "photon-number-splitting",
+        "mafia-fraud",
+        "terrorist-fraud"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "양자 채널(편광 광자)이라 CS 에 수치는 넘어오지 않는다. 쓸모는 두 가지다. (1) 설계자가 스스로 밝힌 '반사 공격' — 빠른 단계는 검증자가 PRF 기저로 실어 보낸 광자를 프로버가 같은 기저로 측정·재부호화해 돌려보내는 거리 측정일 뿐이라, 마지막 MAC 이 없으면 공격자가 아무것도 측정하지 않고 광자를 그대로 되비춰 통과한다. Bogner 2026(SDP)은 이 프로토콜을 'QDB 2017' 로 부르고 MAC 을 뗀 한 라운드 게임에서 마피아 사기 성공 1 을 계산해 '거리 측정과 인증은 분리될 수 없고, 거리만 재는 빠른 단계는 그 자체로 마피아 사기 내성이 없다' 고 정리했다. CS 의 PBR 톤 교환도 비밀이 실리지 않은 거리만 재는 단계이고 결속은 같은 절차의 RTT 스텝과의 교차 검증에 맡겨져 있어 같은 구조다(관찰) — research.json 의 '안전한 근접 증명 요건' 에 반영했다. (2) Ranganathan 2012 의 double read-out 을 '한 라운드에 같은 기저 광자를 여러 개 보내 기저를 알아내는' 공격으로 옮기고 라운드마다 검출기 기저를 갱신해 막는다 — 반사기가 한 스텝 안에서 같은 비밀을 여러 번 노출하는지 묻는 CS 질문과 닿는다. 처리 지연 약 10 ns(거리 이득 3 m)는 QKD 구현에서 가져온 추정이지 실측이 아니다.",
+      "summary": "거리 제한의 빠른 단계를 RF·초음파 대신 큐비트(BB84 네 편광 상태)로 수행하는 첫 양자 거리 제한 프로토콜을 제안하고 그 실현 가능성을 따진다. 검증자와 프로버가 논스와 공유 비밀로 PRF 출력 a 를 계산하고, 검증자는 무작위 챌린지 비트를 a_i 가 정한 기저의 편광 광자로 보내며, 프로버는 같은 기저로 측정해 결과를 다시 같은 기저로 부호화해 돌려보낸다. 기저를 모르는 공격자는 측정하면 상태를 깨므로 조기 검출·늦은 확정(ED/LC)이 통하지 않고, 마지막 단계에서 프로버가 측정 결과 c 위의 MAC 을 보내 반사 공격을 막는다. 분석 결과 거리 사기 (1/2)^n, 마피아 사기 (3/4)^n(단일 광자원 가정), 테러리스트 사기는 레지스터 후반을 장기 키와 XOR 하면 (3/4)^n 이다. 무광자 펄스·다광자 펄스 분할·한 라운드 다중 광자로 기저를 알아내는 double read-out 같은 구현 공격과 대응을 논하고, QKD 장비 기준 프로버 처리 지연을 약 10 ns(거리 이득 3 m)로 추정한다.",
+      "hardware": [
+        "없음 — 실험 없음. 필요한 부품은 단일 광자원(레이저)·단일 광자 검출기·조정 가능한 편광 부호기·데이터 처리부라고만 서술하고, 상용 QKD 장비를 그대로 쓸 수 있다고 봄"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "없음 — 해석 논문"
+      ],
+      "software_verified": true,
+      "results": [
+        "거리 사기: 챌린지를 미리 맞힐 확률 (1/2)^n — 큐비트는 다 받기 전에 값을 알 수 없어 RF 처럼 부분 복조로 일찍 응답할 수 없음",
+        "마피아 사기: 기저를 모르는 공격자의 측정은 상태를 깨 ED/LC 불가; 다광자 펄스 분할(PNS)을 단일 광자원으로 막는다는 가정에서 pre-ask 로 (3/4)^n",
+        "테러리스트 사기: 레지스터 a 의 후반을 전반 ⊕ 장기 키로 만들면 공범에게 절반만 줄 수 있어 (3/4)^n",
+        "프로버 처리 지연 추정 약 10 ns(QKD 구현의 전형값) → 거리 이득 최대 약 3 m; 기존 구현은 1–100 ns 라 일부 아날로그·혼합 설계보다 약간 크지만 하드웨어는 단순하다고 저자 주장",
+        "마지막 MAC(ID·논스·측정 비트 c)이 없으면 공격자가 측정 없이 광자를 그대로 되비춰 통과 — 저자가 '보안에 결정적' 이라고 명시",
+        "구현 공격: 평균 0.3 광자/펄스 레이저면 대부분 펄스가 비어 공격자가 응답할 필요가 없음(라운드 수를 늘려 대응), 한 라운드에 같은 기저의 광자 여러 개로 기저를 알아내는 double read-out(라운드마다 검출기 기저 갱신으로 대응)"
+      ],
+      "limitations": [
+        "실험이 없고 처리 지연 10 ns 는 QKD 구현에서 가져온 추정 — 저자가 QKD 장비로 실증하는 것을 향후 과제로 명시",
+        "PNS 공격을 막으려면 효율적인 단일 광자원이 필요 — 저자 명시",
+        "채널 손실·잡음과 오류 허용 임계값을 분석하지 않음",
+        "Abidin 2020 의 비교표(표 2)는 이 프로토콜의 거리 사기를 (3/4)^n 으로 적어, 이 논문 본문의 (1/2)^n 과 다르다(관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites_source": "fulltext",
+      "relations": [
+        {
+          "to": "ranganathan-2012-tf-resilient-db",
+          "type": "extends",
+          "note": "Ranganathan 2012 의 double read-out 공격을 '한 라운드에 같은 기저 광자를 여러 개 보내 프로버 기저를 알아내는' 양자 채널 공격으로 옮기고, 라운드마다 검출기 기저를 갱신해 막음"
+        }
+      ],
+      "added": "2026-10-22",
+      "last_checked": "2026-10-22",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "clulow-2006-long-symbols",
+        "reid-2007-timing-relay-detection",
+        "singelee-2007-db-noisy-environments",
+        "tippenhauer-2009-id-based-db",
+        "rasmussen-2009-imd-proximity-access",
+        "rasmussen-2010-rf-distance-bounding",
+        "ranganathan-2012-tf-resilient-db",
+        "ranganathan-2015-fmcw-proximity-verification"
+      ]
+    },
+    {
+      "id": "abidin-2020-relay-qubits",
+      "title": "On Detecting Relay Attacks on RFID Systems Using Qubits",
+      "authors": [
+        "Aysajan Abidin"
+      ],
+      "venue": "Cryptography (MDPI)",
+      "venue_full": "Cryptography, vol. 4, no. 2, art. 14, 2020 (게재 2020-05-08) — imec-COSIC, KU Leuven",
+      "tier": "journal",
+      "category": "analysis",
+      "year": 2020,
+      "url": "https://doi.org/10.3390/cryptography4020014",
+      "preprint": "https://www.mdpi.com/2410-387X/4/2/14/pdf",
+      "doi": "10.3390/cryptography4020014",
+      "topics": [
+        "relay-attack",
+        "quantum-distance-bounding",
+        "qubits",
+        "rfid",
+        "quantum-memory",
+        "pre-ask-attack",
+        "timing-removal",
+        "hancke-kuhn",
+        "distance-hijacking"
+      ],
+      "tech": [
+        "other"
+      ],
+      "relevance": "low",
+      "relevance_note": "'시간을 재지 않아도, 읽을 수 없는 물리 신호를 쓰면 릴레이를 막는다' 는 주장의 반례라서 CS 에 쓸모가 있다. Jannati·Ardeshir-Larijani 의 RAD(2016)는 거리 제한의 시간 측정 단계를 큐비트 전송으로 바꾸고 '엿보면 상태가 깨진다' 로 릴레이를 탐지한다고 했지만, 양자 메모리를 가진 공격자는 태그에 먼저 요청해 받은 큐비트를 **읽지 않고** 저장했다가 리더에 넘겨 탐지 없이 통과한다. 고친 방법은 결국 매 라운드 시간 측정과 '응답이 챌린지에 의존' 을 되돌려 놓는 것이었다. CS 에서 같은 자리는 PBR 이다 — 톤의 위상·안테나 경로 무작위화는 공격자가 내용을 예측·해독하지 못하게 할 뿐, 읽지 않고 되보내는 중계를 드러내는 것은 지연 측정이고, PBR 은 그 지연을 위상 기울기로만 보므로 중계기가 위상을 다루면 지연이 숨는다(Staat 2022 실증; 대응은 관찰). research.json broken 에 2020 항목으로 넣었다. 공격은 해석이며 실측이 없다.",
+      "summary": "RFID 릴레이 탐지에 큐비트를 쓰자는 RAD 프로토콜(Jannati·Ardeshir-Larijani, Quantum Inf. Process. 2016)을 분석한다. RAD 는 Hancke–Kuhn 의 초기화 단계를 그대로 두고, 시간을 재는 빠른 단계를 '리더 요청에 태그가 B 기저로 준비한 |D⟩ 큐비트를 보내는' 시간 측정 없는 단계로 바꿨다. 원 저자들은 가로채 무작위 기저로 재전송하는 공격(큐비트당 통과 3/4)만 따졌는데, 이 논문은 양자 메모리를 가진 공격자가 리더 요청 전에 태그의 큐비트를 받아 두었다가 읽지 않고 리더에 넘기면 탐지되지 않음을 보인다. 원인은 시간 측정이 없고 리더 요청과 태그 응답 사이에 의존이 없다는 것이다. 대응으로 고전 챌린지 비트 C_i 에 따라 D_i 또는 B_i 기저로 C_i 를 큐비트로 되보내고 매 라운드 RTT 를 검사하는 개선 RAD 를 제안해 거리 사기 (1/2)^n, 마피아 사기 (3/4)^n, 거리 하이재킹 내성을 보인다.",
+      "hardware": [
+        "없음 — 해석 논문(QKD 의 양자 전송·측정 장비로 구현 가능하다고만 서술)"
+      ],
+      "hardware_verified": true,
+      "software": [
+        "없음 — 해석 논문"
+      ],
+      "software_verified": true,
+      "results": [
+        "RAD 원 분석의 가로채 재전송 공격: 공격자가 기저를 무작위로 골라 측정·재부호화하면 큐비트당 3/4 로 통과",
+        "양자 메모리 사전 요청 공격: 리더 요청 전에 태그에 먼저 요청해 받은 큐비트를 측정 없이 저장했다가 리더 요청에 내주면 리더 측정 결과가 기대값과 같아 탐지되지 않음(그림 4)",
+        "실패 원인 두 가지 — 큐비트 전송 단계에 시간 측정이 없음, 리더 요청과 태그 응답 사이에 논리적 의존이 없음; 저자는 '시간 정보 없이 의존만 있어도 릴레이를 막지 못한다' 고 명시",
+        "개선 RAD(고전 비트 챌린지 + 큐비트 응답, 매 라운드 RTT 검사): 거리 사기 (1/2)^n, 마피아 사기 (3/4)^n, 공유 비밀로 거리 하이재킹 내성; 테러리스트 사기는 현재 형태로는 불가하나 D = PRF_K(N_R, N_T), B = Enc_D(K) 로 바꾸면 가능",
+        "비교(표 2, 쪽 이미지로 확인): Brands–Chaum (1/2)^n·(1/2)^n, Hancke–Kuhn (3/4)^n·(3/4)^n, QDB 2017 (3/4)^n·(3/4)^n, QDB 2019 (1/2)^HD(B,D)·max((1/2)^HD(B,D), (5/8)^n), 개선 RAD (1/2)^n·(3/4)^n (거리 사기·마피아 사기 순)"
+      ],
+      "limitations": [
+        "공격·대응 모두 해석이며 실험이 없음",
+        "개선 RAD 는 현재 형태로 테러리스트 사기 내성이 없음 — 저자 명시",
+        "표 2 의 QDB 2019 마피아 사기 상한 (5/8)^n 은 이후 Verschoor 공격으로 라운드당 7/8 까지 오른다(bogner-2026-quantum-db-framework) — 이 비교표는 갱신이 필요하다(관찰)",
+        "표 2 는 QDB 2017 의 거리 사기를 (3/4)^n 으로 적었으나 원 논문(abidin-2017) 본문은 (1/2)^n 이다(관찰)"
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "verified",
+      "cites_source": "fulltext",
+      "relations": [],
+      "added": "2026-10-22",
+      "last_checked": "2026-10-22",
+      "cites": [
+        "brands-1993-distance-bounding",
+        "hancke-2005-rfid-db",
+        "clulow-2006-long-symbols",
+        "singelee-2007-db-noisy-environments",
+        "tippenhauer-2009-id-based-db",
+        "rasmussen-2009-imd-proximity-access",
+        "rasmussen-2010-rf-distance-bounding",
+        "francillon-2011-pkes-relay",
+        "hancke-2011-secure-db-channel-rfid",
+        "cremers-2012-distance-hijacking",
+        "ranganathan-2012-tf-resilient-db",
+        "ranganathan-2015-fmcw-proximity-verification",
+        "tippenhauer-2015-uwb-rapid-bit-exchange",
+        "abidin-2017-towards-quantum-db",
+        "avoine-2018-db-survey",
+        "singh-2019-uwb-pr"
       ]
     }
   ]
