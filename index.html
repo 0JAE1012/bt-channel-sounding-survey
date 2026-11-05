@@ -1408,7 +1408,7 @@
   function buildLog() {
     if (logLoaded) return;
     logLoaded = true;
-    fetch("CHANGELOG.md")
+    fetch("CHANGELOG.md", { cache: "no-cache" })
       .then((r) => { if (!r.ok) throw new Error(`CHANGELOG.md ${r.status}`); return r.text(); })
       .then((t) => { document.getElementById("log-body").innerHTML = renderMarkdown(t); })
       .catch((e) => {
@@ -2807,7 +2807,9 @@
   // ---------- load ----------
   // 서베이가 끝나면 같은 경로를 한 번 더 타야 하므로 일회성 체인이 아니라 함수로 둔다.
   // bust: 방금 쓰인 JSON 을 읽도록 캐시를 건너뛴다.
-  const grab = (f, bust) => fetch("data/" + f + (bust ? "?t=" + Date.now() : ""))
+  // no-cache: 첫 로드에도 서버에 재검증(If-None-Match → 바뀌지 않았으면 304)한다.
+  // Pages 의 max-age=600 때문에 배포 직후 열린 탭이 옛 JSON 을 그대로 쓰던 문제.
+  const grab = (f, bust) => fetch("data/" + f + (bust ? "?t=" + Date.now() : ""), { cache: "no-cache" })
     .then((r) => { if (!r.ok) throw new Error(`${f} ${r.status}`); return r.json(); });
 
   function loadData({ bust = false, initial = false } = {}) {
