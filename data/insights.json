@@ -1,6 +1,6 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-09-26",
+  "updated": "2026-11-05",
   "note": "코퍼스를 읽으며 나온 관찰과 연구 아이디어. 각 항목은 근거 논문 id에 연결되어 있고, 아직 남의 논문이 아니라 내 판단이므로 evidence를 직접 확인한 뒤 사용할 것.",
   "insights": [
     {
@@ -146,7 +146,7 @@
         "boshoff-2026-secure-indoor-ranging"
       ],
       "why_it_matters": "실용적 함의가 둘이다. 첫째, 이 계보의 프레임(물리계층 위협 모델, 형식적 보안 정의, 실기기 실증)을 따르면 리뷰어가 읽는 방식에 맞는다. 둘째, 그 프레임 밖의 관점이 비어 있다. 실배치 데이터 기반 평가, 벤더 구현 다양성, 유스케이스별 위험 차등이 그렇다. 후자를 노리면 경쟁이 적다.",
-      "research_idea": "정면 승부(같은 프레임에서 더 나은 공격)와 측면 우회(비어 있는 관점) 중 후자가 승률이 높다. 그리고 이번 실행에서 가장 유망한 빈 자리가 드러났다. 물리계층 계보(Capkun)와 페어링 계층 계보(Antonioli)가 서로 인용하지 않는다. CS는 두 계층에 동시에 걸쳐 있으므로(물리계층 측정 + 본딩 키 기반 난수화), 두 계보를 잇는 연구는 양쪽 모두에게 새롭다. cs-randomness-rests-on-pairing이 그 구체적 형태다.",
+      "research_idea": "정면 승부(같은 프레임에서 더 나은 공격)와 측면 우회(비어 있는 관점) 중 후자가 승률이 높다. 그리고 이번 실행에서 가장 유망한 빈 자리가 드러났다. 물리계층 계보(Capkun)와 페어링 계층 계보(Antonioli)가 서로 인용하지 않는다. CS는 두 계층에 동시에 걸쳐 있으므로(물리계층 측정 + 암호화 링크로 보호되는 CS 입력 교환), 두 계보를 잇는 연구는 양쪽 모두에게 새롭다. cs-randomness-rests-on-pairing이 그 구체적 형태다.",
       "first_experiment": "Boshoff 2026 의 분류표와 참고문헌을 내 코퍼스와 대조한다. 내 정리가 이미 남이 한 것인지, 아니면 그 서베이가 놓친 축(예: 정확도 개선 논문의 보안 영향)이 내 자리인지가 여기서 갈린다.",
       "difficulty": "low",
       "novelty_risk": "해당 없음. 판단 자료다.",
@@ -179,23 +179,24 @@
     {
       "id": "cs-randomness-rests-on-pairing",
       "kind": "opportunity",
-      "title": "CS의 난수화는 페어링 키에 얹혀 있고, 그 페어링은 0-click으로 강등된다",
-      "claim": "CS Security Start는 본딩으로 확립된 PK에서 sounding sequence, 마커 배치, 비트 패턴, 안테나 경로 선택의 난수를 유도한다. CS의 모든 물리계층 방어가 '공격자는 이 시퀀스를 예측할 수 없다'는 한 문장에 얹혀 있다. 그런데 BLERP(NDSS 2026)는 표준 v6.1의 재페어링 설계 결함 6개(신규 4개)로 공격자가 재페어링을 강제하고 보안수준을 최저(LSC + JustWorks)까지 강등할 수 있음을 0-click 또는 1-click으로 실증했다. 설계 결함이므로 Bluetooth 버전이나 보안 설정과 무관하게 적용된다. BLUFFS(CCS 2023)는 같은 계층의 세션 키 전후방 비밀성을 깬다. **인접 기술에서는 이 구조가 이미 실증으로 깨졌다.** 802.11az 의 secure FTM 은 WPA2-Personal 에서 널리 공유된 passphrase 의 비밀성에 기대고, WPA3-Personal 에서도 핸드셰이크가 특정 AP 에 결속되지 않아 password 를 아는 공격자가 evil-twin AP 로 유효 PTK 를 세우면 '보안' 레인징이 **공격자와의 근접성을 증명해 준다.** 물리계층 보안이 상위 계층의 키에 얹혀 있을 때 무슨 일이 생기는지의 실물 사례다.",
+      "title": "CS 입력 교환을 보호하는 링크 인증과 암호화의 결속",
+      "claim": "Core 6.0·7.0 공개 규격 대조: h9의 직접 입력은 CS_IV·CS_IN·CS_PV이며, 이 값은 암호화 시작 후 양측이 교환한다. 따라서 본딩 키에서 CS 난수가 직접 유도된다는 기존 설명은 정정한다. 그런데 BLERP(NDSS 2026)는 표준 v6.1의 재페어링 설계 결함 6개(신규 4개)로 공격자가 재페어링을 강제하고 보안수준을 최저(LSC + JustWorks)까지 강등할 수 있음을 0-click 또는 1-click으로 실증했다. 해당 결과를 Core 7.0의 EKS·TAK나 CS 거리측정에 그대로 일반화하지 않는다. BLUFFS(CCS 2023)는 같은 계층의 세션 키 전후방 비밀성을 깬다. **인접 기술에서는 이 구조가 이미 실증으로 깨졌다.** 802.11az 의 secure FTM 은 WPA2-Personal 에서 널리 공유된 passphrase 의 비밀성에 기대고, WPA3-Personal 에서도 핸드셰이크가 특정 AP 에 결속되지 않아 password 를 아는 공격자가 evil-twin AP 로 유효 PTK 를 세우면 '보안' 레인징이 **공격자와의 근접성을 증명해 준다.** 물리계층 보안이 상위 계층의 키에 얹혀 있을 때 무슨 일이 생기는지의 실물 사례다. 남은 질문은 링크 인증·암호화가 깨질 때 CS 입력 교환의 기밀성·상대 결속이 어떻게 훼손되는가이다. 페어링 강등만으로 CS 난수 엔트로피 감소나 거리축소 성공이 증명되지는 않는다.",
       "evidence": [
         "sacchetti-2026-blerp",
         "antonioli-2023-bluffs",
         "antonijevic-2026-secure-wifi-ranging",
         "bt-core-6-0",
-        "bt-core-6-1"
+        "bt-core-6-1",
+        "bt-core-7-0"
       ],
-      "why_it_matters": "NGD 회로나 아날로그 릴레이 같은 정교한 물리계층 공격 없이 CS를 무너뜨릴 수 있는 경로다. 지금까지의 CS 공격 연구는 전부 물리계층에 머물러 있고, 페어링 계층에서 올라오는 이 경로는 아무도 CS와 연결해 보지 않았다. 내 논문에서 위협 모델을 쓸 때 이 경로를 명시적으로 배제하거나 다루지 않으면 리뷰어가 지적할 지점이다.",
-      "research_idea": "강등된 페어링(LSC + JustWorks)에서 유도된 CS 난수가 실제로 얼마나 예측 가능해지는지 분석한다. 세 단계다. (1) CS Security Start가 PK로부터 sounding sequence와 마커 배치를 유도하는 경로를 Core 6.x 규격에서 정확히 따라간다. (2) 재페어링 강등이 그 유도 입력의 엔트로피를 실제로 줄이는지 판단한다. 줄이지 않는다면 CS가 페어링 강등에 강건하다는 것이고 그것 자체가 결과다. (3) 줄인다면 BLERP 툴킷과 CS 지원 칩을 결합해 실측한다. BLERP는 nRF52840에서 돌고 CS는 nRF54L15에서 돌므로 같은 벤더 생태계 안에서 조합이 가능하다.",
-      "first_experiment": "하드웨어 없이 규격만으로 시작한다. Core 6.0/6.3의 Vol 6 Part H에서 CS Security Start의 키 유도 경로를 추적해, 입력이 PK 자체인지 세션 키인지 별도 CS 전용 키인지 확정한다. 여기서 이미 답이 갈린다. 만약 CS가 페어링 보안수준과 무관한 별도 경로를 쓴다면 이 인사이트는 기각되고, 그 사실을 정리한 것만으로도 위협 모델 절이 강해진다.",
-      "novelty_risk": "BLERP 저자(Antonioli 그룹)가 Bluetooth 보안을 체계적으로 파고 있어 CS로 확장할 가능성이 있다. 같은 그룹이 WiSec 2026에서 BlueBrothers와 The Zen of Bluetooth Security도 냈다. 다만 그들은 페어링 계층 전문이고 물리계층 거리측정은 다루지 않아 왔으므로, 두 계층을 잇는 것은 아직 빈 자리로 보인다. 서두르는 편이 좋다. 또한 (2)에서 '엔트로피가 줄지 않는다'는 결론이 나올 확률이 상당하므로, 그 경우에도 쓸 수 있는 형태로 미리 설계해 둘 것.",
+      "why_it_matters": "물리계층 조작 이전에 입력 교환과 인증 주체의 결속을 따져야 하는 연구 경로다. 실제 CS 공격 성공은 미확인이다. Core 7.0의 상위 응용 키 모델까지 포함해 위협 모델을 명시해야 한다.",
+      "research_idea": "페어링·재페어링·EKS·TAK별 링크 상대 인증과 CS 입력 교환의 결속을 모델링하고, 강등 후 CS 허용·거부와 시퀀스 예측 가능성을 확인한다.",
+      "first_experiment": "공개 Core 6.0·7.0의 Vol 6 Part B §5.1.23과 Part E §3.1.5 대조는 완료했다. 다음은 링크 보안 수립 방식별 입력 교환의 보호·상대 인증·RAS/RAP 허용 조건을 표로 만들고 반례를 찾는 것이다.",
+      "novelty_risk": "BLERP·BlueBrothers 등 링크 보안 연구와의 중복을 확인해야 한다. CS 입력 교환은 별도 난수와 암호화 링크를 사용하므로 재페어링 강등이 CS 예측 가능성으로 이어지지 않을 수 있다. Core 7.0 EKS·TAK의 인증 책임까지 포함해 조건부 안전성과 실패 조건을 구분하는 결과를 목표로 한다.",
       "difficulty": "medium",
       "added": "2026-07-28",
       "theme": "system-composition",
-      "status": "open",
+      "status": "refined",
       "maturity": "hypothesis"
     },
     {
@@ -664,12 +665,12 @@
       "theme": "system-composition",
       "insight": "cs-randomness-rests-on-pairing",
       "priority": 14,
-      "status": "blocked",
-      "title": "Bluetooth Core Spec 확보",
-      "why": "두 인사이트의 병목이다. CS Security Start 의 키 유도 경로(cross-layer)와 PBR/RTT 비교 여부 및 허용오차(physical-manipulation)가 모두 여기 있다.",
-      "needs": "SIG 회원 접근 또는 기관 라이선스. 웹 공개본은 없음.",
+      "status": "todo",
+      "title": "공개 규격으로 CS 입력 교환과 인증 주체의 결속 분석",
+      "why": "2026-11-05 Core 6.0·7.0 공개 HTML에서 h9 입력을 확인해 접근 장애를 해소했다. 남은 일은 링크 보안 수립 경로별 위협 모델과 PBR/RTT 수락 정책의 규격·구현 경계 분석이다.",
+      "needs": "공개 Core 6.0·7.0 HTML; 실측 단계에서는 CS 지원 칩의 보안 시작·거부 로그와 RAS/RAP 접근 정책",
       "effort": "소",
-      "bonus": "대체 경로: MATLAB Bluetooth Toolbox 문서가 CS 절차를 상당히 공개한다."
+      "bonus": "EKS·TAK 경로와 기존 SMP 페어링 경로를 비교할 수 있다."
     },
     {
       "id": "todo-estimator-family",

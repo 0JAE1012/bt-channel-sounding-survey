@@ -1,6 +1,6 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-23",
+  "updated": "2026-11-05",
   "standards": [
     {
       "id": "bt-core-6-0",
@@ -16,9 +16,10 @@
         "Vol 6, Part A — Physical Layer (CS tone 및 sounding sequence)",
         "Vol 6, Part B — Link Layer (CS procedure, subevent/step 구조)",
         "Vol 6, Part H — Security (CS Security Start, DRBG 기반 난수화)",
-        "Vol 4, Part E — HCI (LE CS 커맨드 및 이벤트, LE CS Test)"
+        "Vol 4, Part E — HCI (LE CS 커맨드 및 이벤트, LE CS Test)",
+        "Vol 6 Part B §5.1.23 / Part E §3.1.5 — CS 보안 시작과 DRBG 초기화 (공개 HTML 대조, 2026-11-05)"
       ],
-      "notes_for_research": "CS 보안 분석의 1차 근거 문서. sounding sequence의 마커 심볼 삽입, 비트 패턴/톤 페이로드/안테나 경로 선택의 난수화 스크램블링 메커니즘이 위협 모델의 출발점.",
+      "notes_for_research": "CS 보안 분석의 1차 근거 문서. sounding sequence의 마커 심볼 삽입, 비트 패턴/톤 페이로드/안테나 경로 선택의 난수화 스크램블링 메커니즘이 위협 모델의 출발점. (2026-11-05 정정) 공개 HTML 전문 접근 가능. Part E §3.1.5의 h9 입력은 CS_IV(128 bit), CS_IN(64 bit), CS_PV(128 bit)이며 LTK/PK 직접 파생이라는 기존 메모는 잘못이다. Part B §5.1.23은 링크 암호화 완료 후 양측 입력 교환을 규정한다. https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core-60/out/en/low-energy-controller/low-energy-link-layer-security.html",
       "added": "2026-07-28"
     },
     {
@@ -71,7 +72,7 @@
         "CS Inline PCT Transfer (Vol 6 Part B / Vol 4 Part E HCI)",
         "CS 관련 정밀도 개선 항목"
       ],
-      "notes_for_research": "현재 연구 시점 기준 최신 CS 규격. v6.0 대비 delta를 정리해 두면 실험 대상 칩셋의 규격 준수 수준을 구분할 수 있음. Inline PCT Transfer는 새로운 공격면(하드웨어 직접 전달 경로) 가능성도 함께 검토할 것.",
+      "notes_for_research": "2026년 5월 CS 개선 규격이며 2026-11-02 Core 7.0이 후속 채택됐다. v6.0 대비 delta를 정리해 두면 실험 대상 칩셋의 규격 준수 수준을 구분할 수 있음. Inline PCT Transfer는 새로운 공격면(하드웨어 직접 전달 경로) 가능성도 함께 검토할 것.",
       "added": "2026-07-28"
     },
     {
@@ -86,9 +87,10 @@
       "summary": "Ranging Data를 클라이언트에 제공하기 위한 GATT 서비스. Ranging Data는 Core Controller가 생성해 HCI를 통해 Host로 전달하는 CS Procedure 결과물이다. 원격 기기의 ranging 데이터를 읽고 ranging 파라미터를 설정할 수 있게 한다.",
       "key_sections": [
         "RAS Characteristics (Ranging Data, Real-time Ranging Data, Control Point)",
-        "Ranging Data 전달 방식 (on-demand vs real-time)"
+        "Ranging Data 전달 방식 (on-demand vs real-time)",
+        "Erratum 26610 — Ranging Data Body Structure Update (RAS 1.0 준수 주장 시 필수)"
       ],
-      "notes_for_research": "CS 원시 데이터를 애플리케이션 계층에서 획득하는 표준 경로. 실험용 데이터 수집 파이프라인을 RAS 기반으로 구성하면 벤더 중립적으로 재현 가능. GATT 계층에서의 ranging 데이터 노출은 프라이버시 분석 대상.",
+      "notes_for_research": "CS 원시 데이터를 애플리케이션 계층에서 획득하는 표준 경로. 실험용 데이터 수집 파이프라인을 RAS 기반으로 구성하면 벤더 중립적으로 재현 가능. GATT 계층에서의 ranging 데이터 노출은 프라이버시 분석 대상. (2026-11-05 보강) 공식 배포 페이지는 Erratum 26610 적용을 필수로 명시한다. 새 개정일로 단정하지 않으며 정오표 본문 상세는 미확인이다. https://www.bluetooth.com/specifications/specs/ranging-service-1-0/",
       "added": "2026-07-28"
     },
     {
@@ -187,17 +189,17 @@
       "title": "CCC Digital Key Release 3.x / 4.x",
       "body": "Car Connectivity Consortium",
       "kind": "industry-spec",
-      "date": "3.0: 2021 / 4.0: 2024 / V3.1.4 · V4.1.0 배포 중 (2026-10-13 확인; 최신 뉴스는 10-12 Plugfest #20 시작 — Google 주최, 산호세, 10-12~16, Version 4 신규 시험 항목 처음 시험; 사양 버전 변경 없음; 차기 회원회의 2026-10-20~22 밴쿠버)",
+      "date": "3.0: 2021 / 4.0: 2024 / V3.1.6 · V4.1.0 배포 확인 (2026-11-05; 3.1.6의 정확한 발행일 미확인)",
       "status": "adopted",
       "url": "https://carconnectivity.org/digital-key/",
       "relevance": "high",
-      "summary": "차량 디지털 키 표준. R3.0에서 UWB 기반 보안 측위를 도입했다. CS는 이 영역에 대한 BLE 네이티브 대안으로 포지셔닝된다. 2026-08 현재 CCC 사양 다운로드 페이지는 V3.1.4 와 V4.1.0 을 제공하며(신청 양식 필요), 2026-06 Plugfest #18(DEKRA Lausitzring) 에서 Version 4 상호운용성·인증 시험을 진행했고, 2026-09-07~10 Plugfest #19(Ningbo, Geely 주최) 에서 Version 3·4 구현 상호운용 시험에 BLE 스니핑 시험과 BLE·UWB 시험장비 제공사 참여를 포함했다(Apple·Ellisys·COMPRION·DEKRA·VW China 등 참가). 2026-09-30 CCC 는 미국 FCC 가 20여 년 된 UWB 규제 틀을 현대화하는 Notice of Proposed Rulemaking(NPRM) 을 낸 것을 환영하는 성명을 냈다 — 'UWB 는 센티미터급 거리측정 정확도와 강한 릴레이 공격 내성으로 Digital Key 의 토대' 라고 재확인하며, 사례별 면제(waiver) 없이 신규 UWB 기술이 시장에 나올 수 있게 되기를 기대하고 의견 제출 기간에 참여하겠다고 밝혔다(규제 사항이며 사양 변경은 아님). 2026-10-12 CCC 는 Plugfest #20(Google 주최, 미국 산호세, 10-12~16)을 시작했다 — Version 4 의 신규 기능을 처음으로 시험하며, 서버 기반 소유자 기기·서버 기반 플릿 기기·플릿 관리 서버·서비스 제공자 서버 등 플릿·렌터카·서비스형 차량 출입 시험 항목, Version 4 구현과 Version 3·4 구현 사이의 교차 버전 상호운용(Version 4 상호운용 기기 목록 후보 선별), BLE 스니핑 검증(남은 시험 항목·시험장비 문제 평가), 갱신된 NFC 시험 항목과 RKE·패시브 엔트리 기능 검증이 초점이다(참가: Apple·BMW Group·DEKRA·Ellisys·Ford·Google·Motorola Mobility·Rivian·VW Group Technologies·Samsung·TTA). 발표문에는 UWB 나 Channel Sounding 시험 언급이 없다.",
+      "summary": "차량 디지털 키 표준. R3.0에서 UWB 기반 보안 측위를 도입했다. CS는 이 영역에 대한 BLE 네이티브 대안으로 포지셔닝된다. 2026-08 현재 CCC 사양 다운로드 페이지는 V3.1.4 와 V4.1.0 을 제공하며(신청 양식 필요), 2026-06 Plugfest #18(DEKRA Lausitzring) 에서 Version 4 상호운용성·인증 시험을 진행했고, 2026-09-07~10 Plugfest #19(Ningbo, Geely 주최) 에서 Version 3·4 구현 상호운용 시험에 BLE 스니핑 시험과 BLE·UWB 시험장비 제공사 참여를 포함했다(Apple·Ellisys·COMPRION·DEKRA·VW China 등 참가). 2026-09-30 CCC 는 미국 FCC 가 20여 년 된 UWB 규제 틀을 현대화하는 Notice of Proposed Rulemaking(NPRM) 을 낸 것을 환영하는 성명을 냈다 — 'UWB 는 센티미터급 거리측정 정확도와 강한 릴레이 공격 내성으로 Digital Key 의 토대' 라고 재확인하며, 사례별 면제(waiver) 없이 신규 UWB 기술이 시장에 나올 수 있게 되기를 기대하고 의견 제출 기간에 참여하겠다고 밝혔다(규제 사항이며 사양 변경은 아님). 2026-10-12 CCC 는 Plugfest #20(Google 주최, 미국 산호세, 10-12~16)을 시작했다 — Version 4 의 신규 기능을 처음으로 시험하며, 서버 기반 소유자 기기·서버 기반 플릿 기기·플릿 관리 서버·서비스 제공자 서버 등 플릿·렌터카·서비스형 차량 출입 시험 항목, Version 4 구현과 Version 3·4 구현 사이의 교차 버전 상호운용(Version 4 상호운용 기기 목록 후보 선별), BLE 스니핑 검증(남은 시험 항목·시험장비 문제 평가), 갱신된 NFC 시험 항목과 RKE·패시브 엔트리 기능 검증이 초점이다(참가: Apple·BMW Group·DEKRA·Ellisys·Ford·Google·Motorola Mobility·Rivian·VW Group Technologies·Samsung·TTA). 발표문에는 UWB 나 Channel Sounding 시험 언급이 없다. 2026-11-05 공식 다운로드 페이지는 V3.1.6 및 V4.1.0으로 변경되어 있다. 신청 양식 뒤 전문은 확보하지 못했으므로 3.1.4 대비 기술 변경은 미확인이다.",
       "key_sections": [
         "보안 측위 요구사항",
         "릴레이 공격 대응 요구사항",
         "BLE + UWB 조합 구조"
       ],
-      "notes_for_research": "CS의 실제 산업 요구사항(정확도, 지연, 보안 수준)을 정량적으로 확인할 수 있는 문서. 회원사 외 공개 범위 제한 있음 — 접근 가능 버전 확인 필요. (2026-10-01) FCC UWB NPRM 에 대한 CCC 성명은 디지털 키 업계가 여전히 UWB 를 '릴레이 내성의 근거' 로 공식화하고 있음을 보여 준다 — CS 를 디지털 키의 UWB 대안·보완으로 보는 서사(suresh-2025-cs-vehicle-access 류)와 대비되는 업계 공식 입장이며, 미국 UWB 규칙이 완화되면 BLE-only CS 의 시장 논거(비용·규제)가 약해질 수 있다는 점을 인접 기술 비교에서 염두에 둘 것. (2026-10-13) Plugfest #20 의 Version 4 초점은 플릿·서비스형 출입의 서버 측 역할과 교차 버전 상호운용이고, 무선 쪽은 BLE 스니핑 검증·NFC·RKE/PE 만 언급된다 — 이번 시험의 무게는 거리측정 물리계층보다 계정·서버·위임 쪽에 있고, CS 가 Digital Key 에 들어가는지에 대한 신호는 이번 발표에도 없다.",
+      "notes_for_research": "CS의 실제 산업 요구사항(정확도, 지연, 보안 수준)을 정량적으로 확인할 수 있는 문서. 회원사 외 공개 범위 제한 있음 — 접근 가능 버전 확인 필요. (2026-10-01) FCC UWB NPRM 에 대한 CCC 성명은 디지털 키 업계가 여전히 UWB 를 '릴레이 내성의 근거' 로 공식화하고 있음을 보여 준다 — CS 를 디지털 키의 UWB 대안·보완으로 보는 서사(suresh-2025-cs-vehicle-access 류)와 대비되는 업계 공식 입장이며, 미국 UWB 규칙이 완화되면 BLE-only CS 의 시장 논거(비용·규제)가 약해질 수 있다는 점을 인접 기술 비교에서 염두에 둘 것. (2026-10-13) Plugfest #20 의 Version 4 초점은 플릿·서비스형 출입의 서버 측 역할과 교차 버전 상호운용이고, 무선 쪽은 BLE 스니핑 검증·NFC·RKE/PE 만 언급된다 — 이번 시험의 무게는 거리측정 물리계층보다 계정·서버·위임 쪽에 있고, CS 가 Digital Key 에 들어가는지에 대한 신호는 이번 발표에도 없다. (2026-11-05) 배포 버전 확인 출처: https://carconnectivity.org/digital-key-specification-v3-1-6-and-v4-1-0/ . 버전 변경만으로 CS 채택이나 릴레이 방어 변경을 추정하지 않는다.",
       "added": "2026-07-28"
     },
     {
@@ -387,6 +389,25 @@
       ],
       "notes_for_research": "벤더 구현을 '표준 대비' 와 '구현 대비' 로 나눠 볼 때의 NXP 쪽 근거. (1) 표 6 이 NADM 을 'Supported' 로만 적고 알고리즘·임계값·보고 형식은 공개하지 않는다 — 벤더별 NADM 방어력 비교(op-nadm)에서 NXP 는 '지원 선언, 내용 비공개' 칸이다. (2) RTT 페이로드로 Random Sequence(32–128 비트)만 나열하고 Sounding Sequence 는 표에 없다 — Anliker 2026 이 보인 Sounding Sequence 쪽 NGD 축소(−19.09 m) 같은 결과는 이 칩에서 해당 경로가 없을 수 있으므로, 실험 대상 칩을 고를 때 RTT_TYPE 지원 범위부터 확인해야 한다(벤더 문서 기준 관찰, 실측 아님). (3) T_PM 최솟값이 20 µs(10 µs 미지원)라 위상 측정 창이 Nordic·SiLabs 와 다를 수 있고, 이는 톤 위상 조작 공격의 시간 예산을 바꾼다. (4) KW47-LOC 보드가 SMA 로 케이블 연결식 CS 시험을 공식 지원 — nRF54L15 외의 'conducted' 실험 플랫폼 후보. (5) RADE·LCE 는 독자 구현이라 같은 IQ 입력에 대한 거리 출력이 벤더마다 다르다는 전제를 벤더 스스로 확인해 준다.",
       "added": "2026-10-13"
+    },
+    {
+      "id": "bt-core-7-0",
+      "title": "Bluetooth Core Specification v7.0",
+      "body": "Bluetooth SIG",
+      "kind": "core-spec",
+      "date": "2026-11-02 (규격 Version Date; 기술 개요 11-03, HDT 채택 보도자료 11-04)",
+      "status": "adopted",
+      "url": "https://www.bluetooth.com/specifications/specs/core-specification-7-0/",
+      "relevance": "critical",
+      "summary": "HDT, LE Isochronous Parameter Update, Encryption Key Schedule(EKS), Transient Application Key(TAK), Encryption Product Debugging(EPD)을 도입했다. CS Security Start는 기존 Diversifiers 방식 또는 Key Schedule 방식으로 암호화를 시작한 뒤 실행한다. TAK는 상위 응용이 마련한 키로 페어링·본딩 없이 링크 암호화를 시작하는 모델이다.",
+      "key_sections": [
+        "Vol 1 Part A §5.4.7 — Non-paired security model; TAK의 인증·MITM 방어 책임",
+        "Vol 6 Part B §5.1.3.1 / §5.1.23 — 암호화 시작과 CS Security Start",
+        "Vol 6 Part E §3.1.5 — h9(CS_IV, CS_IN, CS_PV)로 DRBG 초기화",
+        "Vol 6 Part H §3.5 — NADM 및 위상·진폭 공격 탐지"
+      ],
+      "notes_for_research": "공개 HTML: https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core_v7.0/out/en/index-en.html . CS 난수의 직접 입력과 링크 보호 키를 구분해야 한다. TAK의 MITM 방어는 상위 프로토콜 책임이며 RAS/RAP 서비스 접근 허용도 별도 검토 대상이다. EKS·TAK 도입이 기존 CS 물리계층 공격을 해결했다는 증거로 쓰지 않는다. 변경표 PDF는 로그인 요구로 미확보; 공개 HTML의 관련 절을 확인했다. 기술 개요: https://www.bluetooth.com/bluetooth-core-7-0-feature-overview/ .",
+      "added": "2026-11-05"
     }
   ]
 }

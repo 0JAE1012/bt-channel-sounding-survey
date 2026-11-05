@@ -1,7 +1,7 @@
 {
   "$schema": "./schema.md",
-  "updated": "2026-10-23",
-  "last_run": "2026-10-23",
+  "updated": "2026-11-05",
+  "last_run": "2026-11-05",
   "topic": "Bluetooth Channel Sounding (CS) / secure ranging",
   "citation_edges": 1837,
   "papers": [
@@ -5659,7 +5659,8 @@
         "보안 관점 없음 — 간섭으로 인한 오차와 공격으로 인한 오차를 구분하는 문제는 다루지 않음",
         "원문 미확보: IEEE Xplore 유료, Semantic Scholar 가 openAccess 상태를 CLOSED 로 명시 (2026-08-24 확인). 킷 모델·간섭원 구성·거리별 오차 수치 미확인",
         "인용 관계(cites)는 IEEE Xplore REST 참고문헌 목록(rest/document/<arnumber>/references)을 코퍼스와 대조해 채움 — 본문은 여전히 미확보 (2026-09-13)",
-        "2026-09-28 재시도: OpenAlex closed, WebSearch 는 VCC 2025 프로그램 페이지만(전문 링크 없음)"
+        "2026-09-28 재시도: OpenAlex closed, WebSearch 는 VCC 2025 프로그램 페이지만(전문 링크 없음)",
+        "2026-11-05 원문 재확인 실패: IEEE 문서 페이지 HTTP 202 빈 응답, abstract 경로 HTTP 418; OpenAlex closed·공개 원문 위치 없음. 기존 검증 등급과 확인된 필드는 유지."
       ],
       "artifacts": {
         "code": null,
@@ -5675,7 +5676,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-24",
-      "last_checked": "2026-09-28"
+      "last_checked": "2026-11-05"
     },
     {
       "id": "gou-2024-uwb-channel-reciprocity",
@@ -7091,7 +7092,8 @@
         "2026-10-05 재시도: Pretoria UPSpace(DSpace REST) 에 Boshoff 학위논문·수락본 없음(같은 그룹 Nkrow 2023 FTM 수락본·Silva 2020 UWB NLOS 박사논문만), Hancke 출판 목록 페이지는 Cloudflare 챌린지, OpenAlex closed",
         "2026-10-06 재시도: 공저자 Hancke 개인 사이트(rfidblog.org.uk)는 열렸으나 출판 목록·PDF 링크가 없고 CityU Scholars 로만 연결, Xplore REST 참고문헌 30건에 오늘 편입한 Hancke JNCA 2011·SECTOR 없음, arXiv 저자·제목 검색 0건",
         "2026-10-10: Crossref 에 참고문헌 46건 예치 — Xplore REST 대조분(9건)에 더해 DOI 일치 8건 + Gou VTC 2025·Joo IoT-J 2024 로 cites 9 → 19; 본문은 OpenAlex·arXiv 재조회에도 여전히 closed",
-        "2026-10-12: Crossref 예치 참고문헌 ref25(DOI 10.1145/3349623.3355475)로 오늘 편입한 Cominelli 외 WiNTECH 2019 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지"
+        "2026-10-12: Crossref 예치 참고문헌 ref25(DOI 10.1145/3349623.3355475)로 오늘 편입한 Cominelli 외 WiNTECH 2019 인용 1건 추가 — 본문은 여전히 미확보, 검증 등급 유지",
+        "2026-11-05 원문 재확인 실패: IEEE 문서 페이지 HTTP 202 빈 응답, abstract 경로 HTTP 418; OpenAlex closed·공개 원문 위치 없음. 기존 검증 등급과 확인된 필드는 유지."
       ],
       "artifacts": {
         "code": null,
@@ -7123,7 +7125,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-08-30",
-      "last_checked": "2026-10-12"
+      "last_checked": "2026-11-05"
     },
     {
       "id": "xie-2026-multipath-toa-binary-ambiguity",
@@ -16042,7 +16044,8 @@
         "2026-10-19 재시도: ACM DL 의 HTML 전문 경로(/doi/fullHtml/·/doi/ 랜딩)도 WebFetch 로 403, S2 openAccessPdf 는 DOI 링크뿐, arXiv 'AutoBLE' 검색 0 — 발표일(10-26) 이후 재시도",
         "2026-10-21 재시도: dl.acm.org/doi/pdf 를 Chrome·Googlebot UA 로 curl 해도 403(Cloudflare), OpenAlex 는 gold 표기지만 pdf_url 없음 — 발표일(10-26) 이후 재시도",
         "2026-10-22 재시도: OpenAlex gold 표기이나 pdf_url 없음, dl.acm.org/doi/pdf 는 Chrome UA 403(발표 10-26 전)",
-        "2026-10-23 재시도: dl.acm.org/doi/pdf 는 Chrome·curl UA 403(발표 10-26 전), OpenAlex gold 표기이나 pdf_url 없음"
+        "2026-10-23 재시도: dl.acm.org/doi/pdf 는 Chrome·curl UA 403(발표 10-26 전), OpenAlex gold 표기이나 pdf_url 없음",
+        "2026-11-05 발표일 이후 재시도: ACM PDF HTTP 403, OpenAlex gold OA 표기이나 PDF URL 없음. 저자 홈페이지에는 채택 소식만 확인되어 전문 검증은 보류."
       ],
       "artifacts": {
         "code": null,
@@ -16058,7 +16061,7 @@
       "cites_source": "fulltext",
       "relations": [],
       "added": "2026-09-29",
-      "last_checked": "2026-10-23"
+      "last_checked": "2026-11-05"
     },
     {
       "id": "pestourie-2019-secureloc-ack-attack",
@@ -21876,6 +21879,65 @@
         "avoine-2018-db-survey",
         "mauw-2018-db-verification-without-time"
       ]
+    },
+    {
+      "id": "luo-2026-time-reversal-dynamic-response-uwb",
+      "title": "A Time-Reversal Enhanced Dynamic Response Framework for Secure UWB Ranging",
+      "authors": [
+        "Wei Luo",
+        "Xiao Tang",
+        "Qinghe Du",
+        "Bilal Hussain",
+        "Houbing Song"
+      ],
+      "venue": "IEEE TVT",
+      "venue_full": "IEEE Transactions on Vehicular Technology, early access (2026); 저자 기관은 Accepted/In press 2026-10-16, Crossref DOI 등록은 2026-10-23로 표시",
+      "tier": "journal",
+      "category": "defense",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/document/11749617/",
+      "preprint": null,
+      "doi": "10.1109/TVT.2026.3746700",
+      "topics": [
+        "secure-ranging",
+        "time-reversal",
+        "channel-reciprocity",
+        "dynamic-sts",
+        "distance-reduction",
+        "simulation"
+      ],
+      "tech": [
+        "uwb"
+      ],
+      "relevance": "medium",
+      "relevance_note": "CS의 양방향 채널 관측을 보안 검사로 활용할 때 비교할 UWB 방어다. 시간반전과 동적 STS를 결합하므로 협대역 CS로 그대로 옮길 수 있는지는 미확인이다. 상호성 가정, 채널 추정 오염, 반사기 인증 조건을 전문에서 확인할 후보로 둔다.",
+      "summary": "HRP UWB 거리축소 공격에 대응하는 TR-DR을 제안한다. 채널 상호성을 이용한 시간반전으로 에너지를 집중시키고, 간격과 진폭 가중치를 바꾸는 STS로 응답자를 검사한다. 최소제곱 이중 피크 탐지와 공격 성공확률 분석을 제시하며 검증은 시뮬레이션이다. 저자 기관 공개 초록만 확인했다.",
+      "hardware": [
+        "확인 필요 — 초록은 시뮬레이션만 보고"
+      ],
+      "hardware_verified": false,
+      "software": [
+        "확인 필요 — 전문 미확보"
+      ],
+      "software_verified": false,
+      "results": [
+        "공격 대 정상 신호 전력비 30 dB에서도 거리축소 확률이 정상 추정 오류 바닥보다 낮다고 보고 (초록; 확률·오류 바닥의 절대값 미확인)",
+        "ToA 정확도는 기준 방식과 비슷하다고 보고 (초록; 수치 미확인)"
+      ],
+      "limitations": [
+        "2026-11-05: 저자 기관 공개 초록 https://profile.cpce-polyu.edu.hk/en/publications/a-time-reversal-enhanced-dynamic-response-framework-for-secure-uw/ 및 Crossref 서지정보 대조. IEEE 페이지 접근 실패·PDF 경로 HTTP 418, OpenAlex는 CC BY hybrid OA이지만 PDF·기관 저장소 사본 없음. arXiv 제목 검색에서 해당 논문 없음.",
+        "전문·참고문헌 미확보 — 공격별 성공확률, 채널 조건, 구현 비용과 상용 칩 호환성 미확인. 시뮬레이션 결과를 무선 공격 실증으로 해석하지 않음."
+      ],
+      "artifacts": {
+        "code": null,
+        "dataset": null
+      },
+      "verification": "partial",
+      "cites": [],
+      "cites_source": "no-fulltext",
+      "relations": [],
+      "added": "2026-11-05",
+      "last_checked": "2026-11-05"
     }
   ]
 }
