@@ -423,6 +423,10 @@
   }
   .filterrow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
   .g-techrow { margin-bottom: 10px; }
+  .g-scope { margin: 0 0 12px; color: var(--fg-muted); font-size: var(--fs-sm); }
+  .g-scope label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+  .g-scope input { accent-color: var(--accent); }
+  .g-scope p { margin: 3px 0 0; }
   /* 라벨 폭을 맞춰 칩 줄의 시작점을 세로로 정렬한다. */
   .filter-label { min-width: 3.4em; font-size: var(--fs-sm); font-weight: 600; color: var(--fg-faint); margin-right: 2px; }
   .chip {
@@ -944,6 +948,10 @@
       접어 여러 줄로 놓습니다(가로축의 연도 순서는 그대로입니다).
     </p>
     <div class="filterrow g-techrow" id="g-tech"></div>
+    <div class="g-scope" id="g-cs-scope" hidden>
+      <label><input type="checkbox" id="g-cs-related" checked aria-describedby="g-cs-note">PBR·RTT 관련 연구 포함</label>
+      <p id="g-cs-note">다른 무선 기술의 위상 기반 거리측정(PBR)·왕복 거리측정(RTT/TWR) 연구도 함께 강조합니다. 끄면 Bluetooth CS 선택에는 Bluetooth/BLE 거리측정 논문만 포함됩니다.</p>
+    </div>
     <div class="g-tools">
       <label>찾기
         <input type="search" id="g-find" placeholder="제목 · 저자 · id" autocomplete="off">
@@ -1069,6 +1077,7 @@
     ver: new Set(),
     tech: new Set(),
     gtech: new Set(),
+    gcsRelated: true,
     open: new Set(),
   };
   let papers = [], standards = [], insights = [], meta = {}, research = {};
@@ -1091,6 +1100,19 @@
   // 기술 축. category(무엇을 하는가)와 직교한다 — data/schema.md의 `tech` 표 참조.
   const TECHS = [["ble-cs", "Bluetooth CS"], ["uwb", "UWB"], ["wifi", "Wi-Fi"], ["other", "그 외"]];
   const TECH_LABEL = Object.fromEntries(TECHS);
+  // 기술 분류는 실험 대상 무선을 뜻한다. CS의 기반 원리를 탐색하는 그래프에서만
+  // 기존 topics의 명시적 PBR/왕복 거리측정 태그까지 범위를 넓힌다.
+  // 일반 phase·ToF·거리 제한 태그만으로 CS 관련성을 추정하지 않는다.
+  const CS_RANGING_TOPICS = new Set([
+    "phase-based-ranging", "ble-phase-based-ranging", "pbr", "mcpr", "mcpd",
+    "carrier-phase-ranging", "multicarrier-phase", "multi-channel-phase",
+    "two-frequency-pbr", "two-way-phase", "round-trip-phase",
+    "rtt", "round-trip-time", "two-way-ranging", "pbr-rtt-cross-check",
+  ]);
+  const isCSRelatedRanging = (p) => (p.topics || []).some((t) => CS_RANGING_TOPICS.has(t));
+  const matchesGraphTech = (p) => !state.gtech.size
+    || (p.tech || []).some((t) => state.gtech.has(t))
+    || (state.gtech.has("ble-cs") && state.gcsRelated && isCSRelatedRanging(p));
   const REL_ORDER = { critical: 0, high: 1, medium: 2, low: 3 };
   const TIER_ORDER = { top4: 0, wireless: 1, journal: 2, thesis: 3, preprint: 4, other: 5 };
 
@@ -2093,7 +2115,7 @@
       GROUP_LABEL.map((l, i) => `<span class="k"><i class="g-swatch" style="background:var(--series-${i + 1})"></i>${l}</span>`).join("")
       + `<span class="k"><i class="g-swatch" style="background:var(--bg-raised);border:2px solid var(--viz-muted)"></i>전문 미확보 (인용 관계 미추출)</span>`
       + `<span class="k">원 크기 = 코퍼스 내 피인용 횟수</span>`
-      + `<span class="k">기술 칩을 누르면 그 기술의 노드만 남고, 양끝이 모두 남는 인용선만 진하게 표시됩니다</span>`;
+      + `<span class="k">선택한 기술·연구 범위의 노드를 강조하고, 양끝이 모두 포함되는 인용선만 진하게 표시합니다</span>`;
 
     const noFull = papers.filter((p) => p.cites_source !== "fulltext").length;
     document.getElementById("g-note").innerHTML =
@@ -2117,7 +2139,7 @@
 
     // ---- 기술 필터 ----
     // 노드 색은 학회 구분에 이미 배정돼 있어(팔레트 슬롯 1–3) 기술을 색으로 더 나눌 수 없다.
-    // 그래서 선택한 기술만 남기고 나머지를 어둡게 죽인다. 인용선은 양끝이 모두 선택에
+    // 그래서 선택한 기술·연구 범위만 남기고 나머지를 어둡게 죽인다. 인용선은 양끝이 모두 선택에
     // 들어야 살려둔다 — 그래야 '그 기술 안의 인용 구조'가 보인다.
     // 세 조건(기술 칩 · 검색어 · 피인용 임계)을 함께 본다. 하나라도 걸리면 어둡게 죽인다.
     // 인용선은 양끝이 모두 살아 있을 때만 남긴다 — 그래야 '그 안의 구조'가 보인다.
@@ -2126,14 +2148,14 @@
 
     function applyGraphTech() {
       const sel = state.gtech;
+      document.getElementById("g-cs-scope").hidden = !sel.has("ble-cs");
       const q = findQ.trim().toLowerCase();
       const live = new Set();
       let hits = 0;
       svg.querySelectorAll(".g-node").forEach((n) => {
         const id = n.dataset.id;
         const p = papers.find((x) => x.id === id);
-        const ts = (n.dataset.tech || "").split(" ").filter(Boolean);
-        const okTech = !sel.size || ts.some((t) => sel.has(t));
+        const okTech = p && matchesGraphTech(p);
         const okDeg = (m.inDeg.get(id) || 0) >= degMin;
         const okFind = !q || (p && hay(p).includes(q));
         if (q && okFind) hits++;
@@ -2167,6 +2189,9 @@
       b.setAttribute("aria-pressed", String(state.gtech.has(v)));
       applyGraphTech();
     };
+    const relatedEl = document.getElementById("g-cs-related");
+    relatedEl.checked = state.gcsRelated;
+    relatedEl.onchange = () => { state.gcsRelated = relatedEl.checked; applyGraphTech(); };
     applyGraphTech();
 
     // ---- 찾기 ----
